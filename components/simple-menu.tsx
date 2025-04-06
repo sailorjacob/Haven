@@ -7,8 +7,7 @@ import Link from "next/link"
 const menuItems = [
   { name: "Vision", href: "#vision" },
   { name: "Components", href: "#components" },
-  { name: "Membership", href: "#membership" },
-  { name: "Products", href: "/products" },
+  { name: "Native", href: "#membership" },
   { name: "Ecosystem", href: "#ecosystem" },
   { name: "Contact", href: "#contact" },
 ]

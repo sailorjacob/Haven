@@ -133,12 +133,12 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="membership" title="Membership" subtitle="A highly selective community">
+        <Section id="membership" title="Native identity" subtitle="A highly selective community">
           <SectionDivider />
           <div className="mt-12 flex flex-col md:flex-row gap-10 items-center">
             <div className="md:w-1/2">
               <p className="text-gray-600 leading-relaxed mb-6">
-                Haven is a selective community of artisans and storytellers who share their craft and build generational
+                Haven is a selective community of artists and storytellers who share their craft and build generational
                 skills in digital arts.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
@@ -147,7 +147,7 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <Link
-                  href="/membership"
+                  href="/products"
                   className="text-sm font-medium py-2 px-4 border border-[#E6B325] text-[#E6B325] rounded-full hover:bg-[#E6B325]/10 transition-colors"
                 >
                   Learn about selection
