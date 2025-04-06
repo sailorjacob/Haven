@@ -1,0 +1,14 @@
+.contactPage {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.contactPage section {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.contactContainer {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+} 
