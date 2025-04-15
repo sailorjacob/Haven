@@ -98,7 +98,7 @@ export default function Contact() {
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
                   <li className="mb-2">Luxurious compounds designed with modern, minimalist aesthetics serve as both living and working spaces.</li>
                   <li className="mb-2">Amenities include upscale movie theaters, fine art galleries, communal workspaces, pools, and private residences—all fostering an environment where creative collaboration is inherent to daily life.</li>
-                  <li className="mb-2">Maintaining 20-30% excess capacity in accommodation and facilities for temporary stays and commercial services, providing additional revenue streams through curated tourism and exclusive access to Haven's amenities such as screening theaters and creative studios.</li>
+                  <li className="mb-2">Maintaining 20-30% excess capacity in accommodation and facilities for temporary stays and commercial services, providing additional revenue streams through curated tourism and exclusive access to Haven's amenities such as screening theaters and art galleries.</li>
                 </ul>
 
                 <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">4. Revenue Drivers & Business Model</h2>
