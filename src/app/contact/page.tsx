@@ -145,7 +145,7 @@ export default function Contact() {
               
               <div className="mb-8 p-6 bg-neutral-800 rounded-xl">
                 <p className="text-neutral-100 font-medium mb-3">
-                  Note: Haven is a highly selective community
+                  Note: Haven is highly selective
                 </p>
                 <p className="text-neutral-300">
                   We are building a hive of the world's most exceptional and dedicated creative professionals. Our rigorous selection process ensures that we maintain the highest standards of excellence and commitment to our vision. Only individuals who demonstrate extraordinary talent, dedication, and alignment with our mission are considered.
@@ -159,10 +159,10 @@ export default function Contact() {
                     For questions about Haven's vision and creative ecosystem.
                   </p>
                   <a 
-                    href="mailto:contact@haven.com" 
+                    href="mailto:join@haven.engineer" 
                     className="inline-block text-neutral-300 hover:text-[#3B82F6] transition-colors duration-300"
                   >
-                    contact@haven.com
+                    join@haven.engineer
                   </a>
                 </div>
                 <div className="space-y-4">
@@ -171,10 +171,10 @@ export default function Contact() {
                     For exceptional creators interested in joining our selective community.
                   </p>
                   <a 
-                    href="mailto:membership@haven.com" 
+                    href="mailto:join@haven.engineer" 
                     className="inline-block text-neutral-300 hover:text-[#3B82F6] transition-colors duration-300"
                   >
-                    membership@haven.com
+                    join@haven.engineer
                   </a>
                 </div>
               </div>
