@@ -308,18 +308,20 @@ export default function Contact() {
                   Haven is a self-sustaining network studio of dedicated creative artists reshaping global media and cultural production. It combines AI-driven filmmaking, music, and digital art with luxurious, hotel and resort style living, offering a sophisticated alternative to traditional institutions. Below is an in-depth look at Haven's structure, economic impact, and revenue drivers, using identification and mutual employment principles as the foundation.
                 </p>
 
-                <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">1. Community & Lifestyle</h2>
-                
-                <h3 className="text-xl font-medium text-neutral-200 mb-4">Selective Identification & Mutual Employment:</h3>
+                <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">1. Hierarchy & Organizational Structure</h2>
+
+                <h3 className="text-xl font-medium text-neutral-200 mb-4">A. Leadership & Governance</h3>
+                <p className="text-neutral-300 mb-4"><strong>Visionary Executive Council:</strong></p>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
-                  <li className="mb-2">A rigorous process ensures that only those who truly identify with the vision—comparable to selections at top-tier institutions—are integrated into the community.</li>
-                  <li className="mb-2">Individuals are not merely "members"; they are professionals who mutually employ their skills and collaborate as equals, ensuring a collective commitment to creative excellence.</li>
+                  <li className="mb-2">A core council of thought leaders—comparable to "Knights of the Round Table"—sets the strategic direction.</li>
+                  <li className="mb-2">This leadership is balanced by input from a network of professionals who mutually employ their expertise in various disciplines.</li>
                 </ul>
 
-                <h3 className="text-xl font-medium text-neutral-200 mb-4">Hotel and Resort Style Living:</h3>
+                <h3 className="text-xl font-medium text-neutral-200 mb-4">B. Network Structure</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
-                  <li className="mb-2">Luxurious compounds designed with modern, minimalist aesthetics serve as both living and working spaces.</li>
-                  <li className="mb-2">Amenities include upscale movie theaters, fine art galleries, communal workspaces, pools, and private residences—all fostering an environment where creative collaboration is inherent to daily life.</li>
+                  <li className="mb-2"><strong>Core Creative Hive:</strong> A concentrated group of dedicated creators and professionals who drive Haven's artistic and technological innovations.</li>
+                  <li className="mb-2"><strong>Extended Network:</strong> A broader circle of allied professionals and service providers who collaborate through mutual employment agreements.</li>
+                  <li className="mb-2"><strong>Strategic Collaborations:</strong> Partnerships with specialized network states in security, biomedical, and infrastructure fields.</li>
                 </ul>
 
                 <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">2. Economic Force & Market Impact</h2>
@@ -344,20 +346,18 @@ export default function Contact() {
 
                 <p className="text-neutral-300 mb-8"><strong>Extended Ecosystem:</strong> Including allied professionals, affiliates, and service providers, the broader economic influence may reach tens of billions globally.</p>
 
-                <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">3. Hierarchy & Organizational Structure</h2>
-
-                <h3 className="text-xl font-medium text-neutral-200 mb-4">A. Leadership & Governance</h3>
-                <p className="text-neutral-300 mb-4"><strong>Visionary Executive Council:</strong></p>
+                <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">3. Community & Lifestyle</h2>
+                
+                <h3 className="text-xl font-medium text-neutral-200 mb-4">Selective Identification & Mutual Employment:</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
-                  <li className="mb-2">A core council of thought leaders—comparable to "Knights of the Round Table"—sets the strategic direction.</li>
-                  <li className="mb-2">This leadership is balanced by input from a network of professionals who mutually employ their expertise in various disciplines.</li>
+                  <li className="mb-2">A rigorous process ensures that only those who truly identify with the vision—comparable to selections at top-tier institutions—are integrated into the community.</li>
+                  <li className="mb-2">Individuals are not merely "members"; they are professionals who mutually employ their skills and collaborate as equals, ensuring a collective commitment to creative excellence.</li>
                 </ul>
 
-                <h3 className="text-xl font-medium text-neutral-200 mb-4">B. Network Structure</h3>
+                <h3 className="text-xl font-medium text-neutral-200 mb-4">Hotel and Resort Style Living:</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
-                  <li className="mb-2"><strong>Core Creative Hive:</strong> A concentrated group of dedicated creators and professionals who drive Haven's artistic and technological innovations.</li>
-                  <li className="mb-2"><strong>Extended Network:</strong> A broader circle of allied professionals and service providers who collaborate through mutual employment agreements.</li>
-                  <li className="mb-2"><strong>Strategic Collaborations:</strong> Partnerships with specialized network states in security, biomedical, and infrastructure fields.</li>
+                  <li className="mb-2">Luxurious compounds designed with modern, minimalist aesthetics serve as both living and working spaces.</li>
+                  <li className="mb-2">Amenities include upscale movie theaters, fine art galleries, communal workspaces, pools, and private residences—all fostering an environment where creative collaboration is inherent to daily life.</li>
                 </ul>
 
                 <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">4. Revenue Drivers & Business Model</h2>
