@@ -19,7 +19,7 @@ const inter = Inter({
 })
 
 // Single golden color for consistency
-const GOLD = "#E6B325"
+const GOLD = "#3B82F6"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
@@ -65,7 +65,7 @@ export default function Home() {
             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M12 3L16.39 5.25L20.78 7.5L20.78 12L20.78 16.5L16.39 18.75L12 21L7.61 18.75L3.22 16.5L3.22 12L3.22 7.5L7.61 5.25L12 3Z"
-                fill="#E6B325"
+                fill="#3B82F6"
               />
             </svg>
           </div>

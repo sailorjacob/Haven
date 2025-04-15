@@ -9,7 +9,7 @@ interface FeatureItemProps {
 
 const FeatureItem: React.FC<FeatureItemProps> = ({ title, description, icon }) => {
   const getIcon = (): JSX.Element => {
-    const iconProps = { className: "h-6 w-6 text-[#E6B325]" }
+    const iconProps = { className: "h-6 w-6 text-[#3B82F6]" }
 
     switch (icon) {
       case "Sparkles":
