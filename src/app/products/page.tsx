@@ -434,12 +434,13 @@ export default function Products() {
                   <p className="text-neutral-300 mb-4">
                     Haven implements industry-leading security protocols to ensure user data privacy and content protection:
                   </p>
-                  <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+                  <ul className="list-disc pl-6 text-neutral-300 space-y-2 mb-2">
                     <li>End-to-end encryption for all data transmission</li>
                     <li>Zero-knowledge proof systems for age verification</li>
                     <li>Multi-factor authentication for account access</li>
                     <li>Decentralized storage to prevent data breaches</li>
                     <li>Regular security audits by third-party specialists</li>
+                    <li>Transparent data usage and privacy policies</li>
                   </ul>
                 </div>
               </div>
