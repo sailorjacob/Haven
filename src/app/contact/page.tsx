@@ -91,13 +91,14 @@ export default function Contact() {
                 <h3 className="text-xl font-medium text-neutral-200 mb-4">Selective Identification & Mutual Employment:</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
                   <li className="mb-2">A rigorous process ensures that only those who truly identify with the vision—comparable to selections at top-tier institutions—are integrated into the community.</li>
-                  <li className="mb-2">Individuals are not merely "members"; they are professionals who mutually employ their skills and collaborate as equals, ensuring a collective commitment to creative excellence.</li>
+                  <li className="mb-2">Individuals are not merely "members"; they are natives who mutually employ their skills and collaborate as equals, ensuring a collective commitment to creative excellence.</li>
                 </ul>
 
                 <h3 className="text-xl font-medium text-neutral-200 mb-4">Hotel and Resort Style Living:</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
                   <li className="mb-2">Luxurious compounds designed with modern, minimalist aesthetics serve as both living and working spaces.</li>
                   <li className="mb-2">Amenities include upscale movie theaters, fine art galleries, communal workspaces, pools, and private residences—all fostering an environment where creative collaboration is inherent to daily life.</li>
+                  <li className="mb-2">Maintaining 20-30% excess capacity in accommodation and facilities for temporary stays and commercial services, providing additional revenue streams through curated tourism and exclusive access to Haven's amenities such as screening theaters and creative studios.</li>
                 </ul>
 
                 <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">4. Revenue Drivers & Business Model</h2>
