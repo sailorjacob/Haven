@@ -424,8 +424,8 @@ export default function Contact() {
               </article>
             </section>
 
-            {/* Contact Methods */}
-            <section className="bg-neutral-900 rounded-2xl p-8 shadow-lg h-auto mb-4">
+            {/* Contact Methods - Hidden as requested */}
+            <section className="bg-neutral-900 rounded-2xl p-8 shadow-lg h-auto mb-4" style={{ display: 'none' }}>
               <h2 className="text-2xl font-semibold text-neutral-100 mb-6">Get in Touch</h2>
               
               <div className="mb-8 p-6 bg-neutral-800 rounded-xl">
