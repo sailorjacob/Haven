@@ -118,7 +118,7 @@ export default function Home() {
                     <ul className="text-gray-600 space-y-1 pl-4 list-disc">
                       <li>Art galleries</li>
                       <li>Screening theaters</li>
-                      <li>Premium accommodations</li>
+                      <li>Accommodations</li>
                     </ul>
                   </div>
                 </div>
@@ -157,24 +157,23 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="membership" title="Native identity" subtitle="A highly selective community">
+        <Section id="membership" title="Native identity" subtitle="An open global community">
           <SectionDivider />
           <div className="mt-12 flex flex-col md:flex-row gap-10 items-center">
             <div className="md:w-1/2">
               <p className="text-gray-600 leading-relaxed mb-6">
-                Haven is a selective community of artists and storytellers who share their craft and build generational
+                Haven is an open community of artists and storytellers who share their craft and build generational
                 skills in digital arts.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Our members identify with the network state over traditional nationality, sharing a collective mission
-                as modern storytellers.
+                Our members come from all corners of the world, united by a shared passion for storytelling and digital creation. We welcome digital immigrants from anywhere on the globe who identify with our collective mission.
               </p>
               <div className="mt-8">
                 <Link
                   href="/products"
                   className="text-sm font-medium py-2 px-4 border border-[#E6B325] text-[#E6B325] rounded-full hover:bg-[#E6B325]/10 transition-colors"
                 >
-                  Learn about selection
+                  Learn about our community
                 </Link>
               </div>
             </div>
@@ -263,7 +262,7 @@ export default function Home() {
           <div className="mt-12 max-w-md mx-auto">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <p className="text-gray-600 text-center mb-6">
-                For inquiries about Haven and our selection process, please reach out through our secure channels.
+                For inquiries about Haven and our community, please reach out through our secure channels.
               </p>
               <div className="flex justify-center">
                 <Link
