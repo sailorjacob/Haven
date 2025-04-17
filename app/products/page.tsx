@@ -116,7 +116,7 @@ export default function Products() {
               </li>
               <li className="flex items-center">
                 <span className="text-[#3B82F6] mr-2">2.</span>
-                <a href="#safe-distribution" className="hover:text-[#3B82F6] transition-colors">Safe Distribution & Payments</a>
+                <a href="#secure-distribution" className="hover:text-[#3B82F6] transition-colors">Secure Distribution & Payments</a>
               </li>
               <li className="flex items-center">
                 <span className="text-[#3B82F6] mr-2">3.</span>
@@ -141,7 +141,7 @@ export default function Products() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {[
               { id: "creative-content", title: "Creative Content Platforms", icon: "🎬" },
-              { id: "safe-distribution", title: "Safe Distribution & Payments", icon: "🔒" },
+              { id: "secure-distribution", title: "Secure Distribution & Payment Systems", icon: "🔒" },
               { id: "advertising", title: "Advertising & Creative Campaigns", icon: "📊" },
               { id: "living", title: "Interconnected Living", icon: "🏙️" },
               { id: "art", title: "International Art Gallery", icon: "🎨" },
@@ -392,7 +392,7 @@ export default function Products() {
           </section>
 
           {/* Safe Distribution, Age Verification & Payments */}
-          <section id="safe-distribution" className="mb-16 scroll-mt-24">
+          <section id="secure-distribution" className="mb-16 scroll-mt-24">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -401,13 +401,13 @@ export default function Products() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden"
             >
               <div className="bg-gradient-to-r from-gray-100 to-white p-8 flex items-center justify-between cursor-pointer"
-                onClick={() => toggleSection("safe-distribution")}>
+                onClick={() => toggleSection("secure-distribution")}>
                 <div className="flex items-center">
                   <span className="text-3xl mr-6">🔒</span>
                   <h2 className="text-3xl font-bold text-gray-800">Secure Distribution & Payment Systems</h2>
                 </div>
                 <div>
-                  {expandedSection === "safe-distribution" ? (
+                  {expandedSection === "secure-distribution" ? (
                     <Minus size={24} className="text-[#E6B325]" />
                   ) : (
                     <Plus size={24} className="text-[#E6B325]" />
@@ -415,7 +415,7 @@ export default function Products() {
                 </div>
               </div>
               
-              {expandedSection === "safe-distribution" && (
+              {expandedSection === "secure-distribution" && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
@@ -801,92 +801,93 @@ export default function Products() {
                         <h3 className="text-2xl font-semibold text-gray-800 mb-6">Crypto Currency & Payments</h3>
                         <div className="space-y-6">
                           <div className="flex">
-                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E6B325] flex items-center justify-center mr-4 mt-1">
-                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                  </div>
-                                  <div>
-                                        <h4 className="text-xl font-medium text-gray-700 mb-2">Decentralized Finance</h4>
-                                        <p className="text-gray-600">A proprietary cryptocurrency underpins all transactions within the Haven ecosystem, enabling frictionless payments across our digital and physical platforms.</p>
-                                  </div>
-                                </div>
-                                
-                                <div className="flex">
-                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E6B325] flex items-center justify-center mr-4 mt-1">
-                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
-                                  </div>
-                                  <div>
-                                        <h4 className="text-xl font-medium text-gray-700 mb-2">Blockchain Transparency</h4>
-                                        <p className="text-gray-600">All transactions, content authenticity, and revenue-sharing mechanisms are secured via blockchain, ensuring trust and transparency for creators and consumers alike.</p>
-                                  </div>
-                                </div>
-                              </div>
+                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E6B325] flex items-center justify-center mr-4 mt-1">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
                             </div>
-                            
-                            <div className="col-span-full md:col-span-2">
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
-                                <div className="bg-gray-50 p-6 rounded-xl">
-                                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Knights of the Round Table Legal System</h3>
-                                  <p className="text-gray-600 mb-4">Drawing inspiration from historical chivalry, our legal framework ensures fair dispute resolution, ethical standards, and community-driven governance.</p>
-                                  <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                                    <li>Innovative Legal Governance</li>
-                                    <li>Decentralized Justice</li>
-                                    <li>Community-driven rule-making</li>
-                                  </ul>
-                                </div>
-                                
-                                <div className="bg-gray-50 p-6 rounded-xl">
-                                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Philosophical Army</h3>
-                                  <p className="text-gray-600 mb-4">A collective of thought leaders and strategists who define the cultural and ethical directions of Haven.</p>
-                                  <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                                    <li>Ideological Vanguard</li>
-                                    <li>Community Engagement</li>
-                                    <li>Progressive social organization</li>
-                                  </ul>
-                                </div>
-                              </div>
+                            <div>
+                              <h4 className="text-xl font-medium text-gray-700 mb-2">Decentralized Finance</h4>
+                              <p className="text-gray-600">A proprietary cryptocurrency underpins all transactions within the Haven ecosystem, enabling frictionless payments across our digital and physical platforms.</p>
                             </div>
                           </div>
-                        </motion.div>
-                      )}
-                    </motion.div>
-                  </section>
-                  
-                  {/* Conclusion */}
-                  <motion.section 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="bg-gradient-to-r from-gray-200 to-gray-100 rounded-2xl p-8 md:p-12 shadow-lg mb-10"
-                  >
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Get Started With Haven</h2>
-                    <div className="prose max-w-none mb-8">
-                      <p className="text-gray-600 text-center max-w-3xl mx-auto">
-                        Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
-                        environment where creativity, commerce, and community thrive in unison.
-                      </p>
+                          
+                          <div className="flex">
+                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E6B325] flex items-center justify-center mr-4 mt-1">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h4 className="text-xl font-medium text-gray-700 mb-2">Blockchain Transparency</h4>
+                              <p className="text-gray-600">All transactions, content authenticity, and revenue-sharing mechanisms are secured via blockchain, ensuring trust and transparency for creators and consumers alike.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="flex justify-center">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                      <Link 
-                        href="/contact" 
-                          className="inline-block bg-white text-gray-700 border border-[#E6B325] hover:bg-[#E6B325]/10 font-medium py-4 px-10 rounded-full transition-colors"
-                      >
-                        Request Information
-                      </Link>
-                      </motion.div>
+                    <div className="col-span-full md:col-span-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+                        <div className="bg-gray-50 p-6 rounded-xl">
+                          <h3 className="text-xl font-semibold text-gray-800 mb-4">Knights of the Round Table Legal System</h3>
+                          <p className="text-gray-600 mb-4">Drawing inspiration from historical chivalry, our legal framework ensures fair dispute resolution, ethical standards, and community-driven governance.</p>
+                          <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Innovative Legal Governance</li>
+                            <li>Decentralized Justice</li>
+                            <li>Community-driven rule-making</li>
+                          </ul>
+                        </div>
+                        
+                        <div className="bg-gray-50 p-6 rounded-xl">
+                          <h3 className="text-xl font-semibold text-gray-800 mb-4">Philosophical Army</h3>
+                          <p className="text-gray-600 mb-4">A collective of thought leaders and strategists who define the cultural and ethical directions of Haven.</p>
+                          <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Ideological Vanguard</li>
+                            <li>Community Engagement</li>
+                            <li>Progressive social organization</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </motion.section>
-                </div>
-              </div>
-            </main>
-          )
-        } 
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+          </section>
+          
+          {/* Conclusion */}
+          <motion.section 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="bg-gradient-to-r from-gray-200 to-gray-100 rounded-2xl p-8 md:p-12 shadow-lg mb-10"
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Get Started With Haven</h2>
+            <div className="prose max-w-none mb-8">
+              <p className="text-gray-600 text-center max-w-3xl mx-auto">
+                Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
+                environment where creativity, commerce, and community thrive in unison.
+              </p>
+            </div>
+            
+            <div className="flex justify-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+              <Link 
+                href="/contact" 
+                  className="inline-block bg-white text-gray-700 border border-[#E6B325] hover:bg-[#E6B325]/10 font-medium py-4 px-10 rounded-full transition-colors"
+              >
+                Request Information
+              </Link>
+              </motion.div>
+            </div>
+          </motion.section>
+        </div>
+      </div>
+    </main>
+  )
+} 
