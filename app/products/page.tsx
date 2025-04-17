@@ -77,7 +77,7 @@ export default function Products() {
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Haven is an integrated ecosystem where cutting‐edge creative production meets next-generation digital distribution, 
               luxurious living, and a new paradigm in cultural governance. This documentation outlines our multi-faceted services—from 
-              advanced AI-generated content in adult entertainment to immersive real estate communities and an international art 
+              advanced AI-generated content to immersive real estate communities and an international art 
               and cultural platform.
             </p>
           </motion.div>
@@ -205,19 +205,19 @@ export default function Products() {
                           <span className="w-6 h-6 rounded-full bg-[#E6B325] flex items-center justify-center mr-3">
                         <span className="text-white font-bold">1</span>
                           </span>
-                          Adult Entertainment
+                          Digital Cinematic Experience
                         </h3>
                         <p className="text-gray-600 mb-4">
-                          Harness the power of AI to produce next-generation adult films with cutting-edge technology, ensuring content that is both artistically innovative and responsibly produced.
+                          Harness the power of AI to produce next-generation films with cutting-edge technology, ensuring content that is both artistically innovative and visually stunning.
                         </p>
                         <ul className="space-y-2 text-gray-600">
                           <li className="flex items-start">
                             <span className="text-[#E6B325] mr-2">•</span>
-                            <span>Elite AI-Generated Content</span>
+                            <span>Premium AI-Generated Content</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-[#E6B325] mr-2">•</span>
-                            <span>Safe and Ethical Production</span>
+                            <span>Advanced Visual Technologies</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-[#E6B325] mr-2">•</span>
@@ -404,7 +404,7 @@ export default function Products() {
                 onClick={() => toggleSection("safe-distribution")}>
                 <div className="flex items-center">
                   <span className="text-3xl mr-6">🔒</span>
-                  <h2 className="text-3xl font-bold text-gray-800">Safe Distribution, Age Verification & Payments</h2>
+                  <h2 className="text-3xl font-bold text-gray-800">Secure Distribution & Payment Systems</h2>
                 </div>
                 <div>
                   {expandedSection === "safe-distribution" ? (
@@ -443,10 +443,10 @@ export default function Products() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                      <h4 className="text-xl font-medium text-gray-700 mb-3">Advanced Age Verification</h4>
-                      <p className="text-gray-600 flex-grow">Leveraging biometric and blockchain technologies, our age verification system guarantees that content is accessible only to verified adults, protecting both users and creators.</p>
+                      <h4 className="text-xl font-medium text-gray-700 mb-3">Advanced Content Security</h4>
+                      <p className="text-gray-600 flex-grow">Leveraging biometric and blockchain technologies, our content security system ensures that high-value intellectual property is protected while maintaining seamless access for authorized users.</p>
                       <div className="mt-4 pt-4 border-t border-gray-200">
-                        <span className="text-[#E6B325] font-medium">Key feature: Zero-knowledge proof systems</span>
+                        <span className="text-[#E6B325] font-medium">Key feature: Multi-layer verification systems</span>
                       </div>
                   </div>
                   
@@ -473,8 +473,8 @@ export default function Products() {
                         </p>
                         <ul className="list-disc pl-6 text-gray-600 space-y-2">
                           <li>End-to-end encryption for all data transmission</li>
-                          <li>Zero-knowledge proof systems for age verification</li>
-                          <li>Multi-factor authentication for account access</li>
+                          <li>Multi-factor authentication and authorization</li>
+                          <li>Secure access management</li>
                         </ul>
                       </div>
                       <div className="md:w-1/2">
@@ -820,7 +820,7 @@ export default function Products() {
                                   </div>
                                   <div>
                                         <h4 className="text-xl font-medium text-gray-700 mb-2">Blockchain Transparency</h4>
-                                        <p className="text-gray-600">All transactions, age verifications, and revenue-sharing mechanisms are secured via blockchain, ensuring trust and transparency for creators and consumers alike.</p>
+                                        <p className="text-gray-600">All transactions, content authenticity, and revenue-sharing mechanisms are secured via blockchain, ensuring trust and transparency for creators and consumers alike.</p>
                                   </div>
                                 </div>
                               </div>
