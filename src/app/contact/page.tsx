@@ -44,8 +44,32 @@ export default function Contact() {
               <article className="prose prose-invert prose-lg max-w-none">
                 <h1 className="text-4xl font-semibold text-neutral-100 mb-6 text-center">Haven: The Network State of Creative Excellence</h1>
                 
+                <p className="text-neutral-300 text-lg leading-relaxed mb-6">
+                  Haven is a self-sustaining network studio of dedicated creative artists reshaping global media and cultural production. It combines AI-driven filmmaking, music, and digital art with luxurious, hotel and resort style living, offering a sophisticated alternative to traditional institutions.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 mt-8">
+                  <div className="bg-neutral-800 p-6 rounded-xl border-l-4 border-[#3B82F6]">
+                    <h3 className="text-xl font-semibold text-[#3B82F6] mb-4">Digital Experience</h3>
+                    <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+                      <li>AI-generated films with cutting-edge visual quality</li>
+                      <li>AI-generated music across multiple genres</li>
+                      <li>Proprietary streaming platform integrating all digital content</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-neutral-800 p-6 rounded-xl border-l-4 border-[#3B82F6]">
+                    <h3 className="text-xl font-semibold text-[#3B82F6] mb-4">Physical Experience</h3>
+                    <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+                      <li>Curated art galleries featuring digital and traditional works</li>
+                      <li>State-of-the-art screening theaters for immersive viewing</li>
+                      <li>Luxury accommodation with resort-style amenities</li>
+                    </ul>
+                  </div>
+                </div>
+                
                 <p className="text-neutral-300 text-lg leading-relaxed mb-12">
-                  Haven is a self-sustaining network studio of dedicated creative artists reshaping global media and cultural production. It combines AI-driven filmmaking, music, and digital art with luxurious, hotel and resort style living, offering a sophisticated alternative to traditional institutions. Below is an in-depth look at Haven's structure, economic impact, and revenue drivers, using identification and mutual employment principles as the foundation.
+                  Below is an in-depth look at Haven's structure, economic impact, and revenue drivers, using identification and mutual employment principles as the foundation.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">1. Hierarchy & Organizational Structure</h2>

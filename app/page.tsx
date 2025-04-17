@@ -99,6 +99,30 @@ export default function Home() {
                 Think of it as a fusion of a cinematic platform, a music service, and an entertainment conglomerate, all
                 operating from interconnected resort compounds.
               </p>
+              
+              <div className="bg-white rounded-xl p-5 shadow-md mt-8">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Our Dual Innovation Model:</h3>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-medium text-blue-600 mb-2">Digital Experience</h4>
+                    <ul className="text-gray-600 space-y-1 pl-4 list-disc">
+                      <li>AI-generated films</li>
+                      <li>AI-generated music</li>
+                      <li>Streaming platform</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-medium text-blue-600 mb-2">Physical Experience</h4>
+                    <ul className="text-gray-600 space-y-1 pl-4 list-disc">
+                      <li>Art galleries</li>
+                      <li>Screening theaters</li>
+                      <li>Luxury accommodation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="bg-white rounded-2xl overflow-hidden h-[300px] md:h-[400px] relative shadow-lg">
               <AIImage
