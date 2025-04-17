@@ -45,7 +45,7 @@ export default function Contact() {
                 <h1 className="text-4xl font-semibold text-neutral-100 mb-6 text-center">Haven: The Network State of Creative Excellence</h1>
                 
                 <p className="text-neutral-300 text-lg leading-relaxed mb-6">
-                  Haven is a self-sustaining network studio of dedicated creative artists reshaping global media and cultural production. It combines AI-driven filmmaking, music, and digital art with luxurious, hotel and resort style living, offering a sophisticated alternative to traditional institutions.
+                  Haven is a self-sustaining network studio of dedicated creative artists reshaping global media and cultural production. It combines AI-driven filmmaking, music, and digital art with premium, hotel and residence style living, offering a sophisticated alternative to traditional institutions.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 mt-8">
@@ -63,7 +63,7 @@ export default function Contact() {
                     <ul className="list-disc pl-6 text-neutral-300 space-y-2">
                       <li>Curated art galleries featuring digital and traditional works</li>
                       <li>State-of-the-art screening theaters for immersive viewing</li>
-                      <li>Luxury accommodation with resort-style amenities</li>
+                      <li>Quality accommodations with residence-style amenities</li>
                     </ul>
                   </div>
                 </div>
@@ -118,9 +118,9 @@ export default function Contact() {
                   <li className="mb-2">Individuals are not merely "members"; they are natives who mutually employ their skills and collaborate as equals, ensuring a collective commitment to creative excellence.</li>
                 </ul>
 
-                <h3 className="text-xl font-medium text-neutral-200 mb-4">Hotel and Resort Style Living:</h3>
+                <h3 className="text-xl font-medium text-neutral-200 mb-4">Hotel and Residence Style Living:</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
-                  <li className="mb-2">Luxurious compounds designed with modern, minimalist aesthetics serve as both living and working spaces.</li>
+                  <li className="mb-2">Modern compounds designed with modern, minimalist aesthetics serve as both living and working spaces.</li>
                   <li className="mb-2">Amenities include upscale movie theaters, fine art galleries, communal workspaces, pools, and private residences—all fostering an environment where creative collaboration is inherent to daily life.</li>
                   <li className="mb-2">Maintaining 20-30% excess capacity in accommodation and facilities for temporary stays and commercial services, providing additional revenue streams through curated tourism and exclusive access to Haven's amenities such as screening theaters and art galleries.</li>
                 </ul>
@@ -138,7 +138,7 @@ export default function Contact() {
                   </div>
                   <div className="bg-neutral-700 p-6 rounded-xl">
                     <h3 className="text-xl font-medium text-[#3B82F6] mb-4">C. Real Estate & Hospitality</h3>
-                    <p className="text-neutral-300">Income from luxury residences and event venues across 250+ planned global resorts.</p>
+                    <p className="text-neutral-300">Income from premium residences and event venues across 250+ planned global accommodation centers.</p>
                   </div>
                   <div className="bg-neutral-700 p-6 rounded-xl">
                     <h3 className="text-xl font-medium text-[#3B82F6] mb-4">D. Art & Cultural Events</h3>
@@ -150,7 +150,7 @@ export default function Contact() {
                 
                 <div className="bg-neutral-700 p-6 rounded-xl mb-12">
                   <h3 className="text-xl font-medium text-[#3B82F6] mb-4">Economic Ecosystem</h3>
-                  <p className="text-neutral-300 mb-4">The convergence of digital media, advertising, and luxury hospitality creates multiple, synergistic revenue channels, supported by a decentralized blockchain payment system.</p>
+                  <p className="text-neutral-300 mb-4">The convergence of digital media, advertising, and quality hospitality creates multiple, synergistic revenue channels, supported by a decentralized blockchain payment system.</p>
                   
                   <h3 className="text-xl font-medium text-[#3B82F6] mb-4">Cultural Leadership</h3>
                   <p className="text-neutral-300">Haven positions itself as a global benchmark in creative production and cultural innovation, challenging traditional power structures with a model built on collaboration and mutual employment.</p>
@@ -158,7 +158,7 @@ export default function Contact() {
 
                 <div className="border-l-4 border-[#3B82F6] pl-6 py-2 mb-12">
                   <p className="text-neutral-300 italic">
-                    Haven is more than a digital media platform or a luxury living environment—it is a transformative network state where professionals who identify with its vision come together to redefine global narratives. Through rigorous identification and mutual employment, each individual contributes to a dynamic collective, driving economic and cultural innovation on a global scale. This network of creative excellence not only challenges the traditional paradigms of media and commerce but also offers a compelling, sophisticated alternative to established institutions.
+                    Haven is more than a digital media platform or a premium living environment—it is a transformative network state where professionals who identify with its vision come together to redefine global narratives. Through rigorous identification and mutual employment, each individual contributes to a dynamic collective, driving economic and cultural innovation on a global scale. This network of creative excellence not only challenges the traditional paradigms of media and commerce but also offers a compelling, sophisticated alternative to established institutions.
                   </p>
                 </div>
               </article>

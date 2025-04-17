@@ -103,7 +103,7 @@ export default function Products() {
                 <ul className="list-disc pl-5 text-gray-600 space-y-2">
                   <li>Curated art galleries showcasing digital and traditional works</li>
                   <li>State-of-the-art screening theaters for premium viewing experiences</li>
-                  <li>Luxury accommodation with exclusive resort-style amenities</li>
+                  <li>Premium accommodation with exclusive residence-style amenities</li>
                 </ul>
               </div>
             </div>
@@ -611,7 +611,7 @@ export default function Products() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div className="bg-gray-50 p-6 rounded-xl">
-                      <h4 className="text-xl font-medium text-gray-700 mb-3">Luxury Compounds & Residences</h4>
+                      <h4 className="text-xl font-medium text-gray-700 mb-3">Quality Compounds & Residences</h4>
                       <p className="text-gray-600">Haven's real estate network includes exclusive apartments, homes, townhouses, and condos designed for both members and visitors. Our living spaces combine the exclusivity of Soho House with the service standards of Hilton hotels.</p>
                     </div>
                     
@@ -629,7 +629,7 @@ export default function Products() {
                   <div className="bg-gray-50 p-6 rounded-xl mb-8">
                     <h4 className="text-xl font-medium text-gray-700 mb-4">Compound Amenities</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {["Creative Studios", "State-of-art Gyms", "Luxury Spas", "Fine Dining", "Art Galleries", "Performance Venues", "Private Theaters", "Recording Studios"].map((amenity, index) => (
+                      {["Creative Studios", "State-of-art Gyms", "Quality Spas", "Fine Dining", "Art Galleries", "Performance Venues", "Private Theaters", "Recording Studios"].map((amenity, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0, y: 10 }}
@@ -647,15 +647,15 @@ export default function Products() {
                     <div className="md:w-2/3">
                       <p className="text-gray-600 mb-6">
                         Our real estate holdings operate as a network of interconnected creative hubs, strategically positioned 
-                        in major global cities and exclusive resort destinations. Each property is designed to foster collaboration, 
-                        inspiration, and community among Haven's members while providing unparalleled luxury and amenities.
+                        in major global cities and exclusive accommodation destinations. Each property is designed to foster collaboration, 
+                        inspiration, and community among Haven's members while providing unparalleled quality amenities.
                       </p>
                     </div>
                     <div className="md:w-1/3">
                       <div className="border-l-4 border-[#E6B325] pl-6 py-2 h-full flex items-center">
                         <p className="text-gray-600 italic">
                           "Haven's living spaces transcend traditional real estate by integrating creative workspaces, 
-                          cultural programming, and luxury amenities into a cohesive ecosystem where innovation and lifestyle converge."
+                          cultural programming, and premium amenities into a cohesive ecosystem where innovation and lifestyle converge."
                         </p>
                       </div>
                     </div>

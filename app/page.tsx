@@ -97,7 +97,7 @@ export default function Home() {
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Think of it as a fusion of a cinematic platform, a music service, and an entertainment conglomerate, all
-                operating from interconnected resort compounds.
+                operating from interconnected residential compounds.
               </p>
               
               <div className="bg-white rounded-xl p-5 shadow-md mt-8">
@@ -118,7 +118,7 @@ export default function Home() {
                     <ul className="text-gray-600 space-y-1 pl-4 list-disc">
                       <li>Art galleries</li>
                       <li>Screening theaters</li>
-                      <li>Luxury accommodation</li>
+                      <li>Premium accommodations</li>
                     </ul>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Home() {
             </div>
             <div className="bg-white rounded-2xl overflow-hidden h-[300px] md:h-[400px] relative shadow-lg">
               <AIImage
-                initialPrompt="luxury resort compound with futuristic architecture, digital art displays, and advanced technology, cinematic quality, night view with glowing lights, aerial perspective showing multiple interconnected buildings"
+                initialPrompt="premium residential compound with futuristic architecture, digital art displays, and advanced technology, cinematic quality, night view with glowing lights, aerial perspective showing multiple interconnected buildings"
                 alt="Haven vision"
                 className="w-full h-full"
                 forcedCategory="futuristic"
@@ -145,8 +145,8 @@ export default function Home() {
               icon="Sparkles"
             />
             <FeatureItem
-              title="Resort-Style Living"
-              description="Luxury compounds where members reside and work together."
+              title="Residence-Style Living"
+              description="Quality compounds where members reside and work together."
               icon="Home"
             />
             <FeatureItem
@@ -181,7 +181,7 @@ export default function Home() {
             <div className="md:w-1/2 grid grid-cols-2 gap-4">
               <div className="bg-white rounded-2xl overflow-hidden aspect-square relative group shadow-lg">
                 <AIImage
-                  initialPrompt="elite luxury resort compound with private villas and creative spaces, cinematic quality, aerial view"
+                  initialPrompt="elite residential compound with private villas and creative spaces, cinematic quality, aerial view"
                   alt="Haven member"
                   className="w-full h-full"
                   forcedCategory="resort"
@@ -190,7 +190,7 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-2xl overflow-hidden aspect-square relative group shadow-lg">
                 <AIImage
-                  initialPrompt="luxury creative workspace with advanced technology and art displays, cinematic quality"
+                  initialPrompt="premium creative workspace with advanced technology and art displays, cinematic quality"
                   alt="Haven technology"
                   className="w-full h-full"
                   forcedCategory="workspace"
@@ -199,7 +199,7 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-2xl overflow-hidden aspect-square relative group shadow-lg">
                 <AIImage
-                  initialPrompt="exclusive luxury resort compound with private beach and creative spaces, cinematic quality"
+                  initialPrompt="exclusive residential compound with private beach and creative spaces, cinematic quality"
                   alt="Haven compound"
                   className="w-full h-full"
                   forcedCategory="resort"
@@ -208,7 +208,7 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-2xl overflow-hidden aspect-square relative group shadow-lg">
                 <AIImage
-                  initialPrompt="global network of luxury resort compounds connected by digital technology, cinematic quality, night view from space"
+                  initialPrompt="global network of premium residential compounds connected by digital technology, cinematic quality, night view from space"
                   alt="Haven community"
                   className="w-full h-full"
                   forcedCategory="network"
@@ -248,7 +248,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#E6B325] mr-2">•</span>
-                  <span>Additional resort accommodations and public events</span>
+                  <span>Additional accommodation facilities and public events</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#E6B325] mr-2">•</span>
