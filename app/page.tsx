@@ -1,9 +1,20 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function LandingPage() {
+  const [activeFeature, setActiveFeature] = useState<string | null>(null);
+
+  const toggleFeature = (title: string) => {
+    if (activeFeature === title) {
+      setActiveFeature(null);
+    } else {
+      setActiveFeature(title);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-zinc-800 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono">
       <div className="container max-w-4xl mx-auto">
@@ -27,12 +38,42 @@ export default function LandingPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-14"
         >
-          <SimpleFeature title="ART GALLERIES" />
-          <SimpleFeature title="ACCOMMODATIONS" />
-          <SimpleFeature title="SCREENING THEATERS" />
-          <SimpleFeature title="CONTENT STUDIO" />
-          <SimpleFeature title="MUSIC PLATFORM" /> 
-          <SimpleFeature title="BEEHIVE PLATFORM" />
+          <SimpleFeature 
+            title="ART GALLERIES" 
+            isActive={activeFeature === "ART GALLERIES"}
+            onClick={() => toggleFeature("ART GALLERIES")}
+            svgPath="M5,5 Q15,30 30,15 T55,25 Q75,5 95,25"
+          />
+          <SimpleFeature 
+            title="ACCOMMODATIONS" 
+            isActive={activeFeature === "ACCOMMODATIONS"}
+            onClick={() => toggleFeature("ACCOMMODATIONS")}
+            svgPath="M10,10 h80 v40 h-80 Z"
+          />
+          <SimpleFeature 
+            title="SCREENING THEATERS" 
+            isActive={activeFeature === "SCREENING THEATERS"}
+            onClick={() => toggleFeature("SCREENING THEATERS")}
+            svgPath="M10,40 L50,10 L90,40 L50,70 Z"
+          />
+          <SimpleFeature 
+            title="CONTENT STUDIO" 
+            isActive={activeFeature === "CONTENT STUDIO"}
+            onClick={() => toggleFeature("CONTENT STUDIO")}
+            svgPath="M30,10 C10,30 30,50 50,30 S90,30 70,50"
+          />
+          <SimpleFeature 
+            title="MUSIC PLATFORM" 
+            isActive={activeFeature === "MUSIC PLATFORM"} 
+            onClick={() => toggleFeature("MUSIC PLATFORM")}
+            svgPath="M10,30 Q30,5 50,30 T90,30"
+          />
+          <SimpleFeature 
+            title="BEEHIVE PLATFORM" 
+            isActive={activeFeature === "BEEHIVE PLATFORM"}
+            onClick={() => toggleFeature("BEEHIVE PLATFORM")}
+            svgPath="M50,10 L70,30 L50,50 L30,30 Z M30,30 L10,30 M70,30 L90,30 M50,50 L50,70"
+          />
         </motion.div>
 
         <motion.div
@@ -63,12 +104,47 @@ export default function LandingPage() {
 
 interface SimpleFeatureProps {
   title: string;
+  isActive: boolean;
+  onClick: () => void;
+  svgPath: string;
 }
 
-function SimpleFeature({ title }: SimpleFeatureProps) {
+function SimpleFeature({ title, isActive, onClick, svgPath }: SimpleFeatureProps) {
   return (
-    <div className="bg-zinc-750 p-4 border border-zinc-700 text-xs tracking-wider">
-      <span className="text-zinc-400">{title}</span>
+    <div className="flex flex-col">
+      <button 
+        onClick={onClick}
+        className={`bg-zinc-750 p-4 border text-left text-xs tracking-wider cursor-pointer transition-colors ${
+          isActive ? "border-zinc-500" : "border-zinc-700 hover:border-zinc-600"
+        }`}
+      >
+        <span className="text-zinc-400">{title}</span>
+      </button>
+      
+      <AnimatePresence>
+        {isActive && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ overflow: 'hidden' }}
+            className="bg-zinc-800 border-l border-r border-b border-zinc-700 p-4"
+          >
+            <svg viewBox="0 0 100 80" width="100%" height="80">
+              <motion.path
+                d={svgPath}
+                stroke="rgba(212, 212, 216, 0.5)"
+                strokeWidth="1.5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+              />
+            </svg>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
