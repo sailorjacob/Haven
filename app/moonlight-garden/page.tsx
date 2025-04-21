@@ -160,9 +160,9 @@ export default function MoonlightGarden() {
         `}</style>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto pt-10">
-        {/* Header */}
-        <div className="px-6 mb-5">
+      <div className="relative z-10 max-w-7xl mx-auto pt-6">
+        {/* Header - raised up with more space below */}
+        <div className="px-6 mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -179,8 +179,8 @@ export default function MoonlightGarden() {
           </motion.div>
         </div>
 
-        {/* Content sections */}
-        <div className="px-6">
+        {/* Content sections - with added spacing at top */}
+        <div className="px-6 mt-8">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
