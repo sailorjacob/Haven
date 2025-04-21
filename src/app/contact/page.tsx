@@ -112,9 +112,9 @@ export default function Contact() {
 
                 <h2 className="text-2xl font-semibold text-neutral-100 mt-12 mb-6">3. Community & Lifestyle</h2>
                 
-                <h3 className="text-xl font-medium text-neutral-200 mb-4">Selective Identification & Mutual Employment:</h3>
+                <h3 className="text-xl font-medium text-neutral-200 mb-4">Open Digital Immigration & Mutual Employment:</h3>
                 <ul className="list-disc pl-6 text-neutral-300 mb-8">
-                  <li className="mb-2">A rigorous process ensures that only those who truly identify with the vision—comparable to selections at top-tier institutions—are integrated into the community.</li>
+                  <li className="mb-2">We welcome storytellers and digital creators from all corners of the world who identify with our vision and want to contribute to a global creative community.</li>
                   <li className="mb-2">Individuals are not merely "members"; they are natives who mutually employ their skills and collaborate as equals, ensuring a collective commitment to creative excellence.</li>
                 </ul>
 
@@ -170,10 +170,10 @@ export default function Contact() {
               
               <div className="mb-8 p-6 bg-neutral-800 rounded-xl">
                 <p className="text-neutral-100 font-medium mb-3">
-                  Note: Haven is highly selective
+                  Note: Haven welcomes digital creators from everywhere
                 </p>
                 <p className="text-neutral-300">
-                  We are building a hive of the world's most exceptional and dedicated creative professionals. Our rigorous selection process ensures that we maintain the highest standards of excellence and commitment to our vision. Only individuals who demonstrate extraordinary talent, dedication, and alignment with our mission are considered.
+                  We are building a global community of creative professionals open to digital immigrants from anywhere in the world. Our collaborative network celebrates diversity of thought and experience, welcoming storytellers who share our passion for creative excellence and innovation. Join us to connect, create, and contribute to a worldwide community of digital natives.
                 </p>
               </div>
 
@@ -191,9 +191,9 @@ export default function Contact() {
                   </a>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-lg font-medium text-[#3B82F6]">Join the Hive</h3>
+                  <h3 className="text-lg font-medium text-[#3B82F6]">Join the Global Community</h3>
                   <p className="text-neutral-300">
-                    For exceptional creators interested in joining our selective community.
+                    For creators interested in joining our worldwide network from anywhere on the globe.
                   </p>
                   <a 
                     href="mailto:join@haven.engineer" 

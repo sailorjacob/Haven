@@ -6,10 +6,9 @@ import Link from "next/link"
 // Menu items
 const menuItems = [
   { name: "Vision", href: "#vision" },
-  { name: "Components", href: "#components" },
-  { name: "Membership", href: "#membership" },
-  { name: "Products", href: "/products" }, // External page link for products
-  { name: "Ecosystem", href: "#ecosystem" },
+  { name: "Services", href: "#services" },
+  { name: "Community", href: "#community" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -142,7 +141,7 @@ const SimpleMenu: React.FC<SimpleMenuProps> = ({ activeSection }) => {
                 href={item.href}
                 onClick={(e) => handleClick(e, item.href, index)}
                 className={`text-sm font-medium transition-colors duration-500 ${
-                  currentSection === index ? "text-[#3B82F6]" : "text-gray-600 hover:text-gray-900"
+                  currentSection === index ? "text-blue-500" : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 {item.name}

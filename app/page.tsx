@@ -24,11 +24,12 @@ export default function LandingPage() {
           transition={{ duration: 1.2 }}
           className="text-center mb-14"
         >
-          <h1 className="text-3xl md:text-4xl font-normal mb-6 text-zinc-300 tracking-tight">
-            HIVE OF NATIVES
+          <h1 className="text-xl md:text-2xl font-normal mb-6 text-zinc-300 tracking-tight">
+            HAVEN
           </h1>
-          <p className="text-sm md:text-base text-zinc-500 max-w-md mx-auto tracking-wide">
-            [//] native technologists // network-state
+          <p className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto tracking-wide leading-relaxed">
+            A digital superplatform bridging virtual experiences with physical spaces. 
+            Curated content, art, and community for the modern native.
           </p>
         </motion.div>
         
@@ -69,9 +70,9 @@ export default function LandingPage() {
             svgPath="M10,30 Q30,5 50,30 T90,30"
           />
           <SimpleFeature 
-            title="BEEHIVE PLATFORM" 
-            isActive={activeFeature === "BEEHIVE PLATFORM"}
-            onClick={() => toggleFeature("BEEHIVE PLATFORM")}
+            title="DIGITAL PLATFORM" 
+            isActive={activeFeature === "DIGITAL PLATFORM"}
+            onClick={() => toggleFeature("DIGITAL PLATFORM")}
             svgPath="M50,10 L70,30 L50,50 L30,30 Z M30,30 L10,30 M70,30 L90,30 M50,50 L50,70"
           />
         </motion.div>
@@ -82,11 +83,11 @@ export default function LandingPage() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="text-center"
         >
-          <Link 
+          <Link
             href="/home" 
             className="inline-flex items-center justify-center bg-zinc-700 hover:bg-zinc-600 text-zinc-300 py-3 px-6 text-xs uppercase tracking-widest transition-all duration-300"
           >
-            IMMIGRATE
+            EXPLORE
           </Link>
         </motion.div>
       </div>

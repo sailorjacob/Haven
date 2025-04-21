@@ -110,32 +110,32 @@ export default function Products() {
             
             <p className="text-gray-600">Explore our comprehensive offerings in detail below:</p>
             <ul className="space-y-2 text-gray-700 mt-3">
-              <li className="flex items-center">
-                <span className="text-[#3B82F6] mr-2">1.</span>
-                <a href="#creative-content" className="hover:text-[#3B82F6] transition-colors">Creative Content Platforms</a>
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3B82F6] mr-2">2.</span>
+                <li className="flex items-center">
+                  <span className="text-[#3B82F6] mr-2">1.</span>
+                  <a href="#creative-content" className="hover:text-[#3B82F6] transition-colors">Creative Content Platforms</a>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-[#3B82F6] mr-2">2.</span>
                 <a href="#secure-distribution" className="hover:text-[#3B82F6] transition-colors">Secure Distribution & Payments</a>
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3B82F6] mr-2">3.</span>
-                <a href="#advertising" className="hover:text-[#3B82F6] transition-colors">Advertising & Creative Campaigns</a>
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3B82F6] mr-2">4.</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-[#3B82F6] mr-2">3.</span>
+                  <a href="#advertising" className="hover:text-[#3B82F6] transition-colors">Advertising & Creative Campaigns</a>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-[#3B82F6] mr-2">4.</span>
                 <a href="#living" className="hover:text-[#3B82F6] transition-colors">Interconnected Living</a>
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3B82F6] mr-2">5.</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-[#3B82F6] mr-2">5.</span>
                 <a href="#art" className="hover:text-[#3B82F6] transition-colors">International Art Gallery</a>
-              </li>
-              <li className="flex items-center">
-                <span className="text-[#3B82F6] mr-2">6.</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-[#3B82F6] mr-2">6.</span>
                 <a href="#network" className="hover:text-[#3B82F6] transition-colors">Network State Infrastructure</a>
-              </li>
-            </ul>
-          </div>
+                </li>
+              </ul>
+            </div>
           
           {/* Navigation Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -180,16 +180,16 @@ export default function Products() {
                 <div className="flex items-center">
                   <span className="text-3xl mr-6">🎬</span>
                   <h2 className="text-3xl font-bold text-gray-800">Creative Content Platforms</h2>
-                </div>
-                <div>
+                      </div>
+                      <div>
                   {expandedSection === "creative-content" ? (
                     <Minus size={24} className="text-[#E6B325]" />
                   ) : (
                     <Plus size={24} className="text-[#E6B325]" />
                   )}
-                </div>
-              </div>
-              
+                      </div>
+                    </div>
+                    
               {expandedSection === "creative-content" && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -224,8 +224,8 @@ export default function Products() {
                             <span>Collaborative Creative Hive</span>
                           </li>
                         </ul>
-                      </div>
-                      
+                    </div>
+                    
                       <div className="bg-gray-50 p-6 rounded-xl md:w-1/3">
                         <h3 className="text-xl font-medium text-gray-800 mb-4 flex items-center">
                           <span className="w-6 h-6 rounded-full bg-[#E6B325] flex items-center justify-center mr-3">
@@ -292,11 +292,11 @@ export default function Products() {
                               "Haven's model fundamentally reimagines the relationship between creators, audiences, and platforms, 
                               removing traditional intermediaries and ensuring value flows directly to creators."
                             </p>
-                          </div>
-                        </div>
-                        
+                  </div>
+                </div>
+                
                         <div className="md:w-1/2 grid grid-cols-2 gap-4">
-                          <div>
+                      <div>
                                 <p className="text-gray-800 font-medium mb-2">Primary Revenue</p>
                                 <ul className="list-disc pl-6 text-gray-600 space-y-1">
                                   <li>Media subscriptions</li>
@@ -304,8 +304,8 @@ export default function Products() {
                                   <li>Production services</li>
                                   <li>Branded partnerships</li>
                                 </ul>
-                          </div>
-                          <div>
+                      </div>
+                      <div>
                                 <p className="text-gray-800 font-medium mb-2">Secondary Revenue</p>
                                 <ul className="list-disc pl-6 text-gray-600 space-y-1">
                                   <li>Marketplace transactions</li>
@@ -313,8 +313,8 @@ export default function Products() {
                                   <li>Event experiences</li>
                                   <li>Education & training</li>
                                 </ul>
-                          </div>
-                        </div>
+                      </div>
+                    </div>
                       </div>
                     </div>
                   </div>
@@ -413,7 +413,7 @@ export default function Products() {
                     <Plus size={24} className="text-[#E6B325]" />
                   )}
                 </div>
-              </div>
+            </div>
               
               {expandedSection === "secure-distribution" && (
                 <motion.div
@@ -469,23 +469,23 @@ export default function Products() {
                     <div className="flex flex-col md:flex-row gap-8">
                       <div className="md:w-1/2">
                         <p className="text-gray-600 mb-4">
-                          Haven implements industry-leading security protocols to ensure user data privacy and content protection:
-                        </p>
+                    Haven implements industry-leading security protocols to ensure user data privacy and content protection:
+                  </p>
                         <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>End-to-end encryption for all data transmission</li>
+                    <li>End-to-end encryption for all data transmission</li>
                           <li>Multi-factor authentication and authorization</li>
                           <li>Secure access management</li>
                         </ul>
                       </div>
                       <div className="md:w-1/2">
                         <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Decentralized storage to prevent data breaches</li>
-                          <li>Regular security audits by third-party specialists</li>
+                    <li>Decentralized storage to prevent data breaches</li>
+                    <li>Regular security audits by third-party specialists</li>
                           <li>Transparent data usage and privacy policies</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
                 </motion.div>
               )}
             </motion.div>
@@ -513,7 +513,7 @@ export default function Products() {
                     <Plus size={24} className="text-[#E6B325]" />
                   )}
                 </div>
-              </div>
+            </div>
               
               {expandedSection === "advertising" && (
                 <motion.div
@@ -591,16 +591,16 @@ export default function Products() {
                 <div className="flex items-center">
                   <span className="text-3xl mr-6">🏙️</span>
                   <h2 className="text-3xl font-bold text-gray-800">Interconnected Living & Real Estate Ecosystem</h2>
-                </div>
+            </div>
                 <div>
                   {expandedSection === "living" ? (
                     <Minus size={24} className="text-[#E6B325]" />
                   ) : (
                     <Plus size={24} className="text-[#E6B325]" />
                   )}
+                  </div>
                 </div>
-              </div>
-              
+                
               {expandedSection === "living" && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -624,7 +624,7 @@ export default function Products() {
                       <h4 className="text-xl font-medium text-gray-700 mb-3">Global Cultural Hubs</h4>
                       <p className="text-gray-600">Our properties are not just living spaces but dynamic cultural centers offering a Disney-like experience where visitors can engage with art, entertainment, and community events.</p>
                     </div>
-                  </div>
+                    </div>
                   
                   <div className="bg-gray-50 p-6 rounded-xl mb-8">
                     <h4 className="text-xl font-medium text-gray-700 mb-4">Compound Amenities</h4>
@@ -640,13 +640,13 @@ export default function Products() {
                           <span className="text-gray-700">{amenity}</span>
                         </motion.div>
                       ))}
-                    </div>
                   </div>
-                  
+                </div>
+                
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-2/3">
                       <p className="text-gray-600 mb-6">
-                        Our real estate holdings operate as a network of interconnected creative hubs, strategically positioned 
+                  Our real estate holdings operate as a network of interconnected creative hubs, strategically positioned 
                         in major global cities and exclusive accommodation destinations. Each property is designed to foster collaboration, 
                         inspiration, and community among Haven's members while providing unparalleled quality amenities.
                       </p>
@@ -654,12 +654,12 @@ export default function Products() {
                     <div className="md:w-1/3">
                       <div className="border-l-4 border-[#E6B325] pl-6 py-2 h-full flex items-center">
                         <p className="text-gray-600 italic">
-                          "Haven's living spaces transcend traditional real estate by integrating creative workspaces, 
+                    "Haven's living spaces transcend traditional real estate by integrating creative workspaces, 
                           cultural programming, and premium amenities into a cohesive ecosystem where innovation and lifestyle converge."
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  </p>
+                </div>
+              </div>
+            </div>
                 </motion.div>
               )}
             </motion.div>
@@ -687,7 +687,7 @@ export default function Products() {
                     <Plus size={24} className="text-[#E6B325]" />
                   )}
                 </div>
-              </div>
+            </div>
               
               {expandedSection === "art" && (
                 <motion.div
@@ -698,12 +698,12 @@ export default function Products() {
                   className="p-8"
                 >
                   <p className="text-gray-600 mb-8 max-w-3xl">
-                    Haven's cultural division extends beyond digital media to embrace physical art spaces and cultural 
-                    institutions that celebrate creativity in all its forms. Our international presence establishes new 
-                    centers of artistic excellence and innovation.
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                  Haven's cultural division extends beyond digital media to embrace physical art spaces and cultural 
+                  institutions that celebrate creativity in all its forms. Our international presence establishes new 
+                  centers of artistic excellence and innovation.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow">
                       <div className="h-36 bg-gradient-to-b from-gray-200 to-white mb-4 rounded-lg flex items-center justify-center">
                         <span className="text-5xl">🖼️</span>
@@ -718,8 +718,8 @@ export default function Products() {
                       </div>
                       <h4 className="text-xl font-medium text-gray-700 mb-3">3D Printed Art & Sculptures</h4>
                       <p className="text-gray-600">Innovative displays featuring state-of-the-art 3D printed statues and installations highlight the fusion of art and technology.</p>
-                    </div>
-                    
+                  </div>
+                  
                     <div className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition-shadow">
                       <div className="h-36 bg-gradient-to-b from-gray-200 to-white mb-4 rounded-lg flex items-center justify-center">
                         <span className="text-5xl">🏆</span>
@@ -734,24 +734,24 @@ export default function Products() {
                     <div className="flex flex-col md:flex-row gap-8">
                       <div className="md:w-1/2">
                         <p className="text-gray-600 mb-4">
-                          Haven's cultural institutions host a diverse array of programming designed to engage communities 
-                          and advance artistic discourse:
-                        </p>
+                      Haven's cultural institutions host a diverse array of programming designed to engage communities 
+                      and advance artistic discourse:
+                    </p>
                         <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Artist residency programs supporting emerging talent</li>
-                          <li>International exhibition exchanges with leading museums</li>
-                          <li>Digital art marketplaces with NFT integration</li>
+                      <li>Artist residency programs supporting emerging talent</li>
+                      <li>International exhibition exchanges with leading museums</li>
+                      <li>Digital art marketplaces with NFT integration</li>
                         </ul>
                       </div>
                       <div className="md:w-1/2">
                         <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                          <li>Educational workshops and masterclasses</li>
-                          <li>Cross-disciplinary cultural festivals</li>
-                          <li>VR/AR immersive art experiences</li>
-                        </ul>
-                      </div>
-                    </div>
+                      <li>Educational workshops and masterclasses</li>
+                      <li>Cross-disciplinary cultural festivals</li>
+                      <li>VR/AR immersive art experiences</li>
+                    </ul>
                   </div>
+                </div>
+              </div>
                 </motion.div>
               )}
             </motion.div>
@@ -779,7 +779,7 @@ export default function Products() {
                     <Plus size={24} className="text-[#E6B325]" />
                   )}
                 </div>
-              </div>
+            </div>
               
               {expandedSection === "network" && (
                 <motion.div
@@ -790,40 +790,40 @@ export default function Products() {
                   className="p-8"
                 >
                   <p className="text-gray-600 mb-8 max-w-3xl">
-                    Haven operates as a forward-thinking network state with innovative governance structures and financial 
-                    systems that support our creative ecosystem. Our infrastructure combines cutting-edge technology with 
-                    progressive social organization to create a sustainable and equitable creative economy.
-                  </p>
-                  
+                  Haven operates as a forward-thinking network state with innovative governance structures and financial 
+                  systems that support our creative ecosystem. Our infrastructure combines cutting-edge technology with 
+                  progressive social organization to create a sustainable and equitable creative economy.
+                </p>
+                
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div className="col-span-full md:col-span-1">
                       <div className="bg-gray-50 p-6 rounded-xl h-full">
                         <h3 className="text-2xl font-semibold text-gray-800 mb-6">Crypto Currency & Payments</h3>
                         <div className="space-y-6">
-                          <div className="flex">
+                    <div className="flex">
                             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E6B325] flex items-center justify-center mr-4 mt-1">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                              </svg>
-                            </div>
-                            <div>
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <div>
                               <h4 className="text-xl font-medium text-gray-700 mb-2">Decentralized Finance</h4>
                               <p className="text-gray-600">A proprietary cryptocurrency underpins all transactions within the Haven ecosystem, enabling frictionless payments across our digital and physical platforms.</p>
-                            </div>
-                          </div>
-                          
-                          <div className="flex">
+                      </div>
+                    </div>
+                    
+                    <div className="flex">
                             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E6B325] flex items-center justify-center mr-4 mt-1">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                              </svg>
-                            </div>
-                            <div>
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <div>
                               <h4 className="text-xl font-medium text-gray-700 mb-2">Blockchain Transparency</h4>
                               <p className="text-gray-600">All transactions, content authenticity, and revenue-sharing mechanisms are secured via blockchain, ensuring trust and transparency for creators and consumers alike.</p>
-                            </div>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
+                </div>
                       </div>
                     </div>
                     
@@ -837,8 +837,8 @@ export default function Products() {
                             <li>Decentralized Justice</li>
                             <li>Community-driven rule-making</li>
                           </ul>
-                        </div>
-                        
+                </div>
+                
                         <div className="bg-gray-50 p-6 rounded-xl">
                           <h3 className="text-xl font-semibold text-gray-800 mb-4">Philosophical Army</h3>
                           <p className="text-gray-600 mb-4">A collective of thought leaders and strategists who define the cultural and ethical directions of Haven.</p>
@@ -847,7 +847,7 @@ export default function Products() {
                             <li>Community Engagement</li>
                             <li>Progressive social organization</li>
                           </ul>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
