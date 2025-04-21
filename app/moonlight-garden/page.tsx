@@ -74,9 +74,9 @@ export default function MoonlightGarden() {
   ];
 
   return (
-    <div className="bg-zinc-900 text-zinc-300">
+    <div className="bg-zinc-900 text-zinc-300 min-h-screen">
       {/* Stars background */}
-      <div className="absolute inset-x-0 top-0 h-24 z-0 overflow-hidden">
+      <div className="fixed inset-x-0 top-0 h-40 z-0">
         <div className="absolute inset-0 bg-zinc-900">
           <div className="stars-small"></div>
           <div className="stars-medium"></div>
@@ -160,9 +160,9 @@ export default function MoonlightGarden() {
         `}</style>
       </div>
 
-      <div className="px-6 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto pt-10">
         {/* Header */}
-        <div className="pt-14 mb-5">
+        <div className="px-6 mb-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -179,156 +179,158 @@ export default function MoonlightGarden() {
           </motion.div>
         </div>
 
-        {/* Content sections - small gap added back */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-10"
-        >
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">The Concept</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zinc-800 p-6 rounded-sm">
-              <h3 className="text-lg mb-2 text-zinc-100">24/7 Availability</h3>
-              <p className="text-zinc-400">
-                Order anytime day or night through popular delivery platforms
-                like DoorDash, Uber Eats, and Grubhub.
-              </p>
+        {/* Content sections */}
+        <div className="px-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">The Concept</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-zinc-800 p-6 rounded-sm">
+                <h3 className="text-lg mb-2 text-zinc-100">24/7 Availability</h3>
+                <p className="text-zinc-400">
+                  Order anytime day or night through popular delivery platforms
+                  like DoorDash, Uber Eats, and Grubhub.
+                </p>
+              </div>
+              <div className="bg-zinc-800 p-6 rounded-sm">
+                <h3 className="text-lg mb-2 text-zinc-100">Automation-First</h3>
+                <p className="text-zinc-400">
+                  Our kitchen utilizes robotic prep systems and partners with
+                  self-driving delivery vehicles to minimize labor costs.
+                </p>
+              </div>
+              <div className="bg-zinc-800 p-6 rounded-sm">
+                <h3 className="text-lg mb-2 text-zinc-100">College Campus Focus</h3>
+                <p className="text-zinc-400">
+                  Starting in Bloomington, Indiana, we're targeting college students
+                  seeking healthy food options with convenient delivery.
+                </p>
+              </div>
             </div>
-            <div className="bg-zinc-800 p-6 rounded-sm">
-              <h3 className="text-lg mb-2 text-zinc-100">Automation-First</h3>
-              <p className="text-zinc-400">
-                Our kitchen utilizes robotic prep systems and partners with
-                self-driving delivery vehicles to minimize labor costs.
-              </p>
-            </div>
-            <div className="bg-zinc-800 p-6 rounded-sm">
-              <h3 className="text-lg mb-2 text-zinc-100">College Campus Focus</h3>
-              <p className="text-zinc-400">
-                Starting in Bloomington, Indiana, we're targeting college students
-                seeking healthy food options with convenient delivery.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Menu Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mb-10"
-        >
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Our Menu</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {menuItems.map((item) => (
-              <div 
-                key={item.id}
-                className={`border cursor-pointer transition-colors duration-300 ${
-                  selectedItem === item.id 
-                    ? "border-zinc-400 bg-zinc-800" 
-                    : "border-zinc-700 hover:border-zinc-500"
-                }`}
-                onClick={() => setSelectedItem(selectedItem === item.id ? null : item.id)}
-              >
-                <div className="p-4">
-                  <h3 className="text-zinc-200 font-medium">{item.name}</h3>
-                  <p className="text-zinc-400 text-sm mt-1">{item.description}</p>
-                  <div className="mt-3 text-zinc-300 font-mono">${item.price.toFixed(2)}</div>
-                </div>
-                
-                <AnimatePresence>
-                  {selectedItem === item.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ 
-                        height: "auto", 
-                        opacity: 1,
-                        transition: { 
-                          height: { duration: 0.3, ease: "easeInOut" },
-                          opacity: { duration: 0.2, delay: 0.15 } 
-                        }
-                      }}
-                      exit={{ 
-                        height: 0, 
-                        opacity: 0,
-                        transition: { 
-                          height: { duration: 0.3, ease: "easeInOut" },
-                          opacity: { duration: 0.1 } 
-                        }
-                      }}
-                      className="bg-zinc-900 border-t border-zinc-700 overflow-hidden"
-                    >
+          {/* Menu Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Our Menu</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {menuItems.map((item) => (
+                <div 
+                  key={item.id}
+                  className={`border cursor-pointer transition-colors duration-300 ${
+                    selectedItem === item.id 
+                      ? "border-zinc-400 bg-zinc-800" 
+                      : "border-zinc-700 hover:border-zinc-500"
+                  }`}
+                  onClick={() => setSelectedItem(selectedItem === item.id ? null : item.id)}
+                >
+                  <div className="p-4">
+                    <h3 className="text-zinc-200 font-medium">{item.name}</h3>
+                    <p className="text-zinc-400 text-sm mt-1">{item.description}</p>
+                    <div className="mt-3 text-zinc-300 font-mono">${item.price.toFixed(2)}</div>
+                  </div>
+                  
+                  <AnimatePresence>
+                    {selectedItem === item.id && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ height: 0, opacity: 0 }}
                         animate={{ 
-                          opacity: 1, 
-                          y: 0,
-                          transition: { delay: 0.15, duration: 0.2 }
+                          height: "auto", 
+                          opacity: 1,
+                          transition: { 
+                            height: { duration: 0.3, ease: "easeInOut" },
+                            opacity: { duration: 0.2, delay: 0.15 } 
+                          }
                         }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="p-4"
+                        exit={{ 
+                          height: 0, 
+                          opacity: 0,
+                          transition: { 
+                            height: { duration: 0.3, ease: "easeInOut" },
+                            opacity: { duration: 0.1 } 
+                          }
+                        }}
+                        className="bg-zinc-900 border-t border-zinc-700 overflow-hidden"
                       >
-                        <div className="grid grid-cols-2 gap-2 text-sm">
-                          <div className="text-zinc-500">Ingredients:</div>
-                          <div className="text-zinc-300">{item.ingredients}</div>
-                          <div className="text-zinc-500">Cost:</div>
-                          <div className="text-zinc-300">${item.cost.toFixed(2)}</div>
-                          <div className="text-zinc-500">Profit:</div>
-                          <div className="text-zinc-300">${item.profit.toFixed(2)}</div>
-                        </div>
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ 
+                            opacity: 1, 
+                            y: 0,
+                            transition: { delay: 0.15, duration: 0.2 }
+                          }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="p-4"
+                        >
+                          <div className="grid grid-cols-2 gap-2 text-sm">
+                            <div className="text-zinc-500">Ingredients:</div>
+                            <div className="text-zinc-300">{item.ingredients}</div>
+                            <div className="text-zinc-500">Cost:</div>
+                            <div className="text-zinc-300">${item.cost.toFixed(2)}</div>
+                            <div className="text-zinc-500">Profit:</div>
+                            <div className="text-zinc-300">${item.profit.toFixed(2)}</div>
+                          </div>
+                        </motion.div>
                       </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Business Strategy */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="pb-12"
-        >
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Business Strategy</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl mb-4 text-zinc-100">Automation Strategy</h3>
-              <p className="text-zinc-400 mb-4">
-                Moonlight Garden minimizes labor costs by leveraging robotic preparation 
-                systems and partnering with self-driving delivery vehicles from roundabout.run. 
-                The initial automation investment is $10,000.
-              </p>
-              <p className="text-zinc-400">
-                We also create partnerships with local markets to source surplus produce, 
-                reducing our ingredient costs while supporting local businesses.
-              </p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
-            <div>
-              <h3 className="text-xl mb-4 text-zinc-100">Revenue Potential</h3>
-              <div className="bg-zinc-800 p-6 rounded-sm text-zinc-300 font-mono">
-                <div className="grid grid-cols-2 gap-y-3">
-                  <div>Annual Orders:</div>
-                  <div>87,600</div>
-                  <div>Average Price:</div>
-                  <div>$8.43</div>
-                  <div>Profit per Item:</div>
-                  <div>$5.00</div>
-                  <div className="text-zinc-200 pt-3 border-t border-zinc-700">Annual Revenue:</div>
-                  <div className="text-zinc-200 pt-3 border-t border-zinc-700">$738,468</div>
-                  <div className="text-zinc-200">Annual Profit:</div>
-                  <div className="text-zinc-200">$438,000</div>
+          </motion.div>
+
+          {/* Business Strategy */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="pb-12"
+          >
+            <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Business Strategy</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl mb-4 text-zinc-100">Automation Strategy</h3>
+                <p className="text-zinc-400 mb-4">
+                  Moonlight Garden minimizes labor costs by leveraging robotic preparation 
+                  systems and partnering with self-driving delivery vehicles from roundabout.run. 
+                  The initial automation investment is $10,000.
+                </p>
+                <p className="text-zinc-400">
+                  We also create partnerships with local markets to source surplus produce, 
+                  reducing our ingredient costs while supporting local businesses.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl mb-4 text-zinc-100">Revenue Potential</h3>
+                <div className="bg-zinc-800 p-6 rounded-sm text-zinc-300 font-mono">
+                  <div className="grid grid-cols-2 gap-y-3">
+                    <div>Annual Orders:</div>
+                    <div>87,600</div>
+                    <div>Average Price:</div>
+                    <div>$8.43</div>
+                    <div>Profit per Item:</div>
+                    <div>$5.00</div>
+                    <div className="text-zinc-200 pt-3 border-t border-zinc-700">Annual Revenue:</div>
+                    <div className="text-zinc-200 pt-3 border-t border-zinc-700">$738,468</div>
+                    <div className="text-zinc-200">Annual Profit:</div>
+                    <div className="text-zinc-200">$438,000</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </div>
   )
