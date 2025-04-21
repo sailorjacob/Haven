@@ -76,7 +76,7 @@ export default function MoonlightGarden() {
   return (
     <div className="bg-zinc-900 text-zinc-300">
       {/* Stars background */}
-      <div className="absolute inset-x-0 top-0 h-16 z-0 overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-24 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-zinc-900">
           <div className="stars-small"></div>
           <div className="stars-medium"></div>
@@ -84,9 +84,17 @@ export default function MoonlightGarden() {
         </div>
         <style jsx global>{`
           @keyframes twinkle {
-            0% { opacity: 0.2; }
-            50% { opacity: 0.8; }
-            100% { opacity: 0.2; }
+            0% { opacity: 0.1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 0.1; }
+          }
+          
+          @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-1px) translateX(1px); }
+            50% { transform: translateY(0px) translateX(2px); }
+            75% { transform: translateY(1px) translateX(1px); }
+            100% { transform: translateY(0px) translateX(0px); }
           }
           
           .stars-small, .stars-medium, .stars-large {
@@ -98,58 +106,80 @@ export default function MoonlightGarden() {
             pointer-events: none;
           }
           
+          .stars-small {
+            animation: float 20s infinite ease-in-out;
+          }
+          
+          .stars-medium {
+            animation: float 30s infinite ease-in-out reverse;
+          }
+          
+          .stars-large {
+            animation: float 40s infinite ease-in-out;
+          }
+          
           .stars-small::after, .stars-medium::after, .stars-large::after {
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(1px 1px at 10px 10px, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
-                             radial-gradient(1px 1px at 30px 25px, rgba(255, 255, 255, 0.6) 50%, transparent 100%),
-                             radial-gradient(1px 1px at 50px 40px, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
-                             radial-gradient(1px 1px at 70px 55px, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-            background-size: 150px 150px;
+            background-image: 
+              radial-gradient(0.5px 0.5px at 10px 10px, rgba(255, 255, 255, 0.3) 50%, transparent 100%),
+              radial-gradient(0.5px 0.5px at 25px 30px, rgba(255, 255, 255, 0.2) 50%, transparent 100%),
+              radial-gradient(0.5px 0.5px at 40px 70px, rgba(255, 255, 255, 0.3) 50%, transparent 100%),
+              radial-gradient(0.5px 0.5px at 55px 15px, rgba(255, 255, 255, 0.2) 50%, transparent 100%),
+              radial-gradient(0.5px 0.5px at 70px 50px, rgba(255, 255, 255, 0.3) 50%, transparent 100%),
+              radial-gradient(0.5px 0.5px at 85px 35px, rgba(255, 255, 255, 0.2) 50%, transparent 100%),
+              radial-gradient(0.5px 0.5px at 100px 60px, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+            background-size: 120px 120px;
+            animation: twinkle 3s infinite ease-in-out;
           }
           
           .stars-medium::after {
-            background-image: radial-gradient(1.5px 1.5px at 15px 15px, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
-                             radial-gradient(1.5px 1.5px at 35px 30px, rgba(255, 255, 255, 0.6) 50%, transparent 100%),
-                             radial-gradient(1.5px 1.5px at 55px 45px, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
-                             radial-gradient(1.5px 1.5px at 75px 60px, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-            background-size: 200px 200px;
-            animation: twinkle 4s infinite ease-in-out;
+            background-image: 
+              radial-gradient(0.7px 0.7px at 15px 15px, rgba(255, 255, 255, 0.4) 50%, transparent 100%),
+              radial-gradient(0.7px 0.7px at 35px 45px, rgba(255, 255, 255, 0.3) 50%, transparent 100%),
+              radial-gradient(0.7px 0.7px at 55px 20px, rgba(255, 255, 255, 0.4) 50%, transparent 100%),
+              radial-gradient(0.7px 0.7px at 75px 50px, rgba(255, 255, 255, 0.3) 50%, transparent 100%),
+              radial-gradient(0.7px 0.7px at 95px 30px, rgba(255, 255, 255, 0.4) 50%, transparent 100%),
+              radial-gradient(0.7px 0.7px at 115px 65px, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+            background-size: 150px 150px;
+            animation: twinkle 5s infinite ease-in-out 1s;
           }
           
           .stars-large::after {
-            background-image: radial-gradient(2px 2px at 20px 20px, rgba(255, 255, 255, 0.8) 50%, transparent 100%),
-                             radial-gradient(2px 2px at 40px 35px, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
-                             radial-gradient(2px 2px at 60px 50px, rgba(255, 255, 255, 0.6) 50%, transparent 100%),
-                             radial-gradient(2px 2px at 80px 65px, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
-            background-size: 250px 250px;
-            animation: twinkle 6s infinite ease-in-out 1s;
+            background-image: 
+              radial-gradient(1px 1px at 20px 20px, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+              radial-gradient(1px 1px at 45px 40px, rgba(255, 255, 255, 0.4) 50%, transparent 100%),
+              radial-gradient(1px 1px at 70px 15px, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+              radial-gradient(1px 1px at 95px 55px, rgba(255, 255, 255, 0.4) 50%, transparent 100%),
+              radial-gradient(1px 1px at 120px 30px, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+            background-size: 180px 180px;
+            animation: twinkle 7s infinite ease-in-out 2s;
           }
         `}</style>
       </div>
 
       <div className="px-6 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="pt-14 mb-2">
+        <div className="pt-14 mb-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-light mb-1 text-white tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-light mb-2 text-white tracking-tight">
               Moonlight Garden
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-300 mb-2">
+            <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-300 mb-3">
               A 24/7 mobile order-only restaurant serving healthy, 
               automated cuisine starting at college campuses.
             </p>
           </motion.div>
         </div>
 
-        {/* Content sections - no space between */}
+        {/* Content sections - small gap added back */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
