@@ -74,7 +74,7 @@ export default function MoonlightGarden() {
   ];
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-300">
+    <div className="bg-zinc-900 text-zinc-300">
       {/* Stars background */}
       <div className="absolute inset-x-0 top-0 h-16 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-zinc-900">
@@ -130,32 +130,32 @@ export default function MoonlightGarden() {
         `}</style>
       </div>
 
-      {/* Hero Section - significantly reduced height */}
-      <section className="relative pt-14 pb-0 w-full overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center px-6"
-        >
-          <h1 className="text-4xl md:text-6xl font-light mb-2 text-white tracking-tight">
-            Moonlight Garden
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-300 mb-3">
-            A 24/7 mobile order-only restaurant serving healthy, 
-            automated cuisine to Bloomington, Indiana.
-          </p>
-        </motion.div>
-      </section>
+      <div className="px-6 max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="pt-14 mb-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-4xl md:text-6xl font-light mb-1 text-white tracking-tight">
+              Moonlight Garden
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-300 mb-2">
+              A 24/7 mobile order-only restaurant serving healthy, 
+              automated cuisine starting at college campuses.
+            </p>
+          </motion.div>
+        </div>
 
-      {/* Content container with no gap */}
-      <section className="pt-2 px-6 max-w-7xl mx-auto">
+        {/* Content sections - no space between */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-10"
         >
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">The Concept</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -189,7 +189,7 @@ export default function MoonlightGarden() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-10"
         >
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Our Menu</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -264,7 +264,7 @@ export default function MoonlightGarden() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="pb-12"
         >
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Business Strategy</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -299,7 +299,7 @@ export default function MoonlightGarden() {
             </div>
           </div>
         </motion.div>
-      </section>
-    </main>
+      </div>
+    </div>
   )
 } 
