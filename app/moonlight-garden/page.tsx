@@ -75,8 +75,8 @@ export default function MoonlightGarden() {
 
   return (
     <main className="min-h-screen text-zinc-300" style={{ backgroundColor: "#2a2045" }}>
-      {/* Hero Section - reduced height */}
-      <section className="relative h-[40vh] w-full overflow-hidden bg-black">
+      {/* Hero Section - reduced height to prevent it taking up the full screen */}
+      <section className="relative h-[30vh] w-full overflow-hidden bg-black">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#2a2045] z-10"></div>
         <div className="absolute inset-0 opacity-60" style={{ 
           backgroundImage: "url('/moonlight-garden-bg.jpg')", 
@@ -102,16 +102,16 @@ export default function MoonlightGarden() {
         </div>
       </section>
 
-      {/* Concept Section - reduced top padding */}
-      <section className="py-8 px-6 max-w-7xl mx-auto">
+      {/* Concept Section - restored original padding */}
+      <section className="py-16 px-6 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">The Concept</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Concept</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#352a54] p-6 rounded-sm">
               <h3 className="text-lg mb-2 text-zinc-100">24/7 Availability</h3>
@@ -143,9 +143,9 @@ export default function MoonlightGarden() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Our Menu</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Our Menu</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {menuItems.map((item) => (
               <div 
@@ -192,7 +192,7 @@ export default function MoonlightGarden() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Business Strategy</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Business Strategy</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl mb-4 text-zinc-100">Automation Strategy</h3>
