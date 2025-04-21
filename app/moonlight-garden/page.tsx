@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -205,7 +205,7 @@ export default function MoonlightGarden() {
             {menuItems.map((item) => (
               <div 
                 key={item.id}
-                className={`border cursor-pointer transition-all duration-300 ${
+                className={`border cursor-pointer transition-colors duration-300 ${
                   selectedItem === item.id 
                     ? "border-zinc-400 bg-zinc-800" 
                     : "border-zinc-700 hover:border-zinc-500"
@@ -218,23 +218,50 @@ export default function MoonlightGarden() {
                   <div className="mt-3 text-zinc-300 font-mono">${item.price.toFixed(2)}</div>
                 </div>
                 
-                {selectedItem === item.id && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="bg-zinc-900 border-t border-zinc-700 p-4"
-                  >
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="text-zinc-500">Ingredients:</div>
-                      <div className="text-zinc-300">{item.ingredients}</div>
-                      <div className="text-zinc-500">Cost:</div>
-                      <div className="text-zinc-300">${item.cost.toFixed(2)}</div>
-                      <div className="text-zinc-500">Profit:</div>
-                      <div className="text-zinc-300">${item.profit.toFixed(2)}</div>
-                    </div>
-                  </motion.div>
-                )}
+                <AnimatePresence>
+                  {selectedItem === item.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ 
+                        height: "auto", 
+                        opacity: 1,
+                        transition: { 
+                          height: { duration: 0.3, ease: "easeInOut" },
+                          opacity: { duration: 0.2, delay: 0.15 } 
+                        }
+                      }}
+                      exit={{ 
+                        height: 0, 
+                        opacity: 0,
+                        transition: { 
+                          height: { duration: 0.3, ease: "easeInOut" },
+                          opacity: { duration: 0.1 } 
+                        }
+                      }}
+                      className="bg-zinc-900 border-t border-zinc-700 overflow-hidden"
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ 
+                          opacity: 1, 
+                          y: 0,
+                          transition: { delay: 0.15, duration: 0.2 }
+                        }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="p-4"
+                      >
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div className="text-zinc-500">Ingredients:</div>
+                          <div className="text-zinc-300">{item.ingredients}</div>
+                          <div className="text-zinc-500">Cost:</div>
+                          <div className="text-zinc-300">${item.cost.toFixed(2)}</div>
+                          <div className="text-zinc-500">Profit:</div>
+                          <div className="text-zinc-300">${item.profit.toFixed(2)}</div>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>
