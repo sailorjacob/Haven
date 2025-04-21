@@ -1,19 +1,11 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
 
 export default function LandingPage() {
-  const [activeFeature, setActiveFeature] = useState<string | null>(null);
-
-  const toggleFeature = (title: string) => {
-    if (activeFeature === title) {
-      setActiveFeature(null);
-    } else {
-      setActiveFeature(title);
-    }
-  };
+  // Removed the activeFeature state since we're now using hover effects
 
   return (
     <main className="min-h-screen bg-zinc-800 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono">
@@ -24,8 +16,9 @@ export default function LandingPage() {
           transition={{ duration: 1.2 }}
           className="text-center mb-14"
         >
-          <h1 className="text-xl md:text-2xl font-normal mb-6 text-zinc-300 tracking-tight">
-            HAVEN
+          <h1 className="text-3xl md:text-5xl font-light mb-6 text-zinc-300 tracking-tighter relative inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-200 to-zinc-400">HAVEN</span>
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-500 to-transparent absolute -bottom-3 left-0"></div>
           </h1>
           <p className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto tracking-wide leading-relaxed">
             A digital superplatform bridging virtual experiences with physical spaces. 
@@ -39,41 +32,29 @@ export default function LandingPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-14"
         >
-          <SimpleFeature 
+          <FeatureBox 
             title="ART GALLERIES" 
-            isActive={activeFeature === "ART GALLERIES"}
-            onClick={() => toggleFeature("ART GALLERIES")}
-            svgPath="M5,5 Q15,30 30,15 T55,25 Q75,5 95,25"
+            description="Emulating prestigious galleries like Gagosian, our spaces showcase cutting-edge contemporary art and digital media, redefining the intersection of technology and artistic expression."
           />
-          <SimpleFeature 
+          <FeatureBox 
             title="ACCOMMODATIONS" 
-            isActive={activeFeature === "ACCOMMODATIONS"}
-            onClick={() => toggleFeature("ACCOMMODATIONS")}
-            svgPath="M10,10 h80 v40 h-80 Z"
+            description="Inspired by the luxury of Hilton and the exclusivity of Soho House, our living spaces create modern campuses for creative natives, fostering collaboration and community."
           />
-          <SimpleFeature 
+          <FeatureBox 
             title="SCREENING THEATERS" 
-            isActive={activeFeature === "SCREENING THEATERS"}
-            onClick={() => toggleFeature("SCREENING THEATERS")}
-            svgPath="M10,40 L50,10 L90,40 L50,70 Z"
+            description="Intimate venues with state-of-the-art technology showcasing independent films, immersive experiences, and exclusive premieres across our global locations."
           />
-          <SimpleFeature 
+          <FeatureBox 
             title="CONTENT STUDIO" 
-            isActive={activeFeature === "CONTENT STUDIO"}
-            onClick={() => toggleFeature("CONTENT STUDIO")}
-            svgPath="M30,10 C10,30 30,50 50,30 S90,30 70,50"
+            description="A full-service production hub rivaling Hollywood studios, creating original content that pushes boundaries across all digital platforms."
           />
-          <SimpleFeature 
+          <FeatureBox 
             title="MUSIC PLATFORM" 
-            isActive={activeFeature === "MUSIC PLATFORM"} 
-            onClick={() => toggleFeature("MUSIC PLATFORM")}
-            svgPath="M10,30 Q30,5 50,30 T90,30"
+            description="Challenging Spotify with a curated music experience that connects artists directly with their audience through exclusive content and live performances."
           />
-          <SimpleFeature 
+          <FeatureBox 
             title="DIGITAL PLATFORM" 
-            isActive={activeFeature === "DIGITAL PLATFORM"}
-            onClick={() => toggleFeature("DIGITAL PLATFORM")}
-            svgPath="M50,10 L70,30 L50,50 L30,30 Z M30,30 L10,30 M70,30 L90,30 M50,50 L50,70"
+            description="A Netflix-caliber streaming service delivering premium original content, with a focus on innovative storytelling that reflects our community's diverse perspectives."
           />
         </motion.div>
 
@@ -103,49 +84,23 @@ export default function LandingPage() {
   )
 }
 
-interface SimpleFeatureProps {
+interface FeatureBoxProps {
   title: string;
-  isActive: boolean;
-  onClick: () => void;
-  svgPath: string;
+  description: string;
 }
 
-function SimpleFeature({ title, isActive, onClick, svgPath }: SimpleFeatureProps) {
+function FeatureBox({ title, description }: FeatureBoxProps) {
   return (
-    <div className="flex flex-col">
-      <button 
-        onClick={onClick}
-        className={`bg-zinc-750 p-4 border text-left text-xs tracking-wider cursor-pointer transition-colors ${
-          isActive ? "border-zinc-500" : "border-zinc-700 hover:border-zinc-600"
-        }`}
-      >
+    <div className="group relative">
+      <div className="bg-zinc-750 p-4 border border-zinc-700 text-left text-xs tracking-wider cursor-pointer transition-colors group-hover:border-zinc-500">
         <span className="text-zinc-400">{title}</span>
-      </button>
+      </div>
       
-      <AnimatePresence>
-        {isActive && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ overflow: 'hidden' }}
-            className="bg-zinc-800 border-l border-r border-b border-zinc-700 p-4"
-          >
-            <svg viewBox="0 0 100 80" width="100%" height="80">
-              <motion.path
-                d={svgPath}
-                stroke="rgba(212, 212, 216, 0.5)"
-                strokeWidth="1.5"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              />
-            </svg>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-900 border border-zinc-600 p-4 shadow-xl">
+          <p className="text-xs text-zinc-300 leading-relaxed">{description}</p>
+        </div>
+      </div>
     </div>
   )
 }
