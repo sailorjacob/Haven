@@ -51,7 +51,10 @@ export default function LetterPage() {
           className="mb-8"
         >
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-zinc-500">{today}</p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-zinc-500">{today}</p>
+              <p className="text-sm text-zinc-400">Wizard by Lucas Lex on Spotify</p>
+            </div>
             <a 
               href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=6f5aaa130ca44557"
               target="_blank"
