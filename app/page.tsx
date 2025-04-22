@@ -10,22 +10,34 @@ export default function LandingPage() {
       <div className="container max-w-4xl mx-auto">
         <div className="flex justify-between items-start mb-12">
           <div className="w-1/3 text-right pr-4">
-            <Link
-              href="/moonlight-garden"
-              className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
-            >
-              moonlight garden
-            </Link>
-            <p className="text-xs text-zinc-500 mt-1">tap with bitcoin for food</p>
+            <div className="group relative inline-block">
+              <Link
+                href="/moonlight-garden"
+                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+              >
+                moonlight garden
+              </Link>
+              <div className="absolute top-full right-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
+                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">tap with bitcoin for food</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="w-1/3 text-left pl-4">
-            <Link
-              href="https://roundabout.run"
-              className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
-            >
-              roundabout
-            </Link>
-            <p className="text-xs text-zinc-500 mt-1">tap with bitcoin for a ride to the doctor</p>
+            <div className="group relative inline-block">
+              <Link
+                href="https://roundabout.run"
+                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+              >
+                roundabout
+              </Link>
+              <div className="absolute top-full left-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
+                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">tap with bitcoin for a ride to the doctor</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
