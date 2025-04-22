@@ -52,8 +52,8 @@ export default function LetterPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
-              <p className="text-sm text-zinc-500">Jacob H B.</p>
               <p className="text-sm text-zinc-500">{today}</p>
+              <p className="text-sm text-zinc-500">Jacob B.</p>
             </div>
             <button 
               onClick={handlePlayPause}
