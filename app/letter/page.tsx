@@ -2,13 +2,44 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useState, useRef } from "react"
 
 export default function LetterPage() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const speechRef = useRef<SpeechSynthesisUtterance | null>(null)
+
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   })
+
+  const handlePlayPause = () => {
+    if (!speechRef.current) {
+      // Initialize speech synthesis
+      const text = document.querySelector('main')?.textContent || ''
+      speechRef.current = new SpeechSynthesisUtterance(text)
+      speechRef.current.rate = 0.9 // Slightly slower for better comprehension
+      speechRef.current.pitch = 1
+      speechRef.current.volume = 1
+      
+      // Set up event handlers
+      speechRef.current.onend = () => {
+        setIsPlaying(false)
+      }
+      speechRef.current.onerror = () => {
+        setIsPlaying(false)
+      }
+    }
+
+    if (isPlaying) {
+      window.speechSynthesis.cancel()
+      setIsPlaying(false)
+    } else {
+      window.speechSynthesis.speak(speechRef.current)
+      setIsPlaying(true)
+    }
+  }
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
@@ -21,10 +52,8 @@ export default function LetterPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-zinc-500">{today}</p>
-            <a 
-              href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=fb3f91dcfb4346e8" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button 
+              onClick={handlePlayPause}
               className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
             >
               <svg 
@@ -32,9 +61,13 @@ export default function LetterPage() {
                 viewBox="0 0 24 24" 
                 fill="currentColor"
               >
-                <path d="M8 5v14l11-7z" />
+                {isPlaying ? (
+                  <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+                ) : (
+                  <path d="M8 5v14l11-7z" />
+                )}
               </svg>
-            </a>
+            </button>
           </div>
           
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
