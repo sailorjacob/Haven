@@ -62,8 +62,28 @@ export default function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-center"
+          className="text-center space-y-8"
         >
+          <div className="space-y-4">
+            <Link
+              href="https://roundabout.run"
+              className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+            >
+              roundabout
+            </Link>
+            <p className="text-sm text-zinc-500">tap with bitcoin for a ride to the doctor</p>
+          </div>
+
+          <div className="space-y-4">
+            <Link
+              href="/moonlight-garden"
+              className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+            >
+              moonlight garden
+            </Link>
+            <p className="text-sm text-zinc-500">tap with bitcoin for food</p>
+          </div>
+
           <Link
             href="/home" 
             className="inline-flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300"
