@@ -54,33 +54,40 @@ export default function LetterPage() {
             <div className="flex items-center gap-4">
               <p className="text-sm text-zinc-500">{today}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <p className="text-sm text-zinc-400">Listen on Spotify</p>
-              <a 
-                href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=6f5aaa130ca44557"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
+            <button 
+              onClick={handlePlayPause}
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
+              aria-label={isPlaying ? "Pause reading" : "Start reading"}
+            >
+              <svg 
+                className="w-5 h-5 text-zinc-700" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
               >
-                <svg 
-                  className="w-5 h-5 text-zinc-700" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
+                {isPlaying ? (
+                  <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+                ) : (
                   <path d="M8 5v14l11-7z" />
-                </svg>
-              </a>
-            </div>
+                )}
+              </svg>
+            </button>
           </div>
           
-          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
-              Technology, Music, Politics, and Art: A Vision for the Future
-            </span>
-          </h1>
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-6"></div>
+          <div className="space-y-2 mb-6">
+            <h1 className="text-2xl md:text-3xl font-bold text-zinc-800 tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
+                Technology, Music, Politics,
+              </span>
+            </h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-zinc-800 tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
+                and Art: A Vision for the Future
+              </span>
+            </h1>
+          </div>
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
           
-          <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-6">
+          <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-8">
             Considering the significant overlap of <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>, here's a recount of observations, personal experience, and aspirations of a more free and unrestricted future.
           </p>
 
