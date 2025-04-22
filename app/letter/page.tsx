@@ -29,7 +29,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            On July 4, 2020, <span className="font-medium text-zinc-800">Kanye West</span> tweeted his intention to run for President of the United States, a post with a quick supporting reply from <span className="font-medium text-zinc-800">Elon Musk</span>: <em>"You have my full support!"</em> This moment, while seemingly impulsive, marks a fascinating convergence of entertainment, technology, and politics. <a href="https://x.com/elonmusk/status/1279577069005897728" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">[1]</a> <a href="https://www.vanityfair.com/style/2020/07/elon-musk-kanye-west-president-support-again?srsltid=AfmBOopgZTPSLbEaccn7ZHeI-3G2YpHciG6UkmY3EH8ko_a1x7n0Q14G" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">[2]</a>
+            On July 4, 2020, <a href="https://x.com/elonmusk/status/1279577069005897728" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">Kanye West</span></a> tweeted his intention to run for President of the United States, a post with a quick supporting reply from <a href="https://www.vanityfair.com/style/2020/07/elon-musk-kanye-west-president-support-again?srsltid=AfmBOopgZTPSLbEaccn7ZHeI-3G2YpHciG6UkmY3EH8ko_a1x7n0Q14G" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">Elon Musk</span></a>: <em>"You have my full support!"</em> This moment, while seemingly impulsive, marks a fascinating convergence of entertainment, technology, and politics.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Kanye West's influence extends beyond this event, his music has shaped artists from <span className="font-medium text-zinc-800">Paul McCartney</span> to <span className="font-medium text-zinc-800">Billie Eilish</span>. However, his suspension from social media for provocative posts, including the ones intentionally anti-Semitic, highlight the tension between artistic persona (or persona) and public perception. Despite this, Kanye's work reflects a deconstructive creativity closer to a civil rights advocate than the negative labels often attached to him. This is consistent with all of our best, merely exaggerated in raw performance art.
@@ -77,6 +77,38 @@ export default function LetterPage() {
           className="text-center mt-8 mb-6"
         >
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-6"></div>
+          
+          <div className="text-left mb-8">
+            <h2 className="text-lg text-zinc-800 mb-4 font-medium">References</h2>
+            <ul className="text-zinc-600 text-sm space-y-2">
+              <li>
+                <a href="https://x.com/elonmusk/status/1279577069005897728" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  Elon Musk's tweet supporting Kanye West's presidential run
+                </a>
+              </li>
+              <li>
+                <a href="https://www.vanityfair.com/style/2020/07/elon-musk-kanye-west-president-support-again?srsltid=AfmBOopgZTPSLbEaccn7ZHeI-3G2YpHciG6UkmY3EH8ko_a1x7n0Q14G" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  Vanity Fair article on Elon Musk's support for Kanye West
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=7b0f339620f64338" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  "Wizard" by Lucas Lex - The song that reached 11 million Spotify streams
+                </a>
+              </li>
+              <li>
+                <a href="https://www.artnews.com/art-news/artists/anthony-haden-guest-matthew-yokobosky-studio-54-1202681404/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  ArtNews article on Anthony Haden Guest and Studio 54
+                </a>
+              </li>
+              <li>
+                <a href="https://archive.vanityfair.com/article/1988/11/burning-out" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  Vanity Fair archive article on the art world
+                </a>
+              </li>
+            </ul>
+          </div>
+
           <p className="text-zinc-600 italic mb-6 text-sm">
             Let's connect if you're into AI, design, and building the future!{" "}
             <Link href="https://github.com/sailorjacob" className="text-zinc-800 hover:text-zinc-900 underline">
