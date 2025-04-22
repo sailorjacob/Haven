@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 export default function BitcoinBankPage() {
   // Simulated prices (in BTC)
@@ -54,6 +55,16 @@ export default function BitcoinBankPage() {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
+          <div className="flex items-center justify-center mb-6">
+            <Image
+              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg"
+              alt="Bitcoin Bee Logo"
+              width={80}
+              height={80}
+              className="transform hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
               Bitcoin Bank
@@ -237,12 +248,16 @@ export default function BitcoinBankPage() {
                     </button>
                   </div>
                   <p id="status" className="text-sm text-zinc-600"></p>
-                  <img 
-                    id="bee" 
-                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTBhMTAgMTAgMCAwIDEgMTAtMTBhMTAgMTAgMCAwIDEtMTAgMTBhMTAgMTAgMCAwIDEtMTAtMTB6IiBmaWxsPSIjZmZhYzAwIi8+PHBhdGggZD0iTTIwIDMwYTEwIDUgMCAwIDAgMTAtMTBhMTAgNSAwIDAgMC0xMCAxMHoiIGZpbGw9IiMwMDAiLz48L3N2Zz4=" 
-                    width="50" 
-                    className="hidden absolute transition-all duration-2000 ease-in-out"
-                  />
+                  <div className="relative h-20">
+                    <Image
+                      id="bee"
+                      src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side.svg"
+                      alt="Flying Bee"
+                      width={50}
+                      height={50}
+                      className="hidden absolute transition-all duration-2000 ease-in-out"
+                    />
+                  </div>
                 </div>
 
                 {/* Data Visualization */}
@@ -263,8 +278,26 @@ export default function BitcoinBankPage() {
                     With <span id="btcValue" className="font-medium">0</span> BTC, you can buy:
                   </p>
                   <ul className="text-sm text-zinc-600 space-y-1">
-                    <li>Apples: <span id="apples" className="font-medium">0</span></li>
-                    <li>Oranges: <span id="oranges" className="font-medium">0</span></li>
+                    <li className="flex items-center gap-2">
+                      <Image
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
+                        alt="Bee Icon"
+                        width={20}
+                        height={20}
+                        className="transform hover:rotate-12 transition-transform duration-300"
+                      />
+                      Apples: <span id="apples" className="font-medium">0</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Image
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
+                        alt="Bee Icon"
+                        width={20}
+                        height={20}
+                        className="transform hover:rotate-12 transition-transform duration-300"
+                      />
+                      Oranges: <span id="oranges" className="font-medium">0</span>
+                    </li>
                   </ul>
                 </div>
               </div>
