@@ -55,16 +55,6 @@ export default function BitcoinBankPage() {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <div className="flex items-center justify-center mb-6">
-            <Image
-              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg"
-              alt="Bitcoin Bee Logo"
-              width={80}
-              height={80}
-              className="transform hover:scale-110 transition-transform duration-300"
-            />
-          </div>
-
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
               Bitcoin Bank
@@ -106,6 +96,15 @@ export default function BitcoinBankPage() {
           </div>
 
           <div className="space-y-6">
+            <div className="flex items-center justify-center mb-6">
+              <Image
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg"
+                alt="Bitcoin Bee Logo"
+                width={80}
+                height={80}
+                className="transform hover:scale-110 transition-transform duration-300"
+              />
+            </div>
             <div>
               <h2 className="text-lg font-medium text-zinc-800 mb-3">Blockchain Branding</h2>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
@@ -173,7 +172,7 @@ export default function BitcoinBankPage() {
             <div>
               <h3 className="text-md font-medium text-zinc-800 mb-2">Is This Happening Already?</h3>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                Not quite in the way you describe. Some projects use blockchain metadata (e.g., OP_RETURN for timestamps), but branding transactions for specific members or use cases—then building value around those datasets—isn't widespread. Your idea of "Verified Branding" could be a fresh way to create identity, trust, or utility in the Bitcoin ecosystem.
+                Not quite in this way. While some projects use blockchain metadata (e.g., OP_RETURN for timestamps), this specific implementation of visual transaction branding with animated bees and real-time value comparisons is unique. The combination of cute bee animations, intuitive value visualization, and user-friendly interface creates a fresh approach to making Bitcoin transactions more engaging and understandable.
               </p>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
                 In short, yes, you can use the public nature of Bitcoin's ledger to brand transactions by cross-referencing and verifying data. It's a practical concept with real value for businesses, communities, or analytics—though it requires careful design to balance privacy and effectiveness.
