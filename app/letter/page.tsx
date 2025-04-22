@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 
 export default function LetterPage() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
-  const [selectedVoice, setSelectedVoice] = useState<SpeechSynthesisVoice | null>(null)
   const speechRef = useRef<SpeechSynthesisUtterance | null>(null)
 
   const today = new Date().toLocaleDateString('en-US', {
@@ -15,30 +13,6 @@ export default function LetterPage() {
     month: 'long',
     day: 'numeric'
   })
-
-  useEffect(() => {
-    // Get available voices
-    const loadVoices = () => {
-      const availableVoices = window.speechSynthesis.getVoices()
-      setVoices(availableVoices)
-      
-      // Try to find a good default voice
-      const preferredVoice = availableVoices.find(
-        voice => voice.name === 'Google UK English Female' || 
-                voice.name === 'Microsoft Zira Desktop' ||
-                voice.name === 'Samantha'
-      ) || availableVoices[0]
-      
-      setSelectedVoice(preferredVoice)
-    }
-
-    // Chrome loads voices asynchronously
-    if (window.speechSynthesis.onvoiceschanged !== undefined) {
-      window.speechSynthesis.onvoiceschanged = loadVoices
-    }
-    
-    loadVoices()
-  }, [])
 
   const handlePlayPause = () => {
     if (!speechRef.current) {
@@ -48,10 +22,6 @@ export default function LetterPage() {
       speechRef.current.rate = 0.9 // Slightly slower for better comprehension
       speechRef.current.pitch = 1
       speechRef.current.volume = 1
-      
-      if (selectedVoice) {
-        speechRef.current.voice = selectedVoice
-      }
       
       // Set up event handlers
       speechRef.current.onend = () => {
@@ -71,17 +41,6 @@ export default function LetterPage() {
     }
   }
 
-  const handleVoiceChange = (voice: SpeechSynthesisVoice) => {
-    setSelectedVoice(voice)
-    if (speechRef.current) {
-      speechRef.current.voice = voice
-      if (isPlaying) {
-        window.speechSynthesis.cancel()
-        window.speechSynthesis.speak(speechRef.current)
-      }
-    }
-  }
-
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
@@ -93,38 +52,22 @@ export default function LetterPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-zinc-500">{today}</p>
-            <div className="flex items-center space-x-2">
-              <select
-                value={selectedVoice?.name || ''}
-                onChange={(e) => {
-                  const voice = voices.find(v => v.name === e.target.value)
-                  if (voice) handleVoiceChange(voice)
-                }}
-                className="text-xs bg-zinc-100 border border-zinc-200 rounded px-2 py-1 text-zinc-700"
+            <button 
+              onClick={handlePlayPause}
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
+            >
+              <svg 
+                className="w-5 h-5 text-zinc-700" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
               >
-                {voices.map((voice) => (
-                  <option key={voice.name} value={voice.name}>
-                    {voice.name}
-                  </option>
-                ))}
-              </select>
-              <button 
-                onClick={handlePlayPause}
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
-              >
-                <svg 
-                  className="w-5 h-5 text-zinc-700" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  {isPlaying ? (
-                    <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
-                  ) : (
-                    <path d="M8 5v14l11-7z" />
-                  )}
-                </svg>
-              </button>
-            </div>
+                {isPlaying ? (
+                  <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+                ) : (
+                  <path d="M8 5v14l11-7z" />
+                )}
+              </svg>
+            </button>
           </div>
           
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
