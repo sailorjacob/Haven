@@ -13,7 +13,7 @@ export default function LetterPage() {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <h1 className="text-2xl md:text-3xl font-medium mb-4 text-zinc-800 tracking-tight">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
               Technology, Music, Politics, and Art: A Vision for the Future
             </span>
@@ -24,28 +24,24 @@ export default function LetterPage() {
             This letter notes the signifigant intertwine between <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>. A recount of observations, personal experience, and aspirations of a more free and unrestricted future.
           </p>
 
-          <h2 className="text-lg text-zinc-800 mb-2 mt-6 font-medium">Tech, Music, and the Future</h2>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             In this conceptual framework, both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an idyll chart, in contrast to <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, and automated farms become reality, society's focus shifts toward health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment only become more pertinent to modern experience, enabled by technological abundance.
           </p>
 
-          <h2 className="text-lg text-zinc-800 mb-2 mt-6 font-medium">Kanye West's Presidential Run and Elon Musk's Support</h2>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            On July 4, 2020, <span className="font-medium text-zinc-800">Kanye West</span> tweeted his intention to run for President of the United States, a post with a quick supporting reply from <span className="font-medium text-zinc-800">Elon Musk</span>: <em>"You have my full support!"</em> This moment, while seemingly impulsive, marks a fascinating convergence of entertainment, technology, and politics.
+            On July 4, 2020, <span className="font-medium text-zinc-800">Kanye West</span> tweeted his intention to run for President of the United States, a post with a quick supporting reply from <span className="font-medium text-zinc-800">Elon Musk</span>: <em>"You have my full support!"</em> This moment, while seemingly impulsive, marks a fascinating convergence of entertainment, technology, and politics. <a href="https://x.com/elonmusk/status/1279577069005897728" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">[1]</a> <a href="https://www.vanityfair.com/style/2020/07/elon-musk-kanye-west-president-support-again?srsltid=AfmBOopgZTPSLbEaccn7ZHeI-3G2YpHciG6UkmY3EH8ko_a1x7n0Q14G" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">[2]</a>
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Kanye West's influence extends beyond this event, his music has shaped artists from <span className="font-medium text-zinc-800">Paul McCartney</span> to <span className="font-medium text-zinc-800">Billie Eilish</span>. However, his suspension from social media for provocative posts, including the ones intentionally anti-Semitic, highlight the tension between artistic persona (or persona) and public perception. Despite this, Kanye's work reflects a deconstructive creativity closer to a civil rights advocate than the negative labels often attached to him. This is consistent with all of our best, merely exaggerated in raw performance art.
           </p>
 
-          <h2 className="text-lg text-zinc-800 mb-2 mt-6 font-medium">Personal Anecdotes and Reflections</h2>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Small actions can yield profound impacts. For Kanye, 'Putting on the red hat' is his version of being Rosa Parks, or Socrates in his commitment to truth. A few years back, I shot a music video for, and gave my old laptop to a 15-year-old aspiring artist. He used it to make a song that has over <span className="font-medium text-zinc-800">11 million Spotify streams</span>. Turning a $500 donation into $50,000 of value.
+            Small actions can yield profound impacts. For Kanye, 'Putting on the red hat' is his version of being Rosa Parks, or Socrates in his commitment to truth. A few years back, I shot a music video for, and gave my old laptop to a 15-year-old aspiring artist. He used it to make a song that has over <a href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=7b0f339620f64338" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">11 million Spotify streams</span></a>. Turning a $500 donation into $50,000 of value.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Moments like these inspire me, as does listening to podcasts like David Senra's <a href="https://www.founderspodcast.com/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Founders Podcast</a>. I'm drawn by the power a music artist like <span className="font-medium text-zinc-800">The Weeknd</span> has to bring over 100,000 fans to a single concert. This evokes potential for once mysterious low-lifes, or designed figures to command influence like political leaders.
           </p>
 
-          <h2 className="text-lg text-zinc-800 mb-2 mt-6 font-medium">Critiques of Political and Social Trends</h2>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Current political figures like <span className="font-medium text-zinc-800">AOC</span> and <span className="font-medium text-zinc-800">Bernie Sanders</span> often oppose technological progress, without realizing it. Prioritizing their own control over innovation, or risking future security & freedom. I look for a return to a <em>"Wild West"</em> ethos, unrestricted exploration, free from bureaucratic suits and rules that favor the slow.
           </p>
@@ -53,15 +49,13 @@ export default function LetterPage() {
             Meanwhile, dangerous double standards abound: men are attacked for past behavior, while platforms like <span className="font-medium text-zinc-800">OnlyFans</span> are promoted. This dynamic, alongside the stagnation of apps like <span className="font-medium text-zinc-800">Tinder</span> and <span className="font-medium text-zinc-800">TikTok</span>, fuels my desire to build better alternatives and design digital landscapes - I'm also ready to replace the overflowing gas station, fast-foods, smoke shop, and liquor stores on every street corner.
           </p>
 
-          <h2 className="text-lg text-zinc-800 mb-2 mt-6 font-medium">Art, Influence, and the Future</h2>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            The art world's elite is a small circle. My friend, <span className="font-medium text-zinc-800">Anthony Haden Guest</span>, who chronicled New York's 1980s art scene and conducted <span className="font-medium text-zinc-800">Basquiat</span>'s last interview, noted that only about 100 people held sway in that era's fine art community. Today, artists like Basquiat and <span className="font-medium text-zinc-800">Warhol</span> command astronomical valuations - Warhol's <em>Marilyn</em> print sold for <span className="font-medium text-zinc-800">$250 million</span>, and Basquiat's works today exceed <span className="font-medium text-zinc-800">$100 million</span>.
+            The art world's elite is a small circle. My friend, <a href="https://www.artnews.com/art-news/artists/anthony-haden-guest-matthew-yokobosky-studio-54-1202681404/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">Anthony Haden Guest</span></a>, who chronicled New York's 1980s art scene and conducted <span className="font-medium text-zinc-800">Basquiat</span>'s last interview, noted that only about 100 people held sway in that era's fine art community. Today, artists like Basquiat and <span className="font-medium text-zinc-800">Warhol</span> command astronomical valuations - Warhol's <em>Marilyn</em> print sold for <span className="font-medium text-zinc-800">$250 million</span>, and Basquiat's works today exceed <span className="font-medium text-zinc-800">$100 million</span>. <a href="https://archive.vanityfair.com/article/1988/11/burning-out" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">[3]</a>
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Yet, the next great artist could emerge from anywhere, unbound by nationality or expectation. I envision launching an art gallery and podcast in the <span className="font-medium text-zinc-800">Network Cloud</span>, collaborating with Anthony to foster serious discourse and elevate artist voices, while avoiding a personal spotlight. Just like a female U.S. President can't just be cherry picked, neither can the next serious American, or Un-American artist. After all, Andy Warhol was shot by a self pro-claimed misandsrist who wrote a book stating all men should be ground to meat. He'd be a billionaire today, and he probably would've been cancelled or worse.
           </p>
 
-          <h2 className="text-lg text-zinc-800 mb-2 mt-6 font-medium">Conclusion</h2>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Ignoring <span className="font-medium text-zinc-800">Technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art's</span> connection, is becoming harder every day. At risk of sounding absurd, the default is politicians talk about other politicians, rappers talk about other rappers, and tech guys only talk about tech guys. This is starting to destroy the careers of people who ignore it.
           </p>
