@@ -4,6 +4,12 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 
 export default function LetterPage() {
+  const today = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
       <div className="container max-w-2xl mx-auto py-8">
@@ -13,6 +19,8 @@ export default function LetterPage() {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
+          <p className="text-sm text-zinc-500 mb-6">{today}</p>
+          
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
               Technology, Music, Politics, and Art: A Vision for the Future
