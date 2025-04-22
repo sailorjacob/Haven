@@ -76,16 +76,8 @@ export default function LandingPage() {
             description="intimate venues with state-of-the-art technology showcasing independent films, immersive experiences, and exclusive premieres across our global locations."
           />
           <FeatureBox 
-            title="content studio" 
-            description="a full-service production hub rivaling hollywood studios, creating original content that pushes boundaries across all digital platforms."
-          />
-          <FeatureBox 
-            title="music platform" 
-            description="challenging spotify with a curated music experience that connects artists directly with their audience through exclusive content and live performances."
-          />
-          <FeatureBox 
-            title="digital platform" 
-            description="a netflix-caliber streaming service delivering premium original content, with a focus on innovative storytelling that reflects our community's diverse perspectives."
+            title="superplatform" 
+            description="a comprehensive digital ecosystem combining a full-service production hub rivaling hollywood studios, a curated music experience that connects artists directly with their audience, and a netflix-caliber streaming service delivering premium original content. all focused on innovative storytelling that reflects our community's diverse perspectives."
           />
         </motion.div>
 
