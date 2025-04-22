@@ -47,7 +47,61 @@ export default function BitcoinBankPage() {
             </div>
           </div>
 
-          <div className="text-center">
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-lg font-medium text-zinc-800 mb-3">Blockchain Branding</h2>
+              <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                Since Bitcoin's blockchain is public, all transaction details—such as sender and receiver addresses, amounts, and timestamps—are openly accessible. By taking this information, you can cross-reference it with other data to identify patterns, verify specific members or use cases, and then brand around those datasets.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-md font-medium text-zinc-800 mb-2">How It Works</h3>
+              <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                The Bitcoin blockchain records every transaction permanently, making it a rich source of data. You could:
+              </p>
+              <ul className="space-y-2 text-sm text-zinc-600 mb-4">
+                <li>• Track Specific Addresses: Identify wallets tied to particular individuals or businesses</li>
+                <li>• Cross-Reference Data: Combine blockchain data with external information</li>
+                <li>• Add Branding On-Chain: Use Bitcoin's OP_RETURN field for identifiers</li>
+                <li>• Leverage Layer 2: Add metadata to off-chain transactions via Lightning</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-md font-medium text-zinc-800 mb-2">Why It's Valuable</h3>
+              <ul className="space-y-2 text-sm text-zinc-600 mb-4">
+                <li>• Verification: Prove transactions belong to specific members</li>
+                <li>• Marketing: Showcase branded transaction volumes</li>
+                <li>• Analytics: Reveal spending trends and patterns</li>
+                <li>• Trust: Signal legitimacy to users</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-md font-medium text-zinc-800 mb-2">Practical Example</h3>
+              <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                Suppose "Bees Bitcoin Bank" wants to brand its transactions:
+              </p>
+              <ul className="space-y-2 text-sm text-zinc-600 mb-4">
+                <li>• Use a wallet with "BEES2023" in the OP_RETURN field</li>
+                <li>• Scan the blockchain for transactions with this tag</li>
+                <li>• Cross-reference with customer IDs</li>
+                <li>• Display verified transactions to build trust</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-md font-medium text-zinc-800 mb-2">Challenges to Consider</h3>
+              <ul className="space-y-2 text-sm text-zinc-600 mb-4">
+                <li>• Privacy: Public ledger could expose transaction patterns</li>
+                <li>• Scalability: Manual cross-referencing can be slow</li>
+                <li>• Adoption: Users must recognize and value branding</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
             <Link
               href="/"
               className="inline-flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 text-zinc-700 py-2 px-6 text-xs lowercase tracking-widest transition-all duration-300"
