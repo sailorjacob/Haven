@@ -89,7 +89,7 @@ export default function LetterPage() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
           
           <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-8">
-            Considering the significant overlap of <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>, here's a recount of observations, personal experience, and aspirations of a more free and unrestricted future.
+            Considering a significant overlap in technology, music, politics, and art, here's a recount of observations, personal experience, and aspiration for a more free and unrestricted future.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
