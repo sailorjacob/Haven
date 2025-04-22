@@ -76,7 +76,7 @@ export default function MoonlightGarden() {
   return (
     <div className="bg-zinc-900 text-zinc-300 min-h-screen">
       {/* Stars background */}
-      <div className="fixed inset-x-0 top-0 h-40 z-0">
+      <div className="fixed inset-x-0 top-0 h-64 z-0">
         <div className="absolute inset-0 bg-zinc-900">
           <div className="stars-small"></div>
           <div className="stars-medium"></div>
@@ -160,35 +160,35 @@ export default function MoonlightGarden() {
         `}</style>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto pt-6">
-        {/* Header - raised up with more space below */}
-        <div className="px-6 mb-10">
+      <div className="relative z-10 max-w-7xl mx-auto pt-28">
+        {/* Header - more space above and below */}
+        <div className="px-6 mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-light mb-2 text-white tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
               Moonlight Garden
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-300 mb-3">
+            <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-300 mb-6">
               A 24/7 mobile order-only restaurant serving healthy, 
               automated cuisine starting at college campuses.
             </p>
           </motion.div>
         </div>
 
-        {/* Content sections - with added spacing at top */}
-        <div className="px-6 mt-8">
+        {/* Content sections - with added spacing */}
+        <div className="px-6 mt-20">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mb-10"
+            className="mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">The Concept</h2>
+            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Concept</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-zinc-800 p-6 rounded-sm">
                 <h3 className="text-lg mb-2 text-zinc-100">24/7 Availability</h3>
@@ -220,9 +220,9 @@ export default function MoonlightGarden() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-10"
+            className="mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Our Menu</h2>
+            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Our Menu</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {menuItems.map((item) => (
                 <div 
@@ -295,9 +295,9 @@ export default function MoonlightGarden() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="pb-12"
+            className="pb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-light mb-6 text-zinc-200">Business Strategy</h2>
+            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Business Strategy</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-xl mb-4 text-zinc-100">Automation Strategy</h3>
