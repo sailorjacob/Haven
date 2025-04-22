@@ -53,6 +53,7 @@ export default function LetterPage() {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
               <p className="text-sm text-zinc-500">{today}</p>
+              <p className="text-sm text-zinc-500">Jacob B.</p>
             </div>
             <button 
               onClick={handlePlayPause}
@@ -110,7 +111,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Current political figures like <span className="font-medium text-zinc-800">AOC</span> and <span className="font-medium text-zinc-800">Bernie Sanders</span> often oppose technological progress, without realizing it. Prioritizing their own control over innovation, or risking future security & freedom. I look for a return to a <em>"Wild West"</em> ethos, unrestricted exploration, free from bureaucratic suits and rules that favor the slow.
+            Current political figures like <a href="https://x.com/AOC/status/1881493371900113227?lang=en" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">AOC</span></a> and <span className="font-medium text-zinc-800">Bernie Sanders</span> often oppose technological progress, without realizing it. Prioritizing their own control over innovation, or risking future security & freedom. I look for a return to a <em>"Wild West"</em> ethos, unrestricted exploration, free from bureaucratic suits and rules that favor the slow.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             I often think of the world as a jungle, a free for all like the Wild West, where invention wins amid risks like misinformation, surveillance, and conspiracy. Platforms like X amplify this, enabling rapid idea exchange but also exposing tensions. Think about Kanye's ban for provocative posts versus the hypocrisy of political figures decrying "hate speech" or students championing Islam, ignoring systemic issues like cigarette deaths (7 million annually).
