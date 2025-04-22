@@ -5,11 +5,30 @@ import Link from "next/link"
 import { useState } from "react"
 
 export default function LandingPage() {
-  // Removed the activeFeature state since we're now using hover effects
-
   return (
     <main className="min-h-screen bg-zinc-900 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono">
       <div className="container max-w-4xl mx-auto">
+        <div className="flex justify-between items-start mb-12">
+          <div className="w-1/3 text-right pr-4">
+            <Link
+              href="/moonlight-garden"
+              className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+            >
+              moonlight garden
+            </Link>
+            <p className="text-xs text-zinc-500 mt-1">tap with bitcoin for food</p>
+          </div>
+          <div className="w-1/3 text-left pl-4">
+            <Link
+              href="https://roundabout.run"
+              className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+            >
+              roundabout
+            </Link>
+            <p className="text-xs text-zinc-500 mt-1">tap with bitcoin for a ride to the doctor</p>
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -64,27 +83,6 @@ export default function LandingPage() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="text-center"
         >
-          <div className="flex justify-between items-start mb-8">
-            <div className="w-1/3 text-right pr-4">
-              <Link
-                href="/moonlight-garden"
-                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
-              >
-                moonlight garden
-              </Link>
-              <p className="text-xs text-zinc-500 mt-1">tap with bitcoin for food</p>
-            </div>
-            <div className="w-1/3 text-left pl-4">
-              <Link
-                href="https://roundabout.run"
-                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
-              >
-                roundabout
-              </Link>
-              <p className="text-xs text-zinc-500 mt-1">tap with bitcoin for a ride to the doctor</p>
-            </div>
-          </div>
-
           <Link
             href="/home" 
             className="inline-flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300"
