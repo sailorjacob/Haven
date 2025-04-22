@@ -21,8 +21,8 @@ export default function LandingPage() {
             <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-700 to-transparent absolute -bottom-3 left-0"></div>
           </h1>
           <p className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto tracking-wide leading-relaxed lowercase">
-            a digital superplatform bridging virtual experiences with physical spaces. 
-            curated content, art, and community for the modern native.
+            a digital superplatform bridging premium content with physical spaces. 
+            curated media, art, and community for the modern native.
           </p>
         </motion.div>
         
