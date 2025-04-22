@@ -52,8 +52,8 @@ export default function LetterPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
+              <p className="text-sm text-zinc-500">Jacob H B.</p>
               <p className="text-sm text-zinc-500">{today}</p>
-              <p className="text-sm text-zinc-500">Jacob B.</p>
             </div>
             <button 
               onClick={handlePlayPause}
@@ -183,7 +183,7 @@ export default function LetterPage() {
           <p className="text-zinc-600 italic mb-6 text-sm">
             Let's talk about the future{" "}
             <Link href="https://github.com/sailorjacob" className="text-zinc-800 hover:text-zinc-900 underline">
-              Back to my profile
+              Visit my profile
             </Link>
           </p>
           <Link
