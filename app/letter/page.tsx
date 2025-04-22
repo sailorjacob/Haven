@@ -76,7 +76,7 @@ export default function LetterPage() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-6"></div>
           
           <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-6">
-            This letter frameworks my perspective on the significant intertwine between <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>. A recount of observations, personal experience, and aspirations of a more free and unrestricted future.
+            Considering the significant overlap of <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>, here's a recount of observations, personal experience, and aspirations of a more free and unrestricted future.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
