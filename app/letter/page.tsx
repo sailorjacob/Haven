@@ -12,14 +12,30 @@ export default function LetterPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
-      <div className="container max-w-2xl mx-auto py-8">
+      <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <p className="text-sm text-zinc-500 mb-6">{today}</p>
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-zinc-500">{today}</p>
+            <a 
+              href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=fb3f91dcfb4346e8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
+            >
+              <svg 
+                className="w-5 h-5 text-zinc-700" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </a>
+          </div>
           
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600">
@@ -29,7 +45,7 @@ export default function LetterPage() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-6"></div>
           
           <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-6">
-            This letter notes the signifigant intertwine between <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>. A recount of observations, personal experience, and aspirations of a more free and unrestricted future.
+            This letter frameworks my perspective on the significant intertwine between <span className="font-medium text-zinc-800">technology</span>, <span className="font-medium text-zinc-800">music</span>, <span className="font-medium text-zinc-800">politics</span>, and <span className="font-medium text-zinc-800">art</span>. A recount of observations, personal experience, and aspirations of a more free and unrestricted future.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -100,7 +116,7 @@ export default function LetterPage() {
                 </a>
               </li>
               <li>
-                <a href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=7b0f339620f64338" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                <a href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=fb3f91dcfb4346e8" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
                   "Wizard" by Lucas Lex - The song that reached 11 million Spotify streams
                 </a>
               </li>
@@ -118,7 +134,7 @@ export default function LetterPage() {
           </div>
 
           <p className="text-zinc-600 italic mb-6 text-sm">
-            Let's connect if you're into AI, design, and building the future!{" "}
+            Let's talk about the future!{" "}
             <Link href="https://github.com/sailorjacob" className="text-zinc-800 hover:text-zinc-900 underline">
               Back to my profile
             </Link>
