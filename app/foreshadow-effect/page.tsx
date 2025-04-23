@@ -1,11 +1,177 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 
 // Set a fixed target date: April 22, 2035 at midnight
 const TARGET_DATE = new Date('2035-04-22T00:00:00Z')
+
+// Prediction data array
+const PREDICTIONS = [
+  {
+    title: "Decentralized Systems",
+    content: "By 2035, we'll see decentralized military and protection services functioning like blockchain networks, with independent nodes tied to governing units. This shift will fundamentally change how security operates globally."
+  },
+  {
+    title: "AI Revolution",
+    content: "The pace of AI advancement will solve complex problems that seem insurmountable today. However, access to this technology won't be evenly distributed, creating new social divides between those who can harness AI and those who cannot."
+  },
+  {
+    title: "Creator Economy",
+    content: "Individual creators will harness AI to produce work that previously required teams of hundreds. A single person will be able to create billion-dollar movies or develop social platforms in days, not years. Personalized AI-generated music will replace traditional music consumption."
+  },
+  {
+    title: "Physical Renaissance",
+    content: "As digital capabilities expand, physical experiences will become more valued. Education will shift toward embodied learning, traditional universities will transform or become obsolete, and transportation will undergo revolutionary changes focused on physical experience."
+  },
+  {
+    title: "Architectural Revolution",
+    content: "Humanoid robots will become commonplace for construction, allowing fantastic architectural achievements that were previously impossible. New forms of buildings and spaces will emerge as AI and robotics remove current limitations."
+  },
+  {
+    title: "Mars Colonization",
+    content: "By 2035, humans will be living on Mars, primarily through SpaceX's efforts. While early settlements won't be luxurious, they will represent humanity's first permanent foothold beyond Earth, cementing Elon Musk's historical legacy."
+  },
+  {
+    title: "Digital Economy Transformation",
+    content: "Physical cash will disappear entirely, replaced by micropayments for AI services, blockchain transactions, and cryptocurrencies. Bitcoin's Lightning Network and Ethereum will dominate, while new visual interfaces will make complex digital value transfers intuitive."
+  },
+  {
+    title: "Privacy Battlegrounds",
+    content: "Privacy will become a critical issue as neural interfaces and thought-translation technologies emerge. Nations like China may pioneer brain activity monitoring, creating stark divisions between surveillance states and privacy havens. Truth-seeking will become increasingly dangerous yet necessary."
+  },
+  {
+    title: "Conflict Zones",
+    content: "The abundance of advanced weapons today foreshadows inevitable conflicts. High-tension regions will see conventional warfare, while developed nations will experience sophisticated cyberattacks and social destabilization. Companies like Palantir may become crucial in neutralizing threats before they materialize."
+  },
+  {
+    title: "Human Nature Constants",
+    content: "Despite technological leaps, human flaws like envy, conspiracy thinking, and tribal division will persist. Not everyone will have access to or understanding of transformative technologies, creating friction between advancing and traditional societies."
+  }
+];
+
+// Prediction Rotator Component
+function PredictionRotator() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+
+  const nextPrediction = () => {
+    setCurrentIndex((prev) => (prev + 1) % PREDICTIONS.length);
+  };
+
+  const prevPrediction = () => {
+    setCurrentIndex((prev) => (prev - 1 + PREDICTIONS.length) % PREDICTIONS.length);
+  };
+
+  const resetAutoPlay = () => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+    }
+    
+    if (isAutoPlaying) {
+      autoPlayRef.current = setInterval(() => {
+        nextPrediction();
+      }, 8000);
+    }
+  };
+
+  useEffect(() => {
+    resetAutoPlay();
+    
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isAutoPlaying, currentIndex]);
+
+  const toggleAutoPlay = () => {
+    setIsAutoPlaying(prev => !prev);
+  };
+
+  const handleClick = () => {
+    nextPrediction();
+    resetAutoPlay();
+  };
+
+  return (
+    <div className="mb-12">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-semibold text-zinc-800">Key Predictions for 2035</h3>
+        <div className="flex gap-2">
+          <button 
+            onClick={prevPrediction} 
+            className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
+            aria-label="Previous prediction"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button 
+            onClick={toggleAutoPlay} 
+            className={`w-8 h-8 rounded-full flex items-center justify-center ${isAutoPlaying ? 'bg-zinc-300' : 'bg-zinc-200'} hover:bg-zinc-300 transition-colors`}
+            aria-label={isAutoPlaying ? "Pause auto-rotation" : "Start auto-rotation"}
+          >
+            {isAutoPlaying ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/>
+                <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 5V19L19 12L5 5Z" fill="currentColor"/>
+              </svg>
+            )}
+          </button>
+          <button 
+            onClick={nextPrediction} 
+            className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
+            aria-label="Next prediction"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div 
+        className="h-48 relative overflow-hidden bg-zinc-100/50 rounded p-6 cursor-pointer"
+        onClick={handleClick}
+      >
+        <div className="absolute bottom-2 right-2 flex gap-1">
+          {PREDICTIONS.map((_, idx) => (
+            <div 
+              key={idx} 
+              className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-zinc-400' : 'bg-zinc-200'}`}
+            />
+          ))}
+        </div>
+        
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.5 }}
+            className="h-full flex flex-col"
+          >
+            <h4 className="text-base font-semibold text-zinc-800 mb-2">
+              {PREDICTIONS[currentIndex].title}
+            </h4>
+            <p className="text-zinc-600 text-sm leading-relaxed">
+              {PREDICTIONS[currentIndex].content}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
 
 export default function ForeshadowEffectPage() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -109,47 +275,9 @@ export default function ForeshadowEffectPage() {
             The Foreshadow Effect describes how the significant elements of our present hint at major future events. By examining what's abundant or emphasized in current society, we can glimpse what might become crucial.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Key Predictions for 2035</h3>
-          
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Decentralized Systems:</strong> By 2035, we'll see decentralized military and protection services functioning like blockchain networks, with independent nodes tied to governing units. This shift will fundamentally change how security operates globally.
-          </p>
+          {/* Prediction Rotator Component */}
+          <PredictionRotator />
 
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>AI Revolution:</strong> The pace of AI advancement will solve complex problems that seem insurmountable today. However, access to this technology won't be evenly distributed, creating new social divides between those who can harness AI and those who cannot.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Creator Economy:</strong> Individual creators will harness AI to produce work that previously required teams of hundreds. A single person will be able to create billion-dollar movies or develop social platforms in days, not years. Personalized AI-generated music will replace traditional music consumption.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Physical Renaissance:</strong> As digital capabilities expand, physical experiences will become more valued. Education will shift toward embodied learning, traditional universities will transform or become obsolete, and transportation will undergo revolutionary changes focused on physical experience.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Architectural Revolution:</strong> Humanoid robots will become commonplace for construction, allowing fantastic architectural achievements that were previously impossible. New forms of buildings and spaces will emerge as AI and robotics remove current limitations.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Mars Colonization:</strong> By 2035, humans will be living on Mars, primarily through SpaceX's efforts. While early settlements won't be luxurious, they will represent humanity's first permanent foothold beyond Earth, cementing Elon Musk's historical legacy.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Digital Economy Transformation:</strong> Physical cash will disappear entirely, replaced by micropayments for AI services, blockchain transactions, and cryptocurrencies. Bitcoin's Lightning Network and Ethereum will dominate, while new visual interfaces will make complex digital value transfers intuitive.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Privacy Battlegrounds:</strong> Privacy will become a critical issue as neural interfaces and thought-translation technologies emerge. Nations like China may pioneer brain activity monitoring, creating stark divisions between surveillance states and privacy havens. Truth-seeking will become increasingly dangerous yet necessary.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Conflict Zones:</strong> The abundance of advanced weapons today foreshadows inevitable conflicts. High-tension regions will see conventional warfare, while developed nations will experience sophisticated cyberattacks and social destabilization. Companies like Palantir may become crucial in neutralizing threats before they materialize.
-          </p>
-
-          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            <strong>Human Nature Constants:</strong> Despite technological leaps, human flaws like envy, conspiracy thinking, and tribal division will persist. Not everyone will have access to or understanding of transformative technologies, creating friction between advancing and traditional societies.
-          </p>
         </motion.div>
 
         <motion.div
