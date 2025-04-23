@@ -6,7 +6,7 @@ import { useState, useRef } from "react"
 
 export default function LetterPage() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const speechRef = useRef<SpeechSynthesisUtterance | null>(null)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
@@ -15,28 +15,18 @@ export default function LetterPage() {
   })
 
   const handlePlayPause = () => {
-    if (!speechRef.current) {
-      // Initialize speech synthesis
-      const text = document.querySelector('main')?.textContent || ''
-      speechRef.current = new SpeechSynthesisUtterance(text)
-      speechRef.current.rate = 0.9 // Slightly slower for better comprehension
-      speechRef.current.pitch = 1
-      speechRef.current.volume = 1
-      
-      // Set up event handlers
-      speechRef.current.onend = () => {
-        setIsPlaying(false)
-      }
-      speechRef.current.onerror = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Wizard1.mp3')
+      audioRef.current.onended = () => {
         setIsPlaying(false)
       }
     }
 
     if (isPlaying) {
-      window.speechSynthesis.cancel()
+      audioRef.current.pause()
       setIsPlaying(false)
     } else {
-      window.speechSynthesis.speak(speechRef.current)
+      audioRef.current.play()
       setIsPlaying(true)
     }
   }
@@ -53,12 +43,11 @@ export default function LetterPage() {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
               <p className="text-sm text-zinc-500">{today}</p>
-              <a href="https://jacobhalestudio.net" className="text-sm text-zinc-500 hover:text-zinc-700 transition-colors">Jacob B.</a>
             </div>
             <button 
               onClick={handlePlayPause}
               className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
-              aria-label={isPlaying ? "Pause reading" : "Start reading"}
+              aria-label={isPlaying ? "Pause audio" : "Play audio"}
             >
               <svg 
                 className="w-5 h-5 text-zinc-700" 
@@ -93,7 +82,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an idyllic chart, in contrast to a <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
+            Both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an ideal chart, in contrast to a<em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
