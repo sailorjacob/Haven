@@ -2,17 +2,41 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 
 export default function ForeshadowEffectPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [timeLeft, setTimeLeft] = useState("")
 
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   })
+
+  useEffect(() => {
+    const targetDate = new Date()
+    targetDate.setFullYear(targetDate.getFullYear() + 10)
+
+    const updateTimer = () => {
+      const now = new Date()
+      const difference = targetDate.getTime() - now.getTime()
+
+      const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365))
+      const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+
+      setTimeLeft(`${years}y ${days}d\n${hours}h ${minutes}m\n${seconds}s`)
+    }
+
+    updateTimer()
+    const interval = setInterval(updateTimer, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   const handlePlayPause = () => {
     if (!audioRef.current) {
@@ -33,6 +57,10 @@ export default function ForeshadowEffectPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 font-bold text-black whitespace-pre-line text-center">
+        {timeLeft}
+      </div>
+      
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
