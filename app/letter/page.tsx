@@ -89,11 +89,11 @@ export default function LetterPage() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
           
           <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-8">
-            Considering a significant overlap in technology, music, politics, and art, here's a recount of observations, personal experience, and aspiration for a more free and unrestricted future.
+            Considering the significant overlap of technology, music, politics, and art, here's a recount of observations, personal experience, and aspiration for a more free and unrestricted future.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            In this conceptual framework, both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an idyll chart, in contrast to <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, and automated farms become reality, society's focus shifts toward health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment only become more pertinent to modern experience, enabled by technological abundance.
+            Both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an idyllic chart, in contrast to a<em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
