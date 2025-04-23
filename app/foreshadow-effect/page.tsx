@@ -55,22 +55,20 @@ const PREDICTIONS = [
   },
   {
     title: "AI as a Modern Voltaire",
-    content: "In ten years, someone or a squad will use AI to blast big ideas at folks crushed by control freaks in politics and religion. Hollywood built the American Dream; AI will spark the next wave."
+    content: "We might see someone or a team use AI to blast ideas. Similar to how VOltaire."
   },
   {
     title: "Death of TikTok & Instagram",
     content: "Tiktok and instagram will die. They are already infected by ugly cash-out features like cheap e-stores, and livestreaming emoji gifts."
   },
-  {
-    title: "Gaming Renaissance",
-    content: "Gaming will return."
-  }
+
 ];
 
 // Prediction Rotator Component
 function PredictionRotator() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(true);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextPrediction = () => {
@@ -86,11 +84,15 @@ function PredictionRotator() {
       clearInterval(autoPlayRef.current);
     }
     
-    if (isAutoPlaying) {
+    if (isAutoPlaying && isExpanded) {
       autoPlayRef.current = setInterval(() => {
         nextPrediction();
       }, 8000);
     }
+  };
+
+  const toggleExpand = () => {
+    setIsExpanded(prev => !prev);
   };
 
   useEffect(() => {
@@ -101,7 +103,7 @@ function PredictionRotator() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [isAutoPlaying, currentIndex]);
+  }, [isAutoPlaying, currentIndex, isExpanded]);
 
   const toggleAutoPlay = () => {
     setIsAutoPlaying(prev => !prev);
@@ -115,76 +117,103 @@ function PredictionRotator() {
   return (
     <div className="mb-12">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-amber-500">Golden Predictions</h3>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
+          <h3 className="text-lg font-semibold" style={{ color: "#d9b47b" }}>Golden Predictions</h3>
           <button 
-            onClick={prevPrediction} 
-            className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
-            aria-label="Previous prediction"
+            onClick={toggleExpand} 
+            className="w-6 h-6 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
+            aria-label={isExpanded ? "Collapse predictions" : "Expand predictions"}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <button 
-            onClick={toggleAutoPlay} 
-            className={`w-8 h-8 rounded-full flex items-center justify-center ${isAutoPlaying ? 'bg-zinc-300' : 'bg-zinc-200'} hover:bg-zinc-300 transition-colors`}
-            aria-label={isAutoPlaying ? "Pause auto-rotation" : "Start auto-rotation"}
-          >
-            {isAutoPlaying ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/>
-                <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>
-              </svg>
-            ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 5V19L19 12L5 5Z" fill="currentColor"/>
-              </svg>
-            )}
-          </button>
-          <button 
-            onClick={nextPrediction} 
-            className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
-            aria-label="Next prediction"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {isExpanded ? (
+                <path d="M19 9l-7 7-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              ) : (
+                <path d="M5 15l7-7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              )}
             </svg>
           </button>
         </div>
+        {isExpanded && (
+          <div className="flex gap-2">
+            <button 
+              onClick={prevPrediction} 
+              className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
+              aria-label="Previous prediction"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button 
+              onClick={toggleAutoPlay} 
+              className={`w-8 h-8 rounded-full flex items-center justify-center ${isAutoPlaying ? 'bg-zinc-300' : 'bg-zinc-200'} hover:bg-zinc-300 transition-colors`}
+              aria-label={isAutoPlaying ? "Pause auto-rotation" : "Start auto-rotation"}
+            >
+              {isAutoPlaying ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/>
+                  <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 5V19L19 12L5 5Z" fill="currentColor"/>
+                </svg>
+              )}
+            </button>
+            <button 
+              onClick={nextPrediction} 
+              className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
+              aria-label="Next prediction"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
 
-      <div 
-        className="h-48 relative overflow-hidden bg-zinc-100/50 rounded p-6 cursor-pointer"
-        onClick={handleClick}
+      <motion.div 
+        className="overflow-hidden"
+        animate={{ 
+          height: isExpanded ? "12rem" : "0",
+          opacity: isExpanded ? 1 : 0,
+          marginBottom: isExpanded ? "1.5rem" : "0"
+        }}
+        transition={{ duration: 0.4 }}
       >
-        <div className="absolute bottom-2 right-2 flex gap-1">
-          {PREDICTIONS.map((_, idx) => (
-            <div 
-              key={idx} 
-              className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-zinc-400' : 'bg-zinc-200'}`}
-            />
-          ))}
+        <div 
+          className="h-48 relative overflow-hidden bg-zinc-100/50 rounded p-6 cursor-pointer"
+          onClick={handleClick}
+        >
+          <div className="absolute bottom-2 right-2 flex gap-1">
+            {PREDICTIONS.map((_, idx) => (
+              <div 
+                key={idx} 
+                className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-zinc-400' : 'bg-zinc-200'}`}
+              />
+            ))}
+          </div>
+          
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="h-full flex flex-col justify-center items-center text-center"
+            >
+              <h4 className="text-lg font-semibold text-zinc-800 mb-3">
+                {PREDICTIONS[currentIndex].title}
+              </h4>
+              <p className="text-zinc-600 text-base leading-relaxed">
+                {PREDICTIONS[currentIndex].content}
+              </p>
+            </motion.div>
+          </AnimatePresence>
         </div>
-        
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.5 }}
-            className="h-full flex flex-col"
-          >
-            <h4 className="text-base font-semibold text-zinc-800 mb-2">
-              {PREDICTIONS[currentIndex].title}
-            </h4>
-            <p className="text-zinc-600 text-sm leading-relaxed">
-              {PREDICTIONS[currentIndex].content}
-            </p>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -295,12 +324,12 @@ export default function ForeshadowEffectPage() {
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">The Foreshadow Effect</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            The Foreshadow Effect, when things that stand out in my life today hint at what's coming. For instance, the abundant amount of weapons: guns, nukes, drones, and the right to bear arms. To me, it suggests inevitable invitation of conflict in the future, like, be careful what you wish for.
+            The Foreshadow Effect, when things that stand out in my life today hint at what's coming. For instance, the abundant amount of weapons: guns, nukes, drones, and the right to bear arms. To me, it suggests inevitable invitation of conflict in the future, like, be careful what you wish for. Nobody's recycling their weapons and tossing them into volcanos even though I'd love them to.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            This has been a helpful way for me to make sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned for future conflicts. At the same time, technology is moving fast. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or the ability to understand what they don't understand. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
+            This has been a helpful way for me to make sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned for future conflicts. At the same time, technology is moving fast. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or <a href="#dunning-kruger" className="text-zinc-800 hover:text-zinc-900 underline">the ability to understand what they don't understand</a>. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
           </p>
 
           {/* Prediction Rotator Component */}
@@ -331,11 +360,6 @@ export default function ForeshadowEffectPage() {
             AI generations will let a single person make things that used to take teams years. A single person will make a $1b movie or a new social app in a day. There will be someone like Bernini, who uses these tools to another factor, like Mr. Beast, with taste. Lately, I've been making AI-generated beats which are now indistinguishable from real ones.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Mars</h3>
-          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            We'll have people living on Mars. Elon Musk and SpaceX's pioneering will pull through. It might not be glamorous, but it will happen. Competing efforts might come from China or AI, but Bezos will tap out. By that time, Elon will be irreversibly historic.
-          </p>
-
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Space:</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Rockets will be able to fly us anywhere across the globe in 30 minutes, Blue Origin will copy SpaceX but i predict they might tap out with competition from China, etc
@@ -343,12 +367,12 @@ export default function ForeshadowEffectPage() {
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Digital Economy</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            Physical cash will be gone. Small digital payments, to AI for services like music or robots, will be common. Blockchain and cryptocurrencies, like Bitcoin's Lightning Network & Ethereum, will be used. Data control will warrant disputes.
+            Physical cash will be gone. Small digital payments, often to AI for services like music or robots. I have ideas for bitcoin branded transactions. On L2, visualizations to wrap a user's head around value.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Privacy Battles</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            Privacy will be a major issue. AI advancements will be used to monitor electrical brain activity, especially in places like China. We'll be able to translate thoughts. Privacy policies will become more obviously important. By 2035, we'll see a divide: those who fought for truth versus those who were clinging to delusion.
+            Privacy will be a major issue. I predict AI advancements could be used to monitor say, electrical brain activity, especially in places like China. I predict we'll be able to translate thoughts. So Privacy policies will become more obviously important.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Major Conflicts</h3>
@@ -357,6 +381,16 @@ export default function ForeshadowEffectPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">My PimEyes facial recognition reverse image search</p>
+              <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                <img 
+                  src="https://jsc15.pimeyes.com/proxy/d1b37ea13a085931c62adfc6f8bcf2365e7c39233e50c882a39ab47a98d1eb79c4ae1b1af921688331b0477b3d50cba12eaafe3150a58fcd4171663da914eb75dedd8a3798df2f5228093fa17a334f2bedde790d3e47b2c67e144a79498655f3a6350d8011c35e02d1e7db40e4118574bafc4a3ab4d4cacec421a2878448fbeae3072cb3b1b71cc05724f7d1299454faef468824de2f89a54ed12357fa2a7d550dc45ce3b9291aeb634eedac43abd8fe03e9d5ea7cf6b8dd7c2a5e674f3e7960c0d31e410e0d1039bcbfb12043083f351c222d1b649059dde958699c1b167b26f403066c26427e9e688a394ac69fe63d982abedc27ab778477acfd59393e70aeed0ae426246278b3884042f382c792c91767636d4a8508d8080acd2fbd7f9d381509b14aa3f075db1b057a8e993a2f4fe746a0cc6f60d2f1d614a1f2f2ead312c5b89f0b3f662a182e6c1f9e36e1759966d4aa7618ae6f833bad53c80f039643fd40f1211273743c482d27998c57b30fadb0d8f8dd25d7cb8e791de1dd394c90" 
+                  alt="My PimEyes facial recognition reverse image search" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
             <div className="bg-zinc-100 p-4 rounded">
               <p className="text-zinc-800 text-sm font-medium mb-2">Kim Kardashian with a Tesla Optimus</p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
@@ -367,12 +401,12 @@ export default function ForeshadowEffectPage() {
                 />
               </div>
             </div>
-            <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">My PimEyes facial recognition reverse image search</p>
+            <div id="dunning-kruger" className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
-                  src="https://jsc15.pimeyes.com/proxy/d1b37ea13a085931c62adfc6f8bcf2365e7c39233e50c882a39ab47a98d1eb79c4ae1b1af921688331b0477b3d50cba12eaafe3150a58fcd4171663da914eb75dedd8a3798df2f5228093fa17a334f2bedde790d3e47b2c67e144a79498655f3a6350d8011c35e02d1e7db40e4118574bafc4a3ab4d4cacec421a2878448fbeae3072cb3b1b71cc05724f7d1299454faef468824de2f89a54ed12357fa2a7d550dc45ce3b9291aeb634eedac43abd8fe03e9d5ea7cf6b8dd7c2a5e674f3e7960c0d31e410e0d1039bcbfb12043083f351c222d1b649059dde958699c1b167b26f403066c26427e9e688a394ac69fe63d982abedc27ab778477acfd59393e70aeed0ae426246278b3884042f382c792c91767636d4a8508d8080acd2fbd7f9d381509b14aa3f075db1b057a8e993a2f4fe746a0cc6f60d2f1d614a1f2f2ead312c5b89f0b3f662a182e6c1f9e36e1759966d4aa7618ae6f833bad53c80f039643fd40f1211273743c482d27998c57b30fadb0d8f8dd25d7cb8e791de1dd394c90" 
-                  alt="My PimEyes facial recognition reverse image search" 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
+                  alt="The Dunning-Kruger Effect Chart" 
                   className="w-full h-full object-cover"
                 />
               </div>
