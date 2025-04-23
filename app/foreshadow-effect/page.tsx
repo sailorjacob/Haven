@@ -11,47 +11,47 @@ const TARGET_DATE = new Date('2035-04-22T00:00:00Z')
 const PREDICTIONS = [
   {
     title: "Decentralized Communities",
-    content: "Digital-first groups will boom. Haven will hook people up in new ways."
+    content: "Digital-first communities will grow, with platforms like Haven designing new living structures."
   },
   {
     title: "AI Media",
-    content: "AI will crank out big chunks of media, top-notch, locked on blockchain."
+    content: "Significant portions of high-quality media, like movie series, will be AI."
   },
   {
     title: "Automation",
-    content: "Self-driving fleets and robots will run the show, tied to be-loved.app and Moonlight Garden."
+    content: "Self-driving fleets and robots will become standard, supporting services like be-loved.app and Moonlight Garden."
   },
   {
     title: "Ethical Governance",
-    content: "Global crews will steer AI ethics, keeping it human-first."
+    content: "Factions of elite may emerge to guide AI ethics, ensuring technology serves humanity."
   },
   {
     title: "Western Admiration for Eastern Figures",
-    content: "Some slick leader from China or India will pull a cult vibe in the West—discipline, harmony, grit."
+    content: "A figure from China (like a technologist advocating for AI-driven governance) or India (e.g., a cultural sensation) will gain a cult-like following in the West. This type of person's mission, or success will resonate with Westerners disillusioned by political gridlock."
   },
   {
     title: "Extinction of Traditional Retail",
-    content: "Gas stations, liquor stores, smoke shops, fast food drive-thrus—they're toast. Cloud-kitchen brands like Moonlight Garden, lean and healthy, will take over."
+    content: "Gas stations, liquor stores, smoke shops, and fast food drive-thrus will largely go extinct. McDonald's will be replaced by a more nimble and healthier cloud-kitchen brand such as Moonlight Garden."
   },
   {
-    title: "AI Translating Thoughts",
-    content: "AI will read brain waves into thoughts, maybe off security cams with tricked-out sensors. Facial recognition will get dirty. It will be a problem."
+    title: "Thought Reading AI",
+    content: "AI will be able to translate electric brain activity into translating thoughts, perhaps from even a security camera with special sensors. Facial recognition will be used in dirty ways. It will be a problem."
   },
   {
     title: "Apple's Decline",
-    content: "Apple's done. App Store and device locks will crack from dumb censorship moves. X might drop better phones, freer systems."
+    content: "Apple will lose its reign, somewhere along the line there'll be a fracturing of the App Store, and physical device monopoly. This could happen due to increasingly polarizing censorship policies."
   },
   {
     title: "1,000 Philosopher Armies",
-    content: "Elites will farm out and mold new rule-sets. 'Knights of the Round Table' will emerge."
+    content: "Elite will outsource and shape new governance. 'Knights of the Round Table' will emerge to guide technology and society."
   },
   {
     title: "Cashless > Designless > Constant",
-    content: "Physical cash and clunky crypto will die. Smooth payment trails will juice your AI."
+    content: "Physical cash will disappear, bad crypto UI will disappear, replaced by network state branded transactions. Constant payments will appear, the tokens powering your AI."
   },
   {
-    title: "Advanced Security for Individuals",
-    content: "Security tech will level up and go personal. When being seen means risk."
+    title: "Decentralized Military & Security",
+    content: "Whether it's a network state outsourcing or a subscription model for individuals or both. Decentralized fit young men could be commanded remotely. Safety drones with aimbot and sleeping darts will hover over your shoulder in Manhattan."
   },
   {
     title: "AI as a Modern Voltaire",
