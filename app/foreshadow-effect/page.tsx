@@ -250,6 +250,7 @@ export default function ForeshadowEffectPage() {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
               <p className="text-sm text-zinc-500">{today}</p>
+              <p className="text-sm text-zinc-600 font-medium">The Beatles x Kanye West | AI Instrumental</p>
             </div>
             <button 
               onClick={handlePlayPause}
@@ -332,11 +333,6 @@ export default function ForeshadowEffectPage() {
 
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             The Foreshadow Effect screams trouble. Weapons everywhere, tensions jacked—wars, cyberattacks, or riots will hit. My buddy Anthony Haden-Guest's mom outran the Gestapo—proof things flip fast. I'm gearing up, hoping tech like Palantir's shuts it down.
-          </p>
-
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Screenshots</h3>
-          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            I'll slap screenshots at the bottom or in the mix:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
