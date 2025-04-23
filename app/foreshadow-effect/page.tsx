@@ -43,7 +43,7 @@ const PREDICTIONS = [
   },
   {
     title: "1,000 Philosopher Armies",
-    content: "Elite will outsource and shape new governance. 'Knights of the Round Table' will emerge to guide technology and society."
+    content: "1,000 philosopher armies or 'Knights of the round table' elite will outsource and shape new governance."
   },
   {
     title: "Cashless > Designless > Constant",
@@ -55,7 +55,15 @@ const PREDICTIONS = [
   },
   {
     title: "AI as a Modern Voltaire",
-    content: "Someone or a squad will use AI to blast big ideas at folks crushed by control freaks in politics and religion. AI will spark the next wave."
+    content: "In ten years, someone or a squad will use AI to blast big ideas at folks crushed by control freaks in politics and religion. Hollywood built the American Dream; AI will spark the next wave."
+  },
+  {
+    title: "Death of TikTok & Instagram",
+    content: "Tiktok and instagram will die. They are already infected by ugly cash-out features like cheap e-stores, and livestreaming emoji gifts."
+  },
+  {
+    title: "Gaming Renaissance",
+    content: "Gaming will return."
   }
 ];
 
@@ -107,7 +115,7 @@ function PredictionRotator() {
   return (
     <div className="mb-12">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-zinc-800">Predictions</h3>
+        <h3 className="text-lg font-semibold text-amber-500">Golden Predictions</h3>
         <div className="flex gap-2">
           <button 
             onClick={prevPrediction} 
@@ -326,6 +334,11 @@ export default function ForeshadowEffectPage() {
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Mars</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             We'll have people living on Mars. Elon Musk and SpaceX's pioneering will pull through. It might not be glamorous, but it will happen. Competing efforts might come from China or AI, but Bezos will tap out. By that time, Elon will be irreversibly historic.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Space:</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            Rockets will be able to fly us anywhere across the globe in 30 minutes, Blue Origin will copy SpaceX but i predict they might tap out with competition from China, etc
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Digital Economy</h3>
