@@ -298,38 +298,47 @@ export default function ForeshadowEffectPage() {
           {/* Prediction Rotator Component */}
           <PredictionRotator />
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Decentralized Military & Security</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             I think there's a future where, like Bitcoin and network states, independent nodes will outsource military & civil protection tied to a governing unit of direction, or affiliations. It will be like subscribing to join, whether it's a network state subscribing or an individual or both. Decentralized fit young men will be commanded remotely. Safety drones with aimbot and sleeping darts will hover over your shoulder while you walk down the street in Manhattan in case a gunman walks up behind you.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Music</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             In the future, people will generate, curate, and listen to their own prompted base music on the fly. An individual will collect their own tracks to share like we do with pictures on Instagram now.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Physical Revolution</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             The traditional university role will be obsolete. Health will become more important. Learning will become more physical. Transportation renaissance and bio-medical renaissance.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Architectural Robots</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Like iPhones, Tesla humanoids will be everywhere. Cool new refinements will emerge, such as builder-bots, for really cool construction of architectural castles.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Individual Gods</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             AI generations will let a single person make things that used to take teams years. A single person will make a $1b movie or a new social app in a day. There will be someone like Bernini, who uses these tools to another factor, like Mr. Beast, with taste. Lately, I've been making AI-generated beats which are now indistinguishable from real ones.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Mars</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             We'll have people living on Mars. Elon Musk and SpaceX's pioneering will pull through. It might not be glamorous, but it will happen. Competing efforts might come from China or AI, but Bezos will tap out. By that time, Elon will be irreversibly historic.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Digital Economy</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Physical cash will be gone. Small digital payments, to AI for services like music or robots, will be common. Blockchain and cryptocurrencies, like Bitcoin's Lightning Network & Ethereum, will be used. Data control will warrant disputes.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Privacy Battles</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Privacy will be a major issue. AI advancements will be used to monitor electrical brain activity, especially in places like China. We'll be able to translate thoughts. Privacy policies will become more obviously important. By 2035, we'll see a divide: those who fought for truth versus those who were clinging to delusion.
           </p>
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Major Conflicts</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             The Foreshadow Effect warns of conflicts. With weapons everywhere and tensions high, we will see wars, cyberattacks, or unrest. My friend Anthony Haden-Guest's mother escaped the Gestapo, my reminder of how fast things can escalate. I'm preparing for this, though I expect hyper-teams like Palantirians to be good at neutralizing threats.
           </p>
