@@ -112,7 +112,7 @@ export default function ForeshadowEffectPage() {
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
           
           <p className="text-zinc-600 leading-relaxed mb-8 text-sm">
-            The Foreshadow Effect is my way of making sense of the world. History shows that weapons don't just sit idle; they get used, which makes me wary of future conflicts. At the same time, technology is moving at breakneck speed. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or the ability to understand what they don't understand. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
+            The Foreshadow Effect is my way of making sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned of future conflicts. At the same time, technology is moving at breakneck speed. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or the ability to understand what they don't understand. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
           </p>
           
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -128,11 +128,11 @@ export default function ForeshadowEffectPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Architectural Robots: Like iPhones, Tesla humanoids will be everywhere. My prediction is that cool new refinements emerge, such as builder-bots, for like, really cool construction of architecture.
+            Architectural Robots: Like iPhones, Tesla humanoids will be everywhere. My prediction is that cool new refinements emerge, such as builder-bots, for like, really cool construction of architectural castles.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Individual Gods: AI generations will let a make things that used to take teams years. A single person can make, a $1b movie, or a new social app in a day. I predict there will be someone like Bernini, who uses these tools to another factor, like, Mr. Beast, with taste. Lately i've been making ai generated beats which are now indistinguishable from real ones.
+            Individual Gods: AI generations will let a make things that used to take teams years. A single person can make, a $1b movie, or a new social app in a day. I predict there will be someone like Bernini, who uses these tools to another factor, like, Mr. Beast, with taste. Lately I've been making <a href="https://youtu.be/Di9Q3nytB_k" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">AI generated beats</a> which are now indistinguishable from real ones.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -144,7 +144,7 @@ export default function ForeshadowEffectPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Privacy Battles: Privacy will be a major issue. I predict AI advancements could be used to monitor say, electrical brain activity, especially in places like China. My X handle, killmefxster, reflects the risks of visibility. I've faced threats for speaking out. By 2035, we'll see a divide: those who fought for truth versus those who were clinging to delusion.
+            Privacy Battles: Privacy will be a major issue. I predict AI advancements could be used to monitor say, electrical brain activity, especially in places like China. I predict we'll be able to translate thoughts. So Privacy policies will become more obviously important. My X handle, killmefxster, reflects the risks of visibility. I've faced threats for speaking out. By 2035, we'll see a divide: those who fought for truth versus those who were clinging to delusion.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">

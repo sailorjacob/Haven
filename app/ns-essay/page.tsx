@@ -82,7 +82,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an ideal chart, in contrast to a<em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
+            Both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an ideal chart, in contrast to a <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
