@@ -51,7 +51,7 @@ const PREDICTIONS = [
   },
   {
     title: "Decentralized Military & Security",
-    content: "Whether it's a network state outsourcing or a subscription model for individuals or both. Decentralized fit young men could be commanded remotely. Safety drones with aimbot and sleeping darts will hover over your shoulder in Manhattan."
+    content: "Whether it's a network state outsourcing or a subscription model for individuals or both. Decentralized fit young men could be commanded remotely. Personal security drones with aimbot and sleeping darts could hover over you on a Manhattan street in case a gunman walks up."
   },
   {
     title: "AI as a Modern Voltaire",
@@ -281,7 +281,7 @@ export default function ForeshadowEffectPage() {
           
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Vision for the Future</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            In ten years, decentralized systems will reshape how we live and work. AI and cryptocurrency will power community-driven models. A superplatform like Haven will replace Netflix, Spotify, and Hollywood, backed by physical spots. X will handle payments. Be-loved.app and roundabout.run will boost transportation and automation. Branded digital currency will kill physical cash. Moonlight Garden's scalable setup will feed these communities. AI-generated media will dominate. Ethical factions, like a "1,000 philosopher army," will shape the rules.
+            Within ten years, decentralized systems will reshape how we live and work, with AI and cryptocurrency enabling community-driven models. A superplatform like Haven could replace netflix, spotify, and hollywood, supported by physical locations. X could sweep payments.  While be-loved.app and roundabout.run enhance transportation and automation. Branded digital currency will replace physical cash. Moonlight Garden's scalable model might start to replace McDonald's. AI-generated media will dominate, while ethical knights like a "1,000 philosopher army" can outsource governing frameworks.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">The Foreshadow Effect</h3>
@@ -298,47 +298,38 @@ export default function ForeshadowEffectPage() {
           {/* Prediction Rotator Component */}
           <PredictionRotator />
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Decentralized Military & Security</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Independent units will run military and civil protection, linked to governing crews or networks you join. Decentralized fit guys will take remote orders. Safety drones with aimbot and sleeping darts will hover over you on a Manhattan street if some gunman rolls up.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Music</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             People will whip up, curate, and jam to their own prompted beats on the fly, sharing tracks like Instagram pics.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Physical Revolution</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Old-school universities will flop. Health and hands-on learning will climb. Transportation and bio-medical breakthroughs will hit hard.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Architectural Robots</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Like iPhones, Tesla humanoids will flood the place. Builder-bots will raise architectural castles with fresh twists.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Individual Gods</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             AI will let one person build what used to take teams years—a $1b movie or a social app in a day. A taste-master like Bernini or Mr. Beast will go nuts with it. I've been cooking AI beats lately—can't tell they're not real.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Mars</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             People will live on Mars, thanks to Elon Musk and SpaceX. It'll be rough, but it'll happen. China or AI might compete, but Bezos is out. Elon's locked in history.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Digital Economy</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Physical cash will vanish. Tiny digital payments to AI for music or robots will be normal. Blockchain and crypto like Bitcoin's Lightning Network & Ethereum will roll. Data fights will flare up.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Privacy Battles</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Privacy will get hammered. AI will snoop brain waves, especially in places like China, turning thoughts into data. Privacy rules will matter big time. Kanye West said, "I don't think people are going to talk," and with AI, it might go quiet, tech-run. Nicole Benham called it a culture of silent assumptions. Andy Warhol's "15 minutes of fame" now means no one can stop anyone from knowing everything about you. Some will lean into selfies, TikToks, podcasts—won't date without a profile. Others, like Satoshi, will fight for shadows. Voltaire's secret writings dodged heavy laws; now we need room for those pushing back on total exposure.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Major Conflicts</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             The Foreshadow Effect screams trouble. Weapons everywhere, tensions jacked—wars, cyberattacks, or riots will hit. My buddy Anthony Haden-Guest's mom outran the Gestapo—proof things flip fast. I'm gearing up, hoping tech like Palantir's shuts it down.
           </p>
