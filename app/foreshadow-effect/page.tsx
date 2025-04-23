@@ -106,13 +106,13 @@ export default function ForeshadowEffectPage() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
           
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            The Foreshadow Effect, where things that stand out in my life today hint at what's coming. For instance, the abundant amount of weapons: Nukes, firearms, drones, and the right to bear arms. To me, that suggests inevitable major conflict in the future, like, be careful what you wish for.
+            The Foreshadow Effect, when things that stand out in my life today hint at what's coming. For instance, the abundant amount of weapons: guns, nukes, drones, and the right to bear arms. To me, it suggests inevitable invitation of conflict in the future, like, be careful what you wish for.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
           
           <p className="text-zinc-600 leading-relaxed mb-8 text-sm">
-            The Foreshadow Effect is my way of making sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned of future conflicts. At the same time, technology is moving at breakneck speed. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or the ability to understand what they don't understand. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
+            This has been a helpful way for me to make sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned for future conflicts. At the same time, technology is moving fast. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or the ability to understand what they don't understand. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
           </p>
           
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
