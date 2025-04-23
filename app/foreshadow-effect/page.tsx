@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 
-// Set a fixed target date: April 23, 2034 (10 years from an approximate "now")
-const TARGET_DATE = new Date('2034-04-23T00:00:00Z')
+// Set a fixed target date: April 22, 2035 at midnight
+const TARGET_DATE = new Date('2035-04-22T00:00:00Z')
 
 export default function ForeshadowEffectPage() {
   const [isPlaying, setIsPlaying] = useState(false)
