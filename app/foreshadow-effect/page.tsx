@@ -206,7 +206,7 @@ export default function ForeshadowEffectPage() {
 
   const handlePlayPause = () => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Wizard1.mp3')
+      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Kanye%20West%20x%20The%20Beatles.mp3')
       audioRef.current.onended = () => {
         setIsPlaying(false)
       }
