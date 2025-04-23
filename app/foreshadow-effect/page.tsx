@@ -341,12 +341,6 @@ export default function ForeshadowEffectPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">Supreme Leader of Iran tweets</p>
-              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
-                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
-              </div>
-            </div>
-            <div className="bg-zinc-100 p-4 rounded">
               <p className="text-zinc-800 text-sm font-medium mb-2">Kim Kardashian with a Tesla Optimus</p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
@@ -357,18 +351,6 @@ export default function ForeshadowEffectPage() {
               </div>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">Kanye West Presidential Announcement Tweet</p>
-              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
-                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
-              </div>
-            </div>
-            <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">AOC's Elon Heil Seig Assertion</p>
-              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
-                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
-              </div>
-            </div>
-            <div className="bg-zinc-100 p-4 rounded">
               <p className="text-zinc-800 text-sm font-medium mb-2">My facial recognition reverse image search</p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
@@ -376,12 +358,6 @@ export default function ForeshadowEffectPage() {
                   alt="Facial recognition reverse image search results" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-            </div>
-            <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
-              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
-                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
               </div>
             </div>
           </div>

@@ -128,6 +128,34 @@ export default function LetterPage() {
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             From a peaceful artist and rapper's conceptual presidential run, to the conceptual power of network states, these ideas cut a world of soft marble. My experience finding early talent, early trends, critiquing trends, and dreaming of freedom reveal my belief in a future where creativity and innovation are given credit. The <span className="font-medium text-zinc-800">Network State</span> is likely the vessel.
           </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Screenshots</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">Supreme Leader of Iran tweets</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">Kanye West Presidential Announcement Tweet</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">AOC's Elon Heil Seig Assertion</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
