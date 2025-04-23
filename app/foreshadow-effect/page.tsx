@@ -4,11 +4,13 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 
+// Set a fixed target date: April 23, 2034 (10 years from an approximate "now")
+const TARGET_DATE = new Date('2034-04-23T00:00:00Z')
+
 export default function ForeshadowEffectPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [timeLeft, setTimeLeft] = useState("")
-  const targetDateRef = useRef(new Date())
 
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
@@ -17,13 +19,9 @@ export default function ForeshadowEffectPage() {
   })
 
   useEffect(() => {
-    // Set target date to exactly 10 years from page load
-    targetDateRef.current = new Date()
-    targetDateRef.current.setFullYear(targetDateRef.current.getFullYear() + 10)
-
     const updateTimer = () => {
       const now = new Date()
-      const difference = targetDateRef.current.getTime() - now.getTime()
+      const difference = TARGET_DATE.getTime() - now.getTime()
 
       const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365.25))
       const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24))
@@ -59,7 +57,10 @@ export default function ForeshadowEffectPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 text-black whitespace-pre-line text-center">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 text-zinc-500 whitespace-pre-line text-center">
+        <div className="text-xl font-bold text-red-500 mb-2">
+          The World in 2035
+        </div>
         <div className="text-4xl font-bold tracking-wider" style={{ minWidth: '200px', letterSpacing: '0.1em' }}>
           {timeLeft}
         </div>
@@ -103,11 +104,9 @@ export default function ForeshadowEffectPage() {
             </h1>
           </div>
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
-
-          <h2 className="text-xl font-bold text-zinc-800 mb-4">Where the World Will Be in Ten Years</h2>
           
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            I have a concept I think of as the Foreshadow Effect, where things that stand out in my life today hint at what's coming. For instance, the simple amount of weapons: firearms, drones, the right to bear arms. To me, that suggests inevitable major conflict in the future, like, be careful what you wish for. While rapid advancements in AI and robotics point to a future of prosperity and abundance. This philosophy shapes my view of the world ten years out, holding onto optimism and caution.
+            The Foreshadow Effect, where things that stand out in my life today hint at what's coming. For instance, the abundant amount of weapons: Nukes, firearms, drones, and the right to bear arms. To me, that suggests inevitable major conflict in the future, like, be careful what you wish for.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
