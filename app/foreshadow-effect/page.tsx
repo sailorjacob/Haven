@@ -34,12 +34,12 @@ const PREDICTIONS = [
     content: "Gas stations, liquor stores, smoke shops, and fast food drive-thrus will largely go extinct. McDonald's will be replaced by a more nimble and healthier cloud-kitchen brand such as Moonlight Garden."
   },
   {
-    title: "Thought Reading AI",
+    title: "Thought Translation",
     content: "AI will be able to translate electric brain activity into translating thoughts, perhaps from even a security camera with special sensors. Facial recognition will be used in dirty ways. It will be a problem."
   },
   {
-    title: "Apple's Decline",
-    content: "Apple will lose its reign, somewhere along the line there'll be a fracturing of the App Store, and physical device monopoly. This could happen due to increasingly polarizing censorship policies."
+    title: "Apple:",
+    content: "Apple will lose its reign, somewhere along the line there'll be a fracturing of the App Store, and physical device monopoly. This could happen due to increasingly polarizing censorship policies. A company like X could have its robots pop out better new phones with a less restrictive ecosystem."
   },
   {
     title: "1,000 Philosopher Armies",
