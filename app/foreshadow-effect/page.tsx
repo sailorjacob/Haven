@@ -282,7 +282,7 @@ export default function ForeshadowEffectPage() {
           
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Vision for the Future</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            Within ten years, decentralized systems will reshape how we live and work, with AI and cryptocurrency enabling community-driven models. A superplatform like Haven could replace netflix, spotify, and hollywood, supported by physical locations. X could sweep payments.  While be-loved.app and roundabout.run enhance transportation and automation. Branded digital currency will replace physical cash. Moonlight Garden's scalable model might start to replace McDonald's. AI-generated media will dominate, while ethical units like "the 1,000 philosopher army" will outsource governing frameworks.
+            Within ten years, decentralized systems will reshape how we live and work, with AI and cryptocurrency enabling hyper-community models. A superplatform like Haven could replace netflix, spotify, and hollywood, supported by physical locations. X could sweep payments.  While be-loved.app and roundabout.run enhance transportation and automation. Branded digital currency will replace physical cash. Moonlight Garden's scalable model might start to replace McDonald's. AI-generated media will dominate, while ethical units like "the 1,000 philosopher army" will outsource governing frameworks.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">The Foreshadow Effect</h3>
