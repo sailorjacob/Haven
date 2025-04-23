@@ -367,13 +367,14 @@ export default function ForeshadowEffectPage() {
         >
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-6"></div>
           
-          <div className="w-full aspect-video mb-8">
-            <iframe
-              src="https://www.youtube.com/embed/Di9Q3nytB_k?modestbranding=1&rel=0"
-              className="w-full h-full rounded-sm"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+          <div className="w-full aspect-video mb-8 relative">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <img 
+                src="https://i0.wp.com/jacobhalestudio.net/wp-content/uploads/2024/11/kanye-beatles.jpg?w=592&ssl=1"
+                alt="Kanye West and The Beatles" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
           </div>
 
           <p className="text-zinc-600 italic mb-6 text-sm">
