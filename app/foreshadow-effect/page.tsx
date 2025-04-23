@@ -8,6 +8,7 @@ export default function ForeshadowEffectPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [timeLeft, setTimeLeft] = useState("")
+  const targetDateRef = useRef(new Date())
 
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
@@ -16,15 +17,16 @@ export default function ForeshadowEffectPage() {
   })
 
   useEffect(() => {
-    const targetDate = new Date()
-    targetDate.setFullYear(targetDate.getFullYear() + 10)
+    // Set target date to exactly 10 years from page load
+    targetDateRef.current = new Date()
+    targetDateRef.current.setFullYear(targetDateRef.current.getFullYear() + 10)
 
     const updateTimer = () => {
       const now = new Date()
-      const difference = targetDate.getTime() - now.getTime()
+      const difference = targetDateRef.current.getTime() - now.getTime()
 
-      const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365))
-      const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24))
+      const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365.25))
+      const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24))
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((difference % (1000 * 60)) / 1000)
@@ -57,8 +59,10 @@ export default function ForeshadowEffectPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 font-bold text-black whitespace-pre-line text-center">
-        {timeLeft}
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 text-black whitespace-pre-line text-center">
+        <div className="text-4xl font-bold tracking-wider" style={{ minWidth: '200px', letterSpacing: '0.1em' }}>
+          {timeLeft}
+        </div>
       </div>
       
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
@@ -99,6 +103,18 @@ export default function ForeshadowEffectPage() {
             </h1>
           </div>
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
+
+          <h2 className="text-xl font-bold text-zinc-800 mb-4">Where the World Will Be in Ten Years</h2>
+          
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            I have a concept I think of as the Foreshadow Effect, where things that stand out in my life today hint at what's coming. For instance, the simple amount of weapons: firearms, drones, the right to bear arms. To me, that suggests inevitable major conflict in the future, like, be careful what you wish for. While rapid advancements in AI and robotics point to a future of prosperity and abundance. This philosophy shapes my view of the world ten years out, holding onto optimism and caution.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
+          
+          <p className="text-zinc-600 leading-relaxed mb-8 text-sm">
+            The Foreshadow Effect is my way of making sense of the world. History shows that weapons don't just sit idle; they get used, which makes me wary of future conflicts. At the same time, technology is moving at breakneck speed. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or the ability to understand what they don't understand. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
+          </p>
           
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Decentralized Military: I think there's a future where, like bitcoin, and network states, independent nodes outsource military & civil protection tied to a governing unit of direction, or affiliations.
