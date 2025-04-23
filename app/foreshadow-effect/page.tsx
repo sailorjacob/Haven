@@ -10,44 +10,52 @@ const TARGET_DATE = new Date('2035-04-22T00:00:00Z')
 // Prediction data array
 const PREDICTIONS = [
   {
-    title: "Decentralized Systems",
-    content: "By 2035, we'll see decentralized military and protection services functioning like blockchain networks, with independent nodes tied to governing units. This shift will fundamentally change how security operates globally."
+    title: "Decentralized Communities",
+    content: "Digital-first groups will boom. Haven will hook people up in new ways."
   },
   {
-    title: "AI Revolution",
-    content: "The pace of AI advancement will solve complex problems that seem insurmountable today. However, access to this technology won't be evenly distributed, creating new social divides between those who can harness AI and those who cannot."
+    title: "AI Media",
+    content: "AI will crank out big chunks of media, top-notch, locked on blockchain."
   },
   {
-    title: "Creator Economy",
-    content: "Individual creators will harness AI to produce work that previously required teams of hundreds. A single person will be able to create billion-dollar movies or develop social platforms in days, not years. Personalized AI-generated music will replace traditional music consumption."
+    title: "Automation",
+    content: "Self-driving fleets and robots will run the show, tied to be-loved.app and Moonlight Garden."
   },
   {
-    title: "Physical Renaissance",
-    content: "As digital capabilities expand, physical experiences will become more valued. Education will shift toward embodied learning, traditional universities will transform or become obsolete, and transportation will undergo revolutionary changes focused on physical experience."
+    title: "Ethical Governance",
+    content: "Global crews will steer AI ethics, keeping it human-first."
   },
   {
-    title: "Architectural Revolution",
-    content: "Humanoid robots will become commonplace for construction, allowing fantastic architectural achievements that were previously impossible. New forms of buildings and spaces will emerge as AI and robotics remove current limitations."
+    title: "Western Admiration for Eastern Figures",
+    content: "Some slick leader from China or India will pull a cult vibe in the West—discipline, harmony, grit."
   },
   {
-    title: "Mars Colonization",
-    content: "By 2035, humans will be living on Mars, primarily through SpaceX's efforts. While early settlements won't be luxurious, they will represent humanity's first permanent foothold beyond Earth, cementing Elon Musk's historical legacy."
+    title: "Extinction of Traditional Retail",
+    content: "Gas stations, liquor stores, smoke shops, fast food drive-thrus—they're toast. Cloud-kitchen brands like Moonlight Garden, lean and healthy, will take over."
   },
   {
-    title: "Digital Economy Transformation",
-    content: "Physical cash will disappear entirely, replaced by micropayments for AI services, blockchain transactions, and cryptocurrencies. Bitcoin's Lightning Network and Ethereum will dominate, while new visual interfaces will make complex digital value transfers intuitive."
+    title: "AI Translating Thoughts",
+    content: "AI will read brain waves into thoughts, maybe off security cams with tricked-out sensors. Facial recognition will get dirty. It will be a problem."
   },
   {
-    title: "Privacy Battlegrounds",
-    content: "Privacy will become a critical issue as neural interfaces and thought-translation technologies emerge. Nations like China may pioneer brain activity monitoring, creating stark divisions between surveillance states and privacy havens. Truth-seeking will become increasingly dangerous yet necessary."
+    title: "Apple's Decline",
+    content: "Apple's done. App Store and device locks will crack from dumb censorship moves. X might drop better phones, freer systems."
   },
   {
-    title: "Conflict Zones",
-    content: "The abundance of advanced weapons today foreshadows inevitable conflicts. High-tension regions will see conventional warfare, while developed nations will experience sophisticated cyberattacks and social destabilization. Companies like Palantir may become crucial in neutralizing threats before they materialize."
+    title: "1,000 Philosopher Armies",
+    content: "Elites will farm out and mold new rule-sets. 'Knights of the Round Table' will emerge."
   },
   {
-    title: "Human Nature Constants",
-    content: "Despite technological leaps, human flaws like envy, conspiracy thinking, and tribal division will persist. Not everyone will have access to or understanding of transformative technologies, creating friction between advancing and traditional societies."
+    title: "Cashless > Designless > Constant",
+    content: "Physical cash and clunky crypto will die. Smooth payment trails will juice your AI."
+  },
+  {
+    title: "Advanced Security for Individuals",
+    content: "Security tech will level up and go personal. When being seen means risk."
+  },
+  {
+    title: "AI as a Modern Voltaire",
+    content: "Someone or a squad will use AI to blast big ideas at folks crushed by control freaks in politics and religion. AI will spark the next wave."
   }
 ];
 
@@ -99,7 +107,7 @@ function PredictionRotator() {
   return (
     <div className="mb-12">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-zinc-800">Key Predictions for 2035</h3>
+        <h3 className="text-lg font-semibold text-zinc-800">Predictions</h3>
         <div className="flex gap-2">
           <button 
             onClick={prevPrediction} 
@@ -271,13 +279,113 @@ export default function ForeshadowEffectPage() {
           </div>
           <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent mb-8"></div>
           
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Vision for the Future</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            The Foreshadow Effect describes how the significant elements of our present hint at major future events. By examining what's abundant or emphasized in current society, we can glimpse what might become crucial.
+            In ten years, decentralized systems will reshape how we live and work. AI and cryptocurrency will power community-driven models. A superplatform like Haven will replace Netflix, Spotify, and Hollywood, backed by physical spots. X will handle payments. Be-loved.app and roundabout.run will boost transportation and automation. Branded digital currency will kill physical cash. Moonlight Garden's scalable setup will feed these communities. AI-generated media will dominate. Ethical factions, like a "1,000 philosopher army," will shape the rules.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">The Foreshadow Effect</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            The Foreshadow Effect is my mental trick where stuff that pops out now hints at what's next. Take weapons—guns, nukes, drones, and the right to bear arms. They're everywhere, screaming future conflict. Be careful what you wish for.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            This model sorts out the world for me. History says weapons don't just sit there; they get used. That bugs me about what's coming. Tech's speeding up. Last night, I used Grok to crack a messy problem set in one go—different programs, me, all synced up. Blew my mind. This tech will fix everything. But it won't hit everyone the same. Human crap like envy, conspiracy, and doubt sticks around. Access stays uneven, and not everyone gets what they don't get. Tensions, migration, resources—they'll keep it chaotic. Still, I'm hopeful. Game-changers like Elon Musk or random heroes can pop up.
+            Ender's Game nails it for me. Ender, the top battle kid, got duped into a real war, thinking it was practice. Had to go hardcore against his nature. Now, someone that good might get stuck, blocked by systems. If you're the best at something, you should be lifted up, not held back.
           </p>
 
           {/* Prediction Rotator Component */}
           <PredictionRotator />
 
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Decentralized Military & Security</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            Independent units will run military and civil protection, linked to governing crews or networks you join. Decentralized fit guys will take remote orders. Safety drones with aimbot and sleeping darts will hover over you on a Manhattan street if some gunman rolls up.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Music</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            People will whip up, curate, and jam to their own prompted beats on the fly, sharing tracks like Instagram pics.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Physical Revolution</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            Old-school universities will flop. Health and hands-on learning will climb. Transportation and bio-medical breakthroughs will hit hard.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Architectural Robots</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            Like iPhones, Tesla humanoids will flood the place. Builder-bots will raise architectural castles with fresh twists.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Individual Gods</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            AI will let one person build what used to take teams years—a $1b movie or a social app in a day. A taste-master like Bernini or Mr. Beast will go nuts with it. I've been cooking AI beats lately—can't tell they're not real.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Mars</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            People will live on Mars, thanks to Elon Musk and SpaceX. It'll be rough, but it'll happen. China or AI might compete, but Bezos is out. Elon's locked in history.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Digital Economy</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            Physical cash will vanish. Tiny digital payments to AI for music or robots will be normal. Blockchain and crypto like Bitcoin's Lightning Network & Ethereum will roll. Data fights will flare up.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Privacy Battles</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            Privacy will get hammered. AI will snoop brain waves, especially in places like China, turning thoughts into data. Privacy rules will matter big time. Kanye West said, "I don't think people are going to talk," and with AI, it might go quiet, tech-run. Nicole Benham called it a culture of silent assumptions. Andy Warhol's "15 minutes of fame" now means no one can stop anyone from knowing everything about you. Some will lean into selfies, TikToks, podcasts—won't date without a profile. Others, like Satoshi, will fight for shadows. Voltaire's secret writings dodged heavy laws; now we need room for those pushing back on total exposure.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Major Conflicts</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            The Foreshadow Effect screams trouble. Weapons everywhere, tensions jacked—wars, cyberattacks, or riots will hit. My buddy Anthony Haden-Guest's mom outran the Gestapo—proof things flip fast. I'm gearing up, hoping tech like Palantir's shuts it down.
+          </p>
+
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Screenshots</h3>
+          <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
+            I'll slap screenshots at the bottom or in the mix:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">Supreme Leader of Iran tweets</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">Kim Kardashian with a Tesla Optimus</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">Kanye West Presidential Announcement Tweet</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">AOC's Elon Heil Seig Assertion</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">My facial recognition reverse image search</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+            <div className="bg-zinc-100 p-4 rounded">
+              <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
+              <div className="h-32 flex items-center justify-center bg-zinc-200 rounded">
+                <p className="text-xs text-zinc-500 italic">Image placeholder</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
