@@ -128,6 +128,7 @@ function PredictionRotator() {
 
 export default function NSPredictionsPage() {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isCountdownVisible, setIsCountdownVisible] = useState(true)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [timeLeft, setTimeLeft] = useState("")
   const [scrollY, setScrollY] = useState(0)
@@ -210,16 +211,27 @@ export default function NSPredictionsPage() {
     }
   }
 
+  const toggleCountdownVisibility = () => {
+    setIsCountdownVisible(prev => !prev);
+  };
+
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 text-zinc-500 whitespace-pre-line text-center">
+      <motion.div 
+        className="fixed left-8 top-1/2 -translate-y-1/2 z-50 text-zinc-500 whitespace-pre-line text-center cursor-pointer"
+        animate={{ 
+          opacity: isCountdownVisible ? 1 : 0
+        }}
+        transition={{ duration: 0.4 }}
+        onClick={toggleCountdownVisibility}
+      >
         <div className="text-xl font-bold text-red-500 mb-2">
           The World in 2035
         </div>
         <div className="text-4xl font-bold tracking-wider" style={{ minWidth: '200px', letterSpacing: '0.1em' }}>
           {timeLeft}
         </div>
-      </div>
+      </motion.div>
       
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
