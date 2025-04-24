@@ -16,9 +16,9 @@ interface FlyingBeeProps {
 const FlyingBee = ({ delay, duration, imgSrc }: FlyingBeeProps) => {
   return (
     <motion.div
-      className="absolute z-10"
-      initial={{ bottom: "5%", right: "5%", opacity: 0 }}
-      animate={{ bottom: "80%", right: "5%", opacity: [0, 1, 1, 0] }}
+      className="fixed z-10"
+      initial={{ bottom: "10vh", right: "10vw", opacity: 0 }}
+      animate={{ bottom: "30vh", right: "80vw", opacity: [0, 1, 1, 0] }}
       transition={{ 
         duration: duration, 
         delay: delay,
