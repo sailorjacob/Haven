@@ -138,6 +138,10 @@ export default function StoryContent() {
             className="overflow-hidden w-full px-2 sm:px-0"
           >
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
+              Ender's Game, is my favorite book. Ender was the best battle student, tricked into fighting a real war thinking it was a simulation, forced to be more ruthless than his natural state. Today, someone like Ender might know they're the best but be blocked by systems at every turn. I think there could be many cases where an individual is the best in the world at something—they should be championed, not nerfed.
+            </p>
+            
+            <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
               I helped shape the business model for Fooji, a multi-million dollar ad startup, by leveraging Vine's early days. We were interviewed by Robert Scoble. I find talent and trends early. I've worked in LA's music scene, sleeping on couches to support artists like Kevin George, and in New York's art world, rubbing shoulders with figures like Travis Scott. My photography has been featured in The Times, and I've designed for major artists and others.
             </p>
             

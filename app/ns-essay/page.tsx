@@ -194,6 +194,19 @@ export default function LetterPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
+      {/* Video section */}
+      <div className="w-full max-w-2xl mx-auto mb-8">
+        <div className="relative">
+          <video 
+            src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//KanyexTrump.mp4" 
+            className="w-full rounded-lg shadow-md" 
+            controls
+            playsInline
+          />
+          <p className="text-center text-zinc-400 text-sm mt-2">Our best export is entertainment and ideas.</p>
+        </div>
+      </div>
+
       {/* Add floating sentences */}
       <ClientOnly>
         <FloatingSentence />
