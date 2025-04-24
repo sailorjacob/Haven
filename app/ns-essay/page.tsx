@@ -177,7 +177,7 @@ export default function LetterPage() {
 
   const handlePlayPause = () => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Wizard1.mp3')
+      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//NSESSAY.mp3')
       audioRef.current.onended = () => {
         setIsPlaying(false)
       }
@@ -224,11 +224,11 @@ export default function LetterPage() {
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-zinc-500 font-bold">{essayDate}</p>
             <div className="flex items-center gap-2">
-              <p className="text-sm text-zinc-600 mr-3">Wizard by Lucas Lex</p>
+              <p className="text-sm text-zinc-600 mr-3">Play</p>
               <button 
                 onClick={handlePlayPause}
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
-                aria-label={isPlaying ? "Pause audio" : "Play audio"}
+                aria-label={isPlaying ? "Pause audio" : "Play article narration"}
               >
                 <svg 
                   className="w-5 h-5 text-zinc-700" 
@@ -275,7 +275,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            When Taylor Swift applauded Kendrick Lamar's Super Bowl halftime performance show naming Drake a pedophile, in front of a nation. She voted for a messy side in the War against Truth. Kendrick Lamar's 'Not Like Us' was also referenced with a wink by Kamala Harris during her 2024 election race. Saying, 'I hear they're not like us' similar to when she said 'We need to be  more woke.' Drake's new lawsuit against his own label, UMG, for promoting the song, which resulted in people shooting up his house - reveals the danger in this. For the lawsuit, my bets are on the side closer to truth. And so far, time has been on my side, with a veteran like Kanye setting his opinion and the record straight in high level thought. There's a real difference in caliber here, when I compare people landing on opposite ends of the issue. These cognitive, moral, perceptual litmus tests are a strong navigating force.
+            When Taylor Swift applauded Kendrick Lamar's Super Bowl halftime performance show naming Drake a pedophile, in front of a nation. She voted for a messy side in the War against Truth. Kendrick Lamar's 'Not Like Us' was also referenced with a wink by Kamala Harris during her 2024 election race. Saying, 'I hear they're not like us' similar to when she said 'We need to be  more woke.' <a href="https://www.nytimes.com/athletic/6290727/2025/04/18/drake-defemation-lawsuit-umg-super-bowl-lix/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Drake's new lawsuit against his own label, UMG, for promoting the song</a>, which resulted in people shooting up his house - reveals the danger in this. For the lawsuit, my bets are on the side closer to truth. And so far, time has been on my side, with a veteran like Kanye setting his opinion and the record straight in high level thought. There's a real difference in caliber here, when I compare people landing on opposite ends of the issue. These cognitive, moral, perceptual litmus tests are a strong navigating force.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -312,21 +312,21 @@ export default function LetterPage() {
             There's no college or school cirriculum talking about how to manage your online following, who to keep up with for the rest of your life. The average person only really gets to know 800 people by name in a lifetime. A family member of mine told me X is an echo chamber. I think, how? I can see what the Supreme Leader of Iran is posting today, foreign citizens comments below it, or an ex-girlfriend's retweets.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            From a peaceful artist and rapper's conceptual presidential run, to the conceptual power of network states, these ideas cut a world of soft marble. My experience finding early talent, early trends, critiquing trends, and dreaming of freedom reveal my belief in a future where creativity and innovation are given credit. The <span className="font-medium text-zinc-800">Network State</span> is likely the vessel.
+            From a peaceful artist and rapper's conceptual presidential run, to the conceptual power of network states, these ideas cut a world of soft marble. My experience finding early talent, early trends, critiquing trends, and dreaming of freedom reveal my belief in a future where creativity and innovation are given credit.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Screenshots</h3>
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Images</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div className="bg-zinc-100 p-4 rounded">
               <p className="text-zinc-800 text-sm font-medium mb-2">
-                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  The Supreme Leader of Iran X
+                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  The Dunning-Kruger Effect Chart
                 </a>
               </p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" 
-                  alt="The Supreme Leader of Iran X" 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
+                  alt="The Dunning-Kruger Effect Chart" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -361,14 +361,14 @@ export default function LetterPage() {
             </div>
             <div className="bg-zinc-100 p-4 rounded">
               <p className="text-zinc-800 text-sm font-medium mb-2">
-                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  The Dunning-Kruger Effect Chart
+                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  The Supreme Leader of Iran X
                 </a>
               </p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
-                  alt="The Dunning-Kruger Effect Chart" 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" 
+                  alt="The Supreme Leader of Iran X" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -415,6 +415,11 @@ export default function LetterPage() {
               <li>
                 <a href="https://www.theguardian.com/news/2002/oct/16/guardianobituaries.nicholasdejongh" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
                   Guardian obituary of Elisabeth Furse, mother of Anthony Haden-Guest
+                </a>
+              </li>
+              <li>
+                <a href="https://www.nytimes.com/athletic/6290727/2025/04/18/drake-defemation-lawsuit-umg-super-bowl-lix/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  New York Times article on Drake's defamation lawsuit against UMG
                 </a>
               </li>
             </ul>
