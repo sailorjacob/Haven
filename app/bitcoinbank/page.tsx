@@ -16,9 +16,13 @@ interface FlyingBeeProps {
 const FlyingBee = ({ delay, duration, imgSrc }: FlyingBeeProps) => {
   return (
     <motion.div
-      className="fixed z-10"
-      initial={{ bottom: "10vh", right: "10vw", opacity: 0 }}
-      animate={{ bottom: "30vh", right: "80vw", opacity: [0, 1, 1, 0] }}
+      className="fixed z-20"
+      initial={{ bottom: `${15 + Math.random() * 40}vh`, right: "5vw", opacity: 0 }}
+      animate={{ 
+        bottom: `${25 + Math.random() * 50}vh`, 
+        right: "95vw", 
+        opacity: [0, 1, 1, 0] 
+      }}
       transition={{ 
         duration: duration, 
         delay: delay,
@@ -29,9 +33,9 @@ const FlyingBee = ({ delay, duration, imgSrc }: FlyingBeeProps) => {
       <Image
         src={imgSrc}
         alt="Flying Bee"
-        width={30}
-        height={30}
-        className="transform rotate-45"
+        width={50}
+        height={50}
+        className="transform rotate-12"
       />
     </motion.div>
   );
@@ -50,10 +54,10 @@ export default function BitcoinBankPage() {
 
   // Generate flying bees with random delays and durations
   const flyingBees = useMemo(() => {
-    return Array.from({ length: 5 }, (_, i) => ({
+    return Array.from({ length: 7 }, (_, i) => ({
       id: i,
-      delay: Math.random() * 2, // Random delay between 0-2 seconds
-      duration: 3 + Math.random() * 2, // Random duration between 3-5 seconds
+      delay: 0.2 + (i * 0.4), // Staggered delays: 0.2, 0.6, 1.0, 1.4, etc.
+      duration: 4 + Math.random() * 2, // Random duration between 4-6 seconds
       imgSrc: beeImages[Math.floor(Math.random() * beeImages.length)]
     }));
   }, [beeImages]);
