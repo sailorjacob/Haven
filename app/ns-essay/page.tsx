@@ -15,7 +15,7 @@ const SENTENCES = [
   "There are 8 million uber drivers, and 12 million global prisoners incarcerated.",
   "The United States is 4% of the world's population, and since I was born, the global population has increased = 38.9352%",
   "There are are roughly 2700 billionaires, I've met one and crossed paths with a couple others.",
-  "I've also crossed paths with some of the most unique artists in the world too.",
+  "I've crossed paths with some of the most unique artists in the world.",
   "I think about these numbers all the time."
 ];
 
@@ -328,6 +328,11 @@ export default function LetterPage() {
               <li>
                 <a href="https://archive.vanityfair.com/article/1988/11/burning-out" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
                   Basquiat's last interview
+                </a>
+              </li>
+              <li>
+                <a href="https://www.theguardian.com/news/2002/oct/16/guardianobituaries.nicholasdejongh" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  Guardian obituary of Elisabeth Furse, mother of Anthony Haden-Guest
                 </a>
               </li>
             </ul>
