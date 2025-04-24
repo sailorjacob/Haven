@@ -138,7 +138,7 @@ export default function StoryContent() {
             className="overflow-hidden w-full px-2 sm:px-0"
           >
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              I helped shape the business model for Fooji, a multi-million dollar ad startup, by leveraging Vine's early days. We were interviewed by Robert Scoble. I find talent and trends early. I've worked in LA's music scene, sleeping on couches to support artists like Kevin George, and in New York's art world, rubbing shoulders with figures like Travis Scott. My photography has been featured in The Times, and I've designed for major artists and others.
+              I helped shape the business model for Fooji, a multi-million dollar ad startup, by leveraging Vine's early days. We were interviewed by Robert Scoble. I find talent and trends early. I've worked in LA's music scene, sleeping on couches to support artists like Kevin George, and in New York's art world, learning from Andy Warhol's old friends. My photography has been featured in The Times, and I've designed for major artists and others.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
