@@ -65,7 +65,7 @@ export default function LandingPage() {
           className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16"
         >
           <FeatureBox 
-            title="art galleries" 
+            title="art gallery network" 
             description="emulating prestigious galleries like gagosian, our spaces showcase cutting-edge contemporary art and digital media, redefining the intersection of technology and artistic expression."
           />
           <FeatureBox 
@@ -82,14 +82,16 @@ export default function LandingPage() {
           />
           <div className="group relative block md:col-span-2">
             <div className="bg-zinc-850 p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-800">
-              <Link href="/bitcoinbank" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
-                bitcoin bank <span className="ml-1">→</span>
-              </Link>
+              <span className="text-zinc-400">bitcoin bank</span>
             </div>
             
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
               <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-800/90 p-4 shadow-xl backdrop-blur-sm rounded-sm">
-                <p className="text-xs text-zinc-400 leading-relaxed">Haven's Bee's - branded transactions</p>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  <Link href="/bitcoinbank" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
+                    Haven's Bee's - branded transactions <span className="ml-1">→</span>
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
