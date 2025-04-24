@@ -275,6 +275,10 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
+            When Taylor Swift applauded Kendrick Lamar's Super Bowl halftime performance show calling Drake a pedophile, in front of a nation, she voted for the wrong side in the War against Truth, in front of an entire nation. Kendrick Lamar's 'Not Like Us' was also referenced with a wink by Kamala Harris during her 2024 Election Run. Saying 'I hear they're not like us' similar to when she said 'We need to be woke.' Drake's new lawsuit against his own label, UMG, for promoting the song, which resulted in people shooting up his house - reveals the dangers to this. For the lawsuit, my bets are on the side closer to truth. And so far, time has been on my side, with a veteran like Kanye setting his opinion and the record straight in high level thought. There's a real difference in caliber here, when I compare people landing on opposite ends of the issue. These cognitive, moral, perceptual litmus tests are a strong navigating force.
+          </p>
+
+          <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             Small actions can yield profound impacts. For Kanye, 'Putting on the red hat' is his version of being Rosa Parks, or Socrates in his commitment to truth. A few years back, I shot a music video for, and gave my old laptop to a 15-year-old aspiring artist. He used it to make a song that has over <a href="https://open.spotify.com/track/2uxOJ85W5IkKNOMTAGwq6p?si=7b0f339620f64338" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">11 million Spotify streams</span></a>. Turning a $500 donation into $50,000 of value.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
