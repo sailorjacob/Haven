@@ -66,61 +66,10 @@ const PREDICTIONS = [
 
 // Prediction Rotator Component
 function PredictionRotator() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isExpanded, setIsExpanded] = useState(true);
-  const [showAllPredictions, setShowAllPredictions] = useState(false);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
-
-  const nextPrediction = () => {
-    setCurrentIndex((prev) => (prev + 1) % PREDICTIONS.length);
-  };
-
-  const prevPrediction = () => {
-    setCurrentIndex((prev) => (prev - 1 + PREDICTIONS.length) % PREDICTIONS.length);
-  };
-
-  const resetAutoPlay = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-    }
-    
-    if (isAutoPlaying && isExpanded && !showAllPredictions) {
-      autoPlayRef.current = setInterval(() => {
-        nextPrediction();
-      }, 8000);
-    }
-  };
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
     setIsExpanded(prev => !prev);
-    setShowAllPredictions(prev => !prev);
-  };
-
-  const handleDotClick = (index: number) => {
-    setCurrentIndex(index);
-    resetAutoPlay();
-  };
-
-  useEffect(() => {
-    resetAutoPlay();
-    
-    return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
-      }
-    };
-  }, [isAutoPlaying, currentIndex, isExpanded, showAllPredictions]);
-
-  const toggleAutoPlay = () => {
-    setIsAutoPlaying(prev => !prev);
-  };
-
-  const handleClick = () => {
-    if (!showAllPredictions) {
-      nextPrediction();
-      resetAutoPlay();
-    }
   };
 
   return (
@@ -142,106 +91,34 @@ function PredictionRotator() {
             </svg>
           </button>
         </div>
-        {isExpanded && !showAllPredictions && (
-          <div className="flex gap-2">
-            <button 
-              onClick={prevPrediction} 
-              className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
-              aria-label="Previous prediction"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button 
-              onClick={toggleAutoPlay} 
-              className={`w-8 h-8 rounded-full flex items-center justify-center ${isAutoPlaying ? 'bg-zinc-300' : 'bg-zinc-200'} hover:bg-zinc-300 transition-colors`}
-              aria-label={isAutoPlaying ? "Pause auto-rotation" : "Start auto-rotation"}
-            >
-              {isAutoPlaying ? (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/>
-                  <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>
-                </svg>
-              ) : (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 5V19L19 12L5 5Z" fill="currentColor"/>
-                </svg>
-              )}
-            </button>
-            <button 
-              onClick={nextPrediction} 
-              className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 transition-colors"
-              aria-label="Next prediction"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        )}
       </div>
 
       <motion.div 
-        className="overflow-hidden"
+        className="overflow-hidden bg-zinc-100/50 rounded"
+        initial={{ height: 0, opacity: 0 }}
         animate={{ 
-          height: isExpanded ? (showAllPredictions ? `${PREDICTIONS.length * 6}rem` : "12rem") : "0",
+          height: isExpanded ? "auto" : 0,
           opacity: isExpanded ? 1 : 0,
           marginBottom: isExpanded ? "1.5rem" : "0"
         }}
-        transition={{ duration: 0.4 }}
+        transition={{ 
+          type: "spring", 
+          stiffness: 300, 
+          damping: 30
+        }}
       >
-        {showAllPredictions ? (
-          <div className="bg-zinc-100/50 rounded p-6 space-y-6">
-            {PREDICTIONS.map((prediction, idx) => (
-              <div key={idx} className="pb-4 border-b border-zinc-200 last:border-0">
-                <h4 className="text-lg font-semibold text-zinc-800 mb-2">
-                  {prediction.title}
-                </h4>
-                <p className="text-zinc-600 text-base leading-relaxed">
-                  {prediction.content}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div 
-            className="h-48 relative overflow-hidden bg-zinc-100/50 rounded p-6 cursor-pointer"
-            onClick={handleClick}
-          >
-            <div className="absolute inset-x-0 bottom-2 flex justify-center gap-1">
-              {PREDICTIONS.map((_, idx) => (
-                <div 
-                  key={idx} 
-                  className={`w-2 h-2 rounded-full cursor-pointer ${idx === currentIndex ? 'bg-zinc-400' : 'bg-zinc-200'}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDotClick(idx);
-                  }}
-                />
-              ))}
+        <div className="p-6 space-y-6">
+          {PREDICTIONS.map((prediction, idx) => (
+            <div key={idx} className="pb-4 border-b border-zinc-200 last:border-0">
+              <h4 className="text-lg font-semibold text-zinc-800 mb-2">
+                {prediction.title}
+              </h4>
+              <p className="text-zinc-600 text-base leading-relaxed">
+                {prediction.content}
+              </p>
             </div>
-            
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="h-full flex flex-col justify-center items-center text-center"
-              >
-                {/* Title is hidden */}
-                <h4 className="text-lg font-semibold text-zinc-800 mb-3 hidden">
-                  {PREDICTIONS[currentIndex].title}
-                </h4>
-                <p className="text-zinc-600 text-base leading-relaxed">
-                  {PREDICTIONS[currentIndex].content}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        )}
+          ))}
+        </div>
       </motion.div>
     </div>
   );
