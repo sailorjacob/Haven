@@ -243,12 +243,12 @@ export default function ForeshadowEffectPage() {
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Decentralized Military & Security</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            I think there's a future where, like Bitcoin and network states, independent nodes will outsource military & civil protection tied to a governing unit of direction, or affiliations. It will be like subscribing to join, whether it's a network state subscribing or an individual or both. Decentralized fit young men will be commanded remotely. Safety drones with aimbot and sleeping darts will hover over your shoulder while you walk down the street in Manhattan in case a gunman walks up behind you.
+            I think there's a future where, like Bitcoin and network states, independent nodes will outsource military & civil protection tied to a governing unit of direction, or affiliations. It will be like subscribing to join, whether it's a network state subscribing or an individual or both.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Music</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            In the future, people will generate, curate, and listen to their own prompted base music on the fly. An individual will collect their own tracks to share like we do with pictures on Instagram now.
+            In the future, people will generate, curate, and listen to their own prompted music on the fly. An individual will collect their own tracks to share like we do with pictures on Instagram now.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Physical Revolution</h3>
