@@ -69,6 +69,7 @@ function PredictionRotator() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isExpanded, setIsExpanded] = useState(true);
+  const [showAllPredictions, setShowAllPredictions] = useState(false);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextPrediction = () => {
@@ -84,7 +85,7 @@ function PredictionRotator() {
       clearInterval(autoPlayRef.current);
     }
     
-    if (isAutoPlaying && isExpanded) {
+    if (isAutoPlaying && isExpanded && !showAllPredictions) {
       autoPlayRef.current = setInterval(() => {
         nextPrediction();
       }, 8000);
@@ -93,6 +94,12 @@ function PredictionRotator() {
 
   const toggleExpand = () => {
     setIsExpanded(prev => !prev);
+    setShowAllPredictions(prev => !prev);
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+    resetAutoPlay();
   };
 
   useEffect(() => {
@@ -103,15 +110,17 @@ function PredictionRotator() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [isAutoPlaying, currentIndex, isExpanded]);
+  }, [isAutoPlaying, currentIndex, isExpanded, showAllPredictions]);
 
   const toggleAutoPlay = () => {
     setIsAutoPlaying(prev => !prev);
   };
 
   const handleClick = () => {
-    nextPrediction();
-    resetAutoPlay();
+    if (!showAllPredictions) {
+      nextPrediction();
+      resetAutoPlay();
+    }
   };
 
   return (
@@ -133,7 +142,7 @@ function PredictionRotator() {
             </svg>
           </button>
         </div>
-        {isExpanded && (
+        {isExpanded && !showAllPredictions && (
           <div className="flex gap-2">
             <button 
               onClick={prevPrediction} 
@@ -176,43 +185,63 @@ function PredictionRotator() {
       <motion.div 
         className="overflow-hidden"
         animate={{ 
-          height: isExpanded ? "12rem" : "0",
+          height: isExpanded ? (showAllPredictions ? `${PREDICTIONS.length * 6}rem` : "12rem") : "0",
           opacity: isExpanded ? 1 : 0,
           marginBottom: isExpanded ? "1.5rem" : "0"
         }}
         transition={{ duration: 0.4 }}
       >
-        <div 
-          className="h-48 relative overflow-hidden bg-zinc-100/50 rounded p-6 cursor-pointer"
-          onClick={handleClick}
-        >
-          <div className="absolute bottom-2 right-2 flex gap-1">
-            {PREDICTIONS.map((_, idx) => (
-              <div 
-                key={idx} 
-                className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-zinc-400' : 'bg-zinc-200'}`}
-              />
+        {showAllPredictions ? (
+          <div className="bg-zinc-100/50 rounded p-6 space-y-6">
+            {PREDICTIONS.map((prediction, idx) => (
+              <div key={idx} className="pb-4 border-b border-zinc-200 last:border-0">
+                <h4 className="text-lg font-semibold text-zinc-800 mb-2">
+                  {prediction.title}
+                </h4>
+                <p className="text-zinc-600 text-base leading-relaxed">
+                  {prediction.content}
+                </p>
+              </div>
             ))}
           </div>
-          
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="h-full flex flex-col justify-center items-center text-center"
-            >
-              <h4 className="text-lg font-semibold text-zinc-800 mb-3">
-                {PREDICTIONS[currentIndex].title}
-              </h4>
-              <p className="text-zinc-600 text-base leading-relaxed">
-                {PREDICTIONS[currentIndex].content}
-              </p>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        ) : (
+          <div 
+            className="h-48 relative overflow-hidden bg-zinc-100/50 rounded p-6 cursor-pointer"
+            onClick={handleClick}
+          >
+            <div className="absolute inset-x-0 bottom-2 flex justify-center gap-1">
+              {PREDICTIONS.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`w-2 h-2 rounded-full cursor-pointer ${idx === currentIndex ? 'bg-zinc-400' : 'bg-zinc-200'}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDotClick(idx);
+                  }}
+                />
+              ))}
+            </div>
+            
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="h-full flex flex-col justify-center items-center text-center"
+              >
+                {/* Title is hidden */}
+                <h4 className="text-lg font-semibold text-zinc-800 mb-3 hidden">
+                  {PREDICTIONS[currentIndex].title}
+                </h4>
+                <p className="text-zinc-600 text-base leading-relaxed">
+                  {PREDICTIONS[currentIndex].content}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        )}
       </motion.div>
     </div>
   );
