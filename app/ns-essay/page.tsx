@@ -1,8 +1,114 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useAnimation, PanInfo } from "framer-motion"
 import Link from "next/link"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
+
+// Random sentences to display
+const SENTENCES = [
+  "The average person only gets to know 800 people by name.",
+  "There is a 2 billion Muslim population contrasting a 15 million global jewish population.",
+  "The slain rapper XXXTENTACION still has 33 million monthly Spotify listeners.",
+  "700 million people live on a $2 international equivalence a day.",
+  "Elon has 200 million followers and 7 million people a year die from cigarettes.",
+  "200,000 people were killed by the atomic bomb, and 1,000 are falling casualties every day on the Ukraine / Russia front.",
+  "There are 8 million uber drivers, and 12 million global prisoners incarcerated.",
+  "The United States is 4% of the world's population, and since I was born, the global population has increased = 38.9352%",
+  "There are are roughly 2700 billionaires, I've met one and crossed paths with a couple others.",
+  "I've also crossed paths with some of the most unique artists in the world too.",
+  "I think about these numbers all the time."
+];
+
+// Floating sentence component
+function FloatingSentence() {
+  const [visible, setVisible] = useState(false);
+  const [sentence, setSentence] = useState("");
+  const [position, setPosition] = useState<{ top: string; left?: string; right?: string; bottom?: string }>({ 
+    top: "0px", 
+    left: "0px" 
+  });
+  const controls = useAnimation();
+  
+  // Get a random sentence
+  const getRandomSentence = () => {
+    const randomIndex = Math.floor(Math.random() * SENTENCES.length);
+    return SENTENCES[randomIndex];
+  };
+  
+  // Get a random position along the edges
+  const getRandomPosition = () => {
+    const positions = [
+      // Top edge
+      { top: "20px", left: `${Math.random() * 60 + 20}%` },
+      // Left edge
+      { top: `${Math.random() * 60 + 20}%`, left: "20px" },
+      // Right edge
+      { top: `${Math.random() * 60 + 20}%`, right: "20px" }
+    ];
+    return positions[Math.floor(Math.random() * positions.length)];
+  };
+  
+  // Handle drag end
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const velocity = Math.sqrt(info.velocity.x ** 2 + info.velocity.y ** 2);
+    
+    // If thrown with enough force, remove it
+    if (velocity > 500) {
+      controls.start({
+        x: info.velocity.x > 0 ? 1000 : -1000,
+        y: info.velocity.y > 0 ? 1000 : -1000,
+        opacity: 0,
+        transition: { duration: 0.5 }
+      }).then(() => {
+        setVisible(false);
+        // Wait before showing the next one
+        setTimeout(showNewSentence, 1500);
+      });
+    }
+  };
+  
+  // Show a new sentence
+  const showNewSentence = () => {
+    setSentence(getRandomSentence());
+    setPosition(getRandomPosition());
+    setVisible(true);
+    controls.set({ x: 0, y: 0, opacity: 0 });
+    controls.start({ opacity: 1, transition: { duration: 1 } });
+  };
+  
+  // Initial setup
+  useEffect(() => {
+    // Show the first sentence after a delay
+    const timeout = setTimeout(showNewSentence, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
+  
+  if (!visible) return null;
+  
+  return (
+    <motion.div
+      drag
+      dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
+      dragElastic={0.1}
+      onDragEnd={handleDragEnd}
+      animate={controls}
+      className="fixed z-40 max-w-xs cursor-grab active:cursor-grabbing"
+      style={{
+        fontFamily: "var(--font-caveat)",
+        fontSize: '18px',
+        color: '#555',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        padding: '10px 15px',
+        borderRadius: '8px',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)',
+        userSelect: 'none',
+        ...position
+      }}
+    >
+      {sentence}
+    </motion.div>
+  );
+}
 
 export default function LetterPage() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -33,6 +139,11 @@ export default function LetterPage() {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
+      {/* Add floating sentences */}
+      <FloatingSentence />
+      <FloatingSentence />
+      <FloatingSentence />
+      
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
