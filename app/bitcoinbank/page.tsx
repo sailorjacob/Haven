@@ -69,7 +69,7 @@ export default function BitcoinBankPage() {
           </div>
           
           <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-6">
-            A secure and intuitive platform for managing your bitcoin assets. Built with modern security practices and a focus on user experience.
+            A secure and intuitive platform for design on top of bitcoin assets. Built with modern security practices and a focus on user experience.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
