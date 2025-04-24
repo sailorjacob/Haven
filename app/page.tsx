@@ -8,8 +8,8 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-zinc-900 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono">
       <div className="container max-w-4xl mx-auto">
-        <div className="flex justify-between items-start mb-12">
-          <div className="w-1/2 text-right pr-4">
+        <div className="flex justify-between items-start mb-12 w-full">
+          <div className="flex-1 flex justify-start">
             <div className="group relative inline-block">
               <Link
                 href="/moonlight-garden"
@@ -25,7 +25,7 @@ export default function LandingPage() {
             </div>
           </div>
           
-          <div className="w-1/2 text-left pl-4">
+          <div className="flex-1 flex justify-end">
             <div className="group relative inline-block">
               <Link
                 href="https://roundabout.run"
