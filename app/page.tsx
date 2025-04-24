@@ -80,9 +80,11 @@ export default function LandingPage() {
             title="superplatform" 
             description="a comprehensive digital ecosystem combining a full-service production hub rivaling hollywood studios, a curated music experience that connects artists directly with their audience, and a netflix-caliber streaming service delivering premium original content. all focused on innovative storytelling that reflects our community's diverse perspectives."
           />
-          <Link href="/bitcoinbank" className="group relative block md:col-span-2">
+          <div className="group relative block md:col-span-2">
             <div className="bg-zinc-850 p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-800">
-              <span className="text-zinc-400">bitcoin bank</span>
+              <Link href="/bitcoinbank" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
+                bitcoin bank <span className="ml-1">→</span>
+              </Link>
             </div>
             
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
@@ -90,7 +92,7 @@ export default function LandingPage() {
                 <p className="text-xs text-zinc-400 leading-relaxed">Haven's Bee's - branded transactions</p>
               </div>
             </div>
-          </Link>
+          </div>
         </motion.div>
 
         <motion.div
