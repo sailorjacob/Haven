@@ -19,11 +19,27 @@ const SENTENCES = [
   "I think about these numbers all the time."
 ];
 
+// Client-side component wrapper
+function ClientOnly({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) return null
+  return <>{children}</>
+}
+
 // Floating sentence component
 function FloatingSentence() {
   const [visible, setVisible] = useState(false);
   const [sentence, setSentence] = useState("");
-  const [position, setPosition] = useState<{ top: string; left?: string; right?: string; bottom?: string }>({ 
+  const [position, setPosition] = useState<{ 
+    top: string; 
+    left?: string; 
+    right?: string; 
+  }>({ 
     top: "0px", 
     left: "0px" 
   });
@@ -52,13 +68,28 @@ function FloatingSentence() {
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const velocity = Math.sqrt(info.velocity.x ** 2 + info.velocity.y ** 2);
     
-    // If thrown with enough force, remove it
-    if (velocity > 500) {
+    // If thrown with enough force, remove it with a gentle fade
+    if (velocity > 300) {
+      // Calculate the exact direction of the flick using the velocity vector
+      // First normalize the velocity vector to get the direction
+      const magnitude = Math.sqrt(info.velocity.x ** 2 + info.velocity.y ** 2);
+      const normalizedX = info.velocity.x / magnitude;
+      const normalizedY = info.velocity.y / magnitude;
+      
+      // Use the normalized direction with a consistent speed
+      const flyAwaySpeed = 1000;
+      const targetX = normalizedX * flyAwaySpeed;
+      const targetY = normalizedY * flyAwaySpeed;
+      
       controls.start({
-        x: info.velocity.x > 0 ? 1000 : -1000,
-        y: info.velocity.y > 0 ? 1000 : -1000,
+        x: targetX,
+        y: targetY,
         opacity: 0,
-        transition: { duration: 0.5 }
+        transition: { 
+          x: { duration: 1.5, ease: "easeOut" },
+          y: { duration: 1.5, ease: "easeOut" },
+          opacity: { duration: 1.2, ease: "easeOut" }
+        }
       }).then(() => {
         setVisible(false);
         // Wait before showing the next one
@@ -71,28 +102,55 @@ function FloatingSentence() {
   const showNewSentence = () => {
     setSentence(getRandomSentence());
     setPosition(getRandomPosition());
-    setVisible(true);
-    controls.set({ x: 0, y: 0, opacity: 0 });
-    controls.start({ opacity: 1, transition: { duration: 1 } });
+    
+    // Start invisible
+    controls.set({ 
+      x: 0, 
+      y: 0, 
+      opacity: 0, 
+      scale: 0.95 
+    });
+    
+    // Show after setting position to ensure proper fade-in
+    setTimeout(() => {
+      setVisible(true);
+      
+      controls.start({ 
+        opacity: 1, 
+        scale: 1,
+        transition: { 
+          opacity: { duration: 3.5, ease: "easeInOut" },
+          scale: { duration: 2.2, ease: "easeOut" }
+        } 
+      });
+    }, 50);
   };
   
   // Initial setup
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined') return;
+    
     // Show the first sentence after a delay
     const timeout = setTimeout(showNewSentence, 2000);
     return () => clearTimeout(timeout);
   }, []);
   
-  if (!visible) return null;
+  // Only render on client-side
+  if (typeof window === 'undefined' || !visible) return null;
   
   return (
     <motion.div
       drag
-      dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-      dragElastic={0.1}
+      dragTransition={{ 
+        power: 0.1,         // Reduce power for less acceleration
+        timeConstant: 750,  // Higher time constant for more dampening
+        modifyTarget: t => Math.round(t * 0.1) / 0.1 // Smoother target rounding
+      }}
+      dragElastic={0.1}     // Reduce elasticity for more direct dragging
       onDragEnd={handleDragEnd}
       animate={controls}
-      className="fixed z-40 max-w-xs cursor-grab active:cursor-grabbing"
+      className="fixed z-50 max-w-xs cursor-grab active:cursor-grabbing"
       style={{
         fontFamily: "var(--font-caveat)",
         fontSize: '18px',
@@ -113,12 +171,9 @@ function FloatingSentence() {
 export default function LetterPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
-
-  const today = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+  
+  // Use a static date
+  const essayDate = "April 23, 2025"
 
   const handlePlayPause = () => {
     if (!audioRef.current) {
@@ -140,9 +195,11 @@ export default function LetterPage() {
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
       {/* Add floating sentences */}
-      <FloatingSentence />
-      <FloatingSentence />
-      <FloatingSentence />
+      <ClientOnly>
+        <FloatingSentence />
+        <FloatingSentence />
+        <FloatingSentence />
+      </ClientOnly>
       
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
@@ -152,7 +209,7 @@ export default function LetterPage() {
           className="mb-8"
         >
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-zinc-500 font-bold">April 23, 2025</p>
+            <p className="text-sm text-zinc-500 font-bold">{essayDate}</p>
             <div className="flex items-center gap-2">
               <p className="text-sm text-zinc-600 mr-3">Wizard by Lucas Lex</p>
               <button 
@@ -194,7 +251,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Both <span className="font-medium text-zinc-800">technology</span> and <span className="font-medium text-zinc-800">music</span> fall on the positive end of an ideal chart, in contrast to a <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
+            Both <span className="font-medium text-zinc-800">Technology</span> and <span className="font-medium text-zinc-800">Music</span> fall on the positive end of an ideal chart, in contrast to a <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -244,52 +301,60 @@ export default function LetterPage() {
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Screenshots</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div className="bg-zinc-100 p-4 rounded">
-              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
-                <p className="text-zinc-800 text-sm font-medium mb-2">The Supreme Leader of Iran X</p>
-                <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                  <img 
-                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" 
-                    alt="The Supreme Leader of Iran X" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </a>
+              <p className="text-zinc-800 text-sm font-medium mb-2">
+                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  The Supreme Leader of Iran X
+                </a>
+              </p>
+              <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                <img 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" 
+                  alt="The Supreme Leader of Iran X" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
-                <p className="text-zinc-800 text-sm font-medium mb-2">Kanye West Presidential Announcement Tweet</p>
-                <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                  <img 
-                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" 
-                    alt="Kanye West Presidential Announcement Tweet" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </a>
+              <p className="text-zinc-800 text-sm font-medium mb-2">
+                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Kanye West Presidential Announcement Tweet
+                </a>
+              </p>
+              <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                <img 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" 
+                  alt="Kanye West Presidential Announcement Tweet" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
-                <p className="text-zinc-800 text-sm font-medium mb-2">AOC's Elon Heil Seig Assertion</p>
-                <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                  <img 
-                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" 
-                    alt="AOC's Elon Heil Seig Assertion" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </a>
+              <p className="text-zinc-800 text-sm font-medium mb-2">
+                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  AOC's Elon Heil Seig Assertion
+                </a>
+              </p>
+              <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                <img 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" 
+                  alt="AOC's Elon Heil Seig Assertion" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
-                <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
-                <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                  <img 
-                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
-                    alt="The Dunning-Kruger Effect Chart" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </a>
+              <p className="text-zinc-800 text-sm font-medium mb-2">
+                <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  The Dunning-Kruger Effect Chart
+                </a>
+              </p>
+              <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                <img 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
+                  alt="The Dunning-Kruger Effect Chart" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
