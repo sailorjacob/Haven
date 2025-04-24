@@ -80,21 +80,6 @@ export default function LandingPage() {
             title="superplatform" 
             description="a comprehensive digital ecosystem combining a full-service production hub rivaling hollywood studios, a curated music experience that connects artists directly with their audience, and a netflix-caliber streaming service delivering premium original content. all focused on innovative storytelling that reflects our community's diverse perspectives."
           />
-          <div className="group relative block md:col-span-2">
-            <div className="bg-zinc-850 p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-800">
-              <span className="text-zinc-400">bitcoin bank</span>
-            </div>
-            
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-              <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-800/90 p-4 shadow-xl backdrop-blur-sm rounded-sm">
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  <Link href="/bitcoinbank" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
-                    Haven's Bee's - branded transactions <span className="ml-1">→</span>
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
         </motion.div>
 
         <motion.div
@@ -109,6 +94,23 @@ export default function LandingPage() {
           >
             explore
           </Link>
+          
+          <div className="mt-8 flex justify-center">
+            <div className="group relative">
+              <Link href="/bitcoinbank">
+                <img 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//bitcoinbank.svg" 
+                  alt="Bitcoin Bank"
+                  className="w-10 h-10 filter invert opacity-40 hover:opacity-60 transition-opacity"
+                />
+              </Link>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm whitespace-nowrap">
+                  <p className="text-xs text-zinc-400 leading-relaxed">Haven's Bee's - branded transactions</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
       
