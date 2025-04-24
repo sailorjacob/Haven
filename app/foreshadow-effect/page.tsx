@@ -288,11 +288,11 @@ export default function ForeshadowEffectPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">My PimEyes facial recognition reverse image search</p>
+              <p className="text-zinc-800 text-sm font-medium mb-2">Reverse Image Search</p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
-                  src="https://jsc15.pimeyes.com/proxy/d1b37ea13a085931c62adfc6f8bcf2365e7c39233e50c882a39ab47a98d1eb79c4ae1b1af921688331b0477b3d50cba12eaafe3150a58fcd4171663da914eb75dedd8a3798df2f5228093fa17a334f2bedde790d3e47b2c67e144a79498655f3a6350d8011c35e02d1e7db40e4118574bafc4a3ab4d4cacec421a2878448fbeae3072cb3b1b71cc05724f7d1299454faef468824de2f89a54ed12357fa2a7d550dc45ce3b9291aeb634eedac43abd8fe03e9d5ea7cf6b8dd7c2a5e674f3e7960c0d31e410e0d1039bcbfb12043083f351c222d1b649059dde958699c1b167b26f403066c26427e9e688a394ac69fe63d982abedc27ab778477acfd59393e70aeed0ae426246278b3884042f382c792c91767636d4a8508d8080acd2fbd7f9d381509b14aa3f075db1b057a8e993a2f4fe746a0cc6f60d2f1d614a1f2f2ead312c5b89f0b3f662a182e6c1f9e36e1759966d4aa7618ae6f833bad53c80f039643fd40f1211273743c482d27998c57b30fadb0d8f8dd25d7cb8e791de1dd394c90" 
-                  alt="My PimEyes facial recognition reverse image search" 
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//reverse-image.webp" 
+                  alt="Reverse Image Search" 
                   className="w-full h-full object-cover"
                 />
               </div>
