@@ -23,7 +23,7 @@ const PREDICTIONS = [
   },
   {
     title: "Western Admiration for Eastern Figures",
-    content: "A figure from <a href=\"https://chinaskinny.com/blog/kanyewest-immersive-consumer-experience-china\" className=\"text-zinc-800 hover:text-zinc-900 underline\" target=\"_blank\" rel=\"noopener noreferrer\">China</a> (like a technologist advocating for AI-driven governance) or India (e.g., a cultural sensation) will gain a cult-like following in the West. This type of person's mission, or success will resonate with Westerners disillusioned by political gridlock."
+    content: "A figure from China (like a technologist advocating for AI-driven governance) or India (e.g., a cultural sensation) will gain a cult-like following in the West. This type of person's mission, or success will resonate with Westerners disillusioned by political gridlock."
   },
   {
     title: "Extinction",

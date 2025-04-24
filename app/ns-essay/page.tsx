@@ -271,7 +271,7 @@ export default function LetterPage() {
             On July 4, 2020, <a href="https://x.com/elonmusk/status/1279577069005897728" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">Kanye West</span></a> tweeted his intention to run for President of the United States, a post with a quick supporting reply from <a href="https://www.vanityfair.com/style/2020/07/elon-musk-kanye-west-president-support-again?srsltid=AfmBOopgZTPSLbEaccn7ZHeI-3G2YpHciG6UkmY3EH8ko_a1x7n0Q14G" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">Elon Musk</span></a>: <em>"You have my full support!"</em> This moment, while seemingly impulsive, marks a fascinating convergence of entertainment, technology, and politics.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Kanye West's influence extends beyond this event, his music has shaped artists from <span className="font-medium text-zinc-800">Paul McCartney</span> to <span className="font-medium text-zinc-800">chinese youth</span>. However, his suspension from social media for provocative posts, including the ones intentionally anti-Semitic, highlight the tension between artistic persona (or persona) and public perception. Despite this, Kanye's work reflects a deconstructive creativity closer to a civil rights advocate than the negative labels often attached to him. This is consistent with all of our best, merely exaggerated in raw performance art.
+            Kanye West's influence extends beyond this event, his music has shaped artists from <span className="font-medium text-zinc-800">Paul McCartney</span> to <a href="https://chinaskinny.com/blog/kanyewest-immersive-consumer-experience-china" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer"><span className="font-medium text-zinc-800">chinese youth</span></a>. However, his suspension from social media for provocative posts, including the ones intentionally anti-Semitic, highlight the tension between artistic persona (or persona) and public perception. Despite this, Kanye's work reflects a deconstructive creativity closer to a civil rights advocate than the negative labels often attached to him. This is consistent with all of our best, merely exaggerated in raw performance art.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -425,6 +425,11 @@ export default function LetterPage() {
               <li>
                 <a href="https://www.tmz.com/watch/2024-07-01-070124-kamala-harris-1855754-066/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
                   TMZ video of Kamala Harris referencing "Not Like Us"
+                </a>
+              </li>
+              <li>
+                <a href="https://chinaskinny.com/blog/kanyewest-immersive-consumer-experience-china" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  China Skinny article on Kanye West's influence on Chinese youth
                 </a>
               </li>
             </ul>
