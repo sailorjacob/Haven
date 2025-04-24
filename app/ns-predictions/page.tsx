@@ -94,7 +94,7 @@ function PredictionRotator() {
       </div>
 
       <motion.div 
-        className="overflow-hidden bg-zinc-100/50 rounded"
+        className="overflow-hidden bg-zinc-50/70 rounded shadow-sm"
         initial={{ height: 0, opacity: 0 }}
         animate={{ 
           height: isExpanded ? "auto" : 0,
@@ -103,17 +103,19 @@ function PredictionRotator() {
         }}
         transition={{ 
           type: "spring", 
-          stiffness: 300, 
-          damping: 30
+          stiffness: 100, 
+          damping: 20,
+          mass: 1,
+          velocity: 0,
         }}
       >
-        <div className="p-6 space-y-6">
+        <div className="p-4 space-y-3">
           {PREDICTIONS.map((prediction, idx) => (
-            <div key={idx} className="pb-4 border-b border-zinc-200 last:border-0">
-              <h4 className="text-lg font-semibold text-zinc-800 mb-2">
+            <div key={idx} className="p-3 rounded border border-zinc-100 hover:border-amber-100 hover:bg-amber-50/30 transition-colors">
+              <h4 className="text-base font-semibold text-zinc-700 mb-1">
                 {prediction.title}
               </h4>
-              <p className="text-zinc-600 text-base leading-relaxed">
+              <p className="text-sm leading-relaxed text-zinc-600">
                 {prediction.content}
               </p>
             </div>
@@ -128,12 +130,48 @@ export default function NSPredictionsPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [timeLeft, setTimeLeft] = useState("")
+  const [scrollY, setScrollY] = useState(0)
+  const backgroundRef = useRef<HTMLDivElement>(null)
 
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   })
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    // Add event listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Remove event listener on cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Calculate background transform based on scroll
+  const getBackgroundTransform = () => {
+    const maxScroll = 300; // Lower threshold for a more direct effect
+    const scrollProgress = Math.min(scrollY / maxScroll, 1);
+    
+    // Simpler, more linear transformation
+    const scale = 1 - scrollProgress * 0.5; // Less aggressive scale
+    const translateX = -scrollProgress * 20; // More subtle movement
+    const translateY = -scrollProgress * 20;
+    const opacity = 1 - scrollProgress; // Linear fade out
+
+    return {
+      transform: `translate(${translateX}%, ${translateY}%) scale(${scale})`,
+      opacity: opacity,
+      transformOrigin: 'top left',
+      transition: 'none' // Remove transition for direct 1:1 movement with scroll
+    };
+  };
 
   useEffect(() => {
     const updateTimer = () => {
@@ -355,11 +393,16 @@ export default function NSPredictionsPage() {
       
       {/* Background SVG */}
       <div className="absolute inset-0 overflow-hidden opacity-30 pointer-events-none">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: `url("https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//BACKGROUND.svg")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}></div>
+        <div 
+          ref={backgroundRef} 
+          className="absolute inset-0" 
+          style={{ 
+            backgroundImage: `url("https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//BACKGROUND.svg")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            ...getBackgroundTransform()
+          }}
+        ></div>
       </div>
     </main>
   )
