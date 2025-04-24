@@ -76,10 +76,10 @@ export default function BitcoinBankPage() {
             <div className="bg-zinc-100 p-6 rounded-lg">
               <h2 className="text-lg font-medium text-zinc-800 mb-3">Features</h2>
               <ul className="space-y-2 text-sm text-zinc-600">
-                <li>• Secure cold storage</li>
-                <li>• Real-time market data</li>
-                <li>• Instant transactions</li>
-                <li>• Multi-signature support</li>
+                <li>• Treasury level design</li>
+                <li>• Visual value comparisons</li>
+                <li>• Branded Transactions</li>
+                <li>• Network flags</li>
                 <li>• Automated portfolio tracking</li>
               </ul>
             </div>
@@ -89,8 +89,8 @@ export default function BitcoinBankPage() {
                 <li>• End-to-end encryption</li>
                 <li>• Two-factor authentication</li>
                 <li>• Biometric verification</li>
-                <li>• Regular security audits</li>
-                <li>• Insurance coverage</li>
+                <li>• Secure cold storage</li>
+                <li>• Real-time market data</li>
               </ul>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function BitcoinBankPage() {
             <div>
               <h2 className="text-lg font-medium text-zinc-800 mb-3">Blockchain Branding</h2>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                Since Bitcoin's blockchain is public, all transaction details—such as sender and receiver addresses, amounts, and timestamps—are openly accessible. By taking this information, you can cross-reference it with other data to identify patterns, verify specific members or use cases, and then brand around those datasets. Here's how this could work and why it might be useful.
+                Since Bitcoin's blockchain is public, all transaction details - such as sender and receiver addresses, amounts, and timestamps - are openly accessible. By taking this information, you can cross-reference it with other data to identify patterns, verify specific members or use cases, and then brand around those datasets. Here's how this could work and why it might be useful.
               </p>
             </div>
 
