@@ -9,7 +9,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-zinc-900 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono">
       <div className="container max-w-4xl mx-auto">
         <div className="flex justify-between items-start mb-12">
-          <div className="w-1/3 text-right pr-4">
+          <div className="w-1/2 text-right pr-4">
             <div className="group relative inline-block">
               <Link
                 href="/moonlight-garden"
@@ -25,23 +25,7 @@ export default function LandingPage() {
             </div>
           </div>
           
-          <div className="w-1/3 text-center">
-            <div className="group relative inline-block">
-              <Link
-                href="/bitcoinbank"
-                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
-              >
-                bitcoin bank
-              </Link>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
-                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">Haven's Bee's - branded transactions</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="w-1/3 text-left pl-4">
+          <div className="w-1/2 text-left pl-4">
             <div className="group relative inline-block">
               <Link
                 href="https://roundabout.run"
@@ -96,6 +80,17 @@ export default function LandingPage() {
             title="superplatform" 
             description="a comprehensive digital ecosystem combining a full-service production hub rivaling hollywood studios, a curated music experience that connects artists directly with their audience, and a netflix-caliber streaming service delivering premium original content. all focused on innovative storytelling that reflects our community's diverse perspectives."
           />
+          <Link href="/bitcoinbank" className="group relative block md:col-span-2">
+            <div className="bg-zinc-850 p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-800">
+              <span className="text-zinc-400">bitcoin bank</span>
+            </div>
+            
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-800/90 p-4 shadow-xl backdrop-blur-sm rounded-sm">
+                <p className="text-xs text-zinc-400 leading-relaxed">Haven's Bee's - branded transactions</p>
+              </div>
+            </div>
+          </Link>
         </motion.div>
 
         <motion.div
