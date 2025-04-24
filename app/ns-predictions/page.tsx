@@ -55,7 +55,7 @@ const PREDICTIONS = [
   },
   {
     title: "AI as a Modern Voltaire",
-    content: "We might see someone or a team use AI to blast ideas. Similar to how VOltaire."
+    content: "We might see a major rebel figure use AI to blast ideas. Similar to how Voltaire wrote books anonymously."
   },
   {
     title: "Death of TikTok & Instagram",
@@ -110,7 +110,7 @@ function PredictionRotator() {
         }}
       >
         <div className="p-4 space-y-3">
-          {PREDICTIONS.map((prediction, idx) => (
+          {[...PREDICTIONS].reverse().map((prediction, idx) => (
             <div key={idx} className="p-3 rounded border border-zinc-100 hover:border-amber-100 hover:bg-amber-50/30 transition-colors">
               <h4 className="text-base font-semibold text-zinc-700 mb-1">
                 {prediction.title}
@@ -229,27 +229,27 @@ export default function NSPredictionsPage() {
           className="mb-8"
         >
           <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-4">
-              <p className="text-sm text-zinc-500">{today}</p>
-              <p className="text-sm text-zinc-600 font-medium">The Beatles x Kanye West | AI Instrumental</p>
-            </div>
-            <button 
-              onClick={handlePlayPause}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
-              aria-label={isPlaying ? "Pause audio" : "Play audio"}
-            >
-              <svg 
-                className="w-5 h-5 text-zinc-700" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
+            <p className="text-sm text-zinc-500 font-bold">April 23, 2025</p>
+            <div className="flex items-center gap-2">
+              <p className="text-sm text-zinc-600 mr-3">The Beatles x Kanye West | AI Instrumental</p>
+              <button 
+                onClick={handlePlayPause}
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
+                aria-label={isPlaying ? "Pause audio" : "Play audio"}
               >
-                {isPlaying ? (
-                  <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
-                ) : (
-                  <path d="M8 5v14l11-7z" />
-                )}
-              </svg>
-            </button>
+                <svg 
+                  className="w-5 h-5 text-zinc-700" 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor"
+                >
+                  {isPlaying ? (
+                    <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+                  ) : (
+                    <path d="M8 5v14l11-7z" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
           
           <div className="space-y-2 mb-6">
@@ -341,16 +341,6 @@ export default function NSPredictionsPage() {
                 <img 
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//kimk.JPG" 
                   alt="Kim Kardashian with a Tesla Optimus" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div id="dunning-kruger" className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
-                  alt="The Dunning-Kruger Effect Chart" 
                   className="w-full h-full object-cover"
                 />
               </div>
