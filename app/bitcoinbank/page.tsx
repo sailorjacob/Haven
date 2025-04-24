@@ -2,12 +2,77 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Image from "next/image"
+
+// FlyingBee component props interface
+interface FlyingBeeProps {
+  delay: number;
+  duration: number;
+  imgSrc: string;
+}
+
+// FlyingBee component for animated bees
+const FlyingBee = ({ delay, duration, imgSrc }: FlyingBeeProps) => {
+  return (
+    <motion.div
+      className="absolute z-10"
+      initial={{ bottom: "5%", right: "5%", opacity: 0 }}
+      animate={{ bottom: "80%", right: "5%", opacity: [0, 1, 1, 0] }}
+      transition={{ 
+        duration: duration, 
+        delay: delay,
+        ease: "easeInOut",
+        opacity: { times: [0, 0.1, 0.9, 1] }
+      }}
+    >
+      <Image
+        src={imgSrc}
+        alt="Flying Bee"
+        width={30}
+        height={30}
+        className="transform rotate-45"
+      />
+    </motion.div>
+  );
+};
 
 export default function BitcoinBankPage() {
   // Simulated prices (in BTC)
   const prices = { apple: 0.0001, orange: 0.0002 }; // 1 apple = 0.0001 BTC, 1 orange = 0.0002 BTC
+
+  // Array of bee images to randomly select from
+  const beeImages = useMemo(() => [
+    "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg",
+    "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side.svg",
+    "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
+  ], []);
+
+  // Generate flying bees with random delays and durations
+  const flyingBees = useMemo(() => {
+    return Array.from({ length: 5 }, (_, i) => ({
+      id: i,
+      delay: Math.random() * 2, // Random delay between 0-2 seconds
+      duration: 3 + Math.random() * 2, // Random duration between 3-5 seconds
+      imgSrc: beeImages[Math.floor(Math.random() * beeImages.length)]
+    }));
+  }, [beeImages]);
+
+  // State to control if flying bees are visible
+  const [showFlyingBees, setShowFlyingBees] = useState(false);
+
+  // Show flying bees on page load
+  useEffect(() => {
+    setShowFlyingBees(true);
+    
+    // Hide flying bees after all animations complete
+    const maxDuration = Math.max(...flyingBees.map(bee => bee.delay + bee.duration)) * 1000 + 500;
+    const timer = setTimeout(() => {
+      setShowFlyingBees(false);
+    }, maxDuration);
+    
+    return () => clearTimeout(timer);
+  }, [flyingBees]);
 
   const sendTransaction = () => {
     const amount = parseFloat((document.getElementById('btcAmount') as HTMLInputElement)?.value || '0');
@@ -47,7 +112,21 @@ export default function BitcoinBankPage() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
+    <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans relative overflow-hidden">
+      {/* Flying bees animation */}
+      {showFlyingBees && (
+        <div className="fixed inset-0 pointer-events-none">
+          {flyingBees.map((bee) => (
+            <FlyingBee 
+              key={bee.id} 
+              delay={bee.delay} 
+              duration={bee.duration} 
+              imgSrc={bee.imgSrc} 
+            />
+          ))}
+        </div>
+      )}
+
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
