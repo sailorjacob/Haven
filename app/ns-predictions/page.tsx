@@ -329,7 +329,7 @@ export default function NSPredictionsPage() {
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Major Conflicts</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            The Foreshadow Effect warns of conflicts. With weapons everywhere and tensions high, we will see wars, cyberattacks, or unrest. My friend Anthony Haden-Guest's mother escaped the Gestapo, my reminder of how fast things can escalate. I'm preparing for this, though I expect hyper-teams like Palantirians to be good at neutralizing threats.
+            The Foreshadow Effect warns of conflicts. With weapons everywhere and tensions high, we will see wars, cyberattacks, or unrest. My friend Anthony Haden-Guest's mother <a href="https://www.theguardian.com/news/2002/oct/16/guardianobituaries.nicholasdejongh" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">escaped the Gestapo</a>, my reminder of how fast things can escalate. I'm preparing for this, though I expect hyper-teams like Palantirians to be good at neutralizing threats.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
