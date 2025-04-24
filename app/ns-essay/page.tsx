@@ -177,7 +177,7 @@ export default function LetterPage() {
 
   const handlePlayPause = () => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//NSESSAY.mp3')
+      audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//NSESSAY2.mp3')
       audioRef.current.onended = () => {
         setIsPlaying(false)
       }
@@ -264,7 +264,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            Both <span className="font-medium text-zinc-800">Technology</span> and <span className="font-medium text-zinc-800">Music</span> fall on the positive end of an ideal chart, in contrast to a <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more fequent than modern experience, enabled by technological abundance.
+            Both <span className="font-medium text-zinc-800">Technology</span> and <span className="font-medium text-zinc-800">Music</span> fall on the positive end of an ideal chart, in contrast to a <em>Dark Ages</em> mentality. As innovations like robotic home construction, abundant energy, or automated farms become reality, society's focus will shift towards health, art, and personal expression. This trend suggests a future where curating our personality and designing our environment become more frequent than modern experience, enabled by technological abundance.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -275,7 +275,7 @@ export default function LetterPage() {
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            When Taylor Swift applauded Kendrick Lamar's Super Bowl halftime performance show naming Drake a pedophile, in front of a nation. She voted for a messy side in the War against Truth. Kendrick Lamar's 'Not Like Us' was also referenced with a wink by Kamala Harris during her 2024 election race. Saying, 'I hear they're not like us' similar to when she said 'We need to be  more woke.' <a href="https://www.nytimes.com/athletic/6290727/2025/04/18/drake-defemation-lawsuit-umg-super-bowl-lix/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Drake's new lawsuit against his own label, UMG, for promoting the song</a>, which resulted in people shooting up his house - reveals the danger in this. For the lawsuit, my bets are on the side closer to truth. And so far, time has been on my side, with a veteran like Kanye setting his opinion and the record straight in high level thought. There's a real difference in caliber here, when I compare people landing on opposite ends of the issue. These cognitive, moral, perceptual litmus tests are a strong navigating force.
+            When Taylor Swift applauded Kendrick Lamar's Super Bowl halftime performance show naming Drake a pedophile, in front of a nation. She voted for a messy side in the War against Truth. Kendrick Lamar's 'Not Like Us' was also referenced with a wink by <a href="https://www.tmz.com/watch/2024-07-01-070124-kamala-harris-1855754-066/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Kamala Harris during her 2024 election race</a>. Saying, 'I hear they're not like us' similar to when she said 'We need to be  more woke.' <a href="https://www.nytimes.com/athletic/6290727/2025/04/18/drake-defemation-lawsuit-umg-super-bowl-lix/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Drake's new lawsuit against his own label, UMG, for promoting the song</a>, which resulted in people shooting up his house - reveals the danger in this. For the lawsuit, my bets are on the side closer to truth. And so far, time has been on my side, with a veteran like Kanye setting his opinion and the record straight in high level thought. There's a real difference in caliber here, when I compare people landing on opposite ends of the issue. These cognitive, moral, perceptual litmus tests are a strong navigating force.
           </p>
 
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
@@ -420,6 +420,11 @@ export default function LetterPage() {
               <li>
                 <a href="https://www.nytimes.com/athletic/6290727/2025/04/18/drake-defemation-lawsuit-umg-super-bowl-lix/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
                   New York Times article on Drake's defamation lawsuit against UMG
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tmz.com/watch/2024-07-01-070124-kamala-harris-1855754-066/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
+                  TMZ video of Kamala Harris referencing "Not Like Us"
                 </a>
               </li>
             </ul>

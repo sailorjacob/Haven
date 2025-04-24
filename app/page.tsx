@@ -24,6 +24,23 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+          
+          <div className="w-1/3 text-center">
+            <div className="group relative inline-block">
+              <Link
+                href="/bitcoinbank"
+                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+              >
+                bitcoin bank
+              </Link>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
+                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">Haven's Bee's - branded transactions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <div className="w-1/3 text-left pl-4">
             <div className="group relative inline-block">
               <Link
