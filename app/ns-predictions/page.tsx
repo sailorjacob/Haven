@@ -22,15 +22,11 @@ const PREDICTIONS = [
     content: "Self-driving fleets and robots will become standard, supporting services like be-loved.app and Moonlight Garden."
   },
   {
-    title: "Ethical Governance",
-    content: "Factions of elite may emerge to guide AI ethics, ensuring technology serves humanity."
-  },
-  {
     title: "Western Admiration for Eastern Figures",
-    content: "A figure from China (like a technologist advocating for AI-driven governance) or India (e.g., a cultural sensation) will gain a cult-like following in the West. This type of person's mission, or success will resonate with Westerners disillusioned by political gridlock."
+    content: "A figure from <a href=\"https://chinaskinny.com/blog/kanyewest-immersive-consumer-experience-china\" className=\"text-zinc-800 hover:text-zinc-900 underline\" target=\"_blank\" rel=\"noopener noreferrer\">China</a> (like a technologist advocating for AI-driven governance) or India (e.g., a cultural sensation) will gain a cult-like following in the West. This type of person's mission, or success will resonate with Westerners disillusioned by political gridlock."
   },
   {
-    title: "Extinction of Traditional Retail",
+    title: "Extinction",
     content: "Gas stations, liquor stores, smoke shops, and fast food drive-thrus will largely go extinct. McDonald's will be replaced by a more nimble and healthier cloud-kitchen brand such as Moonlight Garden."
   },
   {
@@ -111,7 +107,7 @@ function PredictionRotator() {
       >
         <div className="p-4 space-y-3">
           {[...PREDICTIONS].reverse().map((prediction, idx) => (
-            <div key={idx} className="p-3 rounded border border-zinc-100 hover:border-amber-100 hover:bg-amber-50/30 transition-colors">
+            <div key={idx} className="p-3 rounded border border-zinc-100 hover:border-green-100 hover:bg-green-50/30 transition-colors">
               <h4 className="text-base font-semibold text-zinc-700 mb-1">
                 {prediction.title}
               </h4>
@@ -275,17 +271,17 @@ export default function NSPredictionsPage() {
           
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Vision for the Future</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            Within ten years, decentralized systems will reshape how we live and work, with AI and cryptocurrency enabling hyper-community models. A superplatform like Haven could replace netflix, spotify, and hollywood, supported by physical locations. X could sweep payments.  While be-loved.app and roundabout.run enhance transportation and automation. Branded digital currency will replace physical cash. Moonlight Garden's scalable model might start to replace McDonald's. AI-generated media will dominate, while the noble ethical "1,000 philosopher army" can outsource governing frameworks.
+            Within ten years, decentralized systems will reshape how we live and work, with AI and cryptocurrency enabling hyper-community models. A superplatform like <a href="https://haven.engineer" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Haven</a> could replace netflix, spotify, and hollywood, supported by physical locations. X could sweep payments.  While <a href="https://be-loved.app/about" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">be-loved.app</a> and <a href="https://roundabout.run/" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">roundabout.run</a> enhance transportation and automation. <a href="https://haven.engineer/bitcoinbank" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Branded digital currency</a> will replace physical cash. <a href="https://haven.engineer/moonlight-garden" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">Moonlight Garden's</a> scalable model might start to replace McDonald's. AI-generated media will dominate, while the noble ethical "1,000 philosopher army" can outsource governing frameworks.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">The Foreshadow Effect</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            The Foreshadow Effect, when things that stand out in my life today hint at what's coming. For instance, the abundant amount of weapons: guns, nukes, drones, and the right to bear arms. To me, it suggests inevitable invitation of conflict in the future, like, be careful what you wish for. Nobody's recycling their weapons and tossing them into volcanos even though I'd love them to.
+            The Foreshadow Effect, when things that stand out in my life today hint at what's coming. For instance, the abundant amount of <a href="https://www.hulldailymail.co.uk/news/uk-world-news/vladimir-putins-flesh-eating-thermite-7138889" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">weapons</a>: guns, nukes, drones, and the right to bear arms. To me, it suggests inevitable invitation of conflict in the future, like, be careful what you wish for. Nobody's recycling their weapons and tossing them into volcanos even though I'd love them to.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Reasoning</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            This has been a helpful way for me to make sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned for future conflicts. At the same time, technology is moving fast. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or <a href="#dunning-kruger" className="text-zinc-800 hover:text-zinc-900 underline">the ability to understand what they don't understand</a>. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
+            This has been a helpful way for me to make sense of the world. History shows that weapons don't just sit idle; they get used, which makes me concerned for future conflicts. At the same time, technology is moving fast. Last night, I used Grok to solve a seriously complex set of problems in one sweep, involving different programs and myself, opposed to one sheet of paper. So it hit me hard: this tech will solve everything. But progress won't be evenly distributed, for perhaps my lifetime. Human flaws like envy, conspiracy, and doubt will remain, and not everyone will have access or <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">the ability to understand what they don't understand</a>. Tensions, migration, and resource issues will keep things messy. Yet, I'm optimistic. Revolutionaries like Elon Musk and unexpected heroes can always appear.
           </p>
 
           {/* Prediction Rotator Component */}
@@ -298,7 +294,7 @@ export default function NSPredictionsPage() {
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Music</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            In the future, people will generate, curate, and listen to their own prompted base music on the fly. An individual will collect their own tracks to share like we do with pictures on Instagram now.
+            Soon, people will generate, curate, and listen to their own prompted base music on the fly. An individual will collect their own tracks to share like we do with pictures on Instagram now.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Physical Revolution</h3>
@@ -308,7 +304,7 @@ export default function NSPredictionsPage() {
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Architectural Robots</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
-            Like iPhones, Tesla humanoids will be everywhere. Cool new refinements will emerge, such as builder-bots, for really cool construction of architectural castles.
+            Like iPhones, Tesla humanoids will be everywhere. Special refinements will emerge, such as builder-bots, for open-sourced construction of new architectural castles.
           </p>
 
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Individual Gods</h3>

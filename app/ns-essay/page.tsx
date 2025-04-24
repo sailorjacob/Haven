@@ -203,7 +203,7 @@ export default function LetterPage() {
             controls
             playsInline
           />
-          <p className="text-center text-zinc-400 text-sm mt-2">Our best export is entertainment and ideas.</p>
+          <p className="text-center text-zinc-400 text-sm mt-2"><em>Our best export is entertainment and ideas.</em></p>
         </div>
       </div>
 
@@ -305,7 +305,7 @@ export default function LetterPage() {
             There's an importance of returning from the career - to the child, perhaps as a globe. We might need to figure out how to hang out with friends again. Smartphones have given us all a public persona, something which only existed for the rare celebrity in the past. These things are often unspoken for due to societal norms, assumptions, expectation, and pressure.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
-            There's no college or school cirriculum talking about how to manage your online following, who to keep up with for the rest of your life. The average person only really gets to know 800 people by name in a lifetime. A family member of mine told me X is an echo chamber. I think, how? I can see what the Supreme Leader of Iran is posting today, foreign citizens comments below it, and my ex-girlfriend's re-tweets.
+            There's no college or school cirriculum talking about how to manage your online following, who to keep up with for the rest of your life. The average person only really gets to know 800 people by name in a lifetime. A family member of mine told me X is an echo chamber. I think, how? I can see what the Supreme Leader of Iran is posting today, foreign citizens comments below it, or an ex-girlfriend's retweets.
           </p>
           <p className="text-zinc-600 leading-relaxed mb-4 text-sm">
             From a peaceful artist and rapper's conceptual presidential run, to the conceptual power of network states, these ideas cut a world of soft marble. My experience finding early talent, early trends, critiquing trends, and dreaming of freedom reveal my belief in a future where creativity and innovation are given credit. The <span className="font-medium text-zinc-800">Network State</span> is likely the vessel.
