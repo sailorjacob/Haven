@@ -41,27 +41,27 @@ export default function LetterPage() {
           className="mb-8"
         >
           <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-4">
-              <p className="text-sm text-zinc-500">{today}</p>
-              <p className="text-sm text-zinc-600 font-medium">Wizard by Lucas Lex</p>
-            </div>
-            <button 
-              onClick={handlePlayPause}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
-              aria-label={isPlaying ? "Pause audio" : "Play audio"}
-            >
-              <svg 
-                className="w-5 h-5 text-zinc-700" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
+            <p className="text-sm text-zinc-500 font-bold">April 23, 2025</p>
+            <div className="flex items-center gap-2">
+              <p className="text-sm text-zinc-600 mr-3">Wizard by Lucas Lex</p>
+              <button 
+                onClick={handlePlayPause}
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-200 hover:bg-zinc-300 transition-colors duration-300"
+                aria-label={isPlaying ? "Pause audio" : "Play audio"}
               >
-                {isPlaying ? (
-                  <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
-                ) : (
-                  <path d="M8 5v14l11-7z" />
-                )}
-              </svg>
-            </button>
+                <svg 
+                  className="w-5 h-5 text-zinc-700" 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor"
+                >
+                  {isPlaying ? (
+                    <path d="M6 4h4v16H6zm8 0h4v16h-4z" />
+                  ) : (
+                    <path d="M8 5v14l11-7z" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
           
           <div className="space-y-2 mb-6">
@@ -133,44 +133,52 @@ export default function LetterPage() {
           <h3 className="text-lg font-semibold text-zinc-800 mb-3">Screenshots</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">The Supreme Leader of Iran X</p>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" 
-                  alt="The Supreme Leader of Iran X" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
+                <p className="text-zinc-800 text-sm font-medium mb-2">The Supreme Leader of Iran X</p>
+                <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                  <img 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//khameni.jpg" 
+                    alt="The Supreme Leader of Iran X" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">Kanye West Presidential Announcement Tweet</p>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" 
-                  alt="Kanye West Presidential Announcement Tweet" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
+                <p className="text-zinc-800 text-sm font-medium mb-2">Kanye West Presidential Announcement Tweet</p>
+                <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                  <img 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg" 
+                    alt="Kanye West Presidential Announcement Tweet" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">AOC's Elon Heil Seig Assertion</p>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" 
-                  alt="AOC's Elon Heil Seig Assertion" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
+                <p className="text-zinc-800 text-sm font-medium mb-2">AOC's Elon Heil Seig Assertion</p>
+                <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                  <img 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//AOC.jpg" 
+                    alt="AOC's Elon Heil Seig Assertion" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded">
-                <img 
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
-                  alt="The Dunning-Kruger Effect Chart" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <a href="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" target="_blank" rel="noopener noreferrer" className="hover:opacity-90">
+                <p className="text-zinc-800 text-sm font-medium mb-2">The Dunning-Kruger Effect Chart</p>
+                <div className="aspect-[4/3] w-full overflow-hidden rounded">
+                  <img 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//DKEffect.jpg" 
+                    alt="The Dunning-Kruger Effect Chart" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -208,7 +216,7 @@ export default function LetterPage() {
               </li>
               <li>
                 <a href="https://archive.vanityfair.com/article/1988/11/burning-out" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
-                  Vanity Fair archive article on the art world
+                  Basquiat's last interview
                 </a>
               </li>
             </ul>
