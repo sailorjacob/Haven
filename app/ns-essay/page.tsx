@@ -427,11 +427,6 @@ export default function LetterPage() {
                   TMZ video of Kamala Harris referencing "Not Like Us"
                 </a>
               </li>
-              <li>
-                <a href="https://chinaskinny.com/blog/kanyewest-immersive-consumer-experience-china" className="text-zinc-800 hover:text-zinc-900 underline" target="_blank" rel="noopener noreferrer">
-                  China Skinny article on Kanye West's influence on Chinese youth
-                </a>
-              </li>
             </ul>
           </div>
 

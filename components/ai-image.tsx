@@ -46,7 +46,8 @@ const AIImage = ({ className = "", initialPrompt, alt, forcedCategory, showHover
           src={imageUrl}
           alt={alt}
           fill
-          className={`object-cover transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+          className={`object-contain transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+          unoptimized={imageUrl.endsWith('.svg')}
         />
       )}
       
@@ -55,13 +56,14 @@ const AIImage = ({ className = "", initialPrompt, alt, forcedCategory, showHover
           src={nextImageUrl}
           alt={alt}
           fill
-          className={`object-cover transition-opacity duration-500 absolute inset-0 ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
+          className={`object-contain transition-opacity duration-500 absolute inset-0 ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
+          unoptimized={nextImageUrl.endsWith('.svg')}
         />
       )}
 
       {showHoverText && (
         <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <p className="text-white text-sm font-medium bg-black/30 px-3 py-1 rounded-full">Click to refresh</p>
+          <p className="text-white text-sm font-medium bg-black/40 px-3 py-1 rounded-full">Click for new SVG</p>
         </div>
       )}
     </div>

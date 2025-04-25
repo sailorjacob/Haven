@@ -19,7 +19,7 @@ const PREDICTIONS = [
   },
   {
     title: "Automation",
-    content: "Self-driving fleets and robots will become standard, supporting services like be-loved.app and Moonlight Garden."
+    content: "Self-driving fleets and robots will become standard, enabling services like be-loved.app and Moonlight Garden."
   },
   {
     title: "Ethical Governance",
@@ -51,7 +51,7 @@ const PREDICTIONS = [
   },
   {
     title: "Decentralized Military & Security",
-    content: "Whether it's a network state outsourcing or a subscription model for individuals or both. Decentralized fit young men could be commanded remotely. Personal security drones with aimbot and sleeping darts could hover over you on a Manhattan street in case a gunman walks up."
+    content: "Whether it's a network state outsourcing or a subscription model for individuals or both. Decentralized servicemen could be commanded remotely. Personal security drones with aimbot and sleeping darts could hover over you on a Manhattan street in case a gunman walks up."
   },
   {
     title: "AI as a Modern Voltaire",
@@ -266,7 +266,7 @@ export default function ForeshadowEffectPage() {
             AI generations will let a single person make things that used to take teams years. A single person will make a $1b movie or a new social app in a day. There will be someone like Bernini, who uses these tools to another factor, like Mr. Beast, with taste. Lately, I've been making AI-generated beats which are now indistinguishable from real ones.
           </p>
 
-          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Space:</h3>
+          <h3 className="text-lg font-semibold text-zinc-800 mb-3">Space</h3>
           <p className="text-zinc-600 leading-relaxed mb-6 text-sm">
             Rockets will be able to fly us anywhere across the globe in 30 minutes, Blue Origin will copy SpaceX but i predict they might tap out with competition from China, etc
           </p>
@@ -288,7 +288,7 @@ export default function ForeshadowEffectPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             <div className="bg-zinc-100 p-4 rounded">
-              <p className="text-zinc-800 text-sm font-medium mb-2">Reverse Image Search</p>
+              <p className="text-zinc-800 text-sm font-medium mb-2">My PimEyes reverse facial-recognition image search</p>
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//reverse-image.webp" 
@@ -302,7 +302,7 @@ export default function ForeshadowEffectPage() {
               <div className="aspect-[4/3] w-full overflow-hidden rounded">
                 <img 
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//kimk.JPG" 
-                  alt="Kim Kardashian with a Tesla Optimus" 
+                  alt="Kim Kardashian with Tesla Optimus" 
                   className="w-full h-full object-cover"
                 />
               </div>

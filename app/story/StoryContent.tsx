@@ -142,11 +142,11 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              But it hasn't been easy. I faced a false arrest orchestrated by a former employer, Libbie Mugrabi, leading to a $5 million lawsuit (Daily Beast). My case, backed by a lawyer who's taken on dictators, will be a clean sweep. Currently, her second lawyer is trying to drop out of the court. I've also lost someone I loved to a heroin overdose, coming home from my arrest to find her, before catching up.
+              But it hasn't been easy. I faced a false arrest orchestrated by a former employer, Libbie Mugrabi, leading to a $5 million lawsuit (Daily Beast). My case, backed by a lawyer who's taken on dictators, will be a clean sweep. Currently, her second lawyer is trying to drop out of the court. I've also lost someone I loved to a heroin overdose, coming home from my arrest to find her.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a network state that combines AI-generated media—think Netflix and Spotify with ai—with dark-styled accommodation living spaces as nice as Soho House, or Disney, plus art galleries rivaling Gagosian. Haven would be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds (Haven Engineer).
+              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a network state that combines AI-generated media, like netflix x spotify with ai—with dark-styled accommodation living spaces as nice as Soho House, or Disney, and art an art gallery network like Gagosian. Haven would be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">

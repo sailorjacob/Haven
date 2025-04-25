@@ -5,7 +5,50 @@ type ImageCategory = {
   [key: string]: string[]
 }
 
-export const imageGallery: ImageCategory = {
+// Define the base URL for the Supabase SVGs folder
+const SUPABASE_SVG_URL = "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/svgs/";
+
+// Create an array of SVG files from the Supabase bucket with the correct filenames from the screenshot
+const svgImages = [
+  `${SUPABASE_SVG_URL}beehive.svg`,
+  `${SUPABASE_SVG_URL}beach.svg`,
+  `${SUPABASE_SVG_URL}dwadwa.svg`,
+  `${SUPABASE_SVG_URL}sailboat.svg`,
+  `${SUPABASE_SVG_URL}olympian.svg`,
+  `${SUPABASE_SVG_URL}security.svg`,
+  `${SUPABASE_SVG_URL}bitcoin1.svg`,
+  `${SUPABASE_SVG_URL}medusa.svg`,
+  `${SUPABASE_SVG_URL}sculpture.svg`,
+  `${SUPABASE_SVG_URL}socrates.svg`,
+  `${SUPABASE_SVG_URL}2345433.svg`,
+  `${SUPABASE_SVG_URL}345654.svg`,
+  `${SUPABASE_SVG_URL}3er4t5y.svg`,
+  `${SUPABASE_SVG_URL}e3r4.svg`,
+  `${SUPABASE_SVG_URL}9876.svg`,
+  `${SUPABASE_SVG_URL}76545.svg`,
+  `${SUPABASE_SVG_URL}65456.svg`,
+  `${SUPABASE_SVG_URL}23432.svg`,
+  `${SUPABASE_SVG_URL}7654.svg`,
+  `${SUPABASE_SVG_URL}6666.svg`,
+  `${SUPABASE_SVG_URL}55555.svg`,
+  `${SUPABASE_SVG_URL}44444.svg`,
+  `${SUPABASE_SVG_URL}33333.svg`,
+  `${SUPABASE_SVG_URL}22222.svg`,
+  `${SUPABASE_SVG_URL}11111.svg`,
+  `${SUPABASE_SVG_URL}345432.svg`,
+  `${SUPABASE_SVG_URL}34543234.svg`,
+  `${SUPABASE_SVG_URL}34543.svg`,
+  `${SUPABASE_SVG_URL}3454334.svg`,
+  `${SUPABASE_SVG_URL}345434.svg`,
+  `${SUPABASE_SVG_URL}54345654.svg`,
+  `${SUPABASE_SVG_URL}54345643.svg`,
+  `${SUPABASE_SVG_URL}weew4.svg`,
+  `${SUPABASE_SVG_URL}34565.svg`,
+  `${SUPABASE_SVG_URL}hammock.svg`
+];
+
+// Keep the original image gallery for fallback
+export const originalImageGallery: ImageCategory = {
   futuristic: [
     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Luxury modern villa
     "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Modern architecture
@@ -55,17 +98,30 @@ export const imageGallery: ImageCategory = {
     "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Digital technology
     "https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Technology
   ],
-}
+};
+
+// For all categories, use the SVG images from Supabase
+export const imageGallery: ImageCategory = {
+  futuristic: [...svgImages],
+  resort: [...svgImages],
+  "digital-art": [...svgImages],
+  people: [...svgImages],
+  community: [...svgImages],
+  artist: [...svgImages],
+  "ai-tech": [...svgImages],
+  workspace: [...svgImages],
+  network: [...svgImages],
+};
 
 // Function to get a random image from a specific category
 export const getRandomImage = (category: string): string => {
-  // If category doesn't exist, default to futuristic
-  const images = imageGallery[category] || imageGallery.futuristic
-  const randomIndex = Math.floor(Math.random() * images.length)
-  return images[randomIndex]
+  // Always use the SVG images regardless of category
+  const randomIndex = Math.floor(Math.random() * svgImages.length)
+  return svgImages[randomIndex]
 }
 
-// Function to map a prompt to the closest category
+// Function to map a prompt to the closest category - this is kept for compatibility
+// but doesn't affect which images are shown since all categories now return SVGs
 export const getCategoryFromPrompt = (prompt: string): string => {
   const promptLower = prompt.toLowerCase()
 

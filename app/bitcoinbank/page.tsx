@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { toast, Toaster } from "react-hot-toast"
 
 // FlyingBee component props interface
 interface FlyingBeeProps {
@@ -11,6 +12,7 @@ interface FlyingBeeProps {
   delay: number;
   imgSrc: string;
   positionY: number;
+  size: number;
 }
 
 export default function BitcoinBankPage() {
@@ -20,61 +22,173 @@ export default function BitcoinBankPage() {
   // Client-side only state
   const [clientLoaded, setClientLoaded] = useState(false);
   const [bees, setBees] = useState<FlyingBeeProps[]>([]);
+  const [isTransactionInProgress, setIsTransactionInProgress] = useState(false);
+  const [transactionParticles, setTransactionParticles] = useState<{ id: number; x: number; y: number; size: number; rotation: number; delay: number }[]>([]);
 
   // Initialize animation only on client-side
   useEffect(() => {
-    // Mark as client-loaded
-    setClientLoaded(true);
-    
-    // Define bee images
-    const beeImages = [
-      "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg",
-      "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side.svg",
-      "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
-    ];
-    
-    // Create bees with fixed, deterministic properties to avoid hydration issues
-    const newBees = Array.from({ length: 5 }, (_, i) => ({
-      id: i,
-      delay: 0.5 + (i * 0.8),
-      imgSrc: beeImages[i % beeImages.length],
-      positionY: 20 + (i * 12)
-    }));
-    
-    setBees(newBees);
-    
-    // Clean up animation after sufficient time
-    const timer = setTimeout(() => {
-      setBees([]);
-    }, 12000); // Allow enough time for all animations to complete
-    
-    return () => clearTimeout(timer);
+    if (typeof window !== 'undefined') {
+      setClientLoaded(true);
+      
+      // Initialize the bees with remote URLs only
+      const newBees: FlyingBeeProps[] = [];
+      const beeImgs = [
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side.svg",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
+      ];
+      
+      // Create 12 bees with different delays, positions, and sizes
+      for (let i = 0; i < 12; i++) {
+        const randomImgIndex = Math.floor(Math.random() * beeImgs.length);
+        newBees.push({
+          id: i,
+          imgSrc: beeImgs[randomImgIndex],
+          positionY: Math.random() * 70 + 10, // Position between 10% and 80% from bottom
+          size: Math.random() * 30 + 70, // Random size between 70-100% of original
+          delay: i * 0.8 + Math.random() * 2 // Shorter staggered delays
+        });
+      }
+      
+      setBees(newBees);
+    }
   }, []);
 
+  // Send a "transaction" animation
   const sendTransaction = () => {
-    const amount = parseFloat((document.getElementById('btcAmount') as HTMLInputElement)?.value || '0');
-    if (!amount || amount <= 0) {
-      const statusElement = document.getElementById('status');
-      if (statusElement) {
-        statusElement.textContent = 'Please enter a valid amount!';
-      }
-      return;
+    // Get random positions for animation particles
+    const particles: { id: number; x: number; y: number; size: number; rotation: number; delay: number }[] = [];
+    
+    // Get transaction amount for scaling effects
+    const amountElem = document.getElementById('btcAmount') as HTMLInputElement;
+    const amount = parseFloat(amountElem?.value || '0.001');
+    
+    // Scale particle count based on transaction size (min 8, max 20)
+    const particleCount = Math.min(20, Math.max(8, Math.floor(amount * 10000)));
+    
+    // Create multiple particles that will fly from the input to the output
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        id: i,
+        x: Math.random() * 40 - 20, // Random offset X
+        y: Math.random() * 40 - 20, // Random offset Y
+        size: Math.random() * 6 + 8, // Random size (8-14px)
+        rotation: Math.random() * 360, // Random rotation
+        delay: i * 0.1 // Staggered delay
+      });
     }
-
-    // Animate the bee
-    const bee = document.getElementById('bee');
-    if (bee) {
-      bee.classList.remove('hidden');
-      bee.style.left = '10%';
+    
+    setIsTransactionInProgress(true);
+    setTransactionParticles(particles);
+    
+    // Animate the individual bee in the interactive demo section
+    const beeElement = document.getElementById('bee');
+    if (beeElement) {
+      // Reset position
+      beeElement.style.left = '0';
+      beeElement.style.transform = 'translateY(0)';
+      // Show the bee
+      beeElement.classList.remove('hidden');
+      // Animate across screen
       setTimeout(() => {
-        bee.style.left = '80%';
-        const statusElement = document.getElementById('status');
-        if (statusElement) {
-          statusElement.textContent = `${amount} BTC sent! The bees delivered it.`;
+        beeElement.style.left = 'calc(100% - 50px)';
+        if (amount >= 0.01) {
+          beeElement.style.transform = 'translateY(-20px)';
         }
-      }, 100);
-      setTimeout(() => { bee.classList.add('hidden'); }, 2100);
+      }, 50);
+      // Hide the bee after animation completes
+      setTimeout(() => {
+        beeElement.classList.add('hidden');
+      }, 1000);
     }
+    
+    // Clear transaction animation after completion and spawn new bees
+    setTimeout(() => {
+      setIsTransactionInProgress(false);
+      setTransactionParticles([]);
+      
+      // Create new bees after transaction
+      const newBees = [...bees];
+      const beeImgs = [
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side.svg",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
+      ];
+      
+      // Add 2-4 new bees with immediate appearance
+      const newBeesToAdd = Math.floor(Math.random() * 3) + 2;
+      for (let i = 0; i < newBeesToAdd; i++) {
+        const randomImgIndex = Math.floor(Math.random() * beeImgs.length);
+        const newBee: FlyingBeeProps = {
+          id: bees.length + i + Date.now(), // Ensure unique ID
+          imgSrc: beeImgs[randomImgIndex],
+          positionY: Math.random() * 70 + 10,
+          size: Math.random() * 30 + 70,
+          delay: i * 0.3 // Quick sequence of new bees
+        };
+        newBees.push(newBee);
+      }
+      setBees(newBees);
+      
+      // Update comparison data after transaction
+      updateComparison();
+      
+      // Show custom success toast based on transaction size
+      if (amount >= 0.1) {
+        // Large transaction
+        toast.success(
+          <div className="flex flex-col">
+            <span className="font-bold">Large Transaction Sent!</span>
+            <span className="text-xs">Your Bitcoin swarm is buzzing through the network.</span>
+          </div>,
+          {
+            duration: 4000,
+            position: "bottom-right",
+            style: {
+              background: '#f5f5f5',
+              color: '#333',
+              border: '2px solid #333',
+              padding: '16px',
+              borderRadius: '8px'
+            },
+            icon: '🐝🐝🐝'
+          }
+        );
+      } else if (amount >= 0.01) {
+        // Medium transaction
+        toast.success(
+          <div className="flex flex-col">
+            <span className="font-bold">Transaction Sent!</span>
+            <span className="text-xs">Your Bitcoin bees are on their way.</span>
+          </div>,
+          {
+            duration: 3500,
+            position: "bottom-right",
+            style: {
+              background: '#f5f5f5',
+              color: '#333',
+              border: '1px solid #333',
+              padding: '12px',
+              borderRadius: '6px'
+            },
+            icon: '🐝🐝'
+          }
+        );
+      } else {
+        // Small transaction
+        toast.success("Transaction sent! Your Bitcoin is buzzing through the network.", {
+          duration: 3000,
+          position: "bottom-right",
+          style: {
+            background: '#f5f5f5',
+            color: '#333',
+            border: '1px solid #333',
+            borderRadius: '4px'
+          },
+          icon: '🐝'
+        });
+      }
+    }, 2000);
   };
 
   const updateComparison = () => {
@@ -88,37 +202,165 @@ export default function BitcoinBankPage() {
     if (orangesElement) orangesElement.textContent = Math.floor(btc / prices.orange).toString();
   };
 
+  // Render the bees animation  
+  const renderBees = () => {
+    if (!clientLoaded || bees.length === 0) return null;
+    
+    return (
+      <div className="fixed inset-0 pointer-events-none overflow-visible z-[1000]">
+        {bees.map((bee) => (
+          <motion.div
+            key={bee.id}
+            className="fixed pointer-events-none"
+            style={{ 
+              bottom: `${bee.positionY}%`, 
+              right: "-50px", // Start slightly off-screen to the right
+              zIndex: 1000 // Ensure bees are on top of everything
+            }}
+            initial={{ 
+              x: 0,
+              opacity: 0 
+            }}
+            animate={{ 
+              x: "-110vw", // Move completely across the screen
+              y: [0, -20, -40, -30, -50], // Create a more natural wavy flight path
+              opacity: [0, 1, 1, 1, 0.8]
+            }}
+            transition={{
+              duration: 20, // Slower animation so bees are visible longer
+              delay: bee.delay,
+              ease: "linear",
+              y: {
+                duration: 20,
+                times: [0, 0.25, 0.5, 0.75, 1],
+                ease: "easeInOut",
+                repeat: 0
+              },
+              opacity: {
+                times: [0, 0.05, 0.5, 0.9, 1],
+                duration: 20
+              }
+            }}
+          >
+            <Image
+              src={bee.imgSrc}
+              alt="Flying Bee"
+              width={100}
+              height={100}
+              className="transform -rotate-12 hover:rotate-0 transition-transform"
+              style={{ width: `${bee.size}px`, height: 'auto' }}
+              priority
+            />
+          </motion.div>
+        ))}
+      </div>
+    );
+  };
+
+  // Render the transaction animation
+  const renderTransactionAnimation = () => {
+    if (!isTransactionInProgress || transactionParticles.length === 0) return null;
+    
+    // Get transaction amount (if available) for scaling effects
+    const amountElem = document.getElementById('btcAmount') as HTMLInputElement;
+    const amount = parseFloat(amountElem?.value || '0.001');
+    const isLargeTransaction = amount >= 0.01;
+    
+    return (
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Special glow effect for large transactions */}
+        {isLargeTransaction && (
+          <motion.div 
+            className="absolute rounded-full"
+            style={{
+              left: "calc(50% - 150px)",
+              top: "calc(50% + 50px)",
+              background: "radial-gradient(circle, rgba(242,169,0,0.4) 0%, rgba(242,169,0,0) 70%)",
+              zIndex: 199,
+            }}
+            initial={{
+              width: 10,
+              height: 10,
+              opacity: 0,
+            }}
+            animate={{
+              width: 800,
+              height: 800,
+              opacity: [0, 0.8, 0],
+              x: -400,
+              y: -400,
+            }}
+            transition={{
+              duration: 2,
+              ease: "easeOut",
+            }}
+          />
+        )}
+        
+        {transactionParticles.map((particle) => (
+          <motion.div
+            key={particle.id}
+            className="absolute rounded-full pointer-events-none"
+            style={{
+              left: "calc(50% - 150px)",
+              top: "calc(50% + 50px)",
+              background: isLargeTransaction ? 
+                "radial-gradient(circle, #f2a900 30%, rgba(242,169,0,0.6) 70%)" : 
+                "rgba(242,169,0,0.8)",
+              boxShadow: isLargeTransaction ? 
+                "0 0 15px 4px rgba(242,169,0,0.8), 0 0 5px 2px rgba(255,255,255,0.6)" : 
+                "0 0 10px 2px rgba(242,169,0,0.6)",
+              zIndex: 200,
+              width: particle.size,
+              height: particle.size,
+            }}
+            initial={{
+              opacity: 0,
+              x: particle.x,
+              y: particle.y,
+              rotate: particle.rotation,
+              scale: 0.5,
+            }}
+            animate={{
+              opacity: [0, 1, 1, 0],
+              x: [
+                particle.x, 
+                particle.x + 150 * Math.sign(particle.x || 1), 
+                300 + particle.x * (isLargeTransaction ? 1.5 : 1)
+              ],
+              y: [
+                particle.y, 
+                particle.y - 50, 
+                particle.y - (isLargeTransaction ? 150 : 100)
+              ],
+              rotate: [
+                particle.rotation, 
+                particle.rotation + 180, 
+                particle.rotation + 360
+              ],
+              scale: isLargeTransaction ? 
+                [0.5, 1.5, 0.8, 0] : 
+                [0.5, 1.2, 0.8, 0],
+            }}
+            transition={{
+              duration: isLargeTransaction ? 2.5 : 2,
+              delay: particle.delay * (isLargeTransaction ? 0.8 : 1), // Compress delay for larger transactions
+              ease: "easeOut",
+              times: [0, 0.3, 0.7, 1],
+            }}
+          />
+        ))}
+      </div>
+    );
+  };
+
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans relative overflow-hidden">
-      {/* Flying bees animation - only rendered client-side */}
-      {clientLoaded && bees.length > 0 && (
-        <div className="fixed inset-0 pointer-events-none">
-          {bees.map((bee) => (
-            <motion.div
-              key={bee.id}
-              className="fixed z-20 pointer-events-none"
-              style={{ bottom: `${bee.positionY}%` }}
-              initial={{ x: '100vw', opacity: 0 }}
-              animate={{ x: -100, opacity: [0, 1, 1, 0] }}
-              transition={{
-                duration: 8,
-                delay: bee.delay,
-                ease: "linear",
-                opacity: { times: [0, 0.1, 0.8, 1], ease: "easeInOut" }
-              }}
-            >
-              <Image
-                src={bee.imgSrc}
-                alt="Flying Bee"
-                width={50}
-                height={50}
-                className="transform -scale-x-100"
-                priority
-              />
-            </motion.div>
-          ))}
-        </div>
-      )}
+      {/* Toast notifications */}
+      <Toaster />
+      
+      {/* Flying bees animation - separate render function */}
+      {renderBees()}
 
       <div className="container max-w-xl mx-auto py-8 px-4 md:px-8">
         <motion.div
@@ -327,6 +569,12 @@ export default function BitcoinBankPage() {
                       width={50}
                       height={50}
                       className="hidden absolute transition-all duration-2000 ease-in-out"
+                      style={{
+                        left: '0',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        transition: 'left 1s ease-in-out, transform 0.25s ease-in-out'
+                      }}
                     />
                   </div>
                 </div>
@@ -478,6 +726,9 @@ export default function BitcoinBankPage() {
           backgroundSize: '20px 20px'
         }}></div>
       </div>
+
+      {/* Transaction animation */}
+      {renderTransactionAnimation()}
     </main>
   )
 } 

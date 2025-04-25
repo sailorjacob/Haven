@@ -19,8 +19,8 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 })
 
-// Single golden color for consistency
-const GOLD = "#3B82F6"
+// Single color for consistency - replacing gold with dark gray
+const PRIMARY_COLOR = "#333333"
 
 // Define interface for AnimatedSection
 interface AnimatedSectionProps {
@@ -213,7 +213,7 @@ export default function Home() {
             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M12 3L16.39 5.25L20.78 7.5L20.78 12L20.78 16.5L16.39 18.75L12 21L7.61 18.75L3.22 16.5L3.22 12L3.22 7.5L7.61 5.25L12 3Z"
-                fill="#3B82F6"
+                fill="#333333"
               />
             </svg>
           </motion.div>
@@ -242,7 +242,7 @@ export default function Home() {
             className="mt-16 inline-flex flex-col items-center cursor-pointer opacity-80 hover:opacity-100 transition-all duration-500 pointer-events-auto"
           >
             <span className="text-sm text-gray-500 mb-2">Explore</span>
-            <ChevronDown size={20} color={GOLD} />
+            <ChevronDown size={20} color={PRIMARY_COLOR} />
           </motion.div>
         </div>
       </section>
@@ -306,7 +306,7 @@ export default function Home() {
                       <div className="bg-blue-50 p-4 rounded-lg">
                         <h4 className="font-medium text-blue-600 mb-2">Physical Experience</h4>
                         <ul className="text-gray-600 space-y-1 pl-4 list-disc">
-                          <li>Art galleries</li>
+                          <li>Art gallery network</li>
                           <li>Screening theaters</li>
                           <li>Accommodations</li>
                         </ul>
@@ -411,7 +411,7 @@ export default function Home() {
                   <div className="mt-8">
                     <Link
                       href="/products"
-                      className="text-sm font-medium py-2 px-4 border border-[#E6B325] text-[#E6B325] rounded-full hover:bg-[#E6B325]/10 transition-colors"
+                      className="text-sm font-medium py-2 px-4 border border-[#333333] text-[#333333] rounded-full hover:bg-[#333333]/10 transition-colors"
                     >
                       Learn about our community
                     </Link>
@@ -488,18 +488,18 @@ export default function Home() {
                   variants={childVariants}
                   className="bg-white rounded-2xl p-6 h-full shadow-lg"
                 >
-                  <h3 className="text-lg font-medium mb-4 text-[#E6B325]">Digital Media Platform</h3>
+                  <h3 className="text-lg font-medium mb-4 text-[#333333]">Digital Media Platform</h3>
                   <ul className="space-y-3 text-gray-600">
                     <li className="flex items-start">
-                      <span className="text-[#E6B325] mr-2">•</span>
+                      <span className="text-[#333333] mr-2">•</span>
                       <span>AI-Generated films, music, and digital art</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#E6B325] mr-2">•</span>
+                      <span className="text-[#333333] mr-2">•</span>
                       <span>Curated and distributed through a streaming ecosystem</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#E6B325] mr-2">•</span>
+                      <span className="text-[#333333] mr-2">•</span>
                       <span>Micro-payment systems via cryptocurrencies</span>
                     </li>
                   </ul>
@@ -509,18 +509,18 @@ export default function Home() {
                   variants={childVariants}
                   className="bg-white rounded-2xl p-6 h-full shadow-lg"
                 >
-                  <h3 className="text-lg font-medium mb-4 text-[#E6B325]">Economic Model</h3>
+                  <h3 className="text-lg font-medium mb-4 text-[#333333]">Economic Model</h3>
                   <ul className="space-y-3 text-gray-600">
                     <li className="flex items-start">
-                      <span className="text-[#E6B325] mr-2">•</span>
+                      <span className="text-[#333333] mr-2">•</span>
                       <span>Income from content platforms and advertising services</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#E6B325] mr-2">•</span>
+                      <span className="text-[#333333] mr-2">•</span>
                       <span>Additional accommodation facilities and public events</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-[#E6B325] mr-2">•</span>
+                      <span className="text-[#333333] mr-2">•</span>
                       <span>High-end advertising agency and fine art market</span>
                     </li>
                   </ul>
@@ -559,7 +559,7 @@ export default function Home() {
                   <div className="flex justify-center">
                     <Link
                       href="/contact"
-                      className="text-sm font-medium py-2 px-4 border border-[#E6B325] text-[#E6B325] rounded-full hover:bg-[#E6B325]/10 transition-colors"
+                      className="text-sm font-medium py-2 px-4 border border-[#333333] text-[#333333] rounded-full hover:bg-[#333333]/10 transition-colors"
                     >
                       Request information
                     </Link>

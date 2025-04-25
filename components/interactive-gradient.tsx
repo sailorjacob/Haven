@@ -175,9 +175,9 @@ const InteractiveGradient: React.FC<InteractiveGradientProps> = ({ className = "
           style={{
             background: `
               radial-gradient(circle at ${position.x}% ${position.y}%, 
-                rgba(59,130,246,0.4),
-                rgba(59,130,246,0.2) 20%, 
-                rgba(59,130,246,0.1) 40%,
+                rgba(51,51,51,0.4),
+                rgba(51,51,51,0.2) 20%, 
+                rgba(51,51,51,0.1) 40%,
                 rgba(255,255,255,0) 60%
               )
             `,
@@ -190,7 +190,7 @@ const InteractiveGradient: React.FC<InteractiveGradientProps> = ({ className = "
           style={{
             background: `
               radial-gradient(circle at 50% 50%, 
-                rgba(59,130,246,0.2),
+                rgba(51,51,51,0.2),
                 rgba(255,255,255,0) 50%
               )
             `,
@@ -206,7 +206,7 @@ const InteractiveGradient: React.FC<InteractiveGradientProps> = ({ className = "
                 top: `${star.y}%`,
                 width: `${star.size}px`,
                 height: `${star.size}px`,
-                backgroundColor: 'rgba(59,130,246,0.8)',
+                backgroundColor: 'rgba(51,51,51,0.8)',
                 animation: `float ${star.duration}s linear infinite, twinkle 3s ease-in-out infinite`,
                 animationDelay: `${star.delay}s`,
               }}
