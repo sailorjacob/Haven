@@ -13,21 +13,27 @@ interface FlyingBeeProps {
 }
 
 // FlyingBee component for animated bees
-const FlyingBee = ({ delay, duration, imgSrc }: FlyingBeeProps) => {
+const FlyingBee = ({ delay, duration, imgSrc, positionY }: FlyingBeeProps & { positionY: number }) => {
   return (
     <motion.div
-      className="fixed z-20"
-      initial={{ bottom: `${15 + Math.random() * 40}vh`, right: "5vw", opacity: 0 }}
+      className="fixed z-20 pointer-events-none"
+      style={{ 
+        position: 'fixed',
+        bottom: `${positionY}%`,
+      }}
+      initial={{ x: '100vw', opacity: 0 }}
       animate={{ 
-        bottom: `${25 + Math.random() * 50}vh`, 
-        right: "95vw", 
+        x: -100, 
         opacity: [0, 1, 1, 0] 
       }}
       transition={{ 
         duration: duration, 
         delay: delay,
-        ease: "easeInOut",
-        opacity: { times: [0, 0.1, 0.9, 1] }
+        ease: "linear",
+        opacity: { 
+          times: [0, 0.1, 0.8, 1],
+          ease: "easeInOut"
+        }
       }}
     >
       <Image
@@ -35,7 +41,8 @@ const FlyingBee = ({ delay, duration, imgSrc }: FlyingBeeProps) => {
         alt="Flying Bee"
         width={50}
         height={50}
-        className="transform rotate-12"
+        className="transform -scale-x-100"
+        priority
       />
     </motion.div>
   );
@@ -45,6 +52,12 @@ export default function BitcoinBankPage() {
   // Simulated prices (in BTC)
   const prices = { apple: 0.0001, orange: 0.0002 }; // 1 apple = 0.0001 BTC, 1 orange = 0.0002 BTC
 
+  // State to track if component is client-side mounted
+  const [isMounted, setIsMounted] = useState(false);
+  
+  // State to control if flying bees are visible
+  const [showFlyingBees, setShowFlyingBees] = useState(false);
+
   // Array of bee images to randomly select from
   const beeImages = useMemo(() => [
     "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//simple-cute-thick-bumble-bee.svg",
@@ -52,25 +65,27 @@ export default function BitcoinBankPage() {
     "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//cute-flying-bumble-bee-side-2.svg"
   ], []);
 
-  // Generate flying bees with random delays and durations
+  // Generate flying bees with specific parameters
   const flyingBees = useMemo(() => {
-    return Array.from({ length: 7 }, (_, i) => ({
+    // Only create bees when mounted on client to avoid hydration mismatch
+    if (!isMounted) return [];
+    
+    return Array.from({ length: 5 }, (_, i) => ({
       id: i,
-      delay: 0.2 + (i * 0.4), // Staggered delays: 0.2, 0.6, 1.0, 1.4, etc.
-      duration: 4 + Math.random() * 2, // Random duration between 4-6 seconds
-      imgSrc: beeImages[Math.floor(Math.random() * beeImages.length)]
+      delay: 0.5 + (i * 0.8), // Slower staggered delays
+      duration: 8, // Longer fixed duration for smoother animation
+      imgSrc: beeImages[Math.floor(Math.random() * beeImages.length)],
+      positionY: 20 + (i * 10) // Evenly spaced vertical positions
     }));
-  }, [beeImages]);
+  }, [beeImages, isMounted]);
 
-  // State to control if flying bees are visible
-  const [showFlyingBees, setShowFlyingBees] = useState(false);
-
-  // Show flying bees on page load
+  // Initialize on client-side only
   useEffect(() => {
+    setIsMounted(true);
     setShowFlyingBees(true);
     
     // Hide flying bees after all animations complete
-    const maxDuration = Math.max(...flyingBees.map(bee => bee.delay + bee.duration)) * 1000 + 500;
+    const maxDuration = Math.max(...flyingBees.map(bee => bee.delay + bee.duration) || [10]) * 1000 + 500;
     const timer = setTimeout(() => {
       setShowFlyingBees(false);
     }, maxDuration);
@@ -126,6 +141,7 @@ export default function BitcoinBankPage() {
               delay={bee.delay} 
               duration={bee.duration} 
               imgSrc={bee.imgSrc} 
+              positionY={bee.positionY} 
             />
           ))}
         </div>
