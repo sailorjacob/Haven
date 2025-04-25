@@ -150,11 +150,11 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              These experiences have taught me resilience, creativity, and adaptability. I've de-escalated dangerous situations, like when I calmed an armed robbery with a college friend, and I've predicted trends early, like naming a high school business after Elon Musk in 2015. I'm passionate about freedom, ethics, and privacy, and I want to build a Network State.
+              I've de-escalated dangerous situations, like when I calmed an armed robbery with a college friend, and I've predicted trends early, like naming a high school business after Elon Musk in 2015. I'm passionate about freedom, ethics, and privacy, and I want to build a Network State.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              Ender's Game, is my favorite book. Ender was the best battle student, tricked into fighting a real war thinking it was a simulation, forced to be more ruthless than his natural state. Today, someone like Ender might know they're the best but be blocked by systems at every turn. I think in the many cases where an individual is the best in the world at something, they should be championed instead of nerfed.
+              Ender's Game, is my favorite book. Ender was the best battle student, tricked into fighting a real war thinking it was a simulation, forced to be more ruthless than his natural state. Today, someone like Ender might know they're the best but be blocked by systems at every turn. I think in the many cases where an individual is the best in the world at something, they should be championed rather than nerfed.
             </p>
           </motion.div>
         </motion.div>
