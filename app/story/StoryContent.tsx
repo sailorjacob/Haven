@@ -150,7 +150,7 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              I've de-escalated dangerous situations, like when I calmed an armed robbery with a college friend, and I've predicted trends early, like naming a high school business after Elon Musk in 2015. I'm passionate about freedom, ethics, and privacy, and I want to build a Network State.
+              I've de-escalated dangerous situations, like when I faced an armed robbery with a college friend, and I've predicted trends early, like naming a high school business after Elon Musk in 2015. I'm passionate about freedom, ethics, and privacy, and I want to build a Network State.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
