@@ -87,7 +87,7 @@ export default function StudioPage() {
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6 lowercase">
             A digital design and web development studio crafting premium 
-            experiences for modern brands and startups.
+            experiences for modern businesses and brands.
           </p>
         </motion.div>
 
