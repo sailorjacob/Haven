@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 
 type Project = {
@@ -17,6 +17,7 @@ type Project = {
 
 export default function StudioPage() {
   const [filter, setFilter] = useState<string | null>(null)
+  const [counter, setCounter] = useState(0)
   
   const projects: Project[] = [
     {
@@ -60,6 +61,28 @@ export default function StudioPage() {
   const filteredProjects = filter 
     ? projects.filter(project => project.category === filter)
     : projects
+
+  // Counter animation effect
+  useEffect(() => {
+    const targetValue = 100000
+    const duration = 2000 // ms
+    const framesPerSecond = 60
+    const totalFrames = duration / 1000 * framesPerSecond
+    const valueIncrement = targetValue / totalFrames
+    
+    let currentFrame = 0
+    const timer = setInterval(() => {
+      currentFrame++
+      const newValue = Math.min(Math.floor(currentFrame * valueIncrement), targetValue)
+      setCounter(newValue)
+      
+      if (currentFrame >= totalFrames) {
+        clearInterval(timer)
+      }
+    }, 1000 / framesPerSecond)
+    
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <main className="min-h-screen bg-zinc-900 text-zinc-300">
@@ -240,11 +263,198 @@ export default function StudioPage() {
           </div>
         </motion.div>
 
-        {/* Contact Section */}
+        {/* Stats Section with SVG Animation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
+          className="mb-14 pb-6 border-b border-zinc-800"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center max-w-2xl mx-auto">
+            {/* Uptime Circle */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-28 h-28">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
+                  {/* Background circle */}
+                  <circle 
+                    cx="50" 
+                    cy="50" 
+                    r="45" 
+                    fill="none" 
+                    stroke="#27272a" 
+                    strokeWidth="6"
+                  />
+                  
+                  {/* Main Circle */}
+                  <motion.circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="#10b981"
+                    strokeWidth="6"
+                    strokeDasharray="283"
+                    strokeDashoffset="10"  
+                    initial={{ strokeDashoffset: 283 }}
+                    animate={{ 
+                      strokeDashoffset: 10,
+                      transition: { duration: 2, ease: "easeInOut" }
+                    }}
+                    transform="rotate(-35 50 50)"
+                    strokeLinecap="round"
+                  />
+                  
+                  {/* Pulsating end node */}
+                  <motion.circle
+                    cx="84"
+                    cy="21"
+                    r="3"
+                    initial={{ opacity: 0 }}
+                    animate={{ 
+                      opacity: 1,
+                      scale: [0.8, 1.5, 0.8],
+                      fill: ['rgba(16, 185, 129, 0.8)', 'rgba(255, 255, 255, 1)', 'rgba(16, 185, 129, 0.8)'],
+                      filter: ['blur(0px)', 'blur(2px)', 'blur(0px)'],
+                      transition: { 
+                        opacity: { delay: 1.9, duration: 0.3 },
+                        scale: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" },
+                        fill: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" },
+                        filter: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" }
+                      } 
+                    }}
+                  />
+                  
+                  {/* Glow effect */}
+                  <motion.circle
+                    cx="84"
+                    cy="21"
+                    r="4"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.5)"
+                    strokeWidth="2"
+                    initial={{ opacity: 0 }}
+                    animate={{ 
+                      opacity: [0, 0.8, 0],
+                      scale: [0.8, 1.8, 0.8],
+                      transition: { 
+                        opacity: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" },
+                        scale: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" }
+                      } 
+                    }}
+                  />
+                  
+                  <text 
+                    x="50" 
+                    y="45" 
+                    textAnchor="middle" 
+                    fill="#fff" 
+                    fontSize="14" 
+                    fontWeight="bold"
+                  >
+                    100%
+                  </text>
+                  <text 
+                    x="50" 
+                    y="65" 
+                    textAnchor="middle" 
+                    fill="#a1a1aa" 
+                    fontSize="10"
+                  >
+                    Uptime
+                  </text>
+                </svg>
+              </div>
+            </div>
+
+            {/* 24/7 Assistance */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-28 h-28">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
+                  {/* Background circle */}
+                  <circle 
+                    cx="50" 
+                    cy="50" 
+                    r="45" 
+                    fill="none" 
+                    stroke="#27272a" 
+                    strokeWidth="6"
+                  />
+                  {/* Animated pulse */}
+                  <motion.circle 
+                    cx="50" 
+                    cy="50" 
+                    r="40" 
+                    fill="none" 
+                    stroke="#ffffff" 
+                    strokeWidth="2"
+                    initial={{ opacity: 0.5, scale: 0.8 }}
+                    animate={{ 
+                      opacity: [0.5, 1, 0.5],
+                      scale: [0.8, 1, 0.8],
+                      transition: { 
+                        duration: 3, 
+                        ease: "easeInOut", 
+                        repeat: Infinity 
+                      }
+                    }}
+                  />
+                  <text 
+                    x="50" 
+                    y="45" 
+                    textAnchor="middle" 
+                    fill="#fff" 
+                    fontSize="14" 
+                    fontWeight="bold"
+                  >
+                    24/7
+                  </text>
+                  <text 
+                    x="50" 
+                    y="65" 
+                    textAnchor="middle" 
+                    fill="#a1a1aa" 
+                    fontSize="10"
+                  >
+                    Assistance
+                  </text>
+                </svg>
+              </div>
+            </div>
+
+            {/* Impressions Counter */}
+            <div className="flex flex-col items-center">
+              <motion.div
+                className="h-28 flex flex-col items-center justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.5 }}
+              >
+                <motion.div 
+                  className="text-2xl font-bold text-zinc-200 mb-1"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.7 }}
+                >
+                  {counter.toLocaleString()}+
+                </motion.div>
+                <motion.div 
+                  className="text-zinc-400 text-sm"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.9 }}
+                >
+                  Impressions
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Contact Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
           className="text-center"
         >
           <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
