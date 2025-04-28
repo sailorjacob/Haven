@@ -220,61 +220,18 @@ export default function StudioPage() {
           </div>
         </motion.div>
 
-        {/* Process Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-20"
-        >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-10">
-            Our Process
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Discovery</h3>
-              <p className="text-zinc-400">
-                We learn about your business, goals, and vision to establish clear project objectives.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Strategy</h3>
-              <p className="text-zinc-400">
-                We develop a detailed roadmap and technical approach tailored to your specific needs.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Design & Development</h3>
-              <p className="text-zinc-400">
-                Our team crafts beautiful interfaces and builds robust applications with clean code.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Launch & Optimize</h3>
-              <p className="text-zinc-400">
-                We deploy your project and provide ongoing support to ensure continued success.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Stats Section with SVG Animation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-14 pb-6 border-b border-zinc-800"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-20 pb-6 border-b border-zinc-800 overflow-visible"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center max-w-2xl mx-auto overflow-visible">
             {/* Uptime Circle */}
             <div className="flex flex-col items-center">
-              <div className="relative w-28 h-28">
-                <svg className="w-full h-full" viewBox="0 0 100 100">
+              <div className="relative w-28 h-28 overflow-visible">
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100">
                   {/* Background circle */}
                   <circle 
                     cx="50" 
@@ -282,7 +239,7 @@ export default function StudioPage() {
                     r="45" 
                     fill="none" 
                     stroke="#27272a" 
-                    strokeWidth="6"
+                    strokeWidth="4"
                   />
                   
                   {/* Main Circle */}
@@ -291,8 +248,8 @@ export default function StudioPage() {
                     cy="50"
                     r="45"
                     fill="none"
-                    stroke="#10b981"
-                    strokeWidth="6"
+                    stroke="#ffffff"
+                    strokeWidth="4"
                     strokeDasharray="283"
                     strokeDashoffset="10"  
                     initial={{ strokeDashoffset: 283 }}
@@ -306,59 +263,84 @@ export default function StudioPage() {
                   
                   {/* Pulsating end node */}
                   <motion.circle
-                    cx="84"
-                    cy="21"
+                    cx="82.5"
+                    cy="19"
                     r="3"
                     initial={{ opacity: 0 }}
                     animate={{ 
                       opacity: 1,
-                      scale: [0.8, 1.5, 0.8],
-                      fill: ['rgba(16, 185, 129, 0.8)', 'rgba(255, 255, 255, 1)', 'rgba(16, 185, 129, 0.8)'],
-                      filter: ['blur(0px)', 'blur(2px)', 'blur(0px)'],
+                      scale: [0.8, 1.2, 0.8],
+                      fill: ['rgba(45, 212, 138, 0.8)', 'rgba(45, 212, 138, 1)', 'rgba(45, 212, 138, 0.8)'],
+                      filter: ['blur(0px)', 'blur(1px)', 'blur(0px)'],
                       transition: { 
                         opacity: { delay: 1.9, duration: 0.3 },
-                        scale: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" },
-                        fill: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" },
-                        filter: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" }
+                        scale: { delay: 2, duration: 2, repeat: Infinity, repeatType: "loop" },
+                        fill: { delay: 2, duration: 2, repeat: Infinity, repeatType: "loop" },
+                        filter: { delay: 2, duration: 2, repeat: Infinity, repeatType: "loop" }
                       } 
                     }}
                   />
                   
-                  {/* Glow effect */}
+                  {/* Soft radiating glow effect */}
                   <motion.circle
-                    cx="84"
-                    cy="21"
-                    r="4"
+                    cx="82.5"
+                    cy="19"
+                    r="3"
                     fill="none"
-                    stroke="rgba(255, 255, 255, 0.5)"
-                    strokeWidth="2"
+                    stroke="rgba(255, 255, 255, 0.15)"
+                    strokeWidth="8"
                     initial={{ opacity: 0 }}
                     animate={{ 
-                      opacity: [0, 0.8, 0],
-                      scale: [0.8, 1.8, 0.8],
+                      opacity: [0, 0.7, 0],
+                      scale: [1, 2.5, 1],
+                      filter: ['blur(1px)', 'blur(3px)', 'blur(1px)'],
                       transition: { 
-                        opacity: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" },
-                        scale: { delay: 2, duration: 1.5, repeat: Infinity, repeatType: "loop" }
+                        opacity: { delay: 2, duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
+                        scale: { delay: 2, duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
+                        filter: { delay: 2, duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }
+                      } 
+                    }}
+                  />
+                  
+                  {/* Second softer glow layer */}
+                  <motion.circle
+                    cx="82.5"
+                    cy="19"
+                    r="2"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.1)"
+                    strokeWidth="12"
+                    initial={{ opacity: 0 }}
+                    animate={{ 
+                      opacity: [0, 0.5, 0],
+                      scale: [1, 3, 1],
+                      filter: ['blur(2px)', 'blur(5px)', 'blur(2px)'],
+                      transition: { 
+                        opacity: { delay: 2, duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
+                        scale: { delay: 2, duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
+                        filter: { delay: 2, duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }
                       } 
                     }}
                   />
                   
                   <text 
                     x="50" 
-                    y="45" 
+                    y="46" 
                     textAnchor="middle" 
                     fill="#fff" 
-                    fontSize="14" 
+                    fontSize="15" 
                     fontWeight="bold"
+                    dominantBaseline="middle"
                   >
                     100%
                   </text>
                   <text 
                     x="50" 
-                    y="65" 
+                    y="62" 
                     textAnchor="middle" 
                     fill="#a1a1aa" 
                     fontSize="10"
+                    dominantBaseline="middle"
                   >
                     Uptime
                   </text>
@@ -368,8 +350,8 @@ export default function StudioPage() {
 
             {/* 24/7 Assistance */}
             <div className="flex flex-col items-center">
-              <div className="relative w-28 h-28">
-                <svg className="w-full h-full" viewBox="0 0 100 100">
+              <div className="relative w-28 h-28 overflow-visible">
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100">
                   {/* Background circle */}
                   <circle 
                     cx="50" 
@@ -377,7 +359,7 @@ export default function StudioPage() {
                     r="45" 
                     fill="none" 
                     stroke="#27272a" 
-                    strokeWidth="6"
+                    strokeWidth="4"
                   />
                   {/* Animated pulse */}
                   <motion.circle 
@@ -446,6 +428,49 @@ export default function StudioPage() {
                   Impressions
                 </motion.div>
               </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Process Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mb-20"
+        >
+          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-10">
+            Our Process
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-4xl text-zinc-700 font-bold mb-4">01</div>
+              <h3 className="text-xl text-zinc-200 mb-2">Discovery</h3>
+              <p className="text-zinc-400">
+                We learn about your business, goals, and vision to establish clear project objectives.
+              </p>
+            </div>
+            <div>
+              <div className="text-4xl text-zinc-700 font-bold mb-4">02</div>
+              <h3 className="text-xl text-zinc-200 mb-2">Strategy</h3>
+              <p className="text-zinc-400">
+                We develop a detailed roadmap and technical approach tailored to your specific needs.
+              </p>
+            </div>
+            <div>
+              <div className="text-4xl text-zinc-700 font-bold mb-4">03</div>
+              <h3 className="text-xl text-zinc-200 mb-2">Design & Development</h3>
+              <p className="text-zinc-400">
+                Our team crafts beautiful interfaces and builds robust applications with clean code.
+              </p>
+            </div>
+            <div>
+              <div className="text-4xl text-zinc-700 font-bold mb-4">04</div>
+              <h3 className="text-xl text-zinc-200 mb-2">Launch & Optimize</h3>
+              <p className="text-zinc-400">
+                We deploy your project and provide ongoing support to ensure continued success.
+              </p>
             </div>
           </div>
         </motion.div>
