@@ -23,7 +23,7 @@ export default function StudioPage() {
     {
       id: "roundabout",
       title: "roundabout.run",
-      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      description: "A software platform for advanced customer support with ai integration.",
       technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
       link: "https://roundabout.run",
@@ -32,7 +32,7 @@ export default function StudioPage() {
     {
       id: "beloved",
       title: "be-loved.app",
-      description: "A relationship wellness platform with personalized content and interactive experiences.",
+      description: "A NEMT platform with personalized content and interactive scheduling.",
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
       link: "https://be-loved.app",
@@ -41,7 +41,7 @@ export default function StudioPage() {
     {
       id: "ammocat",
       title: "ammocat3000.com",
-      description: "An e-commerce platform for custom ammunition with advanced filtering and search capabilities.",
+      description: "A homepage platform for New York based artist Ammo Cat with advanced filtering and e-commerce capabilities.",
       technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat3000.com",
@@ -480,7 +480,7 @@ export default function StudioPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="text-center"
+          className="text-center mb-20"
         >
           <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
             Start Your Project
@@ -494,6 +494,66 @@ export default function StudioPage() {
           >
             Contact Us
           </Link>
+        </motion.div>
+
+        {/* Team Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="mt-20 pt-16 border-t border-zinc-800"
+        >
+          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-12 text-center">
+            Our Team
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto">
+            {/* Jarret Shull */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white bg-zinc-800 flex items-center justify-center">
+                <span className="text-zinc-500 text-4xl">JS</span>
+              </div>
+              <h3 className="text-lg font-medium text-zinc-200 mb-1">Jarret Shull</h3>
+              <p className="text-zinc-400 text-sm mb-2">Sales</p>
+              <p className="text-zinc-500 text-xs text-center max-w-xs">
+                Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.
+              </p>
+            </div>
+
+            {/* Jacob Beam */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
+                <Image
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
+                  alt="Jacob Beam"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-medium text-zinc-200 mb-1">Jacob Beam</h3>
+              <p className="text-zinc-400 text-sm mb-2">Founder</p>
+              <p className="text-zinc-500 text-xs text-center max-w-xs">
+                Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design.
+              </p>
+            </div>
+
+            {/* Klaire Rasche */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
+                <Image
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
+                  alt="Klaire Rasche"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-medium text-zinc-200 mb-1">Klaire Rasche</h3>
+              <p className="text-zinc-400 text-sm mb-2">Design</p>
+              <p className="text-zinc-500 text-xs text-center max-w-xs">
+                Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </main>
