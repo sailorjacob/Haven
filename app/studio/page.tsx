@@ -490,12 +490,12 @@ export default function StudioPage() {
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
             Ready to bring your digital vision to life? Let's create something exceptional together.
           </p>
-          <Link 
-            href="/contact" 
+          <button 
             className="inline-flex items-center justify-center bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300"
+            onClick={() => alert('Client intake form coming soon!')}
           >
             Contact Us
-          </Link>
+          </button>
         </motion.div>
 
         {/* Team Section */}
