@@ -100,9 +100,11 @@ export default function StudioPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
+          {/* Hidden temporarily
           <Link href="/" className="text-zinc-400 mb-4 inline-block text-sm hover:text-zinc-300 transition-colors">
             ← Back to Haven
           </Link>
+          */}
           <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-300 to-zinc-500">
               Haven Studio
@@ -110,7 +112,7 @@ export default function StudioPage() {
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6 lowercase">
             A digital design and web development studio crafting premium 
-            experiences for modern businesses and brands.
+            experiences for modern brands and startups.
           </p>
         </motion.div>
 
@@ -507,8 +509,10 @@ export default function StudioPage() {
             Our Team
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
+            {/* Hidden temporarily 
             {/* Jarret Shull */}
+            {/*
             <div className="flex flex-col items-center">
               <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white bg-zinc-800 flex items-center justify-center">
                 <span className="text-zinc-500 text-4xl">JS</span>
@@ -519,6 +523,7 @@ export default function StudioPage() {
                 Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.
               </p>
             </div>
+            */}
 
             {/* Jacob Beam */}
             <div className="flex flex-col items-center">
