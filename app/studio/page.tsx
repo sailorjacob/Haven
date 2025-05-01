@@ -21,13 +21,13 @@ export default function StudioPage() {
   
   const projects: Project[] = [
     {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "A software platform for advanced customer support with ai integration.",
-      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
-      link: "https://roundabout.run",
-      category: "webapp"
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "An e-commerce platform for custom ammunition with advanced filtering and search capabilities.",
+      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "https://ammocat3000.com",
+      category: "website"
     },
     {
       id: "beloved",
@@ -39,13 +39,13 @@ export default function StudioPage() {
       category: "webapp"
     },
     {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "A homepage platform for New York based artist Ammo Cat with advanced filtering and e-commerce capabilities.",
-      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "https://ammocat3000.com",
-      category: "website"
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
+      link: "https://roundabout.run",
+      category: "webapp"
     },
     {
       id: "moonlight",
@@ -518,8 +518,13 @@ export default function StudioPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto">
             {/* Jarret Shull */}
             <div className="flex flex-col items-center">
-              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white bg-zinc-800 flex items-center justify-center">
-                <span className="text-zinc-500 text-4xl">JS</span>
+              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
+                <Image
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
+                  alt="Jarret Shull"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-lg font-medium text-zinc-200 mb-1">Jarret Shull</h3>
               <p className="text-zinc-400 text-sm mb-2">Sales</p>
