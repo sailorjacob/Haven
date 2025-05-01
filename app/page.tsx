@@ -104,12 +104,14 @@ export default function LandingPage() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="text-center"
         >
+          {/* Hidden temporarily
           <Link
             href="/home" 
             className="inline-flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300"
           >
             explore
           </Link>
+          */}
           
           <div className="mt-8 flex justify-center">
             <div className="group relative">
