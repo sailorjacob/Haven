@@ -444,10 +444,10 @@ export default function Contact() {
                     For questions about Haven's vision and creative ecosystem.
                   </p>
                   <a 
-                    href="mailto:join@haven.engineer" 
+                    href="mailto:info@haven.engineer" 
                     className="inline-block text-neutral-300 hover:text-[#3B82F6] transition-colors duration-300"
                   >
-                    join@haven.engineer
+                    info@haven.engineer
                   </a>
                 </div>
                 <div className="space-y-4">
@@ -456,10 +456,10 @@ export default function Contact() {
                     For creators interested in joining our worldwide network from anywhere on the globe.
                   </p>
                   <a 
-                    href="mailto:join@haven.engineer" 
+                    href="mailto:info@haven.engineer" 
                     className="inline-block text-neutral-300 hover:text-[#3B82F6] transition-colors duration-300"
                   >
-                    join@haven.engineer
+                    info@haven.engineer
                   </a>
                 </div>
               </div>
