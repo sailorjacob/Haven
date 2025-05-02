@@ -41,7 +41,7 @@ export default function StudioPage() {
     {
       id: "beloved",
       title: "be-loved.app",
-      description: "A NEMT platform with personalized content and interactive scheduling.",
+      description: "A NEMT web-platform and iOS app with personalized content and interactive scheduling.",
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
       link: "https://be-loved.app",
