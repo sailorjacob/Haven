@@ -21,6 +21,15 @@ export default function StudioPage() {
   
   const projects: Project[] = [
     {
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
+      link: "https://roundabout.run",
+      category: "webapp"
+    },
+    {
       id: "ammocat",
       title: "ammocat3000.com",
       description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
@@ -36,15 +45,6 @@ export default function StudioPage() {
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
       link: "https://be-loved.app",
-      category: "webapp"
-    },
-    {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
-      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
-      link: "https://roundabout.run",
       category: "webapp"
     },
     {
@@ -532,23 +532,6 @@ export default function StudioPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto">
-            {/* Jarret Shull */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
-                <Image
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
-                  alt="Jarret Shull"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-medium text-zinc-200 mb-1">Jarret Shull</h3>
-              <p className="text-zinc-400 text-sm mb-2">Sales</p>
-              <p className="text-zinc-500 text-xs text-center max-w-xs">
-                Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.
-              </p>
-            </div>
-
             {/* Jacob Beam */}
             <div className="flex flex-col items-center">
               <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
@@ -563,6 +546,23 @@ export default function StudioPage() {
               <p className="text-zinc-400 text-sm mb-2">Founder</p>
               <p className="text-zinc-500 text-xs text-center max-w-xs">
                 Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design.
+              </p>
+            </div>
+
+            {/* Jarret Shull */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
+                <Image
+                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
+                  alt="Jarret Shull"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-medium text-zinc-200 mb-1">Jarret Shull</h3>
+              <p className="text-zinc-400 text-sm mb-2">Sales</p>
+              <p className="text-zinc-500 text-xs text-center max-w-xs">
+                Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.
               </p>
             </div>
 
