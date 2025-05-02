@@ -93,6 +93,22 @@ export default function StudioPage() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="absolute top-24 left-6 md:left-8"
+        >
+          <Image 
+            src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//silveranimation.gif"
+            alt="Haven Studio Logo"
+            width={80}
+            height={40}
+            className="object-contain"
+          />
+        </motion.div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
