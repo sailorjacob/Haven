@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { Inter } from "next/font/google"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { ChevronDown } from "lucide-react"
 import InteractiveGradient from "@/components/interactive-gradient"
 
 // Using Inter for modern feel
@@ -12,31 +13,34 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 })
 
+// Single color for consistency
+const PRIMARY_COLOR = "#333333"
+
 export default function ExplorePage() {
   return (
     <main className={`${inter.className} bg-gray-100 text-gray-800 h-screen overflow-hidden`}>
       {/* Top Navigation */}
-      <div className="fixed top-0 left-0 right-0 z-20 bg-gray-100/80 backdrop-blur-sm">
+      <div className="fixed top-0 left-0 right-0 z-20">
         <div className="container mx-auto px-6">
           <nav className="flex justify-center py-6">
             <ul className="flex space-x-10">
               <li>
-                <Link href="/design" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link href="/studio" className="text-gray-600 hover:text-gray-900 transition-colors">
                   Design
                 </Link>
               </li>
               <li>
-                <Link href="/imagery" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link href="/studio" className="text-gray-600 hover:text-gray-900 transition-colors">
                   Imagery
                 </Link>
               </li>
               <li>
-                <Link href="/apps" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link href="/studio" className="text-gray-600 hover:text-gray-900 transition-colors">
                   Apps
                 </Link>
               </li>
               <li>
-                <Link href="/games" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link href="/studio" className="text-gray-600 hover:text-gray-900 transition-colors">
                   Games
                 </Link>
               </li>
@@ -90,12 +94,13 @@ export default function ExplorePage() {
           </motion.p>
           
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.1 }}
-            className="mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
+            className="mt-16 inline-flex flex-col items-center cursor-pointer opacity-80 hover:opacity-100 transition-all duration-500"
           >
-            <span className="text-sm text-gray-500">Explore</span>
+            <span className="text-sm text-gray-500 mb-2">Explore</span>
+            <ChevronDown size={20} color={PRIMARY_COLOR} />
           </motion.div>
         </div>
       </section>
