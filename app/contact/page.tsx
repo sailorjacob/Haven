@@ -7,10 +7,32 @@ import { useState } from "react"
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Form submission is handled by Formspree
-    setSubmitted(true)
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/xyzwejry", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        const data = await response.json();
+        alert("Submission failed: " + (data.error || "Unknown error"));
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was a problem submitting your form. Please try again.");
+    }
   }
 
   return (
