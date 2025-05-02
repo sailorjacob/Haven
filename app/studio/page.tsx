@@ -103,9 +103,9 @@ export default function StudioPage() {
           <Image 
             src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//silveranimation.gif"
             alt="Haven Studio Logo"
-            width={80}
-            height={40}
-            className="object-contain"
+            width={70}
+            height={35}
+            className="object-contain opacity-75"
           />
         </motion.div>
 
