@@ -109,6 +109,21 @@ export default function StudioPage() {
           />
         </motion.div>
 
+        {/* Contact Button */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="absolute top-8 right-8"
+        >
+          <button 
+            className="bg-zinc-200 hover:bg-white text-zinc-900 py-2 px-6 text-sm tracking-widest transition-all duration-300"
+            onClick={() => alert('Client intake form coming soon!')}
+          >
+            Contact
+          </button>
+        </motion.div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
