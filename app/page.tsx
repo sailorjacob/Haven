@@ -11,12 +11,11 @@ export default function LandingPage() {
         <div className="flex justify-between items-start mb-12 w-full">
           <div className="flex-1 flex justify-start">
             <div className="group relative inline-block">
-              <Link
-                href="/moonlight-garden"
-                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+              <span
+                className="inline-flex items-center justify-center border border-zinc-700 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
               >
                 moonlight garden
-              </Link>
+              </span>
               <div className="absolute top-full right-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
                 <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
                   <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">tap with bitcoin for food</p>
@@ -43,12 +42,11 @@ export default function LandingPage() {
           
           <div className="flex-1 flex justify-end">
             <div className="group relative inline-block">
-              <Link
-                href="https://roundabout.run"
-                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+              <span
+                className="inline-flex items-center justify-center border border-zinc-700 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
               >
                 roundabout
-              </Link>
+              </span>
               <div className="absolute top-full left-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
                 <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
                   <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">tap with bitcoin for a ride to the doctor</p>
@@ -113,13 +111,13 @@ export default function LandingPage() {
           
           <div className="mt-8 flex justify-center">
             <div className="group relative">
-              <Link href="/bitcoinbank">
+              <div>
                 <img 
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//bitcoinbank.svg" 
                   alt="Bitcoin Bank"
                   className="w-10 h-10 filter invert opacity-40 hover:opacity-60 transition-opacity"
                 />
-              </Link>
+              </div>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
                 <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm whitespace-nowrap">
                   <p className="text-xs text-zinc-400 leading-relaxed">Bitcoin Bank - branded transactions</p>
@@ -153,7 +151,7 @@ function FeatureBox({ title, description }: FeatureBoxProps) {
         <span className="text-zinc-400">{title}</span>
       </div>
       
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10 pointer-events-none">
         <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-800/90 p-4 shadow-xl backdrop-blur-sm rounded-sm">
           <p className="text-xs text-zinc-400 leading-relaxed">{description}</p>
         </div>
