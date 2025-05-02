@@ -521,12 +521,13 @@ export default function StudioPage() {
             Ready to bring your digital vision to life? Let's create something exceptional together.
           </p>
           <div className="flex flex-col items-center gap-4">
-            <button 
-              className="inline-flex items-center justify-center bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300"
-              onClick={() => alert('Client intake form coming soon!')}
-            >
-              Contact Us
-            </button>
+            <Link href="/contact">
+              <button 
+                className="inline-flex items-center justify-center bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300"
+              >
+                Contact Us
+              </button>
+            </Link>
             <a 
               href="mailto:info@haven.engineer" 
               className="text-zinc-400 hover:text-zinc-200 text-sm transition-colors"
