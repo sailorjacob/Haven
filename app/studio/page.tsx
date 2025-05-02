@@ -116,12 +116,13 @@ export default function StudioPage() {
           transition={{ duration: 0.8 }}
           className="absolute top-8 right-8"
         >
-          <button 
-            className="border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white"
-            onClick={() => alert('Client intake form coming soon!')}
-          >
-            Contact
-          </button>
+          <Link href="/contact">
+            <button 
+              className="border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white"
+            >
+              Contact
+            </button>
+          </Link>
         </motion.div>
 
         {/* Header */}
