@@ -14,13 +14,47 @@ const inter = Inter({
 
 export default function ExplorePage() {
   return (
-    <main className={`${inter.className} bg-gray-100 text-gray-800`}>
+    <main className={`${inter.className} bg-gray-100 text-gray-800 h-screen overflow-hidden`}>
+      {/* Top Navigation */}
+      <div className="fixed top-0 left-0 right-0 z-20 bg-gray-100/80 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <nav className="flex justify-center py-6">
+            <ul className="flex space-x-10">
+              <li>
+                <Link href="/design" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  Design
+                </Link>
+              </li>
+              <li>
+                <Link href="/imagery" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  Imagery
+                </Link>
+              </li>
+              <li>
+                <Link href="/apps" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  Apps
+                </Link>
+              </li>
+              <li>
+                <Link href="/games" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  Games
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
       {/* Hero Section with Logo */}
       <section className="h-screen flex flex-col justify-center items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gray-50 z-0">
           <InteractiveGradient />
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=30&width=30')] bg-repeat opacity-[0.03] pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-100 pointer-events-none"></div>
         </div>
 
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -54,73 +88,15 @@ export default function ExplorePage() {
           >
             dream builders
           </motion.p>
-        </div>
-      </section>
-
-      {/* Navigation Menu */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow"
-            >
-              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Design</h2>
-              <Link href="/design" className="text-blue-600 hover:text-blue-800 text-sm">
-                Explore Design
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow"
-            >
-              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Imagery</h2>
-              <Link href="/imagery" className="text-blue-600 hover:text-blue-800 text-sm">
-                Explore Imagery
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow"
-            >
-              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Apps</h2>
-              <Link href="/apps" className="text-blue-600 hover:text-blue-800 text-sm">
-                Explore Apps
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow"
-            >
-              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Games</h2>
-              <Link href="/games" className="text-blue-600 hover:text-blue-800 text-sm">
-                Explore Games
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow"
-            >
-              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Contact</h2>
-              <Link href="/contact" className="text-blue-600 hover:text-blue-800 text-sm">
-                Contact Us
-              </Link>
-            </motion.div>
-          </div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.1 }}
+            className="mt-16"
+          >
+            <span className="text-sm text-gray-500">Explore</span>
+          </motion.div>
         </div>
       </section>
     </main>
