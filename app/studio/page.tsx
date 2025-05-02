@@ -114,10 +114,10 @@ export default function StudioPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="absolute top-28 right-8"
+          className="absolute top-8 right-8"
         >
           <button 
-            className="bg-zinc-200 hover:bg-white text-zinc-900 py-2 px-6 text-sm tracking-widest transition-all duration-300 rounded-full"
+            className="border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white"
             onClick={() => alert('Client intake form coming soon!')}
           >
             Contact
@@ -153,17 +153,17 @@ export default function StudioPage() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
         >
           <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
-            <h3 className="text-xl mb-4 text-zinc-200">Web Design</h3>
-            <p className="text-zinc-400 mb-4">
-              Minimalist, elegant interfaces that elevate brands with 
-              thoughtful interactions and premium aesthetics.
-            </p>
-          </div>
-          <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
             <h3 className="text-xl mb-4 text-zinc-200">Web Development</h3>
             <p className="text-zinc-400 mb-4">
               Custom web applications built with modern frameworks 
               and performance-focused architecture.
+            </p>
+          </div>
+          <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
+            <h3 className="text-xl mb-4 text-zinc-200">Web Design</h3>
+            <p className="text-zinc-400 mb-4">
+              Minimalist, elegant interfaces that elevate brands with 
+              thoughtful interactions and premium aesthetics.
             </p>
           </div>
           <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
