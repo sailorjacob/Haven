@@ -114,10 +114,10 @@ export default function StudioPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="absolute top-8 right-8"
+          className="absolute top-28 right-8"
         >
           <button 
-            className="bg-zinc-200 hover:bg-white text-zinc-900 py-2 px-6 text-sm tracking-widest transition-all duration-300"
+            className="bg-zinc-200 hover:bg-white text-zinc-900 py-2 px-6 text-sm tracking-widest transition-all duration-300 rounded-full"
             onClick={() => alert('Client intake form coming soon!')}
           >
             Contact
