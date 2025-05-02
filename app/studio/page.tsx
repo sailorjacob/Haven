@@ -23,7 +23,7 @@ export default function StudioPage() {
     {
       id: "ammocat",
       title: "ammocat3000.com",
-      description: "An e-commerce platform for custom ammunition with advanced filtering and search capabilities.",
+      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
       technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat3000.com",
@@ -49,7 +49,7 @@ export default function StudioPage() {
     },
     {
       id: "moonlight",
-      title: "Moonlight Garden",
+      title: "Moonlight Garden 🌱",
       description: "A 24/7 mobile order-only restaurant with advanced automation systems.",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
