@@ -21,6 +21,15 @@ export default function StudioPage() {
   
   const projects: Project[] = [
     {
+      id: "beloved",
+      title: "be-loved.app",
+      description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "https://be-loved.app",
+      category: "webapp"
+    },
+    {
       id: "roundabout",
       title: "roundabout.run",
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
@@ -37,15 +46,6 @@ export default function StudioPage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat3000.com",
       category: "website"
-    },
-    {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "A NEMT web-platform and iOS app with personalized content and interactive scheduling.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "https://be-loved.app",
-      category: "webapp"
     },
     {
       id: "moonlight",
