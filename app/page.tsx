@@ -105,7 +105,7 @@ export default function LandingPage() {
           className="text-center"
         >
           <Link
-            href="/home" 
+            href="/explore" 
             className="inline-flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300"
           >
             explore
