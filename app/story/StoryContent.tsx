@@ -171,7 +171,7 @@ export default function StoryContent() {
                 onClick={toggleMemorialPopup} 
                 className="text-zinc-500 font-medium cursor-pointer hover:text-zinc-700 relative inline-block transition-colors border-b border-dotted border-zinc-400"
               >
-                someone I loved
+                my spiritual sister
               </span>{" "}
               to a heroin overdose, coming home from my arrest to find her.
             </p>
@@ -216,7 +216,7 @@ export default function StoryContent() {
                 />
               </div>
               <div className="p-4 bg-zinc-100">
-                <p className="text-zinc-500 text-sm text-center">In loving memory</p>
+                <p className="text-zinc-500 text-sm text-center">Phoebe</p>
               </div>
               <button 
                 onClick={closeMemorialPopup}
