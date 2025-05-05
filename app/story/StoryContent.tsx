@@ -9,6 +9,7 @@ export default function StoryContent() {
   const [isExpanded, setIsExpanded] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [animationComplete, setAnimationComplete] = useState(false)
+  const [showMemorialPopup, setShowMemorialPopup] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const imageSequence = [
@@ -50,6 +51,29 @@ export default function StoryContent() {
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   }
+
+  const toggleMemorialPopup = () => {
+    setShowMemorialPopup(!showMemorialPopup);
+  }
+
+  const closeMemorialPopup = () => {
+    setShowMemorialPopup(false);
+  }
+
+  // Close popup when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (showMemorialPopup && !target.closest('.memorial-popup-content')) {
+        setShowMemorialPopup(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showMemorialPopup]);
 
   return (
     <main className="min-h-screen bg-white text-zinc-700 flex flex-col items-center justify-start p-4 sm:p-6 font-sans">
@@ -142,7 +166,14 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              But it hasn't been easy. I faced a false arrest orchestrated by a former employer, Libbie Mugrabi, leading to a $5 million lawsuit (Daily Beast). My case, backed by a lawyer who's taken on dictators, will be a clean sweep. Currently, her second lawyer is trying to drop out of the court. I've also lost someone I loved to a heroin overdose, coming home from my arrest to find her.
+              But it hasn't been easy. I faced a false arrest orchestrated by a former employer, Libbie Mugrabi, leading to a $5 million lawsuit (Daily Beast). My case, backed by a lawyer who's taken on dictators, will be a clean sweep. Currently, her second lawyer is trying to drop out of the court. I've also lost{" "}
+              <span 
+                onClick={toggleMemorialPopup} 
+                className="text-zinc-500 font-medium cursor-pointer hover:text-zinc-700 relative inline-block transition-colors border-b border-dotted border-zinc-400"
+              >
+                someone I loved
+              </span>{" "}
+              to a heroin overdose, coming home from my arrest to find her.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
@@ -159,6 +190,46 @@ export default function StoryContent() {
           </motion.div>
         </motion.div>
       </div>
+      
+      {/* Memorial Image Popup */}
+      <AnimatePresence>
+        {showMemorialPopup && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 20, stiffness: 300 }}
+              className="memorial-popup-content relative max-w-md w-full bg-zinc-100 rounded-lg overflow-hidden shadow-2xl"
+            >
+              <div className="relative aspect-square overflow-hidden">
+                <img 
+                  src="https://i0.wp.com/jacobhalestudio.net/wp-content/uploads/2024/11/IMG_6351.jpg?w=828&ssl=1" 
+                  alt="Memorial" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4 bg-zinc-100">
+                <p className="text-zinc-500 text-sm text-center">In loving memory</p>
+              </div>
+              <button 
+                onClick={closeMemorialPopup}
+                className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   )
 } 
