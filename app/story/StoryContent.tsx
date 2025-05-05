@@ -177,7 +177,7 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a superplatform that combines AI-generated media, like netflix x spotify with ai. With dark-styled accommodation living spaces as nice as Soho House, or Disney, and art an art gallery network like Gagosian. Haven would be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds.
+              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a superplatform that combines AI-generated media, like netflix x spotify with ai. With dark-styled accommodation living spaces as nice as Soho House, or Disney, and art an art gallery network like Gagosian. Haven can be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
@@ -185,7 +185,7 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              Ender's Game, is my favorite book. Ender was the best battle student, coerced into fighting a real war thinking it was a simulation, forcing him to be more ruthless than natural. Today, someone like Ender might know they're the best and be blocked by systems at every turn. I think in the many cases where an individual is the best in the world at something, they should be championed.
+              Ender's Game, is my favorite book. Ender was the best battle student, coerced into fighting a real war thinking it was a simulation, forcing him to be more ruthless than natural. Today, someone like Ender might know they're the best and be blocked by systems at every turn. I think in the many cases where an individual is the best in the world at something, they should be chosen.
             </p>
           </motion.div>
         </motion.div>
