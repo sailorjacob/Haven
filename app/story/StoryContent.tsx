@@ -177,7 +177,7 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a network state that combines AI-generated media, like netflix x spotify with ai. With dark-styled accommodation living spaces as nice as Soho House, or Disney, and art an art gallery network like Gagosian. Haven would be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds.
+              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a superplatform that combines AI-generated media, like netflix x spotify with ai. With dark-styled accommodation living spaces as nice as Soho House, or Disney, and art an art gallery network like Gagosian. Haven would be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
@@ -208,15 +208,15 @@ export default function StoryContent() {
               transition={{ type: "spring", damping: 20, stiffness: 300 }}
               className="memorial-popup-content relative max-w-md w-full bg-zinc-100 rounded-lg overflow-hidden shadow-2xl"
             >
+              <div className="p-4 bg-zinc-100 border-b border-zinc-200">
+                <p className="text-zinc-500 text-sm text-center font-medium">Phoebe</p>
+              </div>
               <div className="relative aspect-square overflow-hidden">
                 <img 
                   src="https://i0.wp.com/jacobhalestudio.net/wp-content/uploads/2024/11/IMG_6351.jpg?w=828&ssl=1" 
                   alt="Memorial" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="p-4 bg-zinc-100">
-                <p className="text-zinc-500 text-sm text-center">Phoebe</p>
               </div>
               <button 
                 onClick={closeMemorialPopup}
