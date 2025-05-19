@@ -21,12 +21,21 @@ export default function StudioPage() {
   
   const projects: Project[] = [
     {
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
+      link: "/jacobhalestudio",
+      category: "website"
+    },
+    {
       id: "beloved",
       title: "be-loved.app",
       description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "https://be-loved.app",
+      link: "/beloved",
       category: "webapp"
     },
     {
@@ -35,7 +44,7 @@ export default function StudioPage() {
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
       technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
-      link: "https://roundabout.run",
+      link: "/roundabout",
       category: "webapp"
     },
     {
@@ -44,7 +53,7 @@ export default function StudioPage() {
       description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
       technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "https://ammocat3000.com",
+      link: "/ammocat",
       category: "website"
     },
     {
