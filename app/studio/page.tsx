@@ -528,12 +528,6 @@ export default function StudioPage() {
               Contact Us
             </button>
             </Link>
-            <a 
-              href="mailto:info@haven.engineer" 
-              className="text-zinc-400 hover:text-zinc-200 text-sm transition-colors"
-            >
-              info@haven.engineer
-            </a>
           </div>
         </motion.div>
 
@@ -601,6 +595,17 @@ export default function StudioPage() {
             </div>
           </div>
         </motion.div>
+        
+        {/* Contact info footer */}
+        <div className="text-center mt-16">
+          <a href="mailto:info@haven.engineer" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
+            info@haven.engineer
+          </a>
+          <span className="text-zinc-500 mx-2 text-xs">•</span>
+          <a href="tel:812-360-9867" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
+            812-360-9867
+          </a>
+        </div>
       </div>
     </main>
   )

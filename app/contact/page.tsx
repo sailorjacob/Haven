@@ -44,7 +44,7 @@ export default function ContactPage() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        {/* Header */}
+      {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,8 +77,8 @@ export default function ContactPage() {
               <p className="text-zinc-400 mb-8">We'll get back to you as soon as possible.</p>
               <Link href="/studio" className="inline-flex items-center justify-center border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white">
                 Return to Studio
-              </Link>
-            </div>
+          </Link>
+        </div>
           ) : (
             <form 
               action="https://formspree.io/f/xyzwejry" 
@@ -95,9 +95,9 @@ export default function ContactPage() {
                   required
                   className="w-full bg-zinc-800 border border-zinc-700 p-3 text-zinc-300 focus:outline-none focus:border-zinc-500"
                 />
-              </div>
-              
-              <div>
+          </div>
+
+          <div>
                 <label htmlFor="email" className="block text-zinc-300 mb-2">Email</label>
                 <input
                   type="email"
@@ -106,8 +106,8 @@ export default function ContactPage() {
                   required
                   className="w-full bg-zinc-800 border border-zinc-700 p-3 text-zinc-300 focus:outline-none focus:border-zinc-500"
                 />
-              </div>
-              
+                  </div>
+                  
               <div>
                 <label htmlFor="projectType" className="block text-zinc-300 mb-2">Project Type</label>
                 <select
@@ -120,8 +120,8 @@ export default function ContactPage() {
                   <option value="design">Design</option>
                   <option value="other">Other</option>
                 </select>
-              </div>
-              
+                </div>
+                
               <div>
                 <label htmlFor="budget" className="block text-zinc-300 mb-2">Budget Range</label>
                 <select
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   <option value="10k-25k">$10,000 - $25,000</option>
                   <option value="25k+">$25,000+</option>
                 </select>
-              </div>
+                </div>
               
               <div>
                 <label htmlFor="message" className="block text-zinc-300 mb-2">Project Details</label>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                   className="w-full bg-zinc-800 border border-zinc-700 p-3 text-zinc-300 focus:outline-none focus:border-zinc-500"
                 ></textarea>
               </div>
-              
+
               <div>
                 <button 
                   type="submit"
@@ -158,6 +158,16 @@ export default function ContactPage() {
             </form>
           )}
         </motion.div>
+        
+        <div className="text-center mt-8">
+          <a href="mailto:info@haven.engineer" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
+            info@haven.engineer
+          </a>
+          <span className="text-zinc-500 mx-2 text-xs">•</span>
+          <a href="tel:812-360-9867" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
+            812-360-9867
+          </a>
+        </div>
       </div>
     </main>
   )
