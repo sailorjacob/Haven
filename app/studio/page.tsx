@@ -98,13 +98,13 @@ export default function StudioPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="absolute top-24 left-6 md:left-8"
+          className="absolute top-8 left-4"
         >
           <Image 
             src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//silveranimation.gif"
             alt="Haven Studio Logo"
-            width={70}
-            height={35}
+            width={35}
+            height={17}
             className="object-contain opacity-75"
           />
         </motion.div>
@@ -522,11 +522,11 @@ export default function StudioPage() {
           </p>
           <div className="flex flex-col items-center gap-4">
             <Link href="/contact">
-              <button 
-                className="inline-flex items-center justify-center bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300"
-              >
-                Contact Us
-              </button>
+            <button 
+              className="inline-flex items-center justify-center bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300"
+            >
+              Contact Us
+            </button>
             </Link>
             <a 
               href="mailto:info@haven.engineer" 
