@@ -62,97 +62,114 @@ const InteractiveGradient: React.FC<InteractiveGradientProps> = ({ className = "
   const [position, setPosition] = useState({ x: 50, y: 50 })
   const [rotation, setRotation] = useState(0)
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const lastPosition = useRef({ x: 50, y: 50 })
-  const lastAngle = useRef(0)
+  const animationRef = useRef<number | null>(null)
   const [stars, setStars] = useState<Star[]>([])
+  
+  // Store current and target values for smooth animation
+  const currentPos = useRef({ x: 50, y: 50 })
+  const targetPos = useRef({ x: 50, y: 50 })
+  const currentRotation = useRef(0)
+  const isMouseInside = useRef(false)
 
   // Generate stars on client-side only
   useEffect(() => {
     setStars(generateStars(30))
+    
+    // Setup animation loop for smooth transitions
+    const animate = () => {
+      // Calculate smoothing factor based on whether mouse is inside the component
+      const smoothing = isMouseInside.current ? 0.1 : 0.05
+      
+      // Calculate new position with smoothing
+      const newX = currentPos.current.x + (targetPos.current.x - currentPos.current.x) * smoothing
+      const newY = currentPos.current.y + (targetPos.current.y - currentPos.current.y) * smoothing
+      
+      // Calculate new rotation with smoothing
+      // Only update if position changed significantly
+      const dx = targetPos.current.x - 50
+      const dy = targetPos.current.y - 50
+      const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI)
+      
+      // Smooth rotation change
+      let angleDiff = targetAngle - currentRotation.current
+      // Handle angle wrapping
+      if (angleDiff > 180) angleDiff -= 360
+      if (angleDiff < -180) angleDiff += 360
+      
+      const newRotation = currentRotation.current + angleDiff * smoothing * 0.5
+      
+      // Only update state if there's a significant change
+      const hasChanged = 
+        Math.abs(newX - currentPos.current.x) > 0.01 || 
+        Math.abs(newY - currentPos.current.y) > 0.01 ||
+        Math.abs(angleDiff) > 0.01
+      
+      if (hasChanged) {
+        currentPos.current = { x: newX, y: newY }
+        currentRotation.current = newRotation
+        setPosition({ x: newX, y: newY })
+        setRotation(newRotation)
+      }
+      
+      animationRef.current = requestAnimationFrame(animate)
+    }
+    
+    // Start animation
+    animationRef.current = requestAnimationFrame(animate)
+    
+    // Clean up
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
   }, [])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!wrapperRef.current) return
-
+      
+      isMouseInside.current = true
+      
+      // Get container dimensions and center point
       const rect = wrapperRef.current.getBoundingClientRect()
+      const centerX = rect.width / 2
+      const centerY = rect.height / 2
       
-      // Calculate normalized mouse position (-1 to 1)
-      const mouseX = (e.clientX - rect.left) / rect.width * 2 - 1
-      const mouseY = (e.clientY - rect.top) / rect.height * 2 - 1
-
+      // Calculate normalized position (-1 to 1 range)
+      const normalizedX = (e.clientX - rect.left - centerX) / centerX
+      const normalizedY = (e.clientY - rect.top - centerY) / centerY
+      
       // Calculate distance from center (0 to 1)
-      const distance = Math.min(Math.sqrt(mouseX * mouseX + mouseY * mouseY), 1)
+      const distance = Math.min(
+        Math.sqrt(normalizedX * normalizedX + normalizedY * normalizedY),
+        1
+      )
       
-      // Calculate angle, maintaining continuity
-      let angle = Math.atan2(mouseY, mouseX)
+      // Apply a non-linear distance effect for smoother response
+      const scaledDistance = Math.pow(distance, 0.7) * 20
       
-      // Ensure smooth angle transitions
-      const angleDiff = angle - lastAngle.current
-      if (Math.abs(angleDiff) > Math.PI) {
-        if (angleDiff > 0) {
-          angle -= 2 * Math.PI
-        } else {
-          angle += 2 * Math.PI
-        }
+      // Update target position (50,50 is center)
+      targetPos.current = {
+        x: 50 + normalizedX * scaledDistance,
+        y: 50 + normalizedY * scaledDistance
       }
-      
-      // Smooth out the movement
-      const orbitRadius = 30
-      const targetX = 50 + Math.cos(angle) * orbitRadius * distance
-      const targetY = 50 + Math.sin(angle) * orbitRadius * distance
-      
-      // Apply smoothing
-      const smoothFactor = 0.15
-      const x = lastPosition.current.x + (targetX - lastPosition.current.x) * smoothFactor
-      const y = lastPosition.current.y + (targetY - lastPosition.current.y) * smoothFactor
-      
-      setPosition({ x, y })
-      setRotation(angle * (180 / Math.PI))
-      
-      lastPosition.current = { x, y }
-      lastAngle.current = angle
     }
-
+    
     const handleMouseLeave = () => {
-      // Smoothly return to center
-      const smoothToCenter = () => {
-        if (!wrapperRef.current) return
-
-        const dx = 50 - lastPosition.current.x
-        const dy = 50 - lastPosition.current.y
-        const distance = Math.sqrt(dx * dx + dy * dy)
-
-        if (distance < 0.1) {
-          setPosition({ x: 50, y: 50 })
-          setRotation(0)
-          lastPosition.current = { x: 50, y: 50 }
-          lastAngle.current = 0
-          return
-        }
-
-        const smoothFactor = 0.1
-        const x = lastPosition.current.x + dx * smoothFactor
-        const y = lastPosition.current.y + dy * smoothFactor
-        
-        setPosition({ x, y })
-        setRotation(lastAngle.current * (1 - smoothFactor))
-        
-        lastPosition.current = { x, y }
-        lastAngle.current *= (1 - smoothFactor)
-        
-        requestAnimationFrame(smoothToCenter)
-      }
-      
-      smoothToCenter()
+      isMouseInside.current = false
+      // Reset target position to center
+      targetPos.current = { x: 50, y: 50 }
     }
-
+    
+    // Attach event listeners
     const wrapper = wrapperRef.current
     if (wrapper) {
       wrapper.addEventListener("mousemove", handleMouseMove)
       wrapper.addEventListener("mouseleave", handleMouseLeave)
     }
-
+    
+    // Clean up
     return () => {
       if (wrapper) {
         wrapper.removeEventListener("mousemove", handleMouseMove)
@@ -171,7 +188,7 @@ const InteractiveGradient: React.FC<InteractiveGradientProps> = ({ className = "
         style={{ zIndex: 0 }}
       >
         <div
-          className="absolute inset-0 transition-transform duration-100 ease-out"
+          className="absolute inset-0"
           style={{
             background: `
               radial-gradient(circle at ${position.x}% ${position.y}%, 
@@ -181,7 +198,7 @@ const InteractiveGradient: React.FC<InteractiveGradientProps> = ({ className = "
                 rgba(255,255,255,0) 60%
               )
             `,
-            transform: `scale(2) rotate(${rotation * 0.5}deg)`,
+            transform: `scale(2) rotate(${rotation * 0.2}deg)`,
             pointerEvents: "none",
           }}
         />
