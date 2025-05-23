@@ -97,7 +97,7 @@ export default function BelovedPage() {
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Year</h4>
-                  <p className="text-zinc-300">2022</p>
+                  <p className="text-zinc-300">2025</p>
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
