@@ -30,6 +30,15 @@ export default function StudioPage() {
       category: "website"
     },
     {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
+      link: "/anthonyhadenguest",
+      category: "website"
+    },
+    {
       id: "beloved",
       title: "be-loved.app",
       description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
