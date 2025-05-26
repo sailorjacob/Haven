@@ -57,6 +57,15 @@ export default function StudioPage() {
       category: "website"
     },
     {
+      id: "swivimedia",
+      title: "swivimedia.com",
+      description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
+      technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
+      link: "/swivimedia",
+      category: "webapp"
+    },
+    {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
       description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
