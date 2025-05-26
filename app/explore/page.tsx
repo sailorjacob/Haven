@@ -94,15 +94,15 @@ export default function ExplorePage() {
           </motion.p>
           
           <Link href="/studio">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
-              className="mt-16 inline-flex flex-col items-center cursor-pointer opacity-80 hover:opacity-100 transition-all duration-500"
-            >
-              <span className="text-sm text-gray-500 mb-2">Explore</span>
-              <ChevronDown size={20} color={PRIMARY_COLOR} />
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
+            className="mt-16 inline-flex flex-col items-center cursor-pointer opacity-80 hover:opacity-100 transition-all duration-500"
+          >
+            <span className="text-sm text-gray-500 mb-2">Explore</span>
+            <ChevronDown size={20} color={PRIMARY_COLOR} />
+          </motion.div>
           </Link>
         </div>
       </section>
