@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
-import Link from "next/link"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import Image from "next/image"
+import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 type Project = {
   id: string
@@ -18,6 +19,7 @@ type Project = {
 export default function StudioPage() {
   const [filter, setFilter] = useState<string | null>(null)
   const [counter, setCounter] = useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   const projects: Project[] = [
     {
@@ -112,528 +114,659 @@ export default function StudioPage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-300">
-      {/* Gradient background */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 opacity-80"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900/5 to-zinc-900 opacity-100"></div>
+    <main className="bg-white min-h-screen w-full text-zinc-900">
+      {/* Clean gradient background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute top-8 left-4"
-        >
-          <Image 
-            src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//silveranimation.gif"
-            alt="Haven Studio Logo"
-            width={35}
-            height={17}
-            className="object-contain opacity-75"
-          />
-        </motion.div>
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+        <div className="container mx-auto px-6 py-4">
+          <nav className="flex items-center justify-between">
+            <div className="flex items-center space-x-8">
+              <Link href="/" className="flex items-center">
+                <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
+                <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
+              </Link>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-6">
+                <Link 
+                  href="/" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/products" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Products
+                </Link>
+                <Link 
+                  href="/explore" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Explore
+                </Link>
+              </div>
+            </div>
 
-        {/* Contact Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute top-8 right-8"
-        >
-          <Link href="/contact">
-            <button 
-              className="border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white"
-            >
-              Contact
-            </button>
-          </Link>
-        </motion.div>
-
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <Link href="/" className="text-zinc-400 mb-4 inline-block text-sm hover:text-zinc-300 transition-colors">
-            ← Back to Haven
-          </Link>
-          <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-300 to-zinc-500">
-              Haven Studio
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6 lowercase">
-            A digital design and web development studio crafting premium 
-            experiences for modern brands and startups.
-          </p>
-        </motion.div>
-
-        {/* Service Sections */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
-        >
-          <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
-            <h3 className="text-xl mb-4 text-zinc-200">Web Development</h3>
-            <p className="text-zinc-400 mb-4">
-              Custom web applications built with modern frameworks 
-              and performance-focused architecture.
-            </p>
-          </div>
-          <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
-            <h3 className="text-xl mb-4 text-zinc-200">Web Design</h3>
-            <p className="text-zinc-400 mb-4">
-              Minimalist, elegant interfaces that elevate brands with 
-              thoughtful interactions and premium aesthetics.
-            </p>
-          </div>
-          <div className="bg-zinc-800/50 p-8 rounded-sm border border-zinc-700">
-            <h3 className="text-xl mb-4 text-zinc-200">Digital Strategy</h3>
-            <p className="text-zinc-400 mb-4">
-              Comprehensive digital solutions that align with business 
-              goals and create meaningful user experiences.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Portfolio Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-20"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-4 md:mb-0">
-              Selected Projects
-            </h2>
-            <div className="flex space-x-4">
-              <button 
-                onClick={() => setFilter(null)} 
-                className={`px-4 py-2 text-sm transition-colors ${!filter ? 'bg-zinc-200 text-zinc-900' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'}`}
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/contact"
+                className="hidden md:inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 text-sm"
               >
-                All
-              </button>
-              <button 
-                onClick={() => setFilter('webapp')} 
-                className={`px-4 py-2 text-sm transition-colors ${filter === 'webapp' ? 'bg-zinc-200 text-zinc-900' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'}`}
+                Contact Us
+              </Link>
+              
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2"
               >
-                Web Apps
-              </button>
-              <button 
-                onClick={() => setFilter('website')} 
-                className={`px-4 py-2 text-sm transition-colors ${filter === 'website' ? 'bg-zinc-200 text-zinc-900' : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'}`}
-              >
-                Websites
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
-          </div>
+          </nav>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {filteredProjects.map((project) => (
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-white border-b border-zinc-200"
+            >
+              <div className="container mx-auto px-6 py-4 space-y-3">
+                <Link 
+                  href="/" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/products" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Products
+                </Link>
+                <Link 
+                  href="/explore" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Explore
+                </Link>
+                <Link 
+                  href="/contact"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative z-10 pt-32 pb-20 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center mb-6"
+            >
+              <div className="relative">
+                <Hexagon className="w-16 h-16 text-zinc-900" strokeWidth={1} />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Code className="w-8 h-8 text-zinc-700" />
+                </div>
+              </div>
+            </motion.div>
+            
+            <h1 className="text-5xl md:text-6xl font-light text-zinc-900 mb-4 tracking-tight">
+              Haven Studio
+            </h1>
+            <p className="text-lg md:text-xl text-zinc-600 font-light tracking-wide max-w-3xl mx-auto mb-8">
+              A digital design and web development studio crafting premium 
+              experiences for modern brands and startups.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="#portfolio"
+                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
+              >
+                <span className="mr-2">View Our Work</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
+              >
+                Start a Project
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="relative z-10 py-20 px-6 bg-zinc-50">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              We specialize in creating digital experiences that combine beautiful design 
+              with powerful functionality.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+            >
+              <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
+                <Code className="w-6 h-6 text-zinc-700" />
+              </div>
+              <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
+              <p className="text-zinc-600 leading-relaxed">
+                Custom web applications built with modern frameworks 
+                and performance-focused architecture.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+            >
+              <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
+                <Palette className="w-6 h-6 text-zinc-700" />
+              </div>
+              <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
+              <p className="text-zinc-600 leading-relaxed">
+                Minimalist, elegant interfaces that elevate brands with 
+                thoughtful interactions and premium aesthetics.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+            >
+              <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-zinc-700" />
+              </div>
+              <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
+              <p className="text-zinc-600 leading-relaxed">
+                Comprehensive digital solutions that align with business 
+                goals and create meaningful user experiences.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="relative z-10 py-20 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12"
+          >
+            <div>
+              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+                Selected Projects
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-xl">
+                A showcase of our recent work across web applications, websites, and digital platforms.
+              </p>
+            </div>
+            
+            <div className="flex items-center space-x-2 mt-6 md:mt-0">
+              <Filter className="w-4 h-4 text-zinc-400" />
+              <div className="flex space-x-2">
+                <button 
+                  onClick={() => setFilter(null)} 
+                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                    !filter 
+                      ? 'bg-zinc-900 text-white' 
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  All
+                </button>
+                <button 
+                  onClick={() => setFilter('webapp')} 
+                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                    filter === 'webapp' 
+                      ? 'bg-zinc-900 text-white' 
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  Web Apps
+                </button>
+                <button 
+                  onClick={() => setFilter('website')} 
+                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                    filter === 'website' 
+                      ? 'bg-zinc-900 text-white' 
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  Websites
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="group"
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
               >
                 <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
-                  <div className="relative h-64 mb-4 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden">
                     <Image 
                       src={project.imageUrl}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                   </div>
                 </Link>
-                <h3 className="text-xl font-medium text-zinc-200 mb-2">{project.title}</h3>
-                <p className="text-zinc-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="text-xs px-2 py-1 bg-zinc-800 text-zinc-400">
-                      {tech}
-                    </span>
-                  ))}
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
+                  <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link 
+                    href={project.link} 
+                    target={project.link.startsWith('http') ? "_blank" : "_self"}
+                    className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
+                  >
+                    View Project
+                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
-                <Link 
-                  href={project.link} 
-                  target={project.link.startsWith('http') ? "_blank" : "_self"}
-                  className="inline-flex items-center text-sm text-zinc-300 hover:text-white transition-colors"
-                >
-                  View Project
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        {/* Stats Section with SVG Animation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-20 pb-6 border-b border-zinc-800 overflow-visible"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center max-w-2xl mx-auto overflow-visible">
-            {/* Uptime Circle */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-28 h-28 overflow-visible">
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100">
-                  {/* Background circle */}
+      {/* Stats Section */}
+      <section className="relative z-10 py-20 px-6 bg-zinc-50">
+        <div className="container max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+              Studio Performance
+            </h2>
+            <p className="text-lg text-zinc-600">
+              Delivering exceptional results for our clients worldwide.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Uptime */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="relative w-24 h-24 mx-auto mb-4">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
                   <circle 
                     cx="50" 
                     cy="50" 
                     r="45" 
                     fill="none" 
-                    stroke="#27272a" 
+                    stroke="#e4e4e7" 
                     strokeWidth="4"
                   />
-                  
-                  {/* Main Circle */}
                   <motion.circle
                     cx="50"
                     cy="50"
                     r="45"
                     fill="none"
-                    stroke="#ffffff"
+                    stroke="#18181b"
                     strokeWidth="4"
                     strokeDasharray="283"
                     strokeDashoffset="10"  
                     initial={{ strokeDashoffset: 283 }}
-                    animate={{ 
+                    whileInView={{ 
                       strokeDashoffset: 10,
                       transition: { duration: 2, ease: "easeInOut" }
                     }}
-                    transform="rotate(-35 50 50)"
+                    viewport={{ once: true }}
+                    transform="rotate(-90 50 50)"
                     strokeLinecap="round"
                   />
-                  
-                  {/* Pulsating end node */}
-                  <motion.circle
-                    cx="82.5"
-                    cy="19"
-                    r="3"
-                    initial={{ opacity: 0 }}
-                    animate={{ 
-                      opacity: 1,
-                      scale: [0.8, 1.2, 0.8],
-                      fill: ['rgba(45, 212, 138, 0.8)', 'rgba(45, 212, 138, 1)', 'rgba(45, 212, 138, 0.8)'],
-                      filter: ['blur(0px)', 'blur(1px)', 'blur(0px)'],
-                      transition: { 
-                        opacity: { delay: 1.9, duration: 0.3 },
-                        scale: { delay: 2, duration: 2, repeat: Infinity, repeatType: "loop" },
-                        fill: { delay: 2, duration: 2, repeat: Infinity, repeatType: "loop" },
-                        filter: { delay: 2, duration: 2, repeat: Infinity, repeatType: "loop" }
-                      } 
-                    }}
-                  />
-                  
-                  {/* Soft radiating glow effect */}
-                  <motion.circle
-                    cx="82.5"
-                    cy="19"
-                    r="3"
-                    fill="none"
-                    stroke="rgba(255, 255, 255, 0.15)"
-                    strokeWidth="8"
-                    initial={{ opacity: 0 }}
-                    animate={{ 
-                      opacity: [0, 0.7, 0],
-                      scale: [1, 2.5, 1],
-                      filter: ['blur(1px)', 'blur(3px)', 'blur(1px)'],
-                      transition: { 
-                        opacity: { delay: 2, duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
-                        scale: { delay: 2, duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
-                        filter: { delay: 2, duration: 2.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }
-                      } 
-                    }}
-                  />
-                  
-                  {/* Second softer glow layer */}
-                  <motion.circle
-                    cx="82.5"
-                    cy="19"
-                    r="2"
-                    fill="none"
-                    stroke="rgba(255, 255, 255, 0.1)"
-                    strokeWidth="12"
-                    initial={{ opacity: 0 }}
-                    animate={{ 
-                      opacity: [0, 0.5, 0],
-                      scale: [1, 3, 1],
-                      filter: ['blur(2px)', 'blur(5px)', 'blur(2px)'],
-                      transition: { 
-                        opacity: { delay: 2, duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
-                        scale: { delay: 2, duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
-                        filter: { delay: 2, duration: 3, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }
-                      } 
-                    }}
-                  />
-                  
                   <text 
                     x="50" 
-                    y="46" 
+                    y="50" 
                     textAnchor="middle" 
-                    fill="#fff" 
-                    fontSize="15" 
-                    fontWeight="bold"
+                    fill="#18181b" 
+                    fontSize="16" 
+                    fontWeight="600"
                     dominantBaseline="middle"
                   >
                     100%
                   </text>
-                  <text 
-                    x="50" 
-                    y="62" 
-                    textAnchor="middle" 
-                    fill="#a1a1aa" 
-                    fontSize="10"
-                    dominantBaseline="middle"
-                  >
-                    Uptime
-                  </text>
                 </svg>
               </div>
-            </div>
+              <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
+              <p className="text-zinc-600 text-sm">Reliable hosting & maintenance</p>
+            </motion.div>
 
-            {/* 24/7 Assistance */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-28 h-28 overflow-visible">
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100">
-                  {/* Background circle */}
-                  <circle 
-                    cx="50" 
-                    cy="50" 
-                    r="45" 
-                    fill="none" 
-                    stroke="#27272a" 
-                    strokeWidth="4"
-                  />
-                  {/* Animated pulse */}
-                  <motion.circle 
-                    cx="50" 
-                    cy="50" 
-                    r="40" 
-                    fill="none" 
-                    stroke="#ffffff" 
-                    strokeWidth="2"
-                    initial={{ opacity: 0.5, scale: 0.8 }}
-                    animate={{ 
-                      opacity: [0.5, 1, 0.5],
-                      scale: [0.8, 1, 0.8],
-                      transition: { 
-                        duration: 3, 
-                        ease: "easeInOut", 
-                        repeat: Infinity 
-                      }
-                    }}
-                  />
-                  <text 
-                    x="50" 
-                    y="45" 
-                    textAnchor="middle" 
-                    fill="#fff" 
-                    fontSize="14" 
-                    fontWeight="bold"
-                  >
-                    24/7
-                  </text>
-                  <text 
-                    x="50" 
-                    y="65" 
-                    textAnchor="middle" 
-                    fill="#a1a1aa" 
-                    fontSize="10"
-                  >
-                    Assistance
-                  </text>
-                </svg>
+            {/* Support */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-24 h-24 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-semibold text-lg">24/7</span>
               </div>
-            </div>
+              <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
+              <p className="text-zinc-600 text-sm">Always available assistance</p>
+            </motion.div>
 
-            {/* Impressions Counter */}
-            <div className="flex flex-col items-center">
-              <motion.div
-                className="h-28 flex flex-col items-center justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.5 }}
-              >
+            {/* Impressions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="h-24 flex flex-col items-center justify-center mb-4">
                 <motion.div 
-                  className="text-2xl font-bold text-zinc-200 mb-1"
+                  className="text-3xl font-semibold text-zinc-900 mb-1"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.7 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true }}
                 >
                   {counter.toLocaleString()}+
                 </motion.div>
-                <motion.div 
-                  className="text-zinc-400 text-sm"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.9 }}
-                >
-                  Impressions
-                </motion.div>
-              </motion.div>
-            </div>
+              </div>
+              <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
+              <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        {/* Process Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-20"
-        >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-10">
-            Our Process
-          </h2>
+      {/* Process Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+              Our Process
+            </h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              A proven methodology that ensures successful project delivery from concept to launch.
+            </p>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Discovery</h3>
-              <p className="text-zinc-400">
-                We learn about your business, goals, and vision to establish clear project objectives.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Strategy</h3>
-              <p className="text-zinc-400">
-                We develop a detailed roadmap and technical approach tailored to your specific needs.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Design & Development</h3>
-              <p className="text-zinc-400">
-                Our team crafts beautiful interfaces and builds robust applications with clean code.
-              </p>
-            </div>
-            <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Launch & Optimize</h3>
-              <p className="text-zinc-400">
-                We deploy your project and provide ongoing support to ensure continued success.
-              </p>
-            </div>
+            {[
+              {
+                number: "01",
+                title: "Discovery",
+                description: "We learn about your business, goals, and vision to establish clear project objectives."
+              },
+              {
+                number: "02", 
+                title: "Strategy",
+                description: "We develop a detailed roadmap and technical approach tailored to your specific needs."
+              },
+              {
+                number: "03",
+                title: "Design & Development", 
+                description: "Our team crafts beautiful interfaces and builds robust applications with clean code."
+              },
+              {
+                number: "04",
+                title: "Launch & Optimize",
+                description: "We deploy your project and provide ongoing support to ensure continued success."
+              }
+            ].map((step, index) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-medium text-zinc-900 mb-3">{step.title}</h3>
+                <p className="text-zinc-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-
-        {/* Contact Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
-            Start Your Project
-          </h2>
-          <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-            Ready to bring your digital vision to life? Let's create something exceptional together.
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <Link href="/contact">
-            <button 
-              className="inline-flex items-center justify-center bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300"
-            >
-              Contact Us
-            </button>
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-20 pt-16 border-t border-zinc-800"
-        >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-12 text-center">
-            Our Team
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto">
-            {/* Jacob Beam */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
-                <Image
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
-                  alt="Jacob Beam"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-medium text-zinc-200 mb-1">Jacob Beam</h3>
-              <p className="text-zinc-400 text-sm mb-2">Founder</p>
-              <p className="text-zinc-500 text-xs text-center max-w-xs">
-                Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design.
-              </p>
-            </div>
-
-            {/* Jarret Shull */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
-                <Image
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
-                  alt="Jarret Shull"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-medium text-zinc-200 mb-1">Jarret Shull</h3>
-              <p className="text-zinc-400 text-sm mb-2">Sales</p>
-              <p className="text-zinc-500 text-xs text-center max-w-xs">
-                Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.
-              </p>
-            </div>
-
-            {/* Klaire Rasche */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-36 h-36 mb-4 rounded-full overflow-hidden border-2 border-white">
-                <Image
-                  src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
-                  alt="Klaire Rasche"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-medium text-zinc-200 mb-1">Klaire Rasche</h3>
-              <p className="text-zinc-400 text-sm mb-2">Design</p>
-              <p className="text-zinc-500 text-xs text-center max-w-xs">
-                Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-        
-        {/* Contact info footer */}
-        <div className="text-center mt-16">
-          <a href="mailto:info@haven.engineer" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
-            info@haven.engineer
-          </a>
-          <span className="text-zinc-500 mx-2 text-xs">•</span>
-          <a href="tel:812-360-9867" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
-            812-360-9867
-          </a>
         </div>
-      </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="relative z-10 py-20 px-6 bg-zinc-50">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              Passionate professionals dedicated to creating exceptional digital experiences.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                name: "Jacob Beam",
+                role: "Founder",
+                description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design.",
+                image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
+              },
+              {
+                name: "Jarret Shull", 
+                role: "Sales",
+                description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
+                image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
+              },
+              {
+                name: "Klaire Rasche",
+                role: "Design", 
+                description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
+                image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
+              }
+            ].map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center bg-white p-6 rounded-xl border border-zinc-200"
+              >
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
+                <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  {member.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="container max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-6">
+              Start Your Project
+            </h2>
+            <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto">
+              Ready to bring your digital vision to life? Let's create something exceptional together.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
+              >
+                <span className="mr-2">Get Started</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="mailto:info@haven.engineer"
+                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Email Us
+              </Link>
+            </div>
+            
+            {/* Contact Info */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-zinc-600">
+              <a 
+                href="mailto:info@haven.engineer" 
+                className="flex items-center hover:text-zinc-900 transition-colors"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                info@haven.engineer
+              </a>
+              <span className="hidden sm:block">•</span>
+              <a 
+                href="tel:812-360-9867" 
+                className="flex items-center hover:text-zinc-900 transition-colors"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                812-360-9867
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 border-t border-zinc-200 py-12 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center mb-4 md:mb-0">
+              <Hexagon className="w-6 h-6 text-zinc-900 mr-2" strokeWidth={1} />
+              <span className="text-sm text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
+            </div>
+            <div className="flex items-center space-x-6">
+              <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+                Privacy
+              </Link>
+              <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+                Terms
+              </Link>
+              <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 } 
