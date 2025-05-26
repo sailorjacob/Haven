@@ -643,7 +643,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 mb-6 shadow-sm"
+            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 mb-0 shadow-sm"
           >
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-6">
@@ -664,7 +664,7 @@ export default function Products() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-zinc-50 rounded-xl p-4 md:p-6 border border-zinc-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-3">
@@ -708,30 +708,23 @@ export default function Products() {
                   </ul>
                 </div>
               </div>
-            </div>
-          </motion.section>
-          
-          {/* Call to Action */}
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="bg-zinc-50 rounded-xl border border-zinc-200 p-6 md:p-8 text-center mb-0"
-          >
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">Get Started With Haven</h2>
-              <p className="text-zinc-600 mb-4 leading-relaxed">
-                Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
-                environment where creativity, commerce, and community thrive in unison.
-              </p>
-            
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
-              >
-                <span className="mr-2">Request Information</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+
+              {/* Get Started With Haven */}
+              <div className="text-center pt-6 border-t border-zinc-200">
+                <h3 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">Get Started With Haven</h3>
+                <p className="text-zinc-600 mb-4 leading-relaxed max-w-2xl mx-auto">
+                  Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
+                  environment where creativity, commerce, and community thrive in unison.
+                </p>
+                
+                <Link 
+                  href="/contact" 
+                  className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
+                >
+                  <span className="mr-2">Request Information</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </motion.section>
         </div>
