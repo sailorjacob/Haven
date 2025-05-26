@@ -38,7 +38,7 @@ export default function Products() {
       </header>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24 pb-12">
+      <div className="relative z-10 container mx-auto px-6 pt-24 pb-6">
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <motion.div 
@@ -716,7 +716,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="bg-zinc-50 rounded-xl border border-zinc-200 p-6 md:p-8 text-center"
+            className="bg-zinc-50 rounded-xl border border-zinc-200 p-6 md:p-8 text-center mb-0"
           >
             <div className="max-w-2xl mx-auto">
               <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">Get Started With Haven</h2>
