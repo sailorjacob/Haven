@@ -52,7 +52,7 @@ export default function Products() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
               className="flex justify-center mb-6"
-            >
+          >
               <div className="relative">
                 <Hexagon className="w-16 h-16 text-zinc-900" strokeWidth={1} />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -103,24 +103,24 @@ export default function Products() {
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center mr-3">
                     <Activity className="w-5 h-5 text-zinc-700" />
-                  </div>
+              </div>
                   <h3 className="text-xl font-medium text-zinc-900">Digital Experience</h3>
-                </div>
+              </div>
                 <p className="text-zinc-600 mb-4 text-sm">Our integrated digital platform delivers cutting-edge content:</p>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="w-1 h-1 rounded-full bg-zinc-400 mt-2 mr-2 flex-shrink-0"></span>
                     <span className="text-zinc-700 text-sm">AI-generated films with revolutionary visual quality</span>
-                  </li>
+                </li>
                   <li className="flex items-start">
                     <span className="w-1 h-1 rounded-full bg-zinc-400 mt-2 mr-2 flex-shrink-0"></span>
                     <span className="text-zinc-700 text-sm">AI-generated music spanning all genres and moods</span>
-                  </li>
+                </li>
                   <li className="flex items-start">
                     <span className="w-1 h-1 rounded-full bg-zinc-400 mt-2 mr-2 flex-shrink-0"></span>
                     <span className="text-zinc-700 text-sm">Proprietary streaming platform for seamless content delivery</span>
-                  </li>
-                </ul>
+                </li>
+              </ul>
               </motion.div>
               
               <motion.div 
@@ -151,12 +151,12 @@ export default function Products() {
                   </li>
                 </ul>
               </motion.div>
-            </div>
+          </div>
           </motion.div>
           
           {/* Section Modules - Improved Design */}
           <div className="space-y-3 mb-16">
-            {/* Creative Content Platforms */}
+          {/* Creative Content Platforms */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -170,24 +170,24 @@ export default function Products() {
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mr-4">
                     <Film className="w-6 h-6 text-zinc-700" />
-                  </div>
+                      </div>
                   <div className="text-left">
                     <h3 className="text-xl font-medium text-zinc-900">Creative Content Platforms</h3>
                     <p className="text-sm text-zinc-600 mt-1">AI-powered film, TV, and music production ecosystem</p>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                 <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform ${expandedSection === "creative-content" ? "rotate-180" : ""}`} />
               </button>
-              
+                    
               <AnimatePresence>
-                {expandedSection === "creative-content" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+              {expandedSection === "creative-content" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                     className="border-t border-zinc-200"
-                  >
+                >
                     <div className="p-6 space-y-6">
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         <div className="bg-zinc-50 p-5 rounded-lg">
@@ -197,14 +197,14 @@ export default function Products() {
                           </div>
                           <p className="text-zinc-600 text-sm mb-3">
                             Harness the power of AI to produce next-generation films with cutting-edge technology.
-                          </p>
+                        </p>
                           <ul className="space-y-1 text-sm">
                             <li className="text-zinc-600">• Premium AI-Generated Content</li>
                             <li className="text-zinc-600">• Advanced Visual Technologies</li>
                             <li className="text-zinc-600">• Collaborative Creative Hive</li>
-                          </ul>
-                        </div>
-                        
+                        </ul>
+                    </div>
+                    
                         <div className="bg-zinc-50 p-5 rounded-lg">
                           <div className="flex items-center mb-3">
                             <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center mr-3 text-sm font-medium">2</span>
@@ -212,14 +212,14 @@ export default function Products() {
                           </div>
                           <p className="text-zinc-600 text-sm mb-3">
                             Platform leverages AI analytics to generate films and series that break traditional molds.
-                          </p>
+                        </p>
                           <ul className="space-y-1 text-sm">
                             <li className="text-zinc-600">• Bespoke Video Platform</li>
                             <li className="text-zinc-600">• Massive Collaborative Network</li>
                             <li className="text-zinc-600">• Advanced Analytics</li>
-                          </ul>
-                        </div>
-                        
+                        </ul>
+                      </div>
+                      
                         <div className="bg-zinc-50 p-5 rounded-lg">
                           <div className="flex items-center mb-3">
                             <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center mr-3 text-sm font-medium">3</span>
@@ -227,51 +227,51 @@ export default function Products() {
                           </div>
                           <p className="text-zinc-600 text-sm mb-3">
                             Artists and AI generators produce innovative tracks that resonate globally.
-                          </p>
+                        </p>
                           <ul className="space-y-1 text-sm">
                             <li className="text-zinc-600">• AI-Powered Music Production</li>
                             <li className="text-zinc-600">• Dynamic Label & Streaming</li>
                             <li className="text-zinc-600">• Ecosystem-Driven Revenue</li>
-                          </ul>
-                        </div>
+                        </ul>
                       </div>
-                      
+                    </div>
+                    
                       <div className="bg-zinc-100 p-5 rounded-lg">
                         <h4 className="font-medium text-zinc-900 mb-3">Economic Model</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
                             <p className="text-zinc-600 text-sm mb-3">
                               Haven's economic model creates a self-sustaining ecosystem where creators directly benefit from their contributions.
-                            </p>
+                          </p>
                             <div className="border-l-2 border-zinc-300 pl-4">
                               <p className="text-zinc-600 italic text-sm">
                                 "Reimagining the relationship between creators, audiences, and platforms."
-                              </p>
-                            </div>
-                          </div>
+                            </p>
+                  </div>
+                </div>
                           <div className="grid grid-cols-2 gap-4 text-sm">
-                            <div>
+                      <div>
                               <p className="font-medium text-zinc-700 mb-2">Primary Revenue</p>
                               <ul className="space-y-1 text-zinc-600">
                                 <li>• Media subscriptions</li>
                                 <li>• Content licensing</li>
                                 <li>• Production services</li>
-                              </ul>
-                            </div>
-                            <div>
+                                </ul>
+                      </div>
+                      <div>
                               <p className="font-medium text-zinc-700 mb-2">Secondary Revenue</p>
                               <ul className="space-y-1 text-zinc-600">
                                 <li>• Platform fees</li>
                                 <li>• Event experiences</li>
                                 <li>• Education services</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                                </ul>
                       </div>
                     </div>
-                  </motion.div>
-                )}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
               </AnimatePresence>
             </motion.div>
 
@@ -293,20 +293,20 @@ export default function Products() {
                   <div className="text-left">
                     <h3 className="text-xl font-medium text-zinc-900">Secure Distribution & Payment Systems</h3>
                     <p className="text-sm text-zinc-600 mt-1">Blockchain-based security and payment infrastructure</p>
-                  </div>
+                </div>
                 </div>
                 <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform ${expandedSection === "secure-distribution" ? "rotate-180" : ""}`} />
               </button>
               
               <AnimatePresence>
-                {expandedSection === "secure-distribution" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+              {expandedSection === "secure-distribution" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                     className="border-t border-zinc-200"
-                  >
+                >
                     <div className="p-6 space-y-4">
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         <div className="bg-zinc-50 p-5 rounded-lg">
@@ -314,23 +314,23 @@ export default function Products() {
                           <h4 className="font-medium text-zinc-900 mb-2">Safe Distribution Network</h4>
                           <p className="text-zinc-600 text-sm mb-3">Secure, scalable infrastructure for safe streaming and downloads.</p>
                           <p className="text-zinc-500 text-xs font-medium">Key: End-to-end encryption</p>
-                        </div>
-                        
+                  </div>
+                  
                         <div className="bg-zinc-50 p-5 rounded-lg">
                           <Shield className="w-8 h-8 text-zinc-700 mb-3" />
                           <h4 className="font-medium text-zinc-900 mb-2">Advanced Content Security</h4>
                           <p className="text-zinc-600 text-sm mb-3">Biometric and blockchain tech protects intellectual property.</p>
                           <p className="text-zinc-500 text-xs font-medium">Key: Multi-layer verification</p>
-                        </div>
-                        
+                  </div>
+                  
                         <div className="bg-zinc-50 p-5 rounded-lg">
                           <DollarSign className="w-8 h-8 text-zinc-700 mb-3" />
                           <h4 className="font-medium text-zinc-900 mb-2">Integrated Payments</h4>
                           <p className="text-zinc-600 text-sm mb-3">Traditional and crypto payments for borderless commerce.</p>
                           <p className="text-zinc-500 text-xs font-medium">Key: Blockchain tokens</p>
-                        </div>
-                      </div>
-                      
+                  </div>
+                </div>
+                
                       <div className="bg-zinc-100 p-5 rounded-lg">
                         <h4 className="font-medium text-zinc-900 mb-3">Security Standards</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-zinc-600">
@@ -338,21 +338,21 @@ export default function Products() {
                             <li>• End-to-end encryption</li>
                             <li>• Multi-factor authentication</li>
                             <li>• Secure access management</li>
-                          </ul>
+                        </ul>
                           <ul className="space-y-1">
                             <li>• Decentralized storage</li>
                             <li>• Regular security audits</li>
                             <li>• Transparent privacy policies</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
+                  </ul>
+                </div>
+              </div>
+            </div>
+                </motion.div>
+              )}
               </AnimatePresence>
             </motion.div>
 
-            {/* Advertising & Creative Campaigns */}
+          {/* Advertising & Creative Campaigns */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -370,33 +370,33 @@ export default function Products() {
                   <div className="text-left">
                     <h3 className="text-xl font-medium text-zinc-900">Advertising & Creative Campaigns</h3>
                     <p className="text-sm text-zinc-600 mt-1">High-end creative agency for global brands</p>
-                  </div>
+                </div>
                 </div>
                 <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform ${expandedSection === "advertising" ? "rotate-180" : ""}`} />
               </button>
               
               <AnimatePresence>
-                {expandedSection === "advertising" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+              {expandedSection === "advertising" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                     className="border-t border-zinc-200"
-                  >
+                >
                     <div className="p-6 space-y-4">
                       <p className="text-zinc-600">
                         Haven's advertising division delivers compelling campaigns for elite clients worldwide.
-                      </p>
-                      
+                </p>
+                
                       <div className="flex flex-wrap gap-2">
                         {["Global Brands", "Governments", "Sports Teams", "Fortune 50", "Network States", "Celebrities"].map((client) => (
                           <span key={client} className="px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-sm">
                             {client}
                           </span>
-                        ))}
-                      </div>
-                      
+                    ))}
+                    </div>
+                  
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h5 className="font-medium text-zinc-900 mb-2">Data-Driven Strategies</h5>
@@ -405,19 +405,19 @@ export default function Products() {
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h5 className="font-medium text-zinc-900 mb-2">Full-Spectrum Services</h5>
                           <p className="text-zinc-600 text-sm">End-to-end creative and marketing solutions.</p>
-                        </div>
+                    </div>
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h5 className="font-medium text-zinc-900 mb-2">Cross-Platform Integration</h5>
                           <p className="text-zinc-600 text-sm">Seamless campaigns across all media channels.</p>
-                        </div>
+                    </div>
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h5 className="font-medium text-zinc-900 mb-2">Creative Excellence</h5>
                           <p className="text-zinc-600 text-sm">Award-winning design and content teams.</p>
-                        </div>
-                      </div>
                     </div>
-                  </motion.div>
-                )}
+                    </div>
+                </div>
+                </motion.div>
+              )}
               </AnimatePresence>
             </motion.div>
 
@@ -435,7 +435,7 @@ export default function Products() {
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mr-4">
                     <Home className="w-6 h-6 text-zinc-700" />
-                  </div>
+            </div>
                   <div className="text-left">
                     <h3 className="text-xl font-medium text-zinc-900">Interconnected Living & Real Estate</h3>
                     <p className="text-sm text-zinc-600 mt-1">Premium compounds and creative community spaces</p>
@@ -443,32 +443,32 @@ export default function Products() {
                 </div>
                 <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform ${expandedSection === "living" ? "rotate-180" : ""}`} />
               </button>
-              
+                
               <AnimatePresence>
-                {expandedSection === "living" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+              {expandedSection === "living" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                     className="border-t border-zinc-200"
-                  >
+                >
                     <div className="p-6 space-y-4">
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h4 className="font-medium text-zinc-900 mb-2">Quality Compounds</h4>
                           <p className="text-zinc-600 text-sm">Exclusive apartments and homes combining Soho House exclusivity with Hilton service.</p>
-                        </div>
+                    </div>
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h4 className="font-medium text-zinc-900 mb-2">Community Spaces</h4>
                           <p className="text-zinc-600 text-sm">Creative studios, workspaces, and event venues where work and play converge.</p>
-                        </div>
+                    </div>
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h4 className="font-medium text-zinc-900 mb-2">Cultural Hubs</h4>
                           <p className="text-zinc-600 text-sm">Dynamic centers offering Disney-like experiences with art and entertainment.</p>
-                        </div>
-                      </div>
-                      
+                    </div>
+                    </div>
+                  
                       <div>
                         <h5 className="font-medium text-zinc-900 mb-3">Compound Amenities</h5>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
@@ -477,11 +477,11 @@ export default function Products() {
                               {amenity}
                             </span>
                           ))}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
+                </div>
+              </div>
+            </div>
+                </motion.div>
+              )}
               </AnimatePresence>
             </motion.div>
 
@@ -503,18 +503,18 @@ export default function Products() {
                   <div className="text-left">
                     <h3 className="text-xl font-medium text-zinc-900">International Art Gallery & Cultural Institutions</h3>
                     <p className="text-sm text-zinc-600 mt-1">Global art spaces and cultural programming</p>
-                  </div>
+                </div>
                 </div>
                 <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform ${expandedSection === "art" ? "rotate-180" : ""}`} />
               </button>
               
               <AnimatePresence>
-                {expandedSection === "art" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+              {expandedSection === "art" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                     className="border-t border-zinc-200"
                   >
                     <div className="p-6 space-y-4">
@@ -523,19 +523,19 @@ export default function Products() {
                           <Award className="w-8 h-8 text-zinc-700 mb-3 mx-auto" />
                           <h4 className="font-medium text-zinc-900 mb-2">Global Art Galleries</h4>
                           <p className="text-zinc-600 text-sm">International chain celebrating digital and physical art.</p>
-                        </div>
+                      </div>
                         <div className="bg-zinc-50 p-4 rounded-lg text-center">
                           <Layers className="w-8 h-8 text-zinc-700 mb-3 mx-auto" />
                           <h4 className="font-medium text-zinc-900 mb-2">3D Printed Art</h4>
                           <p className="text-zinc-600 text-sm">State-of-the-art installations fusing art and technology.</p>
-                        </div>
+                    </div>
                         <div className="bg-zinc-50 p-4 rounded-lg text-center">
                           <Crown className="w-8 h-8 text-zinc-700 mb-3 mx-auto" />
                           <h4 className="font-medium text-zinc-900 mb-2">Art Olympics</h4>
                           <p className="text-zinc-600 text-sm">Global event celebrating creativity and collaboration.</p>
-                        </div>
-                      </div>
-                      
+                    </div>
+                  </div>
+                  
                       <div className="bg-zinc-100 p-4 rounded-lg">
                         <h5 className="font-medium text-zinc-900 mb-3">Cultural Programming</h5>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-zinc-600">
@@ -543,17 +543,17 @@ export default function Products() {
                             <li>• Artist residency programs</li>
                             <li>• International exhibitions</li>
                             <li>• Digital art marketplaces</li>
-                          </ul>
+                        </ul>
                           <ul className="space-y-1">
                             <li>• Educational workshops</li>
                             <li>• Cultural festivals</li>
                             <li>• VR/AR experiences</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                </motion.div>
+              )}
               </AnimatePresence>
             </motion.div>
 
@@ -575,18 +575,18 @@ export default function Products() {
                   <div className="text-left">
                     <h3 className="text-xl font-medium text-zinc-900">Network State Infrastructure & Governance</h3>
                     <p className="text-sm text-zinc-600 mt-1">Innovative governance and financial systems</p>
-                  </div>
+                </div>
                 </div>
                 <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform ${expandedSection === "network" ? "rotate-180" : ""}`} />
               </button>
               
               <AnimatePresence>
-                {expandedSection === "network" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
+              {expandedSection === "network" && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                     className="border-t border-zinc-200"
                   >
                     <div className="p-6 space-y-4">
@@ -594,23 +594,23 @@ export default function Products() {
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h4 className="font-medium text-zinc-900 mb-3">Crypto Currency & Payments</h4>
                           <div className="space-y-3">
-                            <div>
+                      <div>
                               <div className="flex items-center mb-1">
                                 <Zap className="w-4 h-4 text-zinc-600 mr-2" />
                                 <span className="font-medium text-zinc-800 text-sm">Decentralized Finance</span>
-                              </div>
+                      </div>
                               <p className="text-zinc-600 text-xs">Proprietary cryptocurrency for frictionless payments.</p>
-                            </div>
-                            <div>
+                      </div>
+                      <div>
                               <div className="flex items-center mb-1">
                                 <Shield className="w-4 h-4 text-zinc-600 mr-2" />
                                 <span className="font-medium text-zinc-800 text-sm">Blockchain Transparency</span>
-                              </div>
+                    </div>
                               <p className="text-zinc-600 text-xs">Secured transactions and revenue-sharing.</p>
-                            </div>
-                          </div>
-                        </div>
-                        
+                </div>
+                      </div>
+                    </div>
+                    
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h4 className="font-medium text-zinc-900 mb-2">Knights of the Round Table</h4>
                           <p className="text-zinc-600 text-sm mb-2">Legal framework ensuring fair governance.</p>
@@ -619,8 +619,8 @@ export default function Products() {
                             <li>• Decentralized Justice</li>
                             <li>• Community-driven rules</li>
                           </ul>
-                        </div>
-                        
+                </div>
+                
                         <div className="bg-zinc-50 p-4 rounded-lg">
                           <h4 className="font-medium text-zinc-900 mb-2">Philosophical Army</h4>
                           <p className="text-zinc-600 text-sm mb-2">Thought leaders defining cultural direction.</p>
@@ -629,11 +629,11 @@ export default function Products() {
                             <li>• Community Engagement</li>
                             <li>• Progressive organization</li>
                           </ul>
-                        </div>
                       </div>
                     </div>
-                  </motion.div>
-                )}
+                  </div>
+                </motion.div>
+              )}
               </AnimatePresence>
             </motion.div>
           </div>
@@ -695,15 +695,15 @@ export default function Products() {
           >
             <h2 className="text-2xl font-light text-zinc-900 mb-4">Get Started With Haven</h2>
             <p className="text-zinc-600 max-w-2xl mx-auto mb-6">
-              Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
-              environment where creativity, commerce, and community thrive in unison.
-            </p>
+                Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
+                environment where creativity, commerce, and community thrive in unison.
+              </p>
             
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               className="inline-block"
-            >
+              >
               <Link 
                 href="/contact" 
                 className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
@@ -711,7 +711,7 @@ export default function Products() {
                 <span className="mr-2">Request Information</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </motion.div>
+              </motion.div>
           </motion.section>
         </div>
       </div>
