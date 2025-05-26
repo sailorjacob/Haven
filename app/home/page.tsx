@@ -71,7 +71,7 @@ export default function HomePage() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div
+    <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -108,7 +108,7 @@ export default function HomePage() {
                   Contact
                 </Link>
               </div>
-            </motion.div>
+    </motion.div>
           )}
         </AnimatePresence>
       </header>
@@ -116,7 +116,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="container max-w-6xl mx-auto text-center">
-          <motion.div
+          <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -130,7 +130,7 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          <motion.h1
+          <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -138,8 +138,8 @@ export default function HomePage() {
           >
             Haven
           </motion.h1>
-
-          <motion.p
+          
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -205,10 +205,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-              Vision
+                Vision
             </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              A new paradigm for creative living
+                A new paradigm for creative living
             </p>
           </motion.div>
 
@@ -221,18 +221,18 @@ export default function HomePage() {
               className="space-y-6"
             >
               <p className="text-zinc-600 leading-relaxed">
-                Haven is designed as a modern network state where a community of artists, technologists, and
-                entrepreneurs collectively builds and distributes digital content.
+                    Haven is designed as a modern network state where a community of artists, technologists, and
+                    entrepreneurs collectively builds and distributes digital content.
               </p>
               <p className="text-zinc-600 leading-relaxed">
-                Think of it as a fusion of a cinematic platform, a music service, and an entertainment conglomerate, all
-                operating from interconnected residential compounds.
+                    Think of it as a fusion of a cinematic platform, a music service, and an entertainment conglomerate, all
+                    operating from interconnected residential compounds.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-zinc-200">
                 <h3 className="text-lg font-medium text-zinc-900 mb-4">Our Dual Innovation Model</h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-zinc-50 p-4 rounded-lg">
                     <div className="flex items-center mb-3">
                       <Activity className="w-5 h-5 text-zinc-700 mr-2" />
@@ -242,9 +242,9 @@ export default function HomePage() {
                       <li>• AI-generated films</li>
                       <li>• AI-generated music</li>
                       <li>• Streaming platform</li>
-                    </ul>
-                  </div>
-                  
+                        </ul>
+                      </div>
+                      
                   <div className="bg-zinc-50 p-4 rounded-lg">
                     <div className="flex items-center mb-3">
                       <Building className="w-5 h-5 text-zinc-700 mr-2" />
@@ -254,11 +254,11 @@ export default function HomePage() {
                       <li>• Art gallery network</li>
                       <li>• Screening theaters</li>
                       <li>• Premium accommodations</li>
-                    </ul>
+                        </ul>
                   </div>
-                </div>
-              </div>
-            </motion.div>
+                      </div>
+                    </div>
+                  </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -293,12 +293,12 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-              Key Components
+                Key Components
             </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              The building blocks of our network state
+                The building blocks of our network state
             </p>
-          </motion.div>
+                </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
@@ -315,7 +315,7 @@ export default function HomePage() {
               <p className="text-zinc-600 leading-relaxed">
                 Production of films, music, and digital art using advanced AI tools and creative collaboration.
               </p>
-            </motion.div>
+                </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -331,7 +331,7 @@ export default function HomePage() {
               <p className="text-zinc-600 leading-relaxed">
                 Quality compounds where members reside and work together in collaborative creative environments.
               </p>
-            </motion.div>
+                </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -366,34 +366,34 @@ export default function HomePage() {
               Native Identity
             </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              An open global community
+                An open global community
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+                <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
               <p className="text-zinc-600 leading-relaxed mb-6">
-                Haven is an open community of artists and storytellers who share their craft and build generational
-                skills in digital arts.
-              </p>
+                    Haven is an open community of artists and storytellers who share their craft and build generational
+                    skills in digital arts.
+                  </p>
               <p className="text-zinc-600 leading-relaxed mb-8">
-                Our members come from all corners of the world, united by a shared passion for storytelling and digital creation. We welcome digital immigrants from anywhere on the globe who identify with our collective mission.
-              </p>
-              <Link
-                href="/products"
+                    Our members come from all corners of the world, united by a shared passion for storytelling and digital creation. We welcome digital immigrants from anywhere on the globe who identify with our collective mission.
+                  </p>
+                    <Link
+                      href="/products"
                 className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
-              >
+                    >
                 <span className="mr-2">Learn about our community</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+                    </Link>
+                </motion.div>
 
-            <motion.div
+                <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -419,21 +419,21 @@ export default function HomePage() {
               <div className="bg-white rounded-xl p-6 border border-zinc-200 text-center">
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mx-auto mb-4">
                   <Palette className="w-6 h-6 text-zinc-700" />
-                </div>
+                  </div>
                 <h4 className="font-medium text-zinc-900 mb-2">Creative Spaces</h4>
                 <p className="text-zinc-600 text-sm">Exclusive compounds with premium amenities</p>
-              </div>
+                  </div>
               
               <div className="bg-white rounded-xl p-6 border border-zinc-200 text-center">
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-6 h-6 text-zinc-700" />
-                </div>
+                  </div>
                 <h4 className="font-medium text-zinc-900 mb-2">Global Network</h4>
                 <p className="text-zinc-600 text-sm">Connected digital infrastructure worldwide</p>
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          </div>
-        </div>
+            </div>
       </section>
 
       {/* Ecosystem Section */}
@@ -447,15 +447,15 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-              Ecosystem
+                Ecosystem
             </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              A self-sustaining model
+                A self-sustaining model
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
+                <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -469,22 +469,22 @@ export default function HomePage() {
                 <h3 className="text-xl font-medium text-zinc-900">Digital Media Platform</h3>
               </div>
               <ul className="space-y-3 text-zinc-600">
-                <li className="flex items-start">
+                    <li className="flex items-start">
                   <ChevronRight className="w-4 h-4 text-zinc-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>AI-Generated films, music, and digital art</span>
-                </li>
-                <li className="flex items-start">
+                      <span>AI-Generated films, music, and digital art</span>
+                    </li>
+                    <li className="flex items-start">
                   <ChevronRight className="w-4 h-4 text-zinc-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Curated and distributed through a streaming ecosystem</span>
-                </li>
-                <li className="flex items-start">
+                      <span>Curated and distributed through a streaming ecosystem</span>
+                    </li>
+                    <li className="flex items-start">
                   <ChevronRight className="w-4 h-4 text-zinc-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Micro-payment systems via cryptocurrencies</span>
-                </li>
-              </ul>
-            </motion.div>
+                      <span>Micro-payment systems via cryptocurrencies</span>
+                    </li>
+                  </ul>
+                </motion.div>
 
-            <motion.div
+                <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -498,22 +498,22 @@ export default function HomePage() {
                 <h3 className="text-xl font-medium text-zinc-900">Economic Model</h3>
               </div>
               <ul className="space-y-3 text-zinc-600">
-                <li className="flex items-start">
+                    <li className="flex items-start">
                   <ChevronRight className="w-4 h-4 text-zinc-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Income from content platforms and advertising services</span>
-                </li>
-                <li className="flex items-start">
+                      <span>Income from content platforms and advertising services</span>
+                    </li>
+                    <li className="flex items-start">
                   <ChevronRight className="w-4 h-4 text-zinc-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Additional accommodation facilities and public events</span>
-                </li>
-                <li className="flex items-start">
+                      <span>Additional accommodation facilities and public events</span>
+                    </li>
+                    <li className="flex items-start">
                   <ChevronRight className="w-4 h-4 text-zinc-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>High-end advertising agency and fine art market</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
+                      <span>High-end advertising agency and fine art market</span>
+                    </li>
+                  </ul>
+                </motion.div>
+              </div>
+            </div>
       </section>
 
       {/* CTA Section */}
@@ -526,14 +526,14 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-6">
-              Connect with Haven
+                Connect with Haven
             </h2>
             <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto">
-              For inquiries about Haven and our community, please reach out through our secure channels.
-            </p>
+                    For inquiries about Haven and our community, please reach out through our secure channels.
+                  </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
+                    <Link
+                      href="/contact"
                 className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
               >
                 <span className="mr-2">Request Information</span>
@@ -544,10 +544,10 @@ export default function HomePage() {
                 className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
               >
                 Learn More
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
       </section>
 
       {/* Footer */}
@@ -570,7 +570,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </div>
+      </div>
       </footer>
     </main>
   )

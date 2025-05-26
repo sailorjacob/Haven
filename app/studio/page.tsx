@@ -163,7 +163,7 @@ export default function StudioPage() {
               </Link>
               
               {/* Mobile Menu Button */}
-              <button
+            <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
@@ -209,11 +209,11 @@ export default function StudioPage() {
                   href="/contact"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
+            >
+              Contact
+          </Link>
               </div>
-            </motion.div>
+        </motion.div>
           )}
         </AnimatePresence>
       </header>
@@ -221,10 +221,10 @@ export default function StudioPage() {
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-20 px-6">
         <div className="container max-w-6xl mx-auto">
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
             <motion.div 
@@ -243,11 +243,11 @@ export default function StudioPage() {
             
             <h1 className="text-5xl md:text-6xl font-light text-zinc-900 mb-4 tracking-tight">
               Haven Studio
-            </h1>
+          </h1>
             <p className="text-lg md:text-xl text-zinc-600 font-light tracking-wide max-w-3xl mx-auto mb-8">
-              A digital design and web development studio crafting premium 
-              experiences for modern brands and startups.
-            </p>
+            A digital design and web development studio crafting premium 
+            experiences for modern brands and startups.
+          </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -285,10 +285,10 @@ export default function StudioPage() {
               We specialize in creating digital experiences that combine beautiful design 
               with powerful functionality.
             </p>
-          </motion.div>
+        </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -300,9 +300,9 @@ export default function StudioPage() {
               </div>
               <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
               <p className="text-zinc-600 leading-relaxed">
-                Custom web applications built with modern frameworks 
-                and performance-focused architecture.
-              </p>
+              Custom web applications built with modern frameworks 
+              and performance-focused architecture.
+            </p>
             </motion.div>
 
             <motion.div
@@ -314,12 +314,12 @@ export default function StudioPage() {
             >
               <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
                 <Palette className="w-6 h-6 text-zinc-700" />
-              </div>
+          </div>
               <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
               <p className="text-zinc-600 leading-relaxed">
-                Minimalist, elegant interfaces that elevate brands with 
-                thoughtful interactions and premium aesthetics.
-              </p>
+              Minimalist, elegant interfaces that elevate brands with 
+              thoughtful interactions and premium aesthetics.
+            </p>
             </motion.div>
 
             <motion.div
@@ -331,21 +331,21 @@ export default function StudioPage() {
             >
               <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-zinc-700" />
-              </div>
+          </div>
               <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
               <p className="text-zinc-600 leading-relaxed">
-                Comprehensive digital solutions that align with business 
-                goals and create meaningful user experiences.
-              </p>
+              Comprehensive digital solutions that align with business 
+              goals and create meaningful user experiences.
+            </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
+        {/* Portfolio Section */}
       <section id="portfolio" className="relative z-10 py-20 px-6">
         <div className="container max-w-6xl mx-auto">
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -354,8 +354,8 @@ export default function StudioPage() {
           >
             <div>
               <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Selected Projects
-              </h2>
+              Selected Projects
+            </h2>
               <p className="text-lg text-zinc-600 max-w-xl">
                 A showcase of our recent work across web applications, websites, and digital platforms.
               </p>
@@ -364,38 +364,38 @@ export default function StudioPage() {
             <div className="flex items-center space-x-2 mt-6 md:mt-0">
               <Filter className="w-4 h-4 text-zinc-400" />
               <div className="flex space-x-2">
-                <button 
-                  onClick={() => setFilter(null)} 
+              <button 
+                onClick={() => setFilter(null)} 
                   className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
                     !filter 
                       ? 'bg-zinc-900 text-white' 
                       : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                   }`}
-                >
-                  All
-                </button>
-                <button 
-                  onClick={() => setFilter('webapp')} 
+              >
+                All
+              </button>
+              <button 
+                onClick={() => setFilter('webapp')} 
                   className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
                     filter === 'webapp' 
                       ? 'bg-zinc-900 text-white' 
                       : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                   }`}
-                >
-                  Web Apps
-                </button>
-                <button 
-                  onClick={() => setFilter('website')} 
+              >
+                Web Apps
+              </button>
+              <button 
+                onClick={() => setFilter('website')} 
                   className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
                     filter === 'website' 
                       ? 'bg-zinc-900 text-white' 
                       : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                   }`}
-                >
-                  Websites
-                </button>
-              </div>
+              >
+                Websites
+              </button>
             </div>
+          </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -424,25 +424,25 @@ export default function StudioPage() {
                   <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
                   <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span 
                         key={techIndex} 
                         className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                   
-                  <Link 
-                    href={project.link} 
-                    target={project.link.startsWith('http') ? "_blank" : "_self"}
+                <Link 
+                  href={project.link} 
+                  target={project.link.startsWith('http') ? "_blank" : "_self"}
                     className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
-                  >
-                    View Project
+                >
+                  View Project
                     <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                </Link>
                 </div>
               </motion.div>
             ))}
@@ -466,11 +466,11 @@ export default function StudioPage() {
             <p className="text-lg text-zinc-600">
               Delivering exceptional results for our clients worldwide.
             </p>
-          </motion.div>
+        </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Uptime */}
-            <motion.div
+        <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -538,8 +538,8 @@ export default function StudioPage() {
             </motion.div>
 
             {/* Impressions */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
@@ -558,15 +558,15 @@ export default function StudioPage() {
               </div>
               <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
               <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
-        </div>
       </section>
 
-      {/* Process Section */}
+        {/* Process Section */}
       <section className="relative z-10 py-20 px-6">
         <div className="container max-w-6xl mx-auto">
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -574,8 +574,8 @@ export default function StudioPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-              Our Process
-            </h2>
+            Our Process
+          </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
               A proven methodology that ensures successful project delivery from concept to launch.
             </p>
@@ -614,7 +614,7 @@ export default function StudioPage() {
               >
                 <div className="w-16 h-16 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4">
                   {step.number}
-                </div>
+            </div>
                 <h3 className="text-xl font-medium text-zinc-900 mb-3">{step.title}</h3>
                 <p className="text-zinc-600 leading-relaxed">
                   {step.description}
@@ -628,7 +628,7 @@ export default function StudioPage() {
       {/* Team Section */}
       <section className="relative z-10 py-20 px-6 bg-zinc-50">
         <div className="container max-w-6xl mx-auto">
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -637,11 +637,11 @@ export default function StudioPage() {
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
               Meet Our Team
-            </h2>
+          </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
               Passionate professionals dedicated to creating exceptional digital experiences.
             </p>
-          </motion.div>
+        </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
@@ -664,7 +664,7 @@ export default function StudioPage() {
                 image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
               }
             ].map((member, index) => (
-              <motion.div
+        <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -673,13 +673,13 @@ export default function StudioPage() {
                 className="text-center bg-white p-6 rounded-xl border border-zinc-200"
               >
                 <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
-                  <Image
+                <Image
                     src={member.image}
                     alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                  fill
+                  className="object-cover"
+                />
+              </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
                 <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
                 <p className="text-zinc-600 text-sm leading-relaxed">
@@ -722,7 +722,7 @@ export default function StudioPage() {
                 Email Us
               </Link>
             </div>
-            
+
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-zinc-600">
               <a 
@@ -752,7 +752,7 @@ export default function StudioPage() {
             <div className="flex items-center mb-4 md:mb-0">
               <Hexagon className="w-6 h-6 text-zinc-900 mr-2" strokeWidth={1} />
               <span className="text-sm text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
-            </div>
+              </div>
             <div className="flex items-center space-x-6">
               <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
                 Privacy

@@ -724,7 +724,7 @@ export default function Products() {
                 Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
                 environment where creativity, commerce, and community thrive in unison.
               </p>
-              
+            
               <Link 
                 href="/contact" 
                 className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
