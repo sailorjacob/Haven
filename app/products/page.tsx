@@ -643,32 +643,47 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-zinc-900 text-white rounded-xl p-6 md:p-8 mb-12"
+            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 mb-8 shadow-sm"
           >
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-xl md:text-2xl font-light mb-4 text-center">Self-Sustaining Creative Economy</h2>
-              <div className="text-center mb-6">
-                <p className="text-zinc-300 text-sm mb-2">Annual Revenue Potential Per Creative Professional</p>
-                <div className="bg-zinc-800 rounded-lg p-4 inline-block">
-                  <p className="text-2xl md:text-3xl font-light mb-1">100,000 × $100,000</p>
-                  <p className="text-lg md:text-xl text-zinc-400">= $10 billion in annual collective output</p>
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-3">Self-Sustaining Creative Economy</h2>
+                <p className="text-zinc-600 mb-6">Annual Revenue Potential Per Creative Professional</p>
+                
+                <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200 inline-block">
+                  <div className="flex items-center justify-center space-x-4 mb-2">
+                    <span className="text-2xl md:text-3xl font-semibold text-zinc-900">100,000</span>
+                    <span className="text-xl text-zinc-600">×</span>
+                    <span className="text-2xl md:text-3xl font-semibold text-zinc-900">$100,000</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-lg text-zinc-600">=</span>
+                    <span className="text-xl md:text-2xl font-semibold text-zinc-900 ml-2">$10 billion</span>
+                    <p className="text-sm text-zinc-500 mt-1">in annual collective output</p>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-zinc-800 p-4 rounded-lg">
-                  <h4 className="font-medium mb-3 text-white">Revenue Streams</h4>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-3">
+                      <DollarSign className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="text-lg font-medium text-zinc-900">Revenue Streams</h4>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-zinc-400 mb-2 font-medium">Primary</p>
-                      <ul className="space-y-1 text-zinc-300">
+                      <p className="text-zinc-700 font-medium mb-2 text-sm">Primary</p>
+                      <ul className="space-y-1 text-sm text-zinc-600">
                         <li>• Media subscriptions</li>
                         <li>• Content licensing</li>
                         <li>• Production services</li>
                       </ul>
                     </div>
                     <div>
-                      <p className="text-zinc-400 mb-2 font-medium">Secondary</p>
-                      <ul className="space-y-1 text-zinc-300">
+                      <p className="text-zinc-700 font-medium mb-2 text-sm">Secondary</p>
+                      <ul className="space-y-1 text-sm text-zinc-600">
                         <li>• Platform fees</li>
                         <li>• Event experiences</li>
                         <li>• Education services</li>
@@ -676,10 +691,16 @@ export default function Products() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-zinc-800 p-4 rounded-lg">
-                  <h4 className="font-medium mb-3 text-white">Value Distribution</h4>
-                  <p className="text-zinc-400 text-sm mb-3">Transparent blockchain-based system ensuring:</p>
-                  <ul className="space-y-1 text-sm text-zinc-300">
+                
+                <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-3">
+                      <Users className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="text-lg font-medium text-zinc-900">Value Distribution</h4>
+                  </div>
+                  <p className="text-zinc-600 text-sm mb-3">Transparent blockchain-based system ensuring:</p>
+                  <ul className="space-y-1 text-sm text-zinc-600">
                     <li>• Usage-based compensation</li>
                     <li>• Ownership stakes in works</li>
                     <li>• Performance incentives</li>
@@ -695,28 +716,22 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="bg-zinc-50 rounded-xl p-6 md:p-8 text-center border border-zinc-200"
+            className="bg-zinc-50 rounded-xl border border-zinc-200 p-6 md:p-8 text-center"
           >
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-2xl mx-auto">
               <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">Get Started With Haven</h2>
               <p className="text-zinc-600 mb-6 leading-relaxed">
                 Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
                 environment where creativity, commerce, and community thrive in unison.
               </p>
               
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-block"
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
               >
-                <Link 
-                  href="/contact" 
-                  className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
-                >
-                  <span className="mr-2">Request Information</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </motion.div>
+                <span className="mr-2">Request Information</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </motion.section>
         </div>
