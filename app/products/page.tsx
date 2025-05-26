@@ -38,7 +38,7 @@ export default function Products() {
       </header>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24 pb-20">
+      <div className="relative z-10 container mx-auto px-6 pt-24 pb-12">
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <motion.div 
@@ -155,7 +155,7 @@ export default function Products() {
           </motion.div>
           
           {/* Section Modules - Improved Design */}
-          <div className="space-y-3 mb-16">
+          <div className="space-y-3 mb-8">
           {/* Creative Content Platforms */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -643,14 +643,14 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 mb-8 shadow-sm"
+            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 mb-6 shadow-sm"
           >
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-6">
                 <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-3">Self-Sustaining Creative Economy</h2>
-                <p className="text-zinc-600 mb-6">Annual Revenue Potential Per Creative Professional</p>
+                <p className="text-zinc-600 mb-4">Annual Revenue Potential Per Creative Professional</p>
                 
-                <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200 inline-block">
+                <div className="bg-zinc-50 rounded-xl p-4 md:p-6 border border-zinc-200 inline-block">
                   <div className="flex items-center justify-center space-x-4 mb-2">
                     <span className="text-2xl md:text-3xl font-semibold text-zinc-900">100,000</span>
                     <span className="text-xl text-zinc-600">×</span>
@@ -664,8 +664,8 @@ export default function Products() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-zinc-50 rounded-xl p-4 md:p-6 border border-zinc-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-3">
                       <DollarSign className="w-5 h-5 text-white" />
@@ -692,7 +692,7 @@ export default function Products() {
                   </div>
                 </div>
                 
-                <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200">
+                <div className="bg-zinc-50 rounded-xl p-4 md:p-6 border border-zinc-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-3">
                       <Users className="w-5 h-5 text-white" />
@@ -720,7 +720,7 @@ export default function Products() {
           >
             <div className="max-w-2xl mx-auto">
               <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">Get Started With Haven</h2>
-              <p className="text-zinc-600 mb-6 leading-relaxed">
+              <p className="text-zinc-600 mb-4 leading-relaxed">
                 Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
                 environment where creativity, commerce, and community thrive in unison.
               </p>
