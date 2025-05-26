@@ -20,7 +20,13 @@ export default function StudioPage() {
   const [filter, setFilter] = useState<string | null>(null)
   const [counter, setCounter] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
   
+  // Prevent flash by ensuring component is mounted
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
+
   const projects: Project[] = [
     {
       id: "roundabout",
@@ -113,6 +119,18 @@ export default function StudioPage() {
     return () => clearInterval(timer)
   }, [])
 
+  // Prevent flash of wrong content
+  if (!isLoaded) {
+    return (
+      <div className="bg-white min-h-screen w-full flex items-center justify-center">
+        <div className="flex items-center space-x-2">
+          <Hexagon className="w-6 h-6 text-zinc-900 animate-pulse" strokeWidth={1} />
+          <span className="text-zinc-600">Loading...</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <main className="bg-white min-h-screen w-full text-zinc-900">
       {/* Clean gradient background */}
@@ -158,7 +176,7 @@ export default function StudioPage() {
               <Link 
                 href="/contact"
                 className="hidden md:inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 text-sm"
-              >
+        >
                 Contact Us
               </Link>
               
@@ -226,7 +244,7 @@ export default function StudioPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
             className="text-center mb-16"
-          >
+        >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -284,7 +302,7 @@ export default function StudioPage() {
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
               We specialize in creating digital experiences that combine beautiful design 
               with powerful functionality.
-            </p>
+          </p>
         </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -294,7 +312,7 @@ export default function StudioPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
-            >
+        >
               <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
                 <Code className="w-6 h-6 text-zinc-700" />
               </div>
@@ -572,7 +590,7 @@ export default function StudioPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
-          >
+        >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
             Our Process
           </h2>
@@ -618,7 +636,7 @@ export default function StudioPage() {
                 <h3 className="text-xl font-medium text-zinc-900 mb-3">{step.title}</h3>
                 <p className="text-zinc-600 leading-relaxed">
                   {step.description}
-                </p>
+              </p>
               </motion.div>
             ))}
           </div>
@@ -634,7 +652,7 @@ export default function StudioPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
-          >
+        >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
               Meet Our Team
           </h2>
