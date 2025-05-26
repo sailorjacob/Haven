@@ -66,9 +66,6 @@ export default function KillMeFxsterPage() {
           <p className="text-lg text-zinc-300 mb-4 max-w-xl mx-auto">
             Looking for decentralized military commanders
           </p>
-          <p className="text-sm text-zinc-500">
-            Join the digital revolution and lead the fight for creative freedom
-          </p>
         </motion.div>
 
         {/* Main image */}
@@ -78,14 +75,16 @@ export default function KillMeFxsterPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-24"
         >
-          <div className="relative aspect-video overflow-hidden">
-            <Image
-              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//killmefxster.png"
-              alt="Kill Me Faster Artist Website"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <a href="https://killmefaster.com" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="relative aspect-video overflow-hidden hover:opacity-90 transition-opacity cursor-pointer">
+              <Image
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//killmefxster.png"
+                alt="Kill Me Faster Artist Website"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </a>
         </motion.div>
 
         {/* Project Overview */}
@@ -100,10 +99,10 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Kill Me Faster represents a revolutionary digital art movement where traditional boundaries dissolve into a new frontier of creative expression. Born as the ultimate escape route and weapon, this project embodies the artist's quest for red diamonds while painting with pure energy.
+                Kill Me Faster represents a digital art movement where traditional boundaries dissolve into new forms of creative expression. Born as the ultimate escape route and weapon, this project embodies the artist's quest for red diamonds while painting with pure energy.
               </p>
               <p className="text-zinc-400">
-                The artist's journey through the dark arts combines cryptocurrency culture, digital rebellion, and futuristic warfare aesthetics. This isn't just art—it's a manifesto for a new digital country where creativity and technology merge to fight for ultimate freedom.
+                The artist's work combines cryptocurrency culture, digital rebellion, and futuristic warfare aesthetics. This isn't just art—it's a statement about freedom and the intersection of creativity and technology.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
@@ -214,10 +213,10 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Kill Me Faster has emerged as more than an art project—it's a movement that challenges the very foundations of digital creativity and ownership. The artist's vision of a new digital country resonates with creators worldwide seeking freedom from traditional constraints.
+                Kill Me Faster has emerged as more than an art project—it's a movement that challenges conventional approaches to digital creativity and ownership. The artist's vision resonates with creators seeking freedom from traditional constraints.
               </p>
               <p className="text-zinc-400">
-                Through the fusion of dark arts, cryptocurrency, and futuristic warfare aesthetics, this project has opened new pathways for artistic expression in the digital age, inspiring a generation of crypto-artists and digital rebels.
+                Through the fusion of dark arts, cryptocurrency, and futuristic warfare aesthetics, this project has opened new pathways for artistic expression, inspiring crypto-artists and digital creators.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
@@ -230,11 +229,19 @@ export default function KillMeFxsterPage() {
                 <p className="text-zinc-400 text-sm">Bitcoin integrated</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">🔴</div>
+                <div className="flex justify-center mb-2">
+                  <svg className="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                  </svg>
+                </div>
                 <p className="text-zinc-400 text-sm">Red diamonds sought</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">🤖</div>
+                <div className="flex justify-center mb-2">
+                  <svg className="w-8 h-8 text-zinc-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 14.1 11 13 11V22H11V16H9V22H7V11C5.9 11 5 10.1 5 9V7L3 7V9H1V7C1 5.9 1.9 5 3 5H21C22.1 5 23 5.9 23 7V9H21ZM7.5 7.5C7.5 8.3 8.2 9 9 9S10.5 8.3 10.5 7.5S9.8 6 9 6S7.5 6.7 7.5 7.5ZM13.5 7.5C13.5 8.3 14.2 9 15 9S16.5 8.3 16.5 7.5S15.8 6 15 6S13.5 6.7 13.5 7.5Z"/>
+                  </svg>
+                </div>
                 <p className="text-zinc-400 text-sm">Digital army assembled</p>
               </div>
             </div>
@@ -250,10 +257,10 @@ export default function KillMeFxsterPage() {
           className="text-center mb-16 pt-16 border-t border-zinc-800"
         >
           <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
-            Join the Digital Revolution
+            Ready to Build Something Real?
           </h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-            Ready to escape the conventional and enter the new frontier? Let us help you build your own digital country and artistic rebellion.
+            Let us help you create platforms that matter and connect with the right people.
           </p>
           <Link href="/contact">
             <button className="bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300">
