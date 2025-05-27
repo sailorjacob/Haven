@@ -21,10 +21,16 @@ export default function HomePage() {
   const [counter, setCounter] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   
-  // Prevent flash by ensuring component is mounted
+  // Prevent flash by ensuring component is mounted and ready
   useEffect(() => {
-    setIsLoaded(true)
+    setIsMounted(true)
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 100) // Small delay to ensure layout is stable
+    
+    return () => clearTimeout(timer)
   }, [])
   
   const projects: Project[] = [
@@ -122,7 +128,7 @@ export default function HomePage() {
   }, [isLoaded])
 
   // Prevent flash of wrong content
-  if (!isLoaded) {
+  if (!isMounted || !isLoaded) {
     return (
       <div className="bg-white min-h-screen w-full flex items-center justify-center">
         <div className="flex items-center space-x-2">
@@ -134,7 +140,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="bg-white w-full text-zinc-900" suppressHydrationWarning>
+    <main className={`bg-white w-full text-zinc-900 transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`} suppressHydrationWarning>
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -303,7 +309,7 @@ export default function HomePage() {
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.2 + (index * 0.05) }}
                   viewport={{ once: true }}
                   className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
                 >
@@ -352,14 +358,16 @@ export default function HomePage() {
           <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
                 className="flex justify-center mb-6"
               >
                 <div className="relative">
