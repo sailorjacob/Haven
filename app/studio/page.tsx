@@ -742,21 +742,13 @@ export default function StudioPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-zinc-600">
+            <div className="flex items-center justify-center text-sm text-zinc-600">
               <a 
                 href="mailto:info@haven.engineer" 
                 className="flex items-center hover:text-zinc-900 transition-colors"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 info@haven.engineer
-              </a>
-              <span className="hidden sm:block">•</span>
-              <a 
-                href="tel:812-360-9867" 
-                className="flex items-center hover:text-zinc-900 transition-colors"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                812-360-9867
               </a>
             </div>
           </motion.div>
