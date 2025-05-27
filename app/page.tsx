@@ -675,7 +675,7 @@ export default function HomePage() {
                 {
                   name: "Jarret Shull", 
                   role: "Sales",
-                  description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
+                  description: "Jarret builds partnerships and client services with a love for connecting businesses.",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
                 },
                 {
