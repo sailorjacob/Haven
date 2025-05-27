@@ -40,7 +40,7 @@ export default function AnthonyHadenGuestPage() {
             Anthony Haden-Guest
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
-            A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.
+            A simple portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.
           </p>
           <div className="flex items-center justify-center gap-4 text-sm text-zinc-500">
             <span>Literature</span>

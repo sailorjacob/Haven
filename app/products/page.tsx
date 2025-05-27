@@ -17,7 +17,7 @@ export default function Products() {
   };
 
   return (
-    <main className="bg-white min-h-screen w-full text-zinc-900">
+    <main className="bg-white w-full text-zinc-900">
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -37,15 +37,16 @@ export default function Products() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-24 pb-6">
-        <div className="max-w-6xl mx-auto">
+      {/* Single Combined Section - All Content Flows Together */}
+      <section className="relative z-10 pt-20 px-6">
+        <div className="container max-w-6xl mx-auto space-y-12">
+          
           {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center"
           >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
@@ -74,7 +75,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-zinc-50 rounded-xl p-8 md:p-10 border border-zinc-200 mb-16"
+            className="bg-zinc-50 rounded-xl p-8 md:p-10 border border-zinc-200"
           >
             <p className="text-zinc-700 text-lg leading-relaxed">
               Haven is an integrated ecosystem where cutting‐edge creative production meets next-generation digital distribution, 
@@ -89,7 +90,6 @@ export default function Products() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-16"
           >
             <h2 className="text-2xl font-light text-zinc-900 mb-8 text-center">Haven's Dual Innovation Ecosystem</h2>
             
@@ -155,7 +155,7 @@ export default function Products() {
           </motion.div>
           
           {/* Section Modules - Improved Design */}
-          <div className="space-y-3 mb-8">
+          <div className="space-y-3">
           {/* Creative Content Platforms */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -639,11 +639,11 @@ export default function Products() {
           </div>
 
           {/* Economic Model Highlight */}
-          <motion.section 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 mb-0 shadow-sm"
+            className="bg-white rounded-xl border border-zinc-200 p-6 md:p-8 shadow-sm"
           >
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-6">
@@ -726,9 +726,33 @@ export default function Products() {
                 </Link>
               </div>
             </div>
-          </motion.section>
+          </motion.div>
+
         </div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 border-t border-zinc-200 py-8 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center mb-4 md:mb-0">
+              <Hexagon className="w-5 h-5 text-zinc-900 mr-2" strokeWidth={1} />
+              <span className="text-sm text-zinc-600">© 2024 Haven. All rights reserved.</span>
+            </div>
+            <div className="flex items-center space-x-6">
+              <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+                Privacy
+              </Link>
+              <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+                Terms
+              </Link>
+              <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 } 
