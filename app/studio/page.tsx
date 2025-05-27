@@ -175,9 +175,9 @@ export default function StudioPage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/contact"
-                className="hidden md:inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 text-sm"
-        >
-                Contact Us
+                className="hidden md:inline-flex items-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-lg border border-zinc-300 transition-all duration-300 text-sm"
+              >
+                Contact
               </Link>
               
               {/* Mobile Menu Button */}
