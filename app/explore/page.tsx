@@ -28,7 +28,7 @@ export default function ExplorePage() {
               >
                 <ChevronLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 <span className="text-sm tracking-wider uppercase">Back to Haven</span>
-              </Link>
+                </Link>
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
@@ -44,8 +44,8 @@ export default function ExplorePage() {
                 >
                   Products
                 </Link>
-              </div>
-            </div>
+        </div>
+      </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -56,7 +56,7 @@ export default function ExplorePage() {
             </button>
           </nav>
         </div>
-          
+
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
@@ -91,7 +91,7 @@ export default function ExplorePage() {
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="container max-w-6xl mx-auto text-center">
-          <motion.div
+          <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -105,7 +105,7 @@ export default function ExplorePage() {
             </div>
           </motion.div>
 
-          <motion.h1
+          <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -113,8 +113,8 @@ export default function ExplorePage() {
           >
             Haven
           </motion.h1>
-
-          <motion.p
+          
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -123,7 +123,7 @@ export default function ExplorePage() {
             A digital superplatform bridging premium content with physical spaces. 
             Curated media, art, and community for the modern native.
           </motion.p>
-
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -160,14 +160,14 @@ export default function ExplorePage() {
       </section>
         
       {/* Features Grid */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 pt-6 px-6">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
               Integrated Ecosystem
@@ -220,7 +220,7 @@ export default function ExplorePage() {
       </section>
 
       {/* Value Proposition */}
-      <section className="relative z-10 py-20 px-6 bg-zinc-50">
+      <section className="relative z-10 pt-6 px-6 bg-zinc-50">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -267,7 +267,7 @@ export default function ExplorePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 pt-6 pb-6 px-6">
         <div className="container max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -302,7 +302,7 @@ export default function ExplorePage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-200 py-12 px-6">
+      <footer className="relative z-10 border-t border-zinc-200 pt-4 px-6">
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
