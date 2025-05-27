@@ -236,15 +236,123 @@ export default function StudioPage() {
         </AnimatePresence>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-32 pb-20 px-6">
+      {/* Selected Projects Section - Moved to top */}
+      <section id="portfolio" className="relative z-10 pt-32 pb-20 px-6">
         <div className="container max-w-6xl mx-auto">
-        <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12"
+          >
+            <div>
+              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+                Selected Projects
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-xl">
+                A showcase of our recent work across web applications, websites, and digital platforms.
+              </p>
+            </div>
+            
+            <div className="flex items-center space-x-2 mt-6 md:mt-0">
+              <Filter className="w-4 h-4 text-zinc-400" />
+              <div className="flex space-x-2">
+                <button 
+                  onClick={() => setFilter(null)} 
+                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                    !filter 
+                      ? 'bg-zinc-900 text-white' 
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  All
+                </button>
+                <button 
+                  onClick={() => setFilter('webapp')} 
+                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                    filter === 'webapp' 
+                      ? 'bg-zinc-900 text-white' 
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  Web Apps
+                </button>
+                <button 
+                  onClick={() => setFilter('website')} 
+                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                    filter === 'website' 
+                      ? 'bg-zinc-900 text-white' 
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                  }`}
+                >
+                  Websites
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+              >
+                <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
+                  <div className="relative h-64 overflow-hidden">
+                    <Image 
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                  </div>
+                </Link>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
+                  <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link 
+                    href={project.link} 
+                    target={project.link.startsWith('http') ? "_blank" : "_self"}
+                    className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
+                  >
+                    View Project
+                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section - Moved after projects */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
-        >
+          >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -261,25 +369,25 @@ export default function StudioPage() {
             
             <h1 className="text-5xl md:text-6xl font-light text-zinc-900 mb-4 tracking-tight">
               Haven Studio
-          </h1>
+            </h1>
             <p className="text-lg md:text-xl text-zinc-600 font-light tracking-wide max-w-3xl mx-auto mb-8">
-            A digital design and web development studio crafting premium 
-            experiences for modern brands and startups.
-          </p>
+              A digital design and web development studio crafting premium 
+              experiences for modern brands and startups.
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="#portfolio"
+                href="/contact"
                 className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
               >
-                <span className="mr-2">View Our Work</span>
+                <span className="mr-2">Start a Project</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/contact"
+                href="#services"
                 className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
               >
-                Start a Project
+                Our Services
               </Link>
             </div>
           </motion.div>
@@ -287,7 +395,7 @@ export default function StudioPage() {
       </section>
 
       {/* Services Section */}
-      <section className="relative z-10 py-20 px-6 bg-zinc-50">
+      <section id="services" className="relative z-10 py-20 px-6 bg-zinc-50">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -356,114 +464,6 @@ export default function StudioPage() {
               goals and create meaningful user experiences.
             </p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-        {/* Portfolio Section */}
-      <section id="portfolio" className="relative z-10 py-20 px-6">
-        <div className="container max-w-6xl mx-auto">
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12"
-          >
-            <div>
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-              Selected Projects
-            </h2>
-              <p className="text-lg text-zinc-600 max-w-xl">
-                A showcase of our recent work across web applications, websites, and digital platforms.
-              </p>
-            </div>
-            
-            <div className="flex items-center space-x-2 mt-6 md:mt-0">
-              <Filter className="w-4 h-4 text-zinc-400" />
-              <div className="flex space-x-2">
-              <button 
-                onClick={() => setFilter(null)} 
-                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                    !filter 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                  }`}
-              >
-                All
-              </button>
-              <button 
-                onClick={() => setFilter('webapp')} 
-                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                    filter === 'webapp' 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                  }`}
-              >
-                Web Apps
-              </button>
-              <button 
-                onClick={() => setFilter('website')} 
-                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                    filter === 'website' 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                  }`}
-              >
-                Websites
-              </button>
-            </div>
-          </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
-              >
-                <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
-                  <div className="relative h-64 overflow-hidden">
-                    <Image 
-                      src={project.imageUrl}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                  </div>
-                </Link>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
-                  <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
-                  
-                <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
-                      >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                  
-                <Link 
-                  href={project.link} 
-                  target={project.link.startsWith('http') ? "_blank" : "_self"}
-                    className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
-                >
-                  View Project
-                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
