@@ -237,7 +237,7 @@ export default function StudioPage() {
       </header>
 
       {/* Selected Projects Section - Moved to top */}
-      <section id="portfolio" className="relative z-10 pt-20 pb-1 px-6">
+      <section id="portfolio" className="relative z-10 pt-20 px-6">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -292,7 +292,7 @@ export default function StudioPage() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -345,19 +345,19 @@ export default function StudioPage() {
       </section>
 
       {/* Hero Section - Moved after projects */}
-      <section className="relative z-10 py-2 px-6">
+      <section className="relative z-10 py-1 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center mb-2"
           >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="flex justify-center mb-3"
+              className="flex justify-center mb-2"
             >
               <div className="relative">
                 <Hexagon className="w-10 h-10 text-zinc-900" strokeWidth={1} />
@@ -367,10 +367,10 @@ export default function StudioPage() {
               </div>
             </motion.div>
             
-            <h1 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2 tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-light text-zinc-900 mb-1 tracking-tight">
               Haven Studio
             </h1>
-            <p className="text-sm md:text-base text-zinc-600 font-light tracking-wide max-w-2xl mx-auto mb-4">
+            <p className="text-sm md:text-base text-zinc-600 font-light tracking-wide max-w-2xl mx-auto mb-3">
               A digital design and web development studio crafting premium 
               experiences for modern brands and startups.
             </p>
@@ -395,14 +395,14 @@ export default function StudioPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative z-10 py-2 px-6 bg-zinc-50">
+      <section id="services" className="relative z-10 py-1 px-6 bg-zinc-50">
         <div className="container max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-3"
+            className="text-center mb-2"
           >
             <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Our Services
@@ -413,7 +413,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -469,14 +469,14 @@ export default function StudioPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 py-2 px-6">
+      <section className="relative z-10 py-1 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-3"
+            className="text-center mb-2"
           >
             <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Studio Performance
@@ -486,7 +486,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
             {/* Uptime */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -582,14 +582,14 @@ export default function StudioPage() {
       </section>
 
       {/* Process Section */}
-      <section className="relative z-10 py-2 px-6 bg-zinc-50">
+      <section className="relative z-10 py-1 px-6 bg-zinc-50">
         <div className="container max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-3"
+            className="text-center mb-2"
           >
             <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Our Process
@@ -599,7 +599,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-2">
             {[
               {
                 number: "01",
@@ -644,14 +644,14 @@ export default function StudioPage() {
       </section>
 
       {/* Team Section */}
-      <section className="relative z-10 py-2 px-6">
+      <section className="relative z-10 py-1 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-3"
+            className="text-center mb-2"
           >
             <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Meet Our Team
@@ -661,7 +661,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
             {[
               {
                 name: "Jacob Beam",
@@ -710,7 +710,7 @@ export default function StudioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-2 px-6 bg-zinc-50">
+      <section className="relative z-10 py-1 px-6 bg-zinc-50">
         <div className="container max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -756,10 +756,10 @@ export default function StudioPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-200 py-3 px-6">
+      <footer className="relative z-10 border-t border-zinc-200 py-2 px-6">
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-2 md:mb-0">
+            <div className="flex items-center mb-1 md:mb-0">
               <Hexagon className="w-5 h-5 text-zinc-900 mr-2" strokeWidth={1} />
               <span className="text-xs text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
             </div>
