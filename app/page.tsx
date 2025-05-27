@@ -675,7 +675,7 @@ export default function HomePage() {
                 {
                   name: "Jarret Shull", 
                   role: "Sales",
-                  description: "Jarret builds partnerships and client services with a love for connecting businesses.",
+                  description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
                 },
                 {
@@ -691,7 +691,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center bg-white p-6 rounded-xl border border-zinc-200"
+                  className="text-center"
                 >
                   <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
                     <Image
