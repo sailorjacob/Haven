@@ -237,7 +237,7 @@ export default function StudioPage() {
       </header>
 
       {/* Selected Projects Section - Moved to top */}
-      <section id="portfolio" className="relative z-10 pt-32 px-6">
+      <section id="portfolio" className="relative z-10 pt-32 pb-2 px-6">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -345,13 +345,13 @@ export default function StudioPage() {
       </section>
 
       {/* Hero Section - Moved after projects */}
-      <section className="relative z-10 pt-6 px-6">
+      <section className="relative z-10 pt-2 pb-2 px-6">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8"
+            className="text-center mb-12"
           >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
@@ -395,7 +395,7 @@ export default function StudioPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative z-10 pt-6 px-6 bg-zinc-50">
+      <section id="services" className="relative z-10 pt-2 pb-2 px-6 bg-zinc-50">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -469,7 +469,7 @@ export default function StudioPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 pt-6 px-6 bg-zinc-50">
+      <section className="relative z-10 pt-2 pb-2 px-6 bg-zinc-50">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -582,7 +582,7 @@ export default function StudioPage() {
       </section>
 
         {/* Process Section */}
-      <section className="relative z-10 pt-6 px-6">
+      <section className="relative z-10 pt-2 pb-2 px-6">
         <div className="container max-w-6xl mx-auto">
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -644,7 +644,7 @@ export default function StudioPage() {
       </section>
 
       {/* Team Section */}
-      <section className="relative z-10 pt-6 px-6 bg-zinc-50">
+      <section className="relative z-10 pt-2 pb-2 px-6 bg-zinc-50">
         <div className="container max-w-6xl mx-auto">
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -710,7 +710,7 @@ export default function StudioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 pt-6 pb-6 px-6">
+      <section className="relative z-10 pt-2 pb-4 px-6">
         <div className="container max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -756,7 +756,7 @@ export default function StudioPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-200 pt-4 px-6">
+      <footer className="relative z-10 border-t border-zinc-200 pt-2 px-6">
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
