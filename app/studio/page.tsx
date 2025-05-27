@@ -292,7 +292,7 @@ export default function StudioPage() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -345,13 +345,13 @@ export default function StudioPage() {
       </section>
 
       {/* Hero Section - Moved after projects */}
-      <section className="relative z-10 py-1 px-6">
+      <section className="relative z-10 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-2"
+            className="text-center"
           >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
@@ -395,7 +395,7 @@ export default function StudioPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative z-10 py-1 px-6 bg-zinc-50">
+      <section id="services" className="relative z-10 px-6 bg-zinc-50">
         <div className="container max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -413,7 +413,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -469,7 +469,7 @@ export default function StudioPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 py-1 px-6">
+      <section className="relative z-10 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -486,7 +486,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Uptime */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -582,7 +582,7 @@ export default function StudioPage() {
       </section>
 
       {/* Process Section */}
-      <section className="relative z-10 py-1 px-6 bg-zinc-50">
+      <section className="relative z-10 px-6 bg-zinc-50">
         <div className="container max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -599,7 +599,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
               {
                 number: "01",
@@ -644,7 +644,7 @@ export default function StudioPage() {
       </section>
 
       {/* Team Section */}
-      <section className="relative z-10 py-1 px-6">
+      <section className="relative z-10 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -661,7 +661,7 @@ export default function StudioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
                 name: "Jacob Beam",
@@ -710,7 +710,7 @@ export default function StudioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-1 px-6 bg-zinc-50">
+      <section className="relative z-10 px-6 bg-zinc-50">
         <div className="container max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
