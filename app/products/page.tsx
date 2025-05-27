@@ -78,7 +78,7 @@ export default function Products() {
           >
             <p className="text-zinc-700 text-lg leading-relaxed">
               Haven is an integrated ecosystem where cutting‐edge creative production meets next-generation digital distribution, 
-              luxurious living, and a new paradigm in cultural governance. This documentation outlines our multi-faceted services—from 
+              life-long living, and a new paradigm in cultural governance. This documentation outlines our multi-faceted services—from 
               advanced AI-generated content to immersive real estate communities and an international art 
               and cultural platform.
             </p>

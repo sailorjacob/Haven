@@ -29,13 +29,13 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
-      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
-      link: "/roundabout",
-      category: "webapp"
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
+      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "/ammocat",
+      category: "website"
     },
     {
       id: "jacobhalestudio",
@@ -47,21 +47,21 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
+      link: "/roundabout",
       category: "webapp"
     },
     {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
-      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "/ammocat",
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
+      link: "/anthonyhadenguest",
       category: "website"
     },
     {
@@ -74,13 +74,13 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
-      link: "/anthonyhadenguest",
-      category: "website"
+      id: "beloved",
+      title: "be-loved.app",
+      description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "/beloved",
+      category: "webapp"
     },
     {
       id: "moonlight",
