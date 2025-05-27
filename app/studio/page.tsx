@@ -132,7 +132,7 @@ export default function StudioPage() {
   }
 
   return (
-    <main className="bg-white min-h-screen w-full text-zinc-900">
+    <main className="bg-white w-full text-zinc-900">
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -141,7 +141,7 @@ export default function StudioPage() {
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
@@ -181,7 +181,7 @@ export default function StudioPage() {
               </Link>
               
               {/* Mobile Menu Button */}
-            <button 
+              <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
@@ -227,27 +227,27 @@ export default function StudioPage() {
                   href="/contact"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-          </Link>
+                >
+                  Contact
+                </Link>
               </div>
-        </motion.div>
+            </motion.div>
           )}
         </AnimatePresence>
       </header>
 
       {/* Selected Projects Section - Moved to top */}
-      <section id="portfolio" className="relative z-10 pt-24 pb-2 px-6">
+      <section id="portfolio" className="relative z-10 pt-20 pb-1 px-6">
         <div className="container max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4"
+            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3"
           >
             <div>
-              <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2">
+              <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-1">
                 Selected Projects
               </h2>
               <p className="text-base text-zinc-600 max-w-xl">
@@ -255,7 +255,7 @@ export default function StudioPage() {
               </p>
             </div>
             
-            <div className="flex items-center space-x-2 mt-4 md:mt-0">
+            <div className="flex items-center space-x-2 mt-3 md:mt-0">
               <Filter className="w-4 h-4 text-zinc-400" />
               <div className="flex space-x-2">
                 <button 
@@ -292,7 +292,7 @@ export default function StudioPage() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -303,7 +303,7 @@ export default function StudioPage() {
                 className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
               >
                 <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 overflow-hidden">
                     <Image 
                       src={project.imageUrl}
                       alt={project.title}
@@ -314,11 +314,11 @@ export default function StudioPage() {
                   </div>
                 </Link>
                 
-                <div className="p-4">
-                  <h3 className="text-lg font-medium text-zinc-900 mb-1">{project.title}</h3>
-                  <p className="text-zinc-600 mb-3 text-sm leading-relaxed">{project.description}</p>
+                <div className="p-3">
+                  <h3 className="text-base font-medium text-zinc-900 mb-1">{project.title}</h3>
+                  <p className="text-zinc-600 mb-2 text-sm leading-relaxed">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-1.5 mb-3">
+                  <div className="flex flex-wrap gap-1 mb-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span 
                         key={techIndex} 
@@ -345,7 +345,7 @@ export default function StudioPage() {
       </section>
 
       {/* Hero Section - Moved after projects */}
-      <section className="relative z-10 py-4 px-6">
+      <section className="relative z-10 py-2 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -357,35 +357,35 @@ export default function StudioPage() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="flex justify-center mb-4"
+              className="flex justify-center mb-3"
             >
               <div className="relative">
-                <Hexagon className="w-12 h-12 text-zinc-900" strokeWidth={1} />
+                <Hexagon className="w-10 h-10 text-zinc-900" strokeWidth={1} />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Code className="w-6 h-6 text-zinc-700" />
+                  <Code className="w-5 h-5 text-zinc-700" />
                 </div>
               </div>
             </motion.div>
             
-            <h1 className="text-3xl md:text-4xl font-light text-zinc-900 mb-3 tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2 tracking-tight">
               Haven Studio
             </h1>
-            <p className="text-base md:text-lg text-zinc-600 font-light tracking-wide max-w-2xl mx-auto mb-6">
+            <p className="text-sm md:text-base text-zinc-600 font-light tracking-wide max-w-2xl mx-auto mb-4">
               A digital design and web development studio crafting premium 
               experiences for modern brands and startups.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2.5 px-6 rounded-lg transition-all duration-300 group"
+                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 group text-sm"
               >
                 <span className="mr-2">Start a Project</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#services"
-                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-2.5 px-6 rounded-lg border border-zinc-300 transition-all duration-300"
+                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-5 rounded-lg border border-zinc-300 transition-all duration-300 text-sm"
               >
                 Our Services
               </Link>
@@ -395,37 +395,37 @@ export default function StudioPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative z-10 py-4 px-6 bg-zinc-50">
+      <section id="services" className="relative z-10 py-2 px-6 bg-zinc-50">
         <div className="container max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-4"
+            className="text-center mb-3"
           >
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2">
+            <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Our Services
             </h2>
-            <p className="text-base text-zinc-600 max-w-xl mx-auto">
+            <p className="text-sm text-zinc-600 max-w-xl mx-auto">
               We specialize in creating digital experiences that combine beautiful design 
               with powerful functionality.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+              className="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
             >
-              <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center mb-4">
-                <Code className="w-5 h-5 text-zinc-700" />
+              <div className="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center mb-3">
+                <Code className="w-4 h-4 text-zinc-700" />
               </div>
-              <h3 className="text-lg font-medium text-zinc-900 mb-2">Web Development</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
+              <h3 className="text-base font-medium text-zinc-900 mb-1">Web Development</h3>
+              <p className="text-zinc-600 text-xs leading-relaxed">
                 Custom web applications built with modern frameworks 
                 and performance-focused architecture.
               </p>
@@ -436,13 +436,13 @@ export default function StudioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+              className="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
             >
-              <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center mb-4">
-                <Palette className="w-5 h-5 text-zinc-700" />
+              <div className="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center mb-3">
+                <Palette className="w-4 h-4 text-zinc-700" />
               </div>
-              <h3 className="text-lg font-medium text-zinc-900 mb-2">Web Design</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
+              <h3 className="text-base font-medium text-zinc-900 mb-1">Web Design</h3>
+              <p className="text-zinc-600 text-xs leading-relaxed">
                 Minimalist, elegant interfaces that elevate brands with 
                 thoughtful interactions and premium aesthetics.
               </p>
@@ -453,13 +453,13 @@ export default function StudioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+              className="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
             >
-              <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center mb-4">
-                <Zap className="w-5 h-5 text-zinc-700" />
+              <div className="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center mb-3">
+                <Zap className="w-4 h-4 text-zinc-700" />
               </div>
-              <h3 className="text-lg font-medium text-zinc-900 mb-2">Digital Strategy</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
+              <h3 className="text-base font-medium text-zinc-900 mb-1">Digital Strategy</h3>
+              <p className="text-zinc-600 text-xs leading-relaxed">
                 Comprehensive digital solutions that align with business 
                 goals and create meaningful user experiences.
               </p>
@@ -469,24 +469,24 @@ export default function StudioPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 py-4 px-6">
+      <section className="relative z-10 py-2 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-4"
+            className="text-center mb-3"
           >
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2">
+            <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Studio Performance
             </h2>
-            <p className="text-base text-zinc-600">
+            <p className="text-sm text-zinc-600">
               Delivering exceptional results for our clients worldwide.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Uptime */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -495,7 +495,7 @@ export default function StudioPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="relative w-16 h-16 mx-auto mb-3">
+              <div className="relative w-12 h-12 mx-auto mb-2">
                 <svg className="w-full h-full" viewBox="0 0 100 100">
                   <circle 
                     cx="50" 
@@ -528,7 +528,7 @@ export default function StudioPage() {
                     y="50" 
                     textAnchor="middle" 
                     fill="#18181b" 
-                    fontSize="14" 
+                    fontSize="12" 
                     fontWeight="600"
                     dominantBaseline="middle"
                   >
@@ -536,7 +536,7 @@ export default function StudioPage() {
                   </text>
                 </svg>
               </div>
-              <h3 className="text-base font-medium text-zinc-900 mb-1">Uptime</h3>
+              <h3 className="text-sm font-medium text-zinc-900 mb-0.5">Uptime</h3>
               <p className="text-zinc-600 text-xs">Reliable hosting & maintenance</p>
             </motion.div>
 
@@ -548,10 +548,10 @@ export default function StudioPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-3">
-                <span className="text-white font-semibold text-sm">24/7</span>
+              <div className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-2">
+                <span className="text-white font-semibold text-xs">24/7</span>
               </div>
-              <h3 className="text-base font-medium text-zinc-900 mb-1">Support</h3>
+              <h3 className="text-sm font-medium text-zinc-900 mb-0.5">Support</h3>
               <p className="text-zinc-600 text-xs">Always available assistance</p>
             </motion.div>
 
@@ -563,9 +563,9 @@ export default function StudioPage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="h-16 flex flex-col items-center justify-center mb-3">
+              <div className="h-12 flex flex-col items-center justify-center mb-2">
                 <motion.div 
-                  className="text-2xl font-semibold text-zinc-900"
+                  className="text-lg font-semibold text-zinc-900"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
@@ -574,7 +574,7 @@ export default function StudioPage() {
                   {counter.toLocaleString()}+
                 </motion.div>
               </div>
-              <h3 className="text-base font-medium text-zinc-900 mb-1">Impressions</h3>
+              <h3 className="text-sm font-medium text-zinc-900 mb-0.5">Impressions</h3>
               <p className="text-zinc-600 text-xs">Monthly reach across projects</p>
             </motion.div>
           </div>
@@ -582,24 +582,24 @@ export default function StudioPage() {
       </section>
 
       {/* Process Section */}
-      <section className="relative z-10 py-4 px-6 bg-zinc-50">
+      <section className="relative z-10 py-2 px-6 bg-zinc-50">
         <div className="container max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-4"
+            className="text-center mb-3"
           >
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2">
+            <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Our Process
             </h2>
-            <p className="text-base text-zinc-600 max-w-xl mx-auto">
+            <p className="text-sm text-zinc-600 max-w-xl mx-auto">
               A proven methodology that ensures successful project delivery from concept to launch.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
               {
                 number: "01",
@@ -630,11 +630,11 @@ export default function StudioPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-12 h-12 rounded-full bg-zinc-900 text-white flex items-center justify-center text-base font-semibold mx-auto mb-3">
+                <div className="w-10 h-10 rounded-full bg-zinc-900 text-white flex items-center justify-center text-sm font-semibold mx-auto mb-2">
                   {step.number}
                 </div>
-                <h3 className="text-base font-medium text-zinc-900 mb-2">{step.title}</h3>
-                <p className="text-zinc-600 text-sm leading-relaxed">
+                <h3 className="text-sm font-medium text-zinc-900 mb-1">{step.title}</h3>
+                <p className="text-zinc-600 text-xs leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>
@@ -644,24 +644,24 @@ export default function StudioPage() {
       </section>
 
       {/* Team Section */}
-      <section className="relative z-10 py-4 px-6">
+      <section className="relative z-10 py-2 px-6">
         <div className="container max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-4"
+            className="text-center mb-3"
           >
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-2">
+            <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-1">
               Meet Our Team
             </h2>
-            <p className="text-base text-zinc-600 max-w-xl mx-auto">
+            <p className="text-sm text-zinc-600 max-w-xl mx-auto">
               Passionate professionals dedicated to creating exceptional digital experiences.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
                 name: "Jacob Beam",
@@ -688,9 +688,9 @@ export default function StudioPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white p-4 rounded-xl border border-zinc-200"
+                className="text-center bg-white p-3 rounded-xl border border-zinc-200"
               >
-                <div className="relative w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden border-2 border-zinc-200">
+                <div className="relative w-12 h-12 mx-auto mb-2 rounded-full overflow-hidden border-2 border-zinc-200">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -698,8 +698,8 @@ export default function StudioPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-base font-medium text-zinc-900 mb-1">{member.name}</h3>
-                <p className="text-zinc-600 text-xs mb-2 font-medium">{member.role}</p>
+                <h3 className="text-sm font-medium text-zinc-900 mb-0.5">{member.name}</h3>
+                <p className="text-zinc-600 text-xs mb-1 font-medium">{member.role}</p>
                 <p className="text-zinc-600 text-xs leading-relaxed">
                   {member.description}
                 </p>
@@ -710,7 +710,7 @@ export default function StudioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-4 px-6 bg-zinc-50">
+      <section className="relative z-10 py-2 px-6 bg-zinc-50">
         <div className="container max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -718,36 +718,36 @@ export default function StudioPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-3">
+            <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-2">
               Start Your Project
             </h2>
-            <p className="text-base text-zinc-600 mb-6 max-w-xl mx-auto">
+            <p className="text-sm text-zinc-600 mb-4 max-w-xl mx-auto">
               Ready to bring your digital vision to life? Let's create something exceptional together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-2 justify-center mb-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2.5 px-6 rounded-lg transition-all duration-300 group"
+                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 group text-sm"
               >
                 <span className="mr-2">Get Started</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="mailto:info@haven.engineer"
-                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-2.5 px-6 rounded-lg border border-zinc-300 transition-all duration-300"
+                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-5 rounded-lg border border-zinc-300 transition-all duration-300 text-sm"
               >
-                <Mail className="w-4 h-4 mr-2" />
+                <Mail className="w-3 h-3 mr-2" />
                 Email Us
               </Link>
             </div>
 
             {/* Contact Info */}
-            <div className="flex items-center justify-center text-sm text-zinc-600">
+            <div className="flex items-center justify-center text-xs text-zinc-600">
               <a 
                 href="mailto:info@haven.engineer" 
                 className="flex items-center hover:text-zinc-900 transition-colors"
               >
-                <Mail className="w-4 h-4 mr-2" />
+                <Mail className="w-3 h-3 mr-1.5" />
                 info@haven.engineer
               </a>
             </div>
@@ -756,21 +756,21 @@ export default function StudioPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-200 py-4 px-6">
+      <footer className="relative z-10 border-t border-zinc-200 py-3 px-6">
         <div className="container max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
-              <Hexagon className="w-6 h-6 text-zinc-900 mr-2" strokeWidth={1} />
-              <span className="text-sm text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
+            <div className="flex items-center mb-2 md:mb-0">
+              <Hexagon className="w-5 h-5 text-zinc-900 mr-2" strokeWidth={1} />
+              <span className="text-xs text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
             </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+            <div className="flex items-center space-x-4">
+              <Link href="/privacy" className="text-xs text-zinc-600 hover:text-zinc-900 transition-colors">
                 Privacy
               </Link>
-              <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+              <Link href="/terms" className="text-xs text-zinc-600 hover:text-zinc-900 transition-colors">
                 Terms
               </Link>
-              <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
+              <Link href="/contact" className="text-xs text-zinc-600 hover:text-zinc-900 transition-colors">
                 Contact
               </Link>
             </div>
