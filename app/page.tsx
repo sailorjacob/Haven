@@ -99,6 +99,8 @@ export default function HomePage() {
 
   // Counter animation effect
   useEffect(() => {
+    if (!isLoaded) return
+    
     const targetValue = 100000
     const duration = 2000 // ms
     const framesPerSecond = 60
@@ -117,7 +119,7 @@ export default function HomePage() {
     }, 1000 / framesPerSecond)
     
     return () => clearInterval(timer)
-  }, [])
+  }, [isLoaded])
 
   // Prevent flash of wrong content
   if (!isLoaded) {
@@ -132,7 +134,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="bg-white w-full text-zinc-900">
+    <main className="bg-white w-full text-zinc-900" suppressHydrationWarning>
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>

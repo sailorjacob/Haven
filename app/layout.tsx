@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
 import { Caveat } from 'next/font/google'
 
 const caveat = Caveat({
@@ -26,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={caveat.variable}>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   )

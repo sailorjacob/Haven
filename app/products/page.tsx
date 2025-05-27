@@ -17,7 +17,7 @@ export default function Products() {
   };
 
   return (
-    <main className="bg-white w-full text-zinc-900">
+    <main className="bg-white w-full text-zinc-900" suppressHydrationWarning>
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>

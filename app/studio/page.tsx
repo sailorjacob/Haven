@@ -6,7 +6,7 @@ import { useState } from "react"
 
 export default function StudioPage() {
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono">
+    <main className="min-h-screen bg-zinc-900 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono" suppressHydrationWarning>
       <div className="container max-w-4xl mx-auto">
         <div className="flex justify-between items-start mb-12 w-full">
           <div className="flex-1 flex justify-start">
