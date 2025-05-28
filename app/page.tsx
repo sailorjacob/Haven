@@ -96,6 +96,15 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
       link: "/moonlight-garden",
       category: "webapp"
+    },
+    {
+      id: "killmefaster",
+      title: "killmefaster.com",
+      description: "A minimalist portfolio website for artist Kill Me Faster featuring a dark aesthetic and dynamic content display.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefaster",
+      category: "website"
     }
   ]
 
