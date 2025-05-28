@@ -103,7 +103,7 @@ export default function HomePage() {
       description: "A minimalist portfolio website for artist Kill Me Faster featuring a dark aesthetic and dynamic content display.",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefaster",
+      link: "/killmefxster",
       category: "website"
     }
   ]
