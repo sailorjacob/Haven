@@ -99,10 +99,10 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Kill Me Faster represents a digital art movement where traditional boundaries dissolve into new forms of creative expression. Born as the ultimate escape route and weapon, this project embodies the artist's quest for red diamonds while painting with pure energy.
+                Kill Me Faster represents a deep exploration of history, power, and the vastness of our world. The artist's work examines the intersection of historical figures, military strategy, and the pursuit of rare red diamonds as symbols of ultimate value and power.
               </p>
               <p className="text-zinc-400">
-                The artist's work combines cryptocurrency culture, digital rebellion, and futuristic warfare aesthetics. This isn't just art—it's a statement about freedom and the intersection of creativity and technology.
+                Through digital art and blockchain technology, the project explores concepts of decentralized military power and the role of technology in shaping future conflicts and power structures, while maintaining its core identity as the ultimate escape route and weapon.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
@@ -142,19 +142,19 @@ export default function KillMeFxsterPage() {
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
               <h3 className="text-lg mb-4 text-zinc-200">Red Diamond Quest</h3>
               <p className="text-zinc-400">
-                The search for red diamonds represents the pursuit of the rarest and most valuable elements in both the physical and digital realms, symbolizing ultimate artistic achievement.
+                The pursuit of red diamonds represents the artist's fascination with rare and valuable elements throughout history, symbolizing ultimate power and achievement.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Energy Painting</h3>
+              <h3 className="text-lg mb-4 text-zinc-200">Historical Exploration</h3>
               <p className="text-zinc-400">
-                Creating art with pure energy—channeling digital forces, cryptocurrency movements, and technological rebellion into visual expressions that transcend traditional mediums.
+                Delving into the vastness of world history, examining influential figures and events that have shaped power structures and military strategy throughout time.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Digital Army</h3>
+              <h3 className="text-lg mb-4 text-zinc-200">Decentralized Military</h3>
               <p className="text-zinc-400">
-                Building a real army of mercenaries and robots represents the fusion of human creativity with artificial intelligence in the fight for artistic and digital freedom.
+                Exploring the concept of a decentralized military force, examining how technology and blockchain could reshape traditional power structures and warfare.
               </p>
             </div>
           </div>
@@ -168,34 +168,34 @@ export default function KillMeFxsterPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Journey</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Work</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Dark Arts Mastery</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Artistic Evolution</h3>
               <p className="text-zinc-400">
-                Exploring the forbidden techniques of digital creation, pushing boundaries between art and technology in the shadows of conventional creativity.
+                A long-time artist whose work has evolved through various mediums, now focusing on digital art and blockchain technology as tools for exploring power and history.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Bitcoin Collection</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Red Diamond Collection</h3>
               <p className="text-zinc-400">
-                Integrating cryptocurrency culture into the artistic process, using blockchain technology as both medium and message for digital rebellion.
+                The ongoing pursuit of red diamonds as both physical artifacts and symbolic representations of ultimate value and power throughout history.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Digital Country</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Military Concepts</h3>
               <p className="text-zinc-400">
-                Establishing a new frontier where digital natives can exist freely, creating virtual territories governed by artistic vision and technological innovation.
+                Exploration of military history and strategy, examining how decentralized technology could reshape traditional power structures and warfare.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Freedom Army</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Digital Integration</h3>
               <p className="text-zinc-400">
-                Assembling mercenaries and robots to fight for creative freedom, representing the ultimate fusion of human rebellion and artificial intelligence.
+                Merging historical concepts with modern technology, using blockchain and digital art to explore new forms of power and value in the contemporary world.
               </p>
             </div>
           </div>
@@ -209,20 +209,20 @@ export default function KillMeFxsterPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Digital Revolution</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Artist</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Kill Me Faster has emerged as more than an art project—it's a movement that challenges conventional approaches to digital creativity and ownership. The artist's vision resonates with creators seeking freedom from traditional constraints.
+                As a long-time artist, Kill Me Faster's work examines the intersection of historical power structures, military strategy, and the pursuit of rare red diamonds. The artist's deep understanding of history and technology informs a unique perspective on power and value in both physical and digital realms.
               </p>
               <p className="text-zinc-400">
-                Through the fusion of dark arts, cryptocurrency, and futuristic warfare aesthetics, this project has opened new pathways for artistic expression, inspiring crypto-artists and digital creators.
+                Through the lens of military history and blockchain technology, the work challenges conventional views of power structures while maintaining its identity as the ultimate escape route and weapon in the digital age.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="text-3xl font-bold text-white mb-2">∞</div>
-                <p className="text-zinc-400 text-sm">Digital artworks created</p>
+                <p className="text-zinc-400 text-sm">Artworks created</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="text-3xl font-bold text-white mb-2">₿</div>
@@ -234,7 +234,7 @@ export default function KillMeFxsterPage() {
                     <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
                   </svg>
                 </div>
-                <p className="text-zinc-400 text-sm">Red diamonds sought</p>
+                <p className="text-zinc-400 text-sm">Red diamonds collected</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="flex justify-center mb-2">
@@ -242,7 +242,7 @@ export default function KillMeFxsterPage() {
                     <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 14.1 11 13 11V22H11V16H9V22H7V11C5.9 11 5 10.1 5 9V7L3 7V9H1V7C1 5.9 1.9 5 3 5H21C22.1 5 23 5.9 23 7V9H21ZM7.5 7.5C7.5 8.3 8.2 9 9 9S10.5 8.3 10.5 7.5S9.8 6 9 6S7.5 6.7 7.5 7.5ZM13.5 7.5C13.5 8.3 14.2 9 15 9S16.5 8.3 16.5 7.5S15.8 6 15 6S13.5 6.7 13.5 7.5Z"/>
                   </svg>
                 </div>
-                <p className="text-zinc-400 text-sm">Digital army assembled</p>
+                <p className="text-zinc-400 text-sm">Military concepts developed</p>
               </div>
             </div>
           </div>
