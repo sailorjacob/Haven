@@ -165,18 +165,6 @@ export default function HomePage() {
                 >
                   Studio
                 </Link>
-                <Link 
-                  href="/products" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                >
-                  Products
-                </Link>
-                <Link 
-                  href="/explore" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                >
-                  Explore
-                </Link>
               </div>
             </div>
 
@@ -217,20 +205,6 @@ export default function HomePage() {
                 >
                   Studio
                 </Link>
-                <Link 
-                  href="/products" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Products
-                </Link>
-                <Link 
-                  href="/explore" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Explore
-          </Link>
                 <Link 
                   href="/contact"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
@@ -353,7 +327,7 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-
+          
           {/* Haven Studio Hero */}
           <div>
             <motion.div
@@ -475,7 +449,7 @@ export default function HomePage() {
               </motion.div>
             </div>
           </div>
-
+          
           {/* Studio Performance */}
           <div>
             <motion.div
@@ -580,16 +554,16 @@ export default function HomePage() {
                   >
                     {counter.toLocaleString()}+
                   </motion.div>
-                </div>
+              </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
                 <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
               </motion.div>
-            </div>
           </div>
+        </div>
 
           {/* Process */}
           <div className="bg-zinc-50 rounded-xl p-8">
-            <motion.div
+        <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -601,9 +575,9 @@ export default function HomePage() {
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
-              </p>
-            </motion.div>
-            
+          </p>
+        </motion.div>
+        
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
@@ -649,7 +623,7 @@ export default function HomePage() {
 
           {/* Team */}
           <div>
-            <motion.div
+        <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -662,7 +636,7 @@ export default function HomePage() {
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Passionate professionals dedicated to creating exceptional digital experiences.
               </p>
-            </motion.div>
+        </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
@@ -685,14 +659,14 @@ export default function HomePage() {
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
                 }
               ].map((member, index) => (
-                <motion.div
+        <motion.div
                   key={member.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
-                >
+          className="text-center"
+        >
                   <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
                     <Image
                       src={member.image}
@@ -733,13 +707,13 @@ export default function HomePage() {
                   <span className="mr-2">Get Started</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link
+          <Link
                   href="mailto:info@haven.engineer"
                   className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
-                >
+          >
                   <Mail className="w-4 h-4 mr-2" />
                   Email Us
-                </Link>
+          </Link>
               </div>
 
               {/* Contact Info */}
@@ -778,7 +752,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </div>
+      </div>
       </footer>
     </main>
   )
