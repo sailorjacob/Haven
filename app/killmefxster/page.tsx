@@ -102,7 +102,7 @@ export default function KillMeFxsterPage() {
                 Kill Me Faster represents a deep exploration of history, power, and the vastness of our world. The artist's work examines the intersection of historical figures, military strategy, and the pursuit of rare red diamonds as symbols of ultimate value and power.
               </p>
               <p className="text-zinc-400">
-                Through digital art and blockchain technology, the project explores concepts of decentralized military power and the role of technology in shaping future conflicts and power structures, while maintaining its core identity as the ultimate escape route and weapon.
+                Through digital art and blockchain technology, the project explores concepts of technology and it's role in shaping future conflicts and power structures.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
