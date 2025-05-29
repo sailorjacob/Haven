@@ -18,20 +18,8 @@ type Project = {
 
 export default function HomePage() {
   const [filter, setFilter] = useState<string | null>(null)
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-  
-  // Prevent flash by ensuring component is mounted and ready
-  useEffect(() => {
-    setIsMounted(true)
-    const timer = setTimeout(() => {
-      setIsLoaded(true)
-    }, 100) // Small delay to ensure layout is stable
-    
-    return () => clearTimeout(timer)
-  }, [])
   
   const projects: Project[] = [
     {
@@ -112,44 +100,8 @@ export default function HomePage() {
     ? projects.filter(project => project.category === filter)
     : projects
 
-  // Counter animation effect
-  useEffect(() => {
-    if (!isLoaded) return
-    
-    const targetValue = 100000
-    const duration = 2000 // ms
-    const framesPerSecond = 60
-    const totalFrames = duration / 1000 * framesPerSecond
-    const valueIncrement = targetValue / totalFrames
-    
-    let currentFrame = 0
-    const timer = setInterval(() => {
-      currentFrame++
-      const newValue = Math.min(Math.floor(currentFrame * valueIncrement), targetValue)
-      setCounter(newValue)
-      
-      if (currentFrame >= totalFrames) {
-        clearInterval(timer)
-      }
-    }, 1000 / framesPerSecond)
-    
-    return () => clearInterval(timer)
-  }, [isLoaded])
-
-  // Prevent flash of wrong content
-  if (!isMounted || !isLoaded) {
-    return (
-      <div className="bg-white min-h-screen w-full flex items-center justify-center">
-        <div className="flex items-center space-x-2">
-          <Hexagon className="w-6 h-6 text-zinc-900 animate-pulse" strokeWidth={1} />
-          <span className="text-zinc-600">Loading...</span>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <main className={`bg-white w-full text-zinc-900 transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`} suppressHydrationWarning>
+    <main className="bg-white w-full text-zinc-900">
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -361,27 +313,26 @@ export default function HomePage() {
                 </div>
               </motion.div>
               
-              <h1 className="text-5xl md:text-6xl font-light text-zinc-900 mb-4 tracking-tight">
-                Haven Studio
+              <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
+                Build With Haven
               </h1>
-              <p className="text-lg md:text-xl text-zinc-600 font-light tracking-wide max-w-3xl mx-auto mb-8">
-                A digital design and web development studio crafting premium 
-                experiences for modern brands and startups.
+              <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
+                Premium digital experiences
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
+                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
                 >
                   <span className="mr-2">Start a Project</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
+                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full border border-zinc-300 transition-all duration-300"
                 >
-                  Our Services
+                  View Work
                 </Link>
               </div>
             </motion.div>
@@ -554,15 +505,9 @@ export default function HomePage() {
                 className="text-center"
               >
                 <div className="h-24 flex flex-col items-center justify-center mb-4">
-                  <motion.div 
-                    className="text-3xl font-semibold text-zinc-900 mb-1"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  >
+                  <div className="text-3xl font-semibold text-zinc-900 mb-1">
                     {counter.toLocaleString()}+
-                  </motion.div>
+                  </div>
               </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
                 <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
