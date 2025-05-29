@@ -427,7 +427,7 @@ export default function KillMeFxsterPage() {
           className="mb-24"
         >
           <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200 flex items-center justify-center gap-3">
-            The Vision
+            The Mission
             <Image
               src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//red%20diamond.png"
               alt="Red Diamond"
@@ -519,12 +519,20 @@ export default function KillMeFxsterPage() {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">💎</div>
+                <div className="flex justify-center mb-2">
+                  <svg className="w-8 h-8 text-zinc-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
                 <p className="text-zinc-400 text-sm">Art sales</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">🤖</div>
-                <p className="text-zinc-400 text-sm">Castle systems</p>
+                <div className="flex justify-center mb-2">
+                  <svg className="w-8 h-8 text-zinc-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z"/>
+                  </svg>
+                </div>
+                <p className="text-zinc-400 text-sm">Castles</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="flex justify-center mb-2">
@@ -541,10 +549,11 @@ export default function KillMeFxsterPage() {
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="flex justify-center mb-2">
                   <svg className="w-8 h-8 text-zinc-300" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 14.1 11 13 11V22H11V16H9V22H7V11C5.9 11 5 10.1 5 9V7L3 7V9H1V7C1 5.9 1.9 5 3 5H21C22.1 5 23 5.9 23 7V9H21ZM7.5 7.5C7.5 8.3 8.2 9 9 9S10.5 8.3 10.5 7.5S9.8 6 9 6S7.5 6.7 7.5 7.5ZM13.5 7.5C13.5 8.3 14.2 9 15 9S16.5 8.3 16.5 7.5S15.8 6 15 6S13.5 6.7 13.5 7.5Z"/>
+                    <path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/>
+                    <path d="M12.5 16c-3.54 0-6.55-2.31-7.6-5.5L2.53 11.28C3.92 15.97 7.85 19 12.5 19c2.65 0 5.05-.99 6.9-2.6L22 20v-9h-9l3.62 3.62c-1.39 1.16-3.16 1.88-5.12 1.88z"/>
                   </svg>
                 </div>
-                <p className="text-zinc-400 text-sm">Legacy projects</p>
+                <p className="text-zinc-400 text-sm">Blasting zombies</p>
               </div>
             </div>
           </div>
