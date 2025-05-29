@@ -177,10 +177,6 @@ export default function ContactPage() {
           <a href="mailto:info@haven.engineer" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
             info@haven.engineer
           </a>
-          <span className="text-zinc-500 mx-2 text-xs">•</span>
-          <a href="tel:812-360-9867" className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors">
-            812-360-9867
-          </a>
         </div>
       </div>
     </main>

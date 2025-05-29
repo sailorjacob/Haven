@@ -647,27 +647,28 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                 Start Your Project
               </h2>
-              <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
                 Ready to bring your digital vision to life? Let's create something exceptional together.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
+                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
                 >
                   <span className="mr-2">Get Started</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
-          <Link
+                <Link
                   href="mailto:info@haven.engineer"
-                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
-          >
-                  <Mail className="w-4 h-4 mr-2" />
+                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full border border-zinc-300 transition-all duration-300"
+                >
+                  <Mail className="w-3 h-3 mr-2" />
                   Email Us
-          </Link>
+                </Link>
               </div>
 
               {/* Contact Info */}
