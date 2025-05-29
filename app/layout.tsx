@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={caveat.variable}>
       <body>
-        {children}
+          {children}
       </body>
     </html>
   )

@@ -637,7 +637,7 @@ export default function Products() {
               </AnimatePresence>
             </motion.div>
           </div>
-
+          
           {/* Economic Model Highlight */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -713,12 +713,12 @@ export default function Products() {
               <div className="text-center pt-6 border-t border-zinc-200">
                 <h3 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">Get Started With Haven</h3>
                 <p className="text-zinc-600 mb-4 leading-relaxed max-w-2xl mx-auto">
-                  Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
-                  environment where creativity, commerce, and community thrive in unison.
-                </p>
-                
-                <Link 
-                  href="/contact" 
+                Whether you're an artist, investor, creative professional, or a visionary brand, Haven offers a holistic 
+                environment where creativity, commerce, and community thrive in unison.
+              </p>
+            
+              <Link 
+                href="/contact" 
                   className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
                 >
                   <span className="mr-2">Request Information</span>

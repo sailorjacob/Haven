@@ -94,21 +94,21 @@ export default function ExplorePage() {
           
           {/* Hero */}
           <div className="text-center py-16">
-            <motion.div 
+          <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
               className="flex justify-center mb-8"
-            >
+          >
               <div className="relative">
                 <Hexagon className="w-20 h-20 md:w-24 md:h-24 text-zinc-900" strokeWidth={1} />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-zinc-700" />
                 </div>
               </div>
-            </motion.div>
+          </motion.div>
 
-            <motion.h1 
+          <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -116,20 +116,20 @@ export default function ExplorePage() {
             >
               Haven
             </motion.h1>
-            
-            <motion.p 
+          
+          <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto mb-12 font-light leading-relaxed"
-            >
+          >
               A digital superplatform bridging premium content with physical spaces. 
               Curated media, art, and community for the modern native.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
@@ -282,7 +282,7 @@ export default function ExplorePage() {
                   Learn More
                 </Link>
               </div>
-            </motion.div>
+          </motion.div>
           </div>
 
         </div>

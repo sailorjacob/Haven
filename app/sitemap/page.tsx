@@ -206,7 +206,7 @@ export default function SitemapPage() {
               <PageItem 
                 href="/anthonyhadenguest"
                 title="Anthony Haden-Guest"
-                description="Sophisticated portfolio for renowned author and art critic"
+                description="Simple portfolio for renowned author and art critic"
                 tags={["Literature", "Art Criticism", "Portfolio"]}
               />
             </div>

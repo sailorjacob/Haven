@@ -97,7 +97,7 @@ export default function HomePage() {
                   href="/explore" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
-                >
+    >
                   Explore
                 </Link>
                 <Link 
@@ -228,7 +228,7 @@ export default function HomePage() {
                     Think of it as a fusion of a cinematic platform, a music service, and an entertainment conglomerate, all
                     operating from interconnected residential compounds.
               </p>
-              
+                  
               <div className="bg-white rounded-xl p-6 border border-zinc-200">
                 <h3 className="text-lg font-medium text-zinc-900 mb-4">Our Dual Innovation Model</h3>
                     
@@ -376,7 +376,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-            >
+                >
               <p className="text-zinc-600 leading-relaxed mb-6">
                     Haven is an open community of artists and storytellers who share their craft and build generational
                     skills in digital arts.
@@ -399,7 +399,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
               className="grid grid-cols-2 gap-4"
-            >
+                >
               <div className="bg-white rounded-xl p-6 border border-zinc-200 text-center">
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mx-auto mb-4">
                   <Users className="w-6 h-6 text-zinc-700" />
@@ -461,7 +461,7 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               className="bg-white rounded-xl p-8 border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
-            >
+                >
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mr-4">
                   <Film className="w-6 h-6 text-zinc-700" />
@@ -490,7 +490,7 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               className="bg-white rounded-xl p-8 border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
-            >
+                >
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mr-4">
                   <Zap className="w-6 h-6 text-zinc-700" />

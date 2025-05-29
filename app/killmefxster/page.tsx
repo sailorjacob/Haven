@@ -1,12 +1,301 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import { useRef, useEffect } from "react"
 
 export default function KillMeFxsterPage() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  })
+
+  // Transform scroll progress into different line animations
+  const line1Progress = useTransform(scrollYProgress, [0, 0.4, 0.7], [0, 1, 0])
+  const line2Progress = useTransform(scrollYProgress, [0.1, 0.5, 0.8], [0, 1, 0])
+  const line3Progress = useTransform(scrollYProgress, [0.2, 0.4], [0, 1])
+  const line4Progress = useTransform(scrollYProgress, [0.3, 0.6, 0.9], [0, 1, 0])
+  const line5Progress = useTransform(scrollYProgress, [0.4, 0.6], [0, 1])
+  const line6Progress = useTransform(scrollYProgress, [0.5, 0.7], [0, 1])
+  const line7Progress = useTransform(scrollYProgress, [0.6, 0.8], [0, 1])
+  const line8Progress = useTransform(scrollYProgress, [0.7, 0.9], [0, 1])
+
+  // Zig-zag lines that appear around 2/3 down
+  const zigzag1Progress = useTransform(scrollYProgress, [0.65, 0.7, 0.75], [0, 1, 0])
+  const zigzag2Progress = useTransform(scrollYProgress, [0.67, 0.72, 0.77], [0, 1, 0])
+  const zigzag3Progress = useTransform(scrollYProgress, [0.69, 0.74, 0.79], [0, 1, 0])
+
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-300">
+    <main ref={containerRef} className="min-h-screen bg-zinc-900 text-zinc-300 relative">
+      {/* Animated Blueprint Lines Overlay */}
+      <motion.svg
+        className="fixed inset-0 w-full h-full pointer-events-none z-20"
+        viewBox="0 0 1440 2000"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#ef4444" stopOpacity="0"/>
+            <stop offset="50%" stopColor="#ef4444" stopOpacity="1"/>
+            <stop offset="100%" stopColor="#ef4444" stopOpacity="0"/>
+          </linearGradient>
+          <linearGradient id="wormholeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ef4444" stopOpacity="1"/>
+            <stop offset="50%" stopColor="#dc2626" stopOpacity="0.7"/>
+            <stop offset="100%" stopColor="#ef4444" stopOpacity="0"/>
+          </linearGradient>
+        </defs>
+
+        {/* Grid pattern overlay */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <motion.line
+            key={`vertical-${i}`}
+            x1={i * 72}
+            y1="0"
+            x2={i * 72}
+            y2="2000"
+            stroke="#ef4444"
+            strokeWidth="0.3"
+            initial={{ pathLength: 0, opacity: 0 }}
+            style={{
+              pathLength: useTransform(scrollYProgress, [i * 0.02, i * 0.02 + 0.1], [0, 1]),
+              opacity: useTransform(scrollYProgress, [i * 0.02, i * 0.02 + 0.1], [0, 0.15])
+            }}
+          />
+        ))}
+
+        {Array.from({ length: 10 }).map((_, i) => (
+          <motion.line
+            key={`horizontal-${i}`}
+            x1="0"
+            y1={i * 200}
+            x2="1440"
+            y2={i * 200}
+            stroke="#ef4444"
+            strokeWidth="0.3"
+            initial={{ pathLength: 0, opacity: 0 }}
+            style={{
+              pathLength: useTransform(scrollYProgress, [i * 0.05, i * 0.05 + 0.1], [0, 1]),
+              opacity: useTransform(scrollYProgress, [i * 0.05, i * 0.05 + 0.1], [0, 0.15])
+            }}
+          />
+        ))}
+
+        {/* Main connecting lines that follow scroll */}
+        <motion.path
+          d="M 200 200 L 200 500 L 720 500 L 720 800 L 1200 800 L 1200 1200"
+          stroke="#ef4444"
+          strokeWidth="1.5"
+          fill="none"
+          filter="url(#glow)"
+          style={{ pathLength: line1Progress }}
+          strokeDasharray="1 0"
+          opacity={0.9}
+        />
+        
+        <motion.path
+          d="M 720 350 L 1200 350 L 1200 650 L 800 650 L 800 1100"
+          stroke="#ef4444"
+          strokeWidth="1"
+          fill="none"
+          filter="url(#glow)"
+          style={{ pathLength: line2Progress }}
+          strokeDasharray="1 0"
+          opacity={0.7}
+        />
+
+        {/* Clean sweeping line */}
+        <motion.path
+          d="M 50 600 L 1390 600"
+          stroke="url(#fadeGradient)"
+          strokeWidth="1"
+          fill="none"
+          filter="url(#glow)"
+          style={{ pathLength: line4Progress }}
+          strokeDasharray="1 0"
+          opacity={0.6}
+        />
+
+        {/* Zig-zag lines that appear around 2/3 down */}
+        <motion.path
+          d="M 300 1000 L 450 1050 L 600 1000 L 750 1050 L 900 1000"
+          stroke="#ef4444"
+          strokeWidth="1"
+          fill="none"
+          filter="url(#glow)"
+          style={{ pathLength: zigzag1Progress }}
+          strokeDasharray="1 0"
+          opacity={0.6}
+        />
+
+        <motion.path
+          d="M 200 1100 L 350 1150 L 500 1100 L 650 1150 L 800 1100 L 950 1150"
+          stroke="#ef4444"
+          strokeWidth="0.8"
+          fill="none"
+          filter="url(#glow)"
+          style={{ pathLength: zigzag2Progress }}
+          strokeDasharray="1 0"
+          opacity={0.5}
+        />
+
+        <motion.path
+          d="M 1100 1050 L 1250 1100 L 1400 1050"
+          stroke="#ef4444"
+          strokeWidth="1"
+          fill="none"
+          filter="url(#glow)"
+          style={{ pathLength: zigzag3Progress }}
+          strokeDasharray="1 0"
+          opacity={0.6}
+        />
+
+        {/* Contact section wormhole effect - repositioned higher */}
+        <motion.g style={{ opacity: useTransform(scrollYProgress, [0.75, 0.9], [0, 1]) }}>
+          {/* Outer ring */}
+          <motion.circle
+            cx="720"
+            cy="1350"
+            r="40"
+            fill="none"
+            stroke="#ef4444"
+            strokeWidth="1.5"
+            filter="url(#glow)"
+            style={{ 
+              pathLength: line8Progress,
+              rotate: useTransform(scrollYProgress, [0.75, 1], [0, 360])
+            }}
+            strokeDasharray="8 4"
+            opacity={0.7}
+          />
+          
+          {/* Middle ring */}
+          <motion.circle
+            cx="720"
+            cy="1350"
+            r="25"
+            fill="none"
+            stroke="#dc2626"
+            strokeWidth="2"
+            filter="url(#glow)"
+            style={{ 
+              pathLength: useTransform(scrollYProgress, [0.8, 0.95], [0, 1]),
+              rotate: useTransform(scrollYProgress, [0.8, 1], [360, 0])
+            }}
+            strokeDasharray="6 3"
+            opacity={0.8}
+          />
+          
+          {/* Inner core */}
+          <motion.circle
+            cx="720"
+            cy="1350"
+            r="12"
+            fill="none"
+            stroke="#ef4444"
+            strokeWidth="3"
+            filter="url(#glow)"
+            style={{ 
+              pathLength: useTransform(scrollYProgress, [0.85, 1], [0, 1])
+            }}
+            strokeDasharray="4 2"
+            opacity={0.9}
+          />
+          
+          {/* Convergence lines pointing to contact */}
+          <motion.path
+            d="M 680 1320 L 720 1350 L 760 1320"
+            stroke="#ef4444"
+            strokeWidth="2"
+            fill="none"
+            filter="url(#glow)"
+            style={{ pathLength: useTransform(scrollYProgress, [0.85, 0.95], [0, 1]) }}
+            strokeDasharray="1 0"
+            opacity={0.8}
+          />
+          
+          <motion.path
+            d="M 680 1380 L 720 1350 L 760 1380"
+            stroke="#ef4444"
+            strokeWidth="2"
+            fill="none"
+            filter="url(#glow)"
+            style={{ pathLength: useTransform(scrollYProgress, [0.85, 0.95], [0, 1]) }}
+            strokeDasharray="1 0"
+            opacity={0.8}
+          />
+        </motion.g>
+
+        {/* Journey connection nodes that fade out */}
+        <motion.circle
+          cx="720"
+          cy="500"
+          r="4"
+          fill="#ef4444"
+          filter="url(#glow)"
+          style={{
+            opacity: useTransform(scrollYProgress, [0.1, 0.3, 0.6, 0.75], [0, 1, 1, 0])
+          }}
+          animate={{
+            scale: [1, 1.5, 1]
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <motion.circle
+          cx="200"
+          cy="800"
+          r="3"
+          fill="#ef4444"
+          filter="url(#glow)"
+          style={{
+            opacity: useTransform(scrollYProgress, [0.2, 0.4, 0.65, 0.8], [0, 1, 1, 0])
+          }}
+          animate={{
+            scale: [1, 1.3, 1]
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        />
+
+        <motion.circle
+          cx="1200"
+          cy="800"
+          r="3.5"
+          fill="#ef4444"
+          filter="url(#glow)"
+          style={{
+            opacity: useTransform(scrollYProgress, [0.25, 0.45, 0.7, 0.85], [0, 1, 1, 0])
+          }}
+          animate={{
+            scale: [1, 1.4, 1]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+      </motion.svg>
+
       {/* Gradient background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 opacity-80"></div>
