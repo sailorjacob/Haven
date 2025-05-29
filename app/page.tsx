@@ -329,7 +329,7 @@ export default function HomePage() {
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="#services"
+                  href="/work"
                   className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full border border-zinc-300 transition-all duration-300"
                 >
                   View Work
