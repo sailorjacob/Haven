@@ -45,7 +45,7 @@ export default function KillMeFxsterPage() {
           <div className="flex items-center justify-center gap-4 text-sm text-zinc-500">
             <span>Digital Art</span>
             <span className="text-zinc-600">•</span>
-            <span>Crypto Art</span>
+            <span>History</span>
             <span className="text-zinc-600">•</span>
             <a href="https://killmefaster.com" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-white transition-colors">
               Visit Website
@@ -78,7 +78,7 @@ export default function KillMeFxsterPage() {
           <a href="https://killmefaster.com" target="_blank" rel="noopener noreferrer" className="block">
             <div className="relative aspect-video overflow-hidden hover:opacity-90 transition-opacity cursor-pointer">
               <Image
-                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//killmefxster.png"
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png"
                 alt="Kill Me Faster Artist Website"
                 fill
                 className="object-cover"
@@ -99,10 +99,10 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Kill Me Faster represents a deep exploration of history, power, and the vastness of our world. The artist's work examines the intersection of historical figures, military strategy, and the pursuit of rare red diamonds as symbols of ultimate value and power.
+                Operating pseudonymously through multiple digital identities, Kill Me Faster creates art across various mediums—from AI-generated works to the enigmatic Lisa Mona persona and the producer identity Red Diamonds. Between selling high-value digital art, dismantling dangerous ideologies through strategic content, and developing advanced humanoid robotics, the artist maintains a mysterious presence, potentially residing in a French castle or moving through a network of trusted contacts while commanding influence in digital space.
               </p>
               <p className="text-zinc-400">
-                Through digital art and blockchain technology, the project explores concepts of technology and it's role in shaping future conflicts and power structures.
+              Through digital art and blockchain technology, the project explores concepts of technology and it's role in shaping future conflicts and power structures, while simultaneously pursuing personal projects like immortalizing love-interests in precious metals and constructing autonomous castle systems.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
@@ -117,12 +117,12 @@ export default function KillMeFxsterPage() {
                   <p className="text-zinc-300">2025</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Medium</h4>
-                  <p className="text-zinc-300">Digital Art, Crypto Art</p>
+                  <h4 className="text-sm text-zinc-500 mb-1">Identities</h4>
+                  <p className="text-zinc-300">Multiple Digital Personas</p>
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Technologies</h4>
-                  <p className="text-zinc-300">Next.js, Blockchain, NFTs</p>
+                  <p className="text-zinc-300">AI, Robotics, Blockchain</p>
                 </div>
               </div>
             </div>
@@ -137,30 +137,39 @@ export default function KillMeFxsterPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Vision</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200 flex items-center justify-center gap-3">
+            The Vision
+            <Image
+              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//red%20diamond.png"
+              alt="Red Diamond"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Red Diamond Quest</h3>
+              <h3 className="text-lg mb-4 text-zinc-200">Digital Warfare</h3>
               <p className="text-zinc-400">
-                The pursuit of red diamonds represents the artist's fascination with rare and valuable elements throughout history, symbolizing ultimate power and achievement.
+                Strategically dismantling dangerous ideologies through AI-generated content and anonymous writings, serving as a digital counter-terrorism force while maintaining complete anonymity.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Historical Exploration</h3>
+              <h3 className="text-lg mb-4 text-zinc-200">Art & Legacy</h3>
               <p className="text-zinc-400">
-                Delving into the vastness of world history, examining influential figures and events that have shaped power structures and military strategy throughout time.
+                Creating high-value digital art while developing methods to immortalize companions in precious metals and stone through advanced 3D printing and robotic craftsmanship.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Decentralized Military</h3>
+              <h3 className="text-lg mb-4 text-zinc-200">Castle Systems</h3>
               <p className="text-zinc-400">
-                Exploring the concept of a decentralized military force, examining how technology and blockchain could reshape traditional power structures and warfare.
+                Developing autonomous castle construction and maintenance systems through a specialized LLC, integrating advanced robotics and AI for complete self-sufficiency.
               </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Process Section */}
+        {/* Process Section - renamed to The Work */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -168,40 +177,40 @@ export default function KillMeFxsterPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Work</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Daily Operations</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Artistic Evolution</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Art Market</h3>
               <p className="text-zinc-400">
-                A long-time artist whose work has evolved through various mediums, now focusing on digital art and blockchain technology as tools for exploring power and history.
+                Creating and selling high-value digital art while maintaining market influence through strategic releases and multiple digital identities.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Red Diamond Collection</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Digital Defense</h3>
               <p className="text-zinc-400">
-                The ongoing pursuit of red diamonds as both physical artifacts and symbolic representations of ultimate value and power throughout history.
+                Monitoring and countering dangerous ideologies through AI-generated content and strategic information warfare, operating as an anonymous digital counter-terrorism force.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Military Concepts</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Immortalization</h3>
               <p className="text-zinc-400">
-                Exploration of military history and strategy, examining how decentralized technology could reshape traditional power structures and warfare.
+                Developing advanced methods to preserve companions in precious metals and stone through cutting-edge 3D printing and robotic craftsmanship.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-700 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Digital Integration</h3>
+              <h3 className="text-xl text-zinc-200 mb-2">Castle LLC</h3>
               <p className="text-zinc-400">
-                Merging historical concepts with modern technology, using blockchain and digital art to explore new forms of power and value in the contemporary world.
+                Operating a specialized construction company focused on autonomous castle systems, integrating humanoid robotics and AI for complete self-sufficiency.
               </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Impact Section */}
+        {/* Impact Section - renamed to The Artist */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -213,28 +222,32 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                As a long-time artist, Kill Me Faster's work examines the intersection of historical power structures, military strategy, and the pursuit of rare red diamonds. The artist's deep understanding of history and technology informs a unique perspective on power and value in both physical and digital realms.
+                Operating from undisclosed locations—potentially a French castle or through a network of trusted contacts—Kill Me Faster maintains a commanding presence in digital space while remaining physically anonymous. Between high-value art sales, digital counter-terrorism operations, and developing advanced robotics for castle construction and companion immortalization, the artist's influence extends across multiple domains.
               </p>
               <p className="text-zinc-400">
-                Through the lens of military history and blockchain technology, the work challenges conventional views of power structures while maintaining its identity as the ultimate escape route and weapon in the digital age.
+                Through anonymous writings, AI-generated content, and strategic market operations, the artist's influence on digital culture may parallel historical figures like Voltaire, while simultaneously building a legacy through precious metal preservation and autonomous castle systems.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">∞</div>
-                <p className="text-zinc-400 text-sm">Artworks created</p>
+                <div className="text-3xl font-bold text-white mb-2">💎</div>
+                <p className="text-zinc-400 text-sm">Art sales</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">₿</div>
-                <p className="text-zinc-400 text-sm">Bitcoin integrated</p>
+                <div className="text-3xl font-bold text-white mb-2">🤖</div>
+                <p className="text-zinc-400 text-sm">Castle systems</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="flex justify-center mb-2">
-                  <svg className="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
-                  </svg>
+                  <Image
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//red%20diamond.png"
+                    alt="Red Diamond"
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
                 </div>
-                <p className="text-zinc-400 text-sm">Red diamonds collected</p>
+                <p className="text-zinc-400 text-sm">Diamonds</p>
               </div>
               <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
                 <div className="flex justify-center mb-2">
@@ -242,7 +255,7 @@ export default function KillMeFxsterPage() {
                     <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 14.1 11 13 11V22H11V16H9V22H7V11C5.9 11 5 10.1 5 9V7L3 7V9H1V7C1 5.9 1.9 5 3 5H21C22.1 5 23 5.9 23 7V9H21ZM7.5 7.5C7.5 8.3 8.2 9 9 9S10.5 8.3 10.5 7.5S9.8 6 9 6S7.5 6.7 7.5 7.5ZM13.5 7.5C13.5 8.3 14.2 9 15 9S16.5 8.3 16.5 7.5S15.8 6 15 6S13.5 6.7 13.5 7.5Z"/>
                   </svg>
                 </div>
-                <p className="text-zinc-400 text-sm">Military concepts developed</p>
+                <p className="text-zinc-400 text-sm">Legacy projects</p>
               </div>
             </div>
           </div>
