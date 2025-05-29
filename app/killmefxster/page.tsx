@@ -160,7 +160,7 @@ export default function KillMeFxsterPage() {
         />
 
         {/* Contact section wormhole effect - repositioned higher */}
-        <motion.g style={{ opacity: useTransform(scrollYProgress, [0.75, 0.9], [0, 1]) }}>
+        <motion.g style={{ opacity: useTransform(scrollYProgress, [0.75, 0.9, 0.92], [0, 1, 0]) }}>
           {/* Outer ring */}
           <motion.circle
             cx="720"
@@ -235,7 +235,7 @@ export default function KillMeFxsterPage() {
           />
         </motion.g>
 
-        {/* Journey connection nodes that fade out */}
+        {/* Journey connection nodes visible at entrance, fade out while scrolling */}
         <motion.circle
           cx="720"
           cy="500"
@@ -243,7 +243,7 @@ export default function KillMeFxsterPage() {
           fill="#ef4444"
           filter="url(#glow)"
           style={{
-            opacity: useTransform(scrollYProgress, [0.1, 0.3, 0.6, 0.75], [0, 1, 1, 0])
+            opacity: useTransform(scrollYProgress, [0, 0.15, 0.3], [1, 1, 0])
           }}
           animate={{
             scale: [1, 1.5, 1]
@@ -262,7 +262,7 @@ export default function KillMeFxsterPage() {
           fill="#ef4444"
           filter="url(#glow)"
           style={{
-            opacity: useTransform(scrollYProgress, [0.2, 0.4, 0.65, 0.8], [0, 1, 1, 0])
+            opacity: useTransform(scrollYProgress, [0, 0.2, 0.325], [1, 1, 0])
           }}
           animate={{
             scale: [1, 1.3, 1]
@@ -282,7 +282,7 @@ export default function KillMeFxsterPage() {
           fill="#ef4444"
           filter="url(#glow)"
           style={{
-            opacity: useTransform(scrollYProgress, [0.25, 0.45, 0.7, 0.85], [0, 1, 1, 0])
+            opacity: useTransform(scrollYProgress, [0, 0.225, 0.35], [1, 1, 0])
           }}
           animate={{
             scale: [1, 1.4, 1]
