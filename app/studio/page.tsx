@@ -6,21 +6,21 @@ import { useState } from "react"
 
 export default function StudioPage() {
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-400 flex flex-col items-center justify-center p-6 font-mono" suppressHydrationWarning>
+    <main className="min-h-screen bg-zinc-50 text-zinc-900 flex flex-col items-center justify-center p-6 font-mono" suppressHydrationWarning>
       <div className="container max-w-4xl mx-auto">
         <div className="flex justify-between items-start mb-12 w-full">
           <div className="flex-1 flex justify-start">
             <div className="group relative inline-block">
               <span
-                className="inline-flex items-center justify-center border border-zinc-700 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
-        >
+                className="inline-flex items-center justify-center border border-zinc-200 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
+              >
                 moonlight garden
-            </span>
+              </span>
               <div className="absolute top-full right-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
-                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">tap with bitcoin for food</p>
-          </div>
-          </div>
+                <div className="bg-white/95 p-3 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
+                  <p className="text-xs text-zinc-700 leading-relaxed whitespace-nowrap">tap with bitcoin for food</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -28,28 +28,28 @@ export default function StudioPage() {
             <div className="group relative inline-block">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center border border-zinc-700 hover:border-zinc-600 text-zinc-400 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
+                className="inline-flex items-center justify-center border border-zinc-200 hover:border-zinc-300 text-zinc-700 py-2 px-4 text-xs lowercase tracking-widest transition-all duration-300 rounded-full"
               >
                 home
-                </Link>
+              </Link>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
-                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">web design & development</p>
+                <div className="bg-white/95 p-3 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
+                  <p className="text-xs text-zinc-700 leading-relaxed whitespace-nowrap">web design & development</p>
                 </div>
               </div>
-              </div>
             </div>
+          </div>
 
           <div className="flex-1 flex justify-end">
             <div className="group relative inline-block">
               <span
-                className="inline-flex items-center justify-center border border-zinc-700 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
+                className="inline-flex items-center justify-center border border-zinc-200 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
               >
                 roundabout
               </span>
               <div className="absolute top-full left-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm">
-                  <p className="text-xs text-zinc-400 leading-relaxed whitespace-nowrap">tap with bitcoin for a ride to the doctor</p>
+                <div className="bg-white/95 p-3 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
+                  <p className="text-xs text-zinc-700 leading-relaxed whitespace-nowrap">tap with bitcoin for a ride to the doctor</p>
                 </div>
               </div>
             </div>
@@ -62,14 +62,14 @@ export default function StudioPage() {
           transition={{ duration: 1.2 }}
           className="text-center mb-14"
         >
-          <h1 className="text-3xl md:text-5xl font-light mb-6 text-zinc-300 tracking-tighter relative inline-block">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-300 to-zinc-500 lowercase">haven</span>
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-700 to-transparent absolute -bottom-3 left-0"></div>
+          <h1 className="text-3xl md:text-5xl font-light mb-6 text-zinc-800 tracking-tighter relative inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 lowercase">haven</span>
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-200 to-transparent absolute -bottom-3 left-0"></div>
           </h1>
-          <p className="text-sm md:text-base text-zinc-500 max-w-xl mx-auto tracking-wide leading-relaxed lowercase">
+          <p className="text-sm md:text-base text-zinc-600 max-w-xl mx-auto tracking-wide leading-relaxed lowercase">
             a digital superplatform bridging premium content with physical spaces. 
             curated media, art, and community for the modern native.
-              </p>
+          </p>
         </motion.div>
 
         <motion.div
@@ -104,7 +104,7 @@ export default function StudioPage() {
         >
           <Link
             href="/explore" 
-            className="inline-flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 text-zinc-400 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300"
+            className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-700 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300 border border-zinc-200"
           >
             explore
           </Link>
@@ -115,13 +115,13 @@ export default function StudioPage() {
                 <img 
                   src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//bitcoinbank.svg" 
                   alt="Bitcoin Bank"
-                  className="w-10 h-10 filter invert opacity-40 hover:opacity-60 transition-opacity"
+                  className="w-10 h-10 opacity-60 hover:opacity-80 transition-opacity"
                 />
               </div>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                <div className="bg-zinc-800/90 p-3 shadow-xl backdrop-blur-sm rounded-sm whitespace-nowrap">
-                  <p className="text-xs text-zinc-400 leading-relaxed">Bitcoin Bank - branded transactions</p>
-            </div>
+                <div className="bg-white/95 p-3 shadow-xl backdrop-blur-sm rounded-sm whitespace-nowrap border border-zinc-100">
+                  <p className="text-xs text-zinc-700 leading-relaxed">Bitcoin Bank - branded transactions</p>
+                </div>
               </div>
             </div>
           </div>
@@ -129,9 +129,9 @@ export default function StudioPage() {
       </div>
         
       {/* Grid pattern background */}
-      <div className="absolute inset-0 overflow-hidden opacity-3 pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
         <div className="absolute inset-0" style={{ 
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zM10 0h1v1h-1zM0 10h1v1H0zM10 10h1v1h-1z' fill='%23333' fill-opacity='0.3'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zM10 0h1v1h-1zM0 10h1v1H0zM10 10h1v1h-1z' fill='%23666' fill-opacity='0.2'/%3E%3C/svg%3E")`,
           backgroundSize: '20px 20px'
         }}></div>
       </div>
@@ -147,13 +147,13 @@ interface FeatureBoxProps {
 function FeatureBox({ title, description }: FeatureBoxProps) {
   return (
     <div className="group relative">
-      <div className="bg-zinc-850 p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-800">
-        <span className="text-zinc-400">{title}</span>
+      <div className="bg-white p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-50 border border-zinc-100">
+        <span className="text-zinc-700">{title}</span>
       </div>
       
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10 pointer-events-none">
-        <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-800/90 p-4 shadow-xl backdrop-blur-sm rounded-sm">
-          <p className="text-xs text-zinc-400 leading-relaxed">{description}</p>
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 p-4 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
+          <p className="text-xs text-zinc-700 leading-relaxed">{description}</p>
         </div>
       </div>
     </div>
