@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Mail, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRef, useState } from "react"
-import AnimatedStars from "@/components/AnimatedStars"
+import AnimatedStars from "../components/AnimatedStars"
 
 export default function PricingPage() {
   const featuresRef = useRef<HTMLDivElement>(null)
@@ -293,7 +293,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#00f] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Palette className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -312,7 +312,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-pink-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#ff00ff] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Zap className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -331,7 +331,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#ff0] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Clock className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -350,7 +350,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-orange-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#ff8000] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Star className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -369,7 +369,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-green-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#0f0] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Repeat className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
@@ -388,7 +388,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-red-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-[#f00] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Award className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
