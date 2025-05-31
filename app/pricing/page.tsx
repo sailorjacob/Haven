@@ -11,6 +11,7 @@ export default function PricingPage() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const [activeTab, setActiveTab] = useState<string>("monthly")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isJoinHovered, setIsJoinHovered] = useState(false)
 
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -286,15 +287,18 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white p-6 rounded-xl border border-zinc-200"
+                className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="mb-4">
-                  <Palette className="h-8 w-8 text-primary" />
+                <div className="absolute inset-0 bg-blue-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <Palette className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Design board</h3>
+                  <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
+                    Easily manage your design queue with a dedicated board.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-900">Design board</h3>
-                <p className="text-zinc-600">
-                  Easily manage your design queue with a dedicated board.
-                </p>
               </motion.div>
 
               <motion.div
@@ -302,15 +306,18 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white p-6 rounded-xl border border-zinc-200"
+                className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="mb-4">
-                  <Zap className="h-8 w-8 text-primary" />
+                <div className="absolute inset-0 bg-pink-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <Zap className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Fixed monthly rate</h3>
+                  <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
+                    No surprises here! Pay the same fixed price each month.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-900">Fixed monthly rate</h3>
-                <p className="text-zinc-600">
-                  No surprises here! Pay the same fixed price each month.
-                </p>
               </motion.div>
 
               <motion.div
@@ -318,15 +325,18 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white p-6 rounded-xl border border-zinc-200"
+                className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="mb-4">
-                  <Clock className="h-8 w-8 text-primary" />
+                <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <Clock className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Fast delivery</h3>
+                  <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
+                    Get your design one at a time in just a couple days on average.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-900">Fast delivery</h3>
-                <p className="text-zinc-600">
-                  Get your design one at a time in just a couple days on average.
-                </p>
               </motion.div>
 
               <motion.div
@@ -334,15 +344,18 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white p-6 rounded-xl border border-zinc-200"
+                className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="mb-4">
-                  <Star className="h-8 w-8 text-primary" />
+                <div className="absolute inset-0 bg-orange-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <Star className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Top-notch quality</h3>
+                  <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
+                    Senior-level design quality at your fingertips, whenever you need it.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-900">Top-notch quality</h3>
-                <p className="text-zinc-600">
-                  Senior-level design quality at your fingertips, whenever you need it.
-                </p>
               </motion.div>
 
               <motion.div
@@ -350,15 +363,18 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-white p-6 rounded-xl border border-zinc-200"
+                className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="mb-4">
-                  <Repeat className="h-8 w-8 text-primary" />
+                <div className="absolute inset-0 bg-green-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <Repeat className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Flexible and scalable</h3>
+                  <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
+                    Scale up or down as needed, and pause or cancel at anytime.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-900">Flexible and scalable</h3>
-                <p className="text-zinc-600">
-                  Scale up or down as needed, and pause or cancel at anytime.
-                </p>
               </motion.div>
 
               <motion.div
@@ -366,15 +382,18 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-white p-6 rounded-xl border border-zinc-200"
+                className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="mb-4">
-                  <Award className="h-8 w-8 text-primary" />
+                <div className="absolute inset-0 bg-red-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="relative z-10">
+                  <div className="mb-4">
+                    <Award className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Unique and all yours</h3>
+                  <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
+                    Every design is made especially for you and is 100% yours.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-900">Unique and all yours</h3>
-                <p className="text-zinc-600">
-                  Every design is made especially for you and is 100% yours.
-                </p>
               </motion.div>
             </div>
           </div>
@@ -408,8 +427,8 @@ export default function PricingPage() {
                 <div className="px-6 py-8 border-b border-zinc-200">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold text-zinc-900">Monthly Subscription</h3>
-                    <div className="bg-primary/10 text-primary text-xs font-medium py-1 px-3 rounded-full">
-                      PAUSE OR CANCEL ANYTIME
+                    <div className="text-primary text-xs font-medium">
+                      Pause or cancel anytime
                     </div>
                   </div>
                   <div className="flex items-baseline mb-6">
@@ -417,11 +436,22 @@ export default function PricingPage() {
                     <span className="text-zinc-500 ml-2">/month</span>
                   </div>
                   <Button 
-                    className="w-full border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full" 
+                    className="w-full border-yellow-400 text-zinc-900 rounded-full relative overflow-hidden group" 
                     variant="outline"
                     size="lg"
+                    onMouseEnter={() => setIsJoinHovered(true)}
+                    onMouseLeave={() => setIsJoinHovered(false)}
                   >
-                    Join today
+                    {/* Yellow background that fills from left on hover */}
+                    <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    {/* Text content */}
+                    <span className={`relative z-10 transition-opacity duration-300 ${isJoinHovered ? 'opacity-0' : 'opacity-100'}`}>
+                      Join today
+                    </span>
+                    
+                    {/* Arrow icon that appears on hover */}
+                    <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isJoinHovered ? 'opacity-100' : 'opacity-0'}`} />
                   </Button>
                 </div>
                 
