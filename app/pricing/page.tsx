@@ -34,7 +34,7 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-28 pb-16 px-6 overflow-hidden">
+      <section className="relative pt-28 pb-12 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(230,230,230,0.4),rgba(255,255,255,0))]"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -42,21 +42,30 @@ export default function PricingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-8"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
               Design subscriptions <span className="text-primary">for everyone</span>
             </h1>
-            <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
               One subscription to rule them all. Pause or cancel anytime.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" onClick={scrollToFeatures}>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
+                onClick={scrollToFeatures}
+              >
                 See Pricing
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Link href="/contact">
-                <Button variant="outline" size="lg">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
+                >
                   Book a 15-min intro call
                 </Button>
               </Link>
@@ -66,21 +75,21 @@ export default function PricingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-12 bg-zinc-50 px-6">
+      <section className="py-12 px-6 bg-zinc-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
               The way design should've been done in the first place
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +149,7 @@ export default function PricingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
               Apps, websites, logos & more
@@ -150,7 +159,7 @@ export default function PricingPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.name}
@@ -168,14 +177,14 @@ export default function PricingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-12 bg-zinc-50 px-6">
+      <section className="py-12 px-6 bg-zinc-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-8"
           >
             <p className="text-sm font-medium text-primary mb-2">MEMBERSHIP BENEFITS</p>
             <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
@@ -187,7 +196,7 @@ export default function PricingPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -295,7 +304,7 @@ export default function PricingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-8"
           >
             <p className="text-sm font-medium text-primary mb-2">PRICING</p>
             <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
@@ -325,7 +334,11 @@ export default function PricingPage() {
                   <span className="text-4xl font-bold text-zinc-900">$4,000</span>
                   <span className="text-zinc-500 ml-2">/month</span>
                 </div>
-                <Button className="w-full" size="lg">
+                <Button 
+                  className="w-full border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full" 
+                  variant="outline"
+                  size="lg"
+                >
                   Join today
                 </Button>
               </div>
@@ -395,14 +408,14 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 bg-zinc-50 px-6">
+      <section className="py-12 px-6 bg-zinc-50">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
               Frequently asked questions
@@ -473,22 +486,30 @@ export default function PricingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center bg-primary/5 border border-primary/20 rounded-2xl p-10"
+            className="text-center bg-primary/5 border border-primary/20 rounded-2xl p-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
               See if our design service is the right fit for you
             </h2>
-            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-6">
               Schedule a quick, 15 minute guided tour through our process.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
+                >
                   Book a 15-min intro call
                 </Button>
               </Link>
               <Link href="mailto:hello@example.com">
-                <Button variant="outline" size="lg">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
+                >
                   Prefer to email?
                 </Button>
               </Link>

@@ -138,13 +138,13 @@ export default function HomePage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/pricing"
-                className="hidden md:inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
                 View Pricing
               </Link>
               <Link 
                 href="/contact"
-                className="hidden md:inline-flex items-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-lg border border-zinc-300 transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
                 Contact
               </Link>
@@ -342,14 +342,14 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
+                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
                 >
                   <span className="mr-2">Start a Project</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/work"
-                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full border border-zinc-300 transition-all duration-300"
+                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300"
                 >
                   View Work
                 </Link>
@@ -676,14 +676,14 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
+                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
                 >
                   <span className="mr-2">Get Started</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="mailto:info@haven.engineer"
-                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full border border-zinc-300 transition-all duration-300"
+                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300"
                 >
                   <Mail className="w-3 h-3 mr-2" />
                   Email Us
