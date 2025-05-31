@@ -388,10 +388,9 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Kill Me Faster is an artist working under multiple digital identities. Projects include AI-generated art (Mona Lisa), the Red Diamonds producer project, and digital content focused on art, technology, and robotics. The artist is known for high-value digital art sales and a focus on privacy and anonymity.
+                Kill Me Faster is an artist working under multiple digital identities. Projects include AI-generated art (Lisa Mona), producing as red diamonds, and digital content focused on art, technology, and robotics. The artist is known for high-value digital art sales and a focus on privacy and anonymity.
               </p>
               <p className="text-zinc-400">
-                The work covers digital art, AI, and robotics, with personal projects like Red Diamonds and AI-generated Mona Lisa. The artist uses blockchain and digital tools to explore new ways of creating and sharing art.
               </p>
             </div>
             <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
