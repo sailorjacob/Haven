@@ -21,31 +21,6 @@ export default function HomePage() {
   const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
-  // Animation variants for coordinated animations
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
-  
   // Function to get a random highlight color
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
@@ -260,17 +235,15 @@ export default function HomePage() {
 
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 pt-20 px-6">
-        <motion.div 
-          className="container max-w-6xl mx-auto space-y-12"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-        >
+        <div className="container max-w-6xl mx-auto space-y-12">
           
           {/* Selected Projects */}
           <div>
             <motion.div
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
             >
               <div>
@@ -323,8 +296,10 @@ export default function HomePage() {
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  variants={itemVariants}
-                  custom={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 + (index * 0.05) }}
+                  viewport={{ once: true }}
                   className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
                 >
                   <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
@@ -369,10 +344,19 @@ export default function HomePage() {
           </div>
           
           {/* Haven Studio Hero */}
-          <motion.div variants={itemVariants}>
-            <div className="text-center mb-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
               <motion.div 
-                variants={itemVariants}
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
                 className="flex justify-center mb-6"
               >
                 <div className="relative">
@@ -405,12 +389,18 @@ export default function HomePage() {
                   View Work
                 </Link>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Services */}
-          <motion.div variants={itemVariants} className="bg-zinc-50 rounded-xl p-8">
-            <div className="text-center mb-8">
+          <div className="bg-zinc-50 rounded-xl p-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
               <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                 Our Services
               </h2>
@@ -418,11 +408,14 @@ export default function HomePage() {
                 We specialize in creating digital experiences that combine beautiful design 
                 with powerful functionality.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
@@ -436,7 +429,10 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
@@ -450,7 +446,10 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
@@ -463,63 +462,130 @@ export default function HomePage() {
                 </p>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
           
           {/* Studio Performance */}
-          <motion.div variants={itemVariants}>
-            <div className="text-center mb-8">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
               <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                 Studio Performance
               </h2>
               <p className="text-lg text-zinc-600">
                 Delivering exceptional results for our clients worldwide.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Uptime */}
               <motion.div
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl text-zinc-900 font-bold mb-2">99.9%</div>
+                <div className="relative w-24 h-24 mx-auto mb-4">
+                  <svg className="w-full h-full" viewBox="0 0 100 100">
+                    <circle 
+                      cx="50" 
+                      cy="50" 
+                      r="45" 
+                      fill="none" 
+                      stroke="#e4e4e7" 
+                      strokeWidth="4"
+                    />
+                    <motion.circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#18181b"
+                      strokeWidth="4"
+                      strokeDasharray="283"
+                      strokeDashoffset="10"  
+                      initial={{ strokeDashoffset: 283 }}
+                      whileInView={{ 
+                        strokeDashoffset: 10,
+                        transition: { duration: 2, ease: "easeInOut" }
+                      }}
+                      viewport={{ once: true }}
+                      transform="rotate(-90 50 50)"
+                      strokeLinecap="round"
+                    />
+                    <text 
+                      x="50" 
+                      y="50" 
+                      textAnchor="middle" 
+                      fill="#18181b" 
+                      fontSize="16" 
+                      fontWeight="600"
+                      dominantBaseline="middle"
+                    >
+                      100%
+                    </text>
+                  </svg>
+                </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
                 <p className="text-zinc-600 text-sm">Reliable hosting & maintenance</p>
               </motion.div>
 
               {/* Support */}
               <motion.div
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl text-zinc-900 font-bold mb-2">24/7</div>
+                <div className="w-24 h-24 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-semibold text-lg">24/7</span>
+                </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
                 <p className="text-zinc-600 text-sm">Always available assistance</p>
               </motion.div>
 
               {/* Impressions */}
               <motion.div
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl text-zinc-900 font-bold mb-2">1M+</div>
+                <div className="h-24 flex flex-col items-center justify-center mb-4">
+                  <div className="text-3xl font-semibold text-zinc-900 mb-1">
+                    100,000+
+                  </div>
+                </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
                 <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
               </motion.div>
-            </div>
-          </motion.div>
+          </div>
+        </div>
 
           {/* Process */}
-          <motion.div variants={itemVariants} className="bg-zinc-50 rounded-xl p-8">
-            <div className="text-center mb-8">
+          <div className="bg-zinc-50 rounded-xl p-8">
+        <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
               <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                 Our Process
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
-              </p>
-            </div>
-            
+          </p>
+        </motion.div>
+        
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
@@ -545,8 +611,10 @@ export default function HomePage() {
               ].map((step, index) => (
                 <motion.div
                   key={step.number}
-                  variants={itemVariants}
-                  custom={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="text-center"
                 >
                   <div className="w-16 h-16 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4">
@@ -559,18 +627,24 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Team */}
-          <motion.div variants={itemVariants}>
-            <div className="text-center mb-8">
+          <div>
+        <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
               <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                 Meet Our Team
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Passionate professionals dedicated to creating exceptional digital experiences.
               </p>
-            </div>
+        </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
@@ -578,7 +652,7 @@ export default function HomePage() {
                   name: "Jacob Beam",
                   role: "Founder",
                   description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design. Check out his work on ",
-                  github: "https://github.com/sailorjacob",
+                  github: "https://sailorjacob.github.io",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
                 },
                 {
@@ -594,12 +668,14 @@ export default function HomePage() {
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
                 }
               ].map((member, index) => (
-                <motion.div
+        <motion.div
                   key={member.name}
-                  variants={itemVariants}
-                  custom={index}
-                  className="text-center"
-                >
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+          className="text-center"
+        >
                   <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
                     <Image
                       src={member.image}
@@ -619,18 +695,23 @@ export default function HomePage() {
                         rel="noopener noreferrer" 
                         className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
                       >
-                        GitHub
+                        GitHub Pages
                       </a>
                     )}
                   </p>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* CTA */}
-          <motion.div variants={itemVariants} className="bg-zinc-50 rounded-xl p-8 text-center">
-            <div className="text-center">
+          <div className="bg-zinc-50 rounded-xl p-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                 Start Your Project
               </h2>
@@ -665,10 +746,10 @@ export default function HomePage() {
                   info@haven.engineer
                 </a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-        </motion.div>
+        </div>
       </section>
 
       {/* Footer */}
