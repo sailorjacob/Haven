@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Mail, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRef, useState } from "react"
+import AnimatedStars from "@/components/AnimatedStars"
 
 export default function PricingPage() {
   const featuresRef = useRef<HTMLDivElement>(null)
@@ -34,6 +35,9 @@ export default function PricingPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
+      {/* Animated Stars */}
+      <AnimatedStars />
+
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
