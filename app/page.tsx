@@ -695,7 +695,7 @@ export default function HomePage() {
                         rel="noopener noreferrer" 
                         className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
                       >
-                        GitHub Pages
+                        GitHub
                       </a>
                     )}
                   </p>
