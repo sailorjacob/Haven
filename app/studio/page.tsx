@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 
 export default function StudioPage() {
   return (
@@ -145,17 +146,31 @@ interface FeatureBoxProps {
 }
 
 function FeatureBox({ title, description }: FeatureBoxProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <div className="group relative">
-      <div className="bg-white p-4 text-left text-xs tracking-wider cursor-pointer transition-colors rounded-sm hover:bg-zinc-50 border border-zinc-100">
+    <div className="relative">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full bg-white p-4 text-left text-xs tracking-wider transition-colors rounded-sm hover:bg-zinc-50 border border-zinc-100 flex items-center justify-between group"
+      >
         <span className="text-zinc-700">{title}</span>
-      </div>
+        <ChevronDown 
+          className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
       
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10 pointer-events-none">
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 p-4 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.2 }}
+          className="absolute top-full left-0 right-0 mt-1 bg-white/95 p-4 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100 z-10"
+        >
           <p className="text-xs text-zinc-700 leading-relaxed">{description}</p>
-        </div>
-      </div>
+        </motion.div>
+      )}
     </div>
   )
 } 
