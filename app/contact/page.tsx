@@ -56,7 +56,7 @@ export default function ContactPage() {
           </Link>
           <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700">
-              Contact Us
+              Message Us
             </span>
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-700 mb-6 lowercase">
