@@ -41,6 +41,15 @@ export default function HomePage() {
       category: "website"
     },
     {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "An experimental digital art portfolio with dynamic 3D elements and interactive storytelling for an anonymous artist collective.",
+      technologies: ["Three.js", "WebGL", "GSAP", "Next.js"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "website"
+    },
+    {
       id: "roundabout",
       title: "roundabout.run",
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
@@ -175,6 +184,13 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Work
+                </Link>
+                <Link 
+                  href="/pricing" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Pricing
                 </Link>
                 <Link 
                   href="/contact"
