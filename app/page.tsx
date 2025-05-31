@@ -93,6 +93,15 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
       link: "/moonlight-garden",
       category: "webapp"
+    },
+    {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "A crypto-art project featuring red diamonds, digital army, and freedom. The ultimate escape route and weapon.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "AI Art"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "website"
     }
   ]
 
