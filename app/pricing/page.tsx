@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Mail, Menu } from "lucide-react"
+import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Mail, Menu, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRef, useState } from "react"
 import AnimatedStars from "../components/AnimatedStars"
@@ -13,6 +13,7 @@ export default function PricingPage() {
   const [activeTab, setActiveTab] = useState<string>("monthly")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isJoinHovered, setIsJoinHovered] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -31,6 +32,25 @@ export default function PricingPage() {
     { name: "Branding", included: true },
     { name: "Display Ads", included: true },
     { name: "User Interface", included: true },
+  ]
+
+  const faqs = [
+    {
+      question: "How fast will I receive my designs?",
+      answer: "Most designs are delivered within 48 hours. Complex projects may take longer, but we'll always keep you updated on the progress."
+    },
+    {
+      question: "How does onboarding work?",
+      answer: "After signing up, you'll receive access to your submission system where you can submit requests. We'll schedule a quick onboarding call to understand your brand and preferences."
+    },
+    {
+      question: "Is there a limit to how many requests I can make?",
+      answer: "There's no limit to the number of requests you can add to your queue, but we work on one request at a time to ensure the highest quality output."
+    },
+    {
+      question: "How does the pause feature work?",
+      answer: "You can pause your subscription at any time from your account dashboard. Your billing will be suspended until you decide to resume, and we'll save your spot."
+    }
   ]
 
   return (
@@ -298,9 +318,9 @@ export default function PricingPage() {
                   <div className="mb-4">
                     <Palette className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Design board</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Design submissions</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Easily manage your design queue with a dedicated board.
+                    Easily manage your design queue with a dedicated submission system.
                   </p>
                 </div>
               </motion.div>
@@ -529,65 +549,52 @@ export default function PricingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-6"
+              className="text-center mb-8"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Frequently asked questions
               </h2>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white border border-zinc-200 rounded-lg p-6"
-              >
-                <h3 className="font-medium text-lg mb-2 text-zinc-900">How fast will I receive my designs?</h3>
-                <p className="text-zinc-600">
-                  Most designs are delivered within 48 hours. Complex projects may take longer, but we'll always keep you updated on the progress.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-zinc-200 rounded-lg p-6"
-              >
-                <h3 className="font-medium text-lg mb-2 text-zinc-900">How does onboarding work?</h3>
-                <p className="text-zinc-600">
-                  After signing up, you'll receive access to your design board where you can submit requests. We'll schedule a quick onboarding call to understand your brand and preferences.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white border border-zinc-200 rounded-lg p-6"
-              >
-                <h3 className="font-medium text-lg mb-2 text-zinc-900">Is there a limit to how many requests I can make?</h3>
-                <p className="text-zinc-600">
-                  There's no limit to the number of requests you can add to your queue, but we work on one request at a time to ensure the highest quality output.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white border border-zinc-200 rounded-lg p-6"
-              >
-                <h3 className="font-medium text-lg mb-2 text-zinc-900">How does the pause feature work?</h3>
-                <p className="text-zinc-600">
-                  You can pause your subscription at any time from your account dashboard. Your billing will be suspended until you decide to resume, and we'll save your spot.
-                </p>
-              </motion.div>
+            <div className="max-w-2xl mx-auto space-y-2">
+              {faqs.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white border border-zinc-200 rounded-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-zinc-50 transition-colors"
+                  >
+                    <span className="font-medium text-zinc-900">{faq.question}</span>
+                    <motion.div
+                      animate={{ rotate: openFaq === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown className="w-5 h-5 text-zinc-500" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 py-4 text-zinc-600 border-t border-zinc-100">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
             </div>
           </div>
 
