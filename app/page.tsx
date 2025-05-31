@@ -118,10 +118,10 @@ export default function HomePage() {
                   Studio
                 </Link>
                 <Link 
-                  href="/pricing" 
+                  href="/work" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                 >
-                  Pricing
+                  Work
                 </Link>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function HomePage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/pricing"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border-yellow-400 border hover:bg-yellow-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
                 View Pricing
               </Link>
@@ -170,11 +170,11 @@ export default function HomePage() {
                   Studio
                 </Link>
                 <Link 
-                  href="/pricing" 
+                  href="/work" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Pricing
+                  Work
                 </Link>
                 <Link 
                   href="/contact"

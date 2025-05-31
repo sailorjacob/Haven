@@ -51,8 +51,8 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <Link href="/studio" className="text-zinc-400 mb-4 inline-block text-sm hover:text-zinc-300 transition-colors">
-            ← Back to Studio
+          <Link href="/" className="text-zinc-400 mb-4 inline-block text-sm hover:text-zinc-300 transition-colors">
+            ← Back to Home
           </Link>
           <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-300 to-zinc-500">
@@ -75,7 +75,7 @@ export default function ContactPage() {
             <div className="text-center py-12">
               <h2 className="text-2xl text-zinc-200 mb-4">Thank you for reaching out!</h2>
               <p className="text-zinc-400 mb-8">We'll get back to you as soon as possible.</p>
-              <Link href="/studio" className="inline-flex items-center justify-center border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white">
+              <Link href="/" className="inline-flex items-center justify-center border border-zinc-300/80 text-zinc-300 py-2 px-8 text-sm tracking-widest transition-all duration-300 rounded-full hover:border-white hover:text-white">
                 Return to Studio
           </Link>
         </div>

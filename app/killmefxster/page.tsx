@@ -310,11 +310,11 @@ export default function KillMeFxsterPage() {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <Link href="/studio" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
+          <Link href="/" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
             <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to Studio
+            Back to Home
           </Link>
         </motion.div>
 
