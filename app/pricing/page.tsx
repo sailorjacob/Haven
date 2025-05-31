@@ -22,7 +22,6 @@ export default function PricingPage() {
     { name: "Logos", included: true },
     { name: "Social Media", included: true },
     { name: "Email", included: true },
-    { name: "Webflow", included: true },
     { name: "Print Design", included: true },
     { name: "Packaging", included: true },
     { name: "Ad Creative", included: true },
@@ -68,12 +67,6 @@ export default function PricingPage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Link 
-                href="/pricing"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
-              >
-                View Pricing
-              </Link>
               <Link 
                 href="/contact"
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
@@ -420,7 +413,7 @@ export default function PricingPage() {
                     </div>
                   </div>
                   <div className="flex items-baseline mb-6">
-                    <span className="text-4xl font-bold text-zinc-900">$4,000</span>
+                    <span className="text-4xl font-bold text-zinc-900">$4,995</span>
                     <span className="text-zinc-500 ml-2">/month</span>
                   </div>
                   <Button 
@@ -449,7 +442,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start">
                       <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Webflow development</span>
+                      <span className="text-zinc-800">Web Development</span>
                     </li>
                     <li className="flex items-start">
                       <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
@@ -565,7 +558,7 @@ export default function PricingPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
+          <div className="p-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
