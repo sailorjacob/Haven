@@ -13,7 +13,7 @@ export default function JacobHaleStudioPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900/5 to-zinc-900 opacity-100"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-4 pb-20">
         {/* Back button */}
         <motion.div
           initial={{ opacity: 0 }}
