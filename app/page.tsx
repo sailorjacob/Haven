@@ -436,16 +436,23 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
               >
-                <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                  <Code className="w-6 h-6 text-zinc-700" />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
+                    <Code className="w-6 h-6 text-zinc-700" />
+                  </div>
+                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
+                  <p className="text-zinc-600 leading-relaxed">
+                    Custom web applications built with modern frameworks 
+                    and performance-focused architecture.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  Custom web applications built with modern frameworks 
-                  and performance-focused architecture.
-                </p>
               </motion.div>
 
               <motion.div
@@ -453,16 +460,23 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
               >
-                <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                  <Palette className="w-6 h-6 text-zinc-700" />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
+                    <Palette className="w-6 h-6 text-zinc-700" />
+                  </div>
+                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
+                  <p className="text-zinc-600 leading-relaxed">
+                    Minimalist, elegant interfaces that elevate brands with 
+                    thoughtful interactions and premium aesthetics.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  Minimalist, elegant interfaces that elevate brands with 
-                  thoughtful interactions and premium aesthetics.
-                </p>
               </motion.div>
 
               <motion.div
@@ -470,16 +484,23 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
               >
-                <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                  <Zap className="w-6 h-6 text-zinc-700" />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
+                    <Zap className="w-6 h-6 text-zinc-700" />
+                  </div>
+                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
+                  <p className="text-zinc-600 leading-relaxed">
+                    Comprehensive digital solutions that align with business 
+                    goals and create meaningful user experiences.
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  Comprehensive digital solutions that align with business 
-                  goals and create meaningful user experiences.
-                </p>
               </motion.div>
             </div>
           </div>
