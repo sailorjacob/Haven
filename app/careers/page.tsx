@@ -11,6 +11,7 @@ import { Footer } from "@/components/footer"
 export default function CareersPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isApplyHovered, setIsApplyHovered] = useState(false)
+  const [isJobExpanded, setIsJobExpanded] = useState(false)
 
   return (
     <main className="bg-white w-full text-zinc-900">
@@ -123,60 +124,6 @@ export default function CareersPage() {
       {/* Main Content */}
       <section className="relative z-10 pt-32 px-6 pb-20">
         <div className="container max-w-6xl mx-auto">
-          {/* Hero Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
-                Ready to <span className="text-yellow-400">work</span>?
-              </h1>
-              <p className="text-lg text-zinc-600 mb-8">
-                Join our team of passionate professionals and help us create exceptional digital experiences for clients worldwide.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#openings">
-                  <button className="px-8 py-3 bg-zinc-900 text-white rounded-full flex items-center hover:bg-zinc-800 transition-colors">
-                    See Openings
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
-                </Link>
-                <Link href="/contact">
-                  <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-full hover:bg-zinc-50 transition-colors">
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-tr from-zinc-800 via-zinc-700 to-zinc-800">
-                  <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                </div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center p-8">
-                  <Briefcase className="w-16 h-16 text-white/80 mb-6" />
-                  <h2 className="text-white font-bold text-2xl md:text-3xl mb-3 text-center">Join Our Team</h2>
-                  <p className="text-white/80 text-center max-w-xs">
-                    Collaborate with talented professionals in a creative and supportive environment.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-yellow-100 rounded-lg -z-10"></div>
-              <div className="absolute -left-4 -top-4 w-32 h-32 bg-zinc-200 rounded-lg -z-10"></div>
-            </motion.div>
-          </div>
-          
           {/* Current Openings */}
           <div id="openings" className="mb-24">
             <motion.div
@@ -199,8 +146,11 @@ export default function CareersPage() {
               transition={{ duration: 0.6 }}
               className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
+              <div 
+                className="p-8 cursor-pointer"
+                onClick={() => setIsJobExpanded(!isJobExpanded)}
+              >
+                <div className="flex justify-between items-start">
                   <div>
                     <h3 className="text-xl font-bold text-zinc-900">Sales Representative</h3>
                     <div className="flex items-center space-x-4 mt-2">
@@ -214,50 +164,68 @@ export default function CareersPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">
-                    Sales
+                  <div className="flex items-center">
+                    <div className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium mr-3">
+                      Sales
+                    </div>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-zinc-500 transition-transform duration-300 ${isJobExpanded ? 'rotate-180' : ''}`} 
+                    />
                   </div>
                 </div>
                 
-                <div className="mb-6">
-                  <h4 className="text-lg font-medium text-zinc-900 mb-2">Job Description</h4>
-                  <p className="text-zinc-600 mb-4">
-                    We're looking for motivated sales representatives to help grow our client base. In this role, you'll identify potential clients, pitch our services, and help expand our reach in the digital design market.
-                  </p>
-                  <h4 className="text-lg font-medium text-zinc-900 mb-2">Compensation</h4>
-                  <p className="text-zinc-600 mb-4">
-                    <span className="font-medium">Up to 50% commission on any sales made.</span> Our commission structure rewards your hard work and success directly.
-                  </p>
-                  <h4 className="text-lg font-medium text-zinc-900 mb-2">Requirements</h4>
-                  <ul className="list-disc pl-5 text-zinc-600 mb-6 space-y-1">
-                    <li>Strong communication and negotiation skills</li>
-                    <li>Self-motivated with ability to work independently</li>
-                    <li>Understanding of digital design and web development (preferred)</li>
-                    <li>Previous sales experience (preferred but not required)</li>
-                  </ul>
-                </div>
-                
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300 group relative"
-                  onMouseEnter={() => setIsApplyHovered(true)}
-                  onMouseLeave={() => setIsApplyHovered(false)}
-                >
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  <span className="relative z-10 transition-opacity duration-300 flex items-center">
-                    {isApplyHovered ? (
-                      <>
-                        <ArrowRight className="w-5 h-5 mr-2" />
-                        Reach out & begin now
-                      </>
-                    ) : (
-                      <>
-                        <Mail className="w-5 h-5 mr-2" />
-                        Apply Now
-                      </>
-                    )}
-                  </span>
-                </Link>
+                <AnimatePresence>
+                  {isJobExpanded && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-6"
+                    >
+                      <div className="mb-6">
+                        <h4 className="text-lg font-medium text-zinc-900 mb-2">Job Description</h4>
+                        <p className="text-zinc-600 mb-4">
+                          We're looking for motivated sales representatives to help grow our client base. In this role, you'll identify potential clients, pitch our services, and help expand our reach in the digital design market.
+                        </p>
+                        <h4 className="text-lg font-medium text-zinc-900 mb-2">Compensation</h4>
+                        <p className="text-zinc-600 mb-4">
+                          <span className="font-medium">Up to 50% commission on any sales made.</span> Our commission structure rewards your hard work and success directly.
+                        </p>
+                        <h4 className="text-lg font-medium text-zinc-900 mb-2">Requirements</h4>
+                        <ul className="list-disc pl-5 text-zinc-600 mb-6 space-y-1">
+                          <li>Strong communication and negotiation skills</li>
+                          <li>Self-motivated with ability to work independently</li>
+                          <li>Understanding of digital design and web development (preferred)</li>
+                          <li>Previous sales experience (preferred but not required)</li>
+                        </ul>
+                      </div>
+                      
+                      <Link 
+                        href="/contact"
+                        className="inline-flex items-center border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300 group relative"
+                        onClick={(e) => e.stopPropagation()}
+                        onMouseEnter={() => setIsApplyHovered(true)}
+                        onMouseLeave={() => setIsApplyHovered(false)}
+                      >
+                        <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                        <span className="relative z-10 transition-opacity duration-300 flex items-center">
+                          {isApplyHovered ? (
+                            <>
+                              <ArrowRight className="w-5 h-5 mr-2" />
+                              Reach out & begin now
+                            </>
+                          ) : (
+                            <>
+                              <Mail className="w-5 h-5 mr-2" />
+                              Apply Now
+                            </>
+                          )}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </motion.div>
           </div>
