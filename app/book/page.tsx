@@ -152,12 +152,6 @@ export default function DesignBookPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="#chapters">
-                  <button className="px-8 py-3 bg-zinc-300 text-zinc-700 rounded-none flex items-center hover:bg-zinc-400 transition-colors uppercase tracking-wide text-sm font-medium">
-                    Explore Contents
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
-                </Link>
                 <Link href="/contact">
                   <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-none hover:bg-zinc-50 transition-colors uppercase tracking-wide text-sm font-medium">
                     Pre-Order — $997
