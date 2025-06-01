@@ -528,9 +528,11 @@ export default function PricingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">MONTHLY CLUB</div>
-                            <button className="bg-gradient-to-r from-sky-400 to-sky-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-sky-500 hover:to-sky-600 transition-colors">
-                              Start today
-                            </button>
+                            <Link href="https://buy.stripe.com/3cI6oI2Ph3Du0kn6dB57W02">
+                              <button className="bg-gradient-to-r from-sky-400 to-sky-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-sky-500 hover:to-sky-600 transition-colors">
+                                Start today
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -586,7 +588,7 @@ export default function PricingPage() {
                         </div>
                       </div>
                       
-                      <Link href="/contact">
+                      <Link href="https://buy.stripe.com/3cI6oI2Ph3Du0kn6dB57W02">
                         <button className="group relative w-full border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
                           <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                           <span className="relative z-10 flex items-center justify-center">
