@@ -192,23 +192,18 @@ export default function AdvertisingPage() {
       <motion.div 
         className="fixed inset-0 z-[999] flex items-center justify-center bg-white animated-overlay"
         initial={{ opacity: 1 }}
-        animate={{ 
-          opacity: [1, 1, 0],
-        }}
-        transition={{ 
-          times: [0, 0.85, 1],
-          duration: 5.5,
-          ease: "easeInOut"
-        }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
         <div className="relative w-full h-full flex items-center justify-center">
           {/* Big Red Text */}
           <div className="overflow-hidden text-center">
             <motion.h1 
               className="text-7xl sm:text-[10rem] md:text-[16rem] font-black text-[#ff0000] uppercase tracking-tighter leading-none px-2 w-full"
-              style={{
-                lineHeight: "0.9",
-              }}
+              style={{ lineHeight: "0.9" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.05 }}
             >
               {/* Animated text that types out */}
               {'F#CKING THE ADS GAME UP'.split('').map((char, index) => (
@@ -228,23 +223,23 @@ export default function AdvertisingPage() {
             </motion.h1>
           </div>
           
-          {/* NO MERCY text - with slapping animation */}
+          {/* NO MERCY text - with slapping animation but no bounce */}
           <motion.div
             className="absolute bottom-[15%] right-[10%] z-30 rotate-6"
-            initial={{ opacity: 0, x: 1000, rotate: 25, scale: 2 }}
-            animate={{ opacity: 1, x: 0, rotate: 6, scale: 1 }}
+            initial={{ opacity: 0, x: 1000, rotate: 25 }}
+            animate={{ opacity: 1, x: 0, rotate: 6 }}
             transition={{ 
-              type: "spring",
-              stiffness: 600,
-              damping: 20,
+              type: "tween", // Changed from spring to tween for no bounce
+              ease: "easeOut",
               delay: 4,
-              duration: 0.3
+              duration: 0.2
             }}
             onAnimationComplete={() => {
-              // When NO MERCY animation completes, trigger the overlay to disappear almost immediately
+              // When NO MERCY animation completes, make everything disappear instantly
               const overlay = document.querySelector('.animated-overlay');
               if (overlay) {
-                overlay.classList.add('animate-disappear');
+                // Directly change style rather than adding a class with animation
+                (overlay as HTMLElement).style.display = 'none';
               }
             }}
           >
@@ -261,16 +256,6 @@ export default function AdvertisingPage() {
           </motion.div>
         </div>
       </motion.div>
-
-      <style jsx global>{`
-        .animate-disappear {
-          animation: disappear 0.2s forwards;
-        }
-        @keyframes disappear {
-          0% { opacity: 1; }
-          100% { opacity: 0; display: none; }
-        }
-      `}</style>
 
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 pt-20 px-6">
