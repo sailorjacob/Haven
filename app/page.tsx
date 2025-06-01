@@ -132,19 +132,25 @@ export default function HomePage() {
                 <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
               </Link>
               
-              {/* Desktop Navigation */}
+              {/* Desktop Navigation with random highlight on hover */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
                   href="/sitemap" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Studio
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className="hidden group-hover:inline">
+                    <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Studio</span>
+                  </span>
                 </Link>
                 <Link 
                   href="/work" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Work
+                  <span className="group-hover:hidden">Work</span>
+                  <span className="hidden group-hover:inline">
+                    <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Work</span>
+                  </span>
                 </Link>
               </div>
             </div>
@@ -173,7 +179,9 @@ export default function HomePage() {
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
               >
                 <span className="group-hover:hidden">Contact</span>
-                <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
+                <span className="hidden group-hover:inline">
+                  <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Contact</span>
+                </span>
               </Link>
               
               {/* Mobile Menu Button */}
@@ -200,17 +208,23 @@ export default function HomePage() {
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
                   href="/sitemap" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Studio
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className="hidden group-hover:inline">
+                    <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Studio</span>
+                  </span>
                 </Link>
                 <Link 
                   href="/work" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Work
+                  <span className="group-hover:hidden">Work</span>
+                  <span className="hidden group-hover:inline">
+                    <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Work</span>
+                  </span>
                 </Link>
                 <Link 
                   href="/pricing" 
@@ -218,7 +232,9 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
+                  <span className="hidden group-hover:inline">
+                    <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Pricing</span>
+                  </span>
                 </Link>
                 <Link 
                   href="/contact"
@@ -226,7 +242,9 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Contact</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
+                  <span className="hidden group-hover:inline">
+                    <span className={getRandomHighlightColor().replace('bg-', 'text-')}>Contact</span>
+                  </span>
                 </Link>
           </div>
         </motion.div>
