@@ -8,6 +8,20 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function ExplorePage() {
   const [hoveredFeature, setHoveredFeature] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isGetStartedHovered, setGetStartedHovered] = useState(false)
+  const [isLearnMoreHovered, setLearnMoreHovered] = useState(false)
+  const [isViewProductsHovered, setViewProductsHovered] = useState(false)
+  const [isVisitStudioHovered, setVisitStudioHovered] = useState(false)
+  
+  // Function to get a random highlight color
+  const getRandomHighlightColor = () => {
+    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+  
+  // For CTA highlight colors
+  const [ctaColor1] = useState(getRandomHighlightColor().replace('text-', '').replace(' font-bold', ''));
+  const [ctaColor2] = useState(getRandomHighlightColor().replace('text-', '').replace(' font-bold', ''));
 
   return (
     <main className="bg-white w-full text-zinc-900" suppressHydrationWarning>
@@ -135,16 +149,37 @@ export default function ExplorePage() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
+                className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
+                onMouseEnter={() => setViewProductsHovered(true)}
+                onMouseLeave={() => setViewProductsHovered(false)}
               >
-                <span className="mr-2">View Products</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Yellow background that fills from left on hover */}
+                <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                
+                {/* Text content */}
+                <span className={`relative z-10 transition-opacity duration-300 ${isViewProductsHovered ? 'opacity-0' : 'opacity-100'}`}>
+                  View Products
+                </span>
+                
+                {/* Arrow icon that appears on hover */}
+                <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isViewProductsHovered ? 'opacity-100' : 'opacity-0'}`} />
               </Link>
               <Link
                 href="/studio"
-                className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
+                className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
+                onMouseEnter={() => setVisitStudioHovered(true)}
+                onMouseLeave={() => setVisitStudioHovered(false)}
               >
-                Visit Studio
+                {/* Yellow background that fills from left on hover */}
+                <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                
+                {/* Text content */}
+                <span className={`relative z-10 transition-opacity duration-300 ${isVisitStudioHovered ? 'opacity-0' : 'opacity-100'}`}>
+                  Visit Studio
+                </span>
+                
+                {/* Arrow icon that appears on hover */}
+                <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isVisitStudioHovered ? 'opacity-100' : 'opacity-0'}`} />
               </Link>
             </motion.div>
           </div>
@@ -270,16 +305,37 @@ export default function ExplorePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
+                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
+                  onMouseEnter={() => setGetStartedHovered(true)}
+                  onMouseLeave={() => setGetStartedHovered(false)}
                 >
-                  <span className="mr-2">Get Started</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {/* Yellow background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  
+                  {/* Text content */}
+                  <span className={`relative z-10 transition-opacity duration-300 ${isGetStartedHovered ? 'opacity-0' : 'opacity-100'}`}>
+                    Get Started
+                  </span>
+                  
+                  {/* Arrow icon that appears on hover */}
+                  <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isGetStartedHovered ? 'opacity-100' : 'opacity-0'}`} />
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
+                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
+                  onMouseEnter={() => setLearnMoreHovered(true)}
+                  onMouseLeave={() => setLearnMoreHovered(false)}
                 >
-                  Learn More
+                  {/* Yellow background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  
+                  {/* Text content */}
+                  <span className={`relative z-10 transition-opacity duration-300 ${isLearnMoreHovered ? 'opacity-0' : 'opacity-100'}`}>
+                    Learn More
+                  </span>
+                  
+                  {/* Arrow icon that appears on hover */}
+                  <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isLearnMoreHovered ? 'opacity-100' : 'opacity-0'}`} />
                 </Link>
               </div>
           </motion.div>
