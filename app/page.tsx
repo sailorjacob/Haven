@@ -135,11 +135,16 @@ export default function HomePage() {
               {/* Desktop Navigation with random highlight on hover */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
-                  href="/sitemap" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  href="/advertising" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                 >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  Advertising
+                </Link>
+                <Link 
+                  href="/studio" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Studio
                 </Link>
                 <Link 
                   href="/work" 
@@ -207,7 +212,15 @@ export default function HomePage() {
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
-                  href="/sitemap" 
+                  href="/advertising" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="group-hover:hidden">Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
+                </Link>
+                <Link 
+                  href="/studio" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >

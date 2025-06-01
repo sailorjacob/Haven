@@ -35,6 +35,12 @@ export default function DesignBookPage() {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
+                  href="/advertising" 
+                  className="text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
+                >
+                  Advertising
+                </Link>
+                <Link 
                   href="/studio" 
                   className="text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
                 >
@@ -85,6 +91,13 @@ export default function DesignBookPage() {
               className="md:hidden bg-white border-b border-zinc-200"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
+                <Link 
+                  href="/advertising" 
+                  className="block text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Advertising
+                </Link>
                 <Link 
                   href="/studio" 
                   className="block text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
