@@ -100,6 +100,12 @@ export default function PricingPage() {
                 >
                   Pricing
                 </Link>
+                <Link 
+                  href="/book" 
+                  className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
+                >
+                  Design Book
+                </Link>
               </div>
             </div>
 
@@ -146,6 +152,13 @@ export default function PricingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Pricing
+                </Link>
+                <Link 
+                  href="/book"
+                  className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Design Book
                 </Link>
                 <Link 
                   href="/contact"
