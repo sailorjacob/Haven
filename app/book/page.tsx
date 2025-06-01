@@ -48,7 +48,7 @@ export default function DesignBookPage() {
                 </Link>
                 <Link 
                   href="/book" 
-                  className="text-sm text-yellow-600 hover:text-yellow-700 transition-colors tracking-wider uppercase font-light ml-2"
+                  className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
                 >
                   Design Book
                 </Link>
@@ -58,7 +58,7 @@ export default function DesignBookPage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/contact"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:border-zinc-400 text-zinc-900 font-medium py-2 px-6 rounded-none transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
                 Contact
               </Link>
@@ -101,7 +101,7 @@ export default function DesignBookPage() {
                 </Link>
                 <Link 
                   href="/book"
-                  className="block text-sm text-yellow-600 hover:text-yellow-700 transition-colors tracking-wider uppercase font-light"
+                  className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Design Book
@@ -123,31 +123,29 @@ export default function DesignBookPage() {
       <section className="relative z-10 pt-32 px-6 pb-20">
         <div className="container max-w-6xl mx-auto">
           {/* Hero Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
-                <span className="text-yellow-600 block">CAVEMEN</span>
-                <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">AND</span>
-                <span className="block">ONLY<span className="text-pink-600">FANS</span> <span className="text-pink-600">GIRLS</span></span>
+              <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
+                <span className="text-red-600">Cavemen</span> and <span className="text-yellow-400">Only<span className="text-pink-500">Fans</span> <span className="text-pink-500">Girls</span></span>
               </h1>
-              <p className="text-lg text-zinc-600 mb-8 font-light border-l-2 border-yellow-600 pl-4">
+              <p className="text-lg text-zinc-600 mb-8">
                 A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="#sections">
-                  <button className="px-8 py-3 bg-transparent border border-yellow-600 text-yellow-600 rounded-none flex items-center hover:bg-yellow-600 hover:text-white transition-colors uppercase tracking-wide text-sm font-medium">
-                    Explore Content
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="#chapters">
+                  <button className="px-8 py-3 bg-red-600 text-white rounded-full flex items-center hover:bg-red-700 transition-colors">
+                    Explore Contents
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </button>
                 </Link>
                 <Link href="/contact">
-                  <button className="px-8 py-3 bg-zinc-900 text-white rounded-none hover:bg-zinc-800 transition-colors uppercase tracking-wide text-sm font-medium">
-                    Pre-Order — $340
+                  <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-full hover:bg-zinc-50 transition-colors">
+                    Pre-Order Now — $340
                   </button>
                 </Link>
               </div>
@@ -159,9 +157,9 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative aspect-[4/5] rounded-none overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-zinc-100 via-white to-zinc-100">
-                  <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#333333_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white via-zinc-50 to-zinc-100">
+                  <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 </div>
                 
                 {/* Add the image overlay */}
@@ -170,41 +168,42 @@ export default function DesignBookPage() {
                     src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//cavemen.png"
                     alt="Cavemen and OnlyFans Girls"
                     fill
-                    className="object-cover opacity-70 mix-blend-multiply"
+                    className="object-cover opacity-80 mix-blend-multiply"
                   />
                 </div>
                 
                 <div className="absolute inset-0 flex flex-col justify-between p-8 z-20">
                   <div className="flex justify-between items-start">
                     <div className="flex items-center">
-                      <div className="text-zinc-900/70 font-medium text-xs tracking-widest uppercase">Limited Edition</div>
+                      <div className="text-zinc-800/80 font-medium text-sm">Limited Edition Pre-Order</div>
                     </div>
-                    <div className="h-8 w-8 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-yellow-600"></div>
+                    <div className="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center">
+                      <Hexagon className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
                   
-                  <div className="text-left">
-                    <div className="uppercase tracking-[0.5em] text-xs font-light mb-4 text-zinc-500">Haven Studio</div>
-                    <div className="flex flex-col items-start">
-                      <h2 className="text-zinc-900 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
-                      <div className="h-px w-12 bg-yellow-600 my-2"></div>
-                      <h2 className="text-5xl md:text-6xl font-black uppercase">
-                        ONLY<span className="text-yellow-600">FANS</span>
+                  <div className="text-center my-12">
+                    <div className="text-zinc-800/80 uppercase tracking-widest text-xs font-light mb-2">Haven Studio</div>
+                    <div className="flex flex-col items-center">
+                      <h2 className="text-zinc-900 font-bold text-3xl md:text-4xl">Cavemen</h2>
+                      <div className="text-lg text-zinc-600 my-1">&</div>
+                      <h2 className="text-3xl md:text-4xl font-bold">
+                        <span className="text-yellow-400">Only</span><span className="text-pink-500">Fans</span>
                       </h2>
-                      <h2 className="text-5xl md:text-6xl font-black text-yellow-600 uppercase">GIRLS</h2>
+                      <h2 className="text-3xl md:text-4xl font-bold text-pink-500 mb-2">Girls</h2>
                     </div>
+                    <div className="h-0.5 w-20 bg-zinc-400 mx-auto"></div>
                   </div>
                   
-                  <div className="text-zinc-500 text-xs uppercase tracking-widest">
+                  <div className="text-zinc-800/80 text-sm font-light">
                     Hardcover • Visual Journey • $340
                   </div>
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-yellow-500"></div>
-              <div className="absolute -left-4 -top-4 w-40 h-40 border border-zinc-200"></div>
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-red-100 rounded-lg -z-10"></div>
+              <div className="absolute -left-4 -top-4 w-32 h-32 bg-zinc-200 rounded-lg -z-10"></div>
             </motion.div>
           </div>
           
@@ -214,89 +213,92 @@ export default function DesignBookPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto mb-32 relative"
+            className="max-w-3xl mx-auto text-center mb-24"
           >
-            <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">01</span>
-            <div className="relative">
-              <h2 className="text-5xl font-black text-zinc-900 mb-8 uppercase tracking-tight">THE BOOK</h2>
-              <p className="text-lg text-zinc-600 mb-12 font-light">
-                The Haven Design Book "Cavemen and Onlyfans Girls" is a premium hardcover collection of visual references and secret design principles. This $340 collector's item features high-quality full-page print images spanning graphic designs, photography, AI-generated art, poems, short stories, and simple guide notes. Journey from the dark ages through the digital revolution and into the speculative future of design, with unconventional wisdom not taught in design schools.
-              </p>
-              <div className="grid grid-cols-3 gap-8">
-                <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-yellow-600 mb-4"></div>
-                  <span className="text-4xl font-black text-zinc-900 mb-2">12</span>
-                  <p className="text-zinc-500 text-sm uppercase tracking-wider">Visual Sections</p>
+            <h2 className="text-3xl font-bold text-zinc-900 mb-6">About The Book</h2>
+            <p className="text-lg text-zinc-600 mb-8">
+              The Haven Design Book "Cavemen and Onlyfans Girls" is a premium hardcover collection of visual references and secret design principles. This $340 collector's item features high-quality full-page print images spanning graphic designs, photography, AI-generated art, poems, short stories, and simple guide notes. Journey from the dark ages through the digital revolution and into the speculative future of design, with unconventional wisdom not taught in design schools.
+            </p>
+            <div className="grid grid-cols-3 gap-8">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center mb-4 shadow-md">
+                  <span className="text-white font-bold text-xl">12</span>
                 </div>
-                <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-zinc-900 mb-4"></div>
-                  <span className="text-4xl font-black text-zinc-900 mb-2">240</span>
-                  <p className="text-zinc-500 text-sm uppercase tracking-wider">Pages</p>
+                <p className="text-zinc-700 font-medium">Visual Sections</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-4 shadow-md">
+                  <span className="text-white font-bold text-xl">240</span>
                 </div>
-                <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-pink-600 mb-4"></div>
-                  <span className="text-4xl font-black text-zinc-900 mb-2">∞</span>
-                  <p className="text-zinc-500 text-sm uppercase tracking-wider">Inspirations</p>
+                <p className="text-zinc-700 font-medium">Pages</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center mb-4 shadow-md">
+                  <span className="text-white font-bold text-xl">∞</span>
                 </div>
+                <p className="text-zinc-700 font-medium">Inspirations</p>
               </div>
             </div>
           </motion.div>
           
           {/* Featured Visual Content */}
-          <div id="sections" className="mb-32">
+          <div id="chapters" className="mb-24">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="mb-16 relative"
+              className="text-center mb-12"
             >
-              <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">02</span>
-              <div className="relative">
-                <h2 className="text-5xl font-black text-zinc-900 mb-4 uppercase tracking-tight">VISUAL CONTENT</h2>
-                <p className="text-lg text-zinc-600 max-w-2xl font-light border-l-2 border-yellow-600 pl-4">
-                  Explore the diverse visual categories that make up our premium hardcover collection.
-                </p>
-              </div>
+              <h2 className="text-3xl font-bold text-zinc-900 mb-4">Visual Content</h2>
+              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                Explore the diverse visual categories that make up our premium hardcover collection.
+              </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   number: "01",
-                  title: "PHOTOGRAPHY",
+                  title: "Photography",
                   description: "Stunning high-resolution photography spanning landscapes, portraits, and conceptual imagery.",
-                  color: "border-l-yellow-600"
+                  color: "from-purple-400 to-indigo-500 text-white",
+                  icon: "📸"
                 },
                 {
                   number: "02",
-                  title: "GRAPHIC DESIGN",
+                  title: "Graphic Design",
                   description: "Bold visual compositions exploring typography, color theory, and layout principles.",
-                  color: "border-l-zinc-900"
+                  color: "from-emerald-400 to-teal-500 text-white",
+                  icon: "✏️"
                 },
                 {
                   number: "03",
-                  title: "AI-GENERATED ART",
+                  title: "AI-Generated Art",
                   description: "Cutting-edge imagery created through various AI platforms pushing creative boundaries.",
-                  color: "border-l-pink-600"
+                  color: "from-orange-400 to-amber-500 text-white",
+                  icon: "🤖"
                 },
                 {
                   number: "04",
-                  title: "HISTORICAL REFERENCES",
+                  title: "Historical References",
                   description: "Visual journey through artistic expressions from the dark ages to contemporary times.",
-                  color: "border-l-yellow-600"
+                  color: "from-sky-400 to-blue-500 text-white",
+                  icon: "🏺"
                 },
                 {
                   number: "05",
-                  title: "POEMS & STORIES",
+                  title: "Poems & Stories",
                   description: "Visual typography and illustrated short-form literature that complements the imagery.",
-                  color: "border-l-zinc-900"
+                  color: "from-pink-400 to-rose-500 text-white",
+                  icon: "📝"
                 },
                 {
                   number: "06",
-                  title: "FUTURE CONCEPTS",
+                  title: "Future Concepts",
                   description: "Speculative visual designs exploring how aesthetics might evolve in coming decades.",
-                  color: "border-l-pink-600"
+                  color: "from-violet-400 to-purple-500 text-white",
+                  icon: "🔮"
                 }
               ].map((content, index) => (
                 <motion.div
@@ -305,17 +307,20 @@ export default function DesignBookPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group"
+                  className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div className={`p-8 border-l-4 ${content.color} bg-zinc-100 hover:bg-zinc-200 transition-all duration-300`}>
+                  <div className={`bg-gradient-to-r ${content.color} p-6`}>
                     <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-black text-zinc-900 uppercase tracking-tight">{content.title}</h3>
-                      <span className="text-zinc-400 font-black">{content.number}</span>
+                      <span className="text-2xl">{content.icon}</span>
+                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-sm">
+                        <span className="text-white font-medium text-sm">{content.number}</span>
+                      </div>
                     </div>
-                    <p className="text-zinc-600 mb-6">{content.description}</p>
+                    <h3 className="text-xl font-bold mb-2">{content.title}</h3>
+                    <p className="text-white/90 text-sm mb-4">{content.description}</p>
                     <div className="flex justify-end">
-                      <div className="text-xs uppercase tracking-widest text-zinc-500 group-hover:text-yellow-600 transition-colors duration-300">
-                        View Examples
+                      <div className="bg-white/20 rounded-full px-3 py-1 text-xs backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
+                        Explore
                       </div>
                     </div>
                   </div>
@@ -330,23 +335,17 @@ export default function DesignBookPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-zinc-100 border border-zinc-200 p-16 relative overflow-hidden"
+            className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white rounded-xl p-12 text-center shadow-xl"
           >
-            <div className="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
-              <div className="w-full h-full bg-yellow-600 -skew-x-12 -ml-32 opacity-10"></div>
-            </div>
-            
-            <div className="relative z-10">
-              <h2 className="text-5xl font-black text-zinc-900 mb-6 uppercase tracking-tight">PRE-ORDER NOW</h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mb-8 font-light">
-                Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
-              </p>
-              <Link href="/contact" className="inline-block">
-                <button className="px-10 py-4 bg-zinc-900 text-white rounded-none hover:bg-zinc-800 transition-colors uppercase tracking-wide text-sm font-bold">
-                  PRE-ORDER — $340
-                </button>
-              </Link>
-            </div>
+            <h2 className="text-3xl font-bold mb-4">Ready to pre-order our visual journey?</h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+              Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
+            </p>
+            <Link href="/contact" className="inline-block">
+              <button className="px-8 py-3 bg-white text-pink-600 rounded-full hover:bg-white/90 transition-colors group relative overflow-hidden font-medium">
+                <span className="relative z-10">Pre-Order Now — $340</span>
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
