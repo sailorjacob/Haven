@@ -196,22 +196,6 @@ export default function DesignBookPage() {
                       <Hexagon className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
-                  
-                  <div className="text-center">
-                    <div className="uppercase tracking-[0.5em] text-xs font-light mb-4 text-zinc-500">Haven Studio</div>
-                    <div className="flex flex-col items-center">
-                      <h2 className="text-red-500 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
-                      <div className="h-px w-12 bg-amber-700 my-2"></div>
-                      <h2 className="text-5xl md:text-6xl font-black uppercase">
-                        <span className="text-zinc-400">ONLY</span><span className="text-yellow-400">FANS</span>
-                      </h2>
-                      <h2 className="text-5xl md:text-6xl font-black text-pink-500 uppercase">GIRLS</h2>
-                    </div>
-                  </div>
-                  
-                  <div className="text-zinc-500 text-xs uppercase tracking-widest text-center">
-                    Hardcover • Visual Journey • $997
-                  </div>
                 </div>
               </div>
               
