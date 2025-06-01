@@ -5,12 +5,16 @@ import { useEffect, useState } from "react"
 
 // Bright, bold colors for the stars
 const starColors = [
+  "#f5f5f5", // Silver/white
+  "#e0e0e0", // Lighter silver
+  "#d0d0d0", // Light silver
+  "#c0c0c0", // Silver
+  "#f8f8f8", // Almost white
+  "#ffffff", // Pure white
+  "#00ff00", // Neon green
   "#ff0000", // Pure red
-  "#00ff00", // Pure green
-  "#00ffff", // Neon cyan
-  "#ffd700", // Construction yellow
-  "#ff00ff", // Pure magenta
-  "#800080", // Purple
+  "#ffd700", // Yellow
+  "#00bfff", // Sky blue
 ]
 
 interface Star {
@@ -23,6 +27,23 @@ interface Star {
   delay: number
 }
 
+// Function to select colors with higher probability for silver/white
+const getRandomStarColor = () => {
+  // 80% chance of selecting a silver/white color (indices 0-5)
+  // 20% chance of selecting a bright neon color (indices 6-9)
+  const silverOrNeon = Math.random() < 0.8 ? 'silver' : 'neon';
+  
+  if (silverOrNeon === 'silver') {
+    // Select from silver/white colors (indices 0-5)
+    const silverIndex = Math.floor(Math.random() * 6);
+    return starColors[silverIndex];
+  } else {
+    // Select from neon colors (indices 6-9)
+    const neonIndex = Math.floor(Math.random() * 4) + 6;
+    return starColors[neonIndex];
+  }
+}
+
 export default function AnimatedStars() {
   const [stars, setStars] = useState<Star[]>([])
 
@@ -33,7 +54,7 @@ export default function AnimatedStars() {
       x: -20, // Start from left side
       y: Math.random() * 100, // Random y position (0-100%)
       size: Math.random() * 30 + 20, // Random size between 20-50px
-      color: starColors[Math.floor(Math.random() * starColors.length)],
+      color: getRandomStarColor(),
       duration: Math.random() * 2 + 2, // Random duration between 2-4s
       delay: Math.random() * 1, // Random delay between 0-1s
     }))
@@ -47,7 +68,7 @@ export default function AnimatedStars() {
           x: -20, // Start from left side
           y: Math.random() * 100,
           size: Math.random() * 30 + 20,
-          color: starColors[Math.floor(Math.random() * starColors.length)],
+          color: getRandomStarColor(),
           duration: Math.random() * 2 + 2,
           delay: 0,
         }
