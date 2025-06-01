@@ -130,22 +130,22 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
-                <span className="text-sky-500">Cavemen</span> and <span className="text-pink-500">Onlyfans Girls</span>
+                <span className="text-red-600">Cavemen</span> and <span className="text-red-600">Onlyfans Girls</span>
               </h1>
               <p className="text-lg text-zinc-600 mb-8">
-                A rare collection of art references and secret design principles that drive our creative process. Filled with hidden techniques and unconventional wisdom not taught in design schools.
+                A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#chapters">
-                  <button className="px-8 py-3 bg-zinc-900 text-white rounded-full flex items-center hover:bg-zinc-800 transition-colors">
-                    Explore Chapters
+                  <button className="px-8 py-3 bg-red-600 text-white rounded-full flex items-center hover:bg-red-700 transition-colors">
+                    Explore Contents
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </button>
                 </Link>
                 <Link href="/contact">
                   <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-full hover:bg-zinc-50 transition-colors">
-                    Request PDF Copy
+                    Pre-Order Now — $340
                   </button>
                 </Link>
               </div>
@@ -164,10 +164,9 @@ export default function DesignBookPage() {
                 <div className="absolute inset-0 flex flex-col justify-between p-8">
                   <div className="flex justify-between items-start">
                     <div className="flex items-center">
-                      <BookOpen className="w-6 h-6 text-zinc-800 opacity-80" />
-                      <div className="ml-2 text-zinc-800/80 font-light text-sm">Limited Edition</div>
+                      <div className="text-zinc-800/80 font-medium text-sm">Limited Edition Pre-Order</div>
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-pink-400 flex items-center justify-center">
+                    <div className="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center">
                       <Hexagon className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
@@ -175,18 +174,18 @@ export default function DesignBookPage() {
                   <div className="text-center my-12">
                     <div className="text-zinc-800/80 uppercase tracking-widest text-xs font-light mb-2">Haven Studio</div>
                     <h2 className="text-zinc-900 font-bold text-2xl md:text-3xl mb-2">Cavemen & Onlyfans Girls</h2>
-                    <div className="h-0.5 w-20 bg-zinc-800/30 mx-auto"></div>
+                    <div className="h-0.5 w-20 bg-zinc-400 mx-auto"></div>
                   </div>
                   
                   <div className="text-zinc-800/80 text-sm font-light">
-                    Art References • Secret Principles • $240
+                    Hardcover • Visual Journey • $340
                   </div>
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-pink-100 rounded-lg -z-10"></div>
-              <div className="absolute -left-4 -top-4 w-32 h-32 bg-yellow-100 rounded-lg -z-10"></div>
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-red-100 rounded-lg -z-10"></div>
+              <div className="absolute -left-4 -top-4 w-32 h-32 bg-zinc-200 rounded-lg -z-10"></div>
             </motion.div>
           </div>
           
@@ -200,24 +199,24 @@ export default function DesignBookPage() {
           >
             <h2 className="text-3xl font-bold text-zinc-900 mb-6">About The Book</h2>
             <p className="text-lg text-zinc-600 mb-8">
-              The Haven Design Book "Cavemen and Onlyfans Girls" distills years of design expertise into a comprehensive guide with rare art references and secret principles for creating exceptional digital experiences. Featuring unconventional wisdom and techniques not taught in design schools, this $240 collector's item is essential for designers, developers, and creative professionals seeking insider knowledge.
+              The Haven Design Book "Cavemen and Onlyfans Girls" is a premium hardcover collection of visual references and secret design principles. This $340 collector's item features high-quality full-page print images spanning graphic designs, photography, AI-generated art, poems, short stories, and simple guide notes. Journey from the dark ages through the digital revolution and into the speculative future of design, with unconventional wisdom not taught in design schools.
             </p>
             <div className="grid grid-cols-3 gap-8">
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mb-4">
-                  <span className="text-pink-600 font-medium">16</span>
+                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                  <span className="text-red-600 font-medium">16</span>
                 </div>
                 <p className="text-zinc-600">Chapters</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                  <span className="text-yellow-600 font-medium">240</span>
+                <div className="w-12 h-12 rounded-full bg-zinc-200 flex items-center justify-center mb-4">
+                  <span className="text-zinc-800 font-medium">240</span>
                 </div>
                 <p className="text-zinc-600">Pages</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-4">
-                  <span className="text-zinc-600 font-medium">∞</span>
+                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                  <span className="text-red-600 font-medium">∞</span>
                 </div>
                 <p className="text-zinc-600">Insights</p>
               </div>
@@ -245,37 +244,37 @@ export default function DesignBookPage() {
                   number: "01",
                   title: "Design Philosophy",
                   description: "Our core design principles and the values that guide our creative decisions.",
-                  color: "bg-pink-50 border-pink-100"
+                  color: "bg-red-50 border-red-100"
                 },
                 {
                   number: "04",
                   title: "Visual Systems",
                   description: "How we create cohesive visual languages that communicate brand identity.",
-                  color: "bg-yellow-50 border-yellow-100"
+                  color: "bg-zinc-100 border-zinc-200"
                 },
                 {
                   number: "07",
                   title: "User Experience",
                   description: "Strategies for creating intuitive, meaningful interactions that delight users.",
-                  color: "bg-zinc-50 border-zinc-100"
+                  color: "bg-red-50 border-red-100"
                 },
                 {
                   number: "12",
                   title: "Design Tools",
                   description: "The software, frameworks, and methodologies we use in our design process.",
-                  color: "bg-indigo-50 border-indigo-100"
+                  color: "bg-zinc-100 border-zinc-200"
                 },
                 {
                   number: "15",
                   title: "Case Studies",
                   description: "Real-world examples of our design principles applied to client projects.",
-                  color: "bg-green-50 border-green-100"
+                  color: "bg-red-50 border-red-100"
                 },
                 {
                   number: "16",
                   title: "Future Directions",
                   description: "Emerging trends and technologies shaping the future of digital design.",
-                  color: "bg-rose-50 border-rose-100"
+                  color: "bg-zinc-100 border-zinc-200"
                 }
               ].map((chapter, index) => (
                 <motion.div
@@ -303,15 +302,15 @@ export default function DesignBookPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-zinc-50 text-zinc-900 rounded-xl p-12 text-center"
+            className="bg-zinc-100 text-zinc-900 rounded-xl p-12 text-center"
           >
-            <h2 className="text-3xl font-bold mb-4">Ready to unlock our secret design principles?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to pre-order our visual journey?</h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
-              Request your copy of "Cavemen and Onlyfans Girls" for $240 and discover the unconventional methodologies that help us create exceptional digital experiences.
+              Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
             </p>
             <Link href="/contact" className="inline-block">
-              <button className="px-8 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors">
-                Purchase Design Book
+              <button className="px-8 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+                Pre-Order Now — $340
               </button>
             </Link>
           </motion.div>
