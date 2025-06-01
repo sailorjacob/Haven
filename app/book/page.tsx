@@ -180,23 +180,15 @@ export default function DesignBookPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <div className="relative inline-block">
-                  {/* Styled container for Stripe button */}
-                  <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-200 relative z-10 bg-white">
-                    <div id="stripe-button-container" className="w-[240px] h-[48px]">
-                      {stripeLoaded && (
-                        // @ts-ignore - Stripe custom element
-                        <stripe-buy-button
-                          buy-button-id="buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
-                          publishable-key="pk_live_51RU878LW3qNGE5Nr0cXX4p3pqKFI8M1LtplAMOhlQTysHn36426EANMjlgzjArXWz4MU9TLFxe8VSSxjRNfJv7pP00Hp8rIbaG"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute -right-1 -bottom-1 w-full h-full bg-blue-100 rounded-lg -z-10"></div>
-                  <div className="absolute -left-1 -top-1 w-full h-full bg-zinc-100 rounded-lg -z-20"></div>
+                {/* Simplified Stripe button container */}
+                <div className="relative stripe-button-container">
+                  {stripeLoaded && (
+                    // @ts-ignore - Stripe custom element
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
+                      publishable-key="pk_live_51RU878LW3qNGE5Nr0cXX4p3pqKFI8M1LtplAMOhlQTysHn36426EANMjlgzjArXWz4MU9TLFxe8VSSxjRNfJv7pP00Hp8rIbaG"
+                    />
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -397,6 +389,28 @@ export default function DesignBookPage() {
           window.dispatchEvent(new Event('stripe-loaded'))
         }}
       />
+
+      {/* Stripe styling */}
+      <style jsx global>{`
+        .stripe-button-container {
+          min-width: 240px;
+        }
+        stripe-buy-button {
+          --stripe-button-font-family: sans-serif;
+          --stripe-button-border-radius: 0;
+          --stripe-button-color: #1f2937;
+          --stripe-button-background-color: white;
+          --stripe-button-height: 48px;
+          --stripe-button-border: 1px solid #e4e4e7;
+          --stripe-button-text-transform: uppercase;
+          --stripe-button-font-weight: 500;
+          --stripe-button-letter-spacing: 0.05em;
+          --stripe-button-box-shadow: none;
+        }
+        stripe-buy-button:hover {
+          --stripe-button-background-color: #f9fafb;
+        }
+      `}</style>
     </main>
   )
 } 
