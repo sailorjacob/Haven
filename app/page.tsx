@@ -439,7 +439,7 @@ export default function HomePage() {
                 className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
               >
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-sky-500 via-sky-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 />
@@ -448,7 +448,7 @@ export default function HomePage() {
                     <Code className="w-6 h-6 text-zinc-700" />
                   </div>
                   <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
-                  <p className="text-zinc-600 leading-relaxed">
+                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
                     Custom web applications built with modern frameworks 
                     and performance-focused architecture.
                   </p>
@@ -463,7 +463,7 @@ export default function HomePage() {
                 className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
               >
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-green-500 via-green-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 />
@@ -472,7 +472,7 @@ export default function HomePage() {
                     <Palette className="w-6 h-6 text-zinc-700" />
                   </div>
                   <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
-                  <p className="text-zinc-600 leading-relaxed">
+                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
                     Minimalist, elegant interfaces that elevate brands with 
                     thoughtful interactions and premium aesthetics.
                   </p>
@@ -487,7 +487,7 @@ export default function HomePage() {
                 className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
               >
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-red-500 via-red-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 />
@@ -496,7 +496,7 @@ export default function HomePage() {
                     <Zap className="w-6 h-6 text-zinc-700" />
                   </div>
                   <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
-                  <p className="text-zinc-600 leading-relaxed">
+                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
                     Comprehensive digital solutions that align with business 
                     goals and create meaningful user experiences.
                   </p>
@@ -757,7 +757,7 @@ export default function HomePage() {
                 Start Your Project
               </h2>
               <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
-                Ready to bring your digital vision to life? Let's create something exceptional together.
+                Ready to bring your digital vision to life? Let's create something exceptional.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
