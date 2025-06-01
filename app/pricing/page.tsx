@@ -40,6 +40,9 @@ export default function PricingPage() {
     { name: "Branding", included: true },
     { name: "Display Ads", included: true },
     { name: "User Interface", included: true },
+    { name: "eCommerce", included: true },
+    { name: "Illustrations", included: true },
+    { name: "Infographics", included: true },
   ]
 
   const faqs = [
@@ -295,7 +298,7 @@ export default function PricingPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.name}
