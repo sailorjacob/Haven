@@ -188,40 +188,39 @@ export default function AdvertisingPage() {
         </AnimatePresence>
       </header>
 
-      {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-20 px-0">
-        {/* Big Animated Text */}
-        <div className="relative z-20 py-6 overflow-hidden w-full">
-          <div className="overflow-hidden">
+      {/* Animated Text Overlay */}
+      <motion.div 
+        className="fixed inset-0 z-[999] flex items-center justify-center bg-white animated-overlay"
+        initial={{ opacity: 1 }}
+        animate={{ 
+          opacity: [1, 1, 0],
+        }}
+        transition={{ 
+          times: [0, 0.85, 1],
+          duration: 5.5,
+          ease: "easeInOut"
+        }}
+      >
+        <div className="relative w-full h-full flex items-center justify-center">
+          {/* Big Red Text */}
+          <div className="overflow-hidden text-center">
             <motion.h1 
-              className="text-7xl sm:text-9xl md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-500 to-orange-500 uppercase tracking-tighter leading-none px-2 w-full"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              className="text-7xl sm:text-[10rem] md:text-[16rem] font-black text-[#ff0000] uppercase tracking-tighter leading-none px-2 w-full"
               style={{
-                filter: "saturate(1.5) brightness(1.2)",
-                letterSpacing: "-0.05em",
-                lineHeight: "0.9"
+                lineHeight: "0.9",
               }}
             >
               {/* Animated text that types out */}
               {'F#CKING THE ADS GAME UP'.split('').map((char, index) => (
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{ 
-                    duration: 0.4, 
-                    delay: index * 0.05,
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 10
+                    duration: 0.05, 
+                    delay: index * 0.15,
                   }}
                   className="inline-block"
-                  style={{ 
-                    textShadow: "0 0 25px rgba(255, 50, 20, 0.7)",
-                    WebkitTextStroke: "2px rgba(255, 80, 0, 0.5)"
-                  }}
                 >
                   {char === ' ' ? '\u00A0' : char}
                 </motion.span>
@@ -229,24 +228,53 @@ export default function AdvertisingPage() {
             </motion.h1>
           </div>
           
-          {/* NO MERCY text - creatively positioned */}
+          {/* NO MERCY text - with slapping animation */}
           <motion.div
-            className="absolute -bottom-6 right-10 rotate-12 z-30"
-            initial={{ opacity: 0, scale: 0.8, rotate: 20 }}
-            animate={{ opacity: 1, scale: 1, rotate: 12 }}
+            className="absolute bottom-[15%] right-[10%] z-30 rotate-6"
+            initial={{ opacity: 0, x: 1000, rotate: 25, scale: 2 }}
+            animate={{ opacity: 1, x: 0, rotate: 6, scale: 1 }}
             transition={{ 
-              duration: 0.8,
-              delay: 2.2,
-              type: "spring"
+              type: "spring",
+              stiffness: 600,
+              damping: 20,
+              delay: 4,
+              duration: 0.3
+            }}
+            onAnimationComplete={() => {
+              // When NO MERCY animation completes, trigger the overlay to disappear almost immediately
+              const overlay = document.querySelector('.animated-overlay');
+              if (overlay) {
+                overlay.classList.add('animate-disappear');
+              }
             }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-green-500 uppercase tracking-tight px-4 py-1 bg-black/5 backdrop-blur-sm rounded-md border-2 border-green-500/30">
+            <h2 
+              className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tight"
+              style={{ 
+                color: '#0f0',
+                filter: 'brightness(1.5)',
+                textShadow: '0 0 15px rgba(0, 255, 0, 0.7)'
+              }}
+            >
               NO MERCY
             </h2>
           </motion.div>
         </div>
-        
-        <div className="container max-w-6xl mx-auto space-y-10 px-6">
+      </motion.div>
+
+      <style jsx global>{`
+        .animate-disappear {
+          animation: disappear 0.2s forwards;
+        }
+        @keyframes disappear {
+          0% { opacity: 1; }
+          100% { opacity: 0; display: none; }
+        }
+      `}</style>
+
+      {/* Single Combined Section - All Content Flows Together */}
+      <section className="relative z-10 pt-20 px-6">
+        <div className="container max-w-6xl mx-auto space-y-10">
           {/* Hero Section */}
           <div className="pt-8">
             <motion.div
