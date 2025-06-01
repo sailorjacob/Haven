@@ -24,12 +24,16 @@ export default function HomePage() {
   
   // Function to get a random highlight color
   const getRandomHighlightColor = () => {
-    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
+    const colors = ['bg-green-500', 'bg-red-500', 'bg-yellow-400'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
   
   // State to track hover for pricing button
   const [isPricingHovered, setPricingHovered] = useState(false);
+  
+  // For CTA highlight colors
+  const [ctaColor1] = useState(getRandomHighlightColor());
+  const [ctaColor2] = useState(getRandomHighlightColor());
   
   const projects: Project[] = [
     {
@@ -736,19 +740,36 @@ export default function HomePage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+                {/* Get Started Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
+                  className="inline-flex items-center border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group border-zinc-300"
+                  style={{ borderColor: ctaColor1.replace('bg-', '') }}
                 >
-                  <span className="mr-2">Get Started</span>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  {/* Highlight background that fills from left on hover */}
+                  <div className={`absolute inset-0 ${ctaColor1} origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
+                  {/* Text content */}
+                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
+                    Get Started
+                  </span>
+                  {/* Arrow icon that appears on hover */}
+                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
                 </Link>
+                {/* Email Us Button */}
                 <Link
                   href="mailto:info@haven.engineer"
-                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300"
+                  className="inline-flex items-center border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group border-zinc-300"
+                  style={{ borderColor: ctaColor2.replace('bg-', '') }}
                 >
-                  <Mail className="w-3 h-3 mr-2" />
-                  Email Us
+                  {/* Highlight background that fills from left on hover */}
+                  <div className={`absolute inset-0 ${ctaColor2} origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
+                  {/* Text content */}
+                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
+                    <Mail className="w-3 h-3 mr-2" />
+                    Email Us
+                  </span>
+                  {/* Arrow icon that appears on hover */}
+                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
                 </Link>
               </div>
 
