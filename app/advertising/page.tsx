@@ -190,7 +190,7 @@ export default function AdvertisingPage() {
 
       {/* Animated Text Overlay */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
+        className="fixed inset-0 z-[999] flex items-center justify-center bg-white animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -204,8 +204,8 @@ export default function AdvertisingPage() {
           }
         }}
       >
-        <div className="relative w-full h-full pt-20 pl-12 z-20">
-          {/* Big Red Text - now top left */}
+        <div className="absolute top-20 left-12 z-20">
+          {/* Big Neon Red Text - top left */}
           <motion.div 
             className="overflow-visible text-left"
             initial={{ opacity: 1 }}
@@ -213,13 +213,18 @@ export default function AdvertisingPage() {
             transition={{ duration: 0.05 }}
           >
             <motion.h1 
-              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black text-red-600 uppercase tracking-tighter leading-none"
-              style={{ lineHeight: "0.9" }}
-              initial={{ opacity: 0 }}
+              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black uppercase tracking-tighter leading-none"
+              style={{ 
+                lineHeight: "0.9", 
+                color: '#ff0000', 
+                filter: 'brightness(1.5) saturate(1.5)',
+                textShadow: '0 0 15px rgba(255, 0, 0, 0.8)'
+              }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.05 }}
             >
-              {/* Animated text that types out */}
+              {/* Animated text with typewriter effect - no fading */}
               {'FUCKING THE ADS GAME UP'.split('').map((char, index) => (
                 <motion.span
                   key={index}
@@ -228,9 +233,9 @@ export default function AdvertisingPage() {
                     opacity: [0, 1, 1, 0],
                   }}
                   transition={{ 
-                    duration: 3, 
+                    duration: 3.5, 
                     delay: index * 0.15,
-                    times: [0, 0.1, 0.7, 1]
+                    times: [0, 0.05, 0.8, 0.81] // Quick appear, stay visible, then instant disappear
                   }}
                   className="inline-block"
                 >
@@ -241,9 +246,9 @@ export default function AdvertisingPage() {
           </motion.div>
         </div>
           
-        {/* NO MERCY text - centered and much bigger */}
+        {/* NO MERCY text - properly centered */}
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 w-full text-center"
+          className="absolute inset-0 flex items-center justify-center z-40"
           initial={{ opacity: 0, scale: 0.2 }}
           animate={{ opacity: 1, scale: [0.2, 1.2, 1] }}
           transition={{ 
@@ -256,8 +261,8 @@ export default function AdvertisingPage() {
             className="text-8xl sm:text-[12rem] md:text-[18rem] font-black uppercase tracking-tight"
             style={{ 
               color: '#00ff00',
-              filter: 'brightness(1.5)',
-              textShadow: '0 0 20px rgba(0, 255, 0, 0.7)'
+              filter: 'brightness(1.7) saturate(1.5)',
+              textShadow: '0 0 25px rgba(0, 255, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.5)'
             }}
           >
             NO MERCY
