@@ -130,7 +130,7 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
-                <span className="text-amber-800 block">CAVEMEN</span>
+                <span className="text-orange-600 block">CAVEMEN</span>
                 <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">AND</span>
                 <span className="block">ONLY<span className="text-yellow-400">FANS</span> <span className="text-pink-500">GIRLS</span></span>
               </h1>
@@ -147,7 +147,7 @@ export default function DesignBookPage() {
                 </Link>
                 <Link href="/contact">
                   <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-none hover:bg-zinc-50 transition-colors uppercase tracking-wide text-sm font-medium">
-                    Pre-Order — $340
+                    Pre-Order — $997
                   </button>
                 </Link>
               </div>
@@ -187,7 +187,7 @@ export default function DesignBookPage() {
                   <div className="text-center">
                     <div className="uppercase tracking-[0.5em] text-xs font-light mb-4 text-zinc-500">Haven Studio</div>
                     <div className="flex flex-col items-center">
-                      <h2 className="text-zinc-900 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
+                      <h2 className="text-orange-600 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
                       <div className="h-px w-12 bg-amber-700 my-2"></div>
                       <h2 className="text-5xl md:text-6xl font-black uppercase">
                         ONLY<span className="text-yellow-400">FANS</span>
@@ -197,7 +197,7 @@ export default function DesignBookPage() {
                   </div>
                   
                   <div className="text-zinc-500 text-xs uppercase tracking-widest text-center">
-                    Hardcover • Visual Journey • $340
+                    Hardcover • Visual Journey • $997
                   </div>
                 </div>
               </div>
@@ -208,146 +208,149 @@ export default function DesignBookPage() {
             </motion.div>
           </div>
           
-          {/* Book Introduction */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto mb-32 relative"
-          >
-            <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">01</span>
-            <div className="relative">
-              <h2 className="text-5xl font-black text-amber-950 mb-8 uppercase tracking-tight">THE BOOK</h2>
-              <p className="text-lg text-amber-800 mb-12 font-light">
-                The Haven Design Book "Cavemen and Onlyfans Girls" is a premium hardcover collection of visual references and secret design principles. This $340 collector's item features high-quality full-page print images spanning graphic designs, photography, AI-generated art, poems, short stories, and simple guide notes. Journey from the dark ages through the digital revolution and into the speculative future of design, with unconventional wisdom not taught in design schools.
-              </p>
-              <div className="grid grid-cols-3 gap-8">
-                <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-amber-700 mb-4"></div>
-                  <span className="text-4xl font-black text-zinc-900 mb-2">12</span>
-                  <p className="text-amber-700 text-sm uppercase tracking-wider">Visual Sections</p>
-                </div>
-                <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-zinc-900 mb-4"></div>
-                  <span className="text-4xl font-black text-zinc-900 mb-2">240</span>
-                  <p className="text-amber-700 text-sm uppercase tracking-wider">Pages</p>
-                </div>
-                <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-pink-500 mb-4"></div>
-                  <span className="text-4xl font-black text-zinc-900 mb-2">∞</span>
-                  <p className="text-amber-700 text-sm uppercase tracking-wider">Inspirations</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Featured Visual Content */}
-          <div id="chapters" className="mb-32">
+          {/* Hidden sections */}
+          <div className="hidden">
+            {/* Book Introduction */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="mb-16 relative"
+              className="max-w-4xl mx-auto mb-32 relative"
             >
-              <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">02</span>
+              <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">01</span>
               <div className="relative">
-                <h2 className="text-5xl font-black text-amber-950 mb-4 uppercase tracking-tight">VISUAL CONTENT</h2>
-                <p className="text-lg text-amber-800 max-w-2xl font-light border-l-2 border-amber-700 pl-4">
-                  Explore the diverse visual categories that make up our premium hardcover collection.
+                <h2 className="text-5xl font-black text-amber-950 mb-8 uppercase tracking-tight">THE BOOK</h2>
+                <p className="text-lg text-amber-800 mb-12 font-light">
+                  The Haven Design Book "Cavemen and Onlyfans Girls" is a premium hardcover collection of visual references and secret design principles. This $997 collector's item features high-quality full-page print images spanning graphic designs, photography, AI-generated art, poems, short stories, and simple guide notes. Journey from the dark ages through the digital revolution and into the speculative future of design, with unconventional wisdom not taught in design schools.
                 </p>
+                <div className="grid grid-cols-3 gap-8">
+                  <div className="flex flex-col items-start">
+                    <div className="w-20 h-1 bg-amber-700 mb-4"></div>
+                    <span className="text-4xl font-black text-zinc-900 mb-2">12</span>
+                    <p className="text-amber-700 text-sm uppercase tracking-wider">Visual Sections</p>
+                  </div>
+                  <div className="flex flex-col items-start">
+                    <div className="w-20 h-1 bg-zinc-900 mb-4"></div>
+                    <span className="text-4xl font-black text-zinc-900 mb-2">240</span>
+                    <p className="text-amber-700 text-sm uppercase tracking-wider">Pages</p>
+                  </div>
+                  <div className="flex flex-col items-start">
+                    <div className="w-20 h-1 bg-pink-500 mb-4"></div>
+                    <span className="text-4xl font-black text-zinc-900 mb-2">∞</span>
+                    <p className="text-amber-700 text-sm uppercase tracking-wider">Inspirations</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  number: "01",
-                  title: "PHOTOGRAPHY",
-                  description: "Stunning high-resolution photography spanning landscapes, portraits, and conceptual imagery.",
-                  color: "border-l-amber-700"
-                },
-                {
-                  number: "02",
-                  title: "GRAPHIC DESIGN",
-                  description: "Bold visual compositions exploring typography, color theory, and layout principles.",
-                  color: "border-l-amber-900"
-                },
-                {
-                  number: "03",
-                  title: "AI-GENERATED ART",
-                  description: "Cutting-edge imagery created through various AI platforms pushing creative boundaries.",
-                  color: "border-l-amber-600"
-                },
-                {
-                  number: "04",
-                  title: "HISTORICAL REFERENCES",
-                  description: "Visual journey through artistic expressions from the dark ages to contemporary times.",
-                  color: "border-l-amber-700"
-                },
-                {
-                  number: "05",
-                  title: "POEMS & STORIES",
-                  description: "Visual typography and illustrated short-form literature that complements the imagery.",
-                  color: "border-l-amber-900"
-                },
-                {
-                  number: "06",
-                  title: "FUTURE CONCEPTS",
-                  description: "Speculative visual designs exploring how aesthetics might evolve in coming decades.",
-                  color: "border-l-amber-600"
-                }
-              ].map((content, index) => (
-                <motion.div
-                  key={content.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className={`p-8 border-l-4 ${content.color} bg-zinc-100 hover:bg-zinc-200 transition-all duration-300`}>
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-black text-amber-950 uppercase tracking-tight">{content.title}</h3>
-                      <span className="text-amber-500 font-black">{content.number}</span>
-                    </div>
-                    <p className="text-amber-800 mb-6">{content.description}</p>
-                    <div className="flex justify-end">
-                      <div className="text-xs uppercase tracking-widest text-amber-700 group-hover:text-amber-900 transition-colors duration-300">
-                        View Examples
+            {/* Featured Visual Content */}
+            <div id="chapters" className="mb-32">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="mb-16 relative"
+              >
+                <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">02</span>
+                <div className="relative">
+                  <h2 className="text-5xl font-black text-amber-950 mb-4 uppercase tracking-tight">VISUAL CONTENT</h2>
+                  <p className="text-lg text-amber-800 max-w-2xl font-light border-l-2 border-amber-700 pl-4">
+                    Explore the diverse visual categories that make up our premium hardcover collection.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  {
+                    number: "01",
+                    title: "PHOTOGRAPHY",
+                    description: "Stunning high-resolution photography spanning landscapes, portraits, and conceptual imagery.",
+                    color: "border-l-amber-700"
+                  },
+                  {
+                    number: "02",
+                    title: "GRAPHIC DESIGN",
+                    description: "Bold visual compositions exploring typography, color theory, and layout principles.",
+                    color: "border-l-amber-900"
+                  },
+                  {
+                    number: "03",
+                    title: "AI-GENERATED ART",
+                    description: "Cutting-edge imagery created through various AI platforms pushing creative boundaries.",
+                    color: "border-l-amber-600"
+                  },
+                  {
+                    number: "04",
+                    title: "HISTORICAL REFERENCES",
+                    description: "Visual journey through artistic expressions from the dark ages to contemporary times.",
+                    color: "border-l-amber-700"
+                  },
+                  {
+                    number: "05",
+                    title: "POEMS & STORIES",
+                    description: "Visual typography and illustrated short-form literature that complements the imagery.",
+                    color: "border-l-amber-900"
+                  },
+                  {
+                    number: "06",
+                    title: "FUTURE CONCEPTS",
+                    description: "Speculative visual designs exploring how aesthetics might evolve in coming decades.",
+                    color: "border-l-amber-600"
+                  }
+                ].map((content, index) => (
+                  <motion.div
+                    key={content.number}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className={`p-8 border-l-4 ${content.color} bg-zinc-100 hover:bg-zinc-200 transition-all duration-300`}>
+                      <div className="flex justify-between items-start mb-4">
+                        <h3 className="text-2xl font-black text-amber-950 uppercase tracking-tight">{content.title}</h3>
+                        <span className="text-amber-500 font-black">{content.number}</span>
+                      </div>
+                      <p className="text-amber-800 mb-6">{content.description}</p>
+                      <div className="flex justify-end">
+                        <div className="text-xs uppercase tracking-widest text-amber-700 group-hover:text-amber-900 transition-colors duration-300">
+                          View Examples
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-zinc-100 border border-zinc-200 p-16 relative overflow-hidden"
-          >
-            <div className="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
-              <div className="w-full h-full bg-amber-700 -skew-x-12 -ml-32 opacity-10"></div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
             
-            <div className="relative z-10">
-              <h2 className="text-5xl font-black text-amber-950 mb-6 uppercase tracking-tight">PRE-ORDER NOW</h2>
-              <p className="text-lg text-amber-800 max-w-2xl mb-8 font-light">
-                Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
-              </p>
-              <Link href="/contact" className="inline-block">
-                <button className="px-10 py-4 bg-amber-700 text-white rounded-none hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-bold">
-                  PRE-ORDER — $340
-                </button>
-              </Link>
-            </div>
-          </motion.div>
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-zinc-100 border border-zinc-200 p-16 relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
+                <div className="w-full h-full bg-amber-700 -skew-x-12 -ml-32 opacity-10"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h2 className="text-5xl font-black text-amber-950 mb-6 uppercase tracking-tight">PRE-ORDER NOW</h2>
+                <p className="text-lg text-amber-800 max-w-2xl mb-8 font-light">
+                  Pre-order your copy of "Cavemen and Onlyfans Girls" for $997 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
+                </p>
+                <Link href="/contact" className="inline-block">
+                  <button className="px-10 py-4 bg-amber-700 text-white rounded-none hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-bold">
+                    PRE-ORDER — $997
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
       
