@@ -12,18 +12,18 @@ export default function DesignBookPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <main className="bg-amber-50 w-full text-zinc-900">
+    <main className="bg-white w-full text-zinc-900">
       {/* Animated Stars */}
       <AnimatedStars />
 
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-50 via-amber-50/90 to-amber-50"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-amber-50/80 backdrop-blur-xl border-b border-amber-200/50">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
@@ -58,7 +58,7 @@ export default function DesignBookPage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/contact"
-                className="hidden md:inline-flex items-center border border-amber-300 hover:bg-amber-100 text-amber-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-amber-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
                 Contact
               </Link>
@@ -68,7 +68,7 @@ export default function DesignBookPage() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 text-amber-800" /> : <Menu className="w-5 h-5 text-amber-800" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </nav>
@@ -82,7 +82,7 @@ export default function DesignBookPage() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-amber-50 border-b border-amber-200/50"
+              className="md:hidden bg-white border-b border-zinc-200"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
@@ -129,10 +129,10 @@ export default function DesignBookPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-7xl font-black text-amber-950 mb-6 leading-none tracking-tight uppercase">
+              <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
                 <span className="text-amber-800 block">CAVEMEN</span>
-                <span className="text-xs tracking-[0.3em] text-amber-700 font-light">AND</span>
-                <span className="block">ONLY<span className="text-amber-600">FANS</span> <span className="text-amber-700">GIRLS</span></span>
+                <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">AND</span>
+                <span className="block">ONLY<span className="text-yellow-400">FANS</span> <span className="text-pink-500">GIRLS</span></span>
               </h1>
               <p className="text-lg text-amber-800 mb-8 font-light border-l-2 border-amber-700 pl-4">
                 A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
@@ -140,13 +140,13 @@ export default function DesignBookPage() {
               
               <div className="flex flex-col sm:flex-row gap-6">
                 <Link href="#chapters">
-                  <button className="px-8 py-3 bg-amber-700 text-amber-50 rounded-none flex items-center hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-medium">
+                  <button className="px-8 py-3 bg-amber-700 text-white rounded-none flex items-center hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-medium">
                     Explore Contents
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </button>
                 </Link>
                 <Link href="/contact">
-                  <button className="px-8 py-3 border border-amber-300 text-amber-900 rounded-none hover:bg-amber-100 transition-colors uppercase tracking-wide text-sm font-medium">
+                  <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-none hover:bg-zinc-50 transition-colors uppercase tracking-wide text-sm font-medium">
                     Pre-Order — $340
                   </button>
                 </Link>
@@ -160,8 +160,8 @@ export default function DesignBookPage() {
               className="relative"
             >
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-100 via-amber-50 to-amber-100">
-                  <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#d6d3d1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-white via-zinc-50 to-zinc-100">
+                  <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 </div>
                 
                 {/* Add the image overlay */}
@@ -177,34 +177,34 @@ export default function DesignBookPage() {
                 <div className="absolute inset-0 flex flex-col justify-between p-8 z-20">
                   <div className="flex justify-between items-start">
                     <div className="flex items-center">
-                      <div className="text-amber-800/80 font-medium text-xs tracking-widest uppercase">Limited Edition</div>
+                      <div className="text-zinc-800/80 font-medium text-xs tracking-widest uppercase">Limited Edition</div>
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-amber-700 flex items-center justify-center">
-                      <Hexagon className="w-5 h-5 text-amber-50" strokeWidth={1.5} />
+                    <div className="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center">
+                      <Hexagon className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
                   
                   <div className="text-center">
-                    <div className="uppercase tracking-[0.5em] text-xs font-light mb-4 text-amber-700">Haven Studio</div>
+                    <div className="uppercase tracking-[0.5em] text-xs font-light mb-4 text-zinc-500">Haven Studio</div>
                     <div className="flex flex-col items-center">
-                      <h2 className="text-amber-950 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
+                      <h2 className="text-zinc-900 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
                       <div className="h-px w-12 bg-amber-700 my-2"></div>
                       <h2 className="text-5xl md:text-6xl font-black uppercase">
-                        ONLY<span className="text-amber-600">FANS</span>
+                        ONLY<span className="text-yellow-400">FANS</span>
                       </h2>
-                      <h2 className="text-5xl md:text-6xl font-black text-amber-700 uppercase">GIRLS</h2>
+                      <h2 className="text-5xl md:text-6xl font-black text-pink-500 uppercase">GIRLS</h2>
                     </div>
                   </div>
                   
-                  <div className="text-amber-700 text-xs uppercase tracking-widest text-center">
+                  <div className="text-zinc-500 text-xs uppercase tracking-widest text-center">
                     Hardcover • Visual Journey • $340
                   </div>
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-amber-200 rounded-none -z-10"></div>
-              <div className="absolute -left-4 -top-4 w-32 h-32 bg-amber-100 rounded-none -z-10"></div>
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-red-100 rounded-none -z-10"></div>
+              <div className="absolute -left-4 -top-4 w-32 h-32 bg-zinc-200 rounded-none -z-10"></div>
             </motion.div>
           </div>
           
@@ -216,7 +216,7 @@ export default function DesignBookPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto mb-32 relative"
           >
-            <span className="absolute -left-8 top-0 text-[200px] font-black text-amber-100 leading-none select-none">01</span>
+            <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">01</span>
             <div className="relative">
               <h2 className="text-5xl font-black text-amber-950 mb-8 uppercase tracking-tight">THE BOOK</h2>
               <p className="text-lg text-amber-800 mb-12 font-light">
@@ -225,17 +225,17 @@ export default function DesignBookPage() {
               <div className="grid grid-cols-3 gap-8">
                 <div className="flex flex-col items-start">
                   <div className="w-20 h-1 bg-amber-700 mb-4"></div>
-                  <span className="text-4xl font-black text-amber-950 mb-2">12</span>
+                  <span className="text-4xl font-black text-zinc-900 mb-2">12</span>
                   <p className="text-amber-700 text-sm uppercase tracking-wider">Visual Sections</p>
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-amber-900 mb-4"></div>
-                  <span className="text-4xl font-black text-amber-950 mb-2">240</span>
+                  <div className="w-20 h-1 bg-zinc-900 mb-4"></div>
+                  <span className="text-4xl font-black text-zinc-900 mb-2">240</span>
                   <p className="text-amber-700 text-sm uppercase tracking-wider">Pages</p>
                 </div>
                 <div className="flex flex-col items-start">
-                  <div className="w-20 h-1 bg-amber-600 mb-4"></div>
-                  <span className="text-4xl font-black text-amber-950 mb-2">∞</span>
+                  <div className="w-20 h-1 bg-pink-500 mb-4"></div>
+                  <span className="text-4xl font-black text-zinc-900 mb-2">∞</span>
                   <p className="text-amber-700 text-sm uppercase tracking-wider">Inspirations</p>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
               className="mb-16 relative"
             >
-              <span className="absolute -left-8 top-0 text-[200px] font-black text-amber-100 leading-none select-none">02</span>
+              <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">02</span>
               <div className="relative">
                 <h2 className="text-5xl font-black text-amber-950 mb-4 uppercase tracking-tight">VISUAL CONTENT</h2>
                 <p className="text-lg text-amber-800 max-w-2xl font-light border-l-2 border-amber-700 pl-4">
@@ -307,7 +307,7 @@ export default function DesignBookPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className={`p-8 border-l-4 ${content.color} bg-amber-50/70 hover:bg-amber-100 transition-all duration-300`}>
+                  <div className={`p-8 border-l-4 ${content.color} bg-zinc-100 hover:bg-zinc-200 transition-all duration-300`}>
                     <div className="flex justify-between items-start mb-4">
                       <h3 className="text-2xl font-black text-amber-950 uppercase tracking-tight">{content.title}</h3>
                       <span className="text-amber-500 font-black">{content.number}</span>
@@ -330,7 +330,7 @@ export default function DesignBookPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-amber-100/80 border border-amber-200 p-16 relative overflow-hidden"
+            className="bg-zinc-100 border border-zinc-200 p-16 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
               <div className="w-full h-full bg-amber-700 -skew-x-12 -ml-32 opacity-10"></div>
@@ -342,7 +342,7 @@ export default function DesignBookPage() {
                 Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
               </p>
               <Link href="/contact" className="inline-block">
-                <button className="px-10 py-4 bg-amber-700 text-amber-50 rounded-none hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-bold">
+                <button className="px-10 py-4 bg-amber-700 text-white rounded-none hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-bold">
                   PRE-ORDER — $340
                 </button>
               </Link>

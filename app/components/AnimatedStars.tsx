@@ -3,18 +3,18 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
-// Rustic, warm colors for the stars
+// Bright, bold colors for the stars
 const starColors = [
-  "#f5f5dc", // Beige
-  "#d2b48c", // Tan
-  "#b8860b", // Dark goldenrod
-  "#cd853f", // Peru
-  "#deb887", // Burlywood
-  "#d2691e", // Chocolate
-  "#a0522d", // Sienna
-  "#8b4513", // Saddle brown
-  "#f4a460", // Sandy brown
-  "#ffd700", // Gold
+  "#f5f5f5", // Silver/white
+  "#e0e0e0", // Lighter silver
+  "#d0d0d0", // Light silver
+  "#c0c0c0", // Silver
+  "#f8f8f8", // Almost white
+  "#ffffff", // Pure white
+  "#00ff00", // Neon green
+  "#ff0000", // Pure red
+  "#ffd700", // Yellow
+  "#00bfff", // Sky blue
 ]
 
 interface Star {
@@ -27,20 +27,20 @@ interface Star {
   delay: number
 }
 
-// Function to select colors with higher probability for beige/tan tones
+// Function to select colors with higher probability for silver/white
 const getRandomStarColor = () => {
-  // 80% chance of selecting a beige/tan color (indices 0-5)
-  // 20% chance of selecting a darker brown or gold (indices 6-9)
-  const lightOrDark = Math.random() < 0.8 ? 'light' : 'dark';
+  // 80% chance of selecting a silver/white color (indices 0-5)
+  // 20% chance of selecting a bright neon color (indices 6-9)
+  const silverOrNeon = Math.random() < 0.8 ? 'silver' : 'neon';
   
-  if (lightOrDark === 'light') {
-    // Select from lighter colors (indices 0-5)
-    const lightIndex = Math.floor(Math.random() * 6);
-    return starColors[lightIndex];
+  if (silverOrNeon === 'silver') {
+    // Select from silver/white colors (indices 0-5)
+    const silverIndex = Math.floor(Math.random() * 6);
+    return starColors[silverIndex];
   } else {
-    // Select from darker colors (indices 6-9)
-    const darkIndex = Math.floor(Math.random() * 4) + 6;
-    return starColors[darkIndex];
+    // Select from neon colors (indices 6-9)
+    const neonIndex = Math.floor(Math.random() * 4) + 6;
+    return starColors[neonIndex];
   }
 }
 
@@ -92,8 +92,8 @@ export default function AnimatedStars() {
             height: star.size,
             backgroundColor: star.color,
             clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-            filter: "drop-shadow(0 0 8px currentColor)",
-            opacity: 0.7,
+            filter: "drop-shadow(0 0 12px currentColor)",
+            opacity: 0.9,
           }}
           initial={{ 
             opacity: 0,
@@ -102,7 +102,7 @@ export default function AnimatedStars() {
             x: 0,
           }}
           animate={{ 
-            opacity: [0, 0.7, 0.7, 0],
+            opacity: [0, 0.9, 0.9, 0],
             scale: [0.5, 1.2, 1, 0.8],
             rotate: 360,
             x: "120vw", // Move to right side of viewport
