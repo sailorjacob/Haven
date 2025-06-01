@@ -130,10 +130,10 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
-                The Haven <span className="text-sky-500">Design Book</span>
+                <span className="text-sky-500">Cavemen</span> and <span className="text-pink-500">Onlyfans Girls</span>
               </h1>
               <p className="text-lg text-zinc-600 mb-8">
-                A comprehensive guide to our design principles, methodologies, and best practices that drive our creative process.
+                A rare collection of art references and secret design principles that drive our creative process. Filled with hidden techniques and unconventional wisdom not taught in design schools.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -158,34 +158,34 @@ export default function DesignBookPage() {
               className="relative"
             >
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-zinc-900 via-zinc-800 to-zinc-900">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white via-zinc-50 to-zinc-100">
                   <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 </div>
                 <div className="absolute inset-0 flex flex-col justify-between p-8">
                   <div className="flex justify-between items-start">
                     <div className="flex items-center">
-                      <BookOpen className="w-6 h-6 text-white opacity-80" />
-                      <div className="ml-2 text-white/80 font-light text-sm">First Edition</div>
+                      <BookOpen className="w-6 h-6 text-zinc-800 opacity-80" />
+                      <div className="ml-2 text-zinc-800/80 font-light text-sm">Limited Edition</div>
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-sky-500 flex items-center justify-center">
+                    <div className="h-8 w-8 rounded-full bg-pink-400 flex items-center justify-center">
                       <Hexagon className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
                   
                   <div className="text-center my-12">
-                    <div className="text-white/80 uppercase tracking-widest text-xs font-light mb-2">Haven Studio</div>
-                    <h2 className="text-white font-bold text-2xl md:text-3xl mb-2">Design Book</h2>
-                    <div className="h-0.5 w-20 bg-white/30 mx-auto"></div>
+                    <div className="text-zinc-800/80 uppercase tracking-widest text-xs font-light mb-2">Haven Studio</div>
+                    <h2 className="text-zinc-900 font-bold text-2xl md:text-3xl mb-2">Cavemen & Onlyfans Girls</h2>
+                    <div className="h-0.5 w-20 bg-zinc-800/30 mx-auto"></div>
                   </div>
                   
-                  <div className="text-white/80 text-sm font-light">
-                    Principles • Methods • Case Studies
+                  <div className="text-zinc-800/80 text-sm font-light">
+                    Art References • Secret Principles • $240
                   </div>
                 </div>
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-sky-100 rounded-lg -z-10"></div>
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-pink-100 rounded-lg -z-10"></div>
               <div className="absolute -left-4 -top-4 w-32 h-32 bg-yellow-100 rounded-lg -z-10"></div>
             </motion.div>
           </div>
@@ -200,12 +200,12 @@ export default function DesignBookPage() {
           >
             <h2 className="text-3xl font-bold text-zinc-900 mb-6">About The Book</h2>
             <p className="text-lg text-zinc-600 mb-8">
-              The Haven Design Book distills years of design expertise into a comprehensive guide for creating exceptional digital experiences. Whether you're a designer, developer, or client, this book provides valuable insights into our creative process.
+              The Haven Design Book "Cavemen and Onlyfans Girls" distills years of design expertise into a comprehensive guide with rare art references and secret principles for creating exceptional digital experiences. Featuring unconventional wisdom and techniques not taught in design schools, this $240 collector's item is essential for designers, developers, and creative professionals seeking insider knowledge.
             </p>
             <div className="grid grid-cols-3 gap-8">
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center mb-4">
-                  <span className="text-sky-600 font-medium">16</span>
+                <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mb-4">
+                  <span className="text-pink-600 font-medium">16</span>
                 </div>
                 <p className="text-zinc-600">Chapters</p>
               </div>
@@ -245,7 +245,7 @@ export default function DesignBookPage() {
                   number: "01",
                   title: "Design Philosophy",
                   description: "Our core design principles and the values that guide our creative decisions.",
-                  color: "bg-sky-50 border-sky-100"
+                  color: "bg-pink-50 border-pink-100"
                 },
                 {
                   number: "04",
@@ -303,15 +303,15 @@ export default function DesignBookPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-zinc-900 text-white rounded-xl p-12 text-center"
+            className="bg-zinc-50 text-zinc-900 rounded-xl p-12 text-center"
           >
-            <h2 className="text-3xl font-bold mb-4">Ready to explore our design principles?</h2>
-            <p className="text-lg text-zinc-300 max-w-2xl mx-auto mb-8">
-              Request a copy of our design book and discover the methodologies that help us create exceptional digital experiences.
+            <h2 className="text-3xl font-bold mb-4">Ready to unlock our secret design principles?</h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
+              Request your copy of "Cavemen and Onlyfans Girls" for $240 and discover the unconventional methodologies that help us create exceptional digital experiences.
             </p>
             <Link href="/contact" className="inline-block">
-              <button className="px-8 py-3 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition-colors">
-                Request Design Book
+              <button className="px-8 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors">
+                Purchase Design Book
               </button>
             </Link>
           </motion.div>
