@@ -173,7 +173,14 @@ export default function DesignBookPage() {
                   
                   <div className="text-center my-12">
                     <div className="text-zinc-800/80 uppercase tracking-widest text-xs font-light mb-2">Haven Studio</div>
-                    <h2 className="text-zinc-900 font-bold text-2xl md:text-3xl mb-2">Cavemen & <span className="text-yellow-400">Only</span><span className="text-pink-500">Fans Girls</span></h2>
+                    <div className="flex flex-col items-center">
+                      <h2 className="text-zinc-900 font-bold text-3xl md:text-4xl">Cavemen</h2>
+                      <div className="text-lg text-zinc-600 my-1">&</div>
+                      <h2 className="text-3xl md:text-4xl font-bold">
+                        <span className="text-yellow-400">Only</span><span className="text-pink-500">Fans</span>
+                      </h2>
+                      <h2 className="text-3xl md:text-4xl font-bold text-pink-500 mb-2">Girls</h2>
+                    </div>
                     <div className="h-0.5 w-20 bg-zinc-400 mx-auto"></div>
                   </div>
                   
@@ -309,8 +316,9 @@ export default function DesignBookPage() {
               Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
             </p>
             <Link href="/contact" className="inline-block">
-              <button className="px-8 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
-                Pre-Order Now — $340
+              <button className="px-8 py-3 bg-transparent border-2 border-red-600 text-red-600 rounded-full hover:bg-red-50 transition-colors group relative overflow-hidden">
+                <div className="absolute inset-0 bg-red-600/10 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <span className="relative z-10">Pre-Order Now — $340</span>
               </button>
             </Link>
           </motion.div>

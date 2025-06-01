@@ -571,8 +571,8 @@ export default function PricingPage() {
                       </div>
                       
                       <Link href="/contact">
-                        <button className="group relative w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-medium py-3 px-8 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                          <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
+                        <button className="group relative w-full border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
+                          <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                           <span className="relative z-10 flex items-center justify-center">
                             Join today
                             <ArrowRight className="ml-2 h-4 w-4" />
