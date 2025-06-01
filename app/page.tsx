@@ -37,24 +37,6 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
-      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "/ammocat",
-      category: "website"
-    },
-    {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
-      link: "/jacobhalestudio",
-      category: "website"
-    },
-    {
       id: "roundabout",
       title: "roundabout.run",
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
@@ -70,6 +52,24 @@ export default function HomePage() {
       technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
       link: "/anthonyhadenguest",
+      category: "website"
+    },
+    {
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
+      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "/ammocat",
+      category: "website"
+    },
+    {
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
+      link: "/jacobhalestudio",
       category: "website"
     },
     {
