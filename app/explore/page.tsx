@@ -175,7 +175,7 @@ export default function ExplorePage() {
                 
                 {/* Text content */}
                 <span className={`relative z-10 transition-opacity duration-300 ${isVisitStudioHovered ? 'opacity-0' : 'opacity-100'}`}>
-                  Visit Studio
+                Visit Studio
                 </span>
                 
                 {/* Arrow icon that appears on hover */}
@@ -331,7 +331,7 @@ export default function ExplorePage() {
                   
                   {/* Text content */}
                   <span className={`relative z-10 transition-opacity duration-300 ${isLearnMoreHovered ? 'opacity-0' : 'opacity-100'}`}>
-                    Learn More
+                  Learn More
                   </span>
                   
                   {/* Arrow icon that appears on hover */}
