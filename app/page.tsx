@@ -746,7 +746,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-zinc-50 rounded-xl p-8 text-center">
+          <div className="rounded-xl p-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -764,31 +764,18 @@ export default function HomePage() {
                 {/* Get Started Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className="inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
                 >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    Get Started
-                  </span>
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+                  <span className="group-hover:hidden">Get Started</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Get Started</span>
                 </Link>
                 {/* Email Us Button */}
                 <Link
                   href="mailto:info@haven.engineer"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className="inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
                 >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
-                    <Mail className="w-3 h-3 mr-2" />
-                    Email Us
-                  </span>
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+                  <span className="group-hover:hidden flex items-center"><Mail className="w-3 h-3 mr-2" />Email Us</span>
+                  <span className={`hidden group-hover:inline flex items-center ${getRandomHighlightColor()}`}><Mail className="w-3 h-3 mr-2" />Email Us</span>
                 </Link>
               </div>
 
