@@ -508,8 +508,8 @@ export default function PricingPage() {
                   <div className="bg-white p-8 border-l border-zinc-200">
                     <div className="flex justify-between items-center mb-6">
                       <h3 className="text-2xl font-bold text-zinc-800">Monthly Subscription</h3>
-                      <div className="text-xs font-medium bg-zinc-100 text-zinc-600 px-4 py-1 rounded-full border border-zinc-200">
-                        PAUSE OR CANCEL ANYTIME
+                      <div className="text-xs font-medium text-zinc-500">
+                        Pause or cancel anytime
                       </div>
                     </div>
                     
@@ -548,7 +548,7 @@ export default function PricingPage() {
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-sky-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Webflow development</span>
+                            <span className="text-zinc-700">Website Development</span>
                           </div>
                         </div>
                       </div>
