@@ -9,6 +9,13 @@ import { useRef, useState } from "react"
 import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
 
+// Add custom styles
+const customStyles = {
+  ".rotate-neg-15": {
+    transform: "rotate(-15deg)"
+  }
+};
+
 export default function PricingPage() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const [activeTab, setActiveTab] = useState<string>("monthly")
@@ -458,9 +465,9 @@ export default function PricingPage() {
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/50 backdrop-blur-sm rounded-2xl overflow-hidden">
                   {/* Monthly Club Card */}
                   <div className="flex items-center justify-center p-8 bg-gradient-to-br from-zinc-50 to-zinc-100">
-                    <div className="relative transform hover:-rotate-2 transition-transform duration-300">
+                    <div className="relative rotate-neg-15 hover:-rotate-12 transition-transform duration-300" style={{ transform: "rotate(-15deg)" }}>
                       {/* Card */}
-                      <div className="w-80 h-52 rounded-xl bg-white shadow-lg overflow-hidden relative border border-zinc-200">
+                      <div className="w-96 h-60 rounded-xl bg-white shadow-lg overflow-hidden relative border border-zinc-200">
                         {/* Silver metallic shine effect */}
                         <div className="absolute inset-0 bg-gradient-to-tr from-zinc-100 via-white to-zinc-200"></div>
                         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-sky-50/10 to-sky-100/20"></div>
@@ -470,21 +477,6 @@ export default function PricingPage() {
                         <div className="absolute top-6 left-16 w-16 h-16 rounded-full bg-indigo-500/10 backdrop-blur-md"></div>
                         <div className="absolute bottom-8 right-8 w-20 h-20 rounded-full bg-yellow-300/10 backdrop-blur-md"></div>
                         <div className="absolute bottom-10 right-24 w-14 h-14 rounded-full bg-zinc-800/5 backdrop-blur-md"></div>
-                        
-                        {/* Subtle icons/shapes */}
-                        <div className="absolute top-6 left-6 w-12 h-12 flex items-center justify-center">
-                          <div className="w-8 h-8 rounded-full bg-zinc-800/10"></div>
-                          <div className="absolute w-4 h-2 border-2 border-zinc-700/40 rounded-full bottom-3"></div>
-                          <div className="absolute w-1 h-1 bg-zinc-700/40 rounded-full top-3 left-4"></div>
-                          <div className="absolute w-1 h-1 bg-zinc-700/40 rounded-full top-3 right-4"></div>
-                        </div>
-                        
-                        <div className="absolute top-6 left-20 w-12 h-12 flex items-center justify-center">
-                          <div className="w-8 h-8 rounded-full bg-zinc-800/10"></div>
-                          <div className="absolute w-4 h-2 border-2 border-zinc-700/40 rounded-full bottom-3"></div>
-                          <div className="absolute w-1 h-1 bg-zinc-700/40 rounded-full top-3 left-4"></div>
-                          <div className="absolute w-1 h-1 bg-zinc-700/40 rounded-full top-3 right-4"></div>
-                        </div>
                         
                         {/* Card content */}
                         <div className="absolute inset-0 flex flex-col justify-between p-5">
@@ -562,8 +554,8 @@ export default function PricingPage() {
                       </div>
                       
                       <Link href="/contact">
-                        <button className="group relative w-full bg-gradient-to-r from-zinc-800 to-zinc-900 text-white font-medium py-3 px-8 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                          <div className="absolute inset-0 bg-sky-500/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
+                        <button className="group relative w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-medium py-3 px-8 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                          <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
                           <span className="relative z-10 flex items-center justify-center">
                             Join today
                             <ArrowRight className="ml-2 h-4 w-4" />
