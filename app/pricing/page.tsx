@@ -371,7 +371,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-[#800080] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
                     <Star className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
