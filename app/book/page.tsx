@@ -161,7 +161,18 @@ export default function DesignBookPage() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-white via-zinc-50 to-zinc-100">
                   <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 </div>
-                <div className="absolute inset-0 flex flex-col justify-between p-8">
+                
+                {/* Add the image overlay */}
+                <div className="absolute inset-0 z-10">
+                  <Image 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//cavemen.png"
+                    alt="Cavemen and OnlyFans Girls"
+                    fill
+                    className="object-cover opacity-80 mix-blend-multiply"
+                  />
+                </div>
+                
+                <div className="absolute inset-0 flex flex-col justify-between p-8 z-20">
                   <div className="flex justify-between items-start">
                     <div className="flex items-center">
                       <div className="text-zinc-800/80 font-medium text-sm">Limited Edition Pre-Order</div>
@@ -210,22 +221,22 @@ export default function DesignBookPage() {
             </p>
             <div className="grid grid-cols-3 gap-8">
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
-                  <span className="text-red-600 font-medium">12</span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center mb-4 shadow-md">
+                  <span className="text-white font-bold text-xl">12</span>
                 </div>
-                <p className="text-zinc-600">Visual Sections</p>
+                <p className="text-zinc-700 font-medium">Visual Sections</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-zinc-200 flex items-center justify-center mb-4">
-                  <span className="text-zinc-800 font-medium">240</span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-4 shadow-md">
+                  <span className="text-white font-bold text-xl">240</span>
                 </div>
-                <p className="text-zinc-600">Pages</p>
+                <p className="text-zinc-700 font-medium">Pages</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
-                  <span className="text-red-600 font-medium">∞</span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center mb-4 shadow-md">
+                  <span className="text-white font-bold text-xl">∞</span>
                 </div>
-                <p className="text-zinc-600">Inspirations</p>
+                <p className="text-zinc-700 font-medium">Inspirations</p>
               </div>
             </div>
           </motion.div>
@@ -251,37 +262,43 @@ export default function DesignBookPage() {
                   number: "01",
                   title: "Photography",
                   description: "Stunning high-resolution photography spanning landscapes, portraits, and conceptual imagery.",
-                  color: "bg-red-50 border-red-100"
+                  color: "from-purple-400 to-indigo-500 text-white",
+                  icon: "📸"
                 },
                 {
                   number: "02",
                   title: "Graphic Design",
                   description: "Bold visual compositions exploring typography, color theory, and layout principles.",
-                  color: "bg-zinc-100 border-zinc-200"
+                  color: "from-emerald-400 to-teal-500 text-white",
+                  icon: "✏️"
                 },
                 {
                   number: "03",
                   title: "AI-Generated Art",
                   description: "Cutting-edge imagery created through various AI platforms pushing creative boundaries.",
-                  color: "bg-red-50 border-red-100"
+                  color: "from-orange-400 to-amber-500 text-white",
+                  icon: "🤖"
                 },
                 {
                   number: "04",
                   title: "Historical References",
                   description: "Visual journey through artistic expressions from the dark ages to contemporary times.",
-                  color: "bg-zinc-100 border-zinc-200"
+                  color: "from-sky-400 to-blue-500 text-white",
+                  icon: "🏺"
                 },
                 {
                   number: "05",
                   title: "Poems & Stories",
                   description: "Visual typography and illustrated short-form literature that complements the imagery.",
-                  color: "bg-red-50 border-red-100"
+                  color: "from-pink-400 to-rose-500 text-white",
+                  icon: "📝"
                 },
                 {
                   number: "06",
                   title: "Future Concepts",
                   description: "Speculative visual designs exploring how aesthetics might evolve in coming decades.",
-                  color: "bg-zinc-100 border-zinc-200"
+                  color: "from-violet-400 to-purple-500 text-white",
+                  icon: "🔮"
                 }
               ].map((content, index) => (
                 <motion.div
@@ -290,13 +307,22 @@ export default function DesignBookPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`p-6 rounded-lg border ${content.color} hover:shadow-md transition-all duration-300`}
+                  className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div className="text-sm font-medium text-zinc-400 mb-2">Section {content.number}</div>
-                  <h3 className="text-xl font-bold text-zinc-900 mb-3">{content.title}</h3>
-                  <p className="text-zinc-600 mb-4">{content.description}</p>
-                  <div className="flex justify-end">
-                    <Bookmark className="w-5 h-5 text-zinc-400" />
+                  <div className={`bg-gradient-to-r ${content.color} p-6`}>
+                    <div className="flex justify-between items-start mb-4">
+                      <span className="text-2xl">{content.icon}</span>
+                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-sm">
+                        <span className="text-white font-medium text-sm">{content.number}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{content.title}</h3>
+                    <p className="text-white/90 text-sm mb-4">{content.description}</p>
+                    <div className="flex justify-end">
+                      <div className="bg-white/20 rounded-full px-3 py-1 text-xs backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
+                        Explore
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -309,15 +335,14 @@ export default function DesignBookPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-zinc-100 text-zinc-900 rounded-xl p-12 text-center"
+            className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white rounded-xl p-12 text-center shadow-xl"
           >
             <h2 className="text-3xl font-bold mb-4">Ready to pre-order our visual journey?</h2>
-            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8">
               Pre-order your copy of "Cavemen and Onlyfans Girls" for $340 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
             </p>
             <Link href="/contact" className="inline-block">
-              <button className="px-8 py-3 bg-transparent border-2 border-red-600 text-red-600 rounded-full hover:bg-red-50 transition-colors group relative overflow-hidden">
-                <div className="absolute inset-0 bg-red-600/10 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              <button className="px-8 py-3 bg-white text-pink-600 rounded-full hover:bg-white/90 transition-colors group relative overflow-hidden font-medium">
                 <span className="relative z-10">Pre-Order Now — $340</span>
               </button>
             </Link>
