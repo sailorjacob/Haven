@@ -143,11 +143,11 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
-                <span className="text-red-500 block">CAVEMEN</span>
+                <span className="text-blue-500 block" style={{ color: '#00BBFF' }}>CAVEMEN</span>
                 <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">AND</span>
                 <span className="block"><span className="text-zinc-400">ONLY</span><span className="text-yellow-400">FANS</span> <span className="text-pink-500">GIRLS</span></span>
               </h1>
-              <p className="text-lg text-amber-800 mb-8 font-light border-l-2 border-amber-700 pl-4">
+              <p className="text-lg text-zinc-300 mb-8 font-light border-l-2 border-amber-700 pl-4">
                 A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
               </p>
               
