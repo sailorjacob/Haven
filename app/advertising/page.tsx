@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Menu, Globe, Target, BarChart } from "lucide-react"
+import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Menu, Globe, Target, BarChart, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRef, useState } from "react"
 import AnimatedStars from "../components/AnimatedStars"
