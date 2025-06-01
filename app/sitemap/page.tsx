@@ -5,11 +5,11 @@ import Link from "next/link"
 
 export default function SitemapPage() {
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-300">
+    <main className="min-h-screen bg-white text-zinc-900">
       {/* Gradient background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 opacity-80"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900/5 to-zinc-900 opacity-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50 opacity-80"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-100/20 via-zinc-50/5 to-white opacity-100"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-20">
@@ -20,13 +20,13 @@ export default function SitemapPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
             Haven Navigation
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 mb-6">
             Complete map of the Haven ecosystem - from network state vision to creative projects
           </p>
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -36,7 +36,7 @@ export default function SitemapPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-2xl font-light text-zinc-200 mb-6 border-b border-zinc-700 pb-2">
+            <h2 className="text-2xl font-light text-zinc-800 mb-6 border-b border-zinc-200 pb-2">
               Core Pages
             </h2>
             <div className="space-y-4">
@@ -69,7 +69,7 @@ export default function SitemapPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-2xl font-light text-zinc-200 mb-6 border-b border-zinc-700 pb-2">
+            <h2 className="text-2xl font-light text-zinc-800 mb-6 border-b border-zinc-200 pb-2">
               Network State Vision
             </h2>
             <div className="space-y-4">
@@ -106,7 +106,7 @@ export default function SitemapPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-2xl font-light text-zinc-200 mb-6 border-b border-zinc-700 pb-2">
+            <h2 className="text-2xl font-light text-zinc-800 mb-6 border-b border-zinc-200 pb-2">
               Conceptual & Essays
             </h2>
             <div className="space-y-4">
@@ -137,7 +137,7 @@ export default function SitemapPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <h2 className="text-2xl font-light text-zinc-200 mb-6 border-b border-zinc-700 pb-2">
+            <h2 className="text-2xl font-light text-zinc-800 mb-6 border-b border-zinc-200 pb-2">
               Featured Projects
             </h2>
             <div className="space-y-4">
@@ -169,7 +169,7 @@ export default function SitemapPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="lg:col-span-2"
           >
-            <h2 className="text-2xl font-light text-zinc-200 mb-6 border-b border-zinc-700 pb-2">
+            <h2 className="text-2xl font-light text-zinc-800 mb-6 border-b border-zinc-200 pb-2">
               Studio Portfolio Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -218,27 +218,27 @@ export default function SitemapPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 pt-16 border-t border-zinc-800"
+          className="mt-16 pt-16 border-t border-zinc-200"
         >
-          <h2 className="text-2xl font-light text-zinc-200 mb-8 text-center">
+          <h2 className="text-2xl font-light text-zinc-800 mb-8 text-center">
             Core Network State Vision
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Digital-First Community</h3>
-              <p className="text-zinc-400 text-sm">
+            <div className="bg-zinc-100/50 p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-800">Digital-First Community</h3>
+              <p className="text-zinc-600 text-sm">
                 A network state that operates across borders with shared resources, combining premium content platforms with physical spaces.
               </p>
             </div>
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Economic Revolution</h3>
-              <p className="text-zinc-400 text-sm">
+            <div className="bg-zinc-100/50 p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-800">Economic Revolution</h3>
+              <p className="text-zinc-600 text-sm">
                 Bitcoin/crypto integration, branded transactions, and the elimination of physical cash through innovative payment systems.
               </p>
             </div>
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Creative Freedom</h3>
-              <p className="text-zinc-400 text-sm">
+            <div className="bg-zinc-100/50 p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-800">Creative Freedom</h3>
+              <p className="text-zinc-600 text-sm">
                 A platform for artists, technologists, and creators to operate without traditional constraints using decentralized governance.
               </p>
             </div>
@@ -253,7 +253,7 @@ export default function SitemapPage() {
           className="text-center mt-16"
         >
           <Link href="/">
-            <button className="bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300">
+            <button className="bg-zinc-800 hover:bg-zinc-900 text-white py-3 px-8 text-sm tracking-widest transition-all duration-300">
               Return Home
             </button>
           </Link>
@@ -273,11 +273,11 @@ interface PageItemProps {
 function PageItem({ href, title, description, tags }: PageItemProps) {
   return (
     <Link href={href} className="block group">
-      <div className="bg-zinc-800/30 hover:bg-zinc-800/50 p-4 rounded-sm border border-zinc-700/50 hover:border-zinc-600 transition-all duration-300">
-        <h3 className="text-zinc-200 font-medium mb-2 group-hover:text-white transition-colors">
+      <div className="bg-zinc-100/30 hover:bg-zinc-100/50 p-4 rounded-sm border border-zinc-200/50 hover:border-zinc-300 transition-all duration-300">
+        <h3 className="text-zinc-800 font-medium mb-2 group-hover:text-zinc-900 transition-colors">
           {title}
         </h3>
-        <p className="text-zinc-400 text-sm mb-3 leading-relaxed">
+        <p className="text-zinc-600 text-sm mb-3 leading-relaxed">
           {description}
         </p>
         {tags && (
@@ -285,7 +285,7 @@ function PageItem({ href, title, description, tags }: PageItemProps) {
             {tags.map((tag, index) => (
               <span 
                 key={index}
-                className="text-xs px-2 py-1 bg-zinc-700/50 text-zinc-400 rounded"
+                className="text-xs px-2 py-1 bg-zinc-200/50 text-zinc-600 rounded"
               >
                 {tag}
               </span>
