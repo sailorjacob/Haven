@@ -138,8 +138,8 @@ export default function HomePage() {
                   href="/sitemap" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  <span className="group-hover:hidden">Explore</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Explore</span>
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/work" 
@@ -205,8 +205,8 @@ export default function HomePage() {
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Explore</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Explore</span>
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/work" 
