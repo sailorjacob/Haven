@@ -60,7 +60,7 @@ export default function DesignBookPage() {
                 href="/contact"
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-amber-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
-                Contact
+                Purchase
               </Link>
               
               {/* Mobile Menu Button */}
@@ -111,7 +111,7 @@ export default function DesignBookPage() {
                   className="block text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Contact
+                  Purchase
                 </Link>
               </div>
             </motion.div>
@@ -130,9 +130,9 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
-                <span className="text-orange-600 block">CAVEMEN</span>
+                <span className="text-red-500 block">CAVEMEN</span>
                 <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">AND</span>
-                <span className="block">ONLY<span className="text-yellow-400">FANS</span> <span className="text-pink-500">GIRLS</span></span>
+                <span className="block"><span className="text-zinc-400">ONLY</span><span className="text-yellow-400">FANS</span> <span className="text-pink-500">GIRLS</span></span>
               </h1>
               <p className="text-lg text-amber-800 mb-8 font-light border-l-2 border-amber-700 pl-4">
                 A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
@@ -140,7 +140,7 @@ export default function DesignBookPage() {
               
               <div className="flex flex-col sm:flex-row gap-6">
                 <Link href="#chapters">
-                  <button className="px-8 py-3 bg-amber-700 text-white rounded-none flex items-center hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-medium">
+                  <button className="px-8 py-3 bg-zinc-300 text-zinc-700 rounded-none flex items-center hover:bg-zinc-400 transition-colors uppercase tracking-wide text-sm font-medium">
                     Explore Contents
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </button>
@@ -187,10 +187,10 @@ export default function DesignBookPage() {
                   <div className="text-center">
                     <div className="uppercase tracking-[0.5em] text-xs font-light mb-4 text-zinc-500">Haven Studio</div>
                     <div className="flex flex-col items-center">
-                      <h2 className="text-orange-600 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
+                      <h2 className="text-red-500 font-black text-5xl md:text-6xl uppercase">CAVEMEN</h2>
                       <div className="h-px w-12 bg-amber-700 my-2"></div>
                       <h2 className="text-5xl md:text-6xl font-black uppercase">
-                        ONLY<span className="text-yellow-400">FANS</span>
+                        <span className="text-zinc-400">ONLY</span><span className="text-yellow-400">FANS</span>
                       </h2>
                       <h2 className="text-5xl md:text-6xl font-black text-pink-500 uppercase">GIRLS</h2>
                     </div>
