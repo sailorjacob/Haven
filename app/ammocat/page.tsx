@@ -232,15 +232,20 @@ export default function AmmocatPage() {
           className="text-center mb-16 pt-16 border-t border-zinc-800"
         >
           <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
-            Ready to Showcase Your Creative Work?
+            Ready to Build?
           </h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
             Let us create a custom digital experience that elevates your brand and connects you with your audience.
           </p>
           <Link href="/contact">
-            <button className="bg-zinc-200 hover:bg-white text-zinc-900 py-3 px-8 text-sm tracking-widest transition-all duration-300">
-              Contact Us
-            </button>
+            <div className="inline-flex items-center border border-white text-white font-medium py-2 px-8 rounded-full text-sm relative overflow-hidden group">
+              {/* Sky blue background that fills from left on hover */}
+              <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              {/* Text content */}
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-zinc-900">
+                Start
+              </span>
+            </div>
           </Link>
         </motion.div>
 
