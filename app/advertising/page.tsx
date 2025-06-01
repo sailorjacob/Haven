@@ -22,6 +22,12 @@ export default function AdvertisingPage() {
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
+  // Function to get a random highlight color
+  const getRandomHighlightColor = () => {
+    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" })
   }
@@ -92,21 +98,24 @@ export default function AdvertisingPage() {
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
                   href="/advertising" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Advertising
+                  <span className="group-hover:hidden">Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Studio
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/pricing" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Pricing
+                  <span className="group-hover:hidden">Pricing</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book" 
@@ -120,9 +129,10 @@ export default function AdvertisingPage() {
             <div className="flex items-center space-x-4">
               <Link 
                 href="/contact"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
               >
-                Contact
+                <span className="group-hover:hidden">Contact</span>
+                <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
               </Link>
               
               {/* Mobile Menu Button */}
@@ -149,24 +159,27 @@ export default function AdvertisingPage() {
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
                   href="/advertising" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Advertising
+                  <span className="group-hover:hidden">Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Studio
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/pricing" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Pricing
+                  <span className="group-hover:hidden">Pricing</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book"
@@ -177,10 +190,11 @@ export default function AdvertisingPage() {
                 </Link>
                 <Link 
                   href="/contact"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Contact
+                  <span className="group-hover:hidden">Contact</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
                 </Link>
               </div>
             </motion.div>
