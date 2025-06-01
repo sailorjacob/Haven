@@ -7,6 +7,7 @@ import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, 
 import { Button } from "@/components/ui/button"
 import { useRef, useState } from "react"
 import AnimatedStars from "../components/AnimatedStars"
+import { Footer } from "@/components/footer"
 
 export default function PricingPage() {
   const featuresRef = useRef<HTMLDivElement>(null)
@@ -638,27 +639,7 @@ export default function PricingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-200 py-12 px-6 mt-10">
-        <div className="container max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
-              <Hexagon className="w-6 h-6 text-zinc-900 mr-2" strokeWidth={1} />
-              <span className="text-sm text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Privacy
-              </Link>
-              <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Terms
-              </Link>
-              <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 } 

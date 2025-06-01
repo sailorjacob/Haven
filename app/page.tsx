@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Footer } from "@/components/footer"
 
 type Project = {
   id: string
@@ -20,14 +21,6 @@ export default function HomePage() {
   const [filter, setFilter] = useState<string | null>(null)
   const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-  
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [])
   
   // Function to get a random highlight color
   const getRandomHighlightColor = () => {
@@ -118,20 +111,15 @@ export default function HomePage() {
     : projects
 
   return (
-    <div className={`bg-white w-full text-zinc-900 transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-      {/* Background */}
+    <main className="bg-white w-full text-zinc-900">
+      {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
 
       {/* Header */}
-      <motion.header 
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3, delay: 0.1 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200"
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
@@ -143,11 +131,11 @@ export default function HomePage() {
               {/* Desktop Navigation with random highlight on hover */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
-                  href="/studio" 
+                  href="/sitemap" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  <span className="group-hover:hidden">Explore</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Explore</span>
                 </Link>
                 <Link 
                   href="/work" 
@@ -209,12 +197,12 @@ export default function HomePage() {
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
-                  href="/studio" 
+                  href="/sitemap" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  <span className="group-hover:hidden">Explore</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Explore</span>
                 </Link>
                 <Link 
                   href="/work" 
@@ -244,174 +232,169 @@ export default function HomePage() {
         </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
 
-      {/* Main Content */}
+      {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 pt-20 px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
-          {/* Selected Projects */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
-          >
-            <div>
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Selected Projects
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-xl">
-                A showcase of our recent work across web applications, websites, and digital platforms.
-              </p>
-            </div>
-            
-            <div className="flex items-center space-x-2 mt-6 md:mt-0">
-              <Filter className="w-4 h-4 text-zinc-400" />
-              <div className="flex space-x-2">
-                <button 
-                  onClick={() => setFilter(null)} 
-                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                    !filter 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                  }`}
-                >
-                  All
-                </button>
-                <button 
-                  onClick={() => setFilter('webapp')} 
-                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                    filter === 'webapp' 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                  }`}
-                >
-                  Web Apps
-                </button>
-                <button 
-                  onClick={() => setFilter('website')} 
-                  className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                    filter === 'website' 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                  }`}
-                >
-                  Websites
-                </button>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.4,
-                  delay: index * 0.1,
-                  ease: "easeOut"
-                }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
-              >
-                <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
-                  <div className="relative h-64 overflow-hidden">
-                    <Image 
-                      src={project.imageUrl}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                  </div>
-                </Link>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
-                  <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <Link 
-                    href={project.link} 
-                    target={project.link.startsWith('http') ? "_blank" : "_self"}
-                    className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
-                  >
-                    View Project
-                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
           
-          {/* Haven Studio Hero */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="text-center mb-16"
-          >
-            <motion.div 
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+          {/* Selected Projects */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="flex justify-center mb-6"
+              className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
             >
-              <div className="relative">
-                <Hexagon className="w-16 h-16 text-zinc-900" strokeWidth={1} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Code className="w-8 h-8 text-zinc-700" />
+              <div>
+                <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+                  Selected Projects
+                </h2>
+                <p className="text-lg text-zinc-600 max-w-xl">
+                  A showcase of our recent work across web applications, websites, and digital platforms.
+                </p>
+              </div>
+              
+              <div className="flex items-center space-x-2 mt-6 md:mt-0">
+                <Filter className="w-4 h-4 text-zinc-400" />
+                <div className="flex space-x-2">
+                  <button 
+                    onClick={() => setFilter(null)} 
+                    className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                      !filter 
+                        ? 'bg-zinc-900 text-white' 
+                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                    }`}
+                  >
+                    All
+                  </button>
+                  <button 
+                    onClick={() => setFilter('webapp')} 
+                    className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                      filter === 'webapp' 
+                        ? 'bg-zinc-900 text-white' 
+                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                    }`}
+                  >
+                    Web Apps
+                  </button>
+                  <button 
+                    onClick={() => setFilter('website')} 
+                    className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
+                      filter === 'website' 
+                        ? 'bg-zinc-900 text-white' 
+                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                    }`}
+                  >
+                    Websites
+                  </button>
                 </div>
               </div>
             </motion.div>
-            
-            <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
-              Build With Haven
-            </h1>
-            <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
-              Premium digital experiences
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
-              >
-                <span className="mr-2">Start a Project</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/work"
-                className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300"
-              >
-                View Work
-              </Link>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 + (index * 0.05) }}
+                  viewport={{ once: true }}
+                  className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+                >
+                  <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
+                    <div className="relative h-64 overflow-hidden">
+                      <Image 
+                        src={project.imageUrl}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                    </div>
+                  </Link>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
+                    <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <Link 
+                      href={project.link} 
+                      target={project.link.startsWith('http') ? "_blank" : "_self"}
+                      className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
+                    >
+                      View Project
+                      <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+          </div>
+          
+          {/* Haven Studio Hero */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex justify-center mb-6"
+              >
+                <div className="relative">
+                  <Hexagon className="w-16 h-16 text-zinc-900" strokeWidth={1} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Code className="w-8 h-8 text-zinc-700" />
+                  </div>
+                </div>
+              </motion.div>
+              
+              <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
+                Build With Haven
+              </h1>
+              <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
+                Premium digital experiences
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300 group"
+                >
+                  <span className="mr-2">Start a Project</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/work"
+                  className="inline-flex items-center justify-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-6 rounded-full transition-all duration-300"
+                >
+                  View Work
+                </Link>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="bg-zinc-50 rounded-xl p-8"
-          >
+          <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -480,16 +463,10 @@ export default function HomePage() {
                 </p>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
           
           {/* Studio Performance */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="text-center mb-8"
-          >
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -590,17 +567,12 @@ export default function HomePage() {
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
                 <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
               </motion.div>
-            </div>
-          </motion.div>
+          </div>
+        </div>
 
           {/* Process */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <motion.div
+          <div className="bg-zinc-50 rounded-xl p-8">
+        <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -612,9 +584,9 @@ export default function HomePage() {
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
-              </p>
-            </motion.div>
-            
+          </p>
+        </motion.div>
+        
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
@@ -656,16 +628,11 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Team */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <motion.div
+          <div>
+        <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -678,7 +645,7 @@ export default function HomePage() {
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Passionate professionals dedicated to creating exceptional digital experiences.
               </p>
-            </motion.div>
+        </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
@@ -702,14 +669,14 @@ export default function HomePage() {
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
                 }
               ].map((member, index) => (
-                <motion.div
+        <motion.div
                   key={member.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
-                >
+          className="text-center"
+        >
                   <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
                     <Image
                       src={member.image}
@@ -736,16 +703,10 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="bg-zinc-50 rounded-xl p-8 text-center"
-          >
+          <div className="bg-zinc-50 rounded-xl p-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -787,41 +748,14 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
+
         </div>
       </section>
 
       {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, delay: 0.3 }}
-        className="relative z-10 border-t border-zinc-200 py-12 px-6"
-      >
-        <div className="container max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
-              <Hexagon className="w-6 h-6 text-zinc-900 mr-2" strokeWidth={1} />
-              <span className="text-sm text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Privacy
-              </Link>
-              <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Terms
-              </Link>
-              <Link href="/sitemap" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Sitemap
-              </Link>
-              <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
-      </motion.footer>
-    </div>
+      <Footer />
+    </main>
   )
 }
 

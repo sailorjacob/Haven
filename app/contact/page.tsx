@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
+import { Footer } from "@/components/footer"
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -179,6 +180,9 @@ export default function ContactPage() {
           </a>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </main>
   )
 } 

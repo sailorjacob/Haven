@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { ChevronLeft, ArrowRight, Plus, Minus, Shield, Lock, DollarSign, Film, Music, Palette, Home, Globe, Hexagon, Zap, Users, Building, Crown, Sparkles, Activity, Layers, Award, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Footer } from "@/components/footer"
 
 export default function Products() {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -732,27 +733,7 @@ export default function Products() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-200 py-8 px-6">
-        <div className="container max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
-              <Hexagon className="w-5 h-5 text-zinc-900 mr-2" strokeWidth={1} />
-              <span className="text-sm text-zinc-600">© 2024 Haven. All rights reserved.</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Privacy
-              </Link>
-              <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Terms
-              </Link>
-              <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 } 
