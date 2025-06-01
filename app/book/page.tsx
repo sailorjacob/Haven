@@ -4,12 +4,40 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Hexagon, Menu, X, ChevronDown, BookOpen, Bookmark, Check } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
+import Script from "next/script"
+
+// Declare the Stripe property on the window object
+declare global {
+  interface Window {
+    Stripe?: any;
+  }
+}
 
 export default function DesignBookPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [stripeLoaded, setStripeLoaded] = useState(false)
+
+  // Handle Stripe script loading
+  useEffect(() => {
+    const handleStripeLoad = () => {
+      setStripeLoaded(true)
+    }
+
+    // Check if Stripe is already loaded
+    if (window.Stripe) {
+      setStripeLoaded(true)
+    }
+
+    // Add event listener for script load
+    window.addEventListener('stripe-loaded', handleStripeLoad)
+
+    return () => {
+      window.removeEventListener('stripe-loaded', handleStripeLoad)
+    }
+  }, [])
 
   return (
     <main className="bg-white w-full text-zinc-900">
@@ -152,11 +180,24 @@ export default function DesignBookPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="/contact">
-                  <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-none hover:bg-zinc-50 transition-colors uppercase tracking-wide text-sm font-medium">
-                    Pre-Order — $997
-                  </button>
-                </Link>
+                <div className="relative inline-block">
+                  {/* Styled container for Stripe button */}
+                  <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-200 relative z-10 bg-white">
+                    <div id="stripe-button-container" className="w-[240px] h-[48px]">
+                      {stripeLoaded && (
+                        // @ts-ignore - Stripe custom element
+                        <stripe-buy-button
+                          buy-button-id="buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
+                          publishable-key="pk_live_51RU878LW3qNGE5Nr0cXX4p3pqKFI8M1LtplAMOhlQTysHn36426EANMjlgzjArXWz4MU9TLFxe8VSSxjRNfJv7pP00Hp8rIbaG"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute -right-1 -bottom-1 w-full h-full bg-blue-100 rounded-lg -z-10"></div>
+                  <div className="absolute -left-1 -top-1 w-full h-full bg-zinc-100 rounded-lg -z-20"></div>
+                </div>
               </div>
             </motion.div>
             
@@ -347,6 +388,15 @@ export default function DesignBookPage() {
       
       {/* Footer */}
       <Footer />
+
+      {/* Stripe Script */}
+      <Script
+        src="https://js.stripe.com/v3/buy-button.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          window.dispatchEvent(new Event('stripe-loaded'))
+        }}
+      />
     </main>
   )
 } 
