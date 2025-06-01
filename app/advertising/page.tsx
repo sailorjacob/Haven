@@ -210,7 +210,7 @@ export default function AdvertisingPage() {
             className="overflow-visible text-left"
           >
             <motion.h1 
-              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black uppercase tracking-tighter leading-none"
+              className="text-9xl sm:text-[12rem] md:text-[20rem] font-black uppercase tracking-tighter leading-none"
               style={{ 
                 lineHeight: "0.9", 
                 color: '#ff0000'
@@ -249,7 +249,7 @@ export default function AdvertisingPage() {
           }}
         >
           <h2 
-            className="text-8xl sm:text-[12rem] md:text-[18rem] font-black uppercase tracking-tight"
+            className="text-9xl sm:text-[15rem] md:text-[25rem] font-black uppercase tracking-tight"
             style={{ 
               color: '#00ff00'
             }}
