@@ -189,8 +189,64 @@ export default function AdvertisingPage() {
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-20 px-6">
-        <div className="container max-w-6xl mx-auto space-y-10">
+      <section className="relative z-10 pt-20 px-0">
+        {/* Big Animated Text */}
+        <div className="relative z-20 py-6 overflow-hidden w-full">
+          <div className="overflow-hidden">
+            <motion.h1 
+              className="text-7xl sm:text-9xl md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-500 to-orange-500 uppercase tracking-tighter leading-none px-2 w-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              style={{
+                filter: "saturate(1.5) brightness(1.2)",
+                letterSpacing: "-0.05em",
+                lineHeight: "0.9"
+              }}
+            >
+              {/* Animated text that types out */}
+              {'F#CKING THE ADS GAME UP'.split('').map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    delay: index * 0.05,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 10
+                  }}
+                  className="inline-block"
+                  style={{ 
+                    textShadow: "0 0 25px rgba(255, 50, 20, 0.7)",
+                    WebkitTextStroke: "2px rgba(255, 80, 0, 0.5)"
+                  }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </motion.h1>
+          </div>
+          
+          {/* NO MERCY text - creatively positioned */}
+          <motion.div
+            className="absolute -bottom-6 right-10 rotate-12 z-30"
+            initial={{ opacity: 0, scale: 0.8, rotate: 20 }}
+            animate={{ opacity: 1, scale: 1, rotate: 12 }}
+            transition={{ 
+              duration: 0.8,
+              delay: 2.2,
+              type: "spring"
+            }}
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-green-500 uppercase tracking-tight px-4 py-1 bg-black/5 backdrop-blur-sm rounded-md border-2 border-green-500/30">
+              NO MERCY
+            </h2>
+          </motion.div>
+        </div>
+        
+        <div className="container max-w-6xl mx-auto space-y-10 px-6">
           {/* Hero Section */}
           <div className="pt-8">
             <motion.div
