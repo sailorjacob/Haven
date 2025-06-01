@@ -136,15 +136,17 @@ export default function HomePage() {
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
                   href="/advertising" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Advertising
+                  <span className="group-hover:hidden">Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  Studio
+                  <span className="group-hover:hidden">Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/work" 
