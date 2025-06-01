@@ -190,7 +190,7 @@ export default function AdvertisingPage() {
 
       {/* Animated Text Overlay */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-center justify-center bg-white animated-overlay overflow-hidden"
+        className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -204,25 +204,17 @@ export default function AdvertisingPage() {
           }
         }}
       >
-        <div className="absolute top-20 left-12 z-20">
-          {/* Big Neon Red Text - top left */}
+        <div className="absolute top-12 left-12 z-20">
+          {/* Big Red Text - top left */}
           <motion.div 
             className="overflow-visible text-left"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.05 }}
           >
             <motion.h1 
               className="text-7xl sm:text-[8rem] md:text-[10rem] font-black uppercase tracking-tighter leading-none"
               style={{ 
                 lineHeight: "0.9", 
-                color: '#ff0000', 
-                filter: 'brightness(1.5) saturate(1.5)',
-                textShadow: '0 0 15px rgba(255, 0, 0, 0.8)'
+                color: '#ff0000'
               }}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.05 }}
             >
               {/* Animated text with typewriter effect - no fading */}
               {'FUCKING THE ADS GAME UP'.split('').map((char, index) => (
@@ -246,23 +238,20 @@ export default function AdvertisingPage() {
           </motion.div>
         </div>
           
-        {/* NO MERCY text - properly centered */}
+        {/* NO MERCY text - centered, flat appearance */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center z-40"
-          initial={{ opacity: 0, scale: 0.2 }}
-          animate={{ opacity: 1, scale: [0.2, 1.2, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ 
-            duration: 0.8,
-            delay: 3.5,
-            ease: "backOut"
+            duration: 0.1,
+            delay: 3.5
           }}
         >
           <h2 
             className="text-8xl sm:text-[12rem] md:text-[18rem] font-black uppercase tracking-tight"
             style={{ 
-              color: '#00ff00',
-              filter: 'brightness(1.7) saturate(1.5)',
-              textShadow: '0 0 25px rgba(0, 255, 0, 0.9), 0 0 40px rgba(0, 255, 0, 0.5)'
+              color: '#00ff00'
             }}
           >
             NO MERCY
