@@ -190,7 +190,7 @@ export default function AdvertisingPage() {
 
       {/* Animated Text Overlay */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-start justify-start bg-red-600 animated-overlay overflow-hidden"
+        className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -213,7 +213,7 @@ export default function AdvertisingPage() {
             transition={{ duration: 0.05 }}
           >
             <motion.h1 
-              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black text-white uppercase tracking-tighter leading-none"
+              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black text-red-600 uppercase tracking-tighter leading-none"
               style={{ lineHeight: "0.9" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -255,8 +255,9 @@ export default function AdvertisingPage() {
           <h2 
             className="text-8xl sm:text-[12rem] md:text-[18rem] font-black uppercase tracking-tight"
             style={{ 
-              color: '#ffffff',
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.3)'
+              color: '#00ff00',
+              filter: 'brightness(1.5)',
+              textShadow: '0 0 20px rgba(0, 255, 0, 0.7)'
             }}
           >
             NO MERCY
