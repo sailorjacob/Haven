@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { useState } from "react"
 
 export default function SitemapPage() {
+  const [isReturnHovered, setReturnHovered] = useState(false);
+  
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Gradient background */}
@@ -252,10 +256,22 @@ export default function SitemapPage() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <Link href="/">
-            <button className="bg-zinc-800 hover:bg-zinc-900 text-white py-3 px-8 text-sm tracking-widest transition-all duration-300">
+          <Link 
+            href="/"
+            className="inline-flex items-center border-sky-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group tracking-widest"
+            onMouseEnter={() => setReturnHovered(true)}
+            onMouseLeave={() => setReturnHovered(false)}
+          >
+            {/* Sky blue background that fills from left on hover */}
+            <div className="absolute inset-0 bg-sky-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            
+            {/* Text content */}
+            <span className={`relative z-10 transition-opacity duration-300 ${isReturnHovered ? 'opacity-0' : 'opacity-100'}`}>
               Return Home
-            </button>
+            </span>
+            
+            {/* Arrow icon that appears on hover */}
+            <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isReturnHovered ? 'opacity-100' : 'opacity-0'}`} />
           </Link>
         </motion.div>
       </div>
