@@ -190,23 +190,44 @@ export default function AdvertisingPage() {
 
       {/* Animated Text Overlay */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-center justify-center bg-white animated-overlay"
+        className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div className="relative w-full h-full flex items-center justify-center">
-          {/* Big Red Text */}
-          <div className="overflow-hidden text-center">
+        {/* Color sweep effect */}
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-r from-red-600 to-green-500 z-30"
+          initial={{ x: '-100%' }}
+          animate={{ x: '100%' }}
+          transition={{ 
+            duration: 1, 
+            delay: 3.5, 
+            ease: "easeInOut" 
+          }}
+          onAnimationComplete={() => {
+            // When color sweep completes, trigger the whole overlay to disappear
+            const overlay = document.querySelector('.animated-overlay');
+            if (overlay) {
+              setTimeout(() => {
+                (overlay as HTMLElement).style.display = 'none';
+              }, 1000); // Give time for NO MERCY to show
+            }
+          }}
+        />
+
+        <div className="relative w-full h-full pt-20 pl-12 z-20">
+          {/* Big Red Text - now top left */}
+          <div className="overflow-visible text-left">
             <motion.h1 
-              className="text-7xl sm:text-[10rem] md:text-[16rem] font-black text-[#ff0000] uppercase tracking-tighter leading-none px-2 w-full"
+              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black text-[#ff0000] uppercase tracking-tighter leading-none"
               style={{ lineHeight: "0.9" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.05 }}
             >
               {/* Animated text that types out */}
-              {'F#CKING THE ADS GAME UP'.split('').map((char, index) => (
+              {'FUCKING THE ADS GAME UP'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0 }}
@@ -223,28 +244,19 @@ export default function AdvertisingPage() {
             </motion.h1>
           </div>
           
-          {/* NO MERCY text - with slapping animation but no bounce */}
+          {/* NO MERCY text - now popping up */}
           <motion.div
-            className="absolute bottom-[15%] right-[10%] z-30 rotate-6"
-            initial={{ opacity: 0, x: 1000, rotate: 25 }}
-            animate={{ opacity: 1, x: 0, rotate: 6 }}
+            className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-40"
+            initial={{ opacity: 0, scale: 0.2 }}
+            animate={{ opacity: 1, scale: [0.2, 1.2, 1] }}
             transition={{ 
-              type: "tween", // Changed from spring to tween for no bounce
-              ease: "easeOut",
-              delay: 4,
-              duration: 0.2
-            }}
-            onAnimationComplete={() => {
-              // When NO MERCY animation completes, make everything disappear instantly
-              const overlay = document.querySelector('.animated-overlay');
-              if (overlay) {
-                // Directly change style rather than adding a class with animation
-                (overlay as HTMLElement).style.display = 'none';
-              }
+              duration: 0.5,
+              delay: 4.2, // After the sweep
+              ease: "backOut"
             }}
           >
             <h2 
-              className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tight"
+              className="text-5xl sm:text-7xl md:text-[10rem] font-black uppercase tracking-tight"
               style={{ 
                 color: '#0f0',
                 filter: 'brightness(1.5)',
