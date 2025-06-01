@@ -298,7 +298,7 @@ export default function PricingPage() {
             >
               <p className="text-sm font-medium text-primary mb-2">MEMBERSHIP BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                It's "everything you need" better
+                It's "Everything you need."
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Replaces unreliable freelancers and expensive agencies for one flat monthly fee,
@@ -446,76 +446,123 @@ export default function PricingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl mx-auto"
+              className="max-w-5xl mx-auto"
             >
-              <div className="bg-white border-2 border-primary rounded-xl overflow-hidden">
-                <div className="px-6 py-8 border-b border-zinc-200">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-zinc-900">Monthly Subscription</h3>
-                    <div className="text-primary text-xs font-medium">
-                      Pause or cancel anytime
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Monthly Club Card */}
+                <div className="md:flex items-center justify-center hidden">
+                  <div className="relative transform hover:-rotate-2 transition-transform duration-300">
+                    {/* Card */}
+                    <div className="w-96 h-56 rounded-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 shadow-xl overflow-hidden relative">
+                      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20"></div>
+                      
+                      {/* Colorful shapes */}
+                      <div className="absolute top-4 left-4 w-16 h-16 rounded-full bg-pink-400 opacity-80"></div>
+                      <div className="absolute top-6 left-16 w-16 h-16 rounded-full bg-blue-600 opacity-80"></div>
+                      <div className="absolute bottom-8 right-8 w-20 h-20 rounded-full bg-yellow-400 opacity-80"></div>
+                      <div className="absolute bottom-10 right-24 w-14 h-14 rounded-full bg-orange-500 opacity-80"></div>
+                      
+                      {/* Smiley faces */}
+                      <div className="absolute top-6 left-6 w-12 h-12 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full bg-black opacity-20"></div>
+                        <div className="absolute w-6 h-3 border-2 border-black rounded-full bottom-2 transform translate-x-[1px]"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 left-3"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 right-3"></div>
+                      </div>
+                      
+                      <div className="absolute top-6 left-20 w-12 h-12 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full bg-black opacity-20"></div>
+                        <div className="absolute w-6 h-3 border-2 border-black rounded-full bottom-2 transform translate-x-[1px]"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 left-3"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 right-3"></div>
+                      </div>
+                      
+                      <div className="absolute bottom-12 right-12 w-12 h-12 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full bg-black opacity-20"></div>
+                        <div className="absolute w-6 h-3 border-2 border-black rounded-full bottom-2 transform translate-x-[1px]"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 left-3"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 right-3"></div>
+                      </div>
+                      
+                      <div className="absolute bottom-12 right-28 w-12 h-12 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full bg-black opacity-20"></div>
+                        <div className="absolute w-6 h-3 border-2 border-black rounded-full bottom-2 transform translate-x-[1px]"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 left-3"></div>
+                        <div className="absolute w-1.5 h-1.5 bg-black rounded-full top-3 right-3"></div>
+                      </div>
+                      
+                      {/* Club text */}
+                      <div className="absolute bottom-4 left-4 text-white font-mono text-sm tracking-wider">MONTHLY CLUB</div>
+                      
+                      {/* Start today button */}
+                      <div className="absolute bottom-20 left-4">
+                        <button className="bg-black text-white text-xs font-medium py-1.5 px-4 rounded-full">
+                          Start today
+                        </button>
+                      </div>
+                      
+                      {/* Join text */}
+                      <div className="absolute top-32 left-4 text-white text-4xl font-bold">
+                        Join<br/>
+                        Designjoy
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-baseline mb-6">
-                    <span className="text-4xl font-bold text-zinc-900">$4,995</span>
-                    <span className="text-zinc-500 ml-2">/month</span>
-                  </div>
-                  <Button 
-                    className="w-full border-yellow-400 text-zinc-900 rounded-full relative overflow-hidden group" 
-                    variant="outline"
-                    size="lg"
-                    onMouseEnter={() => setIsJoinHovered(true)}
-                    onMouseLeave={() => setIsJoinHovered(false)}
-                  >
-                    {/* Yellow background that fills from left on hover */}
-                    <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    {/* Text content */}
-                    <span className={`relative z-10 transition-opacity duration-300 ${isJoinHovered ? 'opacity-0' : 'opacity-100'}`}>
-                      Join today
-                    </span>
-                    
-                    {/* Arrow icon that appears on hover */}
-                    <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isJoinHovered ? 'opacity-100' : 'opacity-0'}`} />
-                  </Button>
                 </div>
                 
-                <div className="px-6 py-8">
-                  <h4 className="font-medium text-lg mb-4 text-zinc-900">What's included:</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">One request at a time</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Avg. 48 hour delivery</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Unlimited brands</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Web Development</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Unlimited stock photos</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Up to 2 users</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                      <span className="text-zinc-800">Pause or cancel anytime</span>
-                    </li>
-                  </ul>
+                {/* Pricing Details */}
+                <div className="bg-black text-white rounded-xl overflow-hidden shadow-xl">
+                  <div className="px-6 py-8 border-b border-zinc-800 flex justify-between items-center">
+                    <h3 className="text-2xl font-bold">Monthly Club</h3>
+                    <div className="text-xs font-medium bg-zinc-800 text-white px-4 py-1 rounded-full">
+                      PAUSE OR CANCEL ANYTIME
+                    </div>
+                  </div>
+                  
+                  <div className="px-6 py-8 border-b border-dashed border-zinc-800">
+                    <div className="flex items-baseline mb-6">
+                      <span className="text-5xl font-bold">$4,995</span>
+                      <span className="text-zinc-400 ml-2">/month</span>
+                    </div>
+                    
+                    <div className="bg-zinc-900 px-6 py-6 rounded-lg mb-6">
+                      <div className="uppercase text-sm font-medium text-zinc-500 mb-3">INCLUDED</div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">One request at a time</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">Unlimited stock photos</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">Avg. 48 hour delivery</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">Up to 2 users</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">Unlimited brands</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">Pause or cancel anytime</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="text-zinc-300">Webflow development</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <Link href="/contact">
+                      <button className="group relative w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-medium py-3 px-8 rounded-lg overflow-hidden">
+                        <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
+                        <span className="relative z-10">Join today</span>
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-zinc-50 rounded-xl p-6 border border-zinc-200 flex items-center">
                   <div className="mr-4">
                     <Clock className="h-8 w-8 text-primary" />
