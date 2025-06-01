@@ -397,10 +397,10 @@ export default function HomePage() {
                 {/* View Work Button */}
                 <Link
                   href="/work"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className="inline-flex items-center border-sky-500 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  {/* Sky blue background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     View Work
