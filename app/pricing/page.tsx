@@ -58,6 +58,10 @@ export default function PricingPage() {
     {
       question: "How does the pause feature work?",
       answer: "You can pause your subscription at any time from your account dashboard. Your billing will be suspended until you decide to resume, and we'll save your spot."
+    },
+    {
+      question: "Do you accept crypto?",
+      answer: "Yes, we accept payments in Bitcoin, Ethereum, or USDC."
     }
   ]
 
