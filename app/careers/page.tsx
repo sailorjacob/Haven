@@ -1,0 +1,308 @@
+"use client"
+
+import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowRight, Hexagon, Menu, X, ChevronDown, Briefcase, DollarSign, Users, Mail } from "lucide-react"
+import { useState } from "react"
+import AnimatedStars from "../components/AnimatedStars"
+import { Footer } from "@/components/footer"
+
+export default function CareersPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isApplyHovered, setIsApplyHovered] = useState(false)
+
+  return (
+    <main className="bg-white w-full text-zinc-900">
+      {/* Animated Stars */}
+      <AnimatedStars />
+
+      {/* Clean gradient background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
+      </div>
+
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+        <div className="container mx-auto px-6 py-3">
+          <nav className="flex items-center justify-between">
+            <div className="flex items-center space-x-8">
+              <Link href="/" className="flex items-center">
+                <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
+                <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
+              </Link>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-6">
+                <Link 
+                  href="/studio" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Studio
+                </Link>
+                <Link 
+                  href="/pricing" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Pricing
+                </Link>
+                <Link 
+                  href="/book" 
+                  className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
+                >
+                  Design Book
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/contact"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+              >
+                Contact
+              </Link>
+              
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2"
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden bg-white border-b border-zinc-200"
+            >
+              <div className="container mx-auto px-6 py-4 space-y-3">
+                <Link 
+                  href="/studio" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Studio
+                </Link>
+                <Link 
+                  href="/pricing" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Pricing
+                </Link>
+                <Link 
+                  href="/book"
+                  className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Design Book
+                </Link>
+                <Link 
+                  href="/contact"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+
+      {/* Main Content */}
+      <section className="relative z-10 pt-32 px-6 pb-20">
+        <div className="container max-w-6xl mx-auto">
+          {/* Hero Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
+                Ready to <span className="text-yellow-400">work</span>?
+              </h1>
+              <p className="text-lg text-zinc-600 mb-8">
+                Join our team of passionate professionals and help us create exceptional digital experiences for clients worldwide.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="#openings">
+                  <button className="px-8 py-3 bg-zinc-900 text-white rounded-full flex items-center hover:bg-zinc-800 transition-colors">
+                    See Openings
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="px-8 py-3 border border-zinc-300 text-zinc-900 rounded-full hover:bg-zinc-50 transition-colors">
+                    Contact Us
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-tr from-zinc-800 via-zinc-700 to-zinc-800">
+                  <div className="absolute inset-0 mix-blend-overlay opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                </div>
+                <div className="absolute inset-0 flex flex-col justify-center items-center p-8">
+                  <Briefcase className="w-16 h-16 text-white/80 mb-6" />
+                  <h2 className="text-white font-bold text-2xl md:text-3xl mb-3 text-center">Join Our Team</h2>
+                  <p className="text-white/80 text-center max-w-xs">
+                    Collaborate with talented professionals in a creative and supportive environment.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-yellow-100 rounded-lg -z-10"></div>
+              <div className="absolute -left-4 -top-4 w-32 h-32 bg-zinc-200 rounded-lg -z-10"></div>
+            </motion.div>
+          </div>
+          
+          {/* Current Openings */}
+          <div id="openings" className="mb-24">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-zinc-900 mb-4">Current Openings</h2>
+              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                Explore our available positions and find the perfect role for your skills and experience.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-zinc-900">Sales Representative</h3>
+                    <div className="flex items-center space-x-4 mt-2">
+                      <div className="flex items-center text-zinc-600 text-sm">
+                        <DollarSign className="w-4 h-4 mr-1" />
+                        <span>Commission-based</span>
+                      </div>
+                      <div className="flex items-center text-zinc-600 text-sm">
+                        <Users className="w-4 h-4 mr-1" />
+                        <span>Remote</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">
+                    Sales
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="text-lg font-medium text-zinc-900 mb-2">Job Description</h4>
+                  <p className="text-zinc-600 mb-4">
+                    We're looking for motivated sales representatives to help grow our client base. In this role, you'll identify potential clients, pitch our services, and help expand our reach in the digital design market.
+                  </p>
+                  <h4 className="text-lg font-medium text-zinc-900 mb-2">Compensation</h4>
+                  <p className="text-zinc-600 mb-4">
+                    <span className="font-medium">Up to 50% commission on any sales made.</span> Our commission structure rewards your hard work and success directly.
+                  </p>
+                  <h4 className="text-lg font-medium text-zinc-900 mb-2">Requirements</h4>
+                  <ul className="list-disc pl-5 text-zinc-600 mb-6 space-y-1">
+                    <li>Strong communication and negotiation skills</li>
+                    <li>Self-motivated with ability to work independently</li>
+                    <li>Understanding of digital design and web development (preferred)</li>
+                    <li>Previous sales experience (preferred but not required)</li>
+                  </ul>
+                </div>
+                
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300 group relative"
+                  onMouseEnter={() => setIsApplyHovered(true)}
+                  onMouseLeave={() => setIsApplyHovered(false)}
+                >
+                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <span className="relative z-10 transition-opacity duration-300 flex items-center">
+                    {isApplyHovered ? (
+                      <>
+                        <ArrowRight className="w-5 h-5 mr-2" />
+                        Reach out & begin now
+                      </>
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5 mr-2" />
+                        Apply Now
+                      </>
+                    )}
+                  </span>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Why Join Us */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-zinc-50 rounded-xl p-12 text-center"
+          >
+            <h2 className="text-3xl font-bold mb-4">Why Join Haven Studio?</h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
+              Be part of a creative team that values innovation, collaboration, and growth.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                  <DollarSign className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Competitive Pay</h3>
+                <p className="text-zinc-600 text-sm">Compensation that rewards your skills and contributions.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded-full bg-zinc-200 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-zinc-600" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Collaborative Culture</h3>
+                <p className="text-zinc-600 text-sm">Work with talented professionals in a supportive environment.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                  <Briefcase className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">Growth Opportunities</h3>
+                <p className="text-zinc-600 text-sm">Develop your skills and advance your career with us.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <Footer />
+    </main>
+  )
+} 
