@@ -764,11 +764,10 @@ export default function HomePage() {
                 {/* Get Started Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group border-zinc-300"
-                  style={{ borderColor: ctaColor1.replace('bg-', '') }}
+                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Highlight background that fills from left on hover */}
-                  <div className={`absolute inset-0 ${ctaColor1} origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
+                  {/* Yellow background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     Get Started
@@ -779,11 +778,10 @@ export default function HomePage() {
                 {/* Email Us Button */}
                 <Link
                   href="mailto:info@haven.engineer"
-                  className="inline-flex items-center border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group border-zinc-300"
-                  style={{ borderColor: ctaColor2.replace('bg-', '') }}
+                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Highlight background that fills from left on hover */}
-                  <div className={`absolute inset-0 ${ctaColor2} origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
+                  {/* Yellow background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
                     <Mail className="w-3 h-3 mr-2" />
