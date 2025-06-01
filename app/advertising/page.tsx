@@ -27,43 +27,43 @@ export default function AdvertisingPage() {
   }
 
   const features = [
-    { name: "Media Buying", included: true },
-    { name: "Market Research", included: true },
-    { name: "Brand Strategy", included: true },
-    { name: "Campaign Design", included: true },
-    { name: "Content Creation", included: true },
-    { name: "Influencer Marketing", included: true },
-    { name: "Programmatic Ads", included: true },
-    { name: "Video Production", included: true },
-    { name: "Performance Marketing", included: true },
-    { name: "Analytics & Reporting", included: true },
-    { name: "Social Media Management", included: true },
-    { name: "Email Marketing", included: true },
-    { name: "PR & Communications", included: true },
-    { name: "Conversion Optimization", included: true },
-    { name: "SEO & SEM", included: true },
+    { name: "Brand Identity Development", included: true },
+    { name: "Conceptual Storytelling", included: true },
+    { name: "Visual Narrative Design", included: true },
+    { name: "Cultural Resonance Strategy", included: true },
+    { name: "Bespoke Content Creation", included: true },
+    { name: "Avant-garde Campaigns", included: true },
+    { name: "Creative Direction", included: true },
+    { name: "Brand Voice & Messaging", included: true },
+    { name: "Distinctive Visual Systems", included: true },
+    { name: "Immersive Brand Experiences", included: true },
+    { name: "Conceptual Ideation", included: true },
+    { name: "Brand Narrative Architecture", included: true },
+    { name: "Cultural Brand Positioning", included: true },
+    { name: "Artisan Visual Design", included: true },
+    { name: "Revolutionary Brand Strategy", included: true },
   ]
 
   const faqs = [
     {
       question: "What's included in the unmatched advertising services?",
-      answer: "Our unmatched services include comprehensive campaign strategy, creative development, media buying, analytics, and ongoing optimization. We handle everything from research to execution."
+      answer: "Our unmatched services include revolutionary brand concept development, bespoke visual systems, distinctive narrative creation, and immersive brand experiences. We craft the entire brand universe from conceptual foundation to execution."
     },
     {
-      question: "How long does it take to see results?",
-      answer: "While initial campaigns can be launched within 2-4 weeks, meaningful results typically emerge within 2-3 months. We provide regular reporting and optimize continuously based on performance data."
+      question: "How long does it take to develop a unique brand identity?",
+      answer: "The creation of a truly distinctive brand identity typically takes 6-8 weeks. Our process involves deep conceptual exploration, creative workshops, and iterative design to ensure your brand stands apart with authenticity and purpose."
     },
     {
-      question: "Can we scale up or down our investment?",
-      answer: "Yes, our contracts include flexibility to adjust your investment based on performance and business needs. We'll work with you to optimize spend for maximum ROI."
+      question: "Can we evolve our existing brand identity?",
+      answer: "Absolutely. We specialize in brand evolution that honors your heritage while propelling your identity forward. Our approach carefully identifies core brand elements to preserve while reimagining aspects that need contemporary relevance."
     },
     {
       question: "Do you work with specific industries?",
-      answer: "We work across various industries but have particular expertise in technology, finance, lifestyle brands, and consumer products. We customize our approach based on your specific market."
+      answer: "While we work across various sectors, we're particularly drawn to brands willing to challenge conventions. Our approach is less about industry expertise and more about partnering with visionaries ready to define new category standards."
     },
     {
-      question: "What makes your advertising services different?",
-      answer: "We combine creative excellence with data-driven strategies, offering a full-service approach that eliminates the need to coordinate multiple agencies. Our dedicated team ensures consistent brand messaging across all channels."
+      question: "What makes your branding approach different?",
+      answer: "We reject formulaic branding. Each identity we create begins with a blank canvas and deep conceptual exploration. Our interdisciplinary team of artists, writers, and cultural strategists ensures your brand transcends traditional category expectations."
     }
   ]
 
@@ -190,37 +190,30 @@ export default function AdvertisingPage() {
 
       {/* Animated Text Overlay */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
+        className="fixed inset-0 z-[999] flex items-start justify-start bg-red-600 animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        onAnimationComplete={() => {
+          // When animation completes, trigger the overlay to disappear
+          const overlay = document.querySelector('.animated-overlay');
+          if (overlay) {
+            setTimeout(() => {
+              (overlay as HTMLElement).style.display = 'none';
+            }, 5000); // Show for 5 seconds total
+          }
+        }}
       >
-        {/* Color sweep effect */}
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-r from-red-600 to-green-500 z-30"
-          initial={{ x: '-100%' }}
-          animate={{ x: '100%' }}
-          transition={{ 
-            duration: 1, 
-            delay: 3.5, 
-            ease: "easeInOut" 
-          }}
-          onAnimationComplete={() => {
-            // When color sweep completes, trigger the whole overlay to disappear
-            const overlay = document.querySelector('.animated-overlay');
-            if (overlay) {
-              setTimeout(() => {
-                (overlay as HTMLElement).style.display = 'none';
-              }, 1000); // Give time for NO MERCY to show
-            }
-          }}
-        />
-
         <div className="relative w-full h-full pt-20 pl-12 z-20">
           {/* Big Red Text - now top left */}
-          <div className="overflow-visible text-left">
+          <motion.div 
+            className="overflow-visible text-left"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.05 }}
+          >
             <motion.h1 
-              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black text-[#ff0000] uppercase tracking-tighter leading-none"
+              className="text-7xl sm:text-[8rem] md:text-[10rem] font-black text-white uppercase tracking-tighter leading-none"
               style={{ lineHeight: "0.9" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -231,10 +224,13 @@ export default function AdvertisingPage() {
                 <motion.span
                   key={index}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={{ 
+                    opacity: [0, 1, 1, 0],
+                  }}
                   transition={{ 
-                    duration: 0.05, 
+                    duration: 3, 
                     delay: index * 0.15,
+                    times: [0, 0.1, 0.7, 1]
                   }}
                   className="inline-block"
                 >
@@ -242,31 +238,30 @@ export default function AdvertisingPage() {
                 </motion.span>
               ))}
             </motion.h1>
-          </div>
-          
-          {/* NO MERCY text - now popping up */}
-          <motion.div
-            className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-40"
-            initial={{ opacity: 0, scale: 0.2 }}
-            animate={{ opacity: 1, scale: [0.2, 1.2, 1] }}
-            transition={{ 
-              duration: 0.5,
-              delay: 4.2, // After the sweep
-              ease: "backOut"
-            }}
-          >
-            <h2 
-              className="text-5xl sm:text-7xl md:text-[10rem] font-black uppercase tracking-tight"
-              style={{ 
-                color: '#0f0',
-                filter: 'brightness(1.5)',
-                textShadow: '0 0 15px rgba(0, 255, 0, 0.7)'
-              }}
-            >
-              NO MERCY
-            </h2>
           </motion.div>
         </div>
+          
+        {/* NO MERCY text - centered and much bigger */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 w-full text-center"
+          initial={{ opacity: 0, scale: 0.2 }}
+          animate={{ opacity: 1, scale: [0.2, 1.2, 1] }}
+          transition={{ 
+            duration: 0.8,
+            delay: 3.5,
+            ease: "backOut"
+          }}
+        >
+          <h2 
+            className="text-8xl sm:text-[12rem] md:text-[18rem] font-black uppercase tracking-tight"
+            style={{ 
+              color: '#ffffff',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.3)'
+            }}
+          >
+            NO MERCY
+          </h2>
+        </motion.div>
       </motion.div>
 
       {/* Single Combined Section - All Content Flows Together */}
@@ -284,7 +279,7 @@ export default function AdvertisingPage() {
                 Unmatched <span className="text-purple-600">Advertising</span> Solutions
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
-                Dedicated branding and advertising services to scale your business.
+                Revolutionary branding and conceptual innovation to transform your market presence.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button 
@@ -319,7 +314,7 @@ export default function AdvertisingPage() {
               className="text-center mb-6"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Complete advertising solutions for growing businesses
+                Visionary branding for forward-thinking brands
               </h2>
             </motion.div>
 
@@ -334,9 +329,9 @@ export default function AdvertisingPage() {
                 <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
                   <Target className="text-purple-600 w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-zinc-900">Strategy</h3>
+                <h3 className="text-xl font-semibold mb-3 text-zinc-900">Conceptualization</h3>
                 <p className="text-zinc-600">
-                  Comprehensive marketing strategy tailored to your business goals.
+                  Revolutionary brand concepts that challenge category conventions.
                 </p>
               </motion.div>
 
@@ -350,9 +345,9 @@ export default function AdvertisingPage() {
                 <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
                   <Palette className="text-purple-600 w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-zinc-900">Creative</h3>
+                <h3 className="text-xl font-semibold mb-3 text-zinc-900">Creative Vision</h3>
                 <p className="text-zinc-600">
-                  Best-in-class creative and production for all advertising channels.
+                  Distinctive visual expressions that set your brand apart from competitors.
                 </p>
               </motion.div>
 
@@ -366,9 +361,9 @@ export default function AdvertisingPage() {
                 <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
                   <BarChart className="text-purple-600 w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-zinc-900">Measurement</h3>
+                <h3 className="text-xl font-semibold mb-3 text-zinc-900">Brand Narrative</h3>
                 <p className="text-zinc-600">
-                  Advanced analytics and reporting to maximize ROI.
+                  Compelling storytelling that forges emotional connections with audiences.
                 </p>
               </motion.div>
             </div>
@@ -384,10 +379,10 @@ export default function AdvertisingPage() {
               className="text-center mb-6"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Complete marketing & advertising services
+                Revolutionary brand experiences & conceptual design
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Everything you need to grow your brand and business.
+                Distinctive creative approaches that set you apart.
               </p>
             </motion.div>
 
@@ -418,10 +413,10 @@ export default function AdvertisingPage() {
             >
               <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Why businesses choose Haven for advertising
+                Why visionaries choose Haven for branding
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Our unmatched advertising solutions provide a comprehensive approach to growing your brand and business.
+                Our unmatched creative approach crafts distinct brand universes that transcend category norms.
               </p>
             </motion.div>
 
@@ -438,9 +433,9 @@ export default function AdvertisingPage() {
                   <div className="mb-4">
                     <Globe className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Integrated campaigns</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Conceptual Innovation</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Cohesive messaging across all channels for maximum impact.
+                    Revolutionary brand ideas that create new category standards.
                   </p>
                 </div>
               </motion.div>
@@ -457,9 +452,9 @@ export default function AdvertisingPage() {
                   <div className="mb-4">
                     <Zap className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Dedicated team</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Dedicated Creatives</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Your own marketing department with strategic leadership.
+                    Your own dedicated team of visionary artists and storytellers.
                   </p>
                 </div>
               </motion.div>
@@ -476,9 +471,9 @@ export default function AdvertisingPage() {
                   <div className="mb-4">
                     <BarChart className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Data-driven approach</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cultural Immersion</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Analytics and insights inform every decision we make.
+                    Deep cultural insights inform every creative decision we make.
                   </p>
                 </div>
               </motion.div>
@@ -495,9 +490,9 @@ export default function AdvertisingPage() {
                   <div className="mb-4">
                     <Star className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Premium creative</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Artisan Craft</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Award-winning creative that captures attention and drives action.
+                    Meticulously crafted visual and narrative systems with distinctive character.
                   </p>
                 </div>
               </motion.div>
@@ -514,9 +509,9 @@ export default function AdvertisingPage() {
                   <div className="mb-4">
                     <Repeat className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Continuous optimization</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Perpetual Evolution</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Ongoing testing and refinement to improve performance.
+                    Brands that continuously adapt to cultural shifts while maintaining core identity.
                   </p>
                 </div>
               </motion.div>
@@ -533,9 +528,9 @@ export default function AdvertisingPage() {
                   <div className="mb-4">
                     <Award className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Industry expertise</h3>
+                  <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cross-disciplinary Approach</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
-                    Specialized knowledge across multiple markets and verticals.
+                    Blending art, design, psychology, and cultural anthropology into branding.
                   </p>
                 </div>
               </motion.div>
@@ -553,10 +548,10 @@ export default function AdvertisingPage() {
             >
               <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED SERVICES</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Dedicated marketing solutions for growing businesses
+                Bespoke branding solutions for visionary companies
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Custom advertising services starting at $95,000/month
+                Revolutionary brand transformations starting at $95,000/month
               </p>
             </motion.div>
 
@@ -635,35 +630,35 @@ export default function AdvertisingPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Dedicated strategist</span>
+                            <span className="text-zinc-700">Dedicated brand architect</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Full-service creative</span>
+                            <span className="text-zinc-700">Bespoke creative direction</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Media planning & buying</span>
+                            <span className="text-zinc-700">Conceptual development</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Weekly reporting</span>
+                            <span className="text-zinc-700">Brand narrative crafting</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Unlimited revisions</span>
+                            <span className="text-zinc-700">Unlimited ideation</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Multi-channel campaigns</span>
+                            <span className="text-zinc-700">Cross-medium expression</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Market research</span>
+                            <span className="text-zinc-700">Cultural positioning</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Competitive analysis</span>
+                            <span className="text-zinc-700">Competitive distinction</span>
                           </div>
                         </div>
                       </div>
@@ -681,16 +676,16 @@ export default function AdvertisingPage() {
                       </div>
                       
                       <p className="text-center text-sm text-zinc-500">
-                        Custom solutions and pricing available for larger campaigns.
+                        Bespoke brand development packages available for revolutionary visions.
                       </p>
                     </div>
                     
                     <div className="text-sm text-zinc-600">
                       <p className="mb-4">
-                        Our unmatched advertising solutions are designed for businesses looking to scale their brand presence and drive significant growth. We offer a comprehensive approach to advertising and marketing.
+                        Our unmatched branding solutions are designed for visionaries looking to redefine their categories and create distinctive market presence. We approach each brand as a unique universe to be crafted.
                       </p>
                       <p>
-                        Contact us to discuss your specific needs and goals. We'll create a custom plan tailored to your business.
+                        Contact us to discuss your vision. We'll create a revolutionary brand expression tailored to your ambitions.
                       </p>
                     </div>
                   </div>
@@ -764,10 +759,10 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Ready to elevate your brand?
+                Ready to redefine your brand universe?
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
-                Let's discuss how our advertising solutions can help you achieve your business goals.
+                Let's explore how our revolutionary approach can transform your brand presence.
               </p>
               <Link href="/contact">
                 <Button 
