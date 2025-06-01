@@ -671,7 +671,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design. Check out his work on ",
+                  description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design. Check out his ",
                   github: "https://sailorjacob.github.io",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
                 },
@@ -715,7 +715,7 @@ export default function HomePage() {
                         rel="noopener noreferrer" 
                         className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
                       >
-                        GitHub
+                        work
                       </a>
                     )}
                   </p>
