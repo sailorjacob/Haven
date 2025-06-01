@@ -130,7 +130,7 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
-                <span className="text-red-600">Cavemen</span> and <span className="text-red-600">Onlyfans Girls</span>
+                <span className="text-red-600">Cavemen</span> and <span className="text-yellow-400">Only<span className="text-pink-500">Fans</span> <span className="text-pink-500">Girls</span></span>
               </h1>
               <p className="text-lg text-zinc-600 mb-8">
                 A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
@@ -173,7 +173,7 @@ export default function DesignBookPage() {
                   
                   <div className="text-center my-12">
                     <div className="text-zinc-800/80 uppercase tracking-widest text-xs font-light mb-2">Haven Studio</div>
-                    <h2 className="text-zinc-900 font-bold text-2xl md:text-3xl mb-2">Cavemen & Onlyfans Girls</h2>
+                    <h2 className="text-zinc-900 font-bold text-2xl md:text-3xl mb-2">Cavemen & <span className="text-yellow-400">Only</span><span className="text-pink-500">Fans Girls</span></h2>
                     <div className="h-0.5 w-20 bg-zinc-400 mx-auto"></div>
                   </div>
                   
@@ -204,9 +204,9 @@ export default function DesignBookPage() {
             <div className="grid grid-cols-3 gap-8">
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
-                  <span className="text-red-600 font-medium">16</span>
+                  <span className="text-red-600 font-medium">12</span>
                 </div>
-                <p className="text-zinc-600">Chapters</p>
+                <p className="text-zinc-600">Visual Sections</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-zinc-200 flex items-center justify-center mb-4">
@@ -218,12 +218,12 @@ export default function DesignBookPage() {
                 <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
                   <span className="text-red-600 font-medium">∞</span>
                 </div>
-                <p className="text-zinc-600">Insights</p>
+                <p className="text-zinc-600">Inspirations</p>
               </div>
             </div>
           </motion.div>
           
-          {/* Featured Chapters */}
+          {/* Featured Visual Content */}
           <div id="chapters" className="mb-24">
             <motion.div
               initial={{ opacity: 0 }}
@@ -232,9 +232,9 @@ export default function DesignBookPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-zinc-900 mb-4">Featured Chapters</h2>
+              <h2 className="text-3xl font-bold text-zinc-900 mb-4">Visual Content</h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Explore key sections of our design book that illuminate our approach to creating exceptional digital experiences.
+                Explore the diverse visual categories that make up our premium hardcover collection.
               </p>
             </motion.div>
             
@@ -242,52 +242,52 @@ export default function DesignBookPage() {
               {[
                 {
                   number: "01",
-                  title: "Design Philosophy",
-                  description: "Our core design principles and the values that guide our creative decisions.",
+                  title: "Photography",
+                  description: "Stunning high-resolution photography spanning landscapes, portraits, and conceptual imagery.",
+                  color: "bg-red-50 border-red-100"
+                },
+                {
+                  number: "02",
+                  title: "Graphic Design",
+                  description: "Bold visual compositions exploring typography, color theory, and layout principles.",
+                  color: "bg-zinc-100 border-zinc-200"
+                },
+                {
+                  number: "03",
+                  title: "AI-Generated Art",
+                  description: "Cutting-edge imagery created through various AI platforms pushing creative boundaries.",
                   color: "bg-red-50 border-red-100"
                 },
                 {
                   number: "04",
-                  title: "Visual Systems",
-                  description: "How we create cohesive visual languages that communicate brand identity.",
+                  title: "Historical References",
+                  description: "Visual journey through artistic expressions from the dark ages to contemporary times.",
                   color: "bg-zinc-100 border-zinc-200"
                 },
                 {
-                  number: "07",
-                  title: "User Experience",
-                  description: "Strategies for creating intuitive, meaningful interactions that delight users.",
+                  number: "05",
+                  title: "Poems & Stories",
+                  description: "Visual typography and illustrated short-form literature that complements the imagery.",
                   color: "bg-red-50 border-red-100"
                 },
                 {
-                  number: "12",
-                  title: "Design Tools",
-                  description: "The software, frameworks, and methodologies we use in our design process.",
-                  color: "bg-zinc-100 border-zinc-200"
-                },
-                {
-                  number: "15",
-                  title: "Case Studies",
-                  description: "Real-world examples of our design principles applied to client projects.",
-                  color: "bg-red-50 border-red-100"
-                },
-                {
-                  number: "16",
-                  title: "Future Directions",
-                  description: "Emerging trends and technologies shaping the future of digital design.",
+                  number: "06",
+                  title: "Future Concepts",
+                  description: "Speculative visual designs exploring how aesthetics might evolve in coming decades.",
                   color: "bg-zinc-100 border-zinc-200"
                 }
-              ].map((chapter, index) => (
+              ].map((content, index) => (
                 <motion.div
-                  key={chapter.number}
+                  key={content.number}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`p-6 rounded-lg border ${chapter.color} hover:shadow-md transition-all duration-300`}
+                  className={`p-6 rounded-lg border ${content.color} hover:shadow-md transition-all duration-300`}
                 >
-                  <div className="text-sm font-medium text-zinc-400 mb-2">Chapter {chapter.number}</div>
-                  <h3 className="text-xl font-bold text-zinc-900 mb-3">{chapter.title}</h3>
-                  <p className="text-zinc-600 mb-4">{chapter.description}</p>
+                  <div className="text-sm font-medium text-zinc-400 mb-2">Section {content.number}</div>
+                  <h3 className="text-xl font-bold text-zinc-900 mb-3">{content.title}</h3>
+                  <p className="text-zinc-600 mb-4">{content.description}</p>
                   <div className="flex justify-end">
                     <Bookmark className="w-5 h-5 text-zinc-400" />
                   </div>
