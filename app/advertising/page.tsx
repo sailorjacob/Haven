@@ -46,8 +46,8 @@ export default function AdvertisingPage() {
 
   const faqs = [
     {
-      question: "What's included in the enterprise advertising services?",
-      answer: "Our enterprise services include comprehensive campaign strategy, creative development, media buying, analytics, and ongoing optimization. We handle everything from research to execution."
+      question: "What's included in the unmatched advertising services?",
+      answer: "Our unmatched services include comprehensive campaign strategy, creative development, media buying, analytics, and ongoing optimization. We handle everything from research to execution."
     },
     {
       question: "How long does it take to see results?",
@@ -269,7 +269,7 @@ export default function AdvertisingPage() {
               className="text-center mb-6"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-                Enterprise <span className="text-purple-600">Advertising</span> Solutions
+                Unmatched <span className="text-purple-600">Advertising</span> Solutions
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
                 Dedicated branding and advertising services to scale your business.
@@ -404,12 +404,12 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">ENTERPRISE BENEFITS</p>
+              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Why businesses choose Haven for advertising
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Our enterprise advertising solutions provide a comprehensive approach to growing your brand and business.
+                Our unmatched advertising solutions provide a comprehensive approach to growing your brand and business.
               </p>
             </motion.div>
 
@@ -539,12 +539,12 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">ENTERPRISE SERVICES</p>
+              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED SERVICES</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Dedicated marketing solutions for growing businesses
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Custom advertising services starting at $10,000/month
+                Custom advertising services starting at $95,000/month
               </p>
             </motion.div>
 
@@ -582,7 +582,7 @@ export default function AdvertisingPage() {
                           {/* Card header */}
                           <div className="flex justify-between items-center">
                             <Hexagon className="w-8 h-8 text-zinc-800/80" strokeWidth={1} />
-                            <div className="text-xs font-medium text-zinc-600">Enterprise</div>
+                            <div className="text-xs font-medium text-zinc-600">Unmatched</div>
                           </div>
 
                           {/* Card center content */}
@@ -593,7 +593,7 @@ export default function AdvertisingPage() {
                           
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
-                            <div className="text-sm font-medium tracking-wider text-zinc-600">ENTERPRISE</div>
+                            <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
                             <button className="bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-purple-500 hover:to-purple-600 transition-colors">
                               Get started
                             </button>
@@ -606,7 +606,7 @@ export default function AdvertisingPage() {
                   {/* Pricing Details */}
                   <div className="bg-white p-8 border-l border-zinc-200">
                     <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-2xl font-bold text-zinc-800">Enterprise Advertising</h3>
+                      <h3 className="text-2xl font-bold text-zinc-800">Unmatched Advertising</h3>
                       <div className="text-xs font-medium text-zinc-500">
                         Custom contracts available
                       </div>
@@ -614,7 +614,7 @@ export default function AdvertisingPage() {
                     
                     <div className="border-b border-dashed border-zinc-200 pb-6 mb-6">
                       <div className="flex items-baseline mb-6">
-                        <span className="text-5xl font-bold text-zinc-800">$10,000</span>
+                        <span className="text-5xl font-bold text-zinc-800">$95,000</span>
                         <span className="text-zinc-500 ml-2">/month</span>
                       </div>
                       
@@ -675,7 +675,7 @@ export default function AdvertisingPage() {
                     
                     <div className="text-sm text-zinc-600">
                       <p className="mb-4">
-                        Our enterprise advertising solutions are designed for businesses looking to scale their brand presence and drive significant growth. We offer a comprehensive approach to advertising and marketing.
+                        Our unmatched advertising solutions are designed for businesses looking to scale their brand presence and drive significant growth. We offer a comprehensive approach to advertising and marketing.
                       </p>
                       <p>
                         Contact us to discuss your specific needs and goals. We'll create a custom plan tailored to your business.
