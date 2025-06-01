@@ -3,7 +3,7 @@ import { Hexagon } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="relative z-10 border-t border-zinc-200 pt-12 pb-36 px-6">
+    <footer className="relative z-10 border-t border-zinc-200 mt-36 pt-8 pb-4 px-6">
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row justify-between items-center">
           <div className="flex items-center mt-6 md:mt-0">
