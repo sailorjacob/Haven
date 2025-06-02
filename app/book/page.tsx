@@ -182,7 +182,7 @@ export default function DesignBookPage() {
               style={{ willChange: "transform, opacity" }}
             >
               <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
-                <span className="text-blue-500 block" style={{ color: '#00BBFF' }}>CAVEMEN</span>
+                <span className="text-blue-500 block" style={{ color: '#00BBFF' }}>DESIGNS: 1</span>
                 <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">AND</span>
                 <span className="block"><span className="text-zinc-400">ONLY</span><span className="text-yellow-400">FANS</span> <span className="text-pink-500">GIRLS</span></span>
               </h1>
@@ -219,8 +219,8 @@ export default function DesignBookPage() {
                 {/* Add the image overlay */}
                 <div className="absolute inset-0 z-10">
                   <Image 
-                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//cavemen.png"
-                    alt="Cavemen and OnlyFans Girls"
+                    src="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/designs1-gB5Lpw1KYbDmC0KcuQv0GWC4hl1gq8.jpg"
+                    alt="DESIGNS: 1"
                     fill
                     className="object-cover opacity-80 mix-blend-multiply"
                   />
