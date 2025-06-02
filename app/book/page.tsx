@@ -19,6 +19,8 @@ declare global {
 export default function DesignBookPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [stripeLoaded, setStripeLoaded] = useState(false)
+  const [isCheckoutHovered, setCheckoutHovered] = useState(false)
+  const [isLearnMoreHovered, setLearnMoreHovered] = useState(false)
 
   // Handle Stripe script loading
   useEffect(() => {
@@ -39,8 +41,15 @@ export default function DesignBookPage() {
     }
   }, [])
 
+  // Precompute random colors to avoid runtime calculations
+  const getRandomHighlightColor = () => {
+    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+  const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
+
   return (
-    <main className="bg-white w-full text-zinc-900">
+    <main className="bg-white w-full text-zinc-900 min-h-screen">
       {/* Animated Stars */}
       <AnimatedStars />
 
@@ -367,14 +376,194 @@ export default function DesignBookPage() {
                 <p className="text-lg text-amber-800 max-w-2xl mb-8 font-light">
                   Pre-order your copy of "Cavemen and Onlyfans Girls" for $997 and be among the first to experience this premium hardcover collection of visual references spanning the dark ages to the future.
                 </p>
-                <Link href="/contact" className="inline-block">
-                  <button className="px-10 py-4 bg-amber-700 text-white rounded-none hover:bg-amber-800 transition-colors uppercase tracking-wide text-sm font-bold">
-                    PRE-ORDER — $997
-                  </button>
+                <Link href="/contact" className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group" onMouseEnter={() => setCheckoutHovered(true)} onMouseLeave={() => setCheckoutHovered(false)}>
+                  {/* Yellow background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  
+                  {/* Text content */}
+                  <span className={`relative z-10 transition-opacity duration-300 ${isCheckoutHovered ? 'opacity-0' : 'opacity-100'}`}>
+                    Pre-order Now
+                  </span>
+                  
+                  {/* Arrow icon that appears on hover */}
+                  <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isCheckoutHovered ? 'opacity-100' : 'opacity-0'}`} />
                 </Link>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+      
+      {/* Book Details Section */}
+      <section id="details" className="relative z-10 py-20 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Book Details
+            </h2>
+            <p className="text-zinc-600 max-w-2xl mx-auto">
+              A meticulously crafted visual exploration of contemporary digital design principles and applications.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              className="bg-zinc-50 p-6 rounded-xl border border-zinc-200"
+            >
+              <h3 className="text-xl font-semibold mb-3">Physical Specifications</h3>
+              <ul className="space-y-2 text-zinc-600">
+                <li>• Dimensions: 9.5" × 12"</li>
+                <li>• 250 full-color pages</li>
+                <li>• Hardcover with exposed spine binding</li>
+                <li>• Heavyweight 170gsm silk art paper</li>
+                <li>• Foil-stamped cloth cover</li>
+                <li>• Hand-numbered edition of 500</li>
+              </ul>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              className="bg-zinc-50 p-6 rounded-xl border border-zinc-200"
+            >
+              <h3 className="text-xl font-semibold mb-3">Content Overview</h3>
+              <ul className="space-y-2 text-zinc-600">
+                <li>• 15 in-depth case studies</li>
+                <li>• Haven's design philosophy</li>
+                <li>• Typography and color systems</li>
+                <li>• UX/UI design principles</li>
+                <li>• Creative process documentation</li>
+                <li>• Exclusive photography</li>
+              </ul>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              className="bg-zinc-50 p-6 rounded-xl border border-zinc-200"
+            >
+              <h3 className="text-xl font-semibold mb-3">Special Features</h3>
+              <ul className="space-y-2 text-zinc-600">
+                <li>• QR codes linking to digital content</li>
+                <li>• AR-enhanced visuals</li>
+                <li>• Pull-out poster featuring Haven's design timeline</li>
+                <li>• Bookmark with embedded microchip</li>
+                <li>• Certificate of authenticity</li>
+                <li>• Custom protective slipcase</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Preview Section */}
+      <section className="relative z-10 py-20 px-6 bg-zinc-50">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Preview Pages
+            </h2>
+            <p className="text-zinc-600 max-w-2xl mx-auto">
+              A glimpse into the design philosophy and visual language that defines Haven's work.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Preview images with optimized animations */}
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: Math.min(0.1 * index, 0.5), ease: "easeOut" }}
+                className="group cursor-pointer"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden rounded-lg border border-zinc-200 shadow-sm">
+                  <Image
+                    src={`https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//page${index}.jpeg`}
+                    alt={`Book preview page ${index}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ willChange: "transform" }} // GPU hint
+                  />
+                  
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                  
+                  {/* Zoom icon on hover */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-zinc-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-2 text-sm text-center text-zinc-500">Page {index * 20 + 4}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="container max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="bg-zinc-900 rounded-2xl p-8 md:p-12 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Reserve Your Copy Today
+            </h2>
+            <p className="text-zinc-300 mb-8 max-w-xl mx-auto">
+              The first edition is limited to only 500 hand-numbered copies. 
+              Pre-orders ship worldwide starting September 15th.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                href="#"
+                className="inline-flex items-center bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 px-8 rounded-full transition-all duration-300 text-sm"
+              >
+                Pre-order Now • $129
+              </Link>
+              <Link
+                href="#"
+                className="inline-flex items-center bg-zinc-800 hover:bg-zinc-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 text-sm"
+              >
+                Download Sample
+              </Link>
+            </div>
+            
+            <p className="text-zinc-400 text-xs mt-6">
+              Free worldwide shipping • Money-back guarantee • Expected delivery: September 2023
+            </p>
+          </motion.div>
         </div>
       </section>
       

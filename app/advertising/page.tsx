@@ -22,11 +22,14 @@ export default function AdvertisingPage() {
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
-  // Function to get a random highlight color
+  // Function to get a random highlight color - precompute for better performance
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
+  
+  // Precompute colors to avoid runtime calculations
+  const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
 
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -75,7 +78,7 @@ export default function AdvertisingPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* Animated Stars */}
+      {/* Animated Stars - kept but will be optimized via the component */}
       <AnimatedStars />
 
       {/* Clean gradient background */}
@@ -101,21 +104,21 @@ export default function AdvertisingPage() {
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Advertising</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[0]}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/pricing" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book" 
@@ -132,7 +135,7 @@ export default function AdvertisingPage() {
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
               >
                 <span className="group-hover:hidden">Contact</span>
-                <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
+                <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Contact</span>
               </Link>
               
               {/* Mobile Menu Button */}
@@ -163,7 +166,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Advertising</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[0]}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
@@ -171,7 +174,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/pricing" 
@@ -179,7 +182,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book"
@@ -194,7 +197,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Contact</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Contact</span>
                 </Link>
               </div>
             </motion.div>
@@ -202,12 +205,13 @@ export default function AdvertisingPage() {
         </AnimatePresence>
       </header>
 
-      {/* Animated Text Overlay */}
+      {/* Animated Text Overlay - optimize animation performance */}
       <motion.div 
         className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        style={{ willChange: "opacity" }}
         onAnimationComplete={() => {
           // When animation completes, trigger the overlay to disappear
           const overlay = document.querySelector('.animated-overlay');
@@ -227,7 +231,8 @@ export default function AdvertisingPage() {
               className="text-9xl sm:text-[12rem] md:text-[20rem] font-black uppercase tracking-tighter leading-none"
               style={{ 
                 lineHeight: "0.9", 
-                color: '#ff0000'
+                color: '#ff0000',
+                willChange: "transform, opacity" // GPU acceleration hint
               }}
             >
               {/* Animated text with typewriter effect - no fading */}
@@ -239,11 +244,13 @@ export default function AdvertisingPage() {
                     opacity: [0, 1, 1, 0],
                   }}
                   transition={{ 
-                    duration: 3.5, 
-                    delay: index * 0.15,
-                    times: [0, 0.05, 0.8, 0.81] // Quick appear, stay visible, then instant disappear
+                    duration: 3, // Slightly faster 
+                    delay: index * 0.12, // Slightly faster
+                    times: [0, 0.05, 0.8, 0.81], // Quick appear, stay visible, then instant disappear
+                    ease: "easeOut"
                   }}
                   className="inline-block"
+                  style={{ willChange: "opacity" }}
                 >
                   {char === ' ' ? '\u00A0' : char}
                 </motion.span>
@@ -259,8 +266,9 @@ export default function AdvertisingPage() {
           animate={{ opacity: 1 }}
           transition={{ 
             duration: 0.1,
-            delay: 3.5
+            delay: 3.2 // Slightly faster transition
           }}
+          style={{ willChange: "opacity" }}
         >
           <h2 
             className="text-9xl sm:text-[15rem] md:text-[25rem] font-black uppercase tracking-tight"
@@ -276,12 +284,12 @@ export default function AdvertisingPage() {
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 pt-20 px-6">
         <div className="container max-w-6xl mx-auto space-y-10">
-          {/* Hero Section */}
+          {/* Hero Section - optimized animations */}
           <div className="pt-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
@@ -313,13 +321,13 @@ export default function AdvertisingPage() {
             </motion.div>
           </div>
 
-          {/* How It Works */}
+          {/* How It Works - optimized animations */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
               <p className="text-sm font-medium text-zinc-500 mb-2">VISIONARY BRANDING</p>
@@ -330,10 +338,10 @@ export default function AdvertisingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
                 <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
@@ -346,10 +354,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
                 <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
@@ -362,10 +370,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
                 <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
@@ -379,13 +387,13 @@ export default function AdvertisingPage() {
             </div>
           </div>
 
-          {/* Services Categories */}
+          {/* Services Categories - optimized animations */}
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
               <p className="text-sm font-medium text-zinc-500 mb-2">REVOLUTIONARY DESIGN</p>
@@ -401,10 +409,10 @@ export default function AdvertisingPage() {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.4, delay: Math.min(0.05 * index, 0.25), ease: "easeOut" }}
                   className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-zinc-400 transition-colors"
                 >
                   <p className="text-zinc-800">{feature.name}</p>
@@ -413,13 +421,13 @@ export default function AdvertisingPage() {
             </div>
           </div>
 
-          {/* Benefits */}
+          {/* Benefits - optimized animations */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
               <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED BENEFITS</p>
@@ -433,10 +441,10 @@ export default function AdvertisingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -452,10 +460,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -471,10 +479,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -490,10 +498,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -509,10 +517,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -528,10 +536,10 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -548,13 +556,13 @@ export default function AdvertisingPage() {
             </div>
           </div>
 
-          {/* Pricing Section */}
+          {/* Pricing Section - optimized animations */}
           <div ref={featuresRef} id="pricing">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
               <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED SERVICES</p>
@@ -567,10 +575,10 @@ export default function AdvertisingPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="max-w-5xl mx-auto"
             >
               {/* Unified Card with Border */}
@@ -705,13 +713,13 @@ export default function AdvertisingPage() {
             </motion.div>
           </div>
 
-          {/* FAQ Section */}
+          {/* FAQ Section - optimized animations */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-8"
             >
               <p className="text-sm font-medium text-purple-600 mb-2">FAQ</p>
@@ -724,10 +732,10 @@ export default function AdvertisingPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="max-w-3xl mx-auto divide-y divide-zinc-200"
             >
               {faqs.map((faq, index) => (
@@ -750,7 +758,7 @@ export default function AdvertisingPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                       className="mt-2 pr-12"
                     >
                       <p className="text-zinc-600">{faq.answer}</p>
@@ -761,13 +769,13 @@ export default function AdvertisingPage() {
             </motion.div>
           </div>
           
-          {/* Call to Action */}
+          {/* Call to Action - optimized animations */}
           <div className="text-center pb-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Ready to redefine your brand universe?
