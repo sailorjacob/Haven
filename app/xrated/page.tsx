@@ -43,7 +43,7 @@ export default function XRatedPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
-            X-Rated
+            x-rated
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
             A social platform for selectively sharing and locking content with sophisticated privacy controls and monetization options.
@@ -99,7 +99,7 @@ export default function XRatedPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Client</h4>
-                  <p className="text-zinc-300">X-Rated</p>
+                  <p className="text-zinc-300">x-rated</p>
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Year</h4>
