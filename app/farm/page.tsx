@@ -11,6 +11,12 @@ import { Button } from "@/components/ui/button"
 // Instagram post data
 const instagramPosts = [
   {
+    id: "p0",
+    imageUrl: "https://images.unsplash.com/photo-1620812097331-ff636155488f?q=80&w=1000",
+    caption: "Latest aesthetic exploration from our design lab",
+    link: "https://www.instagram.com/p/DKaLG3KSTNH/",
+  },
+  {
     id: "p1",
     imageUrl: "https://images.unsplash.com/photo-1633358560639-8cb7a114e36e?q=80&w=1000",
     caption: "Aesthetic generated image #1",
