@@ -2,24 +2,13 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Hexagon, Menu, X, ArrowRight, Instagram } from "lucide-react"
+import { useState } from "react"
+import { Hexagon, Menu, X } from "lucide-react"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
 import Script from "next/script"
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [widgetLoaded, setWidgetLoaded] = useState(false)
-
-  // Initialize Elfsight widget
-  useEffect(() => {
-    // Wait for the Elfsight script to be loaded
-    if (typeof window !== 'undefined' && window.elfsight) {
-      window.elfsight.initialize();
-      setWidgetLoaded(true);
-    }
-  }, []);
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
@@ -29,18 +18,8 @@ export default function FarmPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* Load Elfsight Widget Script */}
-      <Script 
-        src="https://static.elfsight.com/platform/platform.js" 
-        data-use-service-core defer
-        strategy="afterInteractive"
-        onLoad={() => {
-          if (typeof window !== 'undefined' && window.elfsight) {
-            window.elfsight.initialize();
-            setWidgetLoaded(true);
-          }
-        }}
-      />
+      {/* Elfsight Script */}
+      <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
 
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
@@ -199,51 +178,11 @@ export default function FarmPage() {
             </p>
           </motion.div>
 
-          {/* Instagram Profile Header */}
-          <div className="mb-12 flex justify-center">
-            <div className="w-full max-w-4xl bg-white rounded-xl shadow-sm p-6 border border-zinc-200">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <Instagram className="w-8 h-8 text-pink-500" />
-                <h2 className="text-xl font-semibold text-center">@haven.engineer</h2>
-              </div>
-              
-              <div className="text-center mb-4">
-                <p className="text-zinc-600">
-                  Our creative laboratory where we experiment with aesthetic visuals and brand narratives.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <Button
-                  variant="outline"
-                  className="border-zinc-300 hover:bg-zinc-50 text-zinc-900"
-                  onClick={() => window.open('https://instagram.com/haven.engineer', '_blank')}
-                >
-                  Visit Our Instagram
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-
           {/* Instagram Feed */}
           <div className="mb-16">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               {/* Elfsight Instagram Feed Widget */}
-              <div className="elfsight-app-e9f71eb9-28fe-42fa-90a7-61f0d63eb616"></div>
-              
-              {!widgetLoaded && (
-                <div className="text-center py-16">
-                  <div className="animate-pulse flex flex-col items-center justify-center">
-                    <div className="rounded-full bg-zinc-200 h-16 w-16 mb-4 flex items-center justify-center">
-                      <Instagram className="h-8 w-8 text-zinc-400" />
-                    </div>
-                    <div className="h-4 bg-zinc-200 rounded w-32 mb-2"></div>
-                    <div className="h-3 bg-zinc-200 rounded w-24 mb-6"></div>
-                    <p className="text-zinc-500">Loading Instagram feed...</p>
-                  </div>
-                </div>
-              )}
+              <div className="elfsight-app-0d3388d2-2de8-4157-97b1-ae10ef33aa26" data-elfsight-app-lazy></div>
             </div>
           </div>
         </div>
@@ -253,13 +192,4 @@ export default function FarmPage() {
       <Footer />
     </main>
   )
-}
-
-// Add TypeScript declaration for Elfsight
-declare global {
-  interface Window {
-    elfsight?: {
-      initialize: () => void;
-    };
-  }
 } 
