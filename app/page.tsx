@@ -265,11 +265,11 @@ export default function HomePage() {
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-28 px-6">
-        <div className="container max-w-6xl mx-auto space-y-16">
+      <section className="relative z-10 pt-20 px-6">
+        <div className="container max-w-6xl mx-auto space-y-12">
           
           {/* Selected Projects */}
-          <div className="pt-14">
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
