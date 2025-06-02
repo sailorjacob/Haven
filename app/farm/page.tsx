@@ -208,7 +208,7 @@ export default function FarmPage() {
               <iframe
                 title="Instagram Feed"
                 className="w-full h-full rounded-xl shadow-md border border-zinc-200"
-                src="https://snapwidget.com/embed/1078123"
+                src="https://feed.mikle.com/widget/v2/149415/"
                 allowTransparency={true}
                 frameBorder="0"
                 scrolling="no"
@@ -216,7 +216,7 @@ export default function FarmPage() {
               ></iframe>
             </div>
             <div className="text-center mt-6 text-sm text-zinc-500">
-              Feed provided by SnapWidget. May take a moment to load.
+              Feed from @haven.engineer - May take a moment to load.
             </div>
           </div>
         </div>
