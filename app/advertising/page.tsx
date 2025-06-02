@@ -231,7 +231,7 @@ export default function AdvertisingPage() {
               }}
             >
               {/* Animated text with typewriter effect - no fading */}
-              {'FUCKING THE ADS GAME UP'.split('').map((char, index) => (
+              {'F#CKING THE AD GAME UP'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0 }}
@@ -285,7 +285,7 @@ export default function AdvertisingPage() {
               className="text-center mb-6"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-                Unmatched <span className="text-purple-600">Advertising</span> Solutions
+                Unmatched <span className="text-red-600">Advertising</span> Solutions
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
                 Revolutionary branding and conceptual innovation to transform your market presence.
@@ -319,24 +319,35 @@ export default function AdvertisingPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Visionary branding for forward-thinking brands
-              </h2>
+              <motion.h2 
+                initial={{ scale: 0.9 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4"
+              >
+                <motion.span
+                  initial={{ color: "#000000" }}
+                  whileInView={{ color: "#ef4444" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >Visionary</motion.span> branding for forward-thinking brands
+              </motion.h2>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
-                  <Target className="text-purple-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-red-600/10 rounded-full flex items-center justify-center mb-4">
+                  <Target className="text-red-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Conceptualization</h3>
                 <p className="text-zinc-600">
@@ -345,14 +356,14 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
-                  <Palette className="text-purple-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-red-600/10 rounded-full flex items-center justify-center mb-4">
+                  <Palette className="text-red-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Creative Vision</h3>
                 <p className="text-zinc-600">
@@ -361,14 +372,14 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
-                  <BarChart className="text-purple-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-red-600/10 rounded-full flex items-center justify-center mb-4">
+                  <BarChart className="text-red-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Brand Narrative</h3>
                 <p className="text-zinc-600">
@@ -387,9 +398,20 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Revolutionary brand experiences & conceptual design
-              </h2>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4"
+                initial={{ letterSpacing: "-0.05em" }}
+                whileInView={{ letterSpacing: "0em" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                Revolutionary brand <motion.span
+                  initial={{ color: "#000000" }}
+                  whileInView={{ color: "#ef4444" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >experiences</motion.span> & conceptual design
+              </motion.h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Distinctive creative approaches that set you apart.
               </p>
@@ -403,7 +425,11 @@ export default function AdvertisingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-purple-600/50 transition-colors"
+                  className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-red-600/50 transition-colors"
+                  whileHover={{ 
+                    scale: 1.03, 
+                    borderColor: "rgba(239, 68, 68, 0.5)" 
+                  }}
                 >
                   <p className="text-zinc-800">{feature.name}</p>
                 </motion.div>
@@ -420,10 +446,29 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED BENEFITS</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Why visionaries choose Haven for branding
-              </h2>
+              <motion.span 
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <p className="text-sm font-medium text-red-600 mb-2">UNMATCHED BENEFITS</p>
+              </motion.span>
+              <motion.div
+                initial={{ filter: "blur(4px)" }}
+                whileInView={{ filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+                  Why visionaries choose <motion.span
+                    initial={{ color: "#000000" }}
+                    whileInView={{ color: "#ef4444" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.4 }}
+                  >Haven</motion.span> for branding
+                </h2>
+              </motion.div>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Our unmatched creative approach crafts distinct brand universes that transcend category norms.
               </p>
@@ -431,17 +476,28 @@ export default function AdvertisingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                initial={{ opacity: 0, y: 60, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.1 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <motion.div 
+                  className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
                 <div className="relative z-10">
-                  <div className="mb-4">
-                    <Globe className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
+                  <motion.div 
+                    className="mb-4"
+                    initial={{ rotate: -10 }}
+                    whileInView={{ rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    <Globe className="h-8 w-8 text-red-600 group-hover:text-white transition-colors" />
+                  </motion.div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Conceptual Innovation</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
                     Revolutionary brand ideas that create new category standards.
@@ -450,17 +506,28 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                initial={{ opacity: 0, y: 60, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.2 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <motion.div 
+                  className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
                 <div className="relative z-10">
-                  <div className="mb-4">
-                    <Zap className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
+                  <motion.div 
+                    className="mb-4"
+                    initial={{ rotate: -10 }}
+                    whileInView={{ rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    <Zap className="h-8 w-8 text-red-600 group-hover:text-white transition-colors" />
+                  </motion.div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Dedicated Creatives</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
                     Your own dedicated team of visionary artists and storytellers.
@@ -469,17 +536,28 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                initial={{ opacity: 0, y: 60, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.3 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <motion.div 
+                  className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
                 <div className="relative z-10">
-                  <div className="mb-4">
-                    <BarChart className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
+                  <motion.div 
+                    className="mb-4"
+                    initial={{ rotate: -10 }}
+                    whileInView={{ rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <BarChart className="h-8 w-8 text-red-600 group-hover:text-white transition-colors" />
+                  </motion.div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cultural Immersion</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
                     Deep cultural insights inform every creative decision we make.
@@ -488,17 +566,28 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0, y: 60, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.4 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <motion.div 
+                  className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
                 <div className="relative z-10">
-                  <div className="mb-4">
-                    <Star className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
+                  <motion.div 
+                    className="mb-4"
+                    initial={{ rotate: -10 }}
+                    whileInView={{ rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
+                    <Star className="h-8 w-8 text-red-600 group-hover:text-white transition-colors" />
+                  </motion.div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Artisan Craft</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
                     Meticulously crafted visual and narrative systems with distinctive character.
@@ -507,17 +596,28 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                initial={{ opacity: 0, y: 60, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.5 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <motion.div 
+                  className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
                 <div className="relative z-10">
-                  <div className="mb-4">
-                    <Repeat className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
+                  <motion.div 
+                    className="mb-4"
+                    initial={{ rotate: -10 }}
+                    whileInView={{ rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    <Repeat className="h-8 w-8 text-red-600 group-hover:text-white transition-colors" />
+                  </motion.div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Perpetual Evolution</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
                     Brands that continuously adapt to cultural shifts while maintaining core identity.
@@ -526,17 +626,28 @@ export default function AdvertisingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                initial={{ opacity: 0, y: 60, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.6 }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <motion.div 
+                  className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
                 <div className="relative z-10">
-                  <div className="mb-4">
-                    <Award className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
+                  <motion.div 
+                    className="mb-4"
+                    initial={{ rotate: -10 }}
+                    whileInView={{ rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                  >
+                    <Award className="h-8 w-8 text-red-600 group-hover:text-white transition-colors" />
+                  </motion.div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cross-disciplinary Approach</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
                     Blending art, design, psychology, and cultural anthropology into branding.
@@ -555,10 +666,28 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED SERVICES</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Bespoke branding solutions for visionary companies
-              </h2>
+              <motion.span 
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <p className="text-sm font-medium text-red-600 mb-2">UNMATCHED SERVICES</p>
+              </motion.span>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4"
+                initial={{ letterSpacing: "-0.05em" }}
+                whileInView={{ letterSpacing: "0em" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                Bespoke branding solutions for <motion.span
+                  initial={{ color: "#000000" }}
+                  whileInView={{ color: "#ef4444" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >visionary</motion.span> companies
+              </motion.h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Revolutionary brand transformations starting at $95,000/month
               </p>
@@ -572,7 +701,14 @@ export default function AdvertisingPage() {
               className="max-w-5xl mx-auto"
             >
               {/* Unified Card with Border */}
-              <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-zinc-300 via-zinc-100 to-zinc-300 shadow-xl overflow-hidden">
+              <motion.div 
+                className="relative p-[1px] rounded-2xl bg-gradient-to-r from-zinc-300 via-zinc-100 to-zinc-300 shadow-xl overflow-hidden"
+                initial={{ scale: 0.95, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{ boxShadow: "0 20px 40px rgba(239, 68, 68, 0.1)" }}
+              >
                 {/* Inner subtle pattern background */}
                 <div className="absolute inset-0 bg-white opacity-80 mix-blend-overlay">
                   <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
@@ -581,16 +717,34 @@ export default function AdvertisingPage() {
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/50 backdrop-blur-sm rounded-2xl overflow-hidden">
                   {/* Enterprise Card */}
                   <div className="flex items-center justify-center p-8 bg-gradient-to-br from-zinc-50 to-zinc-100">
-                    <div className="relative rotate-neg-15 hover:-rotate-12 transition-transform duration-300" style={{ transform: "rotate(-15deg)" }}>
+                    <motion.div 
+                      className="relative rotate-neg-15 hover:-rotate-12 transition-transform duration-300" 
+                      initial={{ rotate: -15 }}
+                      whileHover={{ rotate: -8 }}
+                      transition={{ duration: 0.4 }}
+                      style={{ transform: "rotate(-15deg)" }}
+                    >
                       {/* Card */}
-                      <div className="w-96 h-60 rounded-xl bg-white shadow-lg overflow-hidden relative border border-zinc-200">
-                        {/* Purple metallic shine effect */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-purple-100 via-white to-purple-200"></div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-purple-50/10 to-purple-100/20"></div>
+                      <motion.div 
+                        className="w-96 h-60 rounded-xl bg-white shadow-lg overflow-hidden relative border border-zinc-200"
+                        whileHover={{ y: -5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {/* Red metallic shine effect */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-red-100 via-white to-red-200"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-50/10 to-red-100/20"></div>
                         
                         {/* Accent shapes */}
-                        <div className="absolute top-4 left-4 w-16 h-16 rounded-full bg-purple-400/20 backdrop-blur-md"></div>
-                        <div className="absolute top-6 left-16 w-16 h-16 rounded-full bg-indigo-500/10 backdrop-blur-md"></div>
+                        <motion.div 
+                          className="absolute top-4 left-4 w-16 h-16 rounded-full bg-red-400/20 backdrop-blur-md"
+                          animate={{ scale: [1, 1.1, 1], opacity: [1, 0.8, 1] }}
+                          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        ></motion.div>
+                        <motion.div 
+                          className="absolute top-6 left-16 w-16 h-16 rounded-full bg-red-500/10 backdrop-blur-md"
+                          animate={{ scale: [1, 1.15, 1], opacity: [1, 0.7, 1] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                        ></motion.div>
                         <div className="absolute bottom-8 right-8 w-20 h-20 rounded-full bg-yellow-300/10 backdrop-blur-md"></div>
                         <div className="absolute bottom-10 right-24 w-14 h-14 rounded-full bg-zinc-800/5 backdrop-blur-md"></div>
                         
@@ -610,96 +764,116 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-purple-500 hover:to-purple-600 transition-colors">
+                            <button className="bg-gradient-to-r from-red-400 to-red-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-red-500 hover:to-red-600 transition-colors">
                               Get started
                             </button>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   </div>
                   
                   {/* Pricing Details */}
                   <div className="bg-white p-8 border-l border-zinc-200">
-                    <div className="flex justify-between items-center mb-6">
+                    <motion.div 
+                      className="flex justify-between items-center mb-6"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
                       <h3 className="text-2xl font-bold text-zinc-800">Unmatched Advertising</h3>
                       <div className="text-xs font-medium text-zinc-500">
                         Custom contracts available
                       </div>
-                    </div>
+                    </motion.div>
                     
                     <div className="border-b border-dashed border-zinc-200 pb-6 mb-6">
-                      <div className="flex items-baseline mb-6">
+                      <motion.div 
+                        className="flex items-baseline mb-6"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                      >
                         <span className="text-5xl font-bold text-zinc-800">$95,000</span>
                         <span className="text-zinc-500 ml-2">/month</span>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-zinc-50 px-6 py-6 rounded-lg mb-6 border border-zinc-100">
+                      <motion.div 
+                        className="bg-zinc-50 px-6 py-6 rounded-lg mb-6 border border-zinc-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                      >
                         <div className="uppercase text-sm font-medium text-zinc-500 mb-3">INCLUDED</div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Dedicated brand architect</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Bespoke creative direction</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Conceptual development</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Brand narrative crafting</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Unlimited ideation</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Cross-medium expression</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Cultural positioning</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Competitive distinction</span>
-                          </div>
+                          {[
+                            "Dedicated brand architect",
+                            "Bespoke creative direction",
+                            "Conceptual development",
+                            "Brand narrative crafting",
+                            "Unlimited ideation",
+                            "Cross-medium expression",
+                            "Cultural positioning",
+                            "Competitive distinction"
+                          ].map((feature, index) => (
+                            <motion.div 
+                              key={feature} 
+                              className="flex items-start"
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.3, delay: 0.6 + (index * 0.1) }}
+                            >
+                              <Check className="h-5 w-5 text-red-500 mr-2 shrink-0" />
+                              <span className="text-zinc-700">{feature}</span>
+                            </motion.div>
+                          ))}
                         </div>
-                      </div>
+                      </motion.div>
 
-                      <div className="flex items-center justify-center mb-6">
+                      <motion.div 
+                        className="flex items-center justify-center mb-6"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                      >
                         <Link href="/contact">
                           <Button
                             size="lg"
-                            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full px-8 py-6"
+                            className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full px-8 py-6"
                           >
                             Schedule a consultation
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
                         </Link>
-                      </div>
+                      </motion.div>
                       
                       <p className="text-center text-sm text-zinc-500">
                         Bespoke brand development packages available for revolutionary visions.
                       </p>
                     </div>
                     
-                    <div className="text-sm text-zinc-600">
+                    <motion.div 
+                      className="text-sm text-zinc-600"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 1 }}
+                    >
                       <p className="mb-4">
                         Our unmatched branding solutions are designed for visionaries looking to redefine their categories and create distinctive market presence. We approach each brand as a unique universe to be crafted.
                       </p>
                       <p>
                         Contact us to discuss your vision. We'll create a revolutionary brand expression tailored to your ambitions.
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
 
@@ -712,10 +886,21 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-8"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">FAQ</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Frequently asked questions
-              </h2>
+              <p className="text-sm font-medium text-red-600 mb-2">FAQ</p>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                Frequently asked <motion.span
+                  initial={{ color: "#000000" }}
+                  whileInView={{ color: "#ef4444" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                >questions</motion.span>
+              </motion.h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Everything you need to know about our advertising services
               </p>
@@ -729,7 +914,14 @@ export default function AdvertisingPage() {
               className="max-w-3xl mx-auto divide-y divide-zinc-200"
             >
               {faqs.map((faq, index) => (
-                <div key={index} className="py-5">
+                <motion.div 
+                  key={index} 
+                  className="py-5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + (index * 0.1) }}
+                >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="flex w-full justify-between items-start text-left"
@@ -754,7 +946,7 @@ export default function AdvertisingPage() {
                       <p className="text-zinc-600">{faq.answer}</p>
                     </motion.div>
                   )}
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
@@ -767,21 +959,41 @@ export default function AdvertisingPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Ready to redefine your brand universe?
-              </h2>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4"
+                initial={{ scale: 0.95 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                Ready to <motion.span
+                  initial={{ color: "#000000" }}
+                  whileInView={{ color: "#ef4444" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                >redefine</motion.span> your brand universe?
+              </motion.h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
                 Let's explore how our revolutionary approach can transform your brand presence.
               </p>
-              <Link href="/contact">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full px-8"
-                >
-                  Schedule a consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link href="/contact">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full px-8"
+                  >
+                    Schedule a consultation
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>
