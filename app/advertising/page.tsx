@@ -612,7 +612,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-yellow-500 hover:to-yellow-600 transition-colors">
+                            <button className="bg-yellow-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:bg-yellow-600 transition-colors">
                               Get started
                             </button>
                           </div>
@@ -678,7 +678,7 @@ export default function AdvertisingPage() {
                         <Link href="/contact">
                           <Button
                             size="lg"
-                            className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white rounded-full px-8 py-6"
+                            className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full px-8 py-6"
                           >
                             Schedule a consultation
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -778,7 +778,7 @@ export default function AdvertisingPage() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white rounded-full px-8"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full px-8"
                 >
                   Schedule a consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
