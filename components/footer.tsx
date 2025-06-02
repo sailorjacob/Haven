@@ -8,7 +8,7 @@ export function Footer() {
         <div className="flex flex-col-reverse md:flex-row justify-between items-center">
           <div className="flex items-center mt-6 md:mt-0">
             <Hexagon className="w-6 h-6 text-zinc-900 mr-2" strokeWidth={1} />
-            <span className="text-sm text-zinc-600">© 2024 Haven Studio. All rights reserved.</span>
+            <span className="text-sm text-zinc-600">© 2025 Haven. All rights reserved.</span>
           </div>
           <div className="flex items-center space-x-6 mb-4 md:mb-0">
             <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">

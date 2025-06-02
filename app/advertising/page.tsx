@@ -91,7 +91,7 @@ export default function AdvertisingPage() {
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
+                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
               
               {/* Desktop Navigation */}
@@ -322,8 +322,9 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
+              <p className="text-sm font-medium text-zinc-500 mb-2">VISIONARY BRANDING</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Visionary branding for forward-thinking brands
+                Visionary branding for <span className="text-zinc-400">forward-thinking</span> brands
               </h2>
             </motion.div>
 
@@ -335,8 +336,8 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
-                  <Target className="text-purple-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
+                  <Target className="text-zinc-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Conceptualization</h3>
                 <p className="text-zinc-600">
@@ -351,8 +352,8 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
-                  <Palette className="text-purple-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
+                  <Palette className="text-zinc-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Creative Vision</h3>
                 <p className="text-zinc-600">
@@ -367,8 +368,8 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-purple-600/10 rounded-full flex items-center justify-center mb-4">
-                  <BarChart className="text-purple-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
+                  <BarChart className="text-zinc-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Brand Narrative</h3>
                 <p className="text-zinc-600">
@@ -387,8 +388,9 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
+              <p className="text-sm font-medium text-zinc-500 mb-2">REVOLUTIONARY DESIGN</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Revolutionary brand experiences & conceptual design
+                Revolutionary brand experiences & <span className="text-zinc-400">conceptual design</span>
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Distinctive creative approaches that set you apart.
@@ -403,7 +405,7 @@ export default function AdvertisingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-purple-600/50 transition-colors"
+                  className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-zinc-400 transition-colors"
                 >
                   <p className="text-zinc-800">{feature.name}</p>
                 </motion.div>
@@ -610,7 +612,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-purple-500 hover:to-purple-600 transition-colors">
+                            <button className="bg-yellow-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:bg-yellow-600 transition-colors">
                               Get started
                             </button>
                           </div>
@@ -676,7 +678,7 @@ export default function AdvertisingPage() {
                         <Link href="/contact">
                           <Button
                             size="lg"
-                            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full px-8 py-6"
+                            className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full px-8 py-6"
                           >
                             Schedule a consultation
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -776,7 +778,7 @@ export default function AdvertisingPage() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full px-8"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full px-8"
                 >
                   Schedule a consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
