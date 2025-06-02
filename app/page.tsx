@@ -107,6 +107,15 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
       link: "/killmefxster",
       category: "website"
+    },
+    {
+      id: "klairedev",
+      title: "klaire.dev",
+      description: "A portfolio and personal branding site for a talented design creative, featuring minimalist aesthetics and interactive elements.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Branding"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
+      link: "/klairedev",
+      category: "website"
     }
   ]
 
