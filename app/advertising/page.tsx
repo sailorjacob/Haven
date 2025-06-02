@@ -632,7 +632,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="bg-gradient-to-r from-sky-400 to-sky-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-sky-500 hover:to-sky-600 transition-colors">
+                            <button className="bg-gradient-to-r from-zinc-300 to-zinc-400 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-zinc-400 hover:to-zinc-500 transition-colors">
                               Start today
                             </button>
                           </div>
@@ -696,8 +696,8 @@ export default function AdvertisingPage() {
 
                       <div className="flex items-center justify-center mb-6">
                         <Link href="/contact">
-                          <button className="group relative inline-flex items-center justify-center border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
-                            <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                          <button className="group relative inline-flex items-center justify-center border-2 border-zinc-300 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
+                            <div className="absolute inset-0 bg-zinc-300 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                             <span className="relative z-10 flex items-center justify-center">
                               Schedule a consultation
                               <ArrowRight className="ml-2 h-4 w-4" />
