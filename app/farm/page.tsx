@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Hexagon, Menu, X, ImageIcon, ArrowRight } from "lucide-react"
-import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 
@@ -114,9 +113,6 @@ export default function FarmPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* Animated Stars */}
-      <AnimatedStars />
-
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -267,7 +263,7 @@ export default function FarmPage() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-              Generation <span className="text-purple-600">Farm</span>
+              Generation <span className="text-zinc-400">Farm</span>
             </h1>
             <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
               A curated collection of aesthetic generated images from our creative lab.
