@@ -124,8 +124,9 @@ export default function DesignBookPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="md:hidden bg-white border-b border-zinc-200"
+              style={{ willChange: "opacity, height" }}
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
@@ -177,7 +178,8 @@ export default function DesignBookPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={{ willChange: "transform, opacity" }}
             >
               <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
                 <span className="text-blue-500 block" style={{ color: '#00BBFF' }}>CAVEMEN</span>
@@ -205,8 +207,9 @@ export default function DesignBookPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               className="relative"
+              style={{ willChange: "transform, opacity" }}
             >
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white via-zinc-50 to-zinc-100">
@@ -248,8 +251,9 @@ export default function DesignBookPage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="max-w-4xl mx-auto mb-32 relative"
+              style={{ willChange: "opacity" }}
             >
               <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">01</span>
               <div className="relative">
@@ -283,8 +287,9 @@ export default function DesignBookPage() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className="mb-16 relative"
+                style={{ willChange: "opacity" }}
               >
                 <span className="absolute -left-8 top-0 text-[200px] font-black text-zinc-100 leading-none select-none">02</span>
                 <div className="relative">
@@ -339,8 +344,9 @@ export default function DesignBookPage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.25), ease: "easeOut" }}
                     className="group"
+                    style={{ willChange: "transform, opacity" }}
                   >
                     <div className={`p-8 border-l-4 ${content.color} bg-zinc-100 hover:bg-zinc-200 transition-all duration-300`}>
                       <div className="flex justify-between items-start mb-4">
@@ -364,8 +370,9 @@ export default function DesignBookPage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="bg-zinc-100 border border-zinc-200 p-16 relative overflow-hidden"
+              style={{ willChange: "opacity" }}
             >
               <div className="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
                 <div className="w-full h-full bg-amber-700 -skew-x-12 -ml-32 opacity-10"></div>
@@ -403,6 +410,7 @@ export default function DesignBookPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center mb-12"
+            style={{ willChange: "transform, opacity" }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Book Details
@@ -419,6 +427,7 @@ export default function DesignBookPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               className="bg-zinc-50 p-6 rounded-xl border border-zinc-200"
+              style={{ willChange: "transform, opacity" }}
             >
               <h3 className="text-xl font-semibold mb-3">Physical Specifications</h3>
               <ul className="space-y-2 text-zinc-600">
@@ -437,6 +446,7 @@ export default function DesignBookPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               className="bg-zinc-50 p-6 rounded-xl border border-zinc-200"
+              style={{ willChange: "transform, opacity" }}
             >
               <h3 className="text-xl font-semibold mb-3">Content Overview</h3>
               <ul className="space-y-2 text-zinc-600">
@@ -455,6 +465,7 @@ export default function DesignBookPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               className="bg-zinc-50 p-6 rounded-xl border border-zinc-200"
+              style={{ willChange: "transform, opacity" }}
             >
               <h3 className="text-xl font-semibold mb-3">Special Features</h3>
               <ul className="space-y-2 text-zinc-600">
@@ -479,6 +490,7 @@ export default function DesignBookPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center mb-12"
+            style={{ willChange: "transform, opacity" }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Preview Pages
@@ -498,6 +510,7 @@ export default function DesignBookPage() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: Math.min(0.1 * index, 0.5), ease: "easeOut" }}
                 className="group cursor-pointer"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="relative aspect-[3/4] overflow-hidden rounded-lg border border-zinc-200 shadow-sm">
                   <Image
@@ -536,6 +549,7 @@ export default function DesignBookPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="bg-zinc-900 rounded-2xl p-8 md:p-12 text-center"
+            style={{ willChange: "transform, opacity" }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Reserve Your Copy Today
