@@ -314,7 +314,7 @@ export default function AdvertisingPage() {
                     variant="outline"
                     className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
                   >
-                    Schedule a consultation
+                    Book a 15-min intro call
                   </Button>
                 </Link>
               </div>
@@ -701,13 +701,13 @@ export default function AdvertisingPage() {
 
                       <div className="flex items-center justify-center mb-6">
                         <Link href="/contact">
-                          <Button 
-                            size="lg" 
-                            variant="outline"
-                            className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
-                          >
-                            Schedule a consultation
-                          </Button>
+                          <button className="group relative w-full border-2 border-zinc-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
+                            <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                            <span className="relative z-10 flex items-center justify-center">
+                              Start today
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </span>
+                          </button>
                         </Link>
                       </div>
                       
@@ -801,13 +801,13 @@ export default function AdvertisingPage() {
                 Let's explore how our revolutionary approach can transform your brand presence.
               </p>
               <Link href="/contact">
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
-                >
-                  Schedule a consultation
-                </Button>
+                <button className="group relative w-full border-2 border-zinc-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
+                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <span className="relative z-10 flex items-center justify-center">
+                    Start today
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </button>
               </Link>
             </motion.div>
           </div>
