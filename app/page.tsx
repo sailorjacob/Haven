@@ -265,16 +265,15 @@ export default function HomePage() {
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-20 px-6">
-        <div className="container max-w-6xl mx-auto space-y-12">
+      <section className="relative z-10 pt-28 px-6">
+        <div className="container max-w-6xl mx-auto space-y-16">
           
           {/* Selected Projects */}
-          <div>
+          <div className="pt-14">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
             >
               <div>
@@ -328,9 +327,8 @@ export default function HomePage() {
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + (index * 0.05) }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
                 >
                   <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
