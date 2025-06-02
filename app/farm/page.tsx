@@ -3,8 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { useState, useEffect } from "react"
-import { Hexagon, Menu, X, Camera, ExternalLink } from "lucide-react"
+import { useState } from "react"
+import { Hexagon, Menu, X } from "lucide-react"
 import { Footer } from "@/components/footer"
 
 // Define the farm images array
@@ -53,25 +53,12 @@ const farmImages = [
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
-
-  // Open the modal with the selected image
-  const openModal = (imageUrl: string) => {
-    setSelectedImage(imageUrl);
-    document.body.style.overflow = 'hidden';
-  };
-
-  // Close the modal
-  const closeModal = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = 'auto';
-  };
 
   return (
     <main className="bg-white w-full text-zinc-900">
@@ -217,23 +204,11 @@ export default function FarmPage() {
       {/* Main Content */}
       <section className="relative z-10 pt-32 px-6 pb-16">
         <div className="container mx-auto max-w-6xl">
-          {/* Page Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4">
-              Harvest
-            </h1>
-          </motion.div>
-
-          {/* Image Gallery */}
+          {/* Image Gallery - Only component left */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5 }}
             className="mb-16"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -243,83 +218,21 @@ export default function FarmPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
-                  className="relative aspect-[3/4] overflow-hidden rounded-md cursor-pointer group"
-                  onClick={() => openModal(image.url)}
+                  className="relative aspect-[3/4] overflow-hidden rounded-md"
                 >
                   <Image
                     src={image.url}
                     alt={image.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Camera className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
-          {/* About the Farm */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-zinc-50 p-8 rounded-xl max-w-4xl mx-auto"
-          >
-            <h2 className="text-2xl font-light text-zinc-900 mb-4 text-center">
-              About:
-            </h2>
-            <p className="text-zinc-600 mb-6">
-              Our rural sanctuary is where ideas grow alongside our seasonal harvests. 
-              This space serves as both creative retreat and working landscape, where 
-              nature's rhythms influence our design philosophy and approach to innovation.
-            </p>
-            <p className="text-zinc-600">
-              The interplay between digital and physical worlds finds harmony here, 
-              as we cultivate both land and ideas with equal care. Each visit yields 
-              new perspectives and reminds us of the beauty in simplicity and purpose.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <a 
-                href="mailto:farm@haven.engineer" 
-                className="inline-flex items-center text-zinc-900 border border-zinc-300 hover:bg-zinc-100 py-2 px-6 rounded-full text-sm transition-colors"
-              >
-                Contact the Farm
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </div>
-          </motion.div>
         </div>
       </section>
-
-      {/* Image Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={closeModal}
-        >
-          <div className="relative max-w-5xl max-h-[90vh] w-full">
-            <button 
-              className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full z-10"
-              onClick={closeModal}
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="relative w-full h-full max-h-[85vh]">
-              <Image
-                src={selectedImage}
-                alt="Farm image fullscreen view"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Footer */}
       <Footer />
