@@ -23,6 +23,15 @@ export default function PricingPage() {
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
+  // Function to get a random highlight color - precompute for better performance
+  const getRandomHighlightColor = () => {
+    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+  
+  // Precompute colors to avoid runtime calculations
+  const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
+
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" })
   }
@@ -144,8 +153,9 @@ export default function PricingPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="md:hidden bg-white border-b border-zinc-200"
+              style={{ willChange: "opacity, height" }}
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
@@ -195,10 +205,11 @@ export default function PricingPage() {
           {/* Hero Section */}
           <div className="pt-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
+              style={{ willChange: "transform, opacity" }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
                 Design subscriptions <span className="text-primary">for everyone</span>
@@ -232,11 +243,12 @@ export default function PricingPage() {
           {/* How It Works */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
+              style={{ willChange: "transform, opacity" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 The way design should've been done in the first place
@@ -245,11 +257,12 @@ export default function PricingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Repeat className="text-primary w-7 h-7" />
@@ -261,11 +274,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Palette className="text-primary w-7 h-7" />
@@ -277,11 +291,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Clock className="text-primary w-7 h-7" />
@@ -297,11 +312,12 @@ export default function PricingPage() {
           {/* Design Categories */}
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
+              style={{ willChange: "transform, opacity" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Apps, websites, logos & more
@@ -315,11 +331,12 @@ export default function PricingPage() {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.4, delay: Math.min(0.05 * index, 0.25), ease: "easeOut" }}
                   className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-primary/50 transition-colors"
+                  style={{ willChange: "transform, opacity" }}
                 >
                   <p className="text-zinc-800">{feature.name}</p>
                 </motion.div>
@@ -330,11 +347,12 @@ export default function PricingPage() {
           {/* Benefits */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
+              style={{ willChange: "transform, opacity" }}
             >
               <p className="text-sm font-medium text-primary mb-2">MEMBERSHIP BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
@@ -348,11 +366,12 @@ export default function PricingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="absolute inset-0 bg-[#00ffff] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
@@ -367,11 +386,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="absolute inset-0 bg-[#ff00ff] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
@@ -386,11 +406,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="absolute inset-0 bg-[#ffd700] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
@@ -405,11 +426,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
@@ -424,11 +446,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="absolute inset-0 bg-[#0f0] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
@@ -443,11 +466,12 @@ export default function PricingPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="absolute inset-0 bg-[#f00] origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
@@ -466,11 +490,12 @@ export default function PricingPage() {
           {/* Pricing Section */}
           <div ref={featuresRef} id="pricing">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
+              style={{ willChange: "transform, opacity" }}
             >
               <p className="text-sm font-medium text-primary mb-2">PRICING</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
@@ -482,11 +507,12 @@ export default function PricingPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="max-w-5xl mx-auto"
+              style={{ willChange: "transform, opacity" }}
             >
               {/* Unified Card with Border */}
               <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-zinc-300 via-zinc-100 to-zinc-300 shadow-xl overflow-hidden">
@@ -629,11 +655,12 @@ export default function PricingPage() {
           {/* FAQ Section */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-8"
+              style={{ willChange: "transform, opacity" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Frequently asked questions
@@ -644,11 +671,12 @@ export default function PricingPage() {
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
                   className="bg-white border border-zinc-200 rounded-lg overflow-hidden"
+                  style={{ willChange: "transform, opacity" }}
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
@@ -657,7 +685,8 @@ export default function PricingPage() {
                     <span className="font-medium text-zinc-900">{faq.question}</span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      style={{ willChange: "transform" }}
                     >
                       <ChevronDown className="w-5 h-5 text-zinc-500" />
                     </motion.div>
@@ -668,8 +697,9 @@ export default function PricingPage() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
                         className="overflow-hidden"
+                        style={{ willChange: "opacity, height" }}
                       >
                         <div className="px-6 py-4 text-zinc-600 border-t border-zinc-100">
                           {faq.answer}
@@ -685,10 +715,11 @@ export default function PricingPage() {
           {/* CTA Section */}
           <div className="p-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={{ willChange: "transform, opacity" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 See if our design service is the right fit for you
