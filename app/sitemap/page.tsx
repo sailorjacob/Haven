@@ -178,6 +178,12 @@ export default function SitemapPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <PageItem 
+                href="/xrated"
+                title="X-Rated"
+                description="Social platform with selective content locking and monetization features"
+                tags={["Social", "Content", "Monetization"]}
+              />
+              <PageItem 
                 href="/roundabout"
                 title="Roundabout"
                 description="Medical ride-sharing platform with Bitcoin payment integration"

@@ -233,7 +233,7 @@ export default function AdvertisingPage() {
               }}
             >
               {/* Animated text with typewriter effect - no fading */}
-              {'FUCKING THE ADS GAME UP'.split('').map((char, index) => (
+              {'SWITCHING THE BRAND GAME UP'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0 }}
@@ -271,7 +271,7 @@ export default function AdvertisingPage() {
               color: '#00ff00'
             }}
           >
-            NO MERCY
+            LET'S GO
           </h2>
         </motion.div>
       </motion.div>

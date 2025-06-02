@@ -40,6 +40,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "xrated",
+      title: "X-Rated",
+      description: "A social platform combining elements of Instagram, Twitter, OnlyFans, and Tinder with selective content locking and monetization.",
+      technologies: ["Next.js", "Supabase", "Stripe", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
+      link: "/xrated",
+      category: "webapp"
+    },
+    {
       id: "roundabout",
       title: "roundabout.run",
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
