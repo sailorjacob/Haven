@@ -271,9 +271,10 @@ export default function HomePage() {
           {/* Selected Projects */}
           <div className="pt-14">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
               className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
             >
               <div>
@@ -327,8 +328,9 @@ export default function HomePage() {
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 + (index * 0.05) }}
                   className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
                 >
                   <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
