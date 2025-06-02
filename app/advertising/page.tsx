@@ -22,15 +22,12 @@ export default function AdvertisingPage() {
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
-  // Function to get a random highlight color - precompute for better performance
+  // Function to get a random highlight color
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
   
-  // Precompute colors to avoid runtime calculations
-  const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
-
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" })
   }
@@ -94,7 +91,7 @@ export default function AdvertisingPage() {
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
+                <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
               </Link>
               
               {/* Desktop Navigation */}
@@ -104,21 +101,21 @@ export default function AdvertisingPage() {
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Advertising</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[0]}`}>Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/pricing" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Pricing</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book" 
@@ -135,7 +132,7 @@ export default function AdvertisingPage() {
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
               >
                 <span className="group-hover:hidden">Contact</span>
-                <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Contact</span>
+                <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
               </Link>
               
               {/* Mobile Menu Button */}
@@ -166,7 +163,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Advertising</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[0]}`}>Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
                 </Link>
                 <Link 
                   href="/studio" 
@@ -174,7 +171,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/pricing" 
@@ -182,7 +179,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Pricing</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book"
@@ -197,7 +194,7 @@ export default function AdvertisingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Contact</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Contact</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
                 </Link>
               </div>
             </motion.div>
@@ -236,7 +233,7 @@ export default function AdvertisingPage() {
               }}
             >
               {/* Animated text with typewriter effect - no fading */}
-              {'F#CKING THE AD GAME UP'.split('').map((char, index) => (
+              {'FUCKING THE ADS GAME UP'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0 }}
@@ -244,13 +241,11 @@ export default function AdvertisingPage() {
                     opacity: [0, 1, 1, 0],
                   }}
                   transition={{ 
-                    duration: 3, // Slightly faster 
-                    delay: index * 0.12, // Slightly faster
-                    times: [0, 0.05, 0.8, 0.81], // Quick appear, stay visible, then instant disappear
-                    ease: "easeOut"
+                    duration: 3.5, 
+                    delay: index * 0.15,
+                    times: [0, 0.05, 0.8, 0.81] // Quick appear, stay visible, then instant disappear
                   }}
                   className="inline-block"
-                  style={{ willChange: "opacity" }}
                 >
                   {char === ' ' ? '\u00A0' : char}
                 </motion.span>
@@ -293,7 +288,7 @@ export default function AdvertisingPage() {
               className="text-center mb-6"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-                Unmatched <span className="text-purple-600">Advertising</span> Solutions
+                Unmatched <span className="text-blue-500">Advertising</span> Solutions
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
                 Revolutionary branding and conceptual innovation to transform your market presence.
@@ -309,13 +304,13 @@ export default function AdvertisingPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Link href="/contact">
-                  <button className="group relative inline-flex items-center justify-center border-2 border-purple-500 bg-transparent text-zinc-900 font-medium py-2.5 px-7 rounded-full text-sm overflow-hidden transition-all duration-300">
-                    <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <span className="relative z-10 flex items-center justify-center">
-                      Schedule a consultation
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </span>
-                  </button>
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full px-8"
+                  >
+                    Schedule a consultation
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </Link>
               </div>
             </motion.div>
@@ -447,7 +442,7 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED BENEFITS</p>
+              <p className="text-sm font-medium text-blue-500 mb-2">UNMATCHED BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Why visionaries choose Haven for branding
               </h2>
@@ -464,10 +459,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Globe className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
+                    <Globe className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Conceptual Innovation</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -483,10 +478,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Zap className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
+                    <Zap className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Dedicated Creatives</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -502,10 +497,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <BarChart className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
+                    <BarChart className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cultural Immersion</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -521,10 +516,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Star className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
+                    <Star className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Artisan Craft</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -540,10 +535,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Repeat className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
+                    <Repeat className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Perpetual Evolution</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -559,10 +554,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-purple-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Award className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors" />
+                    <Award className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cross-disciplinary Approach</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -582,7 +577,7 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED SERVICES</p>
+              <p className="text-sm font-medium text-blue-500 mb-2">UNMATCHED SERVICES</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Bespoke branding solutions for visionary companies
               </h2>
@@ -637,7 +632,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="border border-red-500 bg-transparent text-red-600 text-xs font-medium py-1.5 px-4 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+                            <button className="bg-gradient-to-r from-blue-400 to-blue-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-blue-500 hover:to-blue-600 transition-colors">
                               Get started
                             </button>
                           </div>
@@ -651,7 +646,7 @@ export default function AdvertisingPage() {
                     <div className="flex justify-between items-center mb-6">
                       <h3 className="text-2xl font-bold text-zinc-800">Unmatched Advertising</h3>
                       <div className="text-xs font-medium text-zinc-500">
-                        Custom contracts available
+                        Pause or cancel anytime
                       </div>
                     </div>
                     
@@ -665,35 +660,35 @@ export default function AdvertisingPage() {
                         <div className="uppercase text-sm font-medium text-zinc-500 mb-3">INCLUDED</div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Dedicated brand architect</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Bespoke creative direction</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Conceptual development</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Brand narrative crafting</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Unlimited ideation</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Cross-medium expression</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Cultural positioning</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Competitive distinction</span>
                           </div>
                         </div>
@@ -701,13 +696,13 @@ export default function AdvertisingPage() {
 
                       <div className="flex items-center justify-center mb-6">
                         <Link href="/contact">
-                          <button className="group relative inline-flex items-center justify-center border-2 border-red-500 bg-transparent text-zinc-900 font-medium py-2.5 px-7 rounded-full text-sm overflow-hidden transition-all duration-300">
-                            <div className="absolute inset-0 bg-red-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                            <span className="relative z-10 flex items-center justify-center">
-                              Schedule a consultation
-                              <ArrowRight className="ml-2 h-4 w-4" />
-                            </span>
-                          </button>
+                          <Button 
+                            size="lg" 
+                            className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full px-8"
+                          >
+                            Schedule a consultation
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
                         </Link>
                       </div>
                       
@@ -716,13 +711,26 @@ export default function AdvertisingPage() {
                       </p>
                     </div>
                     
-                    <div className="text-sm text-zinc-600">
-                      <p className="mb-4">
-                        Our unmatched branding solutions are designed for visionaries looking to redefine their categories and create distinctive market presence. We approach each brand as a unique universe to be crafted.
-                      </p>
-                      <p>
-                        Contact us to discuss your vision. We'll create a revolutionary brand expression tailored to your ambitions.
-                      </p>
+                    {/* Add pause anytime and money back sections */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="flex items-start">
+                        <div className="mr-3 p-2 bg-zinc-100 rounded-full">
+                          <Clock className="h-5 w-5 text-zinc-500" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-medium text-zinc-900">Pause anytime</h4>
+                          <p className="text-xs text-zinc-500">No questions asked</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="mr-3 p-2 bg-zinc-100 rounded-full">
+                          <Zap className="h-5 w-5 text-zinc-500" />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-medium text-zinc-900">Money back</h4>
+                          <p className="text-xs text-zinc-500">75% refund first week</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -739,7 +747,7 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-8"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">FAQ</p>
+              <p className="text-sm font-medium text-blue-500 mb-2">FAQ</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Frequently asked questions
               </h2>
@@ -801,13 +809,13 @@ export default function AdvertisingPage() {
                 Let's explore how our revolutionary approach can transform your brand presence.
               </p>
               <Link href="/contact">
-                <button className="group relative inline-flex items-center justify-center border-2 border-red-500 bg-transparent text-zinc-900 font-medium py-2.5 px-7 rounded-full text-sm overflow-hidden transition-all duration-300">
-                  <div className="absolute inset-0 bg-red-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  <span className="relative z-10 flex items-center justify-center">
-                    Schedule a consultation
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </span>
-                </button>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full px-8"
+                >
+                  Schedule a consultation
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </Link>
             </motion.div>
           </div>
