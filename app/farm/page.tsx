@@ -2,18 +2,71 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Hexagon, Menu, X, ArrowRight, Instagram } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 
+// Placeholder images - replace with your actual images when available
+const instagramPosts = [
+  {
+    id: "p1",
+    imageUrl: "/images/placeholder1.jpg",
+    fallbackUrl: "https://images.unsplash.com/photo-1633358560639-8cb7a114e36e?q=80&w=1000",
+    caption: "Aesthetic generated image #1",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p2",
+    imageUrl: "/images/placeholder2.jpg",
+    fallbackUrl: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1000",
+    caption: "Visual exploration study",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p3",
+    imageUrl: "/images/placeholder3.jpg",
+    fallbackUrl: "https://images.unsplash.com/photo-1618005198919-177e9dd3b5d9?q=80&w=1000",
+    caption: "Brand identity concept",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p4",
+    imageUrl: "/images/placeholder4.jpg",
+    fallbackUrl: "https://images.unsplash.com/photo-1633501636789-54572bc926b2?q=80&w=1000",
+    caption: "Conceptual design exploration",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p5",
+    imageUrl: "/images/placeholder5.jpg",
+    fallbackUrl: "https://images.unsplash.com/photo-1633497387007-67eadf3efd92?q=80&w=1000",
+    caption: "Generative pattern study",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p6",
+    imageUrl: "/images/placeholder6.jpg",
+    fallbackUrl: "https://images.unsplash.com/photo-1618005198208-283dfd0a830d?q=80&w=1000",
+    caption: "Artistic direction exploration",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+];
+
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [imageLoadError, setImageLoadError] = useState<Record<string, boolean>>({})
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
     return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  // Function to handle image load errors
+  const handleImageError = (id: string) => {
+    setImageLoadError(prev => ({ ...prev, [id]: true }))
   }
 
   return (
@@ -202,21 +255,43 @@ export default function FarmPage() {
             </div>
           </div>
 
-          {/* Instagram Feed Embed */}
+          {/* Grid Gallery */}
           <div className="mb-16">
-            <div className="aspect-square max-w-3xl mx-auto">
-              <iframe
-                title="Instagram Feed"
-                className="w-full h-full rounded-xl shadow-md border border-zinc-200"
-                src="https://feed.mikle.com/widget/v2/149415/"
-                allowTransparency={true}
-                frameBorder="0"
-                scrolling="no"
-                style={{ border: "none", overflow: "hidden", width: "100%" }}
-              ></iframe>
-            </div>
-            <div className="text-center mt-6 text-sm text-zinc-500">
-              Feed from @haven.engineer - May take a moment to load.
+            <h3 className="text-2xl font-semibold mb-6 text-center">Recent Work</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {instagramPosts.map((post) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="group"
+                >
+                  <a 
+                    href={post.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+                  >
+                    <div className="relative aspect-square overflow-hidden">
+                      <Image
+                        src={imageLoadError[post.id] ? post.fallbackUrl : post.imageUrl}
+                        alt={post.caption}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        onError={() => handleImageError(post.id)}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <p className="text-white text-sm font-medium">{post.caption}</p>
+                      </div>
+                    </div>
+                    <div className="p-3 flex items-center justify-between">
+                      <span className="text-xs text-zinc-500">haven.engineer</span>
+                      <Instagram className="w-4 h-4 text-pink-500" />
+                    </div>
+                  </a>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
