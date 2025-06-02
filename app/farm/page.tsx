@@ -52,36 +52,6 @@ export default function FarmPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* CSS to hide Elfsight branding only (not the content) */}
-      <style jsx global>{`
-        /* Very specific selectors to only target branding elements */
-        .eapps-instagram-feed-title,
-        .eapps-instagram-feed-title-container,
-        .eui-widget-title.eui-widget-title-small,
-        .eapps-widget-toolbar,
-        a[href="https://elfsight.com/instagram-feed-instashow/"],
-        a[target="_blank"][href="https://elfsight.com"] {
-          display: none !important;
-        }
-        
-        /* Make sure feed content is visible */
-        .elfsight-app-0d3388d2-2de8-4157-97b1-ae10ef33aa26 {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-        
-        /* Ensure the Instagram posts are visible */
-        .eapps-instagram-feed-posts,
-        .eapps-instagram-feed-posts-item,
-        .eapps-instagram-feed-posts-item-image,
-        .eapps-instagram-feed-posts-item-content {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-      `}</style>
-
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
