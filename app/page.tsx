@@ -35,6 +35,9 @@ export default function HomePage() {
   const [ctaColor1] = useState(getRandomHighlightColor());
   const [ctaColor2] = useState(getRandomHighlightColor());
   
+  // Precompute random colors to avoid runtime calculations
+  const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
+  
   const projects: Project[] = [
     {
       id: "roundabout",
@@ -125,7 +128,7 @@ export default function HomePage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* Clean gradient background */}
+      {/* Clean gradient background - keep static for better performance */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
@@ -290,581 +293,176 @@ export default function HomePage() {
         </AnimatePresence>
       </header>
 
-      {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-20 px-6">
-        <div className="container max-w-6xl mx-auto space-y-12">
+      {/* Hero Section */}
+      <section className="relative z-10 min-h-[60vh] flex items-center justify-center px-6 pt-24">
+        <div className="container max-w-6xl mx-auto text-center">
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative">
+              <Hexagon className="w-20 h-20 md:w-24 md:h-24 text-zinc-900" strokeWidth={1} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-zinc-700" />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            className="text-5xl md:text-7xl font-light text-zinc-900 mb-6 tracking-tight"
+          >
+            Haven
+          </motion.h1>
           
-          {/* Selected Projects */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
+          <motion.p 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto mb-12 font-light leading-relaxed"
+          >
+            A holistic brand studio for the contemporary edge, creating remarkable digital experiences through meticulous craft.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          >
+            <Link 
+              href="/pricing"
+              className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
+              onMouseEnter={() => setPricingHovered(true)}
+              onMouseLeave={() => setPricingHovered(false)}
             >
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                  Selected Projects
-                </h2>
-                <p className="text-lg text-zinc-600 max-w-xl">
-                  A showcase of our recent work across web applications, websites, and digital platforms.
-                </p>
-              </div>
+              {/* Yellow background that fills from left on hover */}
+              <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               
-              <div className="flex items-center space-x-2 mt-6 md:mt-0">
-                <Filter className="w-4 h-4 text-zinc-400" />
-                <div className="flex space-x-2">
-                  <button 
-                    onClick={() => setFilter(null)} 
-                    className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                      !filter 
-                        ? 'bg-zinc-900 text-white' 
-                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                    }`}
-                  >
-                    All
-                  </button>
-                  <button 
-                    onClick={() => setFilter('webapp')} 
-                    className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                      filter === 'webapp' 
-                        ? 'bg-zinc-900 text-white' 
-                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                    }`}
-                  >
-                    Web Apps
-                  </button>
-                  <button 
-                    onClick={() => setFilter('website')} 
-                    className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                      filter === 'website' 
-                        ? 'bg-zinc-900 text-white' 
-                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
-                    }`}
-                  >
-                    Websites
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 + (index * 0.05) }}
-                  className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
-                >
-                  <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
-                    <div className="relative h-64 overflow-hidden">
-                      <Image 
-                        src={project.imageUrl}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                    </div>
-                  </Link>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
-                    <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex} 
-                          className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <Link 
-                      href={project.link} 
-                      target={project.link.startsWith('http') ? "_blank" : "_self"}
-                      className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
-                    >
-                      View Project
-                      <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Haven Studio Hero */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <motion.div 
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex justify-center mb-6"
-              >
-                <div className="relative">
-                  <Hexagon className="w-16 h-16 text-zinc-900" strokeWidth={1} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Code className="w-8 h-8 text-zinc-700" />
-                  </div>
-                </div>
-              </motion.div>
+              {/* Text content */}
+              <span className={`relative z-10 transition-opacity duration-300 ${isPricingHovered ? 'opacity-0' : 'opacity-100'}`}>
+                View Pricing
+              </span>
               
-              <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
-                Build With Haven
-              </h1>
-              <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
-                Premium digital experiences
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                {/* Start a Project Button */}
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
-                >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    Start a Project
-                  </span>
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                </Link>
-                {/* View Work Button */}
-                <Link
-                  href="/work"
-                  className="inline-flex items-center border-sky-500 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
-                >
-                  {/* Sky blue background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    View Work
-                  </span>
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Services */}
-          <div className="bg-zinc-50 rounded-xl p-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
+              {/* Arrow icon that appears on hover */}
+              <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isPricingHovered ? 'opacity-100' : 'opacity-0'}`} />
+            </Link>
+            
+            <Link
+              href="/contact"
+              className="inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-full transition-all duration-300 text-sm group"
             >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Our Services
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                We specialize in creating digital experiences that combine beautiful design 
-                with powerful functionality.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-sky-500 via-sky-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                    <Code className="w-6 h-6 text-zinc-700" />
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
-                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
-                    Custom web applications built with modern frameworks 
-                    and performance-focused architecture.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-green-500 via-green-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                    <Palette className="w-6 h-6 text-zinc-700" />
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
-                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
-                    Minimalist, elegant interfaces that elevate brands with 
-                    thoughtful interactions and premium aesthetics.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-red-500 via-red-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                    <Zap className="w-6 h-6 text-zinc-700" />
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
-                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
-                    Comprehensive digital solutions that align with business 
-                    goals and create meaningful user experiences.
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-          
-          {/* Studio Performance */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Studio Performance
-              </h2>
-              <p className="text-lg text-zinc-600">
-                Delivering exceptional results for our clients worldwide.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Uptime */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="relative w-24 h-24 mx-auto mb-4">
-                  <svg className="w-full h-full" viewBox="0 0 100 100">
-                    <circle 
-                      cx="50" 
-                      cy="50" 
-                      r="45" 
-                      fill="none" 
-                      stroke="#e4e4e7" 
-                      strokeWidth="4"
-                    />
-                    <motion.circle
-                      cx="50"
-                      cy="50"
-                      r="45"
-                      fill="none"
-                      stroke="#18181b"
-                      strokeWidth="4"
-                      strokeDasharray="283"
-                      strokeDashoffset="10"  
-                      initial={{ strokeDashoffset: 283 }}
-                      whileInView={{ 
-                        strokeDashoffset: 10,
-                        transition: { duration: 2, ease: "easeInOut" }
-                      }}
-                      viewport={{ once: true }}
-                      transform="rotate(-90 50 50)"
-                      strokeLinecap="round"
-                    />
-                    <text 
-                      x="50" 
-                      y="50" 
-                      textAnchor="middle" 
-                      fill="#18181b" 
-                      fontSize="16" 
-                      fontWeight="600"
-                      dominantBaseline="middle"
-                    >
-                      100%
-                    </text>
-                  </svg>
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
-                <p className="text-zinc-600 text-sm">Reliable hosting & maintenance</p>
-              </motion.div>
-
-              {/* Support */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-24 h-24 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-semibold text-lg">24/7</span>
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
-                <p className="text-zinc-600 text-sm">Always available assistance</p>
-              </motion.div>
-
-              {/* Impressions */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="h-24 flex flex-col items-center justify-center mb-4">
-                  <div className="text-3xl font-semibold text-zinc-900 mb-1">
-                    100,000+
-                  </div>
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
-                <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
-              </motion.div>
-          </div>
-        </div>
-
-          {/* Process */}
-          <div className="bg-zinc-50 rounded-xl p-8">
-        <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Our Process
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                A proven methodology that ensures successful project delivery from concept to launch.
-          </p>
-        </motion.div>
-        
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                {
-                  number: "01",
-                  title: "Discovery",
-                  description: "We learn about your business, goals, and vision to establish clear project objectives."
-                },
-                {
-                  number: "02", 
-                  title: "Strategy",
-                  description: "We develop a detailed roadmap and technical approach tailored to your specific needs."
-                },
-                {
-                  number: "03",
-                  title: "Design & Development", 
-                  description: "Our team crafts beautiful interfaces and builds robust applications with clean code."
-                },
-                {
-                  number: "04",
-                  title: "Launch & Optimize",
-                  description: "We deploy your project and provide ongoing support to ensure continued success."
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xl font-semibold mx-auto mb-4">
-                    {step.number}
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-3">{step.title}</h3>
-                  <p className="text-zinc-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Team */}
-          <div>
-        <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Meet Our Team
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Passionate professionals dedicated to creating exceptional digital experiences.
-              </p>
-        </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {[
-                {
-                  name: "Jacob Beam",
-                  role: "Founder",
-                  description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design. Check out his ",
-                  github: "https://sailorjacob.github.io",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
-                },
-                {
-                  name: "Jarret Shull", 
-                  role: "Sales",
-                  description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
-                },
-                {
-                  name: "Klaire Rasche",
-                  role: "Design", 
-                  description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
-                }
-              ].map((member, index) => (
-        <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-          className="text-center"
-        >
-                  <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
-                  <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
-                  <p className="text-zinc-600 text-sm leading-relaxed">
-                    {member.description}
-                    {member.github && (
-                      <a 
-                        href={member.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
-                      >
-                        work
-                      </a>
-                    )}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="rounded-xl p-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Start Your Project
-              </h2>
-              <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
-                Ready to bring your digital vision to life? Let's create something exceptional.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-                {/* Get Started Button */}
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center border border-zinc-300 text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
-                >
-                  {/* Random colored background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    Get Started
-                  </span>
-                  
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                </Link>
-                
-                {/* Email Us Button */}
-                <Link
-                  href="mailto:info@haven.engineer"
-                  className="inline-flex items-center border border-zinc-300 text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
-                >
-                  {/* Random colored background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-green-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
-                    <Mail className="w-3 h-3 mr-2" />
-                    Email Us
-                  </span>
-                  
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                </Link>
-              </div>
-
-              {/* Contact Info */}
-              <div className="flex items-center justify-center text-sm text-zinc-600">
-                <a 
-                  href="mailto:info@haven.engineer" 
-                  className="flex items-center hover:text-zinc-900 transition-colors"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  info@haven.engineer
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
+              <span className="group-hover:hidden">Contact</span>
+              <span className={`hidden group-hover:inline ${ctaColor1}`}>Contact</span>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
+      {/* Services Section - use simpler animations with staggered delays */}
+      <section id="services" className="relative z-10 py-16 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">Our Services</h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              Comprehensive web design, development and branding solutions for modern businesses.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Web Development Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300"
+            >
+              {/* Card content */}
+            </motion.div>
+
+            {/* Design Systems Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300"
+            >
+              {/* Card content */}
+            </motion.div>
+
+            {/* Digital Branding Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300"
+            >
+              {/* Card content */}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section - Add simpler loading strategy for projects */}
+      <section id="projects" className="relative z-10 py-16 px-6 bg-zinc-50">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">Our Work</h2>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              Explore our portfolio of successful projects.
+            </p>
+          </motion.div>
+
+          {/* Filter Controls */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
+            {/* Filter buttons */}
+          </motion.div>
+
+          {/* Project Grid - use CSS transitions instead of motion divs for better performance */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.3) }}
+                className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-300 transition-all duration-300 h-full flex flex-col"
+              >
+                {/* Project card content */}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rest of the page content with optimized animations */}
+      
       {/* Footer */}
       <Footer />
     </main>

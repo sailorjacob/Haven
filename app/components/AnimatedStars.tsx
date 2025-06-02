@@ -1,20 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
-// Bright, bold colors for the stars
+// Bright, bold colors for the stars - reduced to only essential colors
 const starColors = [
   "#f5f5f5", // Silver/white
   "#e0e0e0", // Lighter silver
-  "#d0d0d0", // Light silver
-  "#c0c0c0", // Silver
-  "#f8f8f8", // Almost white
   "#ffffff", // Pure white
-  "#00ff00", // Neon green
-  "#ff0000", // Pure red
-  "#ffd700", // Yellow
-  "#00bfff", // Sky blue
+  "#00ff00", // Neon green (used rarely)
+  "#ff0000", // Pure red (used rarely)
 ]
 
 interface Star {
@@ -27,57 +22,68 @@ interface Star {
   delay: number
 }
 
-// Function to select colors with higher probability for silver/white
+// Optimized color selection with strong preference for whites
 const getRandomStarColor = () => {
-  // 80% chance of selecting a silver/white color (indices 0-5)
-  // 20% chance of selecting a bright neon color (indices 6-9)
-  const silverOrNeon = Math.random() < 0.8 ? 'silver' : 'neon';
+  // 90% chance of selecting a silver/white color (indices 0-2)
+  // 10% chance of selecting a bright neon color (indices 3-4)
+  const silverOrNeon = Math.random() < 0.9 ? 'silver' : 'neon';
   
   if (silverOrNeon === 'silver') {
-    // Select from silver/white colors (indices 0-5)
-    const silverIndex = Math.floor(Math.random() * 6);
+    // Select from silver/white colors (indices 0-2)
+    const silverIndex = Math.floor(Math.random() * 3);
     return starColors[silverIndex];
   } else {
-    // Select from neon colors (indices 6-9)
-    const neonIndex = Math.floor(Math.random() * 4) + 6;
+    // Select from neon colors (indices 3-4)
+    const neonIndex = Math.floor(Math.random() * 2) + 3;
     return starColors[neonIndex];
   }
 }
 
 export default function AnimatedStars() {
   const [stars, setStars] = useState<Star[]>([])
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    // Generate initial stars
-    const initialStars = Array.from({ length: 20 }, (_, i) => ({
+    // Generate fewer initial stars - reduced from 20 to 10
+    const initialStars = Array.from({ length: 10 }, (_, i) => ({
       id: i,
-      x: -20, // Start from left side
+      x: -10, // Start from left side
       y: Math.random() * 100, // Random y position (0-100%)
-      size: Math.random() * 30 + 20, // Random size between 20-50px
+      size: Math.random() * 20 + 10, // Smaller size range: 10-30px (was 20-50px)
       color: getRandomStarColor(),
-      duration: Math.random() * 2 + 2, // Random duration between 2-4s
-      delay: Math.random() * 1, // Random delay between 0-1s
+      duration: Math.random() * 1.5 + 2, // Random duration between 2-3.5s (was 2-4s)
+      delay: Math.random() * 0.5, // Shorter random delay between 0-0.5s (was 0-1s)
     }))
     setStars(initialStars)
 
-    // Add new stars periodically
-    const interval = setInterval(() => {
+    // Add new stars less frequently - increased interval from 500ms to 1000ms
+    intervalRef.current = setInterval(() => {
       setStars(prevStars => {
         const newStar = {
           id: Date.now(),
-          x: -20, // Start from left side
+          x: -10, // Start from left side
           y: Math.random() * 100,
-          size: Math.random() * 30 + 20,
+          size: Math.random() * 20 + 10,
           color: getRandomStarColor(),
-          duration: Math.random() * 2 + 2,
+          duration: Math.random() * 1.5 + 2,
           delay: 0,
         }
-        return [...prevStars.slice(-19), newStar] // Keep only the last 20 stars
+        // Keep only the last 10 stars instead of 20
+        return [...prevStars.slice(-9), newStar]
       })
-    }, 500) // Add a new star every 500ms
+    }, 1000) // Add a new star every 1000ms (was 500ms)
 
-    return () => clearInterval(interval)
+    // Proper cleanup to prevent memory leaks
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+    }
   }, [])
+
+  // Add a condition to only render if there are stars (helps with SSR)
+  if (stars.length === 0) return null
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
@@ -92,25 +98,25 @@ export default function AnimatedStars() {
             height: star.size,
             backgroundColor: star.color,
             clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-            filter: "drop-shadow(0 0 12px currentColor)",
-            opacity: 0.9,
+            // Simplified filter with less blur
+            filter: "drop-shadow(0 0 6px currentColor)",
+            opacity: 0.8, // Slightly reduced opacity
+            willChange: "transform", // Performance optimization hint
           }}
           initial={{ 
             opacity: 0,
             scale: 0.5,
-            rotate: 0,
             x: 0,
           }}
           animate={{ 
-            opacity: [0, 0.9, 0.9, 0],
-            scale: [0.5, 1.2, 1, 0.8],
-            rotate: 360,
+            opacity: [0, 0.8, 0.8, 0],
+            scale: [0.5, 1, 1, 0.7], // Simplified scale animation
             x: "120vw", // Move to right side of viewport
           }}
           transition={{
             duration: star.duration,
             delay: star.delay,
-            ease: "easeInOut",
+            ease: "linear", // Changed from easeInOut to linear for better performance
             repeat: 0,
           }}
         />
