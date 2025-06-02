@@ -21,6 +21,19 @@ export default function FarmPage() {
       {/* Elfsight Script */}
       <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
 
+      {/* CSS to hide Elfsight branding */}
+      <style jsx global>{`
+        .eapps-instagram-feed-header,
+        .eapps-instagram-feed-title,
+        .eapps-link,
+        [data-elfsight-app-powered-by] {
+          display: none !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+      `}</style>
+
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -163,21 +176,6 @@ export default function FarmPage() {
       {/* Main Content */}
       <section className="relative z-10 pt-32 px-6 pb-16">
         <div className="container mx-auto max-w-6xl">
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-              Generation <span className="text-zinc-400">Farm</span>
-            </h1>
-            <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
-              A curated collection of aesthetic generated images from our creative lab.
-            </p>
-          </motion.div>
-
           {/* Instagram Feed */}
           <div className="mb-16">
             <div className="max-w-6xl mx-auto">
