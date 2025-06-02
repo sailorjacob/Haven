@@ -309,13 +309,13 @@ export default function AdvertisingPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Link href="/contact">
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
-                  >
-                    Book a 15-min intro call
-                  </Button>
+                  <button className="group relative inline-flex items-center justify-center border-2 border-purple-500 bg-transparent text-zinc-900 font-medium py-2.5 px-7 rounded-full text-sm overflow-hidden transition-all duration-300">
+                    <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <span className="relative z-10 flex items-center justify-center">
+                      Schedule a consultation
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </span>
+                  </button>
                 </Link>
               </div>
             </motion.div>
@@ -637,7 +637,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="border border-zinc-400 bg-transparent text-zinc-600 text-xs font-medium py-1.5 px-4 rounded-full hover:bg-zinc-500 hover:text-white transition-colors">
+                            <button className="border border-red-500 bg-transparent text-red-600 text-xs font-medium py-1.5 px-4 rounded-full hover:bg-red-500 hover:text-white transition-colors">
                               Get started
                             </button>
                           </div>
@@ -701,10 +701,10 @@ export default function AdvertisingPage() {
 
                       <div className="flex items-center justify-center mb-6">
                         <Link href="/contact">
-                          <button className="group relative w-full border-2 border-zinc-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
-                            <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                          <button className="group relative inline-flex items-center justify-center border-2 border-red-500 bg-transparent text-zinc-900 font-medium py-2.5 px-7 rounded-full text-sm overflow-hidden transition-all duration-300">
+                            <div className="absolute inset-0 bg-red-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                             <span className="relative z-10 flex items-center justify-center">
-                              Start today
+                              Schedule a consultation
                               <ArrowRight className="ml-2 h-4 w-4" />
                             </span>
                           </button>
@@ -801,10 +801,10 @@ export default function AdvertisingPage() {
                 Let's explore how our revolutionary approach can transform your brand presence.
               </p>
               <Link href="/contact">
-                <button className="group relative w-full border-2 border-zinc-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
-                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <button className="group relative inline-flex items-center justify-center border-2 border-red-500 bg-transparent text-zinc-900 font-medium py-2.5 px-7 rounded-full text-sm overflow-hidden transition-all duration-300">
+                  <div className="absolute inset-0 bg-red-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   <span className="relative z-10 flex items-center justify-center">
-                    Start today
+                    Schedule a consultation
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </span>
                 </button>
