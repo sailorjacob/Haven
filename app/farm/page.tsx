@@ -10,51 +10,51 @@ import { Footer } from "@/components/footer"
 // Define the farm images array
 const farmImages = [
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2851%29-4vpgjGlAEK4hdAaCgaCi2Ywd9lsJ7R.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2852%29-EM8XwdJMsQrCMPKvO2KbcI86ptRJaX.jpeg",
     alt: "Farm image 1"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(50)-OKZEuqZjBPLQdA3Y66sNP08fXmfUAO.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2853%29-XeFbs4dtIfL1L2OIMpDkUtri3DUUnu.jpeg",
     alt: "Farm image 2"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(49)-PwRE9Ej34cTxs6hWHMXFFiBdkzfQ3s.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2854%29-25QH9xH3Uo0A9ELfeQSduDT4wjFaFD.jpeg",
     alt: "Farm image 3"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(48)-T0KvGzMuNx7DlBbZ9O8Tqrl9jnNc9r.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2855%29-ioKnV0xmu3v7BO6pXix7bwqqbZQuGr.jpeg",
     alt: "Farm image 4"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(47)-fA5Py8KOoF9vP15Zn3Rp87O66c7PnA.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2856%29-87hd2al8VViR1IJXTmAqr89iTRglld.jpeg",
     alt: "Farm image 5"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(46)-EcVjQj6Hsr4yxTw3wl3uf5fDRJRYS5.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2857%29-eK25dRZhwD9WNsdR7VNcpaCT1lXgJA.jpeg",
     alt: "Farm image 6"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(45)-fbsRwK5Vxfke5aPgz1MwOIRdTq2E8l.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2858%29-aq9zalRBIdIjDlheX64PdpmqoHmxmL.jpeg",
     alt: "Farm image 7"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(44)-JU4L1RaAjQb4JgQg3uazttbxQA1PBy.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2859%29-GP102maNGk7s41ggPQtQg0Ag864ea6.jpeg",
     alt: "Farm image 8"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(43)-BkLvtA6ZnQtcXzHH0FZKXZmFFVxHv7.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2860%29-k9BaXEgj2xwF9uTTpeoGnm7MMu9S7B.jpeg",
     alt: "Farm image 9"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(42)-fupEzcOWAq7xFoR4dZb6sV4H5Vz9wc.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2851%29-4vpgjGlAEK4hdAaCgaCi2Ywd9lsJ7R.jpeg",
     alt: "Farm image 10"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(41)-Uw0Iw1m3p9a5rSgBv3UVXHbBh3hQyW.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(50)-OKZEuqZjBPLQdA3Y66sNP08fXmfUAO.jpeg",
     alt: "Farm image 11"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(40)-pWdw9OYFnTnqmK29TRPkwEavtHZitc.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(49)-PwRE9Ej34cTxs6hWHMXFFiBdkzfQ3s.jpeg",
     alt: "Farm image 12"
   }
 ];
@@ -233,11 +233,8 @@ export default function FarmPage() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4">
-              Haven Farm
+              Farm:
             </h1>
-            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              A collection of beautiful moments from our sustainable farming practices
-            </p>
           </motion.div>
 
           {/* Image Gallery */}
@@ -247,21 +244,21 @@ export default function FarmPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-16"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {farmImages.map((image, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 * (index % 4) }}
-                  className="relative aspect-square overflow-hidden rounded-md cursor-pointer group"
+                  transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
+                  className="relative aspect-[3/4] overflow-hidden rounded-md cursor-pointer group"
                   onClick={() => openModal(image.url)}
                 >
                   <Image
                     src={image.url}
                     alt={image.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -282,7 +279,7 @@ export default function FarmPage() {
             className="bg-zinc-50 p-8 rounded-xl max-w-4xl mx-auto"
           >
             <h2 className="text-2xl font-light text-zinc-900 mb-4 text-center">
-              About Haven Farm
+              About:
             </h2>
             <p className="text-zinc-600 mb-6">
               Haven Farm represents our commitment to sustainable living and agricultural practices. 
