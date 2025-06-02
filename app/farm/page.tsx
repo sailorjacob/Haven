@@ -2,53 +2,84 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Hexagon, Menu, X, Instagram } from "lucide-react"
+import { Hexagon, Menu, X, Camera, ExternalLink } from "lucide-react"
 import { Footer } from "@/components/footer"
-import Script from "next/script"
+
+// Define the farm images array
+const farmImages = [
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2851%29-4vpgjGlAEK4hdAaCgaCi2Ywd9lsJ7R.jpeg",
+    alt: "Farm image 1"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(50)-OKZEuqZjBPLQdA3Y66sNP08fXmfUAO.jpeg",
+    alt: "Farm image 2"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(49)-PwRE9Ej34cTxs6hWHMXFFiBdkzfQ3s.jpeg",
+    alt: "Farm image 3"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(48)-T0KvGzMuNx7DlBbZ9O8Tqrl9jnNc9r.jpeg",
+    alt: "Farm image 4"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(47)-fA5Py8KOoF9vP15Zn3Rp87O66c7PnA.jpeg",
+    alt: "Farm image 5"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(46)-EcVjQj6Hsr4yxTw3wl3uf5fDRJRYS5.jpeg",
+    alt: "Farm image 6"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(45)-fbsRwK5Vxfke5aPgz1MwOIRdTq2E8l.jpeg",
+    alt: "Farm image 7"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(44)-JU4L1RaAjQb4JgQg3uazttbxQA1PBy.jpeg",
+    alt: "Farm image 8"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(43)-BkLvtA6ZnQtcXzHH0FZKXZmFFVxHv7.jpeg",
+    alt: "Farm image 9"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(42)-fupEzcOWAq7xFoR4dZb6sV4H5Vz9wc.jpeg",
+    alt: "Farm image 10"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(41)-Uw0Iw1m3p9a5rSgBv3UVXHbBh3hQyW.jpeg",
+    alt: "Farm image 11"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(40)-pWdw9OYFnTnqmK29TRPkwEavtHZitc.jpeg",
+    alt: "Farm image 12"
+  }
+];
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [loaded, setLoaded] = useState(false)
-
-  // Function to initialize Elfsight widget
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Check if script is already loaded
-      const existingScript = document.getElementById('elfsight-script');
-      
-      if (!existingScript) {
-        const script = document.createElement('script');
-        script.id = 'elfsight-script';
-        script.src = 'https://static.elfsight.com/platform/platform.js';
-        script.async = true;
-        script.defer = true;
-        
-        script.onload = () => {
-          console.log('Elfsight script loaded');
-          setLoaded(true);
-          // Try to initialize the widget if window.elfsight exists
-          if (window.elfsight && window.elfsight.initialize) {
-            window.elfsight.initialize();
-          }
-        };
-        
-        document.body.appendChild(script);
-      } else {
-        setLoaded(true);
-        // Try to initialize the widget if window.elfsight exists
-        if (window.elfsight && window.elfsight.initialize) {
-          window.elfsight.initialize();
-        }
-      }
-    }
-  }, []);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
+
+  // Open the modal with the selected image
+  const openModal = (imageUrl: string) => {
+    setSelectedImage(imageUrl);
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Close the modal
+  const closeModal = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'auto';
+  };
 
   return (
     <main className="bg-white w-full text-zinc-900">
@@ -194,39 +225,116 @@ export default function FarmPage() {
       {/* Main Content */}
       <section className="relative z-10 pt-32 px-6 pb-16">
         <div className="container mx-auto max-w-6xl">
-          {/* Instagram Feed */}
-          <div className="mb-16">
-            <div className="max-w-6xl mx-auto">
-              {/* Elfsight Instagram Feed Widget */}
-              <div className="elfsight-app-0d3388d2-2de8-4157-97b1-ae10ef33aa26" data-elfsight-app-lazy="false"></div>
-              
-              {/* Fallback/Loading Content */}
-              {!loaded && (
-                <div className="text-center py-16">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="rounded-full bg-zinc-200 h-16 w-16 mb-4 flex items-center justify-center">
-                      <Instagram className="h-8 w-8 text-zinc-400" />
+          {/* Page Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4">
+              Haven Farm
+            </h1>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              A collection of beautiful moments from our sustainable farming practices
+            </p>
+          </motion.div>
+
+          {/* Image Gallery */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-16"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {farmImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 * (index % 4) }}
+                  className="relative aspect-square overflow-hidden rounded-md cursor-pointer group"
+                  onClick={() => openModal(image.url)}
+                >
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Camera className="w-8 h-8 text-white" />
                     </div>
-                    <div className="mt-4 text-zinc-500">Loading Instagram feed...</div>
                   </div>
-                </div>
-              )}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* About the Farm */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-zinc-50 p-8 rounded-xl max-w-4xl mx-auto"
+          >
+            <h2 className="text-2xl font-light text-zinc-900 mb-4 text-center">
+              About Haven Farm
+            </h2>
+            <p className="text-zinc-600 mb-6">
+              Haven Farm represents our commitment to sustainable living and agricultural practices. 
+              Located in upstate New York, our farm serves as both a retreat and a working model 
+              for ecological harmony. We grow seasonal produce using regenerative methods that 
+              prioritize soil health and biodiversity.
+            </p>
+            <p className="text-zinc-600">
+              The farm connects our digital work with the physical world, reminding us of the 
+              importance of tangible creation and natural cycles. It's also a gathering place 
+              for our team and community to collaborate, recharge, and find inspiration.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <a 
+                href="mailto:farm@haven.engineer" 
+                className="inline-flex items-center text-zinc-900 border border-zinc-300 hover:bg-zinc-100 py-2 px-6 rounded-full text-sm transition-colors"
+              >
+                Contact the Farm
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-5xl max-h-[90vh] w-full">
+            <button 
+              className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full z-10"
+              onClick={closeModal}
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="relative w-full h-full max-h-[85vh]">
+              <Image
+                src={selectedImage}
+                alt="Farm image fullscreen view"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </div>
-      </section>
+      )}
 
       {/* Footer */}
       <Footer />
     </main>
   )
-}
-
-// Add TypeScript declaration for Elfsight
-declare global {
-  interface Window {
-    elfsight?: {
-      initialize: () => void;
-    };
-  }
 } 
