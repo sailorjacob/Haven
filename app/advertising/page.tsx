@@ -319,6 +319,23 @@ export default function AdvertisingPage() {
                 </Link>
               </div>
             </motion.div>
+            
+            {/* Video section */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              className="mt-12 rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto"
+            >
+              <video 
+                src="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/Robots-3B2Td1FgkLYHPhtIkllFanlTXi7v5a.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto"
+              />
+            </motion.div>
           </div>
 
           {/* How It Works - optimized animations */}
@@ -620,7 +637,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="bg-yellow-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:bg-yellow-600 transition-colors">
+                            <button className="border border-yellow-400 bg-transparent text-yellow-500 text-xs font-medium py-1.5 px-4 rounded-full hover:bg-yellow-400 hover:text-white transition-colors">
                               Get started
                             </button>
                           </div>
@@ -684,9 +701,9 @@ export default function AdvertisingPage() {
 
                       <div className="flex items-center justify-center mb-6">
                         <Link href="/contact">
-                          <Button
-                            size="lg"
-                            className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full px-8 py-6"
+                          <Button 
+                            size="lg" 
+                            className="border border-yellow-400 bg-transparent text-yellow-500 rounded-full px-8 hover:bg-yellow-400 hover:text-white transition-colors"
                           >
                             Schedule a consultation
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -786,7 +803,7 @@ export default function AdvertisingPage() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full px-8"
+                  className="border border-yellow-400 bg-transparent text-yellow-500 rounded-full px-8 hover:bg-yellow-400 hover:text-white transition-colors"
                 >
                   Schedule a consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
