@@ -190,9 +190,20 @@ export default function DesignBookPage() {
                 A premium hardcover collection of visual references and secret design principles. Featuring high-quality full-page print images including graphic designs, photography, AI-generated art, poems, short stories, and guide notes that travel from the dark ages through the digital age and into the future.
               </p>
               
+              <div className="flex flex-col mb-4">
+                <div className="flex items-center mb-2">
+                  <BookOpen className="w-4 h-4 text-zinc-400 mr-2" />
+                  <span className="text-sm text-zinc-400">320 pages hardcover limited edition</span>
+                </div>
+                <div className="flex items-center">
+                  <Bookmark className="w-4 h-4 text-zinc-400 mr-2" />
+                  <span className="text-sm text-zinc-400">First print run - limited availability</span>
+                </div>
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-6">
                 {/* Simplified Stripe button container */}
-                <div className="relative stripe-button-container">
+                <div className="relative stripe-button-container block">
                   {stripeLoaded && (
                     // @ts-ignore - Stripe custom element
                     <stripe-buy-button
@@ -200,6 +211,12 @@ export default function DesignBookPage() {
                       publishable-key="pk_live_51RU878LW3qNGE5Nr0cXX4p3pqKFI8M1LtplAMOhlQTysHn36426EANMjlgzjArXWz4MU9TLFxe8VSSxjRNfJv7pP00Hp8rIbaG"
                     />
                   )}
+                </div>
+                <div className="mt-4 sm:hidden">
+                  <a href="https://buy.stripe.com/3cI6oI2Ph3Du0kn6dB57W02" 
+                     className="block text-center border border-zinc-300 hover:bg-zinc-50 text-amber-900 font-medium py-3 px-6 rounded-full transition-all duration-300">
+                    Pre-order Now
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -277,6 +294,13 @@ export default function DesignBookPage() {
         }
         stripe-buy-button:hover {
           --stripe-button-background-color: #f9fafb;
+        }
+        
+        /* Make Stripe button visible on all devices */
+        @media (max-width: 640px) {
+          .stripe-button-container stripe-buy-button {
+            display: none !important;
+          }
         }
       `}</style>
     </main>
