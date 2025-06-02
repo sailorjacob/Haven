@@ -2,22 +2,54 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Hexagon, Menu, X, ArrowRight } from "lucide-react"
+import Image from "next/image"
+import { useState } from "react"
+import { Hexagon, Menu, X, ArrowRight, Instagram } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import Script from "next/script"
+
+// Instagram post data
+const instagramPosts = [
+  {
+    id: "p1",
+    imageUrl: "https://images.unsplash.com/photo-1633358560639-8cb7a114e36e?q=80&w=1000",
+    caption: "Aesthetic generated image #1",
+    link: "https://www.instagram.com/p/C6QBjw3JqLF/",
+  },
+  {
+    id: "p2",
+    imageUrl: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1000",
+    caption: "Visual exploration study",
+    link: "https://www.instagram.com/p/C6PSdQQJ_bM/",
+  },
+  {
+    id: "p3",
+    imageUrl: "https://images.unsplash.com/photo-1618005198919-177e9dd3b5d9?q=80&w=1000",
+    caption: "Brand identity concept",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p4",
+    imageUrl: "https://images.unsplash.com/photo-1633501636789-54572bc926b2?q=80&w=1000",
+    caption: "Conceptual design exploration",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p5",
+    imageUrl: "https://images.unsplash.com/photo-1633497387007-67eadf3efd92?q=80&w=1000",
+    caption: "Generative pattern study",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+  {
+    id: "p6",
+    imageUrl: "https://images.unsplash.com/photo-1618005198208-283dfd0a830d?q=80&w=1000",
+    caption: "Artistic direction exploration",
+    link: "https://www.instagram.com/haven.engineer/",
+  },
+]
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  // Function to process Instagram embeds
-  useEffect(() => {
-    // Check if window and instgrm exist before trying to process embeds
-    if (typeof window !== 'undefined' && window.instgrm) {
-      window.instgrm.Embeds.process()
-    }
-  }, [])
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
@@ -27,12 +59,6 @@ export default function FarmPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* Instagram embed script */}
-      <Script
-        src="https://www.instagram.com/embed.js"
-        strategy="afterInteractive"
-      />
-
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
@@ -190,28 +216,18 @@ export default function FarmPage() {
             </p>
           </motion.div>
 
-          {/* Instagram Profile Embed */}
+          {/* Instagram Profile Header */}
           <div className="mb-12 flex justify-center">
             <div className="w-full max-w-4xl bg-white rounded-xl shadow-sm p-6 border border-zinc-200">
-              <h2 className="text-xl font-semibold mb-4 text-center">@haven.engineer</h2>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <Instagram className="w-8 h-8 text-pink-500" />
+                <h2 className="text-xl font-semibold text-center">@haven.engineer</h2>
+              </div>
               
-              <div className="flex justify-center mb-8">
-                <blockquote 
-                  className="instagram-media" 
-                  data-instgrm-captioned 
-                  data-instgrm-permalink="https://www.instagram.com/haven.engineer/" 
-                  data-instgrm-version="14"
-                  style={{ 
-                    margin: "1px",
-                    maxWidth: "540px",
-                    minWidth: "326px",
-                    width: "100%"
-                  }}
-                >
-                  <a href="https://www.instagram.com/haven.engineer/" target="_blank" rel="noopener noreferrer">
-                    Loading Instagram profile...
-                  </a>
-                </blockquote>
+              <div className="text-center mb-4">
+                <p className="text-zinc-600">
+                  Our creative laboratory where we experiment with aesthetic visuals and brand narratives.
+                </p>
               </div>
               
               <div className="text-center">
@@ -227,47 +243,42 @@ export default function FarmPage() {
             </div>
           </div>
 
-          {/* Recent Posts Grid */}
+          {/* Instagram Posts Grid */}
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-6 text-center">Recent Posts</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex justify-center">
-                <blockquote 
-                  className="instagram-media" 
-                  data-instgrm-captioned 
-                  data-instgrm-permalink="https://www.instagram.com/p/C6QBjw3JqLF/" 
-                  data-instgrm-version="14"
-                  style={{ 
-                    margin: "1px",
-                    maxWidth: "540px",
-                    minWidth: "326px",
-                    width: "100%"
-                  }}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {instagramPosts.map((post) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="group"
                 >
-                  <a href="https://www.instagram.com/p/C6QBjw3JqLF/" target="_blank" rel="noopener noreferrer">
-                    Loading Instagram post...
+                  <a 
+                    href={post.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+                  >
+                    <div className="relative aspect-square overflow-hidden">
+                      <Image
+                        src={post.imageUrl}
+                        alt={post.caption}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <p className="text-white text-sm font-medium">{post.caption}</p>
+                      </div>
+                    </div>
+                    <div className="p-3 flex items-center justify-between">
+                      <span className="text-xs text-zinc-500">haven.engineer</span>
+                      <Instagram className="w-4 h-4 text-pink-500" />
+                    </div>
                   </a>
-                </blockquote>
-              </div>
-              
-              <div className="flex justify-center">
-                <blockquote 
-                  className="instagram-media" 
-                  data-instgrm-captioned 
-                  data-instgrm-permalink="https://www.instagram.com/p/C6PSdQQJ_bM/" 
-                  data-instgrm-version="14"
-                  style={{ 
-                    margin: "1px",
-                    maxWidth: "540px",
-                    minWidth: "326px",
-                    width: "100%"
-                  }}
-                >
-                  <a href="https://www.instagram.com/p/C6PSdQQJ_bM/" target="_blank" rel="noopener noreferrer">
-                    Loading Instagram post...
-                  </a>
-                </blockquote>
-              </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -277,15 +288,4 @@ export default function FarmPage() {
       <Footer />
     </main>
   )
-}
-
-// Add TypeScript declaration for Instagram embeds
-declare global {
-  interface Window {
-    instgrm?: {
-      Embeds: {
-        process: () => void;
-      };
-    };
-  }
 } 
