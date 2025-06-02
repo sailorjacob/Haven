@@ -793,32 +793,6 @@ export default function AdvertisingPage() {
               ))}
             </motion.div>
           </div>
-          
-          {/* Call to Action - optimized animations */}
-          <div className="text-center pb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Ready to redefine your brand universe?
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
-                Let's explore how our revolutionary approach can transform your brand presence.
-              </p>
-              <Link href="/contact">
-                <button className="group relative inline-flex items-center justify-center border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  <span className="relative z-10 flex items-center justify-center">
-                    Schedule a consultation
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </span>
-                </button>
-              </Link>
-            </motion.div>
-          </div>
         </div>
       </section>
 
