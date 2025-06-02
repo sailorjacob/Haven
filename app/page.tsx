@@ -144,6 +144,13 @@ export default function HomePage() {
               {/* Desktop Navigation with random highlight on hover */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
+                  href="/advertising" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                >
+                  <span className="group-hover:hidden">Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
+                </Link>
+                <Link 
                   href="/studio" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
@@ -157,14 +164,19 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Work</span>
                 </Link>
-                {/* Design Book link temporarily hidden
+                <Link 
+                  href="/farm" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                >
+                  <span className="group-hover:hidden">Farm</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Farm</span>
+                </Link>
                 <Link 
                   href="/book" 
                   className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
                 >
                   Design Book
                 </Link>
-                */}
               </div>
             </div>
 
@@ -218,6 +230,14 @@ export default function HomePage() {
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
+                  href="/advertising" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="group-hover:hidden">Advertising</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Advertising</span>
+                </Link>
+                <Link 
                   href="/studio" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
@@ -233,7 +253,14 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Work</span>
                 </Link>
-                {/* Design Book link temporarily hidden
+                <Link 
+                  href="/farm"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="group-hover:hidden">Farm</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Farm</span>
+                </Link>
                 <Link 
                   href="/book"
                   className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
@@ -241,7 +268,6 @@ export default function HomePage() {
                 >
                   Design Book
                 </Link>
-                */}
                 <Link 
                   href="/pricing" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
