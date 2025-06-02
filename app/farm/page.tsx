@@ -2,57 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
 import { useState } from "react"
 import { Hexagon, Menu, X, ArrowRight, Instagram } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-
-// Instagram post data
-const instagramPosts = [
-  {
-    id: "p0",
-    imageUrl: "https://images.unsplash.com/photo-1620812097331-ff636155488f?q=80&w=1000",
-    caption: "Latest aesthetic exploration from our design lab",
-    link: "https://www.instagram.com/p/DKaLG3KSTNH/",
-  },
-  {
-    id: "p1",
-    imageUrl: "https://images.unsplash.com/photo-1633358560639-8cb7a114e36e?q=80&w=1000",
-    caption: "Aesthetic generated image #1",
-    link: "https://www.instagram.com/p/C6QBjw3JqLF/",
-  },
-  {
-    id: "p2",
-    imageUrl: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1000",
-    caption: "Visual exploration study",
-    link: "https://www.instagram.com/p/C6PSdQQJ_bM/",
-  },
-  {
-    id: "p3",
-    imageUrl: "https://images.unsplash.com/photo-1618005198919-177e9dd3b5d9?q=80&w=1000",
-    caption: "Brand identity concept",
-    link: "https://www.instagram.com/haven.engineer/",
-  },
-  {
-    id: "p4",
-    imageUrl: "https://images.unsplash.com/photo-1633501636789-54572bc926b2?q=80&w=1000",
-    caption: "Conceptual design exploration",
-    link: "https://www.instagram.com/haven.engineer/",
-  },
-  {
-    id: "p5",
-    imageUrl: "https://images.unsplash.com/photo-1633497387007-67eadf3efd92?q=80&w=1000",
-    caption: "Generative pattern study",
-    link: "https://www.instagram.com/haven.engineer/",
-  },
-  {
-    id: "p6",
-    imageUrl: "https://images.unsplash.com/photo-1618005198208-283dfd0a830d?q=80&w=1000",
-    caption: "Artistic direction exploration",
-    link: "https://www.instagram.com/haven.engineer/",
-  },
-]
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -249,42 +202,21 @@ export default function FarmPage() {
             </div>
           </div>
 
-          {/* Instagram Posts Grid */}
+          {/* Instagram Feed Embed */}
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6 text-center">Recent Posts</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {instagramPosts.map((post) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="group"
-                >
-                  <a 
-                    href={post.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="block overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
-                  >
-                    <div className="relative aspect-square overflow-hidden">
-                      <Image
-                        src={post.imageUrl}
-                        alt={post.caption}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                        <p className="text-white text-sm font-medium">{post.caption}</p>
-                      </div>
-                    </div>
-                    <div className="p-3 flex items-center justify-between">
-                      <span className="text-xs text-zinc-500">haven.engineer</span>
-                      <Instagram className="w-4 h-4 text-pink-500" />
-                    </div>
-                  </a>
-                </motion.div>
-              ))}
+            <div className="aspect-square max-w-3xl mx-auto">
+              <iframe
+                title="Instagram Feed"
+                className="w-full h-full rounded-xl shadow-md border border-zinc-200"
+                src="https://snapwidget.com/embed/1078123"
+                allowTransparency={true}
+                frameBorder="0"
+                scrolling="no"
+                style={{ border: "none", overflow: "hidden", width: "100%" }}
+              ></iframe>
+            </div>
+            <div className="text-center mt-6 text-sm text-zinc-500">
+              Feed provided by SnapWidget. May take a moment to load.
             </div>
           </div>
         </div>
