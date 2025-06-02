@@ -288,7 +288,7 @@ export default function AdvertisingPage() {
               className="text-center mb-6"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-                Unmatched <span className="text-blue-500">Advertising</span> Solutions
+                Unmatched <span className="text-purple-500">Advertising</span> Solutions
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
                 Revolutionary branding and conceptual innovation to transform your market presence.
@@ -306,7 +306,7 @@ export default function AdvertisingPage() {
                 <Link href="/contact">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full px-8"
+                    className="bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white rounded-full px-8"
                   >
                     Schedule a consultation
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -442,7 +442,7 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-blue-500 mb-2">UNMATCHED BENEFITS</p>
+              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Why visionaries choose Haven for branding
               </h2>
@@ -459,10 +459,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Globe className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
+                    <Globe className="h-8 w-8 text-purple-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Conceptual Innovation</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -478,10 +478,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Zap className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
+                    <Zap className="h-8 w-8 text-purple-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Dedicated Creatives</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -497,10 +497,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <BarChart className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
+                    <BarChart className="h-8 w-8 text-purple-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cultural Immersion</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -516,10 +516,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Star className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
+                    <Star className="h-8 w-8 text-purple-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Artisan Craft</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -535,10 +535,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Repeat className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
+                    <Repeat className="h-8 w-8 text-purple-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Perpetual Evolution</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -554,10 +554,10 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                 className="bg-white p-6 rounded-xl border border-zinc-200 relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-blue-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-purple-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <div className="relative z-10">
                   <div className="mb-4">
-                    <Award className="h-8 w-8 text-blue-500 group-hover:text-white transition-colors" />
+                    <Award className="h-8 w-8 text-purple-500 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-medium mb-2 text-zinc-900 group-hover:text-white transition-colors">Cross-disciplinary Approach</h3>
                   <p className="text-zinc-600 group-hover:text-white/90 transition-colors">
@@ -577,7 +577,7 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-blue-500 mb-2">UNMATCHED SERVICES</p>
+              <p className="text-sm font-medium text-purple-600 mb-2">UNMATCHED SERVICES</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Bespoke branding solutions for visionary companies
               </h2>
@@ -632,7 +632,7 @@ export default function AdvertisingPage() {
                           {/* Card footer */}
                           <div className="flex justify-between items-end">
                             <div className="text-sm font-medium tracking-wider text-zinc-600">UNMATCHED</div>
-                            <button className="bg-gradient-to-r from-blue-400 to-blue-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-blue-500 hover:to-blue-600 transition-colors">
+                            <button className="bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-purple-500 hover:to-purple-600 transition-colors">
                               Get started
                             </button>
                           </div>
@@ -660,35 +660,35 @@ export default function AdvertisingPage() {
                         <div className="uppercase text-sm font-medium text-zinc-500 mb-3">INCLUDED</div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Dedicated brand architect</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Bespoke creative direction</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Conceptual development</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Brand narrative crafting</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Unlimited ideation</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Cross-medium expression</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Cultural positioning</span>
                           </div>
                           <div className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-500 mr-2 shrink-0" />
+                            <Check className="h-5 w-5 text-purple-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Competitive distinction</span>
                           </div>
                         </div>
@@ -698,7 +698,7 @@ export default function AdvertisingPage() {
                         <Link href="/contact">
                           <Button 
                             size="lg" 
-                            className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full px-8"
+                            className="bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white rounded-full px-8"
                           >
                             Schedule a consultation
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -747,7 +747,7 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-8"
             >
-              <p className="text-sm font-medium text-blue-500 mb-2">FAQ</p>
+              <p className="text-sm font-medium text-purple-600 mb-2">FAQ</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Frequently asked questions
               </h2>
@@ -811,7 +811,7 @@ export default function AdvertisingPage() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full px-8"
+                  className="bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white rounded-full px-8"
                 >
                   Schedule a consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
