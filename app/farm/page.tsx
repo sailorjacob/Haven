@@ -2,13 +2,47 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import { useState } from "react"
-import { Hexagon, Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
+import { Hexagon, Menu, X, Instagram } from "lucide-react"
 import { Footer } from "@/components/footer"
 import Script from "next/script"
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [loaded, setLoaded] = useState(false)
+
+  // Function to initialize Elfsight widget
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Check if script is already loaded
+      const existingScript = document.getElementById('elfsight-script');
+      
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.id = 'elfsight-script';
+        script.src = 'https://static.elfsight.com/platform/platform.js';
+        script.async = true;
+        script.defer = true;
+        
+        script.onload = () => {
+          console.log('Elfsight script loaded');
+          setLoaded(true);
+          // Try to initialize the widget if window.elfsight exists
+          if (window.elfsight && window.elfsight.initialize) {
+            window.elfsight.initialize();
+          }
+        };
+        
+        document.body.appendChild(script);
+      } else {
+        setLoaded(true);
+        // Try to initialize the widget if window.elfsight exists
+        if (window.elfsight && window.elfsight.initialize) {
+          window.elfsight.initialize();
+        }
+      }
+    }
+  }, []);
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
@@ -18,19 +52,17 @@ export default function FarmPage() {
 
   return (
     <main className="bg-white w-full text-zinc-900">
-      {/* Elfsight Script */}
-      <Script src="https://static.elfsight.com/platform/platform.js" strategy="afterInteractive" />
-
-      {/* CSS to hide Elfsight branding */}
+      {/* CSS to hide Elfsight branding only (not the content) */}
       <style jsx global>{`
-        .eapps-instagram-feed-header,
-        .eapps-instagram-feed-title,
-        .eapps-link,
-        [data-elfsight-app-powered-by] {
+        /* Target only the branding elements without affecting feed content */
+        .eapps-instagram-feed-container .eui-widget-title.eui-widget-title-small {
           display: none !important;
-          opacity: 0 !important;
-          visibility: hidden !important;
-          pointer-events: none !important;
+        }
+        .eapps-instagram-feed-title-container, 
+        .eapps-platform-footer, 
+        .eapps-widget-toolbar, 
+        .eui-widget-footer {
+          display: none !important;
         }
       `}</style>
 
@@ -180,7 +212,19 @@ export default function FarmPage() {
           <div className="mb-16">
             <div className="max-w-6xl mx-auto">
               {/* Elfsight Instagram Feed Widget */}
-              <div className="elfsight-app-0d3388d2-2de8-4157-97b1-ae10ef33aa26" data-elfsight-app-lazy></div>
+              <div className="elfsight-app-0d3388d2-2de8-4157-97b1-ae10ef33aa26" data-elfsight-app-lazy="false"></div>
+              
+              {/* Fallback/Loading Content */}
+              {!loaded && (
+                <div className="text-center py-16">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="rounded-full bg-zinc-200 h-16 w-16 mb-4 flex items-center justify-center">
+                      <Instagram className="h-8 w-8 text-zinc-400" />
+                    </div>
+                    <div className="mt-4 text-zinc-500">Loading Instagram feed...</div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -190,4 +234,13 @@ export default function FarmPage() {
       <Footer />
     </main>
   )
+}
+
+// Add TypeScript declaration for Elfsight
+declare global {
+  interface Window {
+    elfsight?: {
+      initialize: () => void;
+    };
+  }
 } 
