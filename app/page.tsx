@@ -157,12 +157,14 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Work</span>
                 </Link>
+                {/* Design Book link temporarily hidden
                 <Link 
                   href="/book" 
                   className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
                 >
                   Design Book
                 </Link>
+                */}
               </div>
             </div>
 
@@ -231,6 +233,7 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Work</span>
                 </Link>
+                {/* Design Book link temporarily hidden
                 <Link 
                   href="/book"
                   className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
@@ -238,6 +241,7 @@ export default function HomePage() {
                 >
                   Design Book
                 </Link>
+                */}
                 <Link 
                   href="/pricing" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
