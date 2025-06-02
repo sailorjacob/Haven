@@ -114,7 +114,7 @@ export default function HomePage() {
       description: "A portfolio and personal branding site for a talented design creative, featuring minimalist aesthetics and interactive elements.",
       technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Branding"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
-      link: "/klairedev",
+      link: "https://www.klaire.dev/",
       category: "website"
     }
   ]
