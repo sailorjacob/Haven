@@ -10,19 +10,19 @@ import { Footer } from "@/components/footer"
 // Define the farm images array
 const farmImages = [
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2852%29-EM8XwdJMsQrCMPKvO2KbcI86ptRJaX.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2860%29-k9BaXEgj2xwF9uTTpeoGnm7MMu9S7B.jpeg",
     alt: "Farm image 1"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2853%29-XeFbs4dtIfL1L2OIMpDkUtri3DUUnu.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2859%29-GP102maNGk7s41ggPQtQg0Ag864ea6.jpeg",
     alt: "Farm image 2"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2854%29-25QH9xH3Uo0A9ELfeQSduDT4wjFaFD.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2858%29-aq9zalRBIdIjDlheX64PdpmqoHmxmL.jpeg",
     alt: "Farm image 3"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2855%29-ioKnV0xmu3v7BO6pXix7bwqqbZQuGr.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2857%29-eK25dRZhwD9WNsdR7VNcpaCT1lXgJA.jpeg",
     alt: "Farm image 4"
   },
   {
@@ -30,32 +30,24 @@ const farmImages = [
     alt: "Farm image 5"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2857%29-eK25dRZhwD9WNsdR7VNcpaCT1lXgJA.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2855%29-ioKnV0xmu3v7BO6pXix7bwqqbZQuGr.jpeg",
     alt: "Farm image 6"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2858%29-aq9zalRBIdIjDlheX64PdpmqoHmxmL.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2854%29-25QH9xH3Uo0A9ELfeQSduDT4wjFaFD.jpeg",
     alt: "Farm image 7"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2859%29-GP102maNGk7s41ggPQtQg0Ag864ea6.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2853%29-XeFbs4dtIfL1L2OIMpDkUtri3DUUnu.jpeg",
     alt: "Farm image 8"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2860%29-k9BaXEgj2xwF9uTTpeoGnm7MMu9S7B.jpeg",
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2852%29-EM8XwdJMsQrCMPKvO2KbcI86ptRJaX.jpeg",
     alt: "Farm image 9"
   },
   {
     url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2851%29-4vpgjGlAEK4hdAaCgaCi2Ywd9lsJ7R.jpeg",
     alt: "Farm image 10"
-  },
-  {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(50)-OKZEuqZjBPLQdA3Y66sNP08fXmfUAO.jpeg",
-    alt: "Farm image 11"
-  },
-  {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20(49)-PwRE9Ej34cTxs6hWHMXFFiBdkzfQ3s.jpeg",
-    alt: "Farm image 12"
   }
 ];
 
@@ -233,7 +225,7 @@ export default function FarmPage() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4">
-              Farm:
+              Harvest
             </h1>
           </motion.div>
 
@@ -282,15 +274,14 @@ export default function FarmPage() {
               About:
             </h2>
             <p className="text-zinc-600 mb-6">
-              Haven Farm represents our commitment to sustainable living and agricultural practices. 
-              Located in upstate New York, our farm serves as both a retreat and a working model 
-              for ecological harmony. We grow seasonal produce using regenerative methods that 
-              prioritize soil health and biodiversity.
+              Our rural sanctuary is where ideas grow alongside our seasonal harvests. 
+              This space serves as both creative retreat and working landscape, where 
+              nature's rhythms influence our design philosophy and approach to innovation.
             </p>
             <p className="text-zinc-600">
-              The farm connects our digital work with the physical world, reminding us of the 
-              importance of tangible creation and natural cycles. It's also a gathering place 
-              for our team and community to collaborate, recharge, and find inspiration.
+              The interplay between digital and physical worlds finds harmony here, 
+              as we cultivate both land and ideas with equal care. Each visit yields 
+              new perspectives and reminds us of the beauty in simplicity and purpose.
             </p>
             <div className="mt-8 flex justify-center">
               <a 
