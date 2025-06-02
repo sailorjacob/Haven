@@ -322,9 +322,9 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-red-600 mb-2">VISIONARY BRANDING</p>
+              <p className="text-sm font-medium text-zinc-500 mb-2">VISIONARY BRANDING</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Visionary branding for <span className="text-red-600">forward-thinking</span> brands
+                Visionary branding for <span className="text-zinc-400">forward-thinking</span> brands
               </h2>
             </motion.div>
 
@@ -336,8 +336,8 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-red-600/10 rounded-full flex items-center justify-center mb-4">
-                  <Target className="text-red-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
+                  <Target className="text-zinc-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Conceptualization</h3>
                 <p className="text-zinc-600">
@@ -352,8 +352,8 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-red-600/10 rounded-full flex items-center justify-center mb-4">
-                  <Palette className="text-red-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
+                  <Palette className="text-zinc-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Creative Vision</h3>
                 <p className="text-zinc-600">
@@ -368,8 +368,8 @@ export default function AdvertisingPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="bg-white rounded-xl p-6 shadow-sm border border-zinc-200"
               >
-                <div className="w-14 h-14 bg-red-600/10 rounded-full flex items-center justify-center mb-4">
-                  <BarChart className="text-red-600 w-7 h-7" />
+                <div className="w-14 h-14 bg-zinc-300/40 rounded-full flex items-center justify-center mb-4">
+                  <BarChart className="text-zinc-600 w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-zinc-900">Brand Narrative</h3>
                 <p className="text-zinc-600">
@@ -388,9 +388,9 @@ export default function AdvertisingPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-red-600 mb-2">REVOLUTIONARY DESIGN</p>
+              <p className="text-sm font-medium text-zinc-500 mb-2">REVOLUTIONARY DESIGN</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Revolutionary brand experiences & <span className="text-red-600">conceptual design</span>
+                Revolutionary brand experiences & <span className="text-zinc-400">conceptual design</span>
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Distinctive creative approaches that set you apart.
@@ -405,7 +405,7 @@ export default function AdvertisingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-red-600/50 transition-colors"
+                  className="bg-white border border-zinc-200 p-4 rounded-lg text-center hover:border-zinc-400 transition-colors"
                 >
                   <p className="text-zinc-800">{feature.name}</p>
                 </motion.div>
