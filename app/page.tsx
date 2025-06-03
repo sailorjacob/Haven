@@ -103,15 +103,6 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "A crypto-art project featuring red diamonds, digital army, and freedom. The ultimate escape route and weapon.",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "AI Art"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "website"
-    },
-    {
       id: "klairedev",
       title: "klaire.dev",
       description: "A portfolio and personal branding site for a talented design creative, featuring minimalist aesthetics and interactive elements.",
@@ -119,15 +110,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
       link: "https://www.klaire.dev/",
       category: "website"
-    },
-    {
-      id: "xrated",
-      title: "x-rated",
-      description: "A social platform combining elements of Instagram, Twitter, OnlyFans, and Tinder with selective content locking and monetization.",
-      technologies: ["Next.js", "Supabase", "Stripe", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
-      link: "/xrated",
-      category: "webapp"
     }
   ]
 
@@ -765,12 +747,6 @@ export default function HomePage() {
                   role: "Sales",
                   description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
-                },
-                {
-                  name: "Klaire Rasche",
-                  role: "Design", 
-                  description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
                 }
               ].map((member, index) => (
         <motion.div

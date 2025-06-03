@@ -157,12 +157,6 @@ export default function SitemapPage() {
                 description="24/7 mobile order-only restaurant with automation systems"
                 tags={["Restaurant", "Automation", "Future"]}
               />
-              <PageItem 
-                href="/killmefxster"
-                title="Kill Me Faster"
-                description="Crypto-art project: red diamonds, digital army, and freedom"
-                tags={["Art", "Crypto", "Rebellion"]}
-              />
             </div>
           </motion.div>
 
@@ -188,12 +182,6 @@ export default function SitemapPage() {
                 title="Jacob Hale Studio"
                 description="Photography portfolio website with minimalist design"
                 tags={["Photography", "Portfolio", "Design"]}
-              />
-              <PageItem 
-                href="/xrated"
-                title="x-rated"
-                description="Social platform with selective content locking and monetization features"
-                tags={["Social", "Content", "Monetization"]}
               />
               <PageItem 
                 href="/roundabout"
