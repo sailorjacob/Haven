@@ -22,10 +22,16 @@ export default function AdvertisingPage() {
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   
-  // Simplified scroll animation for the hanging star
+  // Simple scroll animation for the hanging star with more control points for smoothness
   const { scrollYProgress } = useScroll()
-  const starY = useTransform(scrollYProgress, [0, 1], [100, 600]) 
-  const starSwing = useTransform(scrollYProgress, [0, 0.25, 0.5, 0.75, 1], [0, 5, 0, -5, 0])
+  const starY = useTransform(scrollYProgress, 
+    [0, 0.2, 0.4, 0.6, 0.8, 1], 
+    [100, 200, 300, 400, 500, 600]
+  ) 
+  const starSwing = useTransform(scrollYProgress, 
+    [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], 
+    [0, 1, 2, 1, 0, -1, -2, -1, 0, 1, 0]
+  )
   
   // Function to get a random highlight color
   const getRandomHighlightColor = () => {
@@ -97,16 +103,17 @@ export default function AdvertisingPage() {
           rotate: starSwing,
           originY: 0, // Origin at top for pendulum effect
         }}
+        transition={{ type: "spring", stiffness: 50 }}
       >
         {/* String */}
-        <div className="w-[1px] h-[120px] bg-gradient-to-b from-zinc-300 to-zinc-400 mx-auto"></div>
+        <div className="w-[1px] h-[140px] bg-zinc-300/50 mx-auto"></div>
         
         {/* Star */}
         <div className="relative w-16 h-16 -mt-1">
           <svg viewBox="0 0 24 24" fill="none" className="w-16 h-16">
             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
-                  fill="#CBD5E1" 
-                  stroke="#94A3B8" 
+                  fill="rgba(203, 213, 225, 0.6)" 
+                  stroke="rgba(148, 163, 184, 0.4)" 
                   strokeWidth="0.5" />
           </svg>
         </div>
