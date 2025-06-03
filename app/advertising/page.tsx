@@ -21,7 +21,7 @@ export default function AdvertisingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  
+
   // Function to get a random highlight color
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
@@ -83,7 +83,7 @@ export default function AdvertisingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
-      
+
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
         <div className="container mx-auto px-6 py-3">
@@ -564,6 +564,109 @@ export default function AdvertisingPage() {
                     Blending art, design, psychology, and cultural anthropology into branding.
                   </p>
                 </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Portfolio Showcase */}
+          <div className="bg-zinc-50 rounded-xl p-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="text-center mb-6"
+            >
+              <p className="text-sm font-medium text-purple-600 mb-2">FEATURED WORK</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+                Recent brand transformations
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                See how we've helped visionary brands create distinctive identities that challenge conventions.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* X-Rated */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              >
+                <Link href="/xrated" className="block group">
+                  <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png"
+                        alt="X-Rated Platform"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">x-rated</h3>
+                      <p className="text-zinc-600 mb-3">A revolutionary social platform combining selective content sharing with sophisticated privacy controls.</p>
+                      <div className="flex items-center text-purple-600 font-medium">
+                        View Case Study
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Klaire */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              >
+                <div className="bg-white rounded-xl overflow-hidden border border-zinc-200">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
+                      alt="Klaire Rasche"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 text-zinc-900">Klaire Rasche</h3>
+                    <p className="text-zinc-600 mb-3">Brand identity and visual storytelling for a digital design visionary specializing in UI/UX excellence.</p>
+                    <div className="text-zinc-500 text-sm">Creative Direction • Brand Identity</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Kill Me Faster */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              >
+                <Link href="/killmefxster" className="block group">
+                  <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png"
+                        alt="Kill Me Faster"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">Kill Me Faster</h3>
+                      <p className="text-zinc-600 mb-3">Distinctive brand universe for an anonymous digital artist challenging conventional boundaries.</p>
+                      <div className="flex items-center text-purple-600 font-medium">
+                        View Case Study
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             </div>
           </div>
