@@ -729,7 +729,8 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design. Check out his ",
+                  description: "Jacob is a tech artist and entrepreneur with 7+ years of ",
+                  linkedWord: "experience",
                   github: "https://sailorjacob.github.io",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
                 },
@@ -766,7 +767,17 @@ export default function HomePage() {
                   <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
                   <p className="text-zinc-600 text-sm leading-relaxed">
                     {member.description}
-                    {member.github && (
+                    {member.linkedWord && member.github && (
+                      <a 
+                        href={member.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
+                      >
+                        {member.linkedWord}
+                      </a>
+                    )}
+                    {!member.linkedWord && member.github && (
                       <a 
                         href={member.github} 
                         target="_blank" 
@@ -776,6 +787,7 @@ export default function HomePage() {
                         work
                       </a>
                     )}
+                    {member.name === "Jacob Beam" && " in imagery and design."}
                   </p>
                 </motion.div>
               ))}
