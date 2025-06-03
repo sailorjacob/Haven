@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Menu, Globe, Target, BarChart, ChevronDown } from "lucide-react"
@@ -21,7 +21,13 @@ export default function AdvertisingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-
+  
+  // Add scroll animation for the chandelier star
+  const { scrollYProgress } = useScroll()
+  const starY = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [100, 250, 350, 600]) 
+  const starRotate = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0, 15, -15, 0])
+  const starScale = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [1, 1.2, 0.8, 1])
+  
   // Function to get a random highlight color
   const getRandomHighlightColor = () => {
     const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
@@ -83,6 +89,52 @@ export default function AdvertisingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
+      
+      {/* Hanging Chandelier Star */}
+      <motion.div
+        className="fixed right-12 top-0 z-10 hidden md:block"
+        style={{
+          y: starY,
+          rotate: starRotate,
+          scale: starScale,
+          originY: 0, // Origin at top for pendulum effect
+        }}
+      >
+        {/* String */}
+        <div className="w-[2px] h-[100px] bg-gradient-to-b from-zinc-300 to-zinc-400 mx-auto"></div>
+        
+        {/* Star */}
+        <div className="relative w-24 h-24 -mt-1">
+          <motion.div 
+            className="absolute inset-0"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" className="w-24 h-24">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
+                    fill="url(#starGradient)" 
+                    stroke="rgba(255,255,255,0.8)" 
+                    strokeWidth="0.5" />
+              <defs>
+                <linearGradient id="starGradient" x1="2" y1="2" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#E2E8F0" />
+                  <stop offset="0.5" stopColor="#CBD5E1" />
+                  <stop offset="1" stopColor="#94A3B8" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </motion.div>
+          
+          {/* Inner star glow */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-4 h-4 rounded-full bg-white opacity-70 blur-sm"></div>
+          </div>
+          
+          {/* Light reflection */}
+          <div className="absolute top-2 left-6 w-2 h-2 rounded-full bg-white blur-[1px]"></div>
+          <div className="absolute top-4 right-6 w-1 h-1 rounded-full bg-white blur-[0.5px]"></div>
+        </div>
+      </motion.div>
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
