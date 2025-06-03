@@ -101,15 +101,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
       link: "/moonlight-garden",
       category: "webapp"
-    },
-    {
-      id: "klairedev",
-      title: "klaire.dev",
-      description: "A portfolio and personal branding site for a talented design creative, featuring minimalist aesthetics and interactive elements.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Branding"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
-      link: "https://www.klaire.dev/",
-      category: "website"
     }
   ]
 
@@ -747,6 +738,12 @@ export default function HomePage() {
                   role: "Sales",
                   description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
+                },
+                {
+                  name: "Klaire Rasche",
+                  role: "Design", 
+                  description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
+                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
                 }
               ].map((member, index) => (
         <motion.div
