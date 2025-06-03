@@ -178,6 +178,18 @@ export default function SitemapPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <PageItem 
+                href="/ammocat"
+                title="Ammo Cat"
+                description="Artist website, webstore, and mini-game with advanced filtering"
+                tags={["Art", "E-commerce", "Gaming"]}
+              />
+              <PageItem 
+                href="/jacobhalestudio"
+                title="Jacob Hale Studio"
+                description="Photography portfolio website with minimalist design"
+                tags={["Photography", "Portfolio", "Design"]}
+              />
+              <PageItem 
                 href="/xrated"
                 title="x-rated"
                 description="Social platform with selective content locking and monetization features"
@@ -190,22 +202,10 @@ export default function SitemapPage() {
                 tags={["Transport", "Bitcoin", "Medical"]}
               />
               <PageItem 
-                href="/jacobhalestudio"
-                title="Jacob Hale Studio"
-                description="Photography portfolio website with minimalist design"
-                tags={["Photography", "Portfolio", "Design"]}
-              />
-              <PageItem 
                 href="/beloved"
                 title="BeLoved Transportation"
                 description="NEMT provider platform with personalized content and scheduling"
                 tags={["Transport", "Healthcare", "Platform"]}
-              />
-              <PageItem 
-                href="/ammocat"
-                title="Ammo Cat"
-                description="Artist website, webstore, and mini-game with advanced filtering"
-                tags={["Art", "E-commerce", "Gaming"]}
               />
               <PageItem 
                 href="/swivimedia"

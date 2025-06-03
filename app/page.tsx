@@ -40,24 +40,6 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
-      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round2.png",
-      link: "/roundabout",
-      category: "webapp"
-    },
-    {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
-      link: "/anthonyhadenguest",
-      category: "website"
-    },
-    {
       id: "ammocat",
       title: "ammocat3000.com",
       description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
@@ -73,6 +55,24 @@ export default function HomePage() {
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
       link: "/jacobhalestudio",
+      category: "website"
+    },
+    {
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round2.png",
+      link: "/roundabout",
+      category: "webapp"
+    },
+    {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
+      link: "/anthonyhadenguest",
       category: "website"
     },
     {
