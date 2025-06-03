@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowLeft, Lock, Shield, Users, MessageCircle, Heart, Image as ImageIcon, Filter, ChevronRight } from "lucide-react"
-import { Footer } from "@/components/footer"
 
 export default function XRatedPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -322,7 +321,7 @@ export default function XRatedPage() {
             </div>
           </div>
           <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 p-8 rounded-sm border border-pink-500/30">
-            <h3 className="text-xl mb-4 text-zinc-200 text-center">Results at a Glance</h3>
+            <h3 className="text-xl mb-4 text-zinc-200 text-center">Expected results</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
                 <p className="text-3xl font-bold text-pink-400 mb-2">68%</p>
@@ -360,9 +359,6 @@ export default function XRatedPage() {
           </div>
         </motion.div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </main>
   )
 } 
