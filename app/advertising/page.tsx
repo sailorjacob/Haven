@@ -22,15 +22,15 @@ export default function AdvertisingPage() {
   const [isJoinHovered, setIsJoinHovered] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   
-  // Simple scroll animation for the hanging star with more control points for smoothness
+  // Improved scroll animation for the hanging star with gradual end movement
   const { scrollYProgress } = useScroll()
   const starY = useTransform(scrollYProgress, 
-    [0, 0.2, 0.4, 0.6, 0.8, 1], 
-    [100, 200, 300, 400, 500, 600]
+    [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.85, 0.9, 0.95, 1], 
+    [100, 150, 200, 250, 300, 350, 400, 450, 480, 500, 520, 540, 550]
   ) 
   const starSwing = useTransform(scrollYProgress, 
-    [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], 
-    [0, 1, 2, 1, 0, -1, -2, -1, 0, 1, 0]
+    [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1], 
+    [0, 1, 2, 1, 0, -1, -2, -1, 0, 1, 0.5, 0]
   )
   
   // Function to get a random highlight color
@@ -105,8 +105,8 @@ export default function AdvertisingPage() {
         }}
         transition={{ type: "spring", stiffness: 50 }}
       >
-        {/* String */}
-        <div className="w-[1px] h-[140px] bg-zinc-300/50 mx-auto"></div>
+        {/* String - extended length so it doesn't appear to cut off */}
+        <div className="w-[1px] h-[300px] bg-zinc-300/50 mx-auto"></div>
         
         {/* Star */}
         <div className="relative w-16 h-16 -mt-1">
