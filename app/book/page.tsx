@@ -182,7 +182,7 @@ export default function DesignBookPage() {
               style={{ willChange: "transform, opacity" }}
             >
               <h1 className="text-4xl md:text-7xl font-black text-zinc-900 mb-6 leading-none tracking-tight uppercase">
-                <span className="text-blue-500 block" style={{ color: '#00BBFF' }}>DESIGNS: 1</span>
+                <span className="text-red-500 font-black block">DESIGNS: 1</span>
                 <span className="text-xs tracking-[0.3em] text-zinc-500 font-light">THE</span>
                 <span className="block"><span className="text-zinc-400">ART</span> <span className="text-pink-500">BOOK</span></span>
               </h1>
