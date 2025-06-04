@@ -40,6 +40,24 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round2.png",
+      link: "/roundabout",
+      category: "webapp"
+    },
+    {
+      id: "beloved",
+      title: "be-loved.app",
+      description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "/beloved",
+      category: "webapp"
+    },
+    {
       id: "ammocat",
       title: "ammocat3000.com",
       description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
@@ -58,15 +76,6 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
-      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round2.png",
-      link: "/roundabout",
-      category: "webapp"
-    },
-    {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
       description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
@@ -82,15 +91,6 @@ export default function HomePage() {
       technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
-      category: "webapp"
-    },
-    {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
       category: "webapp"
     },
     {
