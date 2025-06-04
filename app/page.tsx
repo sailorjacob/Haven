@@ -58,6 +58,33 @@ export default function HomePage() {
       category: "webapp"
     },
     {
+      id: "xrated",
+      title: "x-rated",
+      description: "A revolutionary social platform combining selective content sharing with sophisticated privacy controls.",
+      technologies: ["Next.js", "React", "Privacy Controls", "Social Platform"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
+      link: "/xrated",
+      category: "webapp"
+    },
+    {
+      id: "klaire",
+      title: "klaire.dev",
+      description: "Personal portfolio showcasing UI/UX excellence and creative digital design work.",
+      technologies: ["Portfolio Design", "UI/UX", "Creative Direction", "Web Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
+      link: "https://klaire.dev",
+      category: "website"
+    },
+    {
+      id: "killmefaster",
+      title: "Kill Me Faster",
+      description: "Distinctive brand universe for an anonymous digital artist challenging conventional boundaries.",
+      technologies: ["Brand Identity", "Digital Art", "Creative Direction", "Web Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "website"
+    },
+    {
       id: "ammocat",
       title: "ammocat3000.com",
       description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
