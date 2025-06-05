@@ -192,7 +192,7 @@ export default function RoundaboutPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Results</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Expected Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">

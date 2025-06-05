@@ -103,15 +103,6 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "killmefaster",
-      title: "Kill Me Faster",
-      description: "Distinctive brand universe for an anonymous digital artist challenging conventional boundaries.",
-      technologies: ["Brand Identity", "Digital Art", "Creative Direction", "Web Design"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "website"
-    },
-    {
       id: "swivimedia",
       title: "swivimedia.com",
       description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
