@@ -49,6 +49,15 @@ export default function HomePage() {
       category: "website"
     },
     {
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
+      link: "/jacobhalestudio",
+      category: "website"
+    },
+    {
       id: "roundabout",
       title: "roundabout.run",
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
@@ -63,7 +72,16 @@ export default function HomePage() {
       description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "https://be-loved.app/about",
+      link: "/beloved",
+      category: "webapp"
+    },
+    {
+      id: "swivimedia",
+      title: "swivimedia.com",
+      description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
+      technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
+      link: "/swivimedia",
       category: "webapp"
     },
     {
@@ -85,15 +103,6 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
-      link: "/jacobhalestudio",
-      category: "website"
-    },
-    {
       id: "klaire",
       title: "klaire.dev",
       description: "Personal portfolio showcasing UI/UX excellence and creative digital design work.",
@@ -101,15 +110,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
       link: "https://klaire.dev",
       category: "website"
-    },
-    {
-      id: "swivimedia",
-      title: "swivimedia.com",
-      description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
-      technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
-      link: "/swivimedia",
-      category: "webapp"
     },
     {
       id: "moonlight",
