@@ -219,17 +219,19 @@ export default function AdvertisingPage() {
           }
         }}
       >
-        <div className="absolute top-12 left-12 z-20">
+        <div className="absolute top-6 left-6 z-20 w-full h-full">
           {/* Big Red Text - top left */}
           <motion.div 
-            className="overflow-visible text-left"
+            className="overflow-visible text-left w-full h-full flex items-start justify-start"
           >
             <motion.h1 
-              className="text-9xl sm:text-[12rem] md:text-[20rem] font-black uppercase tracking-tighter leading-none"
+              className="text-7xl sm:text-[8rem] md:text-[12rem] lg:text-[16rem] font-black uppercase tracking-tighter leading-none max-w-full"
               style={{ 
-                lineHeight: "0.9", 
+                lineHeight: "0.85", 
                 color: '#ff0000',
-                willChange: "transform, opacity" // GPU acceleration hint
+                willChange: "transform, opacity",
+                wordBreak: "break-word",
+                hyphens: "none"
               }}
             >
               {/* Animated text with typewriter effect - no fading */}
@@ -266,7 +268,7 @@ export default function AdvertisingPage() {
           style={{ willChange: "opacity" }}
         >
           <h2 
-            className="text-9xl sm:text-[15rem] md:text-[25rem] font-black uppercase tracking-tight"
+            className="text-7xl sm:text-[10rem] md:text-[18rem] lg:text-[22rem] font-black uppercase tracking-tight"
             style={{ 
               color: '#00ff00'
             }}
@@ -587,26 +589,26 @@ export default function AdvertisingPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* X-Rated */}
+              {/* Swivimedia */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               >
-                <Link href="/xrated" className="block group">
+                <Link href="/swivimedia" className="block group">
                   <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <Image
-                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png"
-                        alt="X-Rated Platform"
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//swivi4.png"
+                        alt="Swivimedia Platform"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">x-rated</h3>
-                      <p className="text-zinc-600 mb-3">A revolutionary social platform combining selective content sharing with sophisticated privacy controls.</p>
+                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">swivimedia.com</h3>
+                      <p className="text-zinc-600 mb-3">A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
                       <div className="flex items-center text-purple-600 font-medium">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
