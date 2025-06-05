@@ -40,6 +40,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
+      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "/ammocat",
+      category: "website"
+    },
+    {
       id: "roundabout",
       title: "roundabout.run",
       description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
@@ -58,6 +67,15 @@ export default function HomePage() {
       category: "webapp"
     },
     {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
+      link: "/anthonyhadenguest",
+      category: "website"
+    },
+    {
       id: "xrated",
       title: "x-rated",
       description: "A revolutionary social platform combining selective content sharing with sophisticated privacy controls.",
@@ -65,6 +83,15 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
       link: "/xrated",
       category: "webapp"
+    },
+    {
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
+      link: "/jacobhalestudio",
+      category: "website"
     },
     {
       id: "klaire",
@@ -82,33 +109,6 @@ export default function HomePage() {
       technologies: ["Brand Identity", "Digital Art", "Creative Direction", "Web Design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
       link: "/killmefxster",
-      category: "website"
-    },
-    {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
-      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "/ammocat",
-      category: "website"
-    },
-    {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
-      link: "/jacobhalestudio",
-      category: "website"
-    },
-    {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
-      link: "/anthonyhadenguest",
       category: "website"
     },
     {

@@ -3,8 +3,47 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 export default function BelovedPage() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  
+  const slides = [
+    {
+      src: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//bloved1.png",
+      alt: "be-loved.app Website - Homepage"
+    },
+    {
+      src: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//bloved2.png", 
+      alt: "be-loved.app Website - Services"
+    },
+    {
+      src: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//bloved3.png",
+      alt: "be-loved.app Website - Booking"
+    }
+  ]
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 4000) // Change slide every 4 seconds
+
+    return () => clearInterval(timer)
+  }, [slides.length])
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
+
   return (
     <main className="min-h-screen bg-zinc-900 text-zinc-300">
       {/* Gradient background */}
@@ -53,20 +92,66 @@ export default function BelovedPage() {
           </div>
         </motion.div>
 
-        {/* Main image */}
+        {/* Slideshow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-24"
         >
-          <div className="relative aspect-video overflow-hidden">
-            <Image
-              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png"
-              alt="be-loved.app Website"
-              fill
-              className="object-cover"
-            />
+          <div className="relative aspect-video overflow-hidden rounded-lg group">
+            {/* Images */}
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-500 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    index === currentSlide ? 'bg-white' : 'bg-white/40'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Slide Counter */}
+          <div className="text-center mt-4 text-sm text-zinc-500">
+            {currentSlide + 1} / {slides.length}
           </div>
         </motion.div>
 
