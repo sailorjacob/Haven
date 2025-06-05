@@ -70,6 +70,33 @@ export default function BelovedPage() {
           </div>
         </motion.div>
 
+        {/* iOS App Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 text-zinc-200">iOS Mobile App</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto">
+              The mobile app provides patients with convenient access to schedule rides, track their transportation, and manage their appointments on-the-go.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-sm">
+              <Image
+                src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//iosapppreview.PNG"
+                alt="be-loved.app iOS Mobile App Preview"
+                width={400}
+                height={800}
+                className="mx-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </motion.div>
+
         {/* Project Overview */}
         <motion.div
           initial={{ opacity: 0 }}
