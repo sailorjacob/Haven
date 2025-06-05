@@ -651,26 +651,26 @@ export default function AdvertisingPage() {
                 </Link>
               </motion.div>
 
-              {/* Kill Me Faster */}
+              {/* X-rated */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               >
-                <Link href="/killmefxster" className="block group">
+                <Link href="/x-rated" className="block group">
                   <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <Image
-                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png"
-                        alt="Kill Me Faster"
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated6dark.png"
+                        alt="X-rated.me"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">Kill Me Faster</h3>
-                      <p className="text-zinc-600 mb-3">Distinctive brand universe for an anonymous digital artist challenging conventional boundaries.</p>
+                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">x-rated.me</h3>
+                      <p className="text-zinc-600 mb-3">Exclusive membership platform featuring cutting-edge design and revolutionary user experience architecture.</p>
                       <div className="flex items-center text-purple-600 font-medium">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
