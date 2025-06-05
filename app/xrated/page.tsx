@@ -52,7 +52,7 @@ export default function XRatedPage() {
             <span className="text-zinc-600">•</span>
             <span>Content Platform</span>
             <span className="text-zinc-600">•</span>
-            <a href="https://xrated-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-white transition-colors">
+            <a href="https://www.x-rated.me/" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-white transition-colors">
               Visit Website
             </a>
           </div>

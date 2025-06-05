@@ -658,12 +658,12 @@ export default function AdvertisingPage() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               >
-                <Link href="/x-rated" className="block group">
+                <Link href="https://www.x-rated.me/" target="_blank" rel="noopener noreferrer" className="block group">
                   <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <Image
-                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated6dark.png"
-                        alt="X-rated.me"
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png"
+                        alt="X-Rated App Interface"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -672,7 +672,7 @@ export default function AdvertisingPage() {
                       <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">x-rated.me</h3>
                       <p className="text-zinc-600 mb-3">Exclusive membership platform featuring cutting-edge design and revolutionary user experience architecture.</p>
                       <div className="flex items-center text-purple-600 font-medium">
-                        View Case Study
+                        Visit Website
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </div>
