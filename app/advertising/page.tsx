@@ -596,7 +596,7 @@ export default function AdvertisingPage() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               >
-                <Link href="/swivimedia" className="block group">
+                <Link href="https://www.swivimedia.com/about" target="_blank" rel="noopener noreferrer" className="block group">
                   <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <Image
