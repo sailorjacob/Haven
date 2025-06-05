@@ -54,7 +54,7 @@ export default function HomePage() {
       description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
+      link: "https://be-loved.app/about",
       category: "webapp"
     },
     {
