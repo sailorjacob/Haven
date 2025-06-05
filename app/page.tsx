@@ -94,24 +94,6 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "xrated",
-      title: "x-rated",
-      description: "A revolutionary social platform combining selective content sharing with sophisticated privacy controls.",
-      technologies: ["Next.js", "React", "Privacy Controls", "Social Platform"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
-      link: "/xrated",
-      category: "webapp"
-    },
-    {
-      id: "klaire",
-      title: "klaire.dev",
-      description: "Personal portfolio showcasing UI/UX excellence and creative digital design work.",
-      technologies: ["Portfolio Design", "UI/UX", "Creative Direction", "Web Design"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
-      link: "https://klaire.dev",
-      category: "website"
-    },
-    {
       id: "moonlight",
       title: "Moonlight Garden 🌱",
       description: "A 24/7 mobile order-only restaurant with advanced automation systems.",
@@ -762,6 +744,8 @@ export default function HomePage() {
                   name: "Klaire Rasche",
                   role: "Design", 
                   description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
+                  linkedWord: "design",
+                  website: "https://klaire.dev",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
                 }
               ].map((member, index) => (
@@ -784,28 +768,39 @@ export default function HomePage() {
                   <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
                   <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
                   <p className="text-zinc-600 text-sm leading-relaxed">
-                    {member.description}
-                    {member.linkedWord && member.github && (
-                      <a 
-                        href={member.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
-                      >
-                        {member.linkedWord}
-                      </a>
+                    {member.linkedWord && member.github ? (
+                      <>
+                        {member.description.split(member.linkedWord)[0]}
+                        <a 
+                          href={member.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
+                        >
+                          {member.linkedWord}
+                        </a>
+                        {member.description.split(member.linkedWord)[1]}
+                        {member.name === "Jacob Beam" && " in imagery and design."}
+                      </>
+                    ) : member.linkedWord && member.website ? (
+                      <>
+                        {member.description.split(member.linkedWord)[0]}
+                        <a 
+                          href={member.website} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
+                        >
+                          {member.linkedWord}
+                        </a>
+                        {member.description.split(member.linkedWord)[1]}
+                      </>
+                    ) : (
+                      <>
+                        {member.description}
+                        {member.name === "Jacob Beam" && " in imagery and design."}
+                      </>
                     )}
-                    {!member.linkedWord && member.github && (
-                      <a 
-                        href={member.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-zinc-900 hover:text-zinc-700 transition-colors font-medium"
-                      >
-                        work
-                      </a>
-                    )}
-                    {member.name === "Jacob Beam" && " in imagery and design."}
                   </p>
                 </motion.div>
               ))}
