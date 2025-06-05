@@ -70,6 +70,10 @@ export default function AdvertisingPage() {
     {
       question: "What makes your branding approach different?",
       answer: "We reject formulaic branding. Each identity we create begins with a blank canvas and deep conceptual exploration. Our interdisciplinary team of artists, writers, and cultural strategists ensures your brand transcends traditional category expectations."
+    },
+    {
+      question: "Do you accept crypto?",
+      answer: "Yes, we accept payments in Bitcoin, Ethereum, or USDC."
     }
   ]
 
