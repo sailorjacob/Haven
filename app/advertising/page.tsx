@@ -608,7 +608,7 @@ export default function AdvertisingPage() {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">swivimedia.com</h3>
-                      <p className="text-zinc-600 mb-3">A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
+                      <p className="text-zinc-600 mb-3">Viral marketing platform connecting brands with micro-influencers for authentic campaign videos.</p>
                       <div className="flex items-center text-purple-600 font-medium">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
