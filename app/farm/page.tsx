@@ -58,8 +58,8 @@ const havenImages = [
     alt: "Art Museum Design"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/designs1-gB5Lpw1KYbDmC0KcuQv0GWC4hl1gq8.jpg",
-    alt: "Design Concept 1"
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park4-tP39MqkMJZM0ZClBu4axRgqiEBqIgP.png",
+    alt: "Park Design 4"
   },
   {
     url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
