@@ -51,8 +51,45 @@ const farmImages = [
   }
 ];
 
+// Define the haven images array
+const havenImages = [
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png",
+    alt: "Art Museum Design"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/designs1-gB5Lpw1KYbDmC0KcuQv0GWC4hl1gq8.jpg",
+    alt: "Design Concept 1"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    alt: "Park Design"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
+    alt: "Sound Park Concept"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark2-rcgsUldxsrE5xeTX16Bv4mIwVHAx8r.png",
+    alt: "Sound Park Design"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater2-c6ylt6vCnnG1jKH7S1DGpixTrhGdGd.png",
+    alt: "Theater Design 2"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater3-THnHgt1zof3uqx4FS1nn9P0jxXcR89.png",
+    alt: "Theater Design 3"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    alt: "Theater Design 4"
+  }
+];
+
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState("farm")
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
@@ -204,7 +241,33 @@ export default function FarmPage() {
       {/* Main Content */}
       <section className="relative z-10 pt-32 px-6 pb-16">
         <div className="container mx-auto max-w-6xl">
-          {/* Image Gallery - Only component left */}
+          {/* Tabs */}
+          <div className="mb-8">
+            <div className="flex space-x-4 border-b border-zinc-200">
+              <button
+                onClick={() => setActiveTab("farm")}
+                className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
+                  activeTab === "farm"
+                    ? "text-zinc-900 border-b-2 border-zinc-900"
+                    : "text-zinc-500 hover:text-zinc-900"
+                }`}
+              >
+                Farm
+              </button>
+              <button
+                onClick={() => setActiveTab("haven")}
+                className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
+                  activeTab === "haven"
+                    ? "text-zinc-900 border-b-2 border-zinc-900"
+                    : "text-zinc-500 hover:text-zinc-900"
+                }`}
+              >
+                Haven
+              </button>
+            </div>
+          </div>
+
+          {/* Image Gallery */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -212,23 +275,43 @@ export default function FarmPage() {
             className="mb-16"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {farmImages.map((image, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
-                  className="relative aspect-[3/4] overflow-hidden rounded-md"
-                >
-                  <Image
-                    src={image.url}
-                    alt={image.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </motion.div>
-              ))}
+              {activeTab === "farm" ? (
+                farmImages.map((image, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
+                    className="relative aspect-[3/4] overflow-hidden rounded-md"
+                  >
+                    <Image
+                      src={image.url}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </motion.div>
+                ))
+              ) : (
+                havenImages.map((image, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
+                    className="relative aspect-[3/4] overflow-hidden rounded-md"
+                  >
+                    <Image
+                      src={image.url}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </motion.div>
+                ))
+              )}
             </div>
           </motion.div>
         </div>
