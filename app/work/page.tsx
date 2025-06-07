@@ -65,6 +65,50 @@ export default function WorkPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
+      
+      {/* Blueprint grid on left margin */}
+      <div className="fixed left-0 top-0 bottom-0 w-24 z-10 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="h-full w-full" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
+                linear-gradient(to right, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px)
+              `,
+              backgroundSize: '20px 20px, 20px 20px, 5px 5px, 5px 5px'
+            }}
+          ></div>
+          <div className="absolute left-0 top-0 bottom-0 w-full opacity-30"
+            style={{
+              background: 'linear-gradient(90deg, white, transparent)'
+            }}
+          ></div>
+        </div>
+      </div>
+      
+      {/* Blueprint grid on right margin */}
+      <div className="fixed right-0 top-0 bottom-0 w-24 z-10 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="h-full w-full" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
+                linear-gradient(to right, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px)
+              `,
+              backgroundSize: '20px 20px, 20px 20px, 5px 5px, 5px 5px'
+            }}
+          ></div>
+          <div className="absolute right-0 top-0 bottom-0 w-full opacity-30"
+            style={{
+              background: 'linear-gradient(270deg, white, transparent)'
+            }}
+          ></div>
+        </div>
+      </div>
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
