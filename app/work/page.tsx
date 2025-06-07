@@ -73,7 +73,7 @@ export default function WorkPage() {
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
+                <span className="ml-2 text-lg font-light tracking-wider text-zinc-900">Haven Studio</span>
               </Link>
               
               {/* Desktop Navigation */}
