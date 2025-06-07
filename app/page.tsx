@@ -49,6 +49,15 @@ export default function HomePage() {
       category: "website"
     },
     {
+      id: "swivimedia",
+      title: "swivimedia.com",
+      description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
+      technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
+      link: "/swivimedia",
+      category: "webapp"
+    },
+    {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
       description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
@@ -73,15 +82,6 @@ export default function HomePage() {
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
       link: "/beloved",
-      category: "webapp"
-    },
-    {
-      id: "swivimedia",
-      title: "swivimedia.com",
-      description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
-      technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
-      link: "/swivimedia",
       category: "webapp"
     },
     {
