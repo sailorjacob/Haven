@@ -714,7 +714,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: "Jacob is a tech artist and entrepreneur with 7+ years of ",
+                  description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design.",
                   linkedWord: "experience",
                   github: "https://sailorjacob.github.io",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
