@@ -42,8 +42,8 @@ export default function ExplorePage() {
                 className="inline-flex items-center text-zinc-600 hover:text-zinc-900 transition-all duration-300 group"
               >
                 <ChevronLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                <span className="text-sm tracking-wider uppercase">Back to Haven</span>
-                </Link>
+                <span className="text-sm tracking-wider uppercase">Back</span>
+              </Link>
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
