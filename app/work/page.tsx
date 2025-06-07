@@ -72,10 +72,10 @@ export default function WorkPage() {
           <div className="h-full w-full" 
             style={{
               backgroundImage: `
-                linear-gradient(to right, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
-                linear-gradient(to right, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px)
+                linear-gradient(to right, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
+                linear-gradient(to right, rgba(75, 85, 99, 0.15) 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.15) 0.5px, transparent 0.5px)
               `,
               backgroundSize: '20px 20px, 20px 20px, 5px 5px, 5px 5px'
             }}
@@ -94,10 +94,10 @@ export default function WorkPage() {
           <div className="h-full w-full" 
             style={{
               backgroundImage: `
-                linear-gradient(to right, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.2) 1px, transparent 1px),
-                linear-gradient(to right, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.1) 0.5px, transparent 0.5px)
+                linear-gradient(to right, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 1px, transparent 1px),
+                linear-gradient(to right, rgba(75, 85, 99, 0.15) 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, rgba(75, 85, 99, 0.15) 0.5px, transparent 0.5px)
               `,
               backgroundSize: '20px 20px, 20px 20px, 5px 5px, 5px 5px'
             }}
