@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
+import Image from "next/image"
 
 export default function StudioPage() {
   return (
@@ -82,18 +83,22 @@ export default function StudioPage() {
           <FeatureBox 
             title="art gallery network" 
             description="emulating prestigious galleries like gagosian, our spaces showcase cutting-edge contemporary art and digital media, redefining the intersection of technology and artistic expression."
+            imageSrc="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png"
           />
           <FeatureBox 
             title="accommodations" 
             description="inspired by the luxury of hilton and the exclusivity of soho house, our living spaces create modern campuses for creative natives, fostering collaboration and community."
+            imageSrc="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/Haven/house-Wc4iCwmD7205OmsHxkN3SQcHnSNyOU.png"
           />
           <FeatureBox 
             title="screening theaters" 
             description="intimate venues with state-of-the-art technology showcasing independent films, immersive experiences, and exclusive premieres across our global locations."
+            imageSrc="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater-aBlfe7xmjq2DPZyqsRznkpzHJMBpHf.png"
           />
           <FeatureBox 
             title="superplatform" 
             description="a comprehensive digital ecosystem combining a full-service production hub rivaling hollywood studios, a curated music experience that connects artists directly with their audience, and a netflix-caliber streaming service delivering premium original content. all focused on innovative storytelling that reflects our community's diverse perspectives."
+            imageSrc="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park4-tP39MqkMJZM0ZClBu4axRgqiEBqIgP.png"
           />
         </motion.div>
 
@@ -143,9 +148,10 @@ export default function StudioPage() {
 interface FeatureBoxProps {
   title: string;
   description: string;
+  imageSrc?: string;
 }
 
-function FeatureBox({ title, description }: FeatureBoxProps) {
+function FeatureBox({ title, description, imageSrc }: FeatureBoxProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -168,7 +174,17 @@ function FeatureBox({ title, description }: FeatureBoxProps) {
           transition={{ duration: 0.2 }}
           className="absolute top-full left-0 right-0 mt-1 bg-white/95 p-4 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100 z-10"
         >
-          <p className="text-xs text-zinc-700 leading-relaxed">{description}</p>
+          <p className="text-xs text-zinc-700 leading-relaxed mb-3">{description}</p>
+          {imageSrc && (
+            <div className="relative w-full h-48 rounded-sm overflow-hidden">
+              <Image 
+                src={imageSrc} 
+                alt={title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
         </motion.div>
       )}
     </div>
