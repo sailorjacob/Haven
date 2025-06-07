@@ -169,7 +169,7 @@ export default function CareersPage() {
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <div className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium mr-3">
+                    <div className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium mr-3">
                       Sales
                     </div>
                     <ChevronDown 
@@ -260,8 +260,8 @@ export default function CareersPage() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium mr-3">
-                        Art & Culture
+                      <div className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium mr-3">
+                        Art
                       </div>
                       <ChevronDown 
                         className={`w-5 h-5 text-zinc-500 transition-transform duration-300 ${isArtDealerExpanded ? 'rotate-180' : ''}`} 
@@ -341,7 +341,7 @@ export default function CareersPage() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium mr-3">
+                      <div className="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-xs font-medium mr-3">
                         Blockchain
                       </div>
                       <ChevronDown 
