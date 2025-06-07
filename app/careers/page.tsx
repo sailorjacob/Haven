@@ -372,8 +372,6 @@ export default function CareersPage() {
                           <ul className="list-disc pl-5 text-zinc-600 mb-6 space-y-1">
                             <li>Expert-level knowledge of blockchain protocols and architecture</li>
                             <li>Experience building outside traditional frameworks and legacy systems</li>
-                            <li>Proficiency in Solidity, Rust, or other blockchain languages</li>
-                            <li>Understanding of DeFi, DAOs, and emerging blockchain paradigms</li>
                             <li>Ability to think beyond existing solutions and create new architectures</li>
                             <li>Entrepreneurial mindset and willingness to build for equity</li>
                           </ul>
@@ -397,43 +395,6 @@ export default function CareersPage() {
               </motion.div>
             </div>
           </div>
-          
-          {/* Why Join Us */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-zinc-50 rounded-xl p-12 text-center"
-          >
-            <h2 className="text-3xl font-bold mb-4">Why Join Haven Studio?</h2>
-            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8">
-              Be part of a creative team that values innovation, collaboration, and growth.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                  <DollarSign className="w-6 h-6 text-yellow-600" />
-                </div>
-                <h3 className="text-lg font-medium mb-2">Competitive Pay</h3>
-                <p className="text-zinc-600 text-sm">Compensation that rewards your skills and contributions.</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-zinc-200 flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-zinc-600" />
-                </div>
-                <h3 className="text-lg font-medium mb-2">Collaborative Culture</h3>
-                <p className="text-zinc-600 text-sm">Work with talented professionals in a supportive environment.</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                  <Briefcase className="w-6 h-6 text-yellow-600" />
-                </div>
-                <h3 className="text-lg font-medium mb-2">Growth Opportunities</h3>
-                <p className="text-zinc-600 text-sm">Develop your skills and advance your career with us.</p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
       
