@@ -191,7 +191,7 @@ export default function WorkPage() {
             
             <div className="text-center mb-12">
               <h1 className="text-3xl md:text-4xl font-light text-zinc-900 mb-3 tracking-tight">
-                Featured Work
+                
               </h1>
               <p className="text-md text-zinc-600 max-w-2xl mx-auto">
                 A selection of our custom development projects showcasing logos, interactive experiences, and AI-powered tools.
@@ -298,7 +298,7 @@ export default function WorkPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2">FEATURED WORK</p>
+              <p className="text-sm font-medium text-purple-600 mb-2"></p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
                 Recent brand transformations
               </h2>
