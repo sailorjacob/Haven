@@ -206,13 +206,13 @@ export default function AdvertisingPage() {
         </AnimatePresence>
       </header>
 
-      {/* Animated Text Overlay - optimize animation performance */}
+      {/* Animated Intro Sequence - new impressive 3D animation */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-start justify-start bg-white animated-overlay overflow-hidden"
+        className="fixed inset-0 z-[999] flex items-center justify-center bg-black animated-overlay overflow-hidden"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        style={{ willChange: "opacity" }}
+        style={{ willChange: "opacity, transform" }}
         onAnimationComplete={() => {
           // When animation completes, trigger the overlay to disappear
           const overlay = document.querySelector('.animated-overlay');
@@ -223,63 +223,144 @@ export default function AdvertisingPage() {
           }
         }}
       >
-        <div className="absolute top-6 left-6 z-20 w-full h-full">
-          {/* Big Red Text - top left */}
-          <motion.div 
-            className="overflow-visible text-left w-full h-full flex items-start justify-start"
-          >
-            <motion.h1 
-              className="text-7xl sm:text-[8rem] md:text-[12rem] lg:text-[16rem] font-black uppercase tracking-tighter leading-none max-w-full"
-              style={{ 
-                lineHeight: "0.85", 
-                color: '#ff0000',
-                willChange: "transform, opacity",
-                wordBreak: "break-word",
-                hyphens: "none"
-              }}
-            >
-              {/* Animated text with typewriter effect - no fading */}
-              {'SWITCHING THE BRAND GAME UP'.split('').map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    opacity: [0, 1, 1, 0],
-                  }}
-                  transition={{ 
-                    duration: 3.5, 
-                    delay: index * 0.15,
-                    times: [0, 0.05, 0.8, 0.81] // Quick appear, stay visible, then instant disappear
-                  }}
-                  className="inline-block"
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </motion.span>
-              ))}
-            </motion.h1>
-          </motion.div>
-        </div>
-          
-        {/* NO MERCY text - centered, flat appearance */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center z-40"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ 
-            duration: 0.1,
-            delay: 3.2 // Slightly faster transition
-          }}
-          style={{ willChange: "opacity" }}
-        >
-          <h2 
-            className="text-7xl sm:text-[10rem] md:text-[18rem] lg:text-[22rem] font-black uppercase tracking-tight"
-            style={{ 
-              color: '#00ff00'
+        {/* 3D Perspective Container */}
+        <div className="relative w-full h-full perspective-container" style={{ perspective: "1000px" }}>
+          {/* Animated Logo */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 1, 0] }}
+            transition={{ 
+              duration: 2,
+              times: [0, 0.2, 0.8, 1],
+              ease: "easeInOut" 
             }}
           >
-            LET'S GO
-          </h2>
-        </motion.div>
+            <motion.div
+              initial={{ scale: 0.5, rotateY: -30 }}
+              animate={{ 
+                scale: [0.5, 1, 1.2, 0], 
+                rotateY: [-30, 0, 30, 60],
+                z: [-100, 0, 200]
+              }}
+              transition={{ 
+                duration: 2.5, 
+                ease: [0.16, 1, 0.3, 1],
+                times: [0, 0.4, 0.8, 1]
+              }}
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              <Hexagon className="w-32 h-32 md:w-64 md:h-64 text-purple-500" strokeWidth={0.5} />
+            </motion.div>
+          </motion.div>
+          
+          {/* Animated Text Elements - Staggered */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            {/* First text line - slide in from top */}
+            <motion.div
+              className="overflow-hidden"
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 1.5, 
+                ease: [0.16, 1, 0.3, 1]
+              }}
+            >
+              <motion.h2 
+                className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight"
+                animate={{ 
+                  opacity: [1, 1, 0],
+                  y: [0, 0, -50] 
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  delay: 2.5,
+                  times: [0, 0.7, 1],
+                  ease: "easeInOut" 
+                }}
+              >
+                DISRUPT
+              </motion.h2>
+            </motion.div>
+            
+            {/* Second text line - slide in from bottom with delay */}
+            <motion.div
+              className="overflow-hidden"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 2.0, 
+                ease: [0.16, 1, 0.3, 1] 
+              }}
+            >
+              <motion.h2 
+                className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight"
+                animate={{ 
+                  opacity: [1, 1, 0],
+                  y: [0, 0, 50] 
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  delay: 2.8,
+                  times: [0, 0.7, 1],
+                  ease: "easeInOut" 
+                }}
+              >
+                TRANSFORM
+              </motion.h2>
+            </motion.div>
+          </div>
+          
+          {/* Final Impact Text - Appears with scale effect */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 1, 0] }}
+            transition={{ 
+              duration: 1.8,
+              delay: 3.4,
+              times: [0, 0.2, 0.8, 1], 
+              ease: "easeInOut"
+            }}
+          >
+            <motion.h1
+              className="text-7xl sm:text-[8rem] md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 tracking-tighter"
+              initial={{ scale: 1.5, opacity: 0 }}
+              animate={{ 
+                scale: [1.5, 1, 1.1, 0],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 1.8,
+                times: [0, 0.3, 0.8, 1],
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              style={{ 
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}
+            >
+              ELEVATE
+            </motion.h1>
+          </motion.div>
+          
+          {/* Particle/Grid Effect Background */}
+          <motion.div
+            className="absolute inset-0 bg-black"
+            initial={{ opacity: 0.6 }}
+            animate={{ opacity: [0.6, 0.4, 0] }}
+            transition={{ duration: 5, ease: "easeInOut" }}
+          >
+            <div className="w-full h-full grid-pattern" 
+              style={{ 
+                backgroundImage: "linear-gradient(to right, rgba(128, 90, 213, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 90, 213, 0.1) 1px, transparent 1px)",
+                backgroundSize: "40px 40px"
+              }}
+            ></div>
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* Single Combined Section - All Content Flows Together */}
