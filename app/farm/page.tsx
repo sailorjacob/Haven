@@ -89,7 +89,7 @@ const havenImages = [
 
 export default function FarmPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeTab, setActiveTab] = useState("farm")
+  const [activeTab, setActiveTab] = useState("haven")
 
   // Function to get a random highlight color - reused from existing page
   const getRandomHighlightColor = () => {
@@ -230,16 +230,6 @@ export default function FarmPage() {
           <div className="mb-8">
             <div className="flex space-x-4 border-b border-zinc-200">
               <button
-                onClick={() => setActiveTab("farm")}
-                className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
-                  activeTab === "farm"
-                    ? "text-zinc-900 border-b-2 border-zinc-900"
-                    : "text-zinc-500 hover:text-zinc-900"
-                }`}
-              >
-                Farm
-              </button>
-              <button
                 onClick={() => setActiveTab("haven")}
                 className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
                   activeTab === "haven"
@@ -248,6 +238,16 @@ export default function FarmPage() {
                 }`}
               >
                 Haven
+              </button>
+              <button
+                onClick={() => setActiveTab("farm")}
+                className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
+                  activeTab === "farm"
+                    ? "text-zinc-900 border-b-2 border-zinc-900"
+                    : "text-zinc-500 hover:text-zinc-900"
+                }`}
+              >
+                Farm
               </button>
             </div>
           </div>
