@@ -22,8 +22,8 @@ const farmImages = [
     alt: "Farm image 3"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2857%29-eK25dRZhwD9WNsdR7VNcpaCT1lXgJA.jpeg",
-    alt: "Farm image 4"
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/bernini-D4WOQSdNfbs4X5z9JvJlkxdowOER7r.png",
+    alt: "Bernini Farm Design"
   },
   {
     url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2856%29-87hd2al8VViR1IJXTmAqr89iTRglld.jpeg",
@@ -38,8 +38,8 @@ const farmImages = [
     alt: "Farm image 7"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2853%29-XeFbs4dtIfL1L2OIMpDkUtri3DUUnu.jpeg",
-    alt: "Farm image 8"
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/bernini2-mR73KBx5VjLLhEfreQAdfgjBHPX5Gw.png",
+    alt: "Bernini Farm Design 2"
   },
   {
     url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2852%29-EM8XwdJMsQrCMPKvO2KbcI86ptRJaX.jpeg",
