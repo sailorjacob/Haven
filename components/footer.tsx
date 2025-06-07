@@ -25,9 +25,6 @@ export function Footer() {
             <Link href="/careers" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
               Careers
             </Link>
-            <Link href="/sitemap" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-              Sitemap
-            </Link>
             <Link href="/advertising" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
               Advertising
             </Link>
@@ -55,9 +52,6 @@ export function Footer() {
               <div className="flex items-center space-x-6 mt-2 animate-fadeIn">
                 <Link href="/careers" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
                   Careers
-                </Link>
-                <Link href="/sitemap" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-                  Sitemap
                 </Link>
                 <Link href="/advertising" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
                   Advertising
