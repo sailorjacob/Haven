@@ -199,7 +199,7 @@ export default function PricingPage() {
               style={{ willChange: "transform, opacity" }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-4">
-                Design subscriptions <span className="text-primary">for everyone</span>
+                Premium design subscription <span className="text-primary">for visionary brands</span>
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-6">
                 One subscription to rule them all. Pause or cancel anytime.
