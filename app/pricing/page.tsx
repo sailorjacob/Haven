@@ -356,7 +356,7 @@ export default function PricingPage() {
             >
               <p className="text-sm font-medium text-primary mb-2">MEMBERSHIP BENEFITS</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                It's "Everything you need."
+                Everything You Need
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Replaces unreliable freelancers and expensive agencies for one flat monthly fee,
