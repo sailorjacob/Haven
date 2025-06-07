@@ -450,9 +450,6 @@ export default function WorkPage() {
             className="text-center py-12 border-t border-zinc-200"
             style={{ willChange: "transform, opacity" }}
           >
-            <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-3">
-              Ready to Create Something Extraordinary?
-            </h2>
             <p className="text-sm text-zinc-600 mb-6 max-w-xl mx-auto">
               Let's collaborate on custom solutions that elevate your brand and captivate your audience.
             </p>
