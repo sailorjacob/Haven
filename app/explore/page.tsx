@@ -123,15 +123,6 @@ export default function ExplorePage() {
               </div>
           </motion.div>
 
-          <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-light text-zinc-900 mb-6 tracking-tight"
-            >
-              Haven
-            </motion.h1>
-          
           <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -288,65 +279,10 @@ export default function ExplorePage() {
             </motion.div>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-6">
-                Join the Haven Community
-              </h2>
-              <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto">
-                Whether you're an artist, investor, creative professional, or visionary brand, 
-                Haven offers a holistic environment where creativity, commerce, and community thrive.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
-                  onMouseEnter={() => setGetStartedHovered(true)}
-                  onMouseLeave={() => setGetStartedHovered(false)}
-                >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  
-                  {/* Text content */}
-                  <span className={`relative z-10 transition-opacity duration-300 ${isGetStartedHovered ? 'opacity-0' : 'opacity-100'}`}>
-                    Get Started
-                  </span>
-                  
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isGetStartedHovered ? 'opacity-100' : 'opacity-0'}`} />
-                </Link>
-                <Link
-                  href="/products"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-3 px-8 rounded-full text-sm relative overflow-hidden group"
-                  onMouseEnter={() => setLearnMoreHovered(true)}
-                  onMouseLeave={() => setLearnMoreHovered(false)}
-                >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                  
-                  {/* Text content */}
-                  <span className={`relative z-10 transition-opacity duration-300 ${isLearnMoreHovered ? 'opacity-0' : 'opacity-100'}`}>
-                  Learn More
-                  </span>
-                  
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isLearnMoreHovered ? 'opacity-100' : 'opacity-0'}`} />
-                </Link>
-              </div>
-          </motion.div>
-          </div>
-
+          {/* Footer */}
+          <Footer />
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </main>
   )
 }
