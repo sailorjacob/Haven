@@ -39,12 +39,6 @@ export default function CareersPage() {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
-                  href="/advertising" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                >
-                  Advertising
-                </Link>
-                <Link 
                   href="/studio" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                 >
@@ -95,13 +89,6 @@ export default function CareersPage() {
               className="md:hidden bg-white border-b border-zinc-200"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
-                <Link 
-                  href="/advertising" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Advertising
-                </Link>
                 <Link 
                   href="/studio" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"

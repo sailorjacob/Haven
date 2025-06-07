@@ -341,7 +341,115 @@ export default function WorkPage() {
           </motion.div>
         </div>
       </div>
-      
+
+      {/* Recent Brand Transformations Section */}
+      <div className="bg-zinc-50 rounded-xl p-8 mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center mb-6"
+        >
+          <p className="text-sm font-medium text-purple-600 mb-2">FEATURED WORK</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+            Recent brand transformations
+          </h2>
+          <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+            See how we've helped visionary brands create distinctive identities that challenge conventions.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Swivimedia */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+          >
+            <Link href="https://www.swivimedia.com/about" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//swivi4.png"
+                    alt="Swivimedia Platform"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">Swivi Media</h3>
+                  <p className="text-zinc-600 mb-3">A viral marketing agency connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
+                  <div className="flex items-center text-purple-600 font-medium">
+                    View Case Study
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Klaire */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          >
+            <Link href="https://klaire.dev" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png"
+                    alt="Klaire.dev Website"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">klaire.dev</h3>
+                  <p className="text-zinc-600 mb-3">Personal portfolio showcasing UI/UX excellence and creative digital design work.</p>
+                  <div className="flex items-center text-purple-600 font-medium">
+                    Visit Website
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Kill Me Faster */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          >
+            <Link href="https://killmefaster.com" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png"
+                    alt="Kill Me Faster Artist Website"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">killmefaster.com</h3>
+                  <p className="text-zinc-600 mb-3">The ultimate escape route and weapon. An artist's journey through the dark arts, collecting bitcoin, and building a digital frontier with an army of mercenaries and robots fighting for freedom.</p>
+                  <div className="flex items-center text-purple-600 font-medium">
+                    Visit Website
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Footer */}
       <Footer />
     </main>
