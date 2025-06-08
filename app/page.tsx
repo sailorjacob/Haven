@@ -271,14 +271,8 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
+              className="flex flex-col md:flex-row justify-end items-start md:items-center mb-8"
             >
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                  Selected Projects
-                </h2>
-              </div>
-              
               <div className="flex items-center space-x-2 mt-6 md:mt-0">
                 <Filter className="w-4 h-4 text-zinc-400" />
                 <div className="flex space-x-2">
