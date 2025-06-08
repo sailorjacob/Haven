@@ -277,9 +277,6 @@ export default function HomePage() {
                 <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
                   Selected Projects
                 </h2>
-                <p className="text-lg text-zinc-600 max-w-xl">
-                  A showcase of our recent work across web applications, websites, and digital platforms.
-                </p>
               </div>
               
               <div className="flex items-center space-x-2 mt-6 md:mt-0">
@@ -751,7 +748,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
                   <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
                   <p className="text-zinc-600 text-sm leading-relaxed">
-                    {member.description}
+                        {member.description}
                   </p>
                 </motion.div>
               ))}
