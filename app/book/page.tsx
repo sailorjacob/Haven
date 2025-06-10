@@ -197,7 +197,7 @@ export default function DesignBookPage() {
                   {stripeLoaded && (
                     // @ts-ignore - Stripe custom element
                     <stripe-buy-button
-                      buy-button-id="buy_btn_00waEYgG74Hy3wz1Xl57W01"
+                      buy-button-id="buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
                       publishable-key="pk_live_51RU878LW3qNGE5Nr0cXX4p3pqKFI8M1LtplAMOhlQTysHn36426EANMjlgzjArXWz4MU9TLFxe8VSSxjRNfJv7pP00Hp8rIbaG"
                     />
                   )}
