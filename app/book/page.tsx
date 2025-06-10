@@ -197,13 +197,13 @@ export default function DesignBookPage() {
                   {stripeLoaded && (
                     // @ts-ignore - Stripe custom element
                     <stripe-buy-button
-                      buy-button-id="buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
+                      buy-button-id="buy_btn_00waEYgG74Hy3wz1Xl57W01"
                       publishable-key="pk_live_51RU878LW3qNGE5Nr0cXX4p3pqKFI8M1LtplAMOhlQTysHn36426EANMjlgzjArXWz4MU9TLFxe8VSSxjRNfJv7pP00Hp8rIbaG"
                     />
                   )}
                 </div>
                 <div className="mt-4 sm:hidden">
-                  <a href="https://buy.stripe.com/3cI6oI2Ph3Du0kn6dB57W02" 
+                  <a href="https://buy.stripe.com/00waEYgG74Hy3wz1Xl57W01" 
                      className="block text-center border border-zinc-300 hover:bg-zinc-50 text-amber-900 font-medium py-3 px-6 rounded-full transition-all duration-300">
                     Pre-order Now
                   </a>
