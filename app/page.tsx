@@ -101,6 +101,33 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
       link: "/moonlight-garden",
       category: "webapp"
+    },
+    {
+      id: "klaire",
+      title: "klaire.dev",
+      description: "A creative portfolio for UI/UX designer Klaire Rasche exploring the intersection of game design, AI technology, and brand experiences.",
+      technologies: ["Next.js", "Tailwind CSS", "AI Tools", "Game Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
+      link: "https://www.klaire.dev/",
+      category: "website"
+    },
+    {
+      id: "xrated",
+      title: "x-rated.me",
+      description: "A social platform for selectively sharing and locking content with sophisticated privacy controls and monetization options.",
+      technologies: ["Next.js", "Supabase", "Stripe", "React"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
+      link: "/xrated",
+      category: "webapp"
+    },
+    {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "A provocative digital art platform exploring themes of mortality and digital existence through interactive experiences.",
+      technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
     }
   ]
 
