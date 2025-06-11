@@ -22,12 +22,16 @@ const farmImages = [
     alt: "Farm image 3"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/bernini-D4WOQSdNfbs4X5z9JvJlkxdowOER7r.png",
-    alt: "Bernini Farm Design"
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/silverballoon1-R3KnWLidnAVFb85ffcDv1UAjMj4dw6.png",
+    alt: "Silver Balloon Design"
   },
   {
-    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2856%29-87hd2al8VViR1IJXTmAqr89iTRglld.jpeg",
-    alt: "Farm image 5"
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/stars/sides2721_STAR_SHAPE_DESIGN_ASSET_ON_WHITE_BACKGROUND_SILVER_SP_6ca327f5-dce3-4e2c-8131-a90a61552a28-RJuKCBPIZEm7YSy8vyGd2TcYNf6W2Q.png",
+    alt: "Star Shape Design"
+  },
+  {
+    url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/silvepole7-zsmmWoBsYt6cACi0Cys1W5LbvfBteR.png",
+    alt: "Silver Pole Design"
   },
   {
     url: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/farm/farm/download%20%2855%29-ioKnV0xmu3v7BO6pXix7bwqqbZQuGr.jpeg",
