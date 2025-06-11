@@ -55,7 +55,7 @@ export default function HomePage() {
     {
       id: "ammocat",
       title: "ammocat3000.com",
-      description: "A homepage, webstore, and mini-game for New York based artist Ammo Cat with advanced filtering and search capabilities.",
+      description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
       technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "/ammocat",
@@ -64,7 +64,7 @@ export default function HomePage() {
     {
       id: "swivimedia",
       title: "swivimedia.com",
-      description: "A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.",
+      description: "Marketing platform connecting brands with micro-influencers for campaign videos.",
       technologies: ["Next.js", "Tailwind CSS", "Video Processing", "Creator Network"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
@@ -73,7 +73,7 @@ export default function HomePage() {
     {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
-      description: "A photography portfolio website for fine art photographer Jacob Hale with a minimalist design and responsive gallery.",
+      description: "Photography portfolio website with responsive gallery.",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
       link: "/jacobhalestudio",
@@ -82,7 +82,7 @@ export default function HomePage() {
     {
       id: "roundabout",
       title: "roundabout.run",
-      description: "A ride-sharing platform connecting people to medical appointments with Bitcoin payment integration.",
+      description: "Ride-sharing platform for medical appointments with Bitcoin payments.",
       technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round2.png",
       link: "/roundabout",
@@ -91,7 +91,7 @@ export default function HomePage() {
     {
       id: "beloved",
       title: "be-loved.app",
-      description: "An iOS app and web-platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.",
+      description: "iOS app and web platform with scheduling for NEMT Provider BeLoved Transportation.",
       technologies: ["React", "Node.js", "PostgreSQL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
       link: "/beloved",
@@ -100,7 +100,7 @@ export default function HomePage() {
     {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
-      description: "A portfolio website for author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
+      description: "Portfolio website for author and art critic Anthony Haden-Guest.",
       technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
       link: "/anthonyhadenguest",
@@ -109,7 +109,7 @@ export default function HomePage() {
     {
       id: "moonlight",
       title: "Moonlight Garden 🌱",
-      description: "A 24/7 mobile order-only restaurant with advanced automation systems.",
+      description: "24/7 mobile order restaurant with automation systems.",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
       link: "/moonlight-garden",
@@ -118,7 +118,7 @@ export default function HomePage() {
     {
       id: "klaire",
       title: "klaire.dev",
-      description: "A creative portfolio for UI/UX designer Klaire Rasche exploring the intersection of game design, AI technology, and brand experiences.",
+      description: "Portfolio for UI/UX designer Klaire Rasche with game design and AI technology.",
       technologies: ["Next.js", "Tailwind CSS", "AI Tools", "Game Design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
       link: "https://www.klaire.dev/",
@@ -127,7 +127,7 @@ export default function HomePage() {
     {
       id: "xrated",
       title: "x-rated.me",
-      description: "A social platform for selectively sharing and locking content with sophisticated privacy controls and monetization options.",
+      description: "Social platform for content sharing with privacy controls and monetization.",
       technologies: ["Next.js", "Supabase", "Stripe", "React"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
       link: "/xrated",
@@ -136,7 +136,7 @@ export default function HomePage() {
     {
       id: "killmefxster",
       title: "killmefaster.com",
-      description: "A provocative digital art platform exploring themes of mortality and digital existence through interactive experiences.",
+      description: "Digital art platform with interactive experiences.",
       technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
       link: "/killmefxster",
