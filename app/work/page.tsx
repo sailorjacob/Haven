@@ -24,7 +24,7 @@ export default function WorkPage() {
     {
       id: "beloved-logo",
       title: "BeLoved Transportation Logo",
-      description: "Custom logo design for NEMT provider featuring clean, modern typography and professional branding.",
+      description: "Logo design for NEMT provider with typography and branding.",
       category: "Logo Design",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved%20logo.png",
       link: "/beloved",
@@ -33,7 +33,7 @@ export default function WorkPage() {
     {
       id: "ammocat-game", 
       title: "Ammocat Mini Game",
-      description: "Interactive browser-based game built for New York artist Ammo Cat featuring custom gameplay mechanics and art integration.",
+      description: "Browser-based game for New York artist Ammo Cat with custom gameplay.",
       category: "Game Development",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat.com/game",
@@ -42,7 +42,7 @@ export default function WorkPage() {
     {
       id: "anthony-ai-generator",
       title: "Anthony Haden-Guest AI Art Generator", 
-      description: "Custom AI image generator trained on Anthony Haden-Guest's cartoon art style, enabling creation of new artwork in his distinctive aesthetic.",
+      description: "AI image generator trained on Anthony Haden-Guest's cartoon art style.",
       category: "AI Development",
       images: [
         "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//My%20First%20Project_1_0001.png",

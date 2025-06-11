@@ -189,8 +189,7 @@ export default function ExplorePage() {
                 Integrated Ecosystem
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Where cutting-edge creative production meets next-generation digital distribution, 
-                luxurious living, and cultural innovation.
+                Where production meets distribution, living spaces, and cultural innovation.
               </p>
             </motion.div>
 
@@ -198,7 +197,7 @@ export default function ExplorePage() {
               <FeatureCard
                 icon={<Palette className="w-6 h-6" />}
                 title="Art Gallery Network"
-                description="Emulating prestigious galleries like Gagosian, our spaces showcase cutting-edge contemporary art and digital media, redefining the intersection of technology and artistic expression."
+                description="Gallery spaces showcasing contemporary art and digital media at the intersection of technology and art."
                 delay={0.1}
                 hoveredFeature={hoveredFeature}
                 setHoveredFeature={setHoveredFeature}
@@ -207,7 +206,7 @@ export default function ExplorePage() {
               <FeatureCard
                 icon={<Home className="w-6 h-6" />}
                 title="Premium Accommodations"
-                description="Inspired by the luxury of Hilton and the exclusivity of Soho House, our living spaces create modern campuses for creative natives, fostering collaboration and community."
+                description="Living spaces for community members, with spaces for collaboration."
                 delay={0.2}
                 hoveredFeature={hoveredFeature}
                 setHoveredFeature={setHoveredFeature}

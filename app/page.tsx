@@ -73,7 +73,7 @@ export default function HomePage() {
     {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
-      description: "A modern photography portfolio website for fine art photographer Jacob Hale featuring a minimalist design and responsive gallery.",
+      description: "A photography portfolio website for fine art photographer Jacob Hale with a minimalist design and responsive gallery.",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
       link: "/jacobhalestudio",
@@ -100,7 +100,7 @@ export default function HomePage() {
     {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
-      description: "A sophisticated portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
+      description: "A portfolio website for author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.",
       technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//anthonysite.png",
       link: "/anthonyhadenguest",

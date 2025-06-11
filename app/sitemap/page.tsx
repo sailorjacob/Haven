@@ -174,37 +174,37 @@ export default function SitemapPage() {
               <PageItem 
                 href="/ammocat"
                 title="Ammo Cat"
-                description="Artist website, webstore, and mini-game with advanced filtering"
+                description="Artist website with webstore and mini-game"
                 tags={["Art", "E-commerce", "Gaming"]}
               />
               <PageItem 
                 href="/jacobhalestudio"
                 title="Jacob Hale Studio"
-                description="Photography portfolio website with minimalist design"
+                description="Photography portfolio with responsive gallery"
                 tags={["Photography", "Portfolio", "Design"]}
               />
               <PageItem 
                 href="/roundabout"
                 title="Roundabout"
-                description="Medical ride-sharing platform with Bitcoin payment integration"
+                description="Medical ride-sharing with Bitcoin payments"
                 tags={["Transport", "Bitcoin", "Medical"]}
               />
               <PageItem 
                 href="/beloved"
                 title="BeLoved Transportation"
-                description="NEMT provider platform with personalized content and scheduling"
+                description="NEMT provider platform with scheduling"
                 tags={["Transport", "Healthcare", "Platform"]}
               />
               <PageItem 
                 href="/swivimedia"
                 title="Swivimedia"
-                description="Viral marketing platform connecting brands with micro-influencers"
+                description="Marketing platform for micro-influencers"
                 tags={["Marketing", "Influencers", "Video"]}
               />
               <PageItem 
                 href="/anthonyhadenguest"
                 title="Anthony Haden-Guest"
-                description="Simple portfolio for renowned author and art critic"
+                description="Portfolio for author and art critic"
                 tags={["Literature", "Art Criticism", "Portfolio"]}
               />
             </div>
