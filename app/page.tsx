@@ -1,11 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Footer } from "@/components/footer"
+import { LucideIcon } from "lucide-react"
+import { ServiceCard } from "./components/ServiceCard"
+import { BlueprintGrid } from "./components/BlueprintGrid"
+import { ServicesSection } from "./components/ServicesSection"
 
 type Project = {
   id: string
@@ -17,26 +21,34 @@ type Project = {
   category: 'webapp' | 'website' | 'mobile'
 }
 
+// Add this utility function at the top level
+const getSeededRandomColor = (seed: string) => {
+  // Simple hash function to get a consistent number from a string
+  const hash = seed.split('').reduce((acc, char) => {
+    return char.charCodeAt(0) + ((acc << 5) - acc)
+  }, 0)
+  
+  // Use the hash to select a color
+  const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold']
+  return colors[Math.abs(hash) % colors.length]
+}
+
 export default function HomePage() {
   const [filter, setFilter] = useState<string | null>(null)
   const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
-  // Function to get a random highlight color
-  const getRandomHighlightColor = () => {
-    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
+  // Use useMemo to compute colors once and keep them consistent
+  const navColors = useMemo(() => ({
+    studio: getSeededRandomColor('studio'),
+    work: getSeededRandomColor('work'),
+    farm: getSeededRandomColor('farm'),
+    contact: getSeededRandomColor('contact'),
+    pricing: getSeededRandomColor('pricing')
+  }), [])
   
   // State to track hover for pricing button
   const [isPricingHovered, setPricingHovered] = useState(false);
-  
-  // For CTA highlight colors
-  const [ctaColor1] = useState(getRandomHighlightColor());
-  const [ctaColor2] = useState(getRandomHighlightColor());
-  
-  // Precompute random colors to avoid runtime calculations
-  const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
   
   const projects: Project[] = [
     {
@@ -160,21 +172,21 @@ export default function HomePage() {
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/work" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Work</span>
+                  <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
                 </Link>
                 <Link 
                   href="/farm" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Farm</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Farm</span>
+                  <span className={`hidden group-hover:inline ${navColors.farm}`}>Farm</span>
                 </Link>
                 <Link 
                   href="/book" 
@@ -209,7 +221,7 @@ export default function HomePage() {
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
               >
                 <span className="group-hover:hidden">Contact</span>
-                <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
+                <span className={`hidden group-hover:inline ${navColors.contact}`}>Contact</span>
               </Link>
               
               {/* Mobile Menu Button */}
@@ -240,7 +252,7 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
+                  <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
                 </Link>
                 <Link 
                   href="/work" 
@@ -248,7 +260,7 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Work</span>
+                  <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
                 </Link>
                 <Link 
                   href="/farm"
@@ -256,7 +268,7 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Farm</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Farm</span>
+                  <span className={`hidden group-hover:inline ${navColors.farm}`}>Farm</span>
                 </Link>
                 <Link 
                   href="/book"
@@ -271,7 +283,7 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
+                  <span className={`hidden group-hover:inline ${navColors.pricing}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/contact"
@@ -279,7 +291,7 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Contact</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Contact</span>
+                  <span className={`hidden group-hover:inline ${navColors.contact}`}>Contact</span>
                 </Link>
           </div>
         </motion.div>
@@ -453,97 +465,7 @@ export default function HomePage() {
           </div>
 
           {/* Services */}
-          <div className="bg-zinc-50 rounded-xl p-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Our Services
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                We specialize in creating digital experiences that combine beautiful design 
-                with powerful functionality.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-sky-500 via-sky-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                    <Code className="w-6 h-6 text-zinc-700" />
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Development</h3>
-                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
-                    Custom web applications built with modern frameworks 
-                    and performance-focused architecture.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-green-500 via-green-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                    <Palette className="w-6 h-6 text-zinc-700" />
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Web Design</h3>
-                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
-                    Minimalist, elegant interfaces that elevate brands with 
-                    thoughtful interactions and premium aesthetics.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="relative bg-white p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-red-500 via-red-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                    <Zap className="w-6 h-6 text-zinc-700" />
-                  </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-4">Digital Strategy</h3>
-                  <p className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors">
-                    Comprehensive digital solutions that align with business 
-                    goals and create meaningful user experiences.
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
+          <ServicesSection />
           
           {/* Studio Performance */}
           <div>
