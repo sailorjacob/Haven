@@ -168,7 +168,7 @@ export default function AdvertisingPage() {
         {/* 3D Perspective Container */}
         <div className="relative w-full h-full perspective-container" style={{ perspective: "1000px" }}>
           {/* Animated Logo */}
-          <motion.div
+          <motion.div 
             className="absolute inset-0 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 1, 0] }}
@@ -211,11 +211,11 @@ export default function AdvertisingPage() {
             >
               <motion.h2 
                 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight"
-                animate={{ 
+                  animate={{ 
                   opacity: [1, 1, 0],
                   y: [0, 0, -50] 
-                }}
-                transition={{ 
+                  }}
+                  transition={{ 
                   duration: 1.5, 
                   delay: 2.5,
                   times: [0, 0.7, 1],
@@ -252,21 +252,21 @@ export default function AdvertisingPage() {
               >
                 TRANSFORM
               </motion.h2>
-            </motion.div>
-          </div>
+          </motion.div>
+        </div>
           
           {/* Final Impact Text - Appears with scale effect */}
-          <motion.div
+        <motion.div
             className="absolute inset-0 flex items-center justify-center"
-            initial={{ opacity: 0 }}
+          initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 1, 0] }}
-            transition={{ 
+          transition={{ 
               duration: 1.8,
               delay: 3.4,
               times: [0, 0.2, 0.8, 1], 
               ease: "easeInOut"
             }}
-          >
+        >
             <motion.h1
               className="text-7xl sm:text-[8rem] md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 tracking-tighter"
               initial={{ scale: 1.5, opacity: 0 }}
@@ -279,14 +279,14 @@ export default function AdvertisingPage() {
                 times: [0, 0.3, 0.8, 1],
                 ease: [0.16, 1, 0.3, 1]
               }}
-              style={{ 
+            style={{ 
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent"
-              }}
-            >
+            }}
+          >
               ELEVATE
             </motion.h1>
-          </motion.div>
+        </motion.div>
           
           {/* Particle/Grid Effect Background */}
           <motion.div

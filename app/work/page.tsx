@@ -65,7 +65,7 @@ export default function WorkPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
-      
+
       {/* Blueprint grid on left margin */}
       <div className="fixed left-0 top-0 bottom-0 w-24 z-10 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -475,7 +475,7 @@ export default function WorkPage() {
           </motion.div>
         </div>
       </div>
-
+      
       {/* Footer */}
       <Footer />
     </main>

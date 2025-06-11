@@ -43,7 +43,7 @@ export default function ExplorePage() {
               >
                 <ChevronLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 <span className="text-sm tracking-wider uppercase">Back</span>
-              </Link>
+                </Link>
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
@@ -122,7 +122,7 @@ export default function ExplorePage() {
                 </div>
               </div>
           </motion.div>
-
+          
           <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

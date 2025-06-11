@@ -10,6 +10,7 @@ import { LucideIcon } from "lucide-react"
 import { ServiceCard } from "./components/ServiceCard"
 import { BlueprintGrid } from "./components/BlueprintGrid"
 import { ServicesSection } from "./components/ServicesSection"
+import { ScatteredStars } from "./components/ScatteredStars"
 
 type Project = {
   id: string
@@ -154,6 +155,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
       </div>
+
+      {/* Scattered Stars */}
+      <ScatteredStars />
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
