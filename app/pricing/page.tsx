@@ -183,10 +183,10 @@ export default function PricingPage() {
             >
               <p className="text-sm font-medium text-primary mb-2">PRICING</p>
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                One subscription, endless possibilities
+                A straightforward, flat-rate design service
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Start today with our unlimited design subscription
+                Reliable design support for a single monthly fee
               </p>
             </motion.div>
 
@@ -240,7 +240,7 @@ export default function PricingPage() {
                             <div className="text-sm font-medium tracking-wider text-zinc-600">MONTHLY</div>
                             <Link href="https://buy.stripe.com/3cI6oI2Ph3Du0kn6dB57W02">
                               <button className="bg-gradient-to-r from-sky-400 to-sky-500 text-white text-xs font-medium py-1.5 px-4 rounded-full shadow-sm hover:from-sky-500 hover:to-sky-600 transition-colors">
-                                Start today
+                                Get started
                               </button>
                             </Link>
                           </div>
@@ -302,7 +302,7 @@ export default function PricingPage() {
                         <button className="group relative w-full border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-3 px-8 rounded-full overflow-hidden transition-all duration-300">
                           <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                           <span className="relative z-10 flex items-center justify-center">
-                            Start today
+                            Get started
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </span>
                         </button>
@@ -325,8 +325,8 @@ export default function PricingPage() {
                           <Zap className="h-4 w-4 text-zinc-600" />
                         </div>
                         <div>
-                          <h4 className="text-sm font-medium text-zinc-800">Money back</h4>
-                          <p className="text-xs text-zinc-500">75% refund first week</p>
+                          <h4 className="text-sm font-medium text-zinc-800">Refund guarantee</h4>
+                          <p className="text-xs text-zinc-500">Partial refund within the first week</p>
                         </div>
                       </div>
                     </div>
