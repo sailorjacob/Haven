@@ -269,19 +269,7 @@ export default function PricingPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-sky-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">One request at a time</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-sky-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Unlimited stock photos</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-sky-500 mr-2 shrink-0" />
                             <span className="text-zinc-700">Avg. 48 hour delivery</span>
-                          </div>
-                          <div className="flex items-start">
-                            <Check className="h-5 w-5 text-sky-500 mr-2 shrink-0" />
-                            <span className="text-zinc-700">Up to 2 users</span>
                           </div>
                           <div className="flex items-start">
                             <Check className="h-5 w-5 text-sky-500 mr-2 shrink-0" />
