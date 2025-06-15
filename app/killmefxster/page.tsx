@@ -342,21 +342,6 @@ export default function KillMeFxsterPage() {
           </div>
         </motion.div>
 
-        {/* Freedom Truth Prosperity Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center mb-16 py-12 border-y border-zinc-700"
-        >
-          <h2 className="text-2xl md:text-4xl font-light mb-6 text-white tracking-wider">
-            Freedom <span className="text-zinc-500 mx-4">•</span> Truth <span className="text-zinc-500 mx-4">•</span> Prosperity
-          </h2>
-          <p className="text-lg text-zinc-300 mb-4 max-w-xl mx-auto">
-            Looking for decentralized military commanders
-          </p>
-        </motion.div>
-
         {/* Main image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
