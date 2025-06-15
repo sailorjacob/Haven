@@ -84,7 +84,7 @@ export default function HomePage() {
       title: "roundabout.run",
       description: "Ride-sharing platform for medical appointments with Bitcoin payments.",
       technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round2.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
       link: "/roundabout",
       category: "webapp"
     },
