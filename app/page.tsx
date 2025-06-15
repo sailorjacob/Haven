@@ -429,10 +429,10 @@ export default function HomePage() {
               </motion.div>
               
               <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
-                Build With Precision
+                Haven Studio
               </h1>
-              <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
-                Premium digital experiences
+              <p className="text-sm md:text-base text-zinc-500 font-light max-w-xl mx-auto mb-8">
+                A digital design and web development studio crafting premium experiences for modern brands and startups.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
