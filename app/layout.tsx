@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     apple: '/apple-icon.png',
   },
+  appleWebApp: {
+    statusBarStyle: 'default',
+    title: 'Haven',
+  },
 }
 
 export default function RootLayout({
@@ -24,6 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={caveat.variable}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body>
           {children}
       </body>
