@@ -307,6 +307,22 @@ export default function HomePage() {
       <section className="relative z-10 pt-20 px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
           
+          {/* Haven Studio Intro */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
+              Haven Studio
+            </h1>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              A digital design and web development studio crafting premium experiences for modern brands and startups.
+            </p>
+          </motion.div>
+
           {/* Selected Projects */}
           <div>
             <motion.div
@@ -429,10 +445,10 @@ export default function HomePage() {
               </motion.div>
               
               <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
-                Haven Studio
+                Build With Precision
               </h1>
-              <p className="text-sm md:text-base text-zinc-500 font-light max-w-xl mx-auto mb-8">
-                A digital design and web development studio crafting premium experiences for modern brands and startups.
+              <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
+                Premium digital experiences
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
