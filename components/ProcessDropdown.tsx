@@ -35,7 +35,7 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
       exit={{ scaleY: 0, opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
       style={{ transformOrigin: 'top center' }}
-      className="relative absolute top-full left-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
+      className="absolute top-full inset-x-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
       ref={dropdownRef}
       onMouseLeave={onClose}
     >
