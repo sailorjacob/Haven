@@ -839,24 +839,29 @@ export default function HomePage() {
           className="text-center"
         >
                   <div className="relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
-                    {/* Primary */}
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    {/* Alternate */}
+                    {/* Now showing altImage by default */}
                     {member.altImage && (
                       <Image
                         src={member.altImage}
                         alt={`${member.name} alternate`}
                         fill
-                        className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        className="object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
                     )}
+                    {/* Primary hidden until hover */}
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
                   </div>
-                  <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
+                  <h3 className="text-lg font-medium text-zinc-900 mb-1">{
+                    (()=>{
+                      const parts = member.name.split(" ")
+                      return parts[0] + (parts[1] ? " " + parts[1][0] + "." : "")
+                    })()
+                  }</h3>
                   <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
                   <p className="text-zinc-600 text-sm leading-relaxed">
                         {member.description}
