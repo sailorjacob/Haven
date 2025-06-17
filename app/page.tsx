@@ -285,16 +285,16 @@ export default function HomePage() {
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href="/" className="flex items-center">
+              <Link href="/studio" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven Studio</span>
+                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 {/* Process trigger container */}
                 <div className="relative flex items-center space-x-6" onMouseEnter={()=>setProcessOpen(true)}>
-                  <Link href="/studio" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
+                  <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
                     <span className="group-hover:hidden">Studio</span>
                     <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
                   </Link>
@@ -372,7 +372,7 @@ export default function HomePage() {
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
-                  href="/studio" 
+                  href="/" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
