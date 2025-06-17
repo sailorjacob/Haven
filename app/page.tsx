@@ -11,6 +11,7 @@ import { ServiceCard } from "./components/ServiceCard"
 import { BlueprintGrid } from "./components/BlueprintGrid"
 import { ServicesSection } from "./components/ServicesSection"
 import { ScatteredStars } from "./components/ScatteredStars"
+import ProcessDropdown from "@/components/ProcessDropdown"
 
 type Project = {
   id: string
@@ -38,6 +39,7 @@ export default function HomePage() {
   const [filter, setFilter] = useState<string | null>(null)
   const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [processOpen, setProcessOpen] = useState(false)
   
   // Use useMemo to compute colors once and keep them consistent
   const navColors = useMemo(() => ({
@@ -287,6 +289,7 @@ export default function HomePage() {
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
+                <div onMouseEnter={() => setProcessOpen(true)} onMouseLeave={() => setProcessOpen(false)}>
                 <Link 
                   href="/studio" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
@@ -294,6 +297,8 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Studio</span>
                   <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
                 </Link>
+                </div>
+                <div onMouseEnter={() => setProcessOpen(true)} onMouseLeave={() => setProcessOpen(false)}>
                 <Link 
                   href="/work" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
@@ -301,6 +306,7 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
                 </Link>
+                </div>
                 <Link 
                   href="/farm" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
@@ -417,6 +423,8 @@ export default function HomePage() {
         </motion.div>
           )}
         </AnimatePresence>
+
+        {processOpen && <ProcessDropdown visible={processOpen} onClose={() => setProcessOpen(false)} />}
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}
@@ -708,6 +716,8 @@ export default function HomePage() {
           </div>
         </div>
 
+          {/* Anchor for dropdown scroll */}
+          <div id="process"></div>
           {/* Process */}
           <div className="bg-zinc-50 rounded-xl p-8">
         <motion.div
