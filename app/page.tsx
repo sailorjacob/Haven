@@ -148,6 +148,66 @@ export default function HomePage() {
     ? projects.filter(project => project.category === filter)
     : projects
 
+  // Graphic component for each process step
+  const GearGraphic = ({ index, number }: { index: number; number: string }) => {
+    const commonProps = {
+      initial: { rotate: -90, scale: 0.9 },
+      whileInView: { rotate: 0, scale: 1 },
+      whileHover: { rotate: 360 },
+      transition: { duration: 1.2, ease: "easeOut" },
+      style: { willChange: "transform" },
+      strokeLinecap: "round" as const,
+      strokeLinejoin: "round" as const,
+      stroke: "currentColor",
+      fill: "none",
+      strokeWidth: 1.25,
+      className: "w-20 h-20 text-zinc-800 group-hover:text-zinc-900"
+    }
+
+    // Different SVGs per step for visual variety
+    const svgs = [
+      // Step 1 – overlapping hexagons
+      (
+        <motion.svg viewBox="0 0 32 32" {...commonProps}>
+          <polygon points="16 2 27 9 27 23 16 30 5 23 5 9" />
+          <polygon points="12 4 23 11 23 25 12 32 1 25 1 11" transform="translate(4 4) rotate(10 16 16)" />
+        </motion.svg>
+      ),
+      // Step 2 – dashed circles
+      (
+        <motion.svg viewBox="0 0 32 32" {...commonProps}>
+          <circle cx="16" cy="16" r="10" strokeDasharray="4 3" />
+          <circle cx="10" cy="10" r="6" strokeDasharray="4 3" />
+          <circle cx="22" cy="10" r="4" strokeDasharray="4 3" />
+        </motion.svg>
+      ),
+      // Step 3 – classic gear outline with spokes
+      (
+        <motion.svg viewBox="0 0 32 32" {...commonProps}>
+          <path d="M30.329 13.721l-2.65-.441a11.922 11.922 0 00-1.524-3.653l1.476-2.066a1.983 1.983 0 00-.211-2.553l-.428-.428a1.983 1.983 0 00-2.553-.211L22.373 5.845a11.922 11.922 0 00-3.653-1.524l-.441-2.65A2 2 0 0016.306 0h-.612a2 2 0 00-1.973 1.671l-.441 2.65a11.922 11.922 0 00-3.653 1.524L7.561 4.369a1.983 1.983 0 00-2.553.211l-.428.428a1.983 1.983 0 00-.211 2.553l1.476 2.066a11.922 11.922 0 00-1.524 3.653l-2.65.441A2 2 0 000 15.694v.612a2 2 0 001.671 1.973l2.65.441a11.922 11.922 0 001.524 3.653L4.369 24.439a1.983 1.983 0 00.211 2.553l.428.428a1.983 1.983 0 002.553.211l2.066-1.476a11.922 11.922 0 003.653 1.524l.441 2.65A2 2 0 0015.694 32h.612a2 2 0 001.973-1.671l.441-2.65a11.922 11.922 0 003.653-1.524l2.066 1.476a1.983 1.983 0 002.553-.211l.428-.428a1.983 1.983 0 00.211-2.553l-1.476-2.066a11.922 11.922 0 001.524-3.653l2.65-.441A2 2 0 0032 16.306v-.612a2 2 0 00-1.671-1.973z" />
+          <circle cx="16" cy="16" r="6" />
+        </motion.svg>
+      ),
+      // Step 4 – concentric dashed circles
+      (
+        <motion.svg viewBox="0 0 32 32" {...commonProps}>
+          <circle cx="16" cy="16" r="12" strokeDasharray="2 3" />
+          <circle cx="16" cy="16" r="8" />
+          <circle cx="16" cy="16" r="4" strokeDasharray="2 3" />
+        </motion.svg>
+      )
+    ]
+
+    return (
+      <div className="relative mb-4 flex justify-center group">
+        {svgs[index]}
+        <span className="absolute inset-0 flex items-center justify-center text-zinc-800 text-base font-medium pointer-events-none">
+          {number}
+        </span>
+      </div>
+    )
+  }
+
   return (
     <main className="bg-white w-full text-zinc-900">
       {/* Clean gradient background */}
@@ -640,27 +700,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  {/* Animated gear icon */}
-                  <div className="relative mb-4 flex justify-center group">
-                    <motion.svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 32 32"
-                      className="w-24 h-24 text-purple-600 group-hover:text-purple-700"
-                      initial={{ rotate: -90, scale: 0.8 }}
-                      whileInView={{ rotate: 0, scale: 1 }}
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 1.2, ease: "easeOut" }}
-                      style={{ willChange: "transform" }}
-                    >
-                      <path
-                        d="M30.329 13.721l-2.65-.441a11.922 11.922 0 00-1.524-3.653l1.476-2.066a1.983 1.983 0 00-.211-2.553l-.428-.428a1.983 1.983 0 00-2.553-.211L22.373 5.845a11.922 11.922 0 00-3.653-1.524l-.441-2.65A2 2 0 0016.306 0h-.612a2 2 0 00-1.973 1.671l-.441 2.65a11.922 11.922 0 00-3.653 1.524L7.561 4.369a1.983 1.983 0 00-2.553.211l-.428.428a1.983 1.983 0 00-.211 2.553l1.476 2.066a11.922 11.922 0 00-1.524 3.653l-2.65.441A2 2 0 000 15.694v.612a2 2 0 001.671 1.973l2.65.441a11.922 11.922 0 001.524 3.653L4.369 24.439a1.983 1.983 0 00.211 2.553l.428.428a1.983 1.983 0 002.553.211l2.066-1.476a11.922 11.922 0 003.653 1.524l.441 2.65A2 2 0 0015.694 32h.612a2 2 0 001.973-1.671l.441-2.65a11.922 11.922 0 003.653-1.524l2.066 1.476a1.983 1.983 0 002.553-.211l.428-.428a1.983 1.983 0 00.211-2.553l-1.476-2.066a11.922 11.922 0 001.524-3.653l2.65-.441A2 2 0 0032 16.306v-.612a2 2 0 00-1.671-1.973zM16 22a6 6 0 116-6 6 6 0 01-6 6z"
-                        fill="currentColor"
-                      />
-                    </motion.svg>
-                    <span className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold pointer-events-none">
-                      {step.number}
-                    </span>
-                  </div>
+                  <GearGraphic index={index} number={step.number} />
                   <h3 className="text-xl font-medium text-zinc-900 mb-3">{step.title}</h3>
                   <p className="text-zinc-600 leading-relaxed">
                     {step.description}
