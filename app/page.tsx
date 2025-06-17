@@ -425,7 +425,7 @@ export default function HomePage() {
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-20 px-6">
+      <section className="relative z-10 pt-10 px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
           
           {/* Haven Studio Intro */}
