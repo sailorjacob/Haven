@@ -1,0 +1,62 @@
+"use client"
+
+import { useEffect } from "react"
+import { motion, useMotionValue } from "framer-motion"
+
+interface Props {
+  parentRef: React.RefObject<HTMLElement | null>
+}
+
+// Bright sky-blue crosshair overlay that follows the cursor inside the given element
+export default function CrosshairOverlay({ parentRef }: Props) {
+  const x = useMotionValue(-100)
+  const y = useMotionValue(-100)
+
+  useEffect(() => {
+    const parent = parentRef.current
+    if (!parent) return
+
+    const handleMove = (e: MouseEvent) => {
+      const rect = parent.getBoundingClientRect()
+      const offsetX = e.clientX - rect.left
+      const offsetY = e.clientY - rect.top
+      if (offsetX < 0 || offsetY < 0 || offsetX > rect.width || offsetY > rect.height) {
+        // hide crosshair when outside
+        x.set(-100)
+        y.set(-100)
+      } else {
+        x.set(offsetX)
+        y.set(offsetY)
+      }
+    }
+
+    parent.addEventListener("mousemove", handleMove)
+    parent.addEventListener("mouseleave", () => {
+      x.set(-100)
+      y.set(-100)
+    })
+    return () => {
+      parent.removeEventListener("mousemove", handleMove)
+    }
+  }, [parentRef, x, y])
+
+  return (
+    <div className="pointer-events-none absolute inset-0 z-20">
+      {/* Vertical line */}
+      <motion.div
+        className="absolute top-0 bottom-0 w-px bg-sky-400/70"
+        style={{ left: x }}
+      />
+      {/* Horizontal line */}
+      <motion.div
+        className="absolute left-0 right-0 h-px bg-sky-400/70"
+        style={{ top: y }}
+      />
+      {/* Central circle */}
+      <motion.div
+        className="absolute w-2.5 h-2.5 border border-sky-400 rounded-full -translate-x-1/2 -translate-y-1/2"
+        style={{ left: x, top: y }}
+      />
+    </div>
+  )
+} 

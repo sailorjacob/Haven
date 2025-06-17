@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X } from "lucide-react"
@@ -12,6 +12,7 @@ import { BlueprintGrid } from "./components/BlueprintGrid"
 import { ServicesSection } from "./components/ServicesSection"
 import { ScatteredStars } from "./components/ScatteredStars"
 import ProcessDropdown from "@/components/ProcessDropdown"
+import CrosshairOverlay from "../components/CrosshairOverlay"
 
 type Project = {
   id: string
@@ -152,6 +153,8 @@ export default function HomePage() {
   const filteredProjects = filter 
     ? projects.filter(project => project.category === filter)
     : projects
+
+  const processRef = useRef<HTMLDivElement>(null)
 
   // Graphic component for each process step
   const GearGraphic = ({ index, number, active }: { index: number; number: string; active: boolean }) => {
@@ -713,8 +716,10 @@ export default function HomePage() {
           {/* Anchor for dropdown scroll */}
           <div id="process"></div>
           {/* Process */}
-          <div className="bg-zinc-50 rounded-xl p-8">
-        <motion.div
+          <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
+            {/* crosshair overlay */}
+            <CrosshairOverlay parentRef={processRef} />
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
