@@ -94,8 +94,10 @@ export default function DesignBookPage() {
 
             <div className="flex items-center space-x-4">
               <Link 
-                href="/contact"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-amber-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+                href="https://buy.stripe.com/00waEYgG74Hy3wz1Xl57W01?locale=en&__embed_source=buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex items-center border border-amber-700 bg-amber-700/10 hover:bg-amber-700/20 text-amber-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
                 Purchase
               </Link>
@@ -145,7 +147,9 @@ export default function DesignBookPage() {
                   Design Book
                 </Link>
                 <Link 
-                  href="/contact"
+                  href="https://buy.stripe.com/00waEYgG74Hy3wz1Xl57W01?locale=en&__embed_source=buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
