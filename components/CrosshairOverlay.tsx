@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { motion, useMotionValue } from "framer-motion"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 
 interface Props {
   parentRef: React.RefObject<HTMLElement | null>
@@ -12,6 +12,10 @@ interface Props {
 export default function CrosshairOverlay({ parentRef, variant = "blue" }: Props) {
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
+
+  // Apply spring smoothing for gradual movement
+  const smoothX = useSpring(x, { stiffness: 40, damping: 12 })
+  const smoothY = useSpring(y, { stiffness: 40, damping: 12 })
 
   useEffect(() => {
     const parent = parentRef.current
@@ -49,17 +53,17 @@ export default function CrosshairOverlay({ parentRef, variant = "blue" }: Props)
       {/* Vertical line */}
       <motion.div
         className={`absolute top-0 bottom-0 w-px ${lineClass}`}
-        style={{ left: x }}
+        style={{ left: smoothX }}
       />
       {/* Horizontal line */}
       <motion.div
         className={`absolute left-0 right-0 h-px ${lineClass}`}
-        style={{ top: y }}
+        style={{ top: smoothY }}
       />
       {/* Central circle */}
       <motion.div
         className={`absolute w-2.5 h-2.5 ${circleBorder} rounded-full -translate-x-1/2 -translate-y-1/2`}
-        style={{ left: x, top: y }}
+        style={{ left: smoothX, top: smoothY }}
       />
     </div>
   )
