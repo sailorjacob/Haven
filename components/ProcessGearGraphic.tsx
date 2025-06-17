@@ -18,7 +18,7 @@ export default function ProcessGearGraphic({ index, number, active = false }: Ge
     stroke: "currentColor",
     fill: "none",
     strokeWidth: 0.4,
-    className: `${baseSize} text-zinc-600`,
+    className: `${baseSize} text-zinc-500`,
     style: { willChange: "transform" }
   }
 
