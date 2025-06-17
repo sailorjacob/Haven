@@ -30,11 +30,11 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
 
   return (
     <motion.div
-      initial={{ scaleY: 0, opacity: 0 }}
-      animate={{ scaleY: 1, opacity: 1 }}
-      exit={{ scaleY: 0, opacity: 0 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      style={{ transformOrigin: 'top center' }}
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "auto", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      style={{ willChange: "height, opacity" }}
       className="absolute top-full inset-x-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
       ref={dropdownRef}
       onMouseLeave={onClose}

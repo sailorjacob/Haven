@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X } from "lucide-react"
+import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Footer } from "@/components/footer"
 import { LucideIcon } from "lucide-react"
@@ -302,6 +302,14 @@ export default function HomePage() {
                     <span className="group-hover:hidden">Work</span>
                     <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
                   </Link>
+                  {/* Dropdown indicator */}
+                  <motion.span
+                    className="ml-1"
+                    animate={{ rotate: processOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <ChevronDown className="w-3.5 h-3.5 text-zinc-500" />
+                  </motion.span>
                 </div>
 
                 {/* Static links */}
