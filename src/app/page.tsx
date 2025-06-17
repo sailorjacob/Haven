@@ -199,11 +199,7 @@ export default function Home() {
             onMouseLeave={resetParallax}
             className="relative overflow-hidden container mx-auto px-6"
           >
-            {/* Parallax background */}
-            <motion.div
-              style={{ x: parallaxX, y: parallaxY }}
-              className="pointer-events-none absolute -inset-20 bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=60')] bg-cover bg-center opacity-10"
-            />
+            {/* Background image removed as per request */}
             <div className="max-w-5xl mx-auto relative">
               <AnimatedElement delay={0} className="text-3xl font-semibold mb-2 text-gray-900">
                 Our Services
