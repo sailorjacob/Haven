@@ -721,15 +721,15 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-8"
             >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-light text-zinc-800 mb-3">
                 Our Process
               </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              <p className="text-base text-zinc-500 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
           </p>
         </motion.div>
         
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
                 {
                   number: "01",
@@ -765,10 +765,10 @@ export default function HomePage() {
                   <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}> 
                     <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
                   </div>
-                  <h3 className="text-xl font-medium text-zinc-900 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                  <h3 className="text-lg font-medium text-zinc-700 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
                     {step.title}
                   </h3>
-                  <p className="text-zinc-600 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                  <p className="text-zinc-500 leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
                     {step.description}
                   </p>
                 </motion.div>
