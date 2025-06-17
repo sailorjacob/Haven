@@ -5,10 +5,11 @@ import { motion, useMotionValue } from "framer-motion"
 
 interface Props {
   parentRef: React.RefObject<HTMLElement | null>
+  variant?: "blue" | "gray"
 }
 
 // Bright sky-blue crosshair overlay that follows the cursor inside the given element
-export default function CrosshairOverlay({ parentRef }: Props) {
+export default function CrosshairOverlay({ parentRef, variant = "blue" }: Props) {
   const x = useMotionValue(-100)
   const y = useMotionValue(-100)
 
@@ -40,21 +41,24 @@ export default function CrosshairOverlay({ parentRef }: Props) {
     }
   }, [parentRef, x, y])
 
+  const lineClass = variant === "gray" ? "bg-zinc-300/70" : "bg-sky-400/70"
+  const circleBorder = variant === "gray" ? "border-zinc-300" : "border-sky-400"
+
   return (
     <div className="pointer-events-none absolute inset-0 z-20">
       {/* Vertical line */}
       <motion.div
-        className="absolute top-0 bottom-0 w-px bg-sky-400/70"
+        className={`absolute top-0 bottom-0 w-px ${lineClass}`}
         style={{ left: x }}
       />
       {/* Horizontal line */}
       <motion.div
-        className="absolute left-0 right-0 h-px bg-sky-400/70"
+        className={`absolute left-0 right-0 h-px ${lineClass}`}
         style={{ top: y }}
       />
       {/* Central circle */}
       <motion.div
-        className="absolute w-2.5 h-2.5 border border-sky-400 rounded-full -translate-x-1/2 -translate-y-1/2"
+        className={`absolute w-2.5 h-2.5 ${circleBorder} rounded-full -translate-x-1/2 -translate-y-1/2`}
         style={{ left: x, top: y }}
       />
     </div>

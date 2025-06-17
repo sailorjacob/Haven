@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useCallback, useState } from "react"
+import { useCallback, useState, useRef } from "react"
 import ProcessGearGraphic from "./ProcessGearGraphic"
+import CrosshairOverlay from "./CrosshairOverlay"
 
 interface Step {
   id: string
@@ -19,6 +20,7 @@ const steps: Step[] = [
 
 export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
   const [hovered, setHovered] = useState<number | null>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   const handleClick = useCallback(() => {
     const section = document.getElementById("process")
@@ -33,9 +35,11 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
       exit={{ scaleY: 0, opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
       style={{ transformOrigin: 'top center' }}
-      className="absolute top-full left-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
+      className="relative absolute top-full left-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
+      ref={dropdownRef}
       onMouseLeave={onClose}
     >
+      <CrosshairOverlay parentRef={dropdownRef} variant="gray" />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-16 py-8 max-w-6xl mx-auto justify-items-center">
         {steps.map((step, idx) => (
           <div
