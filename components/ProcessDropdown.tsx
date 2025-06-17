@@ -44,18 +44,18 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
             onMouseEnter={() => setHovered(idx)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative`}>
+            <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative text-zinc-300`}>
               <GearGraphic index={idx} active={hovered === idx} />
-              <span className="absolute inset-0 flex items-center justify-center text-xs font-medium text-zinc-700 pointer-events-none">
+              <span className="absolute inset-0 flex items-center justify-center text-xs font-medium text-zinc-400 pointer-events-none">
                 {step.id}
               </span>
             </div>
 
-            <button onClick={handleClick} className="mt-2 font-medium text-sm text-zinc-700 hover:text-zinc-900 transition-colors">
+            <button onClick={handleClick} className="mt-2 font-medium text-sm text-zinc-400 hover:text-zinc-700 transition-colors">
               {step.label}
             </button>
 
-            <p className="mt-1 text-xs leading-snug text-zinc-600 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <p className="mt-1 text-xs leading-snug text-zinc-400 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               {step.descr}
             </p>
           </div>
