@@ -260,7 +260,7 @@ export default function PricingPage() {
                     
                     <div className="border-b border-dashed border-zinc-200 pb-6 mb-6">
                       <div className="flex items-baseline mb-6">
-                        <span className="text-5xl font-bold text-zinc-800">$4,995</span>
+                        <span className="text-5xl font-bold text-zinc-800">$14,995</span>
                         <span className="text-zinc-500 ml-2">/month</span>
                       </div>
                       
