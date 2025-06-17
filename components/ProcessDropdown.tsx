@@ -40,7 +40,7 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
       onMouseLeave={onClose}
     >
       <CrosshairOverlay parentRef={dropdownRef} variant="gray" />
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-16 py-8 max-w-6xl mx-auto justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-16 py-8 w-full justify-items-center">
         {steps.map((step, idx) => (
           <div
             key={step.id}
