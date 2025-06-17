@@ -278,7 +278,7 @@ export default function HomePage() {
       <ScatteredStars />
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+      <header onMouseLeave={()=>setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
@@ -289,35 +289,24 @@ export default function HomePage() {
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
-                <div onMouseEnter={() => setProcessOpen(true)} onMouseLeave={() => setProcessOpen(false)}>
-                <Link 
-                  href="/studio" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
-                </Link>
+                {/* Process trigger container */}
+                <div className="relative flex items-center space-x-6" onMouseEnter={()=>setProcessOpen(true)}>
+                  <Link href="/studio" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
+                    <span className="group-hover:hidden">Studio</span>
+                    <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
+                  </Link>
+                  <Link href="/work" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
+                    <span className="group-hover:hidden">Work</span>
+                    <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
+                  </Link>
                 </div>
-                <div onMouseEnter={() => setProcessOpen(true)} onMouseLeave={() => setProcessOpen(false)}>
-                <Link 
-                  href="/work" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
-                  <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
-                </Link>
-                </div>
-                <Link 
-                  href="/farm" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
+
+                {/* Static links */}
+                <Link href="/farm" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
                   <span className="group-hover:hidden">Farm</span>
                   <span className={`hidden group-hover:inline ${navColors.farm}`}>Farm</span>
                 </Link>
-                <Link 
-                  href="/book" 
-                  className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
-                >
+                <Link href="/book" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2">
                   Design Book
                 </Link>
               </div>
@@ -359,6 +348,13 @@ export default function HomePage() {
               </button>
             </div>
           </nav>
+
+          {/* Process dropdown full width */}
+          <AnimatePresence>
+            {processOpen && (
+              <ProcessDropdown onClose={() => setProcessOpen(false)} />
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Mobile Menu */}
@@ -423,8 +419,6 @@ export default function HomePage() {
         </motion.div>
           )}
         </AnimatePresence>
-
-        {processOpen && <ProcessDropdown visible={processOpen} onClose={() => setProcessOpen(false)} />}
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}

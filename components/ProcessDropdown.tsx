@@ -1,21 +1,25 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
+import GearGraphic from "./GearGraphic"
 
 interface Step {
   id: string
   label: string
+  descr: string
 }
 
 const steps: Step[] = [
-  { id: "01", label: "Discovery" },
-  { id: "02", label: "Strategy" },
-  { id: "03", label: "Design & Development" },
-  { id: "04", label: "Launch & Optimize" },
+  { id: "01", label: "Discovery", descr: "We learn about your business, goals, and vision to establish clear project objectives." },
+  { id: "02", label: "Strategy", descr: "We develop a detailed roadmap and technical approach tailored to your specific needs." },
+  { id: "03", label: "Design & Development", descr: "Our team crafts beautiful interfaces and builds robust applications with clean code." },
+  { id: "04", label: "Launch & Optimize", descr: "We deploy your project and provide ongoing support to ensure continued success." },
 ]
 
-export default function ProcessDropdown({ visible, onClose }: { visible: boolean; onClose: () => void }) {
+export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
+  const [hovered, setHovered] = useState<number | null>(null)
+
   const handleClick = useCallback(() => {
     const section = document.getElementById("process")
     section?.scrollIntoView({ behavior: "smooth" })
@@ -24,22 +28,37 @@ export default function ProcessDropdown({ visible, onClose }: { visible: boolean
 
   return (
     <motion.div
-      initial={false}
-      animate={visible ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-      transition={{ duration: 0.25, ease: "easeInOut" }}
+      initial={{ scaleY: 0, opacity: 0 }}
+      animate={{ scaleY: 1, opacity: 1 }}
+      exit={{ scaleY: 0, opacity: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      style={{ transformOrigin: 'top center' }}
       className="absolute top-full left-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
       onMouseLeave={onClose}
     >
-      <div className="flex items-start justify-center gap-10 px-8 py-6">
-        {steps.map(step => (
-          <button
+      <div className="flex items-start justify-center gap-16 px-12 py-6">
+        {steps.map((step, idx) => (
+          <div
             key={step.id}
-            onClick={handleClick}
-            className="text-zinc-700 hover:text-zinc-900 text-sm font-medium transition-colors"
+            className="group flex flex-col items-center w-48"
+            onMouseEnter={() => setHovered(idx)}
+            onMouseLeave={() => setHovered(null)}
           >
-            <div className="text-xs mb-1 tracking-widest text-zinc-500">{step.id}</div>
-            {step.label}
-          </button>
+            <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative`}>
+              <GearGraphic index={idx} active={hovered === idx} />
+              <span className="absolute inset-0 flex items-center justify-center text-xs font-medium text-zinc-700 pointer-events-none">
+                {step.id}
+              </span>
+            </div>
+
+            <button onClick={handleClick} className="mt-2 font-medium text-sm text-zinc-700 hover:text-zinc-900 transition-colors">
+              {step.label}
+            </button>
+
+            <p className="mt-1 text-xs leading-snug text-zinc-600 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {step.descr}
+            </p>
+          </div>
         ))}
       </div>
     </motion.div>
