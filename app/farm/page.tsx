@@ -235,23 +235,9 @@ export default function FarmPage() {
             <div className="flex space-x-4 border-b border-zinc-200">
               <button
                 onClick={() => setActiveTab("haven")}
-                className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
-                  activeTab === "haven"
-                    ? "text-zinc-900 border-b-2 border-zinc-900"
-                    : "text-zinc-500 hover:text-zinc-900"
-                }`}
+                className="pb-4 px-2 text-sm font-medium tracking-wider uppercase text-zinc-900 border-b-2 border-zinc-900"
               >
                 Haven
-              </button>
-              <button
-                onClick={() => setActiveTab("farm")}
-                className={`pb-4 px-2 text-sm font-medium tracking-wider uppercase transition-colors ${
-                  activeTab === "farm"
-                    ? "text-zinc-900 border-b-2 border-zinc-900"
-                    : "text-zinc-500 hover:text-zinc-900"
-                }`}
-              >
-                Farm
               </button>
             </div>
           </div>
@@ -264,43 +250,23 @@ export default function FarmPage() {
             className="mb-16"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {activeTab === "farm" ? (
-                farmImages.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
-                    className="relative aspect-[3/4] overflow-hidden rounded-md"
-                  >
-                    <Image
-                      src={image.url}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </motion.div>
-                ))
-              ) : (
-                havenImages.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
-                    className="relative aspect-[3/4] overflow-hidden rounded-md"
-                  >
-                    <Image
-                      src={image.url}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </motion.div>
-                ))
-              )}
+              {havenImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 * (index % 3) }}
+                  className="relative aspect-[3/4] overflow-hidden rounded-md"
+                >
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
