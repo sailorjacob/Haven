@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useCallback, useState } from "react"
-import GearGraphic from "./GearGraphic"
+import ProcessGearGraphic from "./ProcessGearGraphic"
 
 interface Step {
   id: string
@@ -36,26 +36,23 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
       className="absolute top-full left-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
       onMouseLeave={onClose}
     >
-      <div className="flex items-start justify-center gap-16 px-12 py-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-16 py-8 max-w-6xl mx-auto justify-items-center">
         {steps.map((step, idx) => (
           <div
             key={step.id}
-            className="group flex flex-col items-center w-48"
+            className="group flex flex-col items-center"
             onMouseEnter={() => setHovered(idx)}
             onMouseLeave={() => setHovered(null)}
           >
             <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative text-zinc-300`}>
-              <GearGraphic index={idx} active={hovered === idx} />
-              <span className="absolute inset-0 flex items-center justify-center text-xs font-medium text-zinc-400 pointer-events-none">
-                {step.id}
-              </span>
+              <ProcessGearGraphic index={idx} number={step.id} active={hovered === idx} />
             </div>
 
-            <button onClick={handleClick} className="mt-2 font-medium text-sm text-zinc-400 hover:text-zinc-700 transition-colors">
+            <button onClick={handleClick} className="mt-3 font-medium text-sm text-zinc-400 hover:text-zinc-700 transition-colors">
               {step.label}
             </button>
 
-            <p className="mt-1 text-xs leading-snug text-zinc-400 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <p className="mt-2 text-xs leading-snug text-zinc-400 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               {step.descr}
             </p>
           </div>
