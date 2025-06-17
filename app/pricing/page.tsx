@@ -71,7 +71,7 @@ export default function PricingPage() {
         {/* Spinning background gear */}
         <motion.svg
           viewBox="0 0 32 32"
-          className="pointer-events-none absolute -top-60 -left-60 w-[800px] h-[800px] text-zinc-300/50"
+          className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] text-zinc-300/40"
           initial={{ rotate: 0 }}
           animate={{ rotate: 360 }}
           transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
