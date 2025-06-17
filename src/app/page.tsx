@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useMotionValue, useTransform } from "framer-motion"
 
 import SimpleMenu from "@/components/simple-menu"
 import FeatureItem from "@/components/feature-item"
@@ -17,6 +17,25 @@ const ACCENT_COLOR = "#3B82F6"
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
   const sectionsRef = useRef<HTMLDivElement>(null)
+
+  // Parallax for Services section
+  const servicesRef = useRef<HTMLDivElement>(null)
+  const parallaxX = useMotionValue(0)
+  const parallaxY = useMotionValue(0)
+
+  const handleServicesMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = servicesRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const offsetX = (e.clientX - rect.left) / rect.width - 0.5 // -0.5 to 0.5
+    const offsetY = (e.clientY - rect.top) / rect.height - 0.5
+    parallaxX.set(offsetX * 30) // max 30px shift
+    parallaxY.set(offsetY * 30)
+  }
+
+  const resetParallax = () => {
+    parallaxX.set(0)
+    parallaxY.set(0)
+  }
 
   // Handle scroll snapping and section detection
   useEffect(() => {
@@ -174,8 +193,18 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatedSection id="services">
-          <div className="container mx-auto px-6">
-            <div className="max-w-5xl mx-auto">
+          <div
+            ref={servicesRef}
+            onMouseMove={handleServicesMouseMove}
+            onMouseLeave={resetParallax}
+            className="relative overflow-hidden container mx-auto px-6"
+          >
+            {/* Parallax background */}
+            <motion.div
+              style={{ x: parallaxX, y: parallaxY }}
+              className="pointer-events-none absolute -inset-20 bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=60')] bg-cover bg-center opacity-10"
+            />
+            <div className="max-w-5xl mx-auto relative">
               <AnimatedElement delay={0} className="text-3xl font-semibold mb-2 text-gray-900">
                 Our Services
               </AnimatedElement>
