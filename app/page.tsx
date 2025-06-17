@@ -812,19 +812,22 @@ export default function HomePage() {
                   name: "Jacob Beam",
                   role: "Founder",
                   description: <>Jacob is a tech artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">experience</Link> in imagery and design.</>,
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
+                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
+                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 },
                 {
                   name: "Jarret Shull", 
                   role: "Sales",
                   description: "Jarret builds partnerships and client relations.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
+                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg",
+                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret2.jpg"
                 },
                 {
                   name: "Klaire Rasche",
                   role: "Design", 
                   description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg"
+                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg",
+                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire2.jpg"
                 }
               ].map((member, index) => (
         <motion.div
@@ -835,13 +838,23 @@ export default function HomePage() {
                   viewport={{ once: true }}
           className="text-center"
         >
-                  <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
+                  <div className="relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
+                    {/* Primary */}
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-500 group-hover:opacity-0"
                     />
+                    {/* Alternate */}
+                    {member.altImage && (
+                      <Image
+                        src={member.altImage}
+                        alt={`${member.name} alternate`}
+                        fill
+                        className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      />
+                    )}
                   </div>
                   <h3 className="text-lg font-medium text-zinc-900 mb-1">{member.name}</h3>
                   <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
