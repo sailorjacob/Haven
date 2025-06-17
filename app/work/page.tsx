@@ -429,7 +429,7 @@ export default function WorkPage() {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">killmefaster.com</h3>
-                      <p className="text-zinc-600 mb-3">The ultimate escape route and weapon. An artist's journey through the dark arts, collecting bitcoin, and building a digital frontier with an army of mercenaries and robots fighting for freedom.</p>
+                      <p className="text-zinc-600 mb-3">An artist website exploring the dark arts and a digital frontier of freedom.</p>
                       <div className="flex items-center text-purple-600 font-medium">
                         Visit Website
                         <ArrowRight className="ml-2 h-4 w-4" />

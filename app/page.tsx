@@ -674,15 +674,13 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: "Jacob is a tech artist and entrepreneur with 7+ years of experience in imagery and design.",
-                  linkedWord: "experience",
-                  github: "https://sailorjacob.github.io",
+                  description: <>Jacob is a tech artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">experience</Link> in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg"
                 },
                 {
                   name: "Jarret Shull", 
                   role: "Sales",
-                  description: "Jarret builds partnerships and client relations with a drive for connecting businesses to digital solutions.",
+                  description: "Jarret builds partnerships and client relations.",
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg"
                 },
                 {
