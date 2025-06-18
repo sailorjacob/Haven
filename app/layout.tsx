@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Caveat } from 'next/font/google'
+import CookieConsent from "../components/CookieConsent"
 
 const caveat = Caveat({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
       </head>
       <body>
           {children}
+          <CookieConsent />
       </body>
     </html>
   )
