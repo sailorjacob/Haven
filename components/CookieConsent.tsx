@@ -22,15 +22,15 @@ export default function CookieConsent() {
   if (!visible) return null
 
   return (
-    <div className="fixed inset-0 z-[1000] bg-black/40 flex items-center justify-center p-4">
-      <div className="bg-zinc-200 text-zinc-900 max-w-md w-full rounded-md p-6 text-center shadow-lg">
-        <p className="mb-4 text-sm leading-relaxed">
+    <div className="fixed bottom-4 left-4 z-[1000]">
+      <div className="bg-zinc-200 text-zinc-900 max-w-sm w-[90vw] sm:w-80 rounded-md p-4 text-center shadow-lg">
+        <p className="mb-3 text-sm leading-relaxed">
           This website uses cookies in order to provide its services. By using this website you accept the usage of cookies.{' '}
-          <Link href="/cookies" className="underline">Learn more...</Link>
+          <Link href="/cookies" className="underline whitespace-nowrap">Learn more...</Link>
         </p>
         <button
           onClick={handleAccept}
-          className="w-full border-2 border-zinc-900 py-2 rounded-sm font-medium hover:bg-zinc-100 transition-colors"
+          className="w-full border-2 border-zinc-900 py-1.5 rounded-sm font-medium hover:bg-zinc-100 transition-colors"
         >
           Ok
         </button>
