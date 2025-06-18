@@ -199,6 +199,9 @@ export default function Home() {
             onMouseLeave={resetParallax}
             className="relative overflow-hidden container mx-auto px-6"
           >
+            {/* Cover overlay to remove background artifacts */}
+            <div className="pointer-events-none absolute inset-0 bg-white/90"></div>
+
             {/* Background image removed as per request */}
             <div className="max-w-5xl mx-auto relative">
               <AnimatedElement delay={0} className="text-3xl font-semibold mb-2 text-gray-900">
