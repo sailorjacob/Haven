@@ -233,7 +233,7 @@ export default function HomePage() {
               className={`absolute inset-0 ${baseSize}`}
               style={{ translate: `${i===0? '0px 0px' : '20px -12px'}` }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" fill="none" stroke="currentColor" strokeWidth="0.5" />
+              <path d="M30.329 13.721l-2.65-.441a11.922 11.922 0 00-1.524-3.653l1.476-2.066a1.983 1.983 0 00-.211-2.553l-.428-.428a1.983 1.983 0 00-2.553-.211L22.373 5.845a11.922 11.922 0 00-3.653-1.524l-.441-2.65A2 2 0 0016.306 0h-.612a2 2 0 00-1.973 1.671l-.441 2.65a11.922 11.922 0 00-3.653 1.524L7.561 4.369a1.983 1.983 0 00-2.553.211l-.428.428a1.983 1.983 0 00-.211 2.553l1.476 2.066a11.922 11.922 0 00-1.524 3.653l-2.65.441A2 2 0 000 15.694v.612a2 2 0 001.671 1.973l2.65.441a11.922 11.922 0 001.524 3.653L4.369 24.439a1.983 1.983 0 00.211 2.553l.428.428a1.983 1.983 0 002.553.211l2.066-1.476a11.922 11.922 0 003.653 1.524l.441 2.65A2 2 0 0015.694 32h.612a2 2 0 001.973-1.671l.441-2.65a11.922 11.922 0 003.653-1.524l2.066 1.476a1.983 1.983 0 002.553-.211l.428-.428a1.983 1.983 0 00.211-2.553l-1.476-2.066a11.922 11.922 0 001.524-3.653l2.65-.441A2 2 0 0032 16.306v-.612a2 2 0 00-1.671-1.973z" />
             </motion.svg>
           ))}
         </div>
@@ -275,16 +275,6 @@ export default function HomePage() {
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
-        {/* Spinning background gear */}
-        <motion.svg
-          viewBox="0 0 32 32"
-          className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] text-zinc-200/25"
-          initial={{ rotate: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" fill="none" stroke="currentColor" strokeWidth="0.5" />
-        </motion.svg>
       </div>
 
       {/* Scattered Stars */}
