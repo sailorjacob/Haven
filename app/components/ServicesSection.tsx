@@ -9,16 +9,7 @@ import Image from "next/image"
 export const ServicesSection = () => {
   return (
     <div className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
-      {/* Background Image Container */}
-      <div className="absolute inset-0 w-full h-full opacity-10">
-        <Image
-          src="https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/sculpt33-trDJfLqZGE5gnHoCZvpAxCgP0WMIXz.png"
-          alt="Abstract background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      {/* Background image removed */}
       
       <BlueprintGrid />
       
