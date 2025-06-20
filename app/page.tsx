@@ -46,7 +46,7 @@ export default function HomePage() {
   const navColors = useMemo(() => ({
     studio: getSeededRandomColor('studio'),
     work: getSeededRandomColor('work'),
-    farm: getSeededRandomColor('farm'),
+    gallery: getSeededRandomColor('gallery'),
     contact: getSeededRandomColor('contact'),
     pricing: getSeededRandomColor('pricing')
   }), [])
@@ -322,9 +322,9 @@ export default function HomePage() {
                 </div>
 
                 {/* Static links */}
-                <Link href="/farm" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
-                  <span className="group-hover:hidden">Farm</span>
-                  <span className={`hidden group-hover:inline ${navColors.farm}`}>Farm</span>
+                <Link href="/gallery" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
+                  <span className="group-hover:hidden">Gallery</span>
+                  <span className={`hidden group-hover:inline ${navColors.gallery}`}>Gallery</span>
                 </Link>
                 <Link href="/book" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2">
                   Design Book
@@ -405,12 +405,12 @@ export default function HomePage() {
                   <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
                 </Link>
                 <Link 
-                  href="/farm"
+                  href="/gallery"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Farm</span>
-                  <span className={`hidden group-hover:inline ${navColors.farm}`}>Farm</span>
+                  <span className="group-hover:hidden">Gallery</span>
+                  <span className={`hidden group-hover:inline ${navColors.gallery}`}>Gallery</span>
                 </Link>
                 <Link 
                   href="/book"

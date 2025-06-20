@@ -91,7 +91,7 @@ const havenImages = [
   }
 ];
 
-export default function FarmPage() {
+export default function GalleryPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeTab, setActiveTab] = useState("haven")
 
@@ -129,11 +129,11 @@ export default function FarmPage() {
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
-                  href="/farm" 
+                  href="/gallery" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
-                  <span className="group-hover:hidden">Farm</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Farm</span>
+                  <span className="group-hover:hidden">Gallery</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Gallery</span>
                 </Link>
                 <Link 
                   href="/pricing" 
@@ -191,12 +191,12 @@ export default function FarmPage() {
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
-                  href="/farm"
+                  href="/gallery"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Farm</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Farm</span>
+                  <span className="group-hover:hidden">Gallery</span>
+                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Gallery</span>
                 </Link>
                 <Link 
                   href="/pricing" 
