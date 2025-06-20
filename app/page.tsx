@@ -624,7 +624,75 @@ export default function HomePage() {
 
           {/* Services */}
           <ServicesSection />
-          
+
+          {/* Anchor for dropdown scroll */}
+          <div id="process"></div>
+          {/* Process */}
+          <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
+            {/* crosshair overlay */}
+            <CrosshairOverlay parentRef={processRef} />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
+              <h2 className="text-3xl md:text-4xl font-light text-zinc-800 mb-3">
+                Our Process
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                A proven methodology that ensures successful project delivery from concept to launch.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                {
+                  number: "01",
+                  title: "Discovery",
+                  description: "We learn about your business, goals, and vision to establish clear project objectives."
+                },
+                {
+                  number: "02", 
+                  title: "Strategy",
+                  description: "We develop a detailed roadmap and technical approach tailored to your specific needs."
+                },
+                {
+                  number: "03",
+                  title: "Design & Development", 
+                  description: "Our team crafts beautiful interfaces and builds robust applications with clean code."
+                },
+                {
+                  number: "04",
+                  title: "Launch & Optimize",
+                  description: "We deploy your project and provide ongoing support to ensure continued success."
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setHoveredStep(index)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                  className={`text-center group transition-opacity duration-300 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-25' : 'opacity-100'}`}
+                >
+                  <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
+                    <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
+                  </div>
+                  <h3 className="text-lg font-medium text-zinc-600 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                    {step.title}
+                  </h3>
+                  <p className="text-zinc-500 leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
           {/* Studio Performance */}
           <div>
             <motion.div
@@ -727,80 +795,12 @@ export default function HomePage() {
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
                 <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
               </motion.div>
-          </div>
-        </div>
-
-          {/* Anchor for dropdown scroll */}
-          <div id="process"></div>
-          {/* Process */}
-          <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
-            {/* crosshair overlay */}
-            <CrosshairOverlay parentRef={processRef} />
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-800 mb-3">
-                Our Process
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                A proven methodology that ensures successful project delivery from concept to launch.
-          </p>
-        </motion.div>
-        
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                {
-                  number: "01",
-                  title: "Discovery",
-                  description: "We learn about your business, goals, and vision to establish clear project objectives."
-                },
-                {
-                  number: "02", 
-                  title: "Strategy",
-                  description: "We develop a detailed roadmap and technical approach tailored to your specific needs."
-                },
-                {
-                  number: "03",
-                  title: "Design & Development", 
-                  description: "Our team crafts beautiful interfaces and builds robust applications with clean code."
-                },
-                {
-                  number: "04",
-                  title: "Launch & Optimize",
-                  description: "We deploy your project and provide ongoing support to ensure continued success."
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  onMouseEnter={() => setHoveredStep(index)}
-                  onMouseLeave={() => setHoveredStep(null)}
-                  className={`text-center group transition-opacity duration-300 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-25' : 'opacity-100'}`}
-                >
-                  <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}> 
-                    <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
-                  </div>
-                  <h3 className="text-lg font-medium text-zinc-600 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
-                    {step.title}
-                  </h3>
-                  <p className="text-zinc-500 leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
             </div>
           </div>
 
           {/* Team */}
           <div>
-        <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -813,7 +813,7 @@ export default function HomePage() {
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Passionate professionals dedicated to creating exceptional digital experiences.
               </p>
-        </motion.div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
@@ -839,14 +839,14 @@ export default function HomePage() {
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire2.jpg"
                 }
               ].map((member, index) => (
-        <motion.div
+                <motion.div
                   key={member.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                   viewport={{ once: true }}
-          className="text-center"
-        >
+                  className="text-center"
+                >
                   <div className="relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
                     {/* Now showing altImage by default */}
                     {member.altImage && (
