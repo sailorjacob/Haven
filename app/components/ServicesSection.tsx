@@ -27,7 +27,7 @@ export const ServicesSection = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Our Services
+          Services
         </motion.h2>
         <motion.p 
           className="text-lg text-zinc-600 max-w-2xl mx-auto"

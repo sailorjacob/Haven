@@ -639,7 +639,7 @@ export default function HomePage() {
               className="text-center mb-8"
             >
               <h2 className="text-3xl md:text-4xl font-light text-zinc-800 mb-3">
-                Our Process
+                Process
               </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
