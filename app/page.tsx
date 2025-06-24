@@ -159,9 +159,11 @@ export default function HomePage() {
     }
   ]
 
-  const filteredProjects = filter 
+  const hiddenIds = ['killmefxster', 'xrated']
+
+  const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
-    : projects
+    : projects).filter(project => !hiddenIds.includes(project.id))
 
   const processRef = useRef<HTMLDivElement>(null)
 
