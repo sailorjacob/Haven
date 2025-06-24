@@ -192,9 +192,6 @@ export default function PricingPage() {
               style={{ willChange: "transform, opacity" }}
             >
               <p className="text-sm font-medium text-primary mb-2">PRICING</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                A straightforward, flat-rate design service
-              </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Reliable design support for a single monthly fee
               </p>
