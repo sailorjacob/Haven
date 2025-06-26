@@ -4,12 +4,15 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, ExternalLink, Hexagon, ArrowRight, Menu, X } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
 
 export default function WorkPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [modalImages, setModalImages] = useState<string[]>([])
   
   // Function to get a random highlight color - precompute for better performance
   const getRandomHighlightColor = () => {
@@ -19,6 +22,49 @@ export default function WorkPage() {
   
   // Precompute colors to avoid runtime calculations
   const precomputedColors = Array(10).fill(0).map(() => getRandomHighlightColor());
+  
+  // Modal functions
+  const openModal = (images: string[], startIndex = 0) => {
+    setModalImages(images)
+    setCurrentImageIndex(startIndex)
+    setModalOpen(true)
+    document.body.style.overflow = 'hidden'
+  }
+  
+  const closeModal = () => {
+    setModalOpen(false)
+    document.body.style.overflow = 'unset'
+  }
+  
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % modalImages.length)
+  }
+  
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + modalImages.length) % modalImages.length)
+  }
+  
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!modalOpen) return
+      
+      switch (e.key) {
+        case 'Escape':
+          closeModal()
+          break
+        case 'ArrowLeft':
+          if (modalImages.length > 1) prevImage()
+          break
+        case 'ArrowRight':
+          if (modalImages.length > 1) nextImage()
+          break
+      }
+    }
+    
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [modalOpen, modalImages.length])
   
   const workExamples = [
     {
@@ -290,6 +336,14 @@ export default function WorkPage() {
                       <span className="mr-2">Play Game</span>
                       <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </a>
+                  ) : work.id === "apparel-merch-webstore" ? (
+                    <button
+                      onClick={() => openModal(work.images || [], 0)}
+                      className="inline-flex items-center text-zinc-900 hover:text-zinc-600 transition-colors font-medium text-sm group"
+                    >
+                      View Gallery
+                      <ArrowLeft className="ml-2 w-3.5 h-3.5 rotate-180 group-hover:translate-x-1 transition-transform" />
+                    </button>
                   ) : (
                     <Link
                       href={work.link}
@@ -312,15 +366,23 @@ export default function WorkPage() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true, margin: "-100px" }}
                           transition={{ duration: 0.5, delay: imgIndex * 0.1, ease: "easeOut" }}
-                          className="relative aspect-square overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors"
+                          className="relative aspect-square overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
                           style={{ willChange: "transform, opacity" }}
+                          onClick={() => openModal(work.images || [], imgIndex)}
                         >
                           <Image
                             src={image}
                             alt={`${work.title} example ${imgIndex + 1}`}
                             fill
-                            className="object-cover"
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-2">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                              </svg>
+                            </div>
+                          </div>
                         </motion.div>
                       ))}
                     </div>
@@ -488,6 +550,73 @@ export default function WorkPage() {
           </motion.div>
         </div>
       </div>
+      
+      {/* Image Modal */}
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-4xl max-h-[90vh] mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={closeModal}
+                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              
+              {/* Navigation arrows */}
+              {modalImages.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/20 hover:bg-black/40 rounded-full p-2 z-10"
+                  >
+                    <ArrowLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/20 hover:bg-black/40 rounded-full p-2 z-10"
+                  >
+                    <ArrowRight className="w-6 h-6" />
+                  </button>
+                </>
+              )}
+              
+              {/* Image */}
+              <div className="relative">
+                <Image
+                  src={modalImages[currentImageIndex] || ""}
+                  alt={`Gallery image ${currentImageIndex + 1}`}
+                  width={1200}
+                  height={800}
+                  className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                />
+                
+                {/* Image counter */}
+                {modalImages.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                    {currentImageIndex + 1} / {modalImages.length}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Footer */}
       <Footer />
