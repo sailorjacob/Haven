@@ -61,6 +61,12 @@ body:has(.contact-page) {
   }
 }
 
+/* Fix for studio page mobile overflow */
+body:has(.studio-page) {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 section {
   min-height: 100vh;
   position: relative;

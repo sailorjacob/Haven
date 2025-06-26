@@ -8,8 +8,8 @@ import Image from "next/image"
 
 export default function StudioPage() {
   return (
-    <main className="min-h-screen bg-zinc-50 text-zinc-900 flex flex-col items-center justify-center p-6 font-mono" suppressHydrationWarning>
-      <div className="container max-w-4xl mx-auto">
+    <main className="studio-page min-h-screen w-full max-w-full overflow-x-hidden bg-zinc-50 text-zinc-900 flex flex-col items-center justify-center p-4 sm:p-6 font-mono" suppressHydrationWarning>
+      <div className="container max-w-4xl mx-auto w-full">
         <div className="flex justify-between items-start mb-12 w-full">
           <div className="flex-1 flex justify-start">
             <div className="group relative inline-block">
@@ -135,8 +135,8 @@ export default function StudioPage() {
       </div>
         
       {/* Grid pattern background */}
-      <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
-        <div className="absolute inset-0" style={{ 
+      <div className="fixed inset-0 w-full h-full overflow-hidden opacity-5 pointer-events-none -z-10">
+        <div className="absolute inset-0 w-full h-full" style={{ 
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zM10 0h1v1h-1zM0 10h1v1H0zM10 10h1v1h-1z' fill='%23666' fill-opacity='0.2'/%3E%3C/svg%3E")`,
           backgroundSize: '20px 20px'
         }}></div>
@@ -172,7 +172,7 @@ function FeatureBox({ title, description, imageSrc }: FeatureBoxProps) {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 right-0 mt-1 bg-white/95 p-4 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100 z-10"
+          className="absolute top-full left-0 right-0 mt-1 bg-white/95 p-4 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100 z-10 max-w-full overflow-hidden"
         >
           <p className="text-xs text-zinc-700 leading-relaxed mb-3">{description}</p>
           {imageSrc && (
