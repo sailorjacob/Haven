@@ -22,6 +22,19 @@ export default function WorkPage() {
   
   const workExamples = [
     {
+      id: "apparel-merch-webstore",
+      title: "Apparel x Merch Webstore",
+      description: "Full-service e-commerce design for New York based fashion art x streetwear brand, featuring web design, typography, logo design, and product photography.",
+      category: "E-commerce Design",
+      images: [
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//merch.png",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//merch2.png",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//merch3.png"
+      ],
+      link: "#",
+      type: "gallery"
+    },
+    {
       id: "beloved-logo",
       title: "BeLoved Transportation Logo",
       description: "Logo design for NEMT provider with typography and branding.",
