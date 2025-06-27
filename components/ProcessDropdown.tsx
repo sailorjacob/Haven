@@ -24,8 +24,13 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
 
   const handleClick = useCallback(() => {
     const section = document.getElementById("process")
-    section?.scrollIntoView({ behavior: "smooth" })
-    onClose()
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+      // Small delay before closing to ensure smooth scroll starts
+      setTimeout(() => {
+        onClose()
+      }, 100)
+    }
   }, [onClose])
 
   return (
@@ -44,17 +49,18 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
         {steps.map((step, idx) => (
           <div
             key={step.id}
-            className="group flex flex-col items-center"
+            className="group flex flex-col items-center cursor-pointer"
             onMouseEnter={() => setHovered(idx)}
             onMouseLeave={() => setHovered(null)}
+            onClick={handleClick}
           >
             <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative text-zinc-300`}>
               <ProcessGearGraphic index={idx} number={step.id} active={hovered === idx} />
             </div>
 
-            <button onClick={handleClick} className="mt-3 font-medium text-sm text-zinc-400 hover:text-zinc-700 transition-colors">
+            <span className="mt-3 font-medium text-sm text-zinc-400 hover:text-zinc-700 transition-colors">
               {step.label}
-            </button>
+            </span>
 
             <p className="mt-2 text-xs leading-snug text-zinc-400 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               {step.descr}
