@@ -677,19 +677,6 @@ export default function HomePage() {
                 className="text-center"
               >
                 <div className="relative w-24 h-24 mx-auto mb-4">
-                  {/* Green pulsing dot */}
-                  <motion.div
-                    className="absolute top-2 right-2 w-3 h-3 bg-green-500 rounded-full"
-                    animate={{
-                      opacity: [1, 0.3, 1],
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
                   <svg className="w-full h-full" viewBox="0 0 100 100">
                     <circle 
                       cx="50" 
@@ -742,8 +729,8 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-semibold text-lg">24/7</span>
+                <div className="w-24 h-24 rounded-full bg-zinc-200 border-2 border-zinc-300 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-zinc-700 font-semibold text-lg">24/7</span>
                 </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
                 <p className="text-zinc-600 text-sm">Always available assistance</p>
