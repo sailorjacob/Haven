@@ -292,7 +292,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href="/studio" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
                 <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
@@ -598,7 +598,7 @@ export default function HomePage() {
           <ServicesSection />
 
           {/* Anchor for dropdown scroll */}
-          <div id="process"></div>
+          <div id="process" className="scroll-mt-20"></div>
           {/* Process */}
           <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
             {/* crosshair overlay */}
@@ -667,21 +667,6 @@ export default function HomePage() {
 
           {/* Studio Performance */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Studio Performance
-              </h2>
-              <p className="text-lg text-zinc-600">
-                Delivering exceptional results for our clients worldwide.
-              </p>
-            </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Uptime */}
               <motion.div
@@ -692,6 +677,19 @@ export default function HomePage() {
                 className="text-center"
               >
                 <div className="relative w-24 h-24 mx-auto mb-4">
+                  {/* Green pulsing dot */}
+                  <motion.div
+                    className="absolute top-2 right-2 w-3 h-3 bg-green-500 rounded-full"
+                    animate={{
+                      opacity: [1, 0.3, 1],
+                      scale: [1, 1.2, 1]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                   <svg className="w-full h-full" viewBox="0 0 100 100">
                     <circle 
                       cx="50" 
@@ -706,7 +704,7 @@ export default function HomePage() {
                       cy="50"
                       r="45"
                       fill="none"
-                      stroke="#18181b"
+                      stroke="#22c55e"
                       strokeWidth="4"
                       strokeDasharray="283"
                       strokeDashoffset="10"  
@@ -761,7 +759,7 @@ export default function HomePage() {
               >
                 <div className="h-24 flex flex-col items-center justify-center mb-4">
                   <div className="text-3xl font-semibold text-zinc-900 mb-1">
-                    100,000+
+                    10,000,000
                   </div>
                 </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
@@ -779,9 +777,6 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-8"
             >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Meet Our Team
-              </h2>
               <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                 Passionate professionals dedicated to creating exceptional digital experiences.
               </p>
@@ -860,9 +855,6 @@ export default function HomePage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-900 mb-4">
-                Start Your Project
-              </h2>
               <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
                 Ready to bring your digital vision to life? Let's create something exceptional.
               </p>
