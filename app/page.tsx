@@ -422,11 +422,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h1 className="text-4xl md:text-5xl font-light text-zinc-800 mb-4 tracking-tight">
-              studio
-            </h1>
             <p className="text-lg text-zinc-500 max-w-2xl mx-auto">
-              a digital design and web development agency crafting premium experiences for modern brands and startups.
+              digital design and web development agency crafting premium experiences for modern brands and startups.
             </p>
           </motion.div>
 
