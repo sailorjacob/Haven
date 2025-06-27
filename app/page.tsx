@@ -415,18 +415,7 @@ export default function HomePage() {
       <section className="relative z-10 pt-10 px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
           
-          {/* Haven Studio Intro */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <p className="text-lg text-zinc-500 max-w-2xl mx-auto">
-              digital design and web development agency crafting premium experiences for modern brands and startups.
-            </p>
-          </motion.div>
+
 
           {/* Work Gallery Showcase */}
           <div className="mb-16">

@@ -184,15 +184,29 @@ export default function WorkGallery() {
           
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           
+          {/* Left side click area */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300"
+            className="absolute left-0 top-0 w-1/3 h-full z-10 cursor-pointer"
+            aria-label="Previous slide"
+          />
+          
+          {/* Right side click area */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-0 w-1/3 h-full z-10 cursor-pointer"
+            aria-label="Next slide"
+          />
+          
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
