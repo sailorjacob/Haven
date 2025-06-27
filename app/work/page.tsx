@@ -14,7 +14,7 @@ export default function WorkPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [modalImages, setModalImages] = useState<string[]>([])
   const [ammocatImageIndex, setAmmocatImageIndex] = useState(0)
-  const [apparelImageIndex, setApparelImageIndex] = useState(1)
+  const [apparelImageIndex, setApparelImageIndex] = useState(0)
   const [isAmmocatTransitioning, setIsAmmocatTransitioning] = useState(false)
   const [isApparelTransitioning, setIsApparelTransitioning] = useState(false)
   
