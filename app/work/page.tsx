@@ -343,34 +343,103 @@ export default function WorkPage() {
                 {/* Visual */}
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   {work.type === "gallery" ? (
-                    <div className="grid grid-cols-2 gap-3">
-                      {work.images?.map((image, imgIndex) => (
+                    work.id === "apparel-merch-webstore" ? (
+                      /* Special layout for merch - one big image and two smaller ones */
+                      <div className="space-y-3">
+                        {/* Main large image */}
                         <motion.div
-                          key={imgIndex}
-                          initial={{ opacity: 0, scale: 0.9 }}
+                          initial={{ opacity: 0, scale: 0.95 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true, margin: "-100px" }}
-                          transition={{ duration: 0.5, delay: imgIndex * 0.1, ease: "easeOut" }}
-                          className="relative aspect-square overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                          className="relative aspect-[16/10] overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
                           style={{ willChange: "transform, opacity" }}
-                          onClick={() => openModal(work.images || [], imgIndex)}
+                          onClick={() => openModal(work.images || [], 0)}
                         >
                           <Image
-                            src={image}
-                            alt={`${work.title} example ${imgIndex + 1}`}
+                            src={work.images?.[0] || ""}
+                            alt={`${work.title} main view`}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-2">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-3">
+                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                               </svg>
                             </div>
                           </div>
+                          {/* Gallery indicator */}
+                          <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            1 / {work.images?.length || 0}
+                          </div>
                         </motion.div>
-                      ))}
-                    </div>
+                        
+                        {/* Two smaller preview images */}
+                        <div className="grid grid-cols-2 gap-3">
+                          {work.images?.slice(1, 3).map((image, imgIndex) => (
+                            <motion.div
+                              key={imgIndex + 1}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              viewport={{ once: true, margin: "-100px" }}
+                              transition={{ duration: 0.5, delay: (imgIndex + 1) * 0.1, ease: "easeOut" }}
+                              className="relative aspect-[4/3] overflow-hidden rounded-lg border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
+                              style={{ willChange: "transform, opacity" }}
+                              onClick={() => openModal(work.images || [], imgIndex + 1)}
+                            >
+                              <Image
+                                src={image}
+                                alt={`${work.title} view ${imgIndex + 2}`}
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-2">
+                                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                  </svg>
+                                </div>
+                              </div>
+                              {/* Gallery indicator */}
+                              <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm text-white text-xs px-1.5 py-0.5 rounded-full">
+                                {imgIndex + 2}
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      /* Default gallery layout for other items */
+                      <div className="grid grid-cols-2 gap-3">
+                        {work.images?.map((image, imgIndex) => (
+                          <motion.div
+                            key={imgIndex}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.5, delay: imgIndex * 0.1, ease: "easeOut" }}
+                            className="relative aspect-square overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
+                            style={{ willChange: "transform, opacity" }}
+                            onClick={() => openModal(work.images || [], imgIndex)}
+                          >
+                            <Image
+                              src={image}
+                              alt={`${work.title} example ${imgIndex + 1}`}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-2">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                </svg>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    )
                   ) : (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
