@@ -231,9 +231,6 @@ export default function AnthonyHadenGuestPage() {
           viewport={{ once: true }}
           className="text-center mb-16 pt-16 border-t border-zinc-800"
         >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
-            Ready to Build?
-          </h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
             Let us create a custom digital experience that elevates your brand and connects with your audience.
           </p>

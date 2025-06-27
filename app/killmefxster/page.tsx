@@ -551,9 +551,6 @@ export default function KillMeFxsterPage() {
           viewport={{ once: true }}
           className="text-center mb-16 pt-16 border-t border-zinc-800"
         >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
-            Ready to Build?
-          </h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
             Let us help you create platforms that matter and connect with the right people.
           </p>

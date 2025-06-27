@@ -13,11 +13,12 @@ export default function StudioPage() {
         <div className="flex justify-between items-start mb-12 w-full">
           <div className="flex-1 flex justify-start">
             <div className="group relative inline-block">
-              <span
-                className="inline-flex items-center justify-center border border-zinc-200 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
+              <Link
+                href="/moonlight-garden"
+                className="inline-flex items-center justify-center border border-zinc-200 hover:border-zinc-300 text-zinc-700 py-2 px-4 text-xs lowercase tracking-widest rounded-full transition-all duration-300"
               >
                 moonlight garden
-              </span>
+              </Link>
               <div className="absolute top-full right-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
                 <div className="bg-white/95 p-3 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
                   <p className="text-xs text-zinc-700 leading-relaxed whitespace-nowrap">tap with bitcoin for food</p>
@@ -44,11 +45,12 @@ export default function StudioPage() {
 
           <div className="flex-1 flex justify-end">
             <div className="group relative inline-block">
-              <span
-                className="inline-flex items-center justify-center border border-zinc-200 text-zinc-500 py-2 px-4 text-xs lowercase tracking-widest rounded-full cursor-not-allowed opacity-50"
+              <Link
+                href="/roundabout"
+                className="inline-flex items-center justify-center border border-zinc-200 hover:border-zinc-300 text-zinc-700 py-2 px-4 text-xs lowercase tracking-widest rounded-full transition-all duration-300"
               >
                 roundabout
-              </span>
+              </Link>
               <div className="absolute top-full left-0 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
                 <div className="bg-white/95 p-3 shadow-xl backdrop-blur-sm rounded-sm border border-zinc-100">
                   <p className="text-xs text-zinc-700 leading-relaxed whitespace-nowrap">tap with bitcoin for a ride to the doctor</p>
@@ -109,7 +111,7 @@ export default function StudioPage() {
           className="text-center"
         >
           <Link
-            href="/explore" 
+            href="/work" 
             className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-700 py-3 px-8 text-xs lowercase tracking-widest transition-all duration-300 border border-zinc-200"
           >
             explore

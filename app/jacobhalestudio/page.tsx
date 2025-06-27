@@ -231,9 +231,6 @@ export default function JacobHaleStudioPage() {
           viewport={{ once: true }}
           className="text-center mb-16 pt-16 border-t border-zinc-800"
         >
-          <h2 className="text-2xl md:text-3xl font-light text-zinc-200 mb-6">
-            Ready to Build?
-          </h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
             Let us create a custom website that perfectly showcases your work and elevates your brand.
           </p>

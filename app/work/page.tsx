@@ -69,7 +69,7 @@ export default function WorkPage() {
   const workExamples = [
     {
       id: "apparel-merch-webstore",
-      title: "Apparel x Merch Webstore",
+      title: "LSCHER Apparel x Merch Webstore",
       description: "Full-service e-commerce design for New York based fashion art x streetwear brand, featuring web design, typography, logo design, and product photography.",
       category: "E-commerce Design",
       images: [
@@ -627,9 +627,9 @@ export default function WorkPage() {
               {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+                className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors bg-black/20 hover:bg-black/40 rounded-full p-2 z-10"
               >
-                <X className="w-8 h-8" />
+                <X className="w-6 h-6" />
               </button>
               
               {/* Navigation arrows */}
