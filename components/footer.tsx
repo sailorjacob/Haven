@@ -20,9 +20,6 @@ export function Footer() {
             <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
               Terms
             </Link>
-            <Link href="/advertising" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-              Advertising
-            </Link>
             <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
               Contact
             </Link>
@@ -35,9 +32,6 @@ export function Footer() {
             </Link>
             <Link href="/terms" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
               Terms
-            </Link>
-            <Link href="/advertising" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
-              Advertising
             </Link>
             <Link href="/contact" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors">
               Contact

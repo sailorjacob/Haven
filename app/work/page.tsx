@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, ExternalLink, Hexagon, ArrowRight, Menu, X } from "lucide-react"
+import { ArrowLeft, ExternalLink, Hexagon, ArrowRight, Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react"
 import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
@@ -13,6 +13,10 @@ export default function WorkPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [modalImages, setModalImages] = useState<string[]>([])
+  const [ammocatImageIndex, setAmmocatImageIndex] = useState(0)
+  const [apparelImageIndex, setApparelImageIndex] = useState(1)
+  const [isAmmocatTransitioning, setIsAmmocatTransitioning] = useState(false)
+  const [isApparelTransitioning, setIsApparelTransitioning] = useState(false)
   
   // Function to get a random highlight color - precompute for better performance
   const getRandomHighlightColor = () => {
@@ -44,6 +48,52 @@ export default function WorkPage() {
     setCurrentImageIndex((prev) => (prev - 1 + modalImages.length) % modalImages.length)
   }
   
+  // Ammo cat navigation functions
+  const nextAmmocatImage = () => {
+    const ammocatWork = workExamples.find(work => work.id === "ammocat-game")
+    if (ammocatWork?.images && !isAmmocatTransitioning) {
+      setIsAmmocatTransitioning(true)
+      setTimeout(() => {
+        setAmmocatImageIndex((prev) => (prev + 1) % ammocatWork.images.length)
+        setTimeout(() => setIsAmmocatTransitioning(false), 300)
+      }, 300)
+    }
+  }
+  
+  const prevAmmocatImage = () => {
+    const ammocatWork = workExamples.find(work => work.id === "ammocat-game")
+    if (ammocatWork?.images && !isAmmocatTransitioning) {
+      setIsAmmocatTransitioning(true)
+      setTimeout(() => {
+        setAmmocatImageIndex((prev) => (prev - 1 + ammocatWork.images.length) % ammocatWork.images.length)
+        setTimeout(() => setIsAmmocatTransitioning(false), 300)
+      }, 300)
+    }
+  }
+  
+  // Apparel navigation functions
+  const nextApparelImage = () => {
+    const apparelWork = workExamples.find(work => work.id === "apparel-merch-webstore")
+    if (apparelWork?.images && !isApparelTransitioning) {
+      setIsApparelTransitioning(true)
+      setTimeout(() => {
+        setApparelImageIndex((prev) => (prev + 1) % apparelWork.images.length)
+        setTimeout(() => setIsApparelTransitioning(false), 300)
+      }, 300)
+    }
+  }
+  
+  const prevApparelImage = () => {
+    const apparelWork = workExamples.find(work => work.id === "apparel-merch-webstore")
+    if (apparelWork?.images && !isApparelTransitioning) {
+      setIsApparelTransitioning(true)
+      setTimeout(() => {
+        setApparelImageIndex((prev) => (prev - 1 + apparelWork.images.length) % apparelWork.images.length)
+        setTimeout(() => setIsApparelTransitioning(false), 300)
+      }, 300)
+    }
+  }
+  
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -69,7 +119,7 @@ export default function WorkPage() {
   const workExamples = [
     {
       id: "apparel-merch-webstore",
-      title: "LSCHER Apparel x Merch Webstore",
+      title: "LSCHER Apparel x Webstore",
       description: "Full-service e-commerce design for New York based fashion art x streetwear brand, featuring web design, typography, logo design, and product photography.",
       category: "E-commerce Design",
       images: [
@@ -94,7 +144,10 @@ export default function WorkPage() {
       title: "Ammocat Mini Game",
       description: "Browser-based game for New York artist Ammo Cat with custom gameplay.",
       category: "Game Development",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      images: [
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+        "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/ammocat//minigame.png"
+      ],
       link: "https://ammocat.com/game",
       type: "interactive"
     },
@@ -189,6 +242,13 @@ export default function WorkPage() {
                   <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
                 </Link>
                 <Link 
+                  href="/work" 
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                >
+                  <span className="group-hover:hidden">Work</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Work</span>
+                </Link>
+                <Link 
                   href="/book" 
                   className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
                 >
@@ -236,6 +296,14 @@ export default function WorkPage() {
                 >
                   <span className="group-hover:hidden">Studio</span>
                   <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
+                </Link>
+                <Link 
+                  href="/work" 
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="group-hover:hidden">Work</span>
+                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Work</span>
                 </Link>
                 <Link 
                   href="/book"
@@ -344,71 +412,70 @@ export default function WorkPage() {
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   {work.type === "gallery" ? (
                     work.id === "apparel-merch-webstore" ? (
-                      /* Special layout for merch - one big image and two smaller ones */
-                      <div className="space-y-3">
-                        {/* Main large image */}
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.95 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true, margin: "-100px" }}
-                          transition={{ duration: 0.5, ease: "easeOut" }}
-                          className="relative aspect-[16/10] overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
-                          style={{ willChange: "transform, opacity" }}
-                          onClick={() => openModal(work.images || [], 0)}
-                        >
-                          <Image
-                            src={work.images?.[0] || ""}
-                            alt={`${work.title} main view`}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-3">
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                              </svg>
-                            </div>
+                      /* Arrow navigation layout for apparel like ammo cat */
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="relative aspect-[16/10] overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
+                        style={{ willChange: "transform, opacity" }}
+                        onClick={() => openModal(work.images || [], apparelImageIndex)}
+                      >
+                        <Image
+                          src={work.images?.[apparelImageIndex] || ""}
+                          alt={`${work.title} view ${apparelImageIndex + 1}`}
+                          fill
+                          className={`object-cover group-hover:scale-105 transition-all duration-700 ease-in-out ${
+                            isApparelTransitioning ? 'opacity-30' : 'opacity-100'
+                          }`}
+                          style={{ 
+                            transform: `scale(${isApparelTransitioning ? '1.02' : '1'})`,
+                            transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-3">
+                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
                           </div>
-                          {/* Gallery indicator */}
-                          <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
-                            1 / {work.images?.length || 0}
-                          </div>
-                        </motion.div>
-                        
-                        {/* Two smaller preview images */}
-                        <div className="grid grid-cols-2 gap-3">
-                          {work.images?.slice(1, 3).map((image, imgIndex) => (
-                            <motion.div
-                              key={imgIndex + 1}
-                              initial={{ opacity: 0, scale: 0.9 }}
-                              whileInView={{ opacity: 1, scale: 1 }}
-                              viewport={{ once: true, margin: "-100px" }}
-                              transition={{ duration: 0.5, delay: (imgIndex + 1) * 0.1, ease: "easeOut" }}
-                              className="relative aspect-[4/3] overflow-hidden rounded-lg border border-zinc-200 hover:border-zinc-400 transition-colors cursor-pointer group"
-                              style={{ willChange: "transform, opacity" }}
-                              onClick={() => openModal(work.images || [], imgIndex + 1)}
-                            >
-                              <Image
-                                src={image}
-                                alt={`${work.title} view ${imgIndex + 2}`}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                              />
-                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-2">
-                                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                                  </svg>
-                                </div>
-                              </div>
-                              {/* Gallery indicator */}
-                              <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-sm text-white text-xs px-1.5 py-0.5 rounded-full">
-                                {imgIndex + 2}
-                              </div>
-                            </motion.div>
-                          ))}
                         </div>
-                      </div>
+                        
+                        {/* Navigation arrows for apparel */}
+                        {work.images && work.images.length > 1 && (
+                          <>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                prevApparelImage()
+                              }}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                            >
+                              <ChevronLeft className="w-5 h-5" />
+                            </button>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                nextApparelImage()
+                              }}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                            >
+                              <ChevronRight className="w-5 h-5" />
+                            </button>
+                            
+                            {/* Image indicator */}
+                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-2 py-1 rounded-full text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              {apparelImageIndex + 1} / {work.images.length}
+                            </div>
+                          </>
+                        )}
+                        
+                        {/* Gallery indicator */}
+                        <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                          Gallery: {apparelImageIndex + 1} / {work.images?.length || 0}
+                        </div>
+                      </motion.div>
                     ) : (
                       /* Default gallery layout for other items */
                       <div className="grid grid-cols-2 gap-3">
@@ -440,6 +507,58 @@ export default function WorkPage() {
                         ))}
                       </div>
                     )
+                  ) : work.id === "ammocat-game" && work.images ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      className="relative aspect-video overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-400 transition-colors bg-white p-8 flex items-center justify-center group cursor-pointer"
+                      style={{ willChange: "transform, opacity" }}
+                      onClick={() => openModal(work.images || [], ammocatImageIndex)}
+                    >
+                      <Image
+                        src={work.images[ammocatImageIndex] || ""}
+                        alt={work.title}
+                        fill
+                        className={`object-contain transition-all duration-700 ease-in-out ${
+                          isAmmocatTransitioning ? 'opacity-30' : 'opacity-100'
+                        }`}
+                        style={{ 
+                          transform: `scale(${isAmmocatTransitioning ? '1.02' : '1'})`,
+                          transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                        }}
+                      />
+                      
+                      {/* Navigation arrows for ammo cat */}
+                      {work.images.length > 1 && (
+                        <>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              prevAmmocatImage()
+                            }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                          >
+                            <ChevronLeft className="w-5 h-5" />
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              nextAmmocatImage()
+                            }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                          >
+                            <ChevronRight className="w-5 h-5" />
+                          </button>
+                          
+                          {/* Image indicator */}
+                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-2 py-1 rounded-full text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            {ammocatImageIndex + 1} / {work.images.length}
+                          </div>
+                        </>
+                      )}
+                    </motion.div>
                   ) : (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
