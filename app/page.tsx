@@ -592,7 +592,7 @@ export default function HomePage() {
           <ServicesSection />
 
           {/* Anchor for dropdown scroll */}
-          <div id="process" className="scroll-mt-20"></div>
+          <div id="process" className="scroll-mt-32"></div>
           {/* Process */}
           <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
             {/* crosshair overlay */}
