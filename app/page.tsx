@@ -13,6 +13,7 @@ import { ServicesSection } from "./components/ServicesSection"
 import { ScatteredStars } from "./components/ScatteredStars"
 import ProcessDropdown from "@/components/ProcessDropdown"
 import CrosshairOverlay from "../components/CrosshairOverlay"
+import WorkGallery from "@/components/WorkGallery"
 
 type Project = {
   id: string
@@ -426,6 +427,26 @@ export default function HomePage() {
               digital design and web development agency crafting premium experiences for modern brands and startups.
             </p>
           </motion.div>
+
+          {/* Work Gallery Showcase */}
+          <div className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
+              <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-3">
+                Featured Work
+              </h2>
+              <p className="text-zinc-600 max-w-xl mx-auto">
+                Explore our latest projects showcasing custom development, design, and AI-powered solutions.
+              </p>
+            </motion.div>
+
+            <WorkGallery />
+          </div>
 
           {/* Selected Projects */}
           <div>
