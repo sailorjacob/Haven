@@ -597,7 +597,63 @@ export default function AdvertisingPage() {
             </div>
           </div>
 
-          {/* Portfolio Showcase */}
+          {/* FAQ Section - optimized animations */}
+          <div className="bg-zinc-50 rounded-xl p-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="text-center mb-8"
+            >
+              <p className="text-sm font-medium text-purple-600 mb-2">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+                Frequently asked questions
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                Everything you need to know about our advertising services
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="max-w-3xl mx-auto divide-y divide-zinc-200"
+            >
+              {faqs.map((faq, index) => (
+                <div key={index} className="py-5">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="flex w-full justify-between items-start text-left"
+                  >
+                    <span className="text-lg font-medium text-zinc-900">{faq.question}</span>
+                    <span className="ml-6 flex-shrink-0">
+                      {openFaq === index ? (
+                        <X className="h-5 w-5 text-zinc-500" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-zinc-500" />
+                      )}
+                    </span>
+                  </button>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="mt-2 pr-12"
+                    >
+                      <p className="text-zinc-600">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Portfolio Showcase - moved below FAQ */}
           <div className="bg-zinc-50 rounded-xl p-8">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -674,28 +730,28 @@ export default function AdvertisingPage() {
                 </Link>
               </motion.div>
 
-              {/* Kill Me Faster */}
+              {/* BeLoved - replacing killmefaster */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               >
-                <Link href="https://killmefaster.com" target="_blank" rel="noopener noreferrer" className="block group">
+                <Link href="/beloved" className="block group">
                   <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <Image
-                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png"
-                        alt="Kill Me Faster Artist Website"
+                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png"
+                        alt="BeLoved Transportation Website"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">killmefaster.com</h3>
-                      <p className="text-zinc-600 mb-3">The ultimate escape route and weapon. An artist's journey through the dark arts, collecting bitcoin, and building a digital frontier with an army of mercenaries and robots fighting for freedom.</p>
+                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">BeLoved Transportation</h3>
+                      <p className="text-zinc-600 mb-3">iOS app and web platform with interactive scheduling for NEMT Provider BeLoved Transportation.</p>
                       <div className="flex items-center text-purple-600 font-medium">
-                        Visit Website
+                        View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </div>
@@ -872,62 +928,6 @@ export default function AdvertisingPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-
-          {/* FAQ Section - optimized animations */}
-          <div className="bg-zinc-50 rounded-xl p-8">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="text-center mb-8"
-            >
-              <p className="text-sm font-medium text-purple-600 mb-2">FAQ</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Frequently asked questions
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Everything you need to know about our advertising services
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="max-w-3xl mx-auto divide-y divide-zinc-200"
-            >
-              {faqs.map((faq, index) => (
-                <div key={index} className="py-5">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="flex w-full justify-between items-start text-left"
-                  >
-                    <span className="text-lg font-medium text-zinc-900">{faq.question}</span>
-                    <span className="ml-6 flex-shrink-0">
-                      {openFaq === index ? (
-                        <X className="h-5 w-5 text-zinc-500" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5 text-zinc-500" />
-                      )}
-                    </span>
-                  </button>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="mt-2 pr-12"
-                    >
-                      <p className="text-zinc-600">{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </div>
-              ))}
             </motion.div>
           </div>
         </div>
