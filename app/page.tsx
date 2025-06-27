@@ -292,7 +292,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href="/" className="flex items-center">
+              <Link href="/studio" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
                 <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
