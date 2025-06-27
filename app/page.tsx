@@ -299,15 +299,11 @@ export default function HomePage() {
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
-                {/* Process trigger container */}
-                <div className="relative flex items-center space-x-6" onMouseEnter={()=>setProcessOpen(true)}>
+                {/* Studio with dropdown trigger */}
+                <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
                   <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
                     <span className="group-hover:hidden">Studio</span>
                     <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
-                  </Link>
-                  <Link href="/work" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
-                    <span className="group-hover:hidden">Work</span>
-                    <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
                   </Link>
                   {/* Dropdown indicator */}
                   <motion.span
@@ -320,6 +316,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Static links */}
+                <Link href="/work" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
+                  <span className="group-hover:hidden">Work</span>
+                  <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
+                </Link>
                 <Link href="/gallery" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
                   <span className="group-hover:hidden">Gallery</span>
                   <span className={`hidden group-hover:inline ${navColors.gallery}`}>Gallery</span>
