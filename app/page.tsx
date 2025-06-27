@@ -56,6 +56,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
+      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "/ammocat",
+      category: "website"
+    },
+    {
       id: "1stclassstudios",
       title: "1stclassstudios.com",
       description: "Professional recording studio with three facilities just 45 minutes from Manhattan.",
@@ -65,12 +74,12 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
-      technologies: ["Vue.js", "Firebase", "Stripe", "Algolia"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "/ammocat",
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "Photography portfolio website with responsive gallery.",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
+      link: "/jacobhalestudio",
       category: "website"
     },
     {
@@ -81,15 +90,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
       category: "webapp"
-    },
-    {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "Photography portfolio website with responsive gallery.",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacobhalestudio.png",
-      link: "/jacobhalestudio",
-      category: "website"
     },
     {
       id: "roundabout",
