@@ -120,7 +120,7 @@ export default function GalleryPage() {
               </Link>
               
               {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-6">
+                            <div className="hidden md:flex items-center space-x-6">
                 <Link 
                   href="/studio" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
@@ -129,18 +129,11 @@ export default function GalleryPage() {
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Studio</span>
                 </Link>
                 <Link 
-                  href="/gallery" 
+                  href="/gallery"
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Gallery</span>
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Gallery</span>
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
-                  <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book" 
@@ -197,14 +190,6 @@ export default function GalleryPage() {
                 >
                   <span className="group-hover:hidden">Gallery</span>
                   <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Gallery</span>
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${getRandomHighlightColor()}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book"

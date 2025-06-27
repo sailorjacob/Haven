@@ -47,12 +47,8 @@ export default function HomePage() {
     studio: getSeededRandomColor('studio'),
     work: getSeededRandomColor('work'),
     gallery: getSeededRandomColor('gallery'),
-    contact: getSeededRandomColor('contact'),
-    pricing: getSeededRandomColor('pricing')
+    contact: getSeededRandomColor('contact')
   }), [])
-  
-  // State to track hover for pricing button
-  const [isPricingHovered, setPricingHovered] = useState(false);
   
   // Track which process step is hovered
   const [hoveredStep, setHoveredStep] = useState<number | null>(null)
@@ -336,24 +332,6 @@ export default function HomePage() {
 
             <div className="flex items-center space-x-4">
               <Link 
-                href="/pricing"
-                className="hidden md:inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
-                onMouseEnter={() => setPricingHovered(true)}
-                onMouseLeave={() => setPricingHovered(false)}
-              >
-                {/* Yellow background that fills from left on hover */}
-                <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                
-                {/* Text content */}
-                <span className={`relative z-10 transition-opacity duration-300 ${isPricingHovered ? 'opacity-0' : 'opacity-100'}`}>
-                  View Pricing
-                </span>
-                
-                {/* Arrow icon that appears on hover */}
-                <ArrowRight className={`w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 ${isPricingHovered ? 'opacity-100' : 'opacity-0'}`} />
-              </Link>
-              
-              <Link 
                 href="/contact"
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
               >
@@ -420,14 +398,6 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Design Book
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${navColors.pricing}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/contact"

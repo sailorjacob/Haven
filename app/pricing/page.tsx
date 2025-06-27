@@ -99,12 +99,6 @@ export default function PricingPage() {
                   Studio
                 </Link>
                 <Link 
-                  href="/pricing" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                >
-                  Pricing
-                </Link>
-                <Link 
                   href="/book" 
                   className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
                 >
@@ -150,13 +144,6 @@ export default function PricingPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Studio
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Pricing
                 </Link>
                 <Link 
                   href="/book"

@@ -189,13 +189,6 @@ export default function WorkPage() {
                   <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
                 </Link>
                 <Link 
-                  href="/pricing" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
-                  <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Pricing</span>
-                </Link>
-                <Link 
                   href="/book" 
                   className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
                 >
@@ -243,14 +236,6 @@ export default function WorkPage() {
                 >
                   <span className="group-hover:hidden">Studio</span>
                   <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Pricing</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Pricing</span>
                 </Link>
                 <Link 
                   href="/book"

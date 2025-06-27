@@ -78,12 +78,6 @@ export default function DesignBookPage() {
                   Studio
                 </Link>
                 <Link 
-                  href="/pricing" 
-                  className="text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
-                >
-                  Pricing
-                </Link>
-                <Link 
                   href="/book" 
                   className="text-sm text-amber-900 hover:text-amber-950 transition-colors tracking-wider uppercase font-light ml-2"
                 >
@@ -131,13 +125,6 @@ export default function DesignBookPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Studio
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="block text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Pricing
                 </Link>
                 <Link 
                   href="/book"
