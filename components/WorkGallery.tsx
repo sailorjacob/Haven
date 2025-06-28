@@ -93,7 +93,7 @@ const workExamples: WorkItem[] = [
 ]
 
 export default function WorkGallery() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * workExamples.length))
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
 
