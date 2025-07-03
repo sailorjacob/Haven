@@ -417,8 +417,8 @@ export default function HomePage() {
           
 
 
-          {/* Work Gallery Showcase */}
-          <div className="mb-16">
+          {/* Work Gallery Showcase - HIDDEN */}
+          {/* <div className="mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -435,7 +435,7 @@ export default function HomePage() {
             </motion.div>
 
             <WorkGallery />
-          </div>
+          </div> */}
 
           {/* Selected Projects */}
           <div>
