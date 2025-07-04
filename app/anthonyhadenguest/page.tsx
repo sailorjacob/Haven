@@ -47,7 +47,7 @@ export default function AnthonyHadenGuestPage() {
             <span className="text-zinc-600">•</span>
             <span>Portfolio</span>
             <span className="text-zinc-600">•</span>
-            <a href="https://anthonyhadenguest.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-white transition-colors">
+            <a href="https://anthonyhadenguest.net/" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-white transition-colors">
               Visit Website
             </a>
           </div>
