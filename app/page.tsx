@@ -56,6 +56,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "salomatic",
+      title: "Salomatic Pitch Deck",
+      description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
+      technologies: ["Design", "Branding", "Healthcare", "Pitch Deck"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
+      link: "https://salomatic.com/",
+      category: "website"
+    },
+    {
       id: "ammocat",
       title: "ammocat3000.com",
       description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
