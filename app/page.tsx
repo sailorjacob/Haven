@@ -759,7 +759,7 @@ export default function HomePage() {
               >
                 <div className="h-24 flex flex-col items-center justify-center mb-4">
                   <div className="text-3xl font-semibold text-zinc-900 mb-1">
-                    10,000,000
+                    10,000
                   </div>
                 </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
