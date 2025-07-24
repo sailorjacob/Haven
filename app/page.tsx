@@ -165,7 +165,7 @@ export default function HomePage() {
     }
   ]
 
-  const hiddenIds: string[] = []
+  const hiddenIds: string[] = ["xrated"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
