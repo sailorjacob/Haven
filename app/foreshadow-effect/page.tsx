@@ -129,7 +129,9 @@ export default function ForeshadowEffectPage() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [timeLeft, setTimeLeft] = useState("")
 
-  const today = new Date().toLocaleDateString('en-US', {
+  // Calculate the publication date - 10 years before the target date
+  const publicationDate = new Date('2025-04-22T00:00:00Z')
+  const today = publicationDate.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
