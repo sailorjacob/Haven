@@ -18,10 +18,10 @@ export const ServicesSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true, margin: "-50px" }}
-        className="relative z-10 text-center mb-6"
+        className="relative z-10 text-center mb-5"
       >
         <motion.h2 
-          className="text-2xl md:text-3xl font-light text-zinc-900 mb-3"
+          className="text-xl md:text-2xl font-light text-zinc-900 mb-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export const ServicesSection = () => {
           Services
         </motion.h2>
         <motion.p 
-          className="text-base text-zinc-600 max-w-2xl mx-auto"
+          className="text-sm text-zinc-600 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}

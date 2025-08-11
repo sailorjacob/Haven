@@ -53,7 +53,7 @@ export const ServiceCard = ({ icon: Icon, title, description, delay, color, imag
   return (
     <motion.div
       style={{ opacity, scale, y }}
-      className="relative bg-white/80 backdrop-blur-sm p-8 rounded-xl border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
+      className="relative bg-white/80 backdrop-blur-sm p-6 rounded-lg border border-zinc-200 hover:border-zinc-400 transition-all duration-300 hover:shadow-lg overflow-hidden group"
     >
       {/* Background Image Window Effect */}
       <div className="absolute inset-0 overflow-hidden">
@@ -76,16 +76,16 @@ export const ServiceCard = ({ icon: Icon, title, description, delay, color, imag
 
       <div className="relative z-10">
         <motion.div 
-          className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mb-6"
+          className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center mb-4"
           initial={{ rotate: -180, opacity: 0 }}
           whileInView={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay }}
           viewport={{ once: true }}
         >
-          <Icon className="w-6 h-6 text-zinc-700" />
+          <Icon className="w-5 h-5 text-zinc-700" />
         </motion.div>
         <motion.h3 
-          className="text-xl font-medium text-zinc-900 mb-4"
+          className="text-lg font-medium text-zinc-900 mb-3"
           initial={{ x: -20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: delay + 0.1 }}
@@ -94,7 +94,7 @@ export const ServiceCard = ({ icon: Icon, title, description, delay, color, imag
           {title}
         </motion.h3>
         <motion.p 
-          className="text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors"
+          className="text-zinc-600 text-sm leading-relaxed group-hover:text-zinc-800 transition-colors"
           initial={{ x: -20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: delay + 0.2 }}

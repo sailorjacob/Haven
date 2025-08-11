@@ -623,10 +623,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-6"
             >
-              <h2 className="text-2xl md:text-3xl font-light text-zinc-800 mb-2">
+              <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">
                 Process
               </h2>
-              <p className="text-base text-zinc-600 max-w-2xl mx-auto">
+              <p className="text-sm text-zinc-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
               </p>
             </motion.div>
@@ -667,10 +667,10 @@ export default function HomePage() {
                   <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
                     <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
                   </div>
-                  <h3 className="text-lg font-medium text-zinc-600 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                  <h3 className="text-base font-medium text-zinc-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
                     {step.title}
                   </h3>
-                  <p className="text-zinc-500 leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                  <p className="text-zinc-500 text-sm leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
                     {step.description}
                   </p>
                 </motion.div>
@@ -759,7 +759,7 @@ export default function HomePage() {
               >
                 <div className="h-24 flex flex-col items-center justify-center mb-4">
                   <div className="text-3xl font-semibold text-zinc-900 mb-1">
-                    10,000
+                    1,000,000+
                   </div>
                 </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
