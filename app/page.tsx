@@ -327,10 +327,6 @@ export default function HomePage() {
                 </div>
 
                 {/* Static links */}
-                <Link href="/gallery" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
-                  <span className="group-hover:hidden">Gallery</span>
-                  <span className={`hidden group-hover:inline ${navColors.gallery}`}>Gallery</span>
-                </Link>
                 <Link href="/work" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
@@ -384,14 +380,7 @@ export default function HomePage() {
                   <span className="group-hover:hidden">Studio</span>
                   <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
                 </Link>
-                <Link 
-                  href="/gallery"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Gallery</span>
-                  <span className={`hidden group-hover:inline ${navColors.gallery}`}>Gallery</span>
-                </Link>
+                
                 <Link 
                   href="/work" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"

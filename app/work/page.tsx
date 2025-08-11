@@ -235,43 +235,16 @@ export default function WorkPage() {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
-                  href="/" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
-                </Link>
-                <Link 
-                  href="/gallery" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                >
-                  <span className="group-hover:hidden">Gallery</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Gallery</span>
-                </Link>
-                <Link 
                   href="/work" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                 >
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Work</span>
                 </Link>
-                <Link 
-                  href="/book" 
-                  className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light ml-2"
-                >
-                  Design Book
-                </Link>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
-              <Link 
-                href="/contact"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
-              >
-                <span className="group-hover:hidden">Contact</span>
-                <span className={`hidden group-hover:inline ${precomputedColors[4]}`}>Contact</span>
-              </Link>
               
               {/* Mobile Menu Button */}
               <button 
@@ -297,43 +270,12 @@ export default function WorkPage() {
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
-                  href="/" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[1]}`}>Studio</span>
-                </Link>
-                <Link 
-                  href="/gallery" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Gallery</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[2]}`}>Gallery</span>
-                </Link>
-                <Link 
                   href="/work" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Work</span>
-                </Link>
-                <Link 
-                  href="/book"
-                  className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Design Book
-                </Link>
-                <Link 
-                  href="/contact"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Contact</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[4]}`}>Contact</span>
                 </Link>
               </div>
             </motion.div>
