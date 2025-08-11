@@ -61,7 +61,7 @@ export default function HomePage() {
       description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
       technologies: ["Design", "Branding", "Healthcare", "Pitch Deck"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
-      link: "https://salomatic.com/",
+      link: "/salomatic",
       category: "website"
     },
     {
@@ -70,7 +70,7 @@ export default function HomePage() {
       description: "Professional recording studio with three facilities just 45 minutes from Manhattan.",
       technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
-      link: "https://1stclassstudios.com",
+      link: "/1stclassstudios",
       category: "website"
     },
     {
@@ -165,7 +165,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["xrated", "killmefxster"]
+  const hiddenIds: string[] = ["xrated", "killmefxster", "moonlight"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
