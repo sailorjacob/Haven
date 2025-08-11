@@ -142,7 +142,7 @@ export default function HomePage() {
       description: "Portfolio for UI/UX designer Klaire Rasche with game design and AI technology.",
       technologies: ["Next.js", "Tailwind CSS", "AI Tools", "Game Design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
-      link: "https://www.klaire.dev/",
+      link: "https://www.klaire.dev/klaire-portfolio.html",
       category: "website"
     },
     {
