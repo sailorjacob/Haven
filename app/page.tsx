@@ -42,6 +42,7 @@ export default function HomePage() {
   const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
+  const [processSectionOpen, setProcessSectionOpen] = useState(false)
   
   // Use useMemo to compute colors once and keep them consistent
   const navColors = useMemo(() => ({
@@ -616,23 +617,47 @@ export default function HomePage() {
           <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden">
             {/* crosshair overlay */}
             <CrosshairOverlay parentRef={processRef} />
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-center mb-6"
-            >
-              <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">
-                Process
-              </h2>
-              <p className="text-sm text-zinc-600 max-w-2xl mx-auto">
-                A proven methodology that ensures successful project delivery from concept to launch.
-              </p>
-            </motion.div>
+            <div className="flex items-center justify-center">
+              <button
+                aria-expanded={processSectionOpen}
+                onClick={() => setProcessSectionOpen((v) => !v)}
+                className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                <motion.span
+                  animate={{ rotate: processSectionOpen ? 180 : 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="inline-block"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </motion.span>
+                <span className="uppercase tracking-wider">Process</span>
+              </button>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {[
+            <AnimatePresence initial={false}>
+              {processSectionOpen && (
+                <motion.div
+                  key="process-content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="mt-4"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="text-center mb-6"
+                  >
+                    <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">Process</h2>
+                    <p className="text-sm text-zinc-600 max-w-2xl mx-auto">A proven methodology that ensures successful project delivery from concept to launch.</p>
+                  </motion.div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    {[
                 {
                   number: "01",
                   title: "Discovery",
@@ -653,29 +678,32 @@ export default function HomePage() {
                   title: "Launch & Optimize",
                   description: "We deploy your project and provide ongoing support to ensure continued success."
                 }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  onMouseEnter={() => setHoveredStep(index)}
-                  onMouseLeave={() => setHoveredStep(null)}
-                  className={`text-center group transition-opacity duration-300 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-25' : 'opacity-100'}`}
-                >
-                  <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
-                    <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
+                    ].map((step, index) => (
+                      <motion.div
+                        key={step.number}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        onMouseEnter={() => setHoveredStep(index)}
+                        onMouseLeave={() => setHoveredStep(null)}
+                        className={`text-center group transition-opacity duration-300 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-25' : 'opacity-100'}`}
+                      >
+                        <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
+                          <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
+                        </div>
+                        <h3 className="text-base font-medium text-zinc-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                          {step.title}
+                        </h3>
+                        <p className="text-zinc-500 text-sm leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                          {step.description}
+                        </p>
+                      </motion.div>
+                    ))}
                   </div>
-                  <h3 className="text-base font-medium text-zinc-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
-                    {step.title}
-                  </h3>
-                  <p className="text-zinc-500 text-sm leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
-                    {step.description}
-                  </p>
                 </motion.div>
-              ))}
-            </div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Studio Performance */}
@@ -742,7 +770,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-zinc-200 border-2 border-zinc-300 flex items-center justify-center mx-auto mb-4">
+                <div className="w-24 h-24 rounded-full border-2 border-zinc-300 flex items-center justify-center mx-auto mb-4">
                   <span className="text-zinc-700 font-semibold text-lg">24/7</span>
                 </div>
                 <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
