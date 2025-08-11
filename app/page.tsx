@@ -175,7 +175,7 @@ export default function HomePage() {
 
   // Graphic component for each process step
   const GearGraphic = ({ index, number, active }: { index: number; number: string; active: boolean }) => {
-    const baseSize = "w-28 h-28 md:w-32 md:h-32" // larger for breathing room
+    const baseSize = "w-20 h-20 md:w-24 md:h-24" // slightly smaller scale
     const commonPropsBase = {
       initial: { rotate: 0, scale: 1 },
       style: { willChange: "transform" },
@@ -613,7 +613,7 @@ export default function HomePage() {
           {/* Anchor for dropdown scroll */}
           <div id="process" className="scroll-mt-32"></div>
           {/* Process */}
-          <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
+          <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden">
             {/* crosshair overlay */}
             <CrosshairOverlay parentRef={processRef} />
             <motion.div
@@ -621,17 +621,17 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-center mb-8"
+              className="text-center mb-6"
             >
-              <h2 className="text-3xl md:text-4xl font-light text-zinc-800 mb-3">
+              <h2 className="text-2xl md:text-3xl font-light text-zinc-800 mb-2">
                 Process
               </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              <p className="text-base text-zinc-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery from concept to launch.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
                 {
                   number: "01",

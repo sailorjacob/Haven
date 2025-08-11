@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export const ServicesSection = () => {
   return (
-    <div className="relative bg-zinc-50 rounded-xl p-8 overflow-hidden">
+    <div className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden">
       {/* Background image removed */}
       
       <BlueprintGrid />
@@ -18,10 +18,10 @@ export const ServicesSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true, margin: "-50px" }}
-        className="relative z-10 text-center mb-8"
+        className="relative z-10 text-center mb-6"
       >
         <motion.h2 
-          className="text-3xl md:text-4xl font-light text-zinc-900 mb-4"
+          className="text-2xl md:text-3xl font-light text-zinc-900 mb-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export const ServicesSection = () => {
           Services
         </motion.h2>
         <motion.p 
-          className="text-lg text-zinc-600 max-w-2xl mx-auto"
+          className="text-base text-zinc-600 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -41,7 +41,7 @@ export const ServicesSection = () => {
         </motion.p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
         <ServiceCard
           icon={Code}
           title="Web Development"
