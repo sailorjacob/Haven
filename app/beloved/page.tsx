@@ -45,11 +45,11 @@ export default function BelovedPage() {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-zinc-300">
-      {/* Gradient background */}
+    <main className="min-h-screen bg-white text-zinc-800">
+      {/* Light gradient background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 opacity-80"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900/5 to-zinc-900 opacity-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-zinc-50 opacity-100"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-100/80 via-transparent to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-4 pb-20">
@@ -60,7 +60,7 @@ export default function BelovedPage() {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <Link href="/" className="text-zinc-400 hover:text-zinc-300 transition-colors inline-flex items-center">
+          <Link href="/" className="text-zinc-500 hover:text-zinc-800 transition-colors inline-flex items-center">
             <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -75,10 +75,10 @@ export default function BelovedPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-light mb-6 text-white tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
             be-loved.app
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 mb-6">
             An iOS app and web platform with personalized content and interactive scheduling for NEMT Provider BeLoved Transportation.
           </p>
           <div className="flex items-center justify-center gap-4 text-sm text-zinc-500">
@@ -86,7 +86,7 @@ export default function BelovedPage() {
             <span className="text-zinc-600">•</span>
             <span>Transportation</span>
             <span className="text-zinc-600">•</span>
-            <a href="https://be-loved.app" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-white transition-colors">
+            <a href="https://be-loved.app" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-zinc-900 transition-colors">
               Visit Website
             </a>
           </div>
@@ -118,8 +118,8 @@ export default function BelovedPage() {
           className="mb-24"
         >
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-light mb-4 text-zinc-200">iOS Mobile App</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 text-zinc-800">iOS Mobile App</h2>
+            <p className="text-zinc-600 max-w-2xl mx-auto">
               The mobile app provides patients with convenient access to schedule rides, track their transportation, and manage their appointments on-the-go.
             </p>
           </div>
@@ -144,34 +144,34 @@ export default function BelovedPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Project Overview</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Project Overview</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-zinc-400 mb-4">
+              <p className="text-zinc-600 mb-4">
                 be-loved.app is a comprehensive platform designed for BeLoved Transportation, a Non-Emergency Medical Transportation (NEMT) provider. The platform includes both an iOS mobile app and a web interface that streamlines scheduling, tracking, and managing transportation services for healthcare appointments.
               </p>
-              <p className="text-zinc-400">
+              <p className="text-zinc-600">
                 Our goal was to create an intuitive system that enables patients and healthcare providers to easily book and monitor transportation services while providing the transportation company with powerful tools to optimize their operations.
               </p>
             </div>
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Project Details</h3>
+            <div className="bg-white p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-900">Project Details</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Client</h4>
-                  <p className="text-zinc-300">BeLoved Transportation</p>
+                  <p className="text-zinc-700">BeLoved Transportation</p>
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Year</h4>
-                  <p className="text-zinc-300">2025</p>
+                  <p className="text-zinc-700">2025</p>
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
-                  <p className="text-zinc-300">Mobile App, Web Platform</p>
+                  <p className="text-zinc-700">Mobile App, Web Platform</p>
                 </div>
                 <div>
                   <h4 className="text-sm text-zinc-500 mb-1">Technologies</h4>
-                  <p className="text-zinc-300">React, Node.js, PostgreSQL</p>
+                  <p className="text-zinc-700">React, Node.js, PostgreSQL</p>
                 </div>
               </div>
             </div>
@@ -186,23 +186,23 @@ export default function BelovedPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Key Features</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Interactive Scheduling</h3>
-              <p className="text-zinc-400">
+            <div className="bg-white p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-900">Interactive Scheduling</h3>
+              <p className="text-zinc-600">
                 A user-friendly calendar interface that allows patients and healthcare providers to book transportation services with just a few taps or clicks.
               </p>
             </div>
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Real-time Tracking</h3>
-              <p className="text-zinc-400">
+            <div className="bg-white p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-900">Real-time Tracking</h3>
+              <p className="text-zinc-600">
                 GPS-enabled tracking system that provides real-time updates on vehicle location and estimated arrival times to enhance the user experience.
               </p>
             </div>
-            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
-              <h3 className="text-lg mb-4 text-zinc-200">Personalized Content</h3>
-              <p className="text-zinc-400">
+            <div className="bg-white p-6 rounded-sm border border-zinc-200">
+              <h3 className="text-lg mb-4 text-zinc-900">Personalized Content</h3>
+              <p className="text-zinc-600">
                 Customized user profiles and content delivery based on individual needs, preferences, and medical requirements.
               </p>
             </div>
@@ -217,33 +217,33 @@ export default function BelovedPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Our Process</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Our Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Research</h3>
-              <p className="text-zinc-400">
+              <div className="text-4xl text-zinc-300 font-bold mb-4">01</div>
+              <h3 className="text-xl text-zinc-900 mb-2">Research</h3>
+              <p className="text-zinc-600">
                 We conducted extensive research on NEMT services, user needs, and operational challenges to inform our approach.
               </p>
             </div>
             <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-200 mb-2">UX Design</h3>
-              <p className="text-zinc-400">
+              <div className="text-4xl text-zinc-300 font-bold mb-4">02</div>
+              <h3 className="text-xl text-zinc-900 mb-2">UX Design</h3>
+              <p className="text-zinc-600">
                 Created wireframes and prototypes focusing on accessibility and ease of use for diverse user groups, including elderly patients.
               </p>
             </div>
             <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Development</h3>
-              <p className="text-zinc-400">
+              <div className="text-4xl text-zinc-300 font-bold mb-4">03</div>
+              <h3 className="text-xl text-zinc-900 mb-2">Development</h3>
+              <p className="text-zinc-600">
                 Built the platform using React for the frontend, Node.js for the backend, and integrated with PostgreSQL for data management.
               </p>
             </div>
             <div>
-              <div className="text-4xl text-zinc-700 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-200 mb-2">Deployment & Training</h3>
-              <p className="text-zinc-400">
+              <div className="text-4xl text-zinc-300 font-bold mb-4">04</div>
+              <h3 className="text-xl text-zinc-900 mb-2">Deployment & Training</h3>
+              <p className="text-zinc-600">
                 Launched the platform and provided comprehensive training to both transportation staff and healthcare partners.
               </p>
             </div>
@@ -258,32 +258,32 @@ export default function BelovedPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Results</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-zinc-400 mb-4">
+              <p className="text-zinc-600 mb-4">
                 The be-loved.app platform has transformed BeLoved Transportation's operations, significantly reducing scheduling conflicts and improving overall efficiency.
               </p>
-              <p className="text-zinc-400">
+              <p className="text-zinc-600">
                 Patients now enjoy a more reliable and transparent service, with easy access to scheduling and real-time updates, leading to increased satisfaction and fewer missed appointments.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">42%</div>
-                <p className="text-zinc-400 text-sm">Increase in on-time arrivals</p>
+              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
+                <div className="text-3xl font-bold text-zinc-900 mb-2">42%</div>
+                <p className="text-zinc-600 text-sm">Increase in on-time arrivals</p>
               </div>
-              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">65%</div>
-                <p className="text-zinc-400 text-sm">Reduction in scheduling errors</p>
+              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
+                <div className="text-3xl font-bold text-zinc-900 mb-2">65%</div>
+                <p className="text-zinc-600 text-sm">Reduction in scheduling errors</p>
               </div>
-              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">28%</div>
-                <p className="text-zinc-400 text-sm">Increase in daily rides</p>
+              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
+                <div className="text-3xl font-bold text-zinc-900 mb-2">28%</div>
+                <p className="text-zinc-600 text-sm">Increase in daily rides</p>
               </div>
-              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
-                <div className="text-3xl font-bold text-white mb-2">4.8</div>
-                <p className="text-zinc-400 text-sm">Average user rating</p>
+              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
+                <div className="text-3xl font-bold text-zinc-900 mb-2">4.8</div>
+                <p className="text-zinc-600 text-sm">Average user rating</p>
               </div>
             </div>
           </div>
@@ -297,15 +297,15 @@ export default function BelovedPage() {
           viewport={{ once: true }}
           className="text-center mb-16 pt-16 border-t border-zinc-800"
         >
-          <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
+          <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
             Let us create a custom digital experience that elevates your brand and connects with your audience.
           </p>
           <Link href="/contact">
-            <div className="inline-flex items-center border border-white text-white font-medium py-2 px-8 rounded-full text-sm relative overflow-hidden group">
+            <div className="inline-flex items-center border border-zinc-900 text-zinc-900 font-medium py-2 px-8 rounded-full text-sm relative overflow-hidden group">
               {/* Yellow background that fills from left on hover */}
               <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               {/* Text content */}
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-zinc-900">
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                 Start
               </span>
             </div>
@@ -315,7 +315,7 @@ export default function BelovedPage() {
         {/* Next Project */}
         <div className="text-center mt-24">
           <p className="text-sm text-zinc-500 mb-4">Next Project</p>
-          <Link href="/roundabout" className="text-xl text-zinc-300 hover:text-white transition-colors">
+          <Link href="/roundabout" className="text-xl text-zinc-700 hover:text-zinc-900 transition-colors">
             roundabout.run
             <span className="ml-2">→</span>
           </Link>

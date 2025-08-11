@@ -65,6 +65,15 @@ export default function HomePage() {
       category: "website"
     },
     {
+      id: "1stclassstudios",
+      title: "1stclassstudios.com",
+      description: "Professional recording studio with three facilities just 45 minutes from Manhattan.",
+      technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
+      link: "https://1stclassstudios.com",
+      category: "website"
+    },
+    {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
       description: "Photography portfolio website with responsive gallery.",
@@ -154,18 +163,9 @@ export default function HomePage() {
       link: "/killmefxster",
       category: "webapp"
     },
-    {
-      id: "1stclassstudios",
-      title: "1stclassstudios.com",
-      description: "Professional recording studio with three facilities just 45 minutes from Manhattan.",
-      technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
-      link: "https://1stclassstudios.com",
-      category: "website"
-    }
   ]
 
-  const hiddenIds: string[] = ["xrated"]
+  const hiddenIds: string[] = ["xrated", "killmefxster"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
