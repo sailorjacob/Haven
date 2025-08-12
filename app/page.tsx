@@ -44,6 +44,9 @@ export default function HomePage() {
   const [processOpen, setProcessOpen] = useState(false)
   const [processSectionOpen, setProcessSectionOpen] = useState(false)
   
+  // Feature flags for easy toggling
+  const ENABLE_HOMEPAGE_STARS = false
+  
   // Use useMemo to compute colors once and keep them consistent
   const navColors = useMemo(() => ({
     studio: getSeededRandomColor('studio'),
@@ -297,7 +300,7 @@ export default function HomePage() {
       </div>
 
       {/* Scattered Stars */}
-      <ScatteredStars />
+      {ENABLE_HOMEPAGE_STARS && <ScatteredStars />}
 
       {/* Header */}
       <header onMouseLeave={()=>setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
@@ -823,7 +826,10 @@ export default function HomePage() {
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire2.jpg"
                 }
-              ].map((member, index) => (
+              ]
+              // Hide specific members without deleting their definitions
+              .filter(member => !["Jarret Shull", "Klaire Rasche"].includes(member.name))
+              .map((member, index) => (
                 <motion.div
                   key={member.name}
                   initial={{ opacity: 0, y: 20 }}
