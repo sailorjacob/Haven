@@ -17,8 +17,11 @@ const steps: Step[] = [
 export default function ProcessDropdown({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const handleClick = useCallback(() => {
     const section = document.getElementById("process")
-    section?.scrollIntoView({ behavior: "smooth" })
-    onClose()
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+      // Delay closing to avoid interrupting smooth scroll
+      setTimeout(() => onClose(), 700)
+    }
   }, [onClose])
 
   return (

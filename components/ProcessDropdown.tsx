@@ -26,10 +26,10 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
     const section = document.getElementById("process")
     if (section) {
       section.scrollIntoView({ behavior: "smooth" })
-      // Small delay before closing to ensure smooth scroll starts
+      // Delay closing to avoid interrupting smooth scroll and layout reflow
       setTimeout(() => {
         onClose()
-      }, 100)
+      }, 700)
     }
   }, [onClose])
 

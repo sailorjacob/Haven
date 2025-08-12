@@ -314,11 +314,11 @@ export default function HomePage() {
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
-                {/* Studio with dropdown trigger */}
+                {/* Process with dropdown trigger */}
                 <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
                   <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
-                    <span className="group-hover:hidden">Studio</span>
-                    <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
+                    <span className="group-hover:hidden">Process</span>
+                    <span className={`hidden group-hover:inline ${navColors.studio}`}>Process</span>
                   </Link>
                   {/* Dropdown indicator */}
                   <motion.span
@@ -330,11 +330,7 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-                {/* Static links */}
-                <Link href="/work" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
-                  <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
-                </Link>
+                {/* Static links - Work removed as requested */}
               </div>
             </div>
 
@@ -381,17 +377,8 @@ export default function HomePage() {
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Studio</span>
-                  <span className={`hidden group-hover:inline ${navColors.studio}`}>Studio</span>
-                </Link>
-                
-                <Link 
-                  href="/work" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${navColors.work}`}>Work</span>
+                  <span className="group-hover:hidden">Process</span>
+                  <span className={`hidden group-hover:inline ${navColors.studio}`}>Process</span>
                 </Link>
                 <Link 
                   href="/book"
@@ -604,10 +591,8 @@ export default function HomePage() {
           {/* Services */}
           <ServicesSection />
 
-          {/* Anchor for dropdown scroll */}
-          <div id="process" className="scroll-mt-32"></div>
           {/* Process */}
-          <div ref={processRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden">
+          <div id="process" ref={processRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden scroll-mt-32">
             {/* crosshair overlay */}
             <CrosshairOverlay parentRef={processRef} />
             <div className="flex items-center justify-center">
