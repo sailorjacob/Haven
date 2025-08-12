@@ -827,8 +827,6 @@ export default function HomePage() {
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire2.jpg"
                 }
               ]
-              // Hide specific members without deleting their definitions
-              .filter(member => !["Jarret Shull", "Klaire Rasche"].includes(member.name))
               .map((member, index) => (
                 <motion.div
                   key={member.name}
