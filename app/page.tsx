@@ -535,16 +535,12 @@ export default function HomePage() {
                 className="flex justify-center mb-6"
               >
                 <div className="relative">
-                  <Hexagon className="w-16 h-16 text-zinc-900" strokeWidth={1} />
+                  <Hexagon className="w-16 h-16 text-zinc-400 opacity-40" strokeWidth={1} />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Code className="w-8 h-8 text-zinc-700" />
+                    <Code className="w-8 h-8 text-zinc-400 opacity-40" />
                   </div>
                 </div>
               </motion.div>
-              
-              <h1 className="text-4xl md:text-5xl font-light text-zinc-900 mb-4 tracking-tight">
-                Build With Precision
-              </h1>
               <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
                 Premium digital experiences
               </p>
