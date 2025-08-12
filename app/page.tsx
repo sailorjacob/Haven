@@ -330,12 +330,26 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-                {/* Static links - Work removed as requested */}
+                {/* Additional header link */}
+                <Link
+                  href="https://designforstartups.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group"
+                >
+                  design for startups
+                </Link>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
-              {/* Contact button hidden as requested */}
+              {/* Start button (contact) */}
+              <Link 
+                href="/contact"
+                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+              >
+                Start
+              </Link>
               
               {/* Mobile Menu Button */}
               <button 
