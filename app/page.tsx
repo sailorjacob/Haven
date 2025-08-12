@@ -25,7 +25,7 @@ type Project = {
   category: 'webapp' | 'website' | 'mobile'
 }
 
-// Add this utility function at the top level
+  // Add this utility function at the top level
 const getSeededRandomColor = (seed: string) => {
   // Simple hash function to get a consistent number from a string
   const hash = seed.split('').reduce((acc, char) => {
@@ -33,7 +33,7 @@ const getSeededRandomColor = (seed: string) => {
   }, 0)
   
   // Use the hash to select a color
-  const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold']
+    const colors = ['text-green-500', 'text-red-500', 'text-yellow-500']
   return colors[Math.abs(hash) % colors.length]
 }
 
@@ -316,9 +316,9 @@ export default function HomePage() {
               <div className="hidden md:flex items-center space-x-6">
                 {/* Process with dropdown trigger */}
                 <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
-                  <Link href="/" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
-                    <span className="group-hover:hidden">Process</span>
-                    <span className={`hidden group-hover:inline ${navColors.studio}`}>Process</span>
+                  <Link href="/" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
+                    <span className="group-hover:hidden">process</span>
+                    <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
                   </Link>
                   {/* Dropdown indicator */}
                   <motion.span
@@ -368,11 +368,11 @@ export default function HomePage() {
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
                   href="/" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Process</span>
-                  <span className={`hidden group-hover:inline ${navColors.studio}`}>Process</span>
+                  <span className="group-hover:hidden">process</span>
+                  <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
                 </Link>
                 <Link 
                   href="/book"
