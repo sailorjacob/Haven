@@ -18,8 +18,11 @@ export default function ProcessDropdown({ visible, onClose }: { visible: boolean
   const handleClick = useCallback(() => {
     const section = document.getElementById("process")
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
-      // Delay closing to avoid interrupting smooth scroll
+      // Scroll with offset for fixed header
+      const headerOffset = 96
+      const elementTop = section.getBoundingClientRect().top + window.pageYOffset
+      const scrollPosition = elementTop - headerOffset
+      window.scrollTo({ top: scrollPosition, behavior: "smooth" })
       setTimeout(() => onClose(), 700)
     }
   }, [onClose])
@@ -37,7 +40,7 @@ export default function ProcessDropdown({ visible, onClose }: { visible: boolean
           <button
             key={step.id}
             onClick={handleClick}
-            className="text-zinc-700 hover:text-zinc-900 text-sm font-medium transition-colors"
+            className="text-zinc-700 hover:text-zinc-900 text-sm font-light transition-colors tracking-wider uppercase"
           >
             <div className="text-xs mb-1 tracking-widest text-zinc-500">{step.id}</div>
             {step.label}

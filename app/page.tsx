@@ -316,7 +316,7 @@ export default function HomePage() {
               <div className="hidden md:flex items-center space-x-6">
                 {/* Process with dropdown trigger */}
                 <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
-                  <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
+                  <Link href="/" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group">
                     <span className="group-hover:hidden">Process</span>
                     <span className={`hidden group-hover:inline ${navColors.studio}`}>Process</span>
                   </Link>
@@ -335,13 +335,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Link 
-                href="/contact"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm group"
-              >
-                <span className="group-hover:hidden">Contact</span>
-                <span className={`hidden group-hover:inline ${navColors.contact}`}>Contact</span>
-              </Link>
+              {/* Contact button hidden as requested */}
               
               {/* Mobile Menu Button */}
               <button 
@@ -443,7 +437,7 @@ export default function HomePage() {
                     onClick={() => setFilter(null)} 
                     className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
                       !filter 
-                        ? 'bg-zinc-900 text-white' 
+                        ? 'bg-zinc-200 text-zinc-800' 
                         : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                     }`}
                   >
@@ -453,7 +447,7 @@ export default function HomePage() {
                     onClick={() => setFilter('webapp')} 
                     className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
                       filter === 'webapp' 
-                        ? 'bg-zinc-900 text-white' 
+                        ? 'bg-zinc-200 text-zinc-800' 
                         : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                     }`}
                   >
@@ -463,7 +457,7 @@ export default function HomePage() {
                     onClick={() => setFilter('website')} 
                     className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
                       filter === 'website' 
-                        ? 'bg-zinc-900 text-white' 
+                        ? 'bg-zinc-200 text-zinc-800' 
                         : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                     }`}
                   >

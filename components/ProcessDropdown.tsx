@@ -25,8 +25,10 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
   const handleClick = useCallback(() => {
     const section = document.getElementById("process")
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
-      // Delay closing to avoid interrupting smooth scroll and layout reflow
+      const headerOffset = 96
+      const elementTop = section.getBoundingClientRect().top + window.pageYOffset
+      const scrollPosition = elementTop - headerOffset
+      window.scrollTo({ top: scrollPosition, behavior: "smooth" })
       setTimeout(() => {
         onClose()
       }, 700)
@@ -58,7 +60,7 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
               <ProcessGearGraphic index={idx} number={step.id} active={hovered === idx} />
             </div>
 
-            <span className="mt-3 font-medium text-sm text-zinc-400 hover:text-zinc-700 transition-colors">
+            <span className="mt-3 font-light text-sm text-zinc-400 hover:text-zinc-700 transition-colors tracking-wider uppercase">
               {step.label}
             </span>
 
