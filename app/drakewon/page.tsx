@@ -1,49 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useMemo, useState } from "react"
-import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, Crown } from "lucide-react"
+import { Hexagon, ChevronDown, Menu, X, Crown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import ProcessDropdown from "@/components/ProcessDropdown"
-
-const posts = [
-  {
-    slug: "/drakewon",
-    title: "Drake Won",
-    description: "Why rappers are presidents of network states.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: Crown,
-  },
-  {
-    slug: "/ns-essay",
-    title: "NS Essay",
-    description: "Notes and essays exploring coordination, sovereignty, and network-native societies.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater2-c6ylt6vCnnG1jKH7S1DGpixTrhGdGd.png",
-    Icon: FileText,
-  },
-  {
-    slug: "/ns-predictions",
-    title: "NS Predictions",
-    description: "Foreshadows and near-future calls across tech, culture, and governance.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
-    Icon: Sparkles,
-  },
-  {
-    slug: "/bitcoinbank",
-    title: "Bitcoin Bank",
-    description: "Designing permissionless finance and product thinking around Bitcoin.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
-    Icon: Bitcoin,
-  },
-  {
-    slug: "/story",
-    title: "Story",
-    description: "Creative essays and narrative experiments.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png",
-    Icon: BookOpen,
-  },
-]
 
 const getSeededRandomColor = (seed: string) => {
   const hash = seed.split('').reduce((acc, char) => {
@@ -53,7 +14,7 @@ const getSeededRandomColor = (seed: string) => {
   return colors[Math.abs(hash) % colors.length]
 }
 
-export default function BlogIndex() {
+export default function DrakeWonPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
   const navColors = useMemo(() => ({
@@ -62,9 +23,45 @@ export default function BlogIndex() {
     gallery: getSeededRandomColor('gallery'),
     contact: getSeededRandomColor('contact')
   }), [])
+
+  const content = `Why rappers are presidents of network states
+
+
+Why Drake won
+
+America chose kendrick (superbowl picture)
+
+And then drake went to Australia and drew a crowd
+
+You can see Kanye West doing this 
+Going to japan, going to chinna and thanking the chinese government 
+
+
+Whats the difference between Donald Trump & a KPOP star? A KPOP star could surely win, right? The difference is that Trump is actually a nice guy who got completely destroyed for years and hes actually the type of person who will bomb the terrotists at the right time. 
+
+Lisa & Taylor Swift can maintain their image of innocent & perfection 
+
+
+
+XXXTENTACTION has 33million monthly listeners, and AOC has 12 million followers
+
+
+What’s missing? Only Physical , finance, legal structure? 
+
+It would take one post from one of these guys to get millions of people to Opt-in to a network state promising sovereignty or more fun with their favorite stars
+
+You can see diplo moving about crowds of people and hosting a run club 
+
+Why this matters? Elon Ye presidential announcement (trump ended up being the trojan horse)
+
+
+What’s next? Exiting existing networks (i started making my own cursor for grok while also using cursor) A small army of people at NS could theoretically clone their own version of X, Instagram, etc (you see this happening when IG stole snapchat stories, implemented Reels, and built threads) I had a drink with the product manager of threads shortly before it dropped and we were comparing Grindr to Tinder and how grindr will likely eventually win. . 
+
+
+Exit the state, exit the platform - non - obvious and even our best minds today take this for granted (Elon’s done a great job with X, but I remember the difference between Vine, and TikTok)`
+
   return (
-    <main className="min-h-screen bg-white">
-      {/* Header (same as homepage) */}
+    <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col p-6 font-sans">
       <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-zinc-200">
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
@@ -120,43 +117,32 @@ export default function BlogIndex() {
         </AnimatePresence>
       </header>
 
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50" />
-      </div>
-
       <div className="pt-20" />
 
-      <div className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="mb-10">
-          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">Blog</h1>
-          <p className="text-zinc-600 mt-2">Essays and notes from recent work and thinking.</p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <Link key={post.slug} href={post.slug} className="group">
-              <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105 saturate-75 brightness-95"
-                  />
-                  <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
-                  <div className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-zinc-800 border border-zinc-200 shadow-sm">
-                    {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h2 className="text-lg font-medium text-zinc-900">{post.title}</h2>
-                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">{post.description}</p>
-                </div>
+      <section className="flex-1 w-full">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10">
+          {/* Letter Head */}
+          <div className="mx-auto bg-[#fafaf5] border border-zinc-300 rounded-md shadow-[0_1px_0_rgba(0,0,0,0.05)]">
+            <div className="px-6 py-4 border-b border-zinc-300 flex items-center gap-2">
+              <Crown className="w-4 h-4 text-zinc-700" />
+              <span className="text-zinc-700 text-sm tracking-wide">Office of Cultural Affairs</span>
+            </div>
+            <div className="px-6 py-8">
+              <h1 className="text-center text-zinc-800 text-xl font-semibold mb-6">Drake Won</h1>
+              <div className="whitespace-pre-wrap font-serif text-[15px] leading-7 text-zinc-800">
+                {content}
               </div>
-            </Link>
-          ))}
+            </div>
+            <div className="px-6 py-4 border-t border-zinc-300 text-right text-xs text-zinc-500">
+              Draft • Unofficial
+            </div>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <Link href="/blog" className="text-zinc-600 hover:text-zinc-900 underline text-sm">← Back to Blog</Link>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   )
 }
