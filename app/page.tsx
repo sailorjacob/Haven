@@ -787,9 +787,6 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-8"
             >
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Passionate professionals dedicated to creating exceptional digital experiences.
-              </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -797,7 +794,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: <>Jacob is a tech artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">experience</Link> in imagery and design.</>,
+                    description: <>Jacob is a tech artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">imagery</Link> and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 },
@@ -874,9 +871,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
-                Ready to bring your digital vision to life? Let's create something exceptional.
-              </p>
+              
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 {/* Get Started Button */}
@@ -896,7 +891,7 @@ export default function HomePage() {
                   <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
                 </Link>
                 
-                {/* Email Us Button */}
+                {/* Message Button */}
                 <Link
                   href="mailto:info@haven.engineer"
                   className="inline-flex items-center border border-zinc-300 text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
@@ -907,7 +902,7 @@ export default function HomePage() {
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
                     <Mail className="w-3 h-3 mr-2" />
-                    Email Us
+                    Message
                   </span>
                   
                   {/* Arrow icon that appears on hover */}
