@@ -132,6 +132,8 @@ export default function ForeshadowEffectPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [timeLeft, setTimeLeft] = useState("")
+  const [scrollY, setScrollY] = useState(0)
+  const backgroundRef = useRef<HTMLDivElement>(null)
 
   const getSeededRandomColor = (seed: string) => {
     const hash = seed.split('').reduce((acc, char) => {
@@ -176,6 +178,30 @@ export default function ForeshadowEffectPage() {
     return () => clearInterval(interval)
   }, [])
 
+  // Background scroll effect (match ns-predictions)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const getBackgroundTransform = () => {
+    const maxScroll = 300
+    const scrollProgress = Math.min(scrollY / maxScroll, 1)
+    const scale = 1 - scrollProgress * 0.5
+    const translateX = -scrollProgress * 20
+    const translateY = -scrollProgress * 20
+    const opacity = 1 - scrollProgress
+    return {
+      transform: `translate(${translateX}%, ${translateY}%) scale(${scale})`,
+      opacity,
+      transformOrigin: 'top left',
+      transition: 'none'
+    }
+  }
+
   const handlePlayPause = () => {
     if (!audioRef.current) {
       audioRef.current = new Audio('https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Kanye%20West%20x%20The%20Beatles.mp3')
@@ -194,8 +220,8 @@ export default function ForeshadowEffectPage() {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
-      <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
+    <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col p-6 font-sans">
+      <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-zinc-200">
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
@@ -228,6 +254,7 @@ export default function ForeshadowEffectPage() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <Link href="/blog" className="hidden md:inline text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors">blog</Link>
               <Link
                 href="/contact"
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
@@ -268,6 +295,13 @@ export default function ForeshadowEffectPage() {
                   design for startups
                 </Link>
                 <Link
+                  href="/blog"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  blog
+                </Link>
+                <Link
                   href="/contact"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
                   onClick={() => setMobileMenuOpen(false)}
@@ -281,7 +315,7 @@ export default function ForeshadowEffectPage() {
         </AnimatePresence>
       </header>
 
-      <div className="pt-24" />
+      <div className="pt-20" />
       <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 text-zinc-500 whitespace-pre-line text-center">
         <div className="text-xl font-bold text-red-500 mb-2">
           The World in 2035
@@ -470,12 +504,18 @@ export default function ForeshadowEffectPage() {
         </motion.div>
       </div>
       
-      {/* Grid pattern background */}
-      <div className="absolute inset-0 overflow-hidden opacity-3 pointer-events-none">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zM10 0h1v1h-1zM0 10h1v1H0zM10 10h1v1h-1z' fill='%23ccc' fill-opacity='0.3'/%3E%3C/svg%3E")`,
-          backgroundSize: '20px 20px'
-        }}></div>
+      {/* Background art with scroll transform (match ns-predictions) */}
+      <div className="absolute inset-0 overflow-hidden opacity-30 pointer-events-none">
+        <div 
+          ref={backgroundRef}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//BACKGROUND.svg")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            ...getBackgroundTransform()
+          }}
+        ></div>
       </div>
     </main>
   )
