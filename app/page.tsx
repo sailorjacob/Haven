@@ -827,21 +827,29 @@ export default function HomePage() {
                 >
                   <div className="relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
                     {/* Now showing altImage by default */}
-                    {member.altImage && (
-                      <Image
-                        src={member.altImage}
-                        alt={`${member.name} alternate`}
-                        fill
-                        className="object-cover transition-opacity duration-500 group-hover:opacity-0"
-                      />
-                    )}
-                    {/* Primary hidden until hover */}
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+                    {(() => {
+                      const disableHoverSwap = member.name === "Jarret Shull" || member.name === "Klaire Rasche"
+                      return member.altImage ? (
+                        <Image
+                          src={member.altImage}
+                          alt={`${member.name} alternate`}
+                          fill
+                          className={disableHoverSwap ? "object-cover" : "object-cover transition-opacity duration-500 group-hover:opacity-0"}
+                        />
+                      ) : null
+                    })()}
+                    {/* Primary hidden until hover (kept hidden for Jarret/Klaire) */}
+                    {(() => {
+                      const disableHoverSwap = member.name === "Jarret Shull" || member.name === "Klaire Rasche"
+                      return (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className={disableHoverSwap ? "object-cover opacity-0" : "object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"}
+                        />
+                      )
+                    })()}
                   </div>
                   <h3 className="text-lg font-medium text-zinc-900 mb-1">{
                     (()=>{
