@@ -1,11 +1,42 @@
 "use client"
 
-import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import { useMemo, useState } from 'react'
-import { Hexagon, ChevronDown, Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import ProcessDropdown from '@/components/ProcessDropdown'
+import Link from "next/link"
+import Image from "next/image"
+import { useMemo, useState } from "react"
+import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import ProcessDropdown from "@/components/ProcessDropdown"
+
+const posts = [
+  {
+    slug: "/ns-essay",
+    title: "NS Essay",
+    description: "Notes and essays exploring coordination, sovereignty, and network-native societies.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater2-c6ylt6vCnnG1jKH7S1DGpixTrhGdGd.png",
+    Icon: FileText,
+  },
+  {
+    slug: "/ns-predictions",
+    title: "NS Predictions",
+    description: "Foreshadows and near-future calls across tech, culture, and governance.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
+    Icon: Sparkles,
+  },
+  {
+    slug: "/bitcoinbank",
+    title: "Bitcoin Bank",
+    description: "Designing permissionless finance and product thinking around Bitcoin.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    Icon: Bitcoin,
+  },
+  {
+    slug: "/story",
+    title: "Story",
+    description: "Creative essays and narrative experiments.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png",
+    Icon: BookOpen,
+  },
+]
 
 const getSeededRandomColor = (seed: string) => {
   const hash = seed.split('').reduce((acc, char) => {
@@ -15,13 +46,7 @@ const getSeededRandomColor = (seed: string) => {
   return colors[Math.abs(hash) % colors.length]
 }
 
-// Use dynamic import with SSR disabled to prevent hydration errors
-const StoryContent = dynamic(() => import('./StoryContent'), { 
-  ssr: false,
-  loading: () => <div className="min-h-screen bg-white"></div>
-})
-
-export default function StoryPage() {
+export default function BlogIndex() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
   const navColors = useMemo(() => ({
@@ -30,9 +55,9 @@ export default function StoryPage() {
     gallery: getSeededRandomColor('gallery'),
     contact: getSeededRandomColor('contact')
   }), [])
-
   return (
     <main className="min-h-screen bg-white">
+      {/* Header (same as homepage) */}
       <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
@@ -88,9 +113,45 @@ export default function StoryPage() {
         </AnimatePresence>
       </header>
 
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50" />
+      </div>
+
       <div className="pt-20" />
 
-      <StoryContent />
+      <div className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="mb-10">
+          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">Blog</h1>
+          <p className="text-zinc-600 mt-2">Essays and notes from recent work and thinking.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <Link key={post.slug} href={post.slug} className="group">
+              <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105 saturate-75 brightness-95"
+                  />
+                  <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
+                  <div className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-zinc-800 border border-zinc-200 shadow-sm">
+                    {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h2 className="text-lg font-medium text-zinc-900">{post.title}</h2>
+                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">{post.description}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </main>
   )
-} 
+}
+
+

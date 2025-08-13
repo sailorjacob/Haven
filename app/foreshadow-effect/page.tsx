@@ -196,7 +196,7 @@ export default function ForeshadowEffectPage() {
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col items-center p-6 font-sans">
       <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
-        <div className="container mx-auto px-6 py-3">
+        <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/studio" className="flex items-center">
@@ -257,7 +257,7 @@ export default function ForeshadowEffectPage() {
               transition={{ duration: 0.3 }}
               className="md:hidden bg-white border-b border-zinc-200"
             >
-              <div className="container mx-auto px-6 py-4 space-y-3">
+              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
                 <Link
                   href="https://designforstartups.net"
                   target="_blank"

@@ -361,6 +361,13 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center space-x-4">
+              {/* Blog link */}
+              <Link
+                href="/blog"
+                className="hidden md:inline text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                blog
+              </Link>
               {/* Start button (contact) */}
               <Link 
                 href="/contact"
@@ -406,6 +413,13 @@ export default function HomePage() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   design for startups
+                </Link>
+                <Link 
+                  href="/blog"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  blog
                 </Link>
                 <Link 
                   href="/contact"
