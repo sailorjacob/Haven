@@ -232,13 +232,13 @@ export default function NSPredictionsPage() {
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-700 flex flex-col p-6 font-sans">
       {/* Header (same as homepage) */}
-      <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
+      <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-zinc-200">
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/studio" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
+                <span className="ml-2 text-lg font-light tracking-wider text-zinc-900">Haven</span>
               </Link>
               <div className="hidden md:flex items-center space-x-6">
                 <div className="relative flex items-center" onMouseEnter={() => setProcessOpen(true)}>

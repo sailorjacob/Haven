@@ -201,7 +201,7 @@ export default function ForeshadowEffectPage() {
             <div className="flex items-center space-x-8">
               <Link href="/studio" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
+                <span className="ml-2 text-lg font-light tracking-wider text-zinc-900">Haven</span>
               </Link>
               <div className="hidden md:flex items-center space-x-6">
                 <div className="relative flex items-center" onMouseEnter={() => setProcessOpen(true)}>
