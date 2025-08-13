@@ -60,21 +60,21 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "comparison-deserving",
+      title: "comparison-deserving.net",
+      description: "Fine art gallery, online-first Singapore-based and accepting Bitcoin.",
+      technologies: ["Online Gallery", "Fine Art", "Singapore", "Bitcoin"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison-deserving.png",
+      link: "https://comparison-deserving.net",
+      category: "website"
+    },
+    {
       id: "designforstartups",
       title: "designforstartups.net",
       description: "Branding and design for new and special projects.",
       technologies: ["Branding", "Design", "Identity", "Website"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/designforstartup.png",
       link: "https://designforstartups.net",
-      category: "website"
-    },
-    {
-      id: "comparison-deserving",
-      title: "comparison-deserving.net",
-      description: "Online-first, Singapore-based fine art gallery accepting Bitcoin.",
-      technologies: ["Online Gallery", "Fine Art", "Singapore", "Bitcoin"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison-deserving.png",
-      link: "https://comparison-deserving.net",
       category: "website"
     },
     {
