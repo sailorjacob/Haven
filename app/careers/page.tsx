@@ -90,12 +90,14 @@ export default function CareersPage() {
                 >
                   Studio
                 </Link>
-                <Link 
-                  href="/book"
-                  className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
+                <Link
+                  href="https://designforstartups.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Design Book
+                  design for startups
                 </Link>
                 <Link 
                   href="/contact"

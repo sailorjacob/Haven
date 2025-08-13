@@ -126,12 +126,21 @@ export default function DesignBookPage() {
                 >
                   Studio
                 </Link>
-                <Link 
-                  href="/book"
-                  className="block text-sm text-amber-900 hover:text-amber-950 transition-colors tracking-wider uppercase font-light"
+                <Link
+                  href="https://designforstartups.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-amber-800 hover:text-amber-950 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Design Book
+                  design for startups
+                </Link>
+                <Link 
+                  href="/contact"
+                  className="block text-sm text-amber-800 hover:text-amber-950 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
                 </Link>
                 <Link 
                   href="https://buy.stripe.com/00waEYgG74Hy3wz1Xl57W01?locale=en&__embed_source=buy_btn_1RV7YYLW3qNGE5NrHzRZJjMe"

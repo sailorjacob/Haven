@@ -380,20 +380,14 @@ export default function HomePage() {
               className="md:hidden bg-white border-b border-zinc-200"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
-                <Link 
-                  href="/" 
+                <Link
+                  href="https://designforstartups.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">process</span>
-                  <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
-                </Link>
-                <Link 
-                  href="/book"
-                  className="block text-sm text-zinc-500 hover:text-zinc-900 transition-colors tracking-wider uppercase font-light"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Design Book
+                  design for startups
                 </Link>
                 <Link 
                   href="/contact"
