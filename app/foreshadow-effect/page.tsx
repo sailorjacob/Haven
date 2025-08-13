@@ -448,10 +448,19 @@ export default function ForeshadowEffectPage() {
 
           <p className="text-zinc-600 italic mb-6 text-sm">
             Let's talk about the future{" "}
-            <Link href="https://sailorjacob.github.io" className="text-zinc-800 hover:text-zinc-900 underline">
-              Visit my profile
+            <Link href="https://github.com/sailorjacob" className="text-zinc-800 hover:text-zinc-900 underline">
+              Visit my GitHub
             </Link>
           </p>
+
+          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+            <Link href="/ns-essay" className="text-zinc-700 hover:text-zinc-900 underline">
+              Network States essay →
+            </Link>
+            <Link href="/ns-predictions" className="text-zinc-700 hover:text-zinc-900 underline">
+              Predictions →
+            </Link>
+          </div>
           <Link
             href="/"
             className="inline-flex items-center justify-center bg-zinc-200 hover:bg-zinc-300 text-zinc-700 py-2 px-6 text-xs lowercase tracking-widest transition-all duration-300"
