@@ -60,6 +60,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "Portfolio website for author and art critic Anthony Haden-Guest.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/AHGCOM.png",
+      link: "/anthonyhadenguest",
+      category: "website"
+    },
+    {
       id: "sojourn",
       title: "sojourn.city",
       description: "Solar punk inspired art project with an interactive public art gallery wall.",
@@ -150,15 +159,7 @@ export default function HomePage() {
       link: "/beloved",
       category: "webapp"
     },
-    {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "Portfolio website for author and art critic Anthony Haden-Guest.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//AHGNEW.png",
-      link: "/anthonyhadenguest",
-      category: "website"
-    },
+
     {
       id: "moonlight",
       title: "Moonlight Garden 🌱",
