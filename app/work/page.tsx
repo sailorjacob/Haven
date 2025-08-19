@@ -118,6 +118,15 @@ export default function WorkPage() {
   
   const workExamples = [
     {
+      id: "sojourn",
+      title: "sojourn.city",
+      description: "Solar punk inspired art project with an interactive public art gallery wall.",
+      category: "Interactive Art",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/sojourn.png",
+      link: "https://sojourn.city",
+      type: "image"
+    },
+    {
       id: "beloved-logo",
       title: "BeLoved Transportation Logo",
       description: "Logo design for NEMT provider with typography and branding.",

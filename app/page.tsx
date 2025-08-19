@@ -60,6 +60,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "sojourn",
+      title: "sojourn.city",
+      description: "Solar punk inspired art project with an interactive public art gallery wall.",
+      technologies: ["Interactive Art", "Public Gallery", "Solar Punk", "Community"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/sojourn.png",
+      link: "https://sojourn.city",
+      category: "website"
+    },
+    {
       id: "designforstartups",
       title: "designforstartups.net",
       description: "Branding and design for new and special projects.",
