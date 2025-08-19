@@ -63,8 +63,8 @@ export default function HomePage() {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
       description: "Portfolio website for author and art critic Anthony Haden-Guest.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design", "Typography"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/AHGCOM.png",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ahgpreview7.png",
       link: "/anthonyhadenguest",
       category: "website"
     },
