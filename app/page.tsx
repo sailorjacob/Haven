@@ -60,6 +60,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "Digital art platform with interactive experiences.",
+      technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
+    },
+    {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
       description: "Portfolio website for author and art critic Anthony Haden-Guest.",
@@ -187,18 +196,9 @@ export default function HomePage() {
       link: "/xrated",
       category: "webapp"
     },
-    {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "Digital art platform with interactive experiences.",
-      technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "webapp"
-    },
   ]
 
-  const hiddenIds: string[] = ["xrated", "killmefxster", "moonlight"]
+  const hiddenIds: string[] = ["xrated", "moonlight"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
