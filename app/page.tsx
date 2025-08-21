@@ -91,7 +91,7 @@ export default function HomePage() {
       title: "designforstartups.net",
       description: "Branding and design for new and special projects.",
       technologies: ["Branding", "Design", "Identity", "Website"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/design%20for%20startups.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/desginforstartups%20dark.png",
       link: "https://designforstartups.net",
       category: "website"
     },
