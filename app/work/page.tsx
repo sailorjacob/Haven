@@ -595,34 +595,7 @@ export default function WorkPage() {
                 </Link>
               </motion.div>
 
-              {/* Klaire */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-              >
-                <Link href="https://klaire.dev" target="_blank" rel="noopener noreferrer" className="block group">
-                  <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png"
-                        alt="Klaire.dev Website"
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">klaire.dev</h3>
-                      <p className="text-zinc-600 mb-3">Personal portfolio showcasing UI/UX excellence and creative digital design work.</p>
-                      <div className="flex items-center text-purple-600 font-medium">
-                        Visit Website
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+
 
               {/* 1st Class Studios */}
               <motion.div

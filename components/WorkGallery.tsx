@@ -81,15 +81,7 @@ const workExamples: WorkItem[] = [
     link: "https://www.swivimedia.com/about",
     type: "image"
   },
-  {
-    id: "klaire-dev",
-    title: "klaire.dev",
-    description: "Personal portfolio showcasing UI/UX excellence and creative digital design work.",
-    category: "Brand Transformation",
-    image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
-    link: "https://klaire.dev",
-    type: "image"
-  },
+
   {
     id: "1st-class-studios",
     title: "1st Class Studios",

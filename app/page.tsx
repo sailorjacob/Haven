@@ -198,7 +198,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["xrated", "moonlight"]
+  const hiddenIds: string[] = ["xrated", "moonlight", "klaire"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
@@ -825,7 +825,7 @@ export default function HomePage() {
             >
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="flex justify-center max-w-4xl mx-auto">
               {[
                 {
                   name: "Jacob Beam",
@@ -833,20 +833,6 @@ export default function HomePage() {
                     description: <>Jacob is a tech artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">imagery</Link> and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
-                },
-                {
-                  name: "Jarret Shull", 
-                  role: "Sales",
-                  description: "Jarret builds partnerships and client relations.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret.jpeg",
-                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jarret2.jpg"
-                },
-                {
-                  name: "Klaire Rasche",
-                  role: "Design", 
-                  description: "Klaire brings a unique perspective to digital design with expertise in UI/UX and visual storytelling.",
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire.jpeg",
-                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klaire2.jpg"
                 }
               ]
               .map((member, index) => (
@@ -859,30 +845,22 @@ export default function HomePage() {
                   className="text-center"
                 >
                   <div className="relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
-                    {/* Now showing altImage by default */}
-                    {(() => {
-                      const disableHoverSwap = member.name === "Jarret Shull" || member.name === "Klaire Rasche"
-                      return member.altImage ? (
-                        <Image
-                          src={member.altImage}
-                          alt={`${member.name} alternate`}
-                          fill
-                          className={disableHoverSwap ? "object-cover" : "object-cover transition-opacity duration-500 group-hover:opacity-0"}
-                        />
-                      ) : null
-                    })()}
-                    {/* Primary hidden until hover (kept hidden for Jarret/Klaire) */}
-                    {(() => {
-                      const disableHoverSwap = member.name === "Jarret Shull" || member.name === "Klaire Rasche"
-                      return (
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className={disableHoverSwap ? "object-cover opacity-0" : "object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"}
-                        />
-                      )
-                    })()}
+                    {/* Show altImage by default */}
+                    {member.altImage ? (
+                      <Image
+                        src={member.altImage}
+                        alt={`${member.name} alternate`}
+                        fill
+                        className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+                      />
+                    ) : null}
+                    {/* Primary image shown on hover */}
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
                   </div>
                   <h3 className="text-lg font-medium text-zinc-900 mb-1">{
                     (()=>{
