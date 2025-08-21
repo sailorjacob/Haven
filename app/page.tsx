@@ -376,7 +376,7 @@ export default function HomePage() {
                 href="/contact"
                 className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
               >
-                Start
+                msg
               </Link>
               
               {/* Mobile Menu Button */}
