@@ -59,15 +59,33 @@ export default function HomePage() {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null)
   
   const projects: Project[] = [
-    {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "Digital art platform with interactive experiences.",
-      technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "webapp"
-    },
+          {
+        id: "killmefxster",
+        title: "killmefaster.com",
+        description: "Digital art platform with interactive experiences.",
+        technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
+        imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+        link: "/killmefxster",
+        category: "webapp"
+      },
+      {
+        id: "1stclassstudios",
+        title: "1stclassstudios.com",
+        description: "Professional recording studio with three facilities just 45 minutes from Manhattan.",
+        technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
+        imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
+        link: "/1stclassstudios",
+        category: "website"
+      },
+      {
+        id: "salomatic",
+        title: "Salomatic Pitch Deck",
+        description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
+        technologies: ["Design", "Branding", "Healthcare", "Pitch Deck"],
+        imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
+        link: "/salomatic",
+        category: "website"
+      },
     {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
@@ -104,15 +122,7 @@ export default function HomePage() {
       link: "https://comparison-deserving.net",
       category: "website"
     },
-    {
-      id: "salomatic",
-      title: "Salomatic Pitch Deck",
-      description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
-      technologies: ["Design", "Branding", "Healthcare", "Pitch Deck"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
-      link: "/salomatic",
-      category: "website"
-    },
+
     
     {
       id: "jacobhalestudio",
@@ -141,24 +151,7 @@ export default function HomePage() {
       link: "/swivimedia",
       category: "webapp"
     },
-    {
-      id: "1stclassstudios",
-      title: "1stclassstudios.com",
-      description: "Professional recording studio with three facilities just 45 minutes from Manhattan.",
-      technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
-      link: "/1stclassstudios",
-      category: "website"
-    },
-    {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "Ride-sharing platform for medical appointments with Bitcoin payments.",
-      technologies: ["Next.js", "Tailwind CSS", "Bitcoin Lightning", "React"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
-      link: "/roundabout",
-      category: "webapp"
-    },
+
     {
       id: "beloved",
       title: "be-loved.app",
@@ -198,7 +191,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["xrated", "moonlight", "klaire"]
+  const hiddenIds: string[] = ["xrated", "moonlight", "klaire", "roundabout"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
