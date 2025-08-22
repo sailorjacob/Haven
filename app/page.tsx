@@ -71,7 +71,7 @@ export default function HomePage() {
              {
          id: "1stclassstudios",
          title: "1stclassstudios.com",
-         description: "Professional recording studio with three facilities just 45 minutes from Manhattan and email notification automations.",
+         description: "Professional recording studio with three facilities 45 minutes from Manhattan.",
          technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
          imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
          link: "/1stclassstudios",
