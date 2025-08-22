@@ -14,6 +14,7 @@ const posts = [
     description: "Why rappers are presidents of network states.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Crown,
+    date: "Dec 2024",
   },
   {
     slug: "/ns-essay",
@@ -21,6 +22,7 @@ const posts = [
     description: "Notes and essays exploring coordination, sovereignty, and network-native societies.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater2-c6ylt6vCnnG1jKH7S1DGpixTrhGdGd.png",
     Icon: FileText,
+    date: "Nov 2024",
   },
   {
     slug: "/ns-predictions",
@@ -28,6 +30,7 @@ const posts = [
     description: "Foreshadows and near-future calls across tech, culture, and governance.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
     Icon: Sparkles,
+    date: "Oct 2024",
   },
   {
     slug: "/bitcoinbank",
@@ -35,13 +38,15 @@ const posts = [
     description: "Designing permissionless finance and product thinking around Bitcoin.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
     Icon: Bitcoin,
+    date: "Sep 2024",
   },
   {
     slug: "/story",
     title: "Story",
-    description: "Creative essays and narrative experiments.",
+    description: "About me.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png",
     Icon: BookOpen,
+    date: "Aug 2024",
   },
 ]
 
@@ -90,7 +95,7 @@ export default function BlogIndex() {
             </div>
             <div className="flex items-center space-x-4">
               <Link href="/blog" className="hidden md:inline text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors">blog</Link>
-              <Link href="/contact" className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm">Start</Link>
+              <Link href="/contact" className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm">msg</Link>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2">{mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}</button>
             </div>
           </nav>
@@ -136,7 +141,7 @@ export default function BlogIndex() {
           {posts.map((post) => (
             <Link key={post.slug} href={post.slug} className="group">
               <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
-                <div className="relative aspect-square overflow-hidden">
+                <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -149,7 +154,10 @@ export default function BlogIndex() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <h2 className="text-lg font-medium text-zinc-900">{post.title}</h2>
+                  <div className="flex items-start justify-between">
+                    <h2 className="text-lg font-medium text-zinc-900">{post.title}</h2>
+                    <span className="text-xs text-zinc-400 mt-1 ml-3 flex-shrink-0">{post.date}</span>
+                  </div>
                   <p className="text-sm text-zinc-600 mt-2 leading-relaxed">{post.description}</p>
                 </div>
               </div>

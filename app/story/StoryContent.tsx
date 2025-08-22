@@ -162,11 +162,11 @@ export default function StoryContent() {
             className="overflow-hidden w-full px-2 sm:px-0"
           >
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              I helped shape the business model for Fooji, a multi-million dollar ad startup, by leveraging Vine's early days. We were interviewed by Robert Scoble. I find talent and trends early. I've worked in LA's music scene, sleeping on couches to support artists like Kevin George, and in New York's art world, learning from Andy Warhol's old friends. My photography has been featured in The Times, and I've designed for major artists and others.
+              I helped shape the business model for fooji, a multi-million dollar ad startup, by leveraging Vine's early days. We were interviewed by Robert Scoble. I find talent and trends early. I've worked in LA's music scene, sleeping on couches to support artists like Kevin George, and in New York's art world, learning from Andy Warhol's old friends. My photography has been featured in The Times, and I've designed for major artists and others.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              But it hasn't been easy. I faced a false arrest orchestrated by a former employer, Libbie Mugrabi, leading to a $5 million lawsuit (Daily Beast). My case, backed by a lawyer who's taken on dictators, will be a clean sweep. Currently, her second lawyer is trying to drop out of the court. I've also lost{" "}
+              But it hasn't been easy. I faced a false arrest orchestrated by a former employer, a famous art collector, leading to a $5 million lawsuit (Daily Beast). My case, backed by a lawyer who's taken on dictators, will be a clean sweep. So far, her second lawyer has dropped out of the court. I've also lost{" "}
               <span 
                 onClick={toggleMemorialPopup} 
                 className="text-zinc-500 font-medium cursor-pointer hover:text-zinc-700 relative inline-block transition-colors border-b border-dotted border-zinc-400"
@@ -177,11 +177,11 @@ export default function StoryContent() {
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              Currently, I'm building be-loved.app, a platform to modernize non-emergency medical transportation, aiming to replace outdated systems with tech-driven efficiency. I'm also envisioning Haven, a superplatform that combines AI-generated media, like netflix x spotify with ai. With dark-styled accommodation living spaces as nice as Soho House, or Disney, and art an art gallery network like Gagosian. Haven can be a hive of 100,000 creators, producing billion-dollar films and music while living in resort-like compounds.
+              Right now, I'm building multiple projects, be-loved.app, is a platform to modernize non-emergency medical transportation, streamlining outdated systems with tech. I'm also envisioning Haven, a superplatform label and studio for premium media, like netflix x spotify for ai. Among this is my art - project turned game & animated series, Ammo Cat, which i plan on turning into a feature film and multi-playyer game. I have an online art gallery with plans to turn it into a physical network in multiple locations.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
-              I've de-escalated dangerous situations, like when I faced an armed robbery with a college friend, and I've predicted trends early, like naming a high school business after Elon Musk in 2015. I'm passionate about freedom, ethics, and privacy, and I want to build a Network State.
+              I've de-escalated dangerous situations, like when I was held at gunpoint with a college friend, and I've predicted early trends, like naming a high school business after Elon Musk in 2015. I'm passionate about privacy, freedom, and ethics, and I want to design network states.
             </p>
             
             <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
