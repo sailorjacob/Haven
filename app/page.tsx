@@ -59,42 +59,6 @@ export default function HomePage() {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null)
   
   const projects: Project[] = [
-          {
-        id: "killmefxster",
-        title: "killmefaster.com",
-        description: "Digital art platform with interactive experiences.",
-        technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
-        imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-        link: "/killmefxster",
-        category: "webapp"
-      },
-             {
-         id: "1stclassstudios",
-         title: "1stclassstudios.com",
-         description: "Professional recording studio with three facilities 45 minutes from Manhattan.",
-         technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
-         imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
-         link: "/1stclassstudios",
-         category: "website"
-       },
-      {
-        id: "salomatic",
-        title: "Salomatic Pitch Deck",
-        description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
-        technologies: ["Design", "Branding", "Healthcare", "Pitch Deck"],
-        imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
-        link: "/salomatic",
-        category: "website"
-      },
-    {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "Portfolio website for author and art critic Anthony Haden-Guest.",
-      technologies: ["Next.js", "Tailwind CSS", "Responsive Design"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ahgpreview7.png",
-      link: "https://anthonyhadenguest.net",
-      category: "website"
-    },
     {
       id: "sojourn",
       title: "sojourn.city",
@@ -188,6 +152,42 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
       link: "/xrated",
       category: "webapp"
+    },
+    {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "Digital art platform with interactive experiences.",
+      technologies: ["Next.js", "Three.js", "WebGL", "Framer Motion"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
+    },
+    {
+      id: "1stclassstudios",
+      title: "1stclassstudios.com",
+      description: "Professional recording studio with three facilities 45 minutes from Manhattan.",
+      technologies: ["Next.js", "Tailwind CSS", "Booking System", "Responsive Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
+      link: "/1stclassstudios",
+      category: "website"
+    },
+    {
+      id: "salomatic",
+      title: "Salomatic Pitch Deck",
+      description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
+      technologies: ["Design", "Branding", "Healthcare", "Pitch Deck"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
+      link: "/salomatic",
+      category: "website"
+    },
+    {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "Portfolio website for author and art critic Anthony Haden-Guest.",
+      technologies: ["Next.js", "Tailwind CSS", "Responsive Design"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ahgpreview7.png",
+      link: "https://anthonyhadenguest.net",
+      category: "website"
     },
   ]
 
