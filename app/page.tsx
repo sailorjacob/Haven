@@ -415,31 +415,32 @@ export default function HomePage() {
               transition={{ duration: 0.3 }}
               className="md:hidden bg-white border-b border-zinc-200"
             >
-              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
-                <Link
-                  href="https://designforstartups.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  design for startups
-                </Link>
-                <Link 
-                  href="/blog"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  blog
-                </Link>
-                <Link 
-                  href="/contact"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="group-hover:hidden">Contact</span>
-                  <span className={`hidden group-hover:inline ${navColors.contact}`}>Contact</span>
-                </Link>
+                             <div className="w-full px-4 sm:px-6 py-3 space-y-3">
+                 <Link
+                   href="https://designforstartups.net"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
+                   onClick={() => setMobileMenuOpen(false)}
+                 >
+                   design for startups
+                 </Link>
+                 <Link
+                   href="https://comparison-deserving.net"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
+                   onClick={() => setMobileMenuOpen(false)}
+                 >
+                   buy art
+                 </Link>
+                 <Link 
+                   href="/blog"
+                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
+                   onClick={() => setMobileMenuOpen(false)}
+                 >
+                   blog
+                 </Link>
           </div>
         </motion.div>
           )}
