@@ -351,7 +351,7 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-                {/* Additional header link */}
+                {/* Additional header links */}
                 <Link
                   href="https://designforstartups.net"
                   target="_blank"
@@ -359,6 +359,14 @@ export default function HomePage() {
                   className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group"
                 >
                   design for startups
+                </Link>
+                <Link
+                  href="https://comparison-deserving.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group"
+                >
+                  buy art
                 </Link>
               </div>
             </div>
