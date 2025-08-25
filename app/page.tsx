@@ -366,7 +366,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group"
                 >
-                  buy art
+                  collect art
                 </Link>
               </div>
             </div>
@@ -432,7 +432,7 @@ export default function HomePage() {
                    className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
                    onClick={() => setMobileMenuOpen(false)}
                  >
-                   buy art
+                   collect art
                  </Link>
                  <Link 
                    href="/blog"
