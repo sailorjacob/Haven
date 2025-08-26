@@ -9,6 +9,14 @@ import ProcessDropdown from "@/components/ProcessDropdown"
 
 const posts = [
   {
+    slug: "/ai-work-no-shame",
+    title: "All of My Work is AI: Why I Use AI with No Shame",
+    description: "Exploring how AI amplifies human creativity and why the real work lies in ideas, not typing.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Sparkles,
+    date: "Jan 2025",
+  },
+  {
     slug: "/drakewon",
     title: "Drake Won",
     description: "Why rappers are presidents of network states.",
