@@ -14,7 +14,7 @@ const posts = [
     description: "Exploring how AI amplifies human creativity and why the real work lies in ideas, not typing.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Sparkles,
-    date: "Jan 2025",
+    date: "Aug 2025",
   },
   {
     slug: "/drakewon",
@@ -22,15 +22,15 @@ const posts = [
     description: "Why rappers are presidents of network states.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Crown,
-    date: "Dec 2024",
+    date: "Jul 2025",
   },
   {
     slug: "/ns-essay",
     title: "NS Essay",
     description: "Notes and essays exploring coordination, sovereignty, and network-native societies.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater2-c6ylt6vCnnG1jKH7S1DGpixTrhGdGd.png",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
     Icon: FileText,
-    date: "Nov 2024",
+    date: "Jun 2025",
   },
   {
     slug: "/ns-predictions",
@@ -38,7 +38,7 @@ const posts = [
     description: "Foreshadows and near-future calls across tech, culture, and governance.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
     Icon: Sparkles,
-    date: "Oct 2024",
+    date: "May 2025",
   },
   {
     slug: "/bitcoinbank",
@@ -46,7 +46,7 @@ const posts = [
     description: "Designing permissionless finance and product thinking around Bitcoin.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
     Icon: Bitcoin,
-    date: "Sep 2024",
+    date: "Apr 2025",
   },
   {
     slug: "/story",
@@ -54,7 +54,7 @@ const posts = [
     description: "About me.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png",
     Icon: BookOpen,
-    date: "Aug 2024",
+    date: "Mar 2025",
   },
 ]
 
@@ -102,6 +102,7 @@ export default function BlogIndex() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <Link href="/gallery" className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm">collect art</Link>
               <Link href="/blog" className="hidden md:inline text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors">blog</Link>
               <Link href="/contact" className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm">msg</Link>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2">{mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}</button>
@@ -119,6 +120,9 @@ export default function BlogIndex() {
               <div className="w-full px-4 sm:px-6 py-3 space-y-3">
                 <Link href="https://designforstartups.net" target="_blank" rel="noopener noreferrer" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
                   design for startups
+                </Link>
+                <Link href="/gallery" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
+                  collect art
                 </Link>
                 <Link href="/blog" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
                   blog
