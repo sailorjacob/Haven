@@ -92,7 +92,7 @@ export default function HomePage() {
       id: "designforstartups",
       title: "designforstartups.net",
       description: "Branding and design for new and special projects.",
-      technologies: ["branding", "design", "identity", "website"],
+      technologies: ["branding", "design", "identity"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/designforstartup.png",
       link: "https://designforstartups.net",
       category: "website"
@@ -101,7 +101,7 @@ export default function HomePage() {
       id: "ammocat",
       title: "ammocat3000.com",
       description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
-      technologies: ["webstore", "mini-game", "filtering", "search"],
+      technologies: ["webstore", "mini-game", "filtering"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "/ammocat",
       category: "website"
@@ -110,7 +110,7 @@ export default function HomePage() {
       id: "swivimedia",
       title: "swivimedia.com",
       description: "Marketing platform connecting brands with micro-influencers for campaign videos.",
-      technologies: ["video processing", "creator network"],
+      technologies: ["creator network"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
       category: "webapp"
@@ -157,7 +157,7 @@ export default function HomePage() {
       id: "killmefxster",
       title: "killmefaster.com",
       description: "Digital art platform with interactive experiences.",
-      technologies: ["digital art", "interactive experiences"],
+      technologies: ["digital art"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
       link: "/killmefxster",
       category: "webapp"
@@ -175,7 +175,7 @@ export default function HomePage() {
       id: "salomatic",
       title: "Salomatic Pitch Deck",
       description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
-      technologies: ["design", "branding", "healthcare", "pitch deck"],
+      technologies: ["design", "branding", "pitch deck"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
       link: "/salomatic",
       category: "website"
