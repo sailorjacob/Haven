@@ -115,7 +115,6 @@ export default function WhatMakesPaintingWorth100mPage() {
                     height={400}
                     className="w-full rounded-lg shadow-lg"
                   />
-                  <p className="text-center text-sm text-zinc-600 mt-2">Andy Warhol - The ultimate performer of the artist character</p>
                 </div>
                 
                 <p>More thoughts on this coming soon...</p>
