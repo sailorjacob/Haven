@@ -62,9 +62,9 @@ export default function HomePage() {
     {
       id: "comparison-deserving",
       title: "comparison-deserving.net",
-      description: "Fine art gallery, online-first Singapore-based and accepting Bitcoin.",
-      technologies: ["Online Gallery", "Fine Art", "Singapore", "Bitcoin"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison-deserving.png",
+      description: "Fine art gallery, online-first and accepting Bitcoin.",
+      technologies: ["Online Gallery", "Fine Art", "Bitcoin"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
       link: "https://comparison-deserving.net",
       category: "website"
     },
@@ -75,7 +75,7 @@ export default function HomePage() {
       title: "jacobhalestudio.net",
       description: "Photography portfolio website with responsive gallery.",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Responsive Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jhale.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/jacobhalestudio.png",
       link: "/jacobhalestudio",
       category: "website"
     },
@@ -93,7 +93,7 @@ export default function HomePage() {
       title: "designforstartups.net",
       description: "Branding and design for new and special projects.",
       technologies: ["Branding", "Design", "Identity", "Website"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/desginforstartups%20dark.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/designforstartup.png",
       link: "https://designforstartups.net",
       category: "website"
     },
