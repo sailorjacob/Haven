@@ -126,7 +126,7 @@ export default function DrakeWonPage() {
                 </div>
                 
                 <p>You can see Kanye West doing this</p>
-                <p>Going to japan, going to chinna and thanking the chinese government</p>
+                <p>Going to japan, going to china and thanking the chinese government</p>
                 
                 <div className="my-8">
                   <Image 
@@ -139,11 +139,11 @@ export default function DrakeWonPage() {
                   <p className="text-center text-sm text-zinc-600 mt-2">Kanye West drawing 50,000 people in South Korea and China, 2025</p>
                 </div>
                 
-                <p>Whats the difference between Donald Trump & a KPOP star? A KPOP star could surely win, right? The difference is that Trump is actually a nice guy who got completely destroyed for years and hes actually the type of person who will bomb the terrotists at the right time.</p>
+                <p>What's the difference between Donald Trump & a KPOP star? A KPOP star could surely win, right? The difference is that Trump is actually a nice guy who got completely destroyed for years and he's actually the type of person who will bomb the terrorists at the right time.</p>
                 
                 <p>Lisa & Taylor Swift can maintain their image of innocent & perfection</p>
                 
-                <p>XXXTENTACTION has 33million monthly listeners, and AOC has 12 million followers</p>
+                <p>XXXTENTACION has 33million monthly listeners, and AOC has 12 million followers</p>
                 
                 <div className="my-8">
                   <Image 

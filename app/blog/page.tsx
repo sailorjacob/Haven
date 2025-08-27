@@ -7,15 +7,52 @@ import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, C
 import { motion, AnimatePresence } from "framer-motion"
 import ProcessDropdown from "@/components/ProcessDropdown"
 
+// Random Scribbles Component
+const RandomScribbles = () => {
+  const generateScribble = () => {
+    const points = []
+    const numPoints = Math.floor(Math.random() * 8) + 4 // 4-11 points
+    for (let i = 0; i < numPoints; i++) {
+      points.push({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        pressure: Math.random() * 0.8 + 0.2
+      })
+    }
+    return points
+  }
+
+  const scribbles = useMemo(() => {
+    return Array.from({ length: 3 }, () => generateScribble())
+  }, [])
+
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {scribbles.map((scribble, scribbleIndex) => (
+        <svg
+          key={scribbleIndex}
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            d={`M ${scribble.map((point, i) => 
+              `${point.x} ${point.y}`
+            ).join(' L ')}`}
+            stroke="rgba(0,0,0,0.15)"
+            strokeWidth={scribble[0]?.pressure * 2 || 1}
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity={0.6}
+          />
+        </svg>
+      ))}
+    </div>
+  )
+}
+
 const posts = [
-  {
-    slug: "/ai-work-no-shame",
-    title: "All of My Work is AI: Why I Use AI with No Shame",
-    description: "Exploring how AI amplifies human creativity and why the real work lies in ideas, not typing.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: Sparkles,
-    date: "Aug 2025",
-  },
   {
     slug: "/what-im-listening-to",
     title: "What I'm listening to",
@@ -30,6 +67,14 @@ const posts = [
     description: "The answer: the artist's story. He who is most playing the character and role of an artist.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
     Icon: FileText,
+    date: "Aug 2025",
+  },
+  {
+    slug: "/ai-work-no-shame",
+    title: "All of My Work is AI: Why I Use AI with No Shame",
+    description: "Exploring how AI amplifies human creativity and why the real work lies in ideas, not typing.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Sparkles,
     date: "Aug 2025",
   },
   {
@@ -172,6 +217,7 @@ export default function BlogIndex() {
             <Link key={post.slug} href={post.slug} className="group">
               <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
                 <div className="relative aspect-[3/2] overflow-hidden">
+                  <RandomScribbles />
                   <Image
                     src={post.image}
                     alt={post.title}
