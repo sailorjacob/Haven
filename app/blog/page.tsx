@@ -27,7 +27,7 @@ const RandomScribbles = () => {
   }, [])
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
       {scribbles.map((scribble, scribbleIndex) => (
         <svg
           key={scribbleIndex}
@@ -39,12 +39,12 @@ const RandomScribbles = () => {
             d={`M ${scribble.map((point, i) => 
               `${point.x} ${point.y}`
             ).join(' L ')}`}
-            stroke="rgba(0,0,0,0.15)"
+            stroke="rgba(0,0,0,1)"
             strokeWidth={scribble[0]?.pressure * 2 || 1}
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
-            opacity={0.6}
+            opacity={1}
           />
         </svg>
       ))}
@@ -160,7 +160,7 @@ export default function BlogIndex() {
                 <Link href="https://designforstartups.net" target="_blank" rel="noopener noreferrer" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
                   design for startups
                 </Link>
-                <Link href="/gallery" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
+                <Link href="https://comparison-deserving.net" target="_blank" rel="noopener noreferrer" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
                   collect art
                 </Link>
               </div>
@@ -184,7 +184,7 @@ export default function BlogIndex() {
                 <Link href="https://designforstartups.net" target="_blank" rel="noopener noreferrer" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
                   design for startups
                 </Link>
-                <Link href="/gallery" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="https://comparison-deserving.net" target="_blank" rel="noopener noreferrer" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
                   collect art
                 </Link>
                 <Link href="/blog" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>

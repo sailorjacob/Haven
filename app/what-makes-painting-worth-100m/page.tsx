@@ -5,6 +5,7 @@ import { useMemo, useState } from "react"
 import { Hexagon, ChevronDown, Menu, X, FileText } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import ProcessDropdown from "@/components/ProcessDropdown"
+import Image from "next/image"
 
 const getSeededRandomColor = (seed: string) => {
   const hash = seed.split('').reduce((acc, char) => {
@@ -105,6 +106,17 @@ export default function WhatMakesPaintingWorth100mPage() {
                 <p>Think of the greats: Picasso, Warhol, Basquiat, Hirst. Each mastered not just their craft, but the performance of being an artist. They understood that art is as much about the story as it is about the object.</p>
                 
                 <p>The $100m painting is not just pigment on canvas—it's a relic from the life of someone who played the character of "artist" so well that the world believed it completely.</p>
+                
+                <div className="my-8">
+                  <Image 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/havenblog/andy-warhol575_.webp"
+                    alt="Andy Warhol - Master of the Artist Character"
+                    width={600}
+                    height={400}
+                    className="w-full rounded-lg shadow-lg"
+                  />
+                  <p className="text-center text-sm text-zinc-600 mt-2">Andy Warhol - The ultimate performer of the artist character</p>
+                </div>
                 
                 <p>More thoughts on this coming soon...</p>
               </div>
