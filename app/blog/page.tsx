@@ -17,6 +17,22 @@ const posts = [
     date: "Aug 2025",
   },
   {
+    slug: "/what-im-listening-to",
+    title: "What I'm listening to",
+    description: "Current music, podcasts, and audio that's shaping my thinking and creative process.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Sparkles,
+    date: "Aug 2025",
+  },
+  {
+    slug: "/what-makes-painting-worth-100m",
+    title: "What Makes a painting worth $100m?",
+    description: "The answer: the artist's story. He who is most playing the character and role of an artist.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    Icon: FileText,
+    date: "Aug 2025",
+  },
+  {
     slug: "/drakewon",
     title: "Drake Won",
     description: "Why rappers are presidents of network states.",
@@ -99,10 +115,12 @@ export default function BlogIndex() {
                 <Link href="https://designforstartups.net" target="_blank" rel="noopener noreferrer" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
                   design for startups
                 </Link>
+                <Link href="/gallery" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
+                  collect art
+                </Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="/gallery" className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm">collect art</Link>
               <Link href="/blog" className="hidden md:inline text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors">blog</Link>
               <Link href="/contact" className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm">msg</Link>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2">{mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}</button>
@@ -145,8 +163,8 @@ export default function BlogIndex() {
 
       <div className="max-w-6xl mx-auto px-6 pb-16">
         <div className="mb-10">
-          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">Blog</h1>
-          <p className="text-zinc-600 mt-2">Essays and notes from recent work and thinking.</p>
+          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🔮🏛️⚔️ Blog</h1>
+          <p className="text-zinc-600 mt-2">thoughts ideas + generations</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

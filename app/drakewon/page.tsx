@@ -208,6 +208,17 @@ export default function DrakeWonPage() {
                 
                 <p>Why this matters? Elon Ye presidential announcement (trump ended up being the trojan horse)</p>
                 
+                <div className="my-8">
+                  <Image 
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//Ye.jpeg"
+                    alt="Kanye West Presidential Announcement Tweet"
+                    width={600}
+                    height={400}
+                    className="w-full rounded-lg shadow-lg"
+                  />
+                  <p className="text-center text-sm text-zinc-600 mt-2">Kanye West's presidential announcement tweet with Elon Musk's support</p>
+                </div>
+                
                 <p>What's next? Exiting existing networks (i started making my own cursor for grok while also using cursor) A small army of people at NS could theoretically clone their own version of X, Instagram, etc (you see this happening when IG stole snapchat stories, implemented Reels, and built threads) I had a drink with the product manager of threads shortly before it dropped and we were comparing Grindr to Tinder and how grindr will likely eventually win.</p>
                 
                 <p>Exit the state, exit the platform - non - obvious and even our best minds today take this for granted (Elon's done a great job with X, but I remember the difference between Vine, and TikTok)</p>
