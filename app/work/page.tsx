@@ -316,7 +316,7 @@ export default function WorkPage() {
                 
               </h1>
               <p className="text-md text-zinc-600 max-w-2xl mx-auto">
-                A selection of our custom development projects showcasing logos, interactive experiences, and AI-powered tools.
+                a selection of my custom development projects showcasing logos, interactive experiences, and ai-powered tools.
               </p>
             </div>
           </motion.div>
