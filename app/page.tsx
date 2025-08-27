@@ -103,7 +103,7 @@ export default function HomePage() {
       description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
       technologies: ["webstore", "mini-game", "filtering"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "/ammocat",
+      link: "https://ammocat.com",
       category: "website"
     },
     {
