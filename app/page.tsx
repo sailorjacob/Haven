@@ -43,6 +43,7 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
   const [processSectionOpen, setProcessSectionOpen] = useState(false)
+  const [performanceSectionOpen, setPerformanceSectionOpen] = useState(false)
   
   // Feature flags for easy toggling
   const ENABLE_HOMEPAGE_STARS = false
@@ -198,6 +199,7 @@ export default function HomePage() {
     : projects).filter(project => !hiddenIds.includes(project.id))
 
   const processRef = useRef<HTMLDivElement>(null)
+  const performanceRef = useRef<HTMLDivElement>(null)
 
   // Graphic component for each process step
   const GearGraphic = ({ index, number, active }: { index: number; number: string; active: boolean }) => {
@@ -727,93 +729,137 @@ export default function HomePage() {
           </div>
 
           {/* Studio Performance */}
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Uptime */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="text-center"
+          <div id="performance" ref={performanceRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden scroll-mt-32">
+            {/* crosshair overlay */}
+            <CrosshairOverlay parentRef={performanceRef} />
+            <div className="flex items-center justify-center">
+              <button
+                aria-expanded={performanceSectionOpen}
+                onClick={() => setPerformanceSectionOpen((v) => !v)}
+                className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
               >
-                <div className="relative w-24 h-24 mx-auto mb-4">
-                  <svg className="w-full h-full" viewBox="0 0 100 100">
-                    <circle 
-                      cx="50" 
-                      cy="50" 
-                      r="45" 
-                      fill="none" 
-                      stroke="#e4e4e7" 
-                      strokeWidth="4"
-                    />
-                    <motion.circle
-                      cx="50"
-                      cy="50"
-                      r="45"
-                      fill="none"
-                      stroke="#22c55e"
-                      strokeWidth="4"
-                      strokeDasharray="283"
-                      strokeDashoffset="10"  
-                      initial={{ strokeDashoffset: 283 }}
-                      whileInView={{ 
-                        strokeDashoffset: 10,
-                        transition: { duration: 2, ease: "easeInOut" }
-                      }}
-                      viewport={{ once: true }}
-                      transform="rotate(-90 50 50)"
-                      strokeLinecap="round"
-                    />
-                    <text 
-                      x="50" 
-                      y="50" 
-                      textAnchor="middle" 
-                      fill="#18181b" 
-                      fontSize="16" 
-                      fontWeight="600"
-                      dominantBaseline="middle"
-                    >
-                      100%
-                    </text>
+                <motion.span
+                  animate={{ rotate: performanceSectionOpen ? 180 : 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="inline-block"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
-                <p className="text-zinc-600 text-sm">Reliable hosting & maintenance</p>
-              </motion.div>
-
-              {/* Support */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-24 h-24 rounded-full border-2 border-zinc-300 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-zinc-700 font-semibold text-lg">24/7</span>
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
-                <p className="text-zinc-600 text-sm">Always available assistance</p>
-              </motion.div>
-
-              {/* Impressions */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="h-24 flex flex-col items-center justify-center mb-4">
-                  <div className="text-3xl font-semibold text-zinc-900 mb-1">
-                    1,000,000+
-                  </div>
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
-                <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
-              </motion.div>
+                </motion.span>
+                <span className="uppercase tracking-wider">Studio Performance</span>
+              </button>
             </div>
+
+            <AnimatePresence initial={false}>
+              {performanceSectionOpen && (
+                <motion.div
+                  key="performance-content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="mt-4"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="text-center mb-6"
+                  >
+                    <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">Studio Performance</h2>
+                    <p className="text-sm text-zinc-600 max-w-2xl mx-auto">Key metrics that demonstrate our commitment to excellence and reliability.</p>
+                  </motion.div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Uptime */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                      className="text-center"
+                    >
+                      <div className="relative w-24 h-24 mx-auto mb-4">
+                        <svg className="w-full h-full" viewBox="0 0 100 100">
+                          <circle 
+                            cx="50" 
+                            cy="50" 
+                            r="45" 
+                            fill="none" 
+                            stroke="#e4e4e7" 
+                            strokeWidth="4"
+                          />
+                          <motion.circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="none"
+                            stroke="#22c55e"
+                            strokeWidth="4"
+                            strokeDasharray="283"
+                            strokeDashoffset="10"  
+                            initial={{ strokeDashoffset: 283 }}
+                            whileInView={{ 
+                              strokeDashoffset: 10,
+                              transition: { duration: 2, ease: "easeInOut" }
+                            }}
+                            viewport={{ once: true }}
+                            transform="rotate(-90 50 50)"
+                            strokeLinecap="round"
+                          />
+                          <text 
+                            x="50" 
+                            y="50" 
+                            textAnchor="middle" 
+                            fill="#18181b" 
+                            fontSize="16" 
+                            fontWeight="600"
+                            dominantBaseline="middle"
+                          >
+                            100%
+                          </text>
+                        </svg>
+                      </div>
+                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
+                      <p className="text-zinc-600 text-sm">Reliable hosting & maintenance</p>
+                    </motion.div>
+
+                    {/* Support */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                      className="text-center"
+                    >
+                      <div className="w-24 h-24 rounded-full border-2 border-zinc-300 flex items-center justify-center mx-auto mb-4">
+                        <span className="text-zinc-700 font-semibold text-lg">24/7</span>
+                      </div>
+                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
+                      <p className="text-zinc-600 text-sm">Always available assistance</p>
+                    </motion.div>
+
+                    {/* Impressions */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                      className="text-center"
+                    >
+                      <div className="h-24 flex flex-col items-center justify-center mb-4">
+                        <div className="text-3xl font-semibold text-zinc-900 mb-1">
+                          1,000,000+
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
+                      <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Team */}
