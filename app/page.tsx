@@ -603,10 +603,10 @@ export default function HomePage() {
                 {/* Start a Project Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center border-yellow-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className="inline-flex items-center border-zinc-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Yellow background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  {/* Grey background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     Start a Project
@@ -617,10 +617,10 @@ export default function HomePage() {
                 {/* View Work Button */}
                 <Link
                   href="/work"
-                  className="inline-flex items-center border-sky-500 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className="inline-flex items-center border-zinc-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Sky blue background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  {/* Grey background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     View Work
@@ -941,8 +941,8 @@ export default function HomePage() {
                   href="/contact"
                   className="inline-flex items-center border border-zinc-300 text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Random colored background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  {/* Grey background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
@@ -958,8 +958,8 @@ export default function HomePage() {
                   href="mailto:info@haven.engineer"
                   className="inline-flex items-center border border-zinc-300 text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
                 >
-                  {/* Random colored background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-green-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  {/* Grey background that fills from left on hover */}
+                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                   
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
