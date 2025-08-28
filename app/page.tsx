@@ -71,7 +71,7 @@ export default function HomePage() {
     },
     {
       id: "comparison-deserving",
-      title: "comparison-deserving.net",
+      title: "comparison",
       description: "fine art gallery, online-first and accepting bitcoin.",
       technologies: ["online gallery", "fine art", "bitcoin"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
@@ -587,7 +587,7 @@ export default function HomePage() {
                 </div>
               </motion.div>
               <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
-                Premium digital experiences
+                designing digital experiences
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
