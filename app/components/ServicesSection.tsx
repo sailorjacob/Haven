@@ -43,17 +43,7 @@ export const ServicesSection = () => {
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="relative z-10 mt-4"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
-              className="text-center mb-5"
-            >
-              <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-2">Services</h2>
-              <p className="text-sm text-zinc-600 max-w-2xl mx-auto">
-                We specialize in creating digital experiences that combine beautiful design with powerful functionality.
-              </p>
-            </motion.div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <ServiceCard
@@ -66,8 +56,8 @@ export const ServicesSection = () => {
               />
               <ServiceCard
                 icon={Palette}
-                title="Web Design"
-                description="Minimalist, elegant interfaces that elevate brands with thoughtful interactions and premium aesthetics."
+                title="Graphic Design"
+                description="Creative visual solutions including logos, branding, print materials, and digital assets that capture brand essence."
                 delay={0.2}
                 color="green"
                 imagePosition="center"
@@ -75,7 +65,7 @@ export const ServicesSection = () => {
               <ServiceCard
                 icon={Zap}
                 title="Digital Strategy"
-                description="Comprehensive digital solutions that align with business goals and create meaningful user experiences."
+                description="Strategic brand positioning and digital transformation that builds authentic connections and drives measurable business growth."
                 delay={0.3}
                 color="red"
                 imagePosition="right"
