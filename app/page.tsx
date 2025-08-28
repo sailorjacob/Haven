@@ -659,15 +659,7 @@ export default function HomePage() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="mt-4"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="text-center mb-6"
-                  >
-                    <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">Process</h2>
-                    <p className="text-sm text-zinc-600 max-w-2xl mx-auto">A proven methodology that ensures successful project delivery from concept to launch.</p>
-                  </motion.div>
+
 
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {[
@@ -864,7 +856,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: <>Jacob is a digital artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">imagery</Link> and design.</>,
+                  description: <>Jacob is a digital artist and entrepreneur with <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">7+ years</Link> of imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }

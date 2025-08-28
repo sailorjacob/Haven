@@ -64,7 +64,7 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
               {step.label}
             </span>
 
-            <p className="mt-2 text-xs leading-snug text-zinc-400 text-center">
+            <p className="mt-2 text-xs leading-snug text-zinc-400 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               {step.descr}
             </p>
           </div>
