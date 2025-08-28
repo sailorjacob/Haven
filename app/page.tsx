@@ -864,6 +864,7 @@ export default function HomePage() {
               {[
                 {
                   name: "Jacob Beam",
+                  role: "Founder",
                   description: <>digital artist and entrepreneur with 7+ years of imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
@@ -902,7 +903,7 @@ export default function HomePage() {
                       return parts[0] + (parts[1] ? " " + parts[1][0] + "." : "")
                     })()
                   }</h3>
-
+                  <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
                   <p className="text-zinc-600 text-sm leading-relaxed">
                         {member.description}
                   </p>
