@@ -148,7 +148,7 @@ export default function HomePage() {
     },
     {
       id: "xrated",
-      title: "x-rated.me",
+      title: "rated.",
       description: "social platform for content sharing with privacy controls and monetization.",
       technologies: ["content sharing", "privacy controls", "monetization"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
