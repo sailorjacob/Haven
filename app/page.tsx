@@ -61,6 +61,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "photography portfolio website with responsive gallery.",
+      technologies: ["responsive gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
+      link: "/jacobhalestudio",
+      category: "website"
+    },
+    {
       id: "comparison-deserving",
       title: "comparison-deserving.net",
       description: "fine art gallery, online-first and accepting bitcoin.",
@@ -71,15 +80,7 @@ export default function HomePage() {
     },
 
     
-    {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "photography portfolio website with responsive gallery.",
-      technologies: ["responsive gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "/jacobhalestudio",
-      category: "website"
-    },
+
     {
       id: "sojourn",
       title: "sojourn.city",
@@ -869,7 +870,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                    description: <>Jacob is a tech artist and entrepreneur with 7+ years of <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">imagery</Link> and design.</>,
+                    description: <>Jacob is a digital artist and entrepreneur with 7+ years of imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }
