@@ -547,16 +547,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
                     <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
                     
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex} 
-                          className="text-xs px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+
                     
                     <Link 
                       href={project.link} 
