@@ -68,10 +68,7 @@ export default function SalomaticPage() {
                   <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
                   <p className="text-zinc-700">Pitch Deck, Branding</p>
                 </div>
-                <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Technologies</h4>
-                  <p className="text-zinc-700">Figma, AI Design Tools</p>
-                </div>
+
               </div>
             </div>
           </div>

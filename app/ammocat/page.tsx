@@ -103,10 +103,7 @@ export default function AmmocatPage() {
                   <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
                   <p className="text-zinc-700">Website, E-commerce, Game Development</p>
                 </div>
-                <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Technologies</h4>
-                  <p className="text-zinc-700">Vue.js, Firebase, Stripe</p>
-                </div>
+
               </div>
             </div>
           </div>
@@ -171,7 +168,7 @@ export default function AmmocatPage() {
               <div className="text-4xl text-zinc-300 font-bold mb-4">03</div>
               <h3 className="text-xl text-zinc-900 mb-2">Full-stack Development</h3>
               <p className="text-zinc-600">
-                Built the platform using Vue.js for the frontend, Firebase for backend services, and integrated Algolia for search and Stripe for payment processing.
+                Built the platform with integrated search functionality and secure payment processing for a smooth user experience.
               </p>
             </div>
             <div>

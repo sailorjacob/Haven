@@ -103,10 +103,7 @@ export default function AnthonyHadenGuestPage() {
                   <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
                   <p className="text-zinc-700">Website Design, Development</p>
                 </div>
-                <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Technologies</h4>
-                  <p className="text-zinc-700">Next.js, Tailwind CSS</p>
-                </div>
+
               </div>
             </div>
           </div>
@@ -171,7 +168,7 @@ export default function AnthonyHadenGuestPage() {
               <div className="text-4xl text-zinc-300 font-bold mb-4">03</div>
               <h3 className="text-xl text-zinc-900 mb-2">Development</h3>
               <p className="text-zinc-600">
-                Built with modern web technologies ensuring fast loading times, SEO optimization, and seamless content management.
+                Built with careful attention to performance, SEO optimization, and seamless content management.
               </p>
             </div>
             <div>
