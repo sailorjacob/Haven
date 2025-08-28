@@ -9,21 +9,61 @@ import ProcessDropdown from "@/components/ProcessDropdown"
 
 // Random Scribbles Component
 const RandomScribbles = () => {
-  const generateScribble = () => {
-    const points = []
-    const numPoints = Math.floor(Math.random() * 8) + 4 // 4-11 points
-    for (let i = 0; i < numPoints; i++) {
-      points.push({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        pressure: Math.random() * 0.8 + 0.2
-      })
+  const generateGraffitiScribble = () => {
+    const type = Math.random()
+    if (type < 0.4) {
+      // Ink blot drips
+      const centerX = Math.random() * 80 + 10
+      const centerY = Math.random() * 80 + 10
+      const radius = Math.random() * 15 + 5
+      const points = []
+      const numPoints = Math.floor(Math.random() * 8) + 6
+      
+      for (let i = 0; i < numPoints; i++) {
+        const angle = (i / numPoints) * Math.PI * 2
+        const r = radius + Math.random() * 8
+        points.push({
+          x: centerX + Math.cos(angle) * r,
+          y: centerY + Math.sin(angle) * r
+        })
+      }
+      return { type: 'blot', points }
+    } else if (type < 0.7) {
+      // Curved graffiti lines
+      const startX = Math.random() * 100
+      const startY = Math.random() * 100
+      const controlX1 = startX + (Math.random() - 0.5) * 40
+      const controlY1 = startY + (Math.random() - 0.5) * 40
+      const controlX2 = controlX1 + (Math.random() - 0.5) * 30
+      const controlY2 = controlY1 + (Math.random() - 0.5) * 30
+      const endX = controlX2 + (Math.random() - 0.5) * 20
+      const endY = controlY2 + (Math.random() - 0.5) * 20
+      
+      return { 
+        type: 'curve', 
+        points: [{ x: startX, y: startY }, { x: controlX1, y: controlY1 }, { x: controlX2, y: controlY2 }, { x: endX, y: endY }]
+      }
+    } else {
+      // Spray paint splatter
+      const centerX = Math.random() * 100
+      const centerY = Math.random() * 100
+      const points = []
+      const numPoints = Math.floor(Math.random() * 12) + 8
+      
+      for (let i = 0; i < numPoints; i++) {
+        const angle = Math.random() * Math.PI * 2
+        const distance = Math.random() * 20
+        points.push({
+          x: centerX + Math.cos(angle) * distance,
+          y: centerY + Math.sin(angle) * distance
+        })
+      }
+      return { type: 'splatter', points }
     }
-    return points
   }
 
   const scribbles = useMemo(() => {
-    return Array.from({ length: 3 }, () => generateScribble())
+    return Array.from({ length: 4 }, () => generateGraffitiScribble())
   }, [])
 
   return (
@@ -35,17 +75,34 @@ const RandomScribbles = () => {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
-          <path
-            d={`M ${scribble.map((point, i) => 
-              `${point.x} ${point.y}`
-            ).join(' L ')}`}
-            stroke="rgba(0,0,0,1)"
-            strokeWidth={scribble[0]?.pressure * 2 || 1}
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity={1}
-          />
+          {scribble.type === 'blot' && (
+            <path
+              d={`M ${scribble.points.map((point, i) => 
+                `${point.x} ${point.y}`
+              ).join(' L ')} Z`}
+              fill="rgba(0,0,0,1)"
+              opacity={0.8}
+            />
+          )}
+          {scribble.type === 'curve' && (
+            <path
+              d={`M ${scribble.points[0].x} ${scribble.points[0].y} Q ${scribble.points[1].x} ${scribble.points[1].y} ${scribble.points[2].x} ${scribble.points[2].y} T ${scribble.points[3].x} ${scribble.points[3].y}`}
+              stroke="rgba(0,0,0,1)"
+              strokeWidth={Math.random() * 2 + 1}
+              fill="none"
+              strokeLinecap="round"
+              opacity={0.9}
+            />
+          )}
+          {scribble.type === 'splatter' && (
+            <path
+              d={`M ${scribble.points.map((point, i) => 
+                `${point.x} ${point.y}`
+              ).join(' L ')} Z`}
+              fill="rgba(0,0,0,1)"
+              opacity={0.7}
+            />
+          )}
         </svg>
       ))}
     </div>
