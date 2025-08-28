@@ -193,7 +193,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["xrated", "moonlight", "klaire", "roundabout"]
+  const hiddenIds: string[] = ["moonlight", "klaire", "roundabout"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
