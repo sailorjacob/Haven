@@ -47,7 +47,7 @@ export default function SwivimediaPage() {
             <span className="text-zinc-600">•</span>
             <span>Influencer Platform</span>
             <span className="text-zinc-600">•</span>
-            <a href="https://swivimedia.com" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-zinc-900 transition-colors">
+            <a href="https://www.swivimedia.com/about" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-zinc-900 transition-colors">
               Visit Website
             </a>
           </div>
