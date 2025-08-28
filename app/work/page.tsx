@@ -173,6 +173,15 @@ export default function WorkPage() {
       ],
       link: "#",
       type: "gallery"
+    },
+    {
+      id: "salomatic-pitch-deck",
+      title: "Salomatic Pitch Deck",
+      description: "Recent brand transformation and pitch deck design for AI-enhanced lab test startup backed by Microsoft and the World Bank.",
+      category: "Brand Transformation",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
+      link: "/salomatic",
+      type: "image"
     }
   ]
 
