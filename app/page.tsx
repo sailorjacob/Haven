@@ -63,7 +63,7 @@ export default function HomePage() {
     {
       id: "comparison-deserving",
       title: "comparison-deserving.net",
-      description: "Fine art gallery, online-first and accepting Bitcoin.",
+      description: "fine art gallery, online-first and accepting bitcoin.",
       technologies: ["online gallery", "fine art", "bitcoin"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
       link: "https://comparison-deserving.net",
@@ -74,7 +74,7 @@ export default function HomePage() {
     {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
-      description: "Photography portfolio website with responsive gallery.",
+      description: "photography portfolio website with responsive gallery.",
       technologies: ["responsive gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/jacobhalestudio.png",
       link: "/jacobhalestudio",
@@ -83,7 +83,7 @@ export default function HomePage() {
     {
       id: "sojourn",
       title: "sojourn.city",
-      description: "Solar punk inspired art project with an interactive public art gallery wall.",
+      description: "solar punk inspired art project with an interactive public art gallery wall.",
       technologies: ["interactive art", "public gallery", "solar punk", "community"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/sojourn.png",
       link: "https://sojourn.city",
@@ -92,7 +92,7 @@ export default function HomePage() {
     {
       id: "designforstartups",
       title: "designforstartups.net",
-      description: "Branding and design for new and special projects.",
+      description: "branding and design for new and special projects.",
       technologies: ["branding", "design", "identity"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/designforstartup.png",
       link: "https://designforstartups.net",
@@ -101,7 +101,7 @@ export default function HomePage() {
     {
       id: "ammocat",
       title: "ammocat3000.com",
-      description: "Homepage, webstore, and mini-game for New York artist Ammo Cat with filtering and search.",
+      description: "homepage, webstore, and mini-game for new york artist ammo cat with filtering and search.",
       technologies: ["webstore", "mini-game", "filtering"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat.com",
@@ -110,7 +110,7 @@ export default function HomePage() {
     {
       id: "swivimedia",
       title: "swivimedia.com",
-      description: "Marketing platform connecting brands with micro-influencers for campaign videos.",
+      description: "marketing platform connecting brands with micro-influencers for campaign videos.",
       technologies: ["creator network"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
@@ -120,7 +120,7 @@ export default function HomePage() {
     {
       id: "beloved",
       title: "be-loved.app",
-      description: "iOS app and web platform with scheduling for NEMT Provider BeLoved Transportation.",
+      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
       technologies: ["ios app", "scheduling", "nemt"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
       link: "/beloved",
@@ -139,7 +139,7 @@ export default function HomePage() {
     {
       id: "klaire",
       title: "klaire.dev",
-      description: "Portfolio for UI/UX designer Klaire Rasche with game design and AI technology.",
+      description: "portfolio for ui/ux designer klaire rasche with game design and ai technology.",
       technologies: ["ui/ux", "game design", "ai tools"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
       link: "https://www.klaire.dev/klaire-portfolio.html",
@@ -148,7 +148,7 @@ export default function HomePage() {
     {
       id: "xrated",
       title: "x-rated.me",
-      description: "Social platform for content sharing with privacy controls and monetization.",
+      description: "social platform for content sharing with privacy controls and monetization.",
       technologies: ["content sharing", "privacy controls", "monetization"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//xrated1.png",
       link: "/xrated",
@@ -157,7 +157,7 @@ export default function HomePage() {
     {
       id: "killmefxster",
       title: "killmefaster.com",
-      description: "Digital art platform with interactive experiences.",
+      description: "digital art platform with interactive experiences.",
       technologies: ["digital art"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
       link: "/killmefxster",
@@ -166,7 +166,7 @@ export default function HomePage() {
     {
       id: "1stclassstudios",
       title: "1stclassstudios.com",
-      description: "Professional recording studio with three facilities 45 minutes from Manhattan.",
+      description: "professional recording studio with three facilities 45 minutes from manhattan.",
       technologies: ["booking system", "responsive design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
       link: "/1stclassstudios",
@@ -175,7 +175,7 @@ export default function HomePage() {
     {
       id: "salomatic",
       title: "Salomatic Pitch Deck",
-      description: "Design and branding for their routine blood testing product with modern healthcare aesthetics.",
+      description: "design and branding for their routine blood testing product with modern healthcare aesthetics.",
       technologies: ["design", "branding", "pitch deck"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
       link: "/salomatic",
@@ -184,7 +184,7 @@ export default function HomePage() {
     {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
-      description: "Portfolio website for author and art critic Anthony Haden-Guest.",
+      description: "portfolio website for author and art critic anthony haden-guest.",
       technologies: ["responsive design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ahgpreview7.png",
       link: "https://anthonyhadenguest.net",
