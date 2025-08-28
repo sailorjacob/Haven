@@ -752,14 +752,7 @@ export default function HomePage() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="mt-4"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="text-center mb-6"
-                  >
-                    <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">Studio Performance</h2>
-                  </motion.div>
+
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Uptime */}
@@ -837,9 +830,15 @@ export default function HomePage() {
                       className="text-center"
                     >
                       <div className="h-24 flex flex-col items-center justify-center mb-4">
-                        <div className="text-2xl font-semibold text-zinc-900 mb-1">
-                          100,000
-                        </div>
+                        <motion.div 
+                          className="text-2xl font-semibold text-zinc-900 mb-1"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 1, ease: "easeOut" }}
+                          viewport={{ once: true }}
+                        >
+                          100,000+
+                        </motion.div>
                       </div>
                       <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
                     </motion.div>
