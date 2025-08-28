@@ -186,7 +186,7 @@ export default function HomePage() {
       title: "Anthony Haden-Guest",
       description: "portfolio website for author and art critic anthony haden-guest.",
       technologies: ["responsive design"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ahgpreview7.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
       link: "https://anthonyhadenguest.net",
       category: "website"
     },
