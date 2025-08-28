@@ -65,7 +65,7 @@ export const ServicesSection = () => {
               <ServiceCard
                 icon={Zap}
                 title="Digital Strategy"
-                description="Strategic brand positioning and digital transformation that builds authentic connections and drives measurable business growth."
+                description="Strategic brand positioning and digital transformation that drives business growth."
                 delay={0.3}
                 color="red"
                 imagePosition="right"

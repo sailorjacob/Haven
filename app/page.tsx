@@ -813,7 +813,7 @@ export default function HomePage() {
                       <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
                     </motion.div>
 
-                    {/* Impressions */}
+                    {/* Better Conversion */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -829,10 +829,12 @@ export default function HomePage() {
                           transition={{ duration: 1, ease: "easeOut" }}
                           viewport={{ once: true }}
                         >
-                          100,000+
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-green-600">
+                            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
                         </motion.div>
                       </div>
-                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
+                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Better Conversion</h3>
                     </motion.div>
                   </div>
                 </motion.div>
