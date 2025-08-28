@@ -76,7 +76,7 @@ export default function HomePage() {
       title: "jacobhalestudio.net",
       description: "photography portfolio website with responsive gallery.",
       technologies: ["responsive gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/jacobhalestudio.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
       link: "/jacobhalestudio",
       category: "website"
     },
