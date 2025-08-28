@@ -486,7 +486,6 @@ export default function HomePage() {
               className="flex flex-col md:flex-row justify-end items-start md:items-center mb-8"
             >
               <div className="flex items-center space-x-2 mt-6 md:mt-0">
-                <Filter className="w-4 h-4 text-zinc-400" />
                 <div className="flex space-x-2">
                   <button 
                     onClick={() => setFilter(null)} 
