@@ -587,7 +587,7 @@ export default function HomePage() {
                 </div>
               </motion.div>
               <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
-                designing digital experiences
+                Premium digital experiences
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
