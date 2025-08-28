@@ -53,12 +53,8 @@ export default function ContactPage() {
           className="text-center mb-12"
         >
           <Link href="/" className="text-zinc-600 mb-4 inline-block text-sm hover:text-zinc-800 transition-colors">
-            ← Back to Home
+            ← Back
           </Link>
-
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-700 mb-6 lowercase">
-            Let's discuss your next project
-          </p>
         </motion.div>
 
         {/* Form Section */}
@@ -105,47 +101,9 @@ export default function ContactPage() {
                 />
               </div>
                 
-              <div>
-                <label htmlFor="projectType" className="block text-zinc-800 mb-2">Project Type</label>
-                <select
-                  id="projectType"
-                  name="projectType"
-                  className="w-full bg-white border border-zinc-200 p-3 text-zinc-800 focus:outline-none focus:border-zinc-300 appearance-none cursor-pointer rounded-none"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                    backgroundPosition: 'right 0.75rem center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: '1.5em 1.5em',
-                    paddingRight: '2.5rem'
-                  }}
-                >
-                  <option value="website">Website</option>
-                  <option value="webapp">Web Application</option>
-                  <option value="design">Design</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+
                 
-              <div>
-                <label htmlFor="budget" className="block text-zinc-800 mb-2">Budget Range</label>
-                <select
-                  id="budget"
-                  name="budget"
-                  className="w-full bg-white border border-zinc-200 p-3 text-zinc-800 focus:outline-none focus:border-zinc-300 appearance-none cursor-pointer rounded-none"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-                    backgroundPosition: 'right 0.75rem center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: '1.5em 1.5em',
-                    paddingRight: '2.5rem'
-                  }}
-                >
-                  <option value="<5k">Less than $5,000</option>
-                  <option value="5k-10k">$5,000 - $10,000</option>
-                  <option value="10k-25k">$10,000 - $25,000</option>
-                  <option value="25k+">$25,000+</option>
-                </select>
-              </div>
+
               
               <div>
                 <label htmlFor="message" className="block text-zinc-800 mb-2">Project Details</label>
