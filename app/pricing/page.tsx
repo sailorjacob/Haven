@@ -93,7 +93,7 @@ export default function PricingPage() {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
-                  href="/studio" 
+                  href="/" 
                   className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                 >
                   Studio
@@ -139,7 +139,7 @@ export default function PricingPage() {
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
-                  href="/studio" 
+                  href="/" 
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >

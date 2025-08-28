@@ -55,7 +55,7 @@ export default function SitemapPage() {
                 description="Interactive exploration page with bouncing navigation"
               />
               <PageItem 
-                href="/studio"
+                href="/"
                 title="Studio"
                 description="Portfolio showcase of web development and design projects"
               />

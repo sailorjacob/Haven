@@ -217,7 +217,7 @@ export default function LetterPage() {
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href="/studio" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
                 <span className="ml-2 text-lg font-light tracking-wider text-zinc-900">Haven</span>
               </Link>

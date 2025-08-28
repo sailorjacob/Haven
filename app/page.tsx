@@ -331,7 +331,7 @@ export default function HomePage() {
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href="/studio" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
                 <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
@@ -759,7 +759,6 @@ export default function HomePage() {
                     className="text-center mb-6"
                   >
                     <h2 className="text-xl md:text-2xl font-light text-zinc-800 mb-2">Studio Performance</h2>
-                    <p className="text-sm text-zinc-600 max-w-2xl mx-auto">Key metrics that demonstrate our commitment to excellence and reliability.</p>
                   </motion.div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -813,7 +812,6 @@ export default function HomePage() {
                         </svg>
                       </div>
                       <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
-                      <p className="text-zinc-600 text-sm">Reliable hosting & maintenance</p>
                     </motion.div>
 
                     {/* Support */}
@@ -828,7 +826,6 @@ export default function HomePage() {
                         <span className="text-zinc-700 font-semibold text-lg">24/7</span>
                       </div>
                       <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
-                      <p className="text-zinc-600 text-sm">Always available assistance</p>
                     </motion.div>
 
                     {/* Impressions */}
@@ -840,12 +837,11 @@ export default function HomePage() {
                       className="text-center"
                     >
                       <div className="h-24 flex flex-col items-center justify-center mb-4">
-                        <div className="text-3xl font-semibold text-zinc-900 mb-1">
-                          1,000,000+
+                        <div className="text-2xl font-semibold text-zinc-900 mb-1">
+                          100,000
                         </div>
                       </div>
                       <h3 className="text-lg font-medium text-zinc-900 mb-1">Impressions</h3>
-                      <p className="text-zinc-600 text-sm">Monthly reach across projects</p>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -869,7 +865,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                    description: <>Jacob is a digital artist and entrepreneur with 7+ years of imagery and design.</>,
+                    description: <>digital artist and entrepreneur with 7+ years of imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }
