@@ -12,10 +12,10 @@ interface Step {
 }
 
 const steps: Step[] = [
-  { id: "01", label: "Discovery", descr: "We learn about your business, goals, and vision to establish clear project objectives." },
-  { id: "02", label: "Strategy", descr: "We develop a detailed roadmap and technical approach tailored to your specific needs." },
+  { id: "01", label: "Discovery", descr: "Learn about your business, goals, and vision to establish clear project objectives." },
+  { id: "02", label: "Strategy", descr: "Develop a detailed roadmap and technical approach tailored to your specific needs." },
   { id: "03", label: "Design & Development", descr: "Our team crafts beautiful interfaces and builds robust applications with clean code." },
-  { id: "04", label: "Launch & Optimize", descr: "We deploy your project and provide ongoing support to ensure continued success." },
+  { id: "04", label: "Launch & Optimize", descr: "Deploy your project and provide ongoing support to ensure continued success." },
 ]
 
 export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
