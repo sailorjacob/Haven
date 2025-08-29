@@ -235,8 +235,6 @@ export default function HomePage() {
               viewBox="0 0 32 32"
               {...withAnim()}
               initial={{ rotate: 0, scale: [1,0.7,0.5][i] }}
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 1.2 + i * 0.2, ease: "easeOut" }}
               className={`absolute inset-0 ${baseSize}`}
               style={{ transformOrigin: "50% 50%", translate: `${['0px 0px','12px -8px','-14px 10px'][i]}` }}
             >
@@ -255,8 +253,6 @@ export default function HomePage() {
               viewBox="0 0 32 32"
               {...withAnim()}
               initial={{ rotate: -90, scale: 1 - i * 0.15 }}
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 1 + i * 0.3, ease: "easeOut" }}
               className={`absolute inset-0 ${baseSize}`}
               style={{ translate: `${i===0? -12 : i===1? 0 : 12}px ${i===2? 10 : -10}px` }}
             >
@@ -274,8 +270,7 @@ export default function HomePage() {
               viewBox="0 0 32 32"
               {...withAnim()}
               initial={{ rotate: -90 + (i===0? -5 : 10), scale: i===0 ? 1 : 0.45 }}
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 1.2 + i*0.25, ease: "easeOut" }}
+
               className={`absolute inset-0 ${baseSize}`}
               style={{ translate: `${i===0? '0px 0px' : '20px -12px'}` }}
             >
@@ -293,8 +288,6 @@ export default function HomePage() {
               viewBox="0 0 32 32"
               {...withAnim()}
               initial={{ rotate: -90, scale: 1 - i*0.15 }}
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 1 + i*0.3, ease:"easeOut" }}
               className={`absolute inset-0 ${baseSize}`}
               style={{ translate: `${i===0? -10 : i===1? 0 : 10}px ${(i===0? -6 : i===1? 6 : -6)}px` }}
             >
@@ -697,10 +690,10 @@ export default function HomePage() {
                         <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
                           <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
                         </div>
-                        <h3 className="text-base font-medium text-zinc-600 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                        <h3 className="text-base font-medium text-zinc-600 mb-1 transition-opacity duration-700 ease-in-out">
                           {step.title}
                         </h3>
-                        <p className="text-zinc-500 text-sm leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+                        <p className="text-zinc-500 text-sm leading-snug transition-opacity duration-700 ease-in-out">
                           {step.description}
                         </p>
                       </motion.div>
