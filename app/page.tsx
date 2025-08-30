@@ -86,7 +86,7 @@ export default function HomePage() {
       title: "sojourn.city",
       description: "solar punk inspired art project with an interactive public art gallery wall.",
       technologies: ["interactive art", "public gallery", "solar punk", "community"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated7.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Screenshot%202025-08-31%20at%204.20.33%20AM.png",
       link: "https://sojourn.city",
       category: "website"
     },

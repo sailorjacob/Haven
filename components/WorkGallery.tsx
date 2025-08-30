@@ -23,7 +23,7 @@ const workExamples: WorkItem[] = [
     title: "sojourn.city",
     description: "Solar punk inspired art project with an interactive public art gallery wall.",
     category: "Interactive Art",
-          image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated7.png",
+          image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Screenshot%202025-08-31%20at%204.20.33%20AM.png",
     link: "https://sojourn.city",
     type: "image"
   },
