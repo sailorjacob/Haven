@@ -151,7 +151,7 @@ export default function HomePage() {
       title: "rated.",
       description: "social platform for content sharing with privacy controls and monetization.",
       technologies: ["content sharing", "privacy controls", "monetization"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/ratedexplore.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
       link: "https://x-rated.me",
       category: "webapp"
     },
