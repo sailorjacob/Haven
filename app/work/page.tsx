@@ -122,7 +122,7 @@ export default function WorkPage() {
       title: "sojourn.city",
       description: "Solar punk inspired art project with an interactive public art gallery wall.",
       category: "Interactive Art",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/sojourn.png",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated7.png",
       link: "https://sojourn.city",
       type: "image"
     },
