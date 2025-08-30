@@ -159,14 +159,14 @@ export default function HomePage() {
               href="#vision"
               className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
             >
-              <span className="mr-2">Explore Our Vision</span>
+              <span className="mr-2">explore our vision</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/products"
               className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
             >
-              View Products
+              view products
             </Link>
           </motion.div>
 
@@ -388,7 +388,7 @@ export default function HomePage() {
                       href="/products"
                 className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 group"
                     >
-                <span className="mr-2">Learn about our community</span>
+                <span className="mr-2">learn about our community</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </motion.div>
@@ -536,14 +536,14 @@ export default function HomePage() {
                       href="/contact"
                 className="inline-flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 group"
               >
-                <span className="mr-2">Request Information</span>
+                <span className="mr-2">request information</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/products"
                 className="inline-flex items-center justify-center bg-white hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-lg border border-zinc-300 transition-all duration-300"
               >
-                Learn More
+                learn more
                     </Link>
                   </div>
                 </motion.div>
