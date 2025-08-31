@@ -63,7 +63,7 @@ export default function HomePage() {
     {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
-      description: "photography portfolio website with responsive gallery.",
+      description: "fine art photography gallery.",
       technologies: ["responsive gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
       link: "/jacobhalestudio",
@@ -102,7 +102,7 @@ export default function HomePage() {
     {
       id: "ammocat",
       title: "ammocat3000.com",
-      description: "homepage, webstore, and mini-game for new york artist ammo cat with filtering and search.",
+      description: "homepage, webstore, and mini-game for new york artist ammo cat.",
       technologies: ["webstore", "mini-game", "filtering"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat3000.com",
@@ -185,7 +185,7 @@ export default function HomePage() {
     {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
-      description: "portfolio website for author and art critic anthony haden-guest.",
+      description: "website for author and art critic anthony haden-guest.",
       technologies: ["responsive design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
       link: "https://anthonyhadenguest.net",
