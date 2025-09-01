@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useMemo, useState } from "react"
 import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, Crown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -184,6 +183,28 @@ const getSeededRandomColor = (seed: string) => {
   return colors[Math.abs(hash) % colors.length]
 }
 
+// Generate random background colors for blog post cards
+const getRandomBackgroundColor = (seed: string) => {
+  const hash = seed.split('').reduce((acc, char) => {
+    return char.charCodeAt(0) + ((acc << 5) - acc)
+  }, 0)
+  
+  const backgroundColors = [
+    'bg-gradient-to-br from-blue-50 to-indigo-100',
+    'bg-gradient-to-br from-green-50 to-emerald-100',
+    'bg-gradient-to-br from-purple-50 to-violet-100',
+    'bg-gradient-to-br from-orange-50 to-amber-100',
+    'bg-gradient-to-br from-pink-50 to-rose-100',
+    'bg-gradient-to-br from-cyan-50 to-teal-100',
+    'bg-gradient-to-br from-slate-50 to-gray-100',
+    'bg-gradient-to-br from-lime-50 to-green-100',
+    'bg-white',
+    'bg-gradient-to-br from-red-50 to-pink-100'
+  ]
+  
+  return backgroundColors[Math.abs(hash) % backgroundColors.length]
+}
+
 export default function BlogIndex() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
@@ -265,7 +286,7 @@ export default function BlogIndex() {
 
       <div className="max-w-6xl mx-auto px-6 pb-16">
         <div className="mb-10">
-          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🔮🏛️⚔️ Blog</h1>
+          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🔮🏛️⚔️</h1>
           <p className="text-zinc-600 mt-2">thoughts ideas + generations</p>
         </div>
 
@@ -273,14 +294,8 @@ export default function BlogIndex() {
           {posts.map((post) => (
             <Link key={post.slug} href={post.slug} className="group">
               <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
-                <div className="relative aspect-[3/2] overflow-hidden">
+                <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)}`}>
                   <RandomScribbles />
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105 saturate-75 brightness-95"
-                  />
                   <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
                   <div className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-zinc-800 border border-zinc-200 shadow-sm">
                     {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
