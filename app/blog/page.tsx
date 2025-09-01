@@ -110,6 +110,14 @@ const RandomScribbles = () => {
 
 const posts = [
   {
+    slug: "/is-the-world-dangerous-or-safe",
+    title: "Is the world dangerous or safe?",
+    description: "We have iPhones, video games, art museums, and sports. But we have hundreds of millions if not billions on the threshold of poverty. Does this mean there's a long way to fall for those at the top? Or will those at the bottom be lifted?",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: FileText,
+    date: "Aug 2025",
+  },
+  {
     slug: "/what-im-listening-to",
     title: "What I'm listening to",
     description: "Current music, podcasts, and audio that's shaping my thinking and creative process.",
