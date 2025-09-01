@@ -133,14 +133,7 @@ const posts = [
     Icon: FileText,
     date: "Aug 2025",
   },
-  {
-    slug: "/ai-work-no-shame",
-    title: "All of My Work is AI: Why I Use AI with No Shame",
-    description: "Exploring how AI amplifies human creativity and why the real work lies in ideas, not typing.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: Sparkles,
-    date: "Aug 2025",
-  },
+
   {
     slug: "/drakewon",
     title: "Drake Won",
@@ -198,16 +191,16 @@ const getRandomBackgroundColor = (seed: string) => {
   }, 0)
   
   const backgroundColors = [
-    'bg-gradient-to-br from-blue-50 to-indigo-100',
-    'bg-gradient-to-br from-green-50 to-emerald-100',
-    'bg-gradient-to-br from-purple-50 to-violet-100',
-    'bg-gradient-to-br from-orange-50 to-amber-100',
-    'bg-gradient-to-br from-pink-50 to-rose-100',
-    'bg-gradient-to-br from-cyan-50 to-teal-100',
-    'bg-gradient-to-br from-slate-50 to-gray-100',
-    'bg-gradient-to-br from-lime-50 to-green-100',
+    'bg-gradient-to-br from-stone-100 to-stone-200',
+    'bg-gradient-to-br from-zinc-100 to-zinc-200',
+    'bg-gradient-to-br from-slate-100 to-slate-200',
+    'bg-gradient-to-br from-gray-100 to-gray-200',
+    'bg-gradient-to-br from-neutral-100 to-neutral-200',
+    'bg-gradient-to-br from-slate-50 to-slate-100',
+    'bg-gradient-to-br from-zinc-50 to-zinc-100',
+    'bg-gradient-to-br from-stone-50 to-stone-100',
     'bg-white',
-    'bg-gradient-to-br from-red-50 to-pink-100'
+    'bg-gradient-to-br from-gray-50 to-gray-100'
   ]
   
   return backgroundColors[Math.abs(hash) % backgroundColors.length]
