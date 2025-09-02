@@ -357,8 +357,7 @@ export default function BlogIndex() {
                 </Link>
                 <p className="text-zinc-600 mt-1 text-sm md:text-base">Founder & Creative Director</p>
                 <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
-                  Exploring the intersection of technology, culture, and human potential. 
-                  Building the future through thoughtful design and strategic thinking.
+                  Exploring the intersection of technology, culture, and human potential. Building the future through thoughtful design.
                 </p>
               </div>
             </div>
