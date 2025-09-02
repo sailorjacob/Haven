@@ -329,7 +329,12 @@ export default function HomePage() {
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
-                <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
+                <div className="relative">
+                  <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Code className="w-4 h-4 text-zinc-900" />
+                  </div>
+                </div>
                 <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
               
