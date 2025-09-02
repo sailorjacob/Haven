@@ -46,7 +46,7 @@ export default function HomePage() {
   const [performanceSectionOpen, setPerformanceSectionOpen] = useState(false)
   
   // Feature flags for easy toggling
-  const ENABLE_HOMEPAGE_STARS = false
+  const ENABLE_HOMEPAGE_STARS = true
   
   // Use useMemo to compute colors once and keep them consistent
   const navColors = useMemo(() => ({
