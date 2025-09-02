@@ -95,7 +95,7 @@ export default function SteveJobsCorporatePage() {
                 
                 <p>Keep this in mind as I work and deal with people.</p>
                 
-                <p>Steve Jobs didn't just run a company—he ran a revolution. He didn't just sell products—he sold dreams. He didn't just manage people—he inspired them to believe in something bigger than themselves.</p>
+                <p>Steve Jobs didn't just run a company. He ran a revolution. He didn't just sell products. He sold dreams. He didn't just manage people. He inspired them to believe in something bigger than themselves.</p>
                 
                 <p>When Steve Jobs was corporate, he was corporate on his own terms. He wore black turtlenecks and jeans to board meetings. He refused to put his name on the company's products. He insisted on perfection even when it meant delaying launches and disappointing investors.</p>
                 
@@ -103,11 +103,11 @@ export default function SteveJobsCorporatePage() {
                 
                 <p>Steve Jobs corporate means having the confidence to break the rules when the rules don't serve your vision. It means being uncompromising about quality, even when it costs more money or takes more time. It means treating your company like a work of art, not just a business.</p>
                 
-                <p>It means understanding that the best companies aren't just profitable—they're meaningful. They don't just satisfy customers—they delight them. They don't just employ people—they empower them.</p>
+                <p>It means understanding that the best companies aren't just profitable. They're meaningful. They don't just satisfy customers. They delight them. They don't just employ people. They empower them.</p>
                 
-                <p>Steve Jobs corporate means having the courage to say no to good ideas in favor of great ones. It means being willing to cannibalize your own products before someone else does. It means understanding that the most important thing isn't what you're building—it's why you're building it.</p>
+                <p>Steve Jobs corporate means having the courage to say no to good ideas in favor of great ones. It means being willing to cannibalize your own products before someone else does. It means understanding that the most important thing isn't what you're building. It's why you're building it.</p>
                 
-                <p>It means treating every interaction, every decision, every detail as if it matters—because it does.</p>
+                <p>It means treating every interaction, every decision, every detail as if it matters. Because it does.</p>
                 
                 <p>Steve Jobs corporate means being corporate without losing your soul. It means being professional without being boring. It means being successful without being satisfied.</p>
                 
@@ -115,7 +115,7 @@ export default function SteveJobsCorporatePage() {
                 
                 <p>So as I work and deal with people, I keep this in mind: be corporate, but be Steve Jobs corporate. Be professional, but be passionate. Be successful, but be significant.</p>
                 
-                <p>Because in the end, the companies that matter aren't the ones that make the most money—they're the ones that make the most difference.</p>
+                <p>Because in the end, the companies that matter aren't the ones that make the most money. They're the ones that make the most difference.</p>
               </div>
             </div>
             <div className="px-6 py-4 border-t border-zinc-300 text-right text-xs text-zinc-500">

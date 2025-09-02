@@ -111,6 +111,22 @@ const RandomScribbles = () => {
 
 const posts = [
   {
+    slug: "/is-the-world-dangerous-or-safe",
+    title: "Is the world dangerous or safe?",
+    description: "We have iPhones, video games, art museums, and sports. But we have hundreds of millions if not billions on the threshold of poverty. Does this mean there's a long way to fall for those at the top? Or will those at the bottom be lifted?",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: FileText,
+    date: "Aug 2025",
+  },
+  {
+    slug: "/what-makes-painting-worth-100m",
+    title: "What Makes a painting worth $100m?",
+    description: "The answer: the artist's story. He who is most playing the character and role of an artist.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    Icon: FileText,
+    date: "Aug 2025",
+  },
+  {
     slug: "/dom-hoffman-evan-spiegel",
     title: "Dom Hoffman & Evan Spiegel",
     description: "Two of my inspirations, thinking about the tone a platform sets, simplicity. Respectability as a founder.",
@@ -175,27 +191,11 @@ const posts = [
     date: "Sep 2025",
   },
   {
-    slug: "/is-the-world-dangerous-or-safe",
-    title: "Is the world dangerous or safe?",
-    description: "We have iPhones, video games, art museums, and sports. But we have hundreds of millions if not billions on the threshold of poverty. Does this mean there's a long way to fall for those at the top? Or will those at the bottom be lifted?",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: FileText,
-    date: "Aug 2025",
-  },
-  {
     slug: "/what-im-listening-to",
     title: "What I'm listening to",
     description: "Current music, podcasts, and audio that's shaping my thinking and creative process.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Sparkles,
-    date: "Aug 2025",
-  },
-  {
-    slug: "/what-makes-painting-worth-100m",
-    title: "What Makes a painting worth $100m?",
-    description: "The answer: the artist's story. He who is most playing the character and role of an artist.",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
-    Icon: FileText,
     date: "Aug 2025",
   },
   {
@@ -216,7 +216,7 @@ const posts = [
   },
   {
     slug: "/ns-predictions",
-    title: "NS Predictions",
+    title: "Predictions",
     description: "Foreshadows and near-future calls across tech, culture, and governance.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
     Icon: Sparkles,
@@ -273,7 +273,7 @@ const getRandomBackgroundColor = (seed: string) => {
 export default function BlogIndex() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('list')
   const navColors = useMemo(() => ({
     studio: getSeededRandomColor('studio'),
     work: getSeededRandomColor('work'),

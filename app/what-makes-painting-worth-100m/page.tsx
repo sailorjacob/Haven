@@ -93,15 +93,15 @@ export default function WhatMakesPaintingWorth100mPage() {
               <div className="font-serif text-[15px] leading-7 text-zinc-800 space-y-6">
                 <p>The answer is simple yet profound: <strong>the artist's story</strong>.</p>
                 
-                <p>Not the technical skill, not the materials used, not even the aesthetic beauty—though these matter, they are secondary.</p>
+                <p>Not the technical skill, not the materials used, not even the aesthetic beauty. Though these matter, they are secondary.</p>
                 
                 <p>What truly drives a painting to nine-figure valuations is <strong>he who is most playing the character and role of an artist</strong>.</p>
                 
-                <p>This is the meta-game of the art world. The artist who most convincingly embodies the archetype of "the artist" in the collective imagination—who lives the myth, who performs the role with such conviction that it becomes indistinguishable from reality.</p>
+                <p>This is the meta-game of the art world. The artist who most convincingly embodies the archetype of "the artist" in the collective imagination who lives the myth, who performs the role with such conviction that it becomes indistinguishable from reality.</p>
                 
                 <p>Think of the greats: Picasso, Warhol, Basquiat, Hirst. Each mastered not just their craft, but the performance of being an artist. They understood that art is as much about the story as it is about the object.</p>
                 
-                <p>The $100m painting is not just pigment on canvas—it's a relic from the life of someone who played the character of "artist" so well that the world believed it completely.</p>
+                <p>The $100m painting is not just pigment on canvas. It's a relic from the life of someone who played the character of "artist" so well that the world believed it completely.</p>
                 
                 <div className="my-8">
                   <Image 
