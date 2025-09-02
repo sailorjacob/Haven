@@ -851,7 +851,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: <>Jacob is a digital artist and entrepreneur with <Link href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">7+ years</Link> of imagery and design.</>,
+                  description: <>Jacob is a digital artist and entrepreneur with <Link href="https://github.com/sailorjacob" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">experience</Link> in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }
