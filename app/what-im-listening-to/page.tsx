@@ -44,9 +44,7 @@ export default function WhatImListeningToPage() {
                     <ChevronDown className="w-3.5 h-3.5 text-zinc-500" />
                   </motion.span>
                 </div>
-                <Link href="https://designforstartups.net" target="_blank" rel="noopener noreferrer" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
-                  design for startups
-                </Link>
+
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -65,9 +63,7 @@ export default function WhatImListeningToPage() {
           {mobileMenuOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden bg-white border-b border-zinc-200">
               <div className="w-full px-4 sm:px-6 py-3 space-y-3">
-                <Link href="https://designforstartups.net" target="_blank" rel="noopener noreferrer" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
-                  design for startups
-                </Link>
+
                 <Link href="/blog" className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group" onClick={() => setMobileMenuOpen(false)}>
                   blog
                 </Link>

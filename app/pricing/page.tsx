@@ -145,15 +145,7 @@ export default function PricingPage() {
                 >
                   Studio
                 </Link>
-                <Link
-                  href="https://designforstartups.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  design for startups
-                </Link>
+
                 <Link 
                   href="/contact"
                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"

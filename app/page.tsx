@@ -355,23 +355,7 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-                {/* Additional header links */}
-                <Link
-                  href="https://designforstartups.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group"
-                >
-                  design for startups
-                </Link>
-                <Link
-                  href="https://comparison-deserving.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group"
-                >
-                  collect art
-                </Link>
+
               </div>
             </div>
 
@@ -420,24 +404,7 @@ export default function HomePage() {
               className="md:hidden bg-white border-b border-zinc-200"
             >
                              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
-                 <Link
-                   href="https://designforstartups.net"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
-                   onClick={() => setMobileMenuOpen(false)}
-                 >
-                   design for startups
-                 </Link>
-                 <Link
-                   href="https://comparison-deserving.net"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
-                   onClick={() => setMobileMenuOpen(false)}
-                 >
-                   collect art
-                 </Link>
+
                  <Link 
                    href="/blog"
                    className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
