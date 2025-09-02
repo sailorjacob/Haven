@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useMemo, useState } from "react"
-import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, Crown } from "lucide-react"
+import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, Crown, Grid, List } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import ProcessDropdown from "@/components/ProcessDropdown"
 
@@ -272,6 +273,7 @@ const getRandomBackgroundColor = (seed: string) => {
 export default function BlogIndex() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const navColors = useMemo(() => ({
     studio: getSeededRandomColor('studio'),
     work: getSeededRandomColor('work'),
@@ -339,33 +341,120 @@ export default function BlogIndex() {
       <div className="pt-20" />
 
       <div className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="mb-10">
-          <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🔮🏛️⚔️</h1>
-          <p className="text-zinc-600 mt-2">thoughts ideas + generations</p>
+        {/* Jacob's Profile Section */}
+        <div className="mb-12">
+          <div className="bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm">
+            <div className="flex items-center space-x-6">
+              <div className="relative">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-zinc-100 to-zinc-200 flex items-center justify-center">
+                  <Hexagon className="w-10 h-10 text-zinc-600" strokeWidth={1} />
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-semibold text-zinc-900">Jacob Hale</h2>
+                <p className="text-zinc-600 mt-1">Founder & Creative Director at Haven</p>
+                <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
+                  Exploring the intersection of technology, culture, and human potential. 
+                  Building the future through thoughtful design and strategic thinking.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <Link key={post.slug} href={post.slug} className="group">
-              <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
-                <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)}`}>
-                  <RandomScribbles />
-                  <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
-                  <div className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-zinc-800 border border-zinc-200 shadow-sm">
-                    {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="flex items-start justify-between">
-                    <h2 className="text-lg font-medium text-zinc-900">{post.title}</h2>
-                    <span className="text-xs text-zinc-400 mt-1 ml-3 flex-shrink-0">{post.date}</span>
-                  </div>
-                  <p className="text-sm text-zinc-600 mt-2 leading-relaxed">{post.description}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="mb-10">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🔮🏛️⚔️</h1>
+              <p className="text-zinc-600 mt-2">thoughts ideas + generations</p>
+            </div>
+            
+            {/* View Mode Switcher */}
+            <div className="flex items-center space-x-2 bg-zinc-100 rounded-lg p-1">
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-md transition-all duration-200 ${
+                  viewMode === 'grid' 
+                    ? 'bg-white text-zinc-900 shadow-sm' 
+                    : 'text-zinc-600 hover:text-zinc-900'
+                }`}
+              >
+                <Grid className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => setViewMode('list')}
+                className={`p-2 rounded-md transition-all duration-200 ${
+                  viewMode === 'list' 
+                    ? 'bg-white text-zinc-900 shadow-sm' 
+                    : 'text-zinc-600 hover:text-zinc-900'
+                }`}
+              >
+                <List className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={viewMode}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            {viewMode === 'grid' ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {posts.map((post) => (
+                  <Link key={post.slug} href={post.slug} className="group">
+                    <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
+                      <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)}`}>
+                        <RandomScribbles />
+                        <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
+                        <div className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm text-zinc-800 border border-zinc-200 shadow-sm">
+                          {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                        </div>
+                      </div>
+                      <div className="p-5">
+                        <div className="flex items-start justify-between">
+                          <h2 className="text-lg font-medium text-zinc-900">{post.title}</h2>
+                          <span className="text-xs text-zinc-400 mt-1 ml-3 flex-shrink-0">{post.date}</span>
+                        </div>
+                        <p className="text-sm text-zinc-600 mt-2 leading-relaxed">{post.description}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {posts.map((post) => (
+                  <Link key={post.slug} href={post.slug} className="group">
+                    <div className="bg-white rounded-xl border border-zinc-200 p-6 hover:border-zinc-400 transition-all duration-300 hover:shadow-md">
+                      <div className="flex items-start space-x-4">
+                        <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)}`}>
+                          <RandomScribbles />
+                          <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            {post.Icon ? <post.Icon className="w-6 h-6 text-zinc-700" /> : null}
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between">
+                            <h2 className="text-lg font-medium text-zinc-900 group-hover:text-zinc-700 transition-colors">{post.title}</h2>
+                            <span className="text-xs text-zinc-400 mt-1 ml-3 flex-shrink-0">{post.date}</span>
+                          </div>
+                          <p className="text-sm text-zinc-600 mt-2 leading-relaxed">{post.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </main>
   )
