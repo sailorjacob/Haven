@@ -110,6 +110,70 @@ const RandomScribbles = () => {
 
 const posts = [
   {
+    slug: "/dom-hoffman-evan-spiegel",
+    title: "Dom Hoffman & Evan Spiegel",
+    description: "Two of my inspirations, thinking about the tone a platform sets, simplicity. Respectability as a founder.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: FileText,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/the-next-monaco",
+    title: "The Next Monaco",
+    description: "Inspired by James of Arc's post saying we need more Australia's, my joke is we need more Monaco's. Why not?",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    Icon: Crown,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/steve-jobs-corporate",
+    title: "Steve Jobs Corporate",
+    description: "Being corporate is one thing, being Steve Jobs corporate is another. Keep this in mind as I work and deal with people.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: FileText,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/the-mosquito",
+    title: "The Mosquito",
+    description: "This is a true legend, an epic about being disturbed by a different mosquito every night, just as I'm about to fall asleep.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    Icon: Sparkles,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/haven-music-platform",
+    title: "Haven Music Platform",
+    description: "Netflix x Spotify x HBO. AI music, crypto payments, replace BMI, replace things, build a software platform.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/soundpark-mw8b8hcheUxbTkqe7nBOKEEJg1C9QD.png",
+    Icon: Bitcoin,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/our-jeff-koons-our-drake-our-star-wars",
+    title: "Our Jeff Koons, Our Drake, Our Star Wars",
+    description: "Gordon Berger is the next Jeff Koons. Kevin George is our Drake. Ammo Cat is our Star Wars.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/artmuseum-Ghgi7H2LrI2doarDHPUkVhRND9HDdQ.png",
+    Icon: Crown,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/i-dont-like-the-word-product",
+    title: "I Don't Like the Word Product",
+    description: "Product product product. Talking to you, San Francisco. How often do you hear Elon use the word product?",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: FileText,
+    date: "Sep 2025",
+  },
+  {
+    slug: "/blood-libel-and-the-modern-devil",
+    title: "Blood Libel & the Modern Devil",
+    description: "Conspiracy is the modern devil. The Jeffrey Epstein files, Elon tweeting away about it... accuse or be accused.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
+    Icon: Sparkles,
+    date: "Sep 2025",
+  },
+  {
     slug: "/is-the-world-dangerous-or-safe",
     title: "Is the world dangerous or safe?",
     description: "We have iPhones, video games, art museums, and sports. But we have hundreds of millions if not billions on the threshold of poverty. Does this mean there's a long way to fall for those at the top? Or will those at the bottom be lifted?",
@@ -133,7 +197,6 @@ const posts = [
     Icon: FileText,
     date: "Aug 2025",
   },
-
   {
     slug: "/drakewon",
     title: "Drake Won",
