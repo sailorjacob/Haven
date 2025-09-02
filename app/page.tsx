@@ -61,6 +61,69 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "ride-sharing platform connecting people to medical appointments with bitcoin payment integration.",
+      technologies: ["ride-sharing", "bitcoin", "healthcare"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
+      link: "/roundabout",
+      category: "webapp"
+    },
+    {
+      id: "beloved",
+      title: "be-loved.app",
+      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
+      technologies: ["ios app", "scheduling", "nemt"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "/beloved",
+      category: "webapp"
+    },
+    {
+      id: "swivimedia",
+      title: "swivimedia.com",
+      description: "marketing platform connecting brands with micro-influencers for campaign videos.",
+      technologies: ["creator network"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
+      link: "/swivimedia",
+      category: "webapp"
+    },
+    {
+      id: "xrated",
+      title: "rated",
+      description: "social platform for content sharing with privacy controls and monetization.",
+      technologies: ["content sharing", "privacy controls", "monetization"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
+      link: "https://x-rated.me",
+      category: "webapp"
+    },
+    {
+      id: "moonlight",
+      title: "Moonlight Garden 🌱",
+      description: "24/7 mobile order restaurant with automation systems.",
+      technologies: ["mobile order", "automation", "restaurant"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
+      link: "/moonlight-garden",
+      category: "webapp"
+    },
+    {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "digital art platform with interactive experiences.",
+      technologies: ["digital art"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
+    },
+    {
+      id: "klaire",
+      title: "klaire.dev",
+      description: "portfolio for ui/ux designer klaire rasche with game design and ai technology.",
+      technologies: ["ui/ux", "game design", "ai tools"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
+      link: "https://www.klaire.dev/klaire-portfolio.html",
+      category: "website"
+    },
+    {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
       description: "fine art photography gallery.",
@@ -78,9 +141,6 @@ export default function HomePage() {
       link: "https://comparison-deserving.net",
       category: "website"
     },
-
-    
-
     {
       id: "sojourn",
       title: "sojourn.city",
@@ -107,62 +167,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat3000.com",
       category: "website"
-    },
-    {
-      id: "swivimedia",
-      title: "swivimedia.com",
-      description: "marketing platform connecting brands with micro-influencers for campaign videos.",
-      technologies: ["creator network"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
-      link: "/swivimedia",
-      category: "webapp"
-    },
-
-    {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
-      technologies: ["ios app", "scheduling", "nemt"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
-      category: "webapp"
-    },
-
-    {
-      id: "moonlight",
-      title: "Moonlight Garden 🌱",
-      description: "24/7 mobile order restaurant with automation systems.",
-      technologies: ["mobile order", "automation", "restaurant"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
-      link: "/moonlight-garden",
-      category: "webapp"
-    },
-    {
-      id: "klaire",
-      title: "klaire.dev",
-      description: "portfolio for ui/ux designer klaire rasche with game design and ai technology.",
-      technologies: ["ui/ux", "game design", "ai tools"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
-      link: "https://www.klaire.dev/klaire-portfolio.html",
-      category: "website"
-    },
-    {
-      id: "xrated",
-      title: "rated",
-      description: "social platform for content sharing with privacy controls and monetization.",
-      technologies: ["content sharing", "privacy controls", "monetization"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
-      link: "https://x-rated.me",
-      category: "webapp"
-    },
-    {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "digital art platform with interactive experiences.",
-      technologies: ["digital art"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "webapp"
     },
     {
       id: "1stclassstudios",
@@ -193,7 +197,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["moonlight", "klaire", "roundabout", "salomatic"]
+  const hiddenIds: string[] = ["moonlight", "klaire", "salomatic"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
