@@ -61,22 +61,22 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "roundabout",
-      title: "roundabout.run",
-      description: "ride-sharing platform connecting people to medical appointments with bitcoin payment integration.",
-      technologies: ["Next.js", "Bitcoin", "Healthcare"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
-      link: "/roundabout",
-      category: "webapp"
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "fine art photography gallery.",
+      technologies: ["Next.js", "Photography", "Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
+      link: "/jacobhalestudio",
+      category: "website"
     },
     {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
-      technologies: ["React", "iOS App", "Scheduling"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
-      category: "webapp"
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "homepage, webstore, and mini-game for new york artist ammo cat.",
+      technologies: ["Vue.js", "Webstore", "Mini-game"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "https://ammocat3000.com",
+      category: "website"
     },
     {
       id: "swivimedia",
@@ -85,15 +85,6 @@ export default function HomePage() {
       technologies: ["Next.js", "Creator Network", "Video"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
-      category: "webapp"
-    },
-    {
-      id: "xrated",
-      title: "rated",
-      description: "social platform for content sharing with privacy controls and monetization.",
-      technologies: ["Next.js", "Privacy Controls", "Monetization"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
-      link: "https://x-rated.me",
       category: "webapp"
     },
     {
@@ -106,12 +97,21 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "digital art platform with interactive experiences.",
-      technologies: ["Next.js", "Three.js", "Digital Art"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
+      id: "comparison-deserving",
+      title: "comparison",
+      description: "fine art gallery, online-first and accepting bitcoin.",
+      technologies: ["Fine Art", "Bitcoin", "Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
+      link: "https://comparison-deserving.net",
+      category: "website"
+    },
+    {
+      id: "roundabout",
+      title: "roundabout.run",
+      description: "ride-sharing platform connecting people to medical appointments with bitcoin payment integration.",
+      technologies: ["Next.js", "Bitcoin", "Healthcare"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//round1.png",
+      link: "/roundabout",
       category: "webapp"
     },
     {
@@ -124,31 +124,22 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "fine art photography gallery.",
-      technologies: ["Next.js", "Photography", "Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "/jacobhalestudio",
-      category: "website"
+      id: "beloved",
+      title: "be-loved.app",
+      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
+      technologies: ["React", "iOS App", "Scheduling"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "/beloved",
+      category: "webapp"
     },
     {
-      id: "comparison-deserving",
-      title: "comparison",
-      description: "fine art gallery, online-first and accepting bitcoin.",
-      technologies: ["Fine Art", "Bitcoin", "Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
-      link: "https://comparison-deserving.net",
-      category: "website"
-    },
-    {
-      id: "sojourn",
-      title: "sojourn.city",
-      description: "solar punk inspired art project with an interactive public art gallery wall.",
-      technologies: ["Interactive Art", "Solar Punk", "Community"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/sojournbubble.png",
-      link: "https://sojourn.city",
-      category: "website"
+      id: "xrated",
+      title: "rated",
+      description: "social platform for content sharing with privacy controls and monetization.",
+      technologies: ["Next.js", "Privacy Controls", "Monetization"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
+      link: "https://x-rated.me",
+      category: "webapp"
     },
     {
       id: "designforstartups",
@@ -160,12 +151,21 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "homepage, webstore, and mini-game for new york artist ammo cat.",
-      technologies: ["Vue.js", "Webstore", "Mini-game"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "https://ammocat3000.com",
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "digital art platform with interactive experiences.",
+      technologies: ["Next.js", "Three.js", "Digital Art"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
+    },
+    {
+      id: "sojourn",
+      title: "sojourn.city",
+      description: "solar punk inspired art project with an interactive public art gallery wall.",
+      technologies: ["Interactive Art", "Solar Punk", "Community"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/sojournbubble.png",
+      link: "https://sojourn.city",
       category: "website"
     },
     {
@@ -324,15 +324,23 @@ export default function HomePage() {
       {ENABLE_HOMEPAGE_STARS && <ScatteredStars />}
 
       {/* Header */}
-      <header onMouseLeave={()=>setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200 relative">
+      <header onMouseLeave={()=>setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
+        processOpen 
+          ? 'bg-zinc-900/95 border-zinc-700' 
+          : 'bg-white/80 border-zinc-200'
+      }`}>
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
                 <div className="relative">
-                  <Hexagon className="w-8 h-8 text-zinc-400 opacity-40" strokeWidth={1} />
+                  <Hexagon className={`w-8 h-8 transition-colors duration-300 delay-100 ${
+                    processOpen ? 'text-zinc-500 opacity-60' : 'text-zinc-400 opacity-40'
+                  }`} strokeWidth={1} />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Code className="w-4 h-4 text-zinc-400 opacity-40" />
+                    <Code className={`w-4 h-4 transition-colors duration-300 delay-100 ${
+                      processOpen ? 'text-zinc-500 opacity-60' : 'text-zinc-400 opacity-40'
+                    }`} />
                   </div>
                 </div>
               </Link>
@@ -341,7 +349,11 @@ export default function HomePage() {
               <div className="hidden md:flex items-center space-x-6">
                 {/* Process with dropdown trigger */}
                 <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
-                  <Link href="/" className="text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors group">
+                  <Link href="/" className={`text-sm font-light transition-colors duration-300 delay-100 group ${
+                    processOpen 
+                      ? 'text-zinc-200 hover:text-zinc-100' 
+                      : 'text-zinc-600 hover:text-zinc-900'
+                  }`}>
                     <span className="group-hover:hidden">process</span>
                     <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
                   </Link>
@@ -351,7 +363,9 @@ export default function HomePage() {
                     animate={{ rotate: processOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <ChevronDown className="w-3.5 h-3.5 text-zinc-500" />
+                    <ChevronDown className={`w-3.5 h-3.5 transition-colors duration-300 delay-100 ${
+                      processOpen ? 'text-zinc-400' : 'text-zinc-500'
+                    }`} />
                   </motion.span>
                 </div>
 
@@ -361,16 +375,24 @@ export default function HomePage() {
 
             <div className="flex items-center space-x-4">
               {/* Blog link */}
-              <Link
-                href="/blog"
-                className="hidden md:inline text-sm font-light text-zinc-600 hover:text-zinc-900 transition-colors"
-              >
+                              <Link
+                  href="/blog"
+                  className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
+                    processOpen 
+                      ? 'text-zinc-400 hover:text-zinc-200' 
+                      : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                >
                 blog
               </Link>
               {/* Start button (contact) */}
               <Link 
                 href="/contact"
-                className="hidden md:inline-flex items-center border border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm"
+                className={`hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 delay-100 text-sm ${
+                  processOpen 
+                    ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200' 
+                    : 'border-zinc-300 hover:bg-zinc-50 text-zinc-900'
+                }`}
               >
                 msg
               </Link>
@@ -380,7 +402,11 @@ export default function HomePage() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                  processOpen ? 'text-zinc-200' : 'text-zinc-900'
+                }`} /> : <Menu className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                  processOpen ? 'text-zinc-200' : 'text-zinc-900'
+                }`} />}
               </button>
             </div>
           </nav>
@@ -401,13 +427,21 @@ export default function HomePage() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-white border-b border-zinc-200"
+              className={`md:hidden border-b transition-all duration-300 delay-100 ${
+                processOpen 
+                  ? 'bg-zinc-900 border-zinc-700' 
+                  : 'bg-white border-zinc-200'
+              }`}
             >
                              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
 
                  <Link 
                    href="/blog"
-                   className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors group"
+                   className={`block text-sm transition-colors duration-300 delay-100 group ${
+                     processOpen 
+                       ? 'text-zinc-400 hover:text-zinc-200' 
+                       : 'text-zinc-600 hover:text-zinc-900'
+                   }`}
                    onClick={() => setMobileMenuOpen(false)}
                  >
                    blog

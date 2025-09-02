@@ -45,8 +45,8 @@ export default function CrosshairOverlay({ parentRef, variant = "blue" }: Props)
     }
   }, [parentRef, x, y])
 
-  const lineClass = variant === "gray" ? "bg-zinc-300/70" : "bg-sky-400/70"
-  const circleBorder = variant === "gray" ? "border-zinc-300" : "border-sky-400"
+  const lineClass = variant === "gray" ? "bg-zinc-500/70" : "bg-sky-400/70"
+  const circleBorder = variant === "gray" ? "border-zinc-500" : "border-sky-400"
 
   return (
     <div className="pointer-events-none absolute inset-0 z-20">

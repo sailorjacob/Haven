@@ -18,7 +18,7 @@ export default function ProcessGearGraphic({ index, number, active = false }: Ge
     stroke: "currentColor",
     fill: "none",
     strokeWidth: 0.4,
-    className: `${baseSize} text-zinc-500`,
+    className: `${baseSize} text-zinc-400`,
     style: { willChange: "transform" }
   }
 
@@ -105,7 +105,7 @@ export default function ProcessGearGraphic({ index, number, active = false }: Ge
   return (
     <div className="relative mb-4 flex justify-center group">
       {visuals[index]}
-      <span className="absolute inset-0 flex items-center justify-center text-zinc-700 text-base font-medium pointer-events-none">
+      <span className="absolute inset-0 flex items-center justify-center text-zinc-200 text-base font-medium pointer-events-none">
         {number}
       </span>
     </div>

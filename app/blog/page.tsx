@@ -343,17 +343,19 @@ export default function BlogIndex() {
       <div className="max-w-6xl mx-auto px-6 pb-16">
         {/* Jacob's Profile Section */}
         <div className="mb-12">
-          <div className="bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm">
-            <div className="flex items-center space-x-6">
-              <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-zinc-100 to-zinc-200 flex items-center justify-center">
-                  <Hexagon className="w-10 h-10 text-zinc-600" strokeWidth={1} />
+          <div className="bg-white rounded-2xl border border-zinc-200 p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <div className="relative flex-shrink-0">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-zinc-100 to-zinc-200 flex items-center justify-center">
+                  <Hexagon className="w-8 h-8 md:w-10 md:h-10 text-zinc-600" strokeWidth={1} />
                 </div>
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
+                <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 border-white"></div>
               </div>
-              <div className="flex-1">
-                <h2 className="text-xl font-semibold text-zinc-900">Jacob Hale</h2>
-                <p className="text-zinc-600 mt-1">Founder & Creative Director at Haven</p>
+              <div className="flex-1 min-w-0">
+                <Link href="/story" className="hover:opacity-80 transition-opacity">
+                  <h2 className="text-lg md:text-xl font-semibold text-zinc-900">Jacob Hale</h2>
+                </Link>
+                <p className="text-zinc-600 mt-1 text-sm md:text-base">Founder & Creative Director</p>
                 <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
                   Exploring the intersection of technology, culture, and human potential. 
                   Building the future through thoughtful design and strategic thinking.
@@ -366,7 +368,7 @@ export default function BlogIndex() {
         <div className="mb-10">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🔮🏛️⚔️</h1>
+              <h1 className="text-2xl md:text-3xl font-light text-zinc-900">🌋🏛️⚔️</h1>
               <p className="text-zinc-600 mt-2">thoughts ideas + generations</p>
             </div>
             

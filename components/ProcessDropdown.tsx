@@ -42,7 +42,7 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
       exit={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
       style={{ willChange: "height, opacity" }}
-      className="absolute top-full inset-x-0 w-full bg-white border-b border-zinc-200 shadow-lg overflow-hidden z-50"
+      className="absolute top-full inset-x-0 w-full bg-zinc-900 border-b border-zinc-700 shadow-2xl overflow-hidden z-50"
       ref={dropdownRef}
       onMouseLeave={onClose}
     >
@@ -56,11 +56,11 @@ export default function ProcessDropdown({ onClose }: { onClose: () => void }) {
             onMouseLeave={() => setHovered(null)}
             onClick={handleClick}
           >
-            <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative text-zinc-300`}>
+            <div className={`${hovered !== null && hovered !== idx ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300 relative text-zinc-400`}>
               <ProcessGearGraphic index={idx} number={step.id} active={hovered === idx} />
             </div>
 
-            <span className="mt-3 font-light text-sm text-zinc-400 hover:text-zinc-700 transition-colors tracking-wider uppercase">
+            <span className="mt-3 font-light text-sm text-zinc-300 hover:text-zinc-100 transition-colors tracking-wider uppercase">
               {step.label}
             </span>
 
