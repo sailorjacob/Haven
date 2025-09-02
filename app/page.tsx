@@ -330,12 +330,11 @@ export default function HomePage() {
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
                 <div className="relative">
-                  <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
+                  <Hexagon className="w-8 h-8 text-zinc-400 opacity-40" strokeWidth={1} />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Code className="w-4 h-4 text-zinc-900" />
+                    <Code className="w-4 h-4 text-zinc-400 opacity-40" />
                   </div>
                 </div>
-                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
               
               {/* Desktop Navigation */}
