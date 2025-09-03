@@ -19,7 +19,21 @@ export default function ShopPage() {
   const [showNotification, setShowNotification] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null)
   const [hoveredProductImage, setHoveredProductImage] = useState<Record<string, boolean>>({})
+
   const { theme, setTheme } = useTheme()
+
+  // Prevent body scroll when product is selected
+  useEffect(() => {
+    if (selectedProduct) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedProduct])
 
   // Get seeded random color for navigation
   const getSeededRandomColor = (seed: string) => {
@@ -382,8 +396,9 @@ export default function ShopPage() {
       {/* Main Content */}
       <section className="pt-20 px-6 pb-12">
         <div className="container max-w-6xl mx-auto">
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* Products Grid - Hidden when product is selected */}
+          {!selectedProduct && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {products.map((product, index) => {
               const isSelected = selectedProduct === product.id
               const isHidden = selectedProduct && !isSelected
@@ -403,7 +418,7 @@ export default function ShopPage() {
                     ease: "easeInOut"
                   }}
                   className={`group cursor-pointer ${
-                    isSelected ? 'fixed inset-0 z-40 flex items-center justify-center p-8' : ''
+                    isSelected ? 'fixed inset-0 z-40 flex items-center justify-center p-8 min-h-screen' : ''
                   }`}
                   onClick={isSelected ? (e) => {
                     // Close if clicking on the overlay (not on the product card)
@@ -570,10 +585,10 @@ export default function ShopPage() {
                             e.stopPropagation()
                             setSelectedProduct(null)
                           }}
-                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 backdrop-blur-sm ${
                             theme === 'dark'
-                              ? 'bg-zinc-900 text-zinc-200 hover:bg-zinc-800'
-                              : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200'
+                              ? 'bg-zinc-800/70 text-zinc-200 hover:bg-zinc-700/80 border border-zinc-600/50'
+                              : 'bg-white/70 text-zinc-900 hover:bg-zinc-100/80 border border-zinc-300/50'
                           }`}
                         >
                           <ChevronLeft className="w-4 h-4 mr-1.5" />
@@ -585,24 +600,27 @@ export default function ShopPage() {
                 </div>
               </motion.div>
             )
-          })}
-          </div>
+                      })}
+            </div>
+          )}
 
-          {/* Footer Text */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className={`text-center mt-16 pt-8 border-t transition-colors duration-300 ${
-              theme === 'dark' ? 'border-zinc-800' : 'border-zinc-200'
-            }`}
-          >
-            <p className={`text-sm transition-colors duration-300 ${
-              theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500'
-            }`}>
-              All designs are printed on demand. Shipping worldwide.
-            </p>
-          </motion.div>
+          {/* Footer Text - Hidden when product is selected */}
+          {!selectedProduct && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className={`text-center mt-16 pt-8 border-t transition-colors duration-300 ${
+                theme === 'dark' ? 'border-zinc-800' : 'border-zinc-200'
+              }`}
+            >
+              <p className={`text-sm transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500'
+              }`}>
+                All designs are printed on demand. Shipping worldwide.
+              </p>
+            </motion.div>
+          )}
         </div>
       </section>
 
