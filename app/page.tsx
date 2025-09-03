@@ -45,6 +45,7 @@ export default function HomePage() {
   const [processOpen, setProcessOpen] = useState(false)
   const [processSectionOpen, setProcessSectionOpen] = useState(false)
   const [performanceSectionOpen, setPerformanceSectionOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
   
   // Feature flags for easy toggling
@@ -57,6 +58,17 @@ export default function HomePage() {
     gallery: getSeededRandomColor('gallery'),
     contact: getSeededRandomColor('contact')
   }), [])
+
+  // Handle scroll detection for signature visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 100) // Show bottom signature after scrolling 100px
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   
   // Track which process step is hovered
   const [hoveredStep, setHoveredStep] = useState<number | null>(null)
@@ -515,8 +527,10 @@ export default function HomePage() {
         </AnimatePresence>
       </header>
 
-      {/* Signature - Top Left Corner */}
-      <div className="fixed top-20 left-4 z-40 pointer-events-none">
+      {/* Signature - Top Left Corner (disappears on scroll) */}
+      <div className={`fixed top-20 left-4 z-40 pointer-events-none transition-opacity duration-500 ${
+        isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-80 hover:opacity-100'
+      }`}>
         <Image
           src={theme === 'dark'
             ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
@@ -525,7 +539,7 @@ export default function HomePage() {
           alt="Signature"
           width={120}
           height={60}
-          className="opacity-80 hover:opacity-100 transition-opacity duration-300 pointer-events-auto"
+          className="transition-opacity duration-300 pointer-events-auto"
         />
       </div>
 
@@ -1111,6 +1125,22 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
+          </div>
+
+          {/* Signature - Bottom (appears on scroll) */}
+          <div className={`flex justify-center pt-8 transition-opacity duration-500 ${
+            isScrolled ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <Image
+              src={theme === 'dark'
+                ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
+                : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
+              }
+              alt="Signature"
+              width={140}
+              height={70}
+              className="opacity-70 hover:opacity-90 transition-opacity duration-300"
+            />
           </div>
 
         </div>
