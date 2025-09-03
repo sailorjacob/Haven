@@ -98,31 +98,33 @@ export const ServiceCard = ({ icon: Icon, title, description, delay, color, imag
       />
 
       <div className="relative z-10">
-        <motion.div 
-          className={`w-10 h-10 rounded-full flex items-center justify-center mb-4 transition-colors duration-300 ${
-            theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-100'
-          }`}
-          initial={{ rotate: -180, opacity: 0 }}
-          whileInView={{ rotate: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay }}
-          viewport={{ once: true }}
-        >
-          <Icon className={`w-5 h-5 transition-colors duration-300 ${
-            theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
-          }`} />
-        </motion.div>
-        <motion.h3 
-          className={`text-lg font-medium mb-3 transition-colors duration-300 ${
-            theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-          }`}
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: delay + 0.1 }}
-          viewport={{ once: true }}
-        >
-          {title}
-        </motion.h3>
-        <motion.p 
+        <div className="flex items-center gap-3 mb-3">
+          <motion.div
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${
+              theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-100'
+            }`}
+            initial={{ rotate: -180, opacity: 0 }}
+            whileInView={{ rotate: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay }}
+            viewport={{ once: true }}
+          >
+            <Icon className={`w-5 h-5 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+            }`} />
+          </motion.div>
+          <motion.h3
+            className={`text-lg font-medium transition-colors duration-300 ${
+              theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+            }`}
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: delay + 0.1 }}
+            viewport={{ once: true }}
+          >
+            {title}
+          </motion.h3>
+        </div>
+        <motion.p
           className={`text-sm leading-relaxed transition-colors ${
             theme === 'dark'
               ? 'text-zinc-400 group-hover:text-zinc-300'
