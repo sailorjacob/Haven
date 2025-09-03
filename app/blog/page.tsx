@@ -209,7 +209,7 @@ const posts = [
   },
   {
     slug: "/ns-essay",
-    title: "NS Essay",
+    title: "Network state essay",
     description: "Notes and essays exploring coordination, sovereignty, and network-native societies.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/park1-HhRCLKZ5rlanSRwjwaVZPIWfgduYPZ.png",
     Icon: FileText,
