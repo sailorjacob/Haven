@@ -382,7 +382,7 @@ export default function HomePage() {
                   <Link href="/" className={`text-sm font-light transition-colors duration-300 delay-100 group ${
                     processOpen
                       ? theme === 'dark'
-                        ? 'text-zinc-100 hover:text-zinc-50'
+                        ? 'text-zinc-400 hover:text-zinc-200'
                         : 'text-zinc-200 hover:text-zinc-100'
                       : theme === 'dark'
                         ? 'text-zinc-300 hover:text-zinc-100'
