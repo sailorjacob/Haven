@@ -353,11 +353,23 @@ export default function HomePage() {
               <Link href="/" className="flex items-center">
                 <div className="relative">
                   <Hexagon className={`w-8 h-8 transition-colors duration-300 delay-100 ${
-                    processOpen ? 'text-zinc-500 opacity-60' : 'text-zinc-400 opacity-40'
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-200 opacity-60'
+                        : 'text-zinc-500 opacity-60'
+                      : theme === 'dark'
+                        ? 'text-zinc-300 opacity-40'
+                        : 'text-zinc-400 opacity-40'
                   }`} strokeWidth={1} />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Code className={`w-4 h-4 transition-colors duration-300 delay-100 ${
-                      processOpen ? 'text-zinc-500 opacity-60' : 'text-zinc-400 opacity-40'
+                      processOpen
+                        ? theme === 'dark'
+                          ? 'text-zinc-200 opacity-60'
+                          : 'text-zinc-500 opacity-60'
+                        : theme === 'dark'
+                          ? 'text-zinc-300 opacity-40'
+                          : 'text-zinc-400 opacity-40'
                     }`} />
                   </div>
                 </div>
@@ -368,9 +380,13 @@ export default function HomePage() {
                 {/* Process with dropdown trigger */}
                 <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
                   <Link href="/" className={`text-sm font-light transition-colors duration-300 delay-100 group ${
-                    processOpen 
-                      ? 'text-zinc-200 hover:text-zinc-100' 
-                      : 'text-zinc-600 hover:text-zinc-900'
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-100 hover:text-zinc-50'
+                        : 'text-zinc-200 hover:text-zinc-100'
+                      : theme === 'dark'
+                        ? 'text-zinc-300 hover:text-zinc-100'
+                        : 'text-zinc-600 hover:text-zinc-900'
                   }`}>
                     <span className="group-hover:hidden">process</span>
                     <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
@@ -398,10 +414,10 @@ export default function HomePage() {
                   className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
                     processOpen
                       ? theme === 'dark'
-                        ? 'text-zinc-400 hover:text-zinc-200'
+                        ? 'text-zinc-500 hover:text-zinc-200'
                         : 'text-zinc-400 hover:text-zinc-200'
                       : theme === 'dark'
-                        ? 'text-zinc-400 hover:text-zinc-200'
+                        ? 'text-zinc-500 hover:text-zinc-200'
                         : 'text-zinc-600 hover:text-zinc-900'
                   }`}
                 >
