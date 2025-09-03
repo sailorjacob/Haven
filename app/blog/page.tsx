@@ -419,7 +419,7 @@ export default function BlogIndex() {
                     theme === 'dark' ? 'text-zinc-300' : 'text-zinc-600'
                   }`} strokeWidth={1} />
                 </div>
-                <div className={`absolute -bottom-0.5 -right-0.5 w-4 h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 transition-colors duration-300 ${
+                <div className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full border-2 transition-colors duration-300 ${
                   theme === 'dark' ? 'border-zinc-800' : 'border-white'
                 }`}></div>
               </div>

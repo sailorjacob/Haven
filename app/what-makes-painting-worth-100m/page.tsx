@@ -80,22 +80,7 @@ export default function WhatMakesPaintingWorth100mPage() {
                   : 'border-zinc-300 hover:bg-zinc-50 text-zinc-900'
               }`}>msg</Link>
 
-              {/* Theme Toggle Button */}
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
-                aria-label="Toggle reading mode"
-              >
-                {theme === 'dark' ? (
-                  <Sun className={`w-5 h-5 transition-colors duration-300 ${
-                    theme === 'dark' ? 'text-zinc-400' : 'text-zinc-900'
-                  }`} />
-                ) : (
-                  <Moon className={`w-5 h-5 transition-colors duration-300 ${
-                    theme === 'dark' ? 'text-zinc-400' : 'text-zinc-900'
-                  }`} />
-                )}
-              </button>
+
 
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`md:hidden p-2 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-400' : 'text-zinc-900'
@@ -159,6 +144,24 @@ export default function WhatMakesPaintingWorth100mPage() {
               }`}>Art Market Analysis</span>
             </div>
             <div className="px-6 py-8">
+              {/* Theme Toggle Button */}
+              <div className="flex justify-center mb-4">
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className={`p-2 rounded-full transition-colors duration-200 ${
+                    theme === 'dark'
+                      ? 'hover:bg-zinc-700 text-zinc-400 hover:text-zinc-200'
+                      : 'hover:bg-zinc-200 text-zinc-600 hover:text-zinc-800'
+                  }`}
+                  aria-label="Toggle reading mode"
+                >
+                  {theme === 'dark' ? (
+                    <Sun className="w-5 h-5" />
+                  ) : (
+                    <Moon className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
               <h1 className={`text-center text-xl font-semibold mb-6 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-100' : 'text-zinc-800'
               }`}>What Makes a painting worth $100m?</h1>
