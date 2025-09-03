@@ -620,13 +620,13 @@ export default function ShopPage() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="relative"
                   >
-                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-screen max-w-none mx-0 ${
+                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-5xl ${
                       theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700'
                         : 'bg-zinc-50 border-zinc-200'
                     }`}>
                       {/* Product Image */}
-                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px] w-screen max-w-none mx-0`}>
+                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px] w-full`}>
                         <Image
                           src={getCurrentImage(product)}
                           alt={product.name}
