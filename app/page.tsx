@@ -1127,20 +1127,28 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Signature - Bottom (appears on scroll) */}
-          <div className={`flex justify-center transition-opacity duration-500 ${
+          {/* Signature - Bottom (appears on scroll) - Overlaid without affecting layout */}
+          <div className={`absolute inset-0 flex justify-center transition-opacity duration-500 pointer-events-none ${
             isScrolled ? 'opacity-100' : 'opacity-0'
-          }`}>
-            <Image
-              src={theme === 'dark'
-                ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
-                : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
-              }
-              alt="Signature"
-              width={140}
-              height={70}
-              className="opacity-70 hover:opacity-90 transition-opacity duration-300"
-            />
+          }`} style={{ top: 'auto', bottom: '20px' }}>
+            <div className="relative overflow-hidden" style={{ width: '140px', height: '35px' }}>
+              <Image
+                src={theme === 'dark'
+                  ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
+                  : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
+                }
+                alt="Signature"
+                width={140}
+                height={70}
+                className="opacity-70 hover:opacity-90 transition-opacity duration-300 absolute"
+                style={{
+                  top: '-21px', // Crop 30% from top (21px of 70px)
+                  left: 0,
+                  width: '140px',
+                  height: '70px'
+                }}
+              />
+            </div>
           </div>
 
         </div>
