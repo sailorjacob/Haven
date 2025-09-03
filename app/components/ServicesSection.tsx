@@ -18,7 +18,7 @@ export const ServicesSection = () => {
       <button
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="relative z-10 mx-auto flex items-center gap-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors px-2 py-1 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-700"
+        className="relative z-10 flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors tracking-wider uppercase"
       >
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
