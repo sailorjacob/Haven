@@ -383,7 +383,9 @@ export default function ShopPage() {
       <section className="pt-20 px-6 pb-12">
         <div className="container max-w-6xl mx-auto">
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto ${
+            selectedProduct ? 'mt-8' : ''
+          }`}>
             {products.map((product, index) => {
               const isSelected = selectedProduct === product.id
               const isHidden = selectedProduct && !isSelected
@@ -403,7 +405,7 @@ export default function ShopPage() {
                     ease: "easeInOut"
                   }}
                   className={`group cursor-pointer ${
-                    isSelected ? 'md:col-span-3 lg:col-span-3' : ''
+                    isSelected ? 'md:col-span-3 lg:col-span-3 transform -translate-y-8' : ''
                   }`}
                   onClick={() => selectProduct(product.id)}
                   onMouseEnter={() => handleProductHover(product.id, true)}
@@ -559,20 +561,20 @@ export default function ShopPage() {
 
                     {/* Back Button for Selected Product */}
                     {isSelected && (
-                      <div className="mt-6 text-center">
+                      <div className="absolute top-4 left-4 z-10">
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
                             setSelectedProduct(null)
                           }}
-                          className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                             theme === 'dark'
-                              ? 'bg-zinc-700 text-zinc-200 hover:bg-zinc-600'
-                              : 'bg-zinc-200 text-zinc-900 hover:bg-zinc-300'
+                              ? 'bg-zinc-900 text-zinc-200 hover:bg-zinc-800'
+                              : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200'
                           }`}
                         >
-                          <ChevronLeft className="w-4 h-4 mr-2" />
-                          Back to All Products
+                          <ChevronLeft className="w-4 h-4 mr-1.5" />
+                          Back
                         </button>
                       </div>
                     )}
