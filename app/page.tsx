@@ -1073,16 +1073,14 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <div className="rounded-xl p-8 text-center">
+          <div className="rounded-xl p-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              
-              
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center mb-4">
                 {/* Message Button */}
                 <Link
                   href="mailto:info@haven.engineer"
