@@ -383,9 +383,7 @@ export default function ShopPage() {
       <section className="pt-20 px-6 pb-12">
         <div className="container max-w-6xl mx-auto">
           {/* Products Grid */}
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto ${
-            selectedProduct ? 'mt-8' : ''
-          }`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {products.map((product, index) => {
               const isSelected = selectedProduct === product.id
               const isHidden = selectedProduct && !isSelected
@@ -405,13 +403,18 @@ export default function ShopPage() {
                     ease: "easeInOut"
                   }}
                   className={`group cursor-pointer ${
-                    isSelected ? 'md:col-span-3 lg:col-span-3 transform -translate-y-8' : ''
+                    isSelected ? 'fixed inset-0 z-40 flex items-center justify-center p-8' : ''
                   }`}
-                  onClick={() => selectProduct(product.id)}
+                  onClick={isSelected ? (e) => {
+                    // Close if clicking on the overlay (not on the product card)
+                    if (e.target === e.currentTarget) {
+                      setSelectedProduct(null)
+                    }
+                  } : () => selectProduct(product.id)}
                   onMouseEnter={() => handleProductHover(product.id, true)}
                   onMouseLeave={() => handleProductHover(product.id, false)}
                 >
-                  <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 ${
+                  <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-4xl ${
                     theme === 'dark'
                       ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
                       : 'bg-zinc-50 border-zinc-200 hover:border-zinc-300'
