@@ -839,12 +839,12 @@ export default function HomePage() {
                         onMouseLeave={() => setHoveredStep(null)}
                         className={`text-center group transition-opacity duration-300 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-25' : 'opacity-100'}`}
                       >
-                        <div className={`${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
+                        <div className={`flex items-center justify-center gap-3 mb-3 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
                           <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
+                          <h3 className="text-base font-medium text-zinc-600 transition-opacity duration-700 ease-in-out">
+                            {step.title}
+                          </h3>
                         </div>
-                        <h3 className="text-base font-medium text-zinc-600 mb-1 transition-opacity duration-700 ease-in-out">
-                          {step.title}
-                        </h3>
                         <p className="text-zinc-500 text-sm leading-snug transition-opacity duration-700 ease-in-out">
                           {step.description}
                         </p>
@@ -1008,7 +1008,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-center mb-8"
+              className="text-center mb-12"
             >
             </motion.div>
 
