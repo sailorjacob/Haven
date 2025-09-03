@@ -63,7 +63,11 @@ export default function HomePage() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 200) // Show bottom signature after scrolling 200px
+      const documentHeight = document.documentElement.scrollHeight
+      const windowHeight = window.innerHeight
+      const scrollThreshold = documentHeight * 0.5 // 50% down the page
+
+      setIsScrolled(scrollTop > scrollThreshold)
     }
 
     window.addEventListener('scroll', handleScroll)
