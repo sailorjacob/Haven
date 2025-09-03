@@ -17,6 +17,8 @@ export default function ShopPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [productSizes, setProductSizes] = useState<Record<string, string>>({})
   const [showNotification, setShowNotification] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState<string | null>(null)
+  const [hoveredProductImage, setHoveredProductImage] = useState<Record<string, boolean>>({})
   const { theme, setTheme } = useTheme()
 
   // Get seeded random color for navigation
@@ -100,6 +102,27 @@ export default function ShopPage() {
     }))
   }
 
+  // Product selection function
+  const selectProduct = (productId: string) => {
+    setSelectedProduct(productId === selectedProduct ? null : productId)
+  }
+
+  // Image hover functions
+  const handleProductHover = (productId: string, isHovering: boolean) => {
+    setHoveredProductImage(prev => ({
+      ...prev,
+      [productId]: isHovering
+    }))
+  }
+
+  // Get current image for product (hover state)
+  const getCurrentImage = (product: any) => {
+    if (hoveredProductImage[product.id] && product.hoverImage) {
+      return product.hoverImage
+    }
+    return product.image
+  }
+
   // Calculate total cart price
   const cartTotal = cartItems.reduce((total, item) => {
     const price = parseFloat(item.price.replace('$', ''))
@@ -139,6 +162,7 @@ export default function ShopPage() {
       id: "blackbunny",
       name: "Black Bunny",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/black%20bunny%20(1).png",
+      hoverImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/bunny2.png",
       description: "Mysterious black bunny design",
       price: "$46"
     }
@@ -359,31 +383,80 @@ export default function ShopPage() {
       <section className="pt-20 px-6 pb-12">
         <div className="container max-w-6xl mx-auto">
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-                onMouseEnter={() => setHoveredProduct(product.id)}
-                onMouseLeave={() => setHoveredProduct(null)}
-              >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {products.map((product, index) => {
+              const isSelected = selectedProduct === product.id
+              const isHidden = selectedProduct && !isSelected
+
+              return (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: isHidden ? 0 : 1,
+                    scale: isHidden ? 0.8 : 1,
+                    y: isHidden ? -20 : 0
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    delay: isHidden ? 0 : index * 0.1,
+                    ease: "easeInOut"
+                  }}
+                  className={`group cursor-pointer ${
+                    isSelected ? 'md:col-span-3 lg:col-span-3' : ''
+                  }`}
+                  onClick={() => selectProduct(product.id)}
+                  onMouseEnter={() => handleProductHover(product.id, true)}
+                  onMouseLeave={() => handleProductHover(product.id, false)}
+                >
                 <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 ${
                   theme === 'dark'
                     ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
                     : 'bg-zinc-50 border-zinc-200 hover:border-zinc-300'
                 }`}>
                   {/* Product Image */}
-                  <div className="relative h-96 overflow-hidden">
+                  <div className={`relative overflow-hidden transition-all duration-500 ${
+                    isSelected ? 'h-[600px]' : 'h-96'
+                  }`}>
                     <Image
-                      src={product.image}
+                      src={getCurrentImage(product)}
                       alt={product.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-all duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+
+                    {/* Image Toggle for Selected Product */}
+                    {isSelected && product.hoverImage && (
+                      <div className="absolute top-4 right-4 flex space-x-2">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleProductHover(product.id, false)
+                          }}
+                          className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ${
+                            !hoveredProductImage[product.id]
+                              ? 'bg-zinc-900 text-white'
+                              : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+                          }`}
+                        >
+                          Full
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleProductHover(product.id, true)
+                          }}
+                          className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ${
+                            hoveredProductImage[product.id]
+                              ? 'bg-zinc-900 text-white'
+                              : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+                          }`}
+                        >
+                          Close-up
+                        </button>
+                      </div>
+                    )}
                   </div>
 
                   {/* Product Info */}
@@ -407,7 +480,10 @@ export default function ShopPage() {
                         {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
                           <button
                             key={size}
-                            onClick={() => selectSize(product.id, size)}
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              selectSize(product.id, size)
+                            }}
                             className={`px-3 py-2 text-sm font-medium rounded-md border transition-all duration-200 ${
                               productSizes[product.id] === size
                                 ? theme === 'dark'
@@ -427,7 +503,10 @@ export default function ShopPage() {
                     {/* Action Buttons */}
                     <div className="flex space-x-3">
                       <button
-                        onClick={() => addToCart(product)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          addToCart(product)
+                        }}
                         className={`flex-1 flex items-center justify-center border font-medium py-3 px-6 rounded-full text-sm transition-all duration-300 ${
                           theme === 'dark'
                             ? 'border-zinc-600 text-zinc-200 hover:bg-zinc-700'
@@ -439,7 +518,10 @@ export default function ShopPage() {
                       </button>
 
                       <button
-                        onClick={() => toggleLike(product.id)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          toggleLike(product.id)
+                        }}
                         className={`relative p-3 rounded-full border transition-all duration-300 ${
                           likedProducts.has(product.id)
                             ? 'border-green-500 text-green-400 bg-green-500/10'
@@ -474,10 +556,31 @@ export default function ShopPage() {
                         )}
                       </button>
                     </div>
+
+                    {/* Back Button for Selected Product */}
+                    {isSelected && (
+                      <div className="mt-6 text-center">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setSelectedProduct(null)
+                          }}
+                          className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                            theme === 'dark'
+                              ? 'bg-zinc-700 text-zinc-200 hover:bg-zinc-600'
+                              : 'bg-zinc-200 text-zinc-900 hover:bg-zinc-300'
+                          }`}
+                        >
+                          <ChevronLeft className="w-4 h-4 mr-2" />
+                          Back to All Products
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
-            ))}
+            )
+          })}
           </div>
 
           {/* Footer Text */}
