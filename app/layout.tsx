@@ -11,7 +11,7 @@ const caveat = Caveat({
 })
 
 export const metadata: Metadata = {
-  title: 'Haven',
+  title: 'Haven | Digital Studio',
   description: 'Your digital sanctuary',
   icons: {
     icon: '/favicon.ico',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     statusBarStyle: 'default',
-    title: 'Haven',
+    title: 'Haven | Digital Studio',
   },
 }
 
