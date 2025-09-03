@@ -10,7 +10,7 @@ import { useState } from "react"
 export const ServicesSection = () => {
   const [open, setOpen] = useState(false)
   return (
-    <div className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden">
+    <div className="relative bg-zinc-50 dark:bg-zinc-800 rounded-xl p-6 overflow-hidden transition-colors duration-300">
       {/* Background image removed */}
       
       <BlueprintGrid />
@@ -18,7 +18,7 @@ export const ServicesSection = () => {
       <button
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="relative z-10 mx-auto flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+        className="relative z-10 mx-auto flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
       >
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
@@ -26,7 +26,7 @@ export const ServicesSection = () => {
           className="inline-block"
         >
           {/* thin chevron */}
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700 dark:text-zinc-500">
             <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.span>

@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion'
+import { useTheme } from 'next-themes'
 
 const starImages = [
   "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/stars/transparentstars/TE_BACKGROUND_SILVER_SP_0ef0c6d5-b5cc-4696-8a49-b673622b934f-xtPrf5Skrzk3Hq7Sd239ic5v9AXXjE.png",
@@ -77,7 +78,8 @@ export function ScatteredStars() {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
-  
+  const { theme } = useTheme()
+
   // Create a motion value for scroll progress
   const scrollProgress = useMotionValue(0)
 
@@ -122,8 +124,12 @@ export function ScatteredStars() {
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0">
       {/* Overlay filter */}
-      <div className="absolute inset-0 bg-white/50 mix-blend-overlay" />
-      
+      <div className={`absolute inset-0 transition-colors duration-300 ${
+        theme === 'dark'
+          ? 'bg-zinc-950/40 mix-blend-overlay'
+          : 'bg-white/50 mix-blend-overlay'
+      }`} />
+
       {/* Stars */}
       {stars.map((star) => (
         <Star

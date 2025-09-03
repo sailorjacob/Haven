@@ -3,7 +3,8 @@
 import { useState, useEffect, useMemo, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X, ChevronDown } from "lucide-react"
+import { ArrowRight, Hexagon, Sparkles, Code, Palette, Zap, Users, ChevronLeft, Filter, ExternalLink, Mail, Phone, Menu, X, ChevronDown, Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Footer } from "@/components/footer"
 import { LucideIcon } from "lucide-react"
@@ -44,6 +45,7 @@ export default function HomePage() {
   const [processOpen, setProcessOpen] = useState(false)
   const [processSectionOpen, setProcessSectionOpen] = useState(false)
   const [performanceSectionOpen, setPerformanceSectionOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
   
   // Feature flags for easy toggling
   const ENABLE_HOMEPAGE_STARS = true
@@ -66,7 +68,7 @@ export default function HomePage() {
       description: "fine art photography gallery.",
       technologies: ["Next.js", "Photography", "Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "/jacobhalestudio",
+      link: "https://jacobhalestudio.net",
       category: "website"
     },
     {
@@ -76,6 +78,24 @@ export default function HomePage() {
       technologies: ["Vue.js", "Webstore", "Mini-game"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
       link: "https://ammocat3000.com",
+      category: "website"
+    },
+    {
+      id: "sojourn",
+      title: "sojourn.city",
+      description: "solar punk inspired art project with an interactive public art gallery wall.",
+      technologies: ["Interactive Art", "Solar Punk", "Community"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/sojournbubble.png",
+      link: "https://sojourn.city",
+      category: "website"
+    },
+    {
+      id: "designforstartups",
+      title: "designforstartups.net",
+      description: "branding and design for new and special projects.",
+      technologies: ["Branding", "Design", "Identity"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/designforstartup.png",
+      link: "https://designforstartups.net",
       category: "website"
     },
     {
@@ -142,15 +162,6 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "designforstartups",
-      title: "designforstartups.net",
-      description: "branding and design for new and special projects.",
-      technologies: ["Branding", "Design", "Identity"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/designforstartup.png",
-      link: "https://designforstartups.net",
-      category: "website"
-    },
-    {
       id: "killmefxster",
       title: "killmefaster.com",
       description: "digital art platform with interactive experiences.",
@@ -158,15 +169,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
       link: "/killmefxster",
       category: "webapp"
-    },
-    {
-      id: "sojourn",
-      title: "sojourn.city",
-      description: "solar punk inspired art project with an interactive public art gallery wall.",
-      technologies: ["Interactive Art", "Solar Punk", "Community"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/sojournbubble.png",
-      link: "https://sojourn.city",
-      category: "website"
     },
     {
       id: "1stclassstudios",
@@ -197,7 +199,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["moonlight", "klaire", "roundabout", "salomatic"]
+  const hiddenIds: string[] = ["moonlight", "klaire", "roundabout", "salomatic", "killmefaster"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
@@ -313,11 +315,23 @@ export default function HomePage() {
   }
 
   return (
-    <main className="bg-white w-full text-zinc-900">
+    <main className={`w-full transition-colors duration-300 ${
+      theme === 'dark'
+        ? 'bg-zinc-900 text-zinc-100'
+        : 'bg-white text-zinc-900'
+    }`}>
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
+        <div className={`absolute inset-0 transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-900'
+            : 'bg-gradient-to-b from-zinc-50 via-white to-zinc-50'
+        }`}></div>
+        <div className={`absolute inset-0 transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900/30 via-transparent to-transparent'
+            : 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent'
+        }`}></div>
       </div>
 
       {/* Scattered Stars */}
@@ -325,9 +339,13 @@ export default function HomePage() {
 
       {/* Header */}
       <header onMouseLeave={()=>setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
-        processOpen 
-          ? 'bg-zinc-900/95 border-zinc-700' 
-          : 'bg-white/80 border-zinc-200'
+        processOpen
+          ? theme === 'dark'
+            ? 'bg-zinc-900/95 border-zinc-700'
+            : 'bg-zinc-900/95 border-zinc-700'
+          : theme === 'dark'
+            ? 'bg-zinc-900/80 border-zinc-700'
+            : 'bg-white/80 border-zinc-200'
       }`}>
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
@@ -378,9 +396,13 @@ export default function HomePage() {
                               <Link
                   href="/blog"
                   className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
-                    processOpen 
-                      ? 'text-zinc-400 hover:text-zinc-200' 
-                      : 'text-zinc-600 hover:text-zinc-900'
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
                   }`}
                 >
                 blog
@@ -389,23 +411,44 @@ export default function HomePage() {
               <Link 
                 href="/contact"
                 className={`hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 delay-100 text-sm ${
-                  processOpen 
-                    ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200' 
-                    : 'border-zinc-300 hover:bg-zinc-50 text-zinc-900'
+                  processOpen
+                    ? theme === 'dark'
+                      ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
+                      : 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
+                    : theme === 'dark'
+                      ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
+                      : 'border-zinc-300 hover:bg-zinc-50 text-zinc-900'
                 }`}
               >
                 msg
               </Link>
               
+              {/* Dark Mode Toggle - Hidden for now */}
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="hidden p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'dark' ? (
+                  <Sun className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                    processOpen ? 'text-zinc-200' : 'text-zinc-900 dark:text-zinc-100'
+                  }`} />
+                ) : (
+                  <Moon className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                    processOpen ? 'text-zinc-200' : 'text-zinc-900'
+                  }`} />
+                )}
+              </button>
+
               {/* Mobile Menu Button */}
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
                 {mobileMenuOpen ? <X className={`w-5 h-5 transition-colors duration-300 delay-100 ${
-                  processOpen ? 'text-zinc-200' : 'text-zinc-900'
+                  processOpen ? 'text-zinc-200' : 'text-zinc-900 dark:text-zinc-100'
                 }`} /> : <Menu className={`w-5 h-5 transition-colors duration-300 delay-100 ${
-                  processOpen ? 'text-zinc-200' : 'text-zinc-900'
+                  processOpen ? 'text-zinc-200' : 'text-zinc-900 dark:text-zinc-100'
                 }`} />}
               </button>
             </div>
@@ -428,9 +471,11 @@ export default function HomePage() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className={`md:hidden border-b transition-all duration-300 delay-100 ${
-                processOpen 
-                  ? 'bg-zinc-900 border-zinc-700' 
-                  : 'bg-white border-zinc-200'
+                processOpen
+                  ? 'bg-zinc-900 border-zinc-700'
+                  : theme === 'dark'
+                    ? 'bg-zinc-900 border-zinc-700'
+                    : 'bg-white border-zinc-200'
               }`}
             >
                              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
@@ -438,9 +483,11 @@ export default function HomePage() {
                  <Link 
                    href="/blog"
                    className={`block text-sm transition-colors duration-300 delay-100 group ${
-                     processOpen 
-                       ? 'text-zinc-400 hover:text-zinc-200' 
-                       : 'text-zinc-600 hover:text-zinc-900'
+                     processOpen
+                       ? 'text-zinc-400 hover:text-zinc-200'
+                       : theme === 'dark'
+                         ? 'text-zinc-400 hover:text-zinc-200'
+                         : 'text-zinc-600 hover:text-zinc-900'
                    }`}
                    onClick={() => setMobileMenuOpen(false)}
                  >
@@ -453,7 +500,7 @@ export default function HomePage() {
       </header>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-10 px-6">
+      <section className="relative z-10 pt-10 px-6 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto space-y-12">
           
 
@@ -492,9 +539,13 @@ export default function HomePage() {
                   <button 
                     onClick={() => setFilter(null)} 
                     className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                      !filter 
-                        ? 'bg-zinc-200 text-zinc-800' 
-                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                      !filter
+                        ? theme === 'dark'
+                          ? 'bg-zinc-700 text-zinc-200'
+                          : 'bg-zinc-200 text-zinc-800'
+                        : theme === 'dark'
+                          ? 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                          : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                     }`}
                   >
                     All
@@ -502,9 +553,13 @@ export default function HomePage() {
                   <button 
                     onClick={() => setFilter('webapp')} 
                     className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                      filter === 'webapp' 
-                        ? 'bg-zinc-200 text-zinc-800' 
-                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                      filter === 'webapp'
+                        ? theme === 'dark'
+                          ? 'bg-zinc-700 text-zinc-200'
+                          : 'bg-zinc-200 text-zinc-800'
+                        : theme === 'dark'
+                          ? 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                          : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                     }`}
                   >
                     Web Apps
@@ -512,9 +567,13 @@ export default function HomePage() {
                   <button 
                     onClick={() => setFilter('website')} 
                     className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                      filter === 'website' 
-                        ? 'bg-zinc-200 text-zinc-800' 
-                        : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
+                      filter === 'website'
+                        ? theme === 'dark'
+                          ? 'bg-zinc-700 text-zinc-200'
+                          : 'bg-zinc-200 text-zinc-800'
+                        : theme === 'dark'
+                          ? 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                          : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                     }`}
                   >
                     Websites
@@ -531,7 +590,11 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: Math.min(0.1 + (index * 0.05), 0.3), ease: "easeOut" }}
-                  className="group bg-white rounded-xl border border-zinc-200 overflow-hidden hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
+                  className={`group rounded-xl border overflow-hidden transition-all duration-300 hover:shadow-lg ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
+                      : 'bg-white border-zinc-200 hover:border-zinc-400'
+                  }`}
                 >
                   <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
                     <div className="relative h-64 overflow-hidden">
@@ -546,15 +609,23 @@ export default function HomePage() {
                   </Link>
                   
                   <div className="p-6">
-                    <h3 className="text-xl font-medium text-zinc-900 mb-2">{project.title}</h3>
-                    <p className="text-zinc-600 mb-4 leading-relaxed">{project.description}</p>
+                    <h3 className={`text-xl font-medium mb-2 transition-colors duration-300 ${
+                      theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                    }`}>{project.title}</h3>
+                    <p className={`mb-4 leading-relaxed transition-colors duration-300 ${
+                      theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                    }`}>{project.description}</p>
                     
                     {/* Technology Pills */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, index) => (
                         <span 
                           key={index}
-                          className="text-xs px-2 py-1 bg-zinc-100 text-zinc-600 rounded border border-zinc-200"
+                          className={`text-xs px-2 py-1 rounded border transition-colors duration-300 ${
+                            theme === 'dark'
+                              ? 'bg-zinc-700 text-zinc-300 border-zinc-600'
+                              : 'bg-zinc-100 text-zinc-600 border-zinc-200'
+                          }`}
                         >
                           {tech}
                         </span>
@@ -564,7 +635,11 @@ export default function HomePage() {
                     <Link 
                       href={project.link} 
                       target={project.link.startsWith('http') ? "_blank" : "_self"}
-                      className="inline-flex items-center text-sm text-zinc-900 hover:text-zinc-600 transition-colors font-medium group"
+                      className={`inline-flex items-center text-sm transition-colors font-medium group ${
+                        theme === 'dark'
+                          ? 'text-zinc-300 hover:text-zinc-100'
+                          : 'text-zinc-900 hover:text-zinc-600'
+                      }`}
                     >
                       View Project
                       <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -606,10 +681,16 @@ export default function HomePage() {
                 {/* Start a Project Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center border-zinc-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className={`inline-flex items-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group ${
+                    theme === 'dark'
+                      ? 'border-zinc-600 text-zinc-200'
+                      : 'border-zinc-400 text-zinc-900'
+                  }`}
                 >
                   {/* Grey background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
+                  }`}></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     start a project
@@ -620,10 +701,16 @@ export default function HomePage() {
                 {/* View Work Button */}
                 <Link
                   href="/work"
-                  className="inline-flex items-center border-zinc-400 border text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className={`inline-flex items-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group ${
+                    theme === 'dark'
+                      ? 'border-zinc-600 text-zinc-200'
+                      : 'border-zinc-400 text-zinc-900'
+                  }`}
                 >
                   {/* Grey background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
+                  }`}></div>
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     view work
@@ -639,21 +726,23 @@ export default function HomePage() {
           <ServicesSection />
 
           {/* Process */}
-          <div id="process" ref={processRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden scroll-mt-32">
+          <div id="process" ref={processRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
+            theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
+          }`}>
             {/* crosshair overlay */}
             <CrosshairOverlay parentRef={processRef} />
             <div className="flex items-center justify-center">
               <button
                 aria-expanded={processSectionOpen}
                 onClick={() => setProcessSectionOpen((v) => !v)}
-                className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
               >
                 <motion.span
                   animate={{ rotate: processSectionOpen ? 180 : 0 }}
                   transition={{ duration: 0.25 }}
                   className="inline-block"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700 dark:text-zinc-500">
                     <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </motion.span>
@@ -724,21 +813,23 @@ export default function HomePage() {
           </div>
 
           {/* Studio Performance */}
-          <div id="performance" ref={performanceRef} className="relative bg-zinc-50 rounded-xl p-6 overflow-hidden scroll-mt-32">
+          <div id="performance" ref={performanceRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
+            theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
+          }`}>
             {/* crosshair overlay */}
             <CrosshairOverlay parentRef={performanceRef} />
             <div className="flex items-center justify-center">
               <button
                 aria-expanded={performanceSectionOpen}
                 onClick={() => setPerformanceSectionOpen((v) => !v)}
-                className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+                className="flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
               >
                 <motion.span
                   animate={{ rotate: performanceSectionOpen ? 180 : 0 }}
                   transition={{ duration: 0.25 }}
                   className="inline-block"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700 dark:text-zinc-500">
                     <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </motion.span>
@@ -769,12 +860,12 @@ export default function HomePage() {
                     >
                       <div className="relative w-24 h-24 mx-auto mb-4">
                         <svg className="w-full h-full" viewBox="0 0 100 100">
-                          <circle 
-                            cx="50" 
-                            cy="50" 
-                            r="45" 
-                            fill="none" 
-                            stroke="#e4e4e7" 
+                          <circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="none"
+                            stroke={theme === 'dark' ? '#374151' : '#e4e4e7'}
                             strokeWidth="4"
                           />
                           <motion.circle
@@ -795,12 +886,12 @@ export default function HomePage() {
                             transform="rotate(-90 50 50)"
                             strokeLinecap="round"
                           />
-                          <text 
-                            x="50" 
-                            y="50" 
-                            textAnchor="middle" 
-                            fill="#18181b" 
-                            fontSize="16" 
+                          <text
+                            x="50"
+                            y="50"
+                            textAnchor="middle"
+                            fill={theme === 'dark' ? '#f4f4f5' : '#18181b'}
+                            fontSize="16"
                             fontWeight="600"
                             dominantBaseline="middle"
                           >
@@ -808,7 +899,9 @@ export default function HomePage() {
                           </text>
                         </svg>
                       </div>
-                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Uptime</h3>
+                      <h3 className={`font-light text-sm mb-2 transition-colors duration-300 tracking-wider uppercase ${
+                        theme === 'dark' ? 'text-zinc-300 hover:text-zinc-100' : 'text-zinc-900'
+                      }`}>Uptime</h3>
                     </motion.div>
 
                     {/* Support */}
@@ -819,10 +912,16 @@ export default function HomePage() {
                       viewport={{ once: true }}
                       className="text-center"
                     >
-                      <div className="w-24 h-24 rounded-full border-2 border-zinc-300 flex items-center justify-center mx-auto mb-4">
-                        <span className="text-zinc-700 font-semibold text-lg">24/7</span>
+                      <div className={`w-24 h-24 rounded-full border-2 flex items-center justify-center mx-auto mb-4 transition-colors duration-300 ${
+                        theme === 'dark' ? 'border-zinc-600' : 'border-zinc-300'
+                      }`}>
+                        <span className={`font-semibold text-lg transition-colors duration-300 ${
+                          theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+                        }`}>24/7</span>
                       </div>
-                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Support</h3>
+                      <h3 className={`font-light text-sm mb-2 transition-colors duration-300 tracking-wider uppercase ${
+                        theme === 'dark' ? 'text-zinc-300 hover:text-zinc-100' : 'text-zinc-900'
+                      }`}>Support</h3>
                     </motion.div>
 
                     {/* Better Conversion */}
@@ -834,8 +933,10 @@ export default function HomePage() {
                       className="text-center"
                     >
                       <div className="h-24 flex flex-col items-center justify-center mb-4">
-                        <motion.div 
-                          className="text-2xl font-semibold text-zinc-900 mb-1"
+                        <motion.div
+                          className={`text-2xl font-semibold mb-1 transition-colors duration-300 ${
+                            theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                          }`}
                           initial={{ scale: 0.8, opacity: 0 }}
                           whileInView={{ scale: 1, opacity: 1 }}
                           transition={{ duration: 1, ease: "easeOut" }}
@@ -846,7 +947,9 @@ export default function HomePage() {
                           </svg>
                         </motion.div>
                       </div>
-                      <h3 className="text-lg font-medium text-zinc-900 mb-1">Better Conversion</h3>
+                      <h3 className={`font-light text-sm mb-2 transition-colors duration-300 tracking-wider uppercase ${
+                        theme === 'dark' ? 'text-zinc-300 hover:text-zinc-100' : 'text-zinc-900'
+                      }`}>Better Conversion</h3>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -884,7 +987,9 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-zinc-200">
+                  <div className={`relative group w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 transition-colors duration-300 ${
+                    theme === 'dark' ? 'border-zinc-700' : 'border-zinc-200'
+                  }`}>
                     {/* Show altImage by default */}
                     {member.altImage ? (
                       <Image
@@ -902,14 +1007,20 @@ export default function HomePage() {
                       className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     />
                   </div>
-                  <h3 className="text-lg font-medium text-zinc-900 mb-1">{
+                  <h3 className={`text-lg font-medium mb-1 transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                  }`}>{
                     (()=>{
                       const parts = member.name.split(" ")
                       return parts[0] + (parts[1] ? " " + parts[1][0] + "." : "")
                     })()
                   }</h3>
-                  <p className="text-zinc-600 text-sm mb-3 font-medium">{member.role}</p>
-                  <p className="text-zinc-600 text-sm leading-relaxed">
+                  <p className={`text-sm mb-3 font-medium transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                  }`}>{member.role}</p>
+                  <p className={`text-sm leading-relaxed transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                  }`}>
                         {member.description}
                   </p>
                 </motion.div>
@@ -931,10 +1042,16 @@ export default function HomePage() {
                 {/* Message Button */}
                 <Link
                   href="mailto:info@haven.engineer"
-                  className="inline-flex items-center border border-zinc-300 text-zinc-900 font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group"
+                  className={`inline-flex items-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group transition-colors duration-300 ${
+                    theme === 'dark'
+                      ? 'border-zinc-600 text-zinc-200'
+                      : 'border-zinc-300 text-zinc-900'
+                  }`}
                 >
                   {/* Grey background that fills from left on hover */}
-                  <div className="absolute inset-0 bg-zinc-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
+                  }`}></div>
                   
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0 flex items-center">
@@ -948,10 +1065,16 @@ export default function HomePage() {
               </div>
 
               {/* Contact Info */}
-              <div className="flex items-center justify-center text-sm text-zinc-600">
-                <a 
-                  href="mailto:info@haven.engineer" 
-                  className="flex items-center hover:text-zinc-900 transition-colors"
+              <div className={`flex items-center justify-center text-sm transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+              }`}>
+                <a
+                  href="mailto:info@haven.engineer"
+                  className={`flex items-center transition-colors ${
+                    theme === 'dark'
+                      ? 'hover:text-zinc-200'
+                      : 'hover:text-zinc-900'
+                  }`}
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   info@haven.engineer

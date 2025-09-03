@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 
 interface WorkItem {
   id: string
@@ -97,6 +98,7 @@ export default function WorkGallery() {
   const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * workExamples.length))
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
+  const { theme } = useTheme() || { theme: 'light' }
 
   const nextSlide = () => {
     if (isTransitioning) return
@@ -169,7 +171,11 @@ export default function WorkGallery() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative bg-white rounded-2xl border border-zinc-200 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-500 group"
+        className={`relative rounded-2xl border overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 group ${
+          theme === 'dark'
+            ? 'bg-zinc-800 border-zinc-700'
+            : 'bg-white border-zinc-200'
+        }`}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -201,24 +207,40 @@ export default function WorkGallery() {
           
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
+            className={`absolute left-4 top-1/2 -translate-y-1/2 backdrop-blur-sm rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 ${
+              theme === 'dark'
+                ? 'bg-zinc-700/80 hover:bg-zinc-600/80 text-zinc-200'
+                : 'bg-white/20 hover:bg-white/30 text-white'
+            }`}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
+            className={`absolute right-4 top-1/2 -translate-y-1/2 backdrop-blur-sm rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 ${
+              theme === 'dark'
+                ? 'bg-zinc-700/80 hover:bg-zinc-600/80 text-zinc-200'
+                : 'bg-white/20 hover:bg-white/30 text-white'
+            }`}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
           <div className="absolute top-4 left-4">
-            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs font-medium">
+            <span className={`inline-block px-3 py-1 backdrop-blur-sm rounded-full text-xs font-medium transition-colors duration-300 ${
+              theme === 'dark'
+                ? 'bg-zinc-700/80 text-zinc-100'
+                : 'bg-white/20 text-white'
+            }`}>
               {currentWork.category}
             </span>
           </div>
 
-          <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">
+          <div className={`absolute top-4 right-4 backdrop-blur-sm px-3 py-1 rounded-full text-xs transition-colors duration-300 ${
+            theme === 'dark'
+              ? 'bg-zinc-800/80 text-zinc-200'
+              : 'bg-black/50 text-white'
+          }`}>
             {currentIndex + 1} / {workExamples.length}
           </div>
         </div>
@@ -230,10 +252,14 @@ export default function WorkGallery() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-light text-zinc-900 mb-3">
+            <h3 className={`text-2xl font-light mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+            }`}>
               {currentWork.title}
             </h3>
-            <p className="text-zinc-600 leading-relaxed mb-6">
+            <p className={`leading-relaxed mb-6 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+            }`}>
               {currentWork.description}
             </p>
             
@@ -242,7 +268,11 @@ export default function WorkGallery() {
                 href={currentWork.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 text-sm group/btn"
+                className={`inline-flex items-center font-medium py-3 px-6 rounded-full transition-all duration-300 text-sm group/btn ${
+                  theme === 'dark'
+                    ? 'bg-zinc-100 hover:bg-zinc-200 text-zinc-900'
+                    : 'bg-zinc-900 hover:bg-zinc-800 text-white'
+                }`}
               >
                 <span className="mr-2">Play Game</span>
                 <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -252,7 +282,11 @@ export default function WorkGallery() {
                 href={currentWork.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-zinc-900 hover:text-zinc-600 transition-colors font-medium text-sm group/btn"
+                className={`inline-flex items-center transition-colors font-medium text-sm group/btn ${
+                  theme === 'dark'
+                    ? 'text-zinc-100 hover:text-zinc-300'
+                    : 'text-zinc-900 hover:text-zinc-600'
+                }`}
               >
                 Visit Website
                 <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -260,7 +294,11 @@ export default function WorkGallery() {
             ) : (
               <Link
                 href={currentWork.link}
-                className="inline-flex items-center text-zinc-900 hover:text-zinc-600 transition-colors font-medium text-sm group/btn"
+                className={`inline-flex items-center transition-colors font-medium text-sm group/btn ${
+                  theme === 'dark'
+                    ? 'text-zinc-100 hover:text-zinc-300'
+                    : 'text-zinc-900 hover:text-zinc-600'
+                }`}
               >
                 View Project
                 <ChevronRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -276,9 +314,13 @@ export default function WorkGallery() {
             key={index}
             onClick={() => goToSlide(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? 'bg-zinc-900 w-8' 
-                : 'bg-zinc-300 hover:bg-zinc-400 w-2'
+              index === currentIndex
+                ? theme === 'dark'
+                  ? 'bg-zinc-100 w-8'
+                  : 'bg-zinc-900 w-8'
+                : theme === 'dark'
+                  ? 'bg-zinc-600 hover:bg-zinc-500 w-2'
+                  : 'bg-zinc-300 hover:bg-zinc-400 w-2'
             }`}
           />
         ))}
@@ -287,7 +329,11 @@ export default function WorkGallery() {
       <div className="text-center mt-8">
         <Link
           href="/work"
-          className="inline-flex items-center text-zinc-600 hover:text-zinc-900 transition-colors font-medium text-sm group"
+          className={`inline-flex items-center transition-colors font-medium text-sm group ${
+            theme === 'dark'
+              ? 'text-zinc-400 hover:text-zinc-200'
+              : 'text-zinc-600 hover:text-zinc-900'
+          }`}
         >
           View All Work
           <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

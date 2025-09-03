@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Caveat } from 'next/font/google'
 import CookieConsent from "../components/CookieConsent"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const caveat = Caveat({
   subsets: ['latin'],
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={caveat.variable}>
+    <html lang="en" className={caveat.variable} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,8 +37,15 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <CookieConsent />
+        </ThemeProvider>
       </body>
     </html>
   )
