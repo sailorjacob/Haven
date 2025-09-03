@@ -620,7 +620,7 @@ export default function ShopPage() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="relative"
                   >
-                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-5xl ${
+                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-6xl ${
                       theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700'
                         : 'bg-zinc-50 border-zinc-200'
