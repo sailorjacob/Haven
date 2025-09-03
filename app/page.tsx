@@ -1128,7 +1128,7 @@ export default function HomePage() {
           </div>
 
           {/* Signature - Bottom (appears on scroll) */}
-          <div className={`flex justify-center pt-8 transition-opacity duration-500 ${
+          <div className={`flex justify-center transition-opacity duration-500 ${
             isScrolled ? 'opacity-100' : 'opacity-0'
           }`}>
             <Image
