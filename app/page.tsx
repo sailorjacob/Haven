@@ -63,6 +63,24 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "1stclassstudios",
+      title: "1stclassstudios.com",
+      description: "professional recording studio with three facilities 45 minutes from manhattan.",
+      technologies: ["Next.js", "Booking System", "Studio"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
+      link: "/1stclassstudios",
+      category: "website"
+    },
+    {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "website for author and art critic anthony haden-guest.",
+      technologies: ["Next.js", "Literature", "Portfolio"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
+      link: "https://anthonyhadenguest.net",
+      category: "website"
+    },
+    {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
       description: "fine art photography gallery.",
@@ -112,7 +130,7 @@ export default function HomePage() {
       title: "Moonlight Garden 🌱",
       description: "24/7 mobile order restaurant with automation systems.",
       technologies: ["Next.js", "Mobile Order", "Automation"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png",
       link: "/moonlight-garden",
       category: "webapp"
     },
@@ -171,30 +189,12 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "1stclassstudios",
-      title: "1stclassstudios.com",
-      description: "professional recording studio with three facilities 45 minutes from manhattan.",
-      technologies: ["Next.js", "Booking System", "Studio"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
-      link: "/1stclassstudios",
-      category: "website"
-    },
-    {
       id: "salomatic",
       title: "Salomatic Pitch Deck",
       description: "design and branding for their routine blood testing product with modern healthcare aesthetics.",
       technologies: ["Design", "Healthcare", "Pitch Deck"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
       link: "/salomatic",
-      category: "website"
-    },
-    {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "website for author and art critic anthony haden-guest.",
-      technologies: ["Next.js", "Literature", "Portfolio"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
-      link: "https://anthonyhadenguest.net",
       category: "website"
     },
   ]
