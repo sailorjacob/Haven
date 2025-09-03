@@ -63,7 +63,7 @@ export default function HomePage() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 100) // Show bottom signature after scrolling 100px
+      setIsScrolled(scrollTop > 200) // Show bottom signature after scrolling 200px
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -1128,7 +1128,7 @@ export default function HomePage() {
           {/* Signature - Bottom (appears on scroll) - Overlaid without affecting layout */}
           <div className={`absolute inset-0 flex justify-center transition-opacity duration-500 pointer-events-none ${
             isScrolled ? 'opacity-100' : 'opacity-0'
-          }`} style={{ top: 'auto', bottom: '-45px' }}>
+          }`} style={{ top: 'auto', bottom: '-35px', transform: 'translateX(8px)' }}>
             <div className="relative overflow-hidden" style={{ width: '140px', height: '45px' }}>
               <Image
                 src={theme === 'dark'
