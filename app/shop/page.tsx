@@ -406,8 +406,8 @@ export default function ShopPage() {
                   key={`grid-${product.id}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
-                    opacity: isSelected ? 0 : 1,
-                    scale: 1,
+                    opacity: selectedProduct ? (isSelected ? 0 : 0.3) : 1,
+                    scale: selectedProduct ? (isSelected ? 0.95 : 0.95) : 1,
                     y: 0
                   }}
                   transition={{
@@ -420,7 +420,7 @@ export default function ShopPage() {
                   onMouseEnter={() => handleProductHover(product.id, true)}
                   onMouseLeave={() => handleProductHover(product.id, false)}
                 >
-                  <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-4xl ${
+                  <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-6xl ${
                     theme === 'dark'
                       ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
                       : 'bg-zinc-50 border-zinc-200 hover:border-zinc-300'
@@ -601,7 +601,9 @@ export default function ShopPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 flex items-center justify-center p-8 min-h-screen bg-transparent"
+              className={`fixed inset-0 z-40 flex items-center justify-center p-8 min-h-screen ${
+                theme === 'dark' ? 'bg-black/60' : 'bg-white/60'
+              } backdrop-blur-sm`}
               onClick={(e) => {
                 if (e.target === e.currentTarget) {
                   setSelectedProduct(null)
@@ -620,7 +622,7 @@ export default function ShopPage() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="relative"
                   >
-                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-4xl ${
+                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-6xl ${
                       theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700'
                         : 'bg-zinc-50 border-zinc-200'
