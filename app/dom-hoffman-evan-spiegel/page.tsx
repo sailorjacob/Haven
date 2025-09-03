@@ -145,7 +145,7 @@ export default function DomHoffmanEvanSpiegelPage() {
             </div>
             <div className="px-6 py-8">
               {/* Theme Toggle Button */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-start mb-4">
                 <button
                   onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                   className={`p-2 rounded-full transition-colors duration-200 ${
