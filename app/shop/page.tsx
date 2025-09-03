@@ -388,40 +388,28 @@ export default function ShopPage() {
               const isSelected = selectedProduct === product.id
               const isHidden = selectedProduct && !isSelected
 
-              // Don't render hidden products
-              if (isHidden) return null
-
               return (
                 <motion.div
                   key={product.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
-                    opacity: 1,
-                    scale: isSelected ? 1 : 1,
-                    y: 0
+                    opacity: isHidden ? 0 : 1,
+                    scale: isHidden ? 0.8 : 1,
+                    y: isHidden ? -20 : 0
                   }}
                   transition={{
                     duration: 0.5,
-                    delay: index * 0.1,
+                    delay: isHidden ? 0 : index * 0.1,
                     ease: "easeInOut"
                   }}
                   className={`group cursor-pointer ${
-                    isSelected ? 'fixed inset-0 z-40 flex items-center justify-center bg-black/50 backdrop-blur-sm' : ''
+                    isSelected ? 'md:col-span-3 lg:col-span-3' : ''
                   }`}
-                  onClick={isSelected ? (e) => {
-                    // Close if clicking on the overlay (not on the product card)
-                    if (e.target === e.currentTarget) {
-                      setSelectedProduct(null)
-                    }
-                  } : () => selectProduct(product.id)}
+                  onClick={() => selectProduct(product.id)}
                   onMouseEnter={() => handleProductHover(product.id, true)}
                   onMouseLeave={() => handleProductHover(product.id, false)}
                 >
                   <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 ${
-                    isSelected
-                      ? 'w-full max-w-2xl mx-auto'
-                      : ''
-                  } ${
                     theme === 'dark'
                       ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
                       : 'bg-zinc-50 border-zinc-200 hover:border-zinc-300'
@@ -440,16 +428,16 @@ export default function ShopPage() {
 
                     {/* Image Toggle for Selected Product */}
                     {isSelected && product.hoverImage && (
-                      <div className="absolute top-4 right-4 flex space-x-2 z-50">
+                      <div className="absolute top-4 right-4 flex space-x-2">
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
                             handleProductHover(product.id, false)
                           }}
-                          className={`px-3 py-1 text-xs rounded-full transition-all duration-200 backdrop-blur-sm ${
+                          className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ${
                             !hoveredProductImage[product.id]
-                              ? 'bg-zinc-900/80 text-white'
-                              : 'bg-zinc-700/80 text-zinc-300 hover:bg-zinc-600/80'
+                              ? 'bg-zinc-900 text-white'
+                              : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
                           }`}
                         >
                           Full
@@ -459,10 +447,10 @@ export default function ShopPage() {
                             e.stopPropagation()
                             handleProductHover(product.id, true)
                           }}
-                          className={`px-3 py-1 text-xs rounded-full transition-all duration-200 backdrop-blur-sm ${
+                          className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ${
                             hoveredProductImage[product.id]
-                              ? 'bg-zinc-900/80 text-white'
-                              : 'bg-zinc-700/80 text-zinc-300 hover:bg-zinc-600/80'
+                              ? 'bg-zinc-900 text-white'
+                              : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
                           }`}
                         >
                           Close-up
@@ -571,7 +559,7 @@ export default function ShopPage() {
 
                     {/* Back Button for Selected Product */}
                     {isSelected && (
-                      <div className="absolute top-4 left-4 z-50">
+                      <div className="mt-6 text-center">
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
@@ -579,12 +567,12 @@ export default function ShopPage() {
                           }}
                           className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                             theme === 'dark'
-                              ? 'bg-zinc-900/80 text-zinc-200 hover:bg-zinc-800 backdrop-blur-sm'
-                              : 'bg-white/80 text-zinc-900 hover:bg-zinc-100 backdrop-blur-sm'
+                              ? 'bg-zinc-700 text-zinc-200 hover:bg-zinc-600'
+                              : 'bg-zinc-200 text-zinc-900 hover:bg-zinc-300'
                           }`}
                         >
                           <ChevronLeft className="w-4 h-4 mr-2" />
-                          Back
+                          Back to All Products
                         </button>
                       </div>
                     )}
