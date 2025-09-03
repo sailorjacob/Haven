@@ -396,36 +396,27 @@ export default function ShopPage() {
       {/* Main Content */}
       <section className="pt-20 px-6 pb-12">
         <div className="container max-w-6xl mx-auto">
-          {/* Products Grid - Hidden when product is selected */}
-          {!selectedProduct && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {products.map((product, index) => {
               const isSelected = selectedProduct === product.id
-              const isHidden = selectedProduct && !isSelected
 
               return (
                 <motion.div
-                  key={product.id}
+                  key={`grid-${product.id}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
-                    opacity: isHidden ? 0 : 1,
-                    scale: isHidden ? 0.8 : 1,
-                    y: isHidden ? -20 : 0
+                    opacity: isSelected ? 0 : 1,
+                    scale: 1,
+                    y: 0
                   }}
                   transition={{
                     duration: 0.5,
-                    delay: isHidden ? 0 : index * 0.1,
+                    delay: index * 0.1,
                     ease: "easeInOut"
                   }}
-                  className={`group cursor-pointer ${
-                    isSelected ? 'fixed inset-0 z-40 flex items-center justify-center p-8 min-h-screen' : ''
-                  }`}
-                  onClick={isSelected ? (e) => {
-                    // Close if clicking on the overlay (not on the product card)
-                    if (e.target === e.currentTarget) {
-                      setSelectedProduct(null)
-                    }
-                  } : () => selectProduct(product.id)}
+                  className="group cursor-pointer"
+                  onClick={() => selectProduct(product.id)}
                   onMouseEnter={() => handleProductHover(product.id, true)}
                   onMouseLeave={() => handleProductHover(product.id, false)}
                 >
@@ -600,8 +591,204 @@ export default function ShopPage() {
                 </div>
               </motion.div>
             )
-                      })}
-            </div>
+                                  })}
+          </div>
+
+          {/* Selected Product Overlay */}
+          {selectedProduct && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 flex items-center justify-center p-8 min-h-screen bg-transparent"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                  setSelectedProduct(null)
+                }
+              }}
+            >
+              {(() => {
+                const product = products.find(p => p.id === selectedProduct)
+                if (!product) return null
+
+                return (
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.8, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="relative"
+                  >
+                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-4xl ${
+                      theme === 'dark'
+                        ? 'bg-zinc-800 border-zinc-700'
+                        : 'bg-zinc-50 border-zinc-200'
+                    }`}>
+                      {/* Product Image */}
+                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px]`}>
+                        <Image
+                          src={getCurrentImage(product)}
+                          alt={product.name}
+                          fill
+                          className="object-cover"
+                        />
+
+                        {/* Image Toggle for Selected Product */}
+                        {product.hoverImage && (
+                          <div className="absolute top-4 right-4 flex space-x-2 z-10">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleProductHover(product.id, false)
+                              }}
+                              className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ${
+                                !hoveredProductImage[product.id]
+                                  ? 'bg-zinc-900 text-white'
+                                  : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+                              }`}
+                            >
+                              Full
+                            </button>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleProductHover(product.id, true)
+                              }}
+                              className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ${
+                                hoveredProductImage[product.id]
+                                  ? 'bg-zinc-900 text-white'
+                                  : 'bg-zinc-700 text-zinc-300 hover:bg-zinc-600'
+                              }`}
+                            >
+                              Close-up
+                            </button>
+                          </div>
+                        )}
+
+                        {/* Back Button for Selected Product */}
+                        <div className="absolute top-4 left-4 z-10">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setSelectedProduct(null)
+                            }}
+                            className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 backdrop-blur-sm ${
+                              theme === 'dark'
+                                ? 'bg-zinc-800/70 text-zinc-200 hover:bg-zinc-700/80 border border-zinc-600/50'
+                                : 'bg-white/70 text-zinc-900 hover:bg-zinc-100/80 border border-zinc-300/50'
+                            }`}
+                          >
+                            <ChevronLeft className="w-4 h-4 mr-1.5" />
+                            Back
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Product Info */}
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className={`text-2xl font-light transition-colors duration-300 ${
+                            theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                          }`}>
+                            {product.name}
+                          </h3>
+                          <span className={`text-xl font-medium transition-colors duration-300 ${
+                            theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+                          }`}>
+                            {product.price}
+                          </span>
+                        </div>
+
+                        {/* Size Selector */}
+                        <div className="mb-6">
+                          <div className="flex space-x-2">
+                            {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+                              <button
+                                key={size}
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  selectSize(product.id, size)
+                                }}
+                                className={`px-3 py-2 text-sm font-medium rounded-md border transition-all duration-200 ${
+                                  productSizes[product.id] === size
+                                    ? theme === 'dark'
+                                      ? 'border-zinc-300 bg-zinc-700 text-zinc-100'
+                                      : 'border-zinc-400 bg-zinc-200 text-zinc-900'
+                                    : theme === 'dark'
+                                      ? 'border-zinc-600 text-zinc-400 hover:border-zinc-500'
+                                      : 'border-zinc-300 text-zinc-600 hover:border-zinc-400'
+                                }`}
+                              >
+                                {size}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex space-x-3">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              addToCart(product)
+                            }}
+                            className={`flex-1 flex items-center justify-center border font-medium py-3 px-6 rounded-full text-sm transition-all duration-300 ${
+                              theme === 'dark'
+                                ? 'border-zinc-600 text-zinc-200 hover:bg-zinc-700'
+                                : 'border-zinc-300 text-zinc-900 hover:bg-zinc-50'
+                            }`}
+                          >
+                            <ShoppingCart className="w-4 h-4 mr-2" />
+                            Add to Cart
+                          </button>
+
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              toggleLike(product.id)
+                            }}
+                            className={`relative p-3 rounded-full border transition-all duration-300 ${
+                              likedProducts.has(product.id)
+                                ? 'border-green-500 text-green-400 bg-green-500/10'
+                                : theme === 'dark'
+                                  ? 'border-zinc-600 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200'
+                                  : 'border-zinc-300 text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
+                            }`}
+                          >
+                            <Heart
+                              className={`w-4 h-4 transition-all duration-300 ${
+                                likedProducts.has(product.id) ? 'fill-current scale-110' : ''
+                              }`}
+                            />
+
+                            {/* Flying heart animation */}
+                            {likedProducts.has(product.id) && (
+                              <motion.div
+                                initial={{ scale: 1, opacity: 1, y: 0 }}
+                                animate={{
+                                  scale: [1, 1.5, 0.5],
+                                  opacity: [1, 0.8, 0],
+                                  y: [-20, -60, -100],
+                                  x: [0, 10, 20]
+                                }}
+                                transition={{
+                                  duration: 1,
+                                  ease: "easeOut"
+                                }}
+                                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                              >
+                                <Heart className="w-4 h-4 text-green-400 fill-current" />
+                              </motion.div>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })()}
+            </motion.div>
           )}
 
           {/* Footer Text - Hidden when product is selected */}
