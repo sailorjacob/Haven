@@ -419,8 +419,23 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-
+                {/* Shop link */}
+                <Link
+                  href="/shop"
+                  className={`text-sm font-light transition-colors duration-300 delay-100 ${
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-500 hover:text-zinc-200'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-500 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                >
+                  shop
+                </Link>
               </div>
+
             </div>
 
             <div className="flex items-center space-x-4">
@@ -512,7 +527,7 @@ export default function HomePage() {
             >
                              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
 
-                 <Link 
+                 <Link
                    href="/blog"
                    className={`block text-sm transition-colors duration-300 delay-100 group ${
                      processOpen
@@ -524,6 +539,20 @@ export default function HomePage() {
                    onClick={() => setMobileMenuOpen(false)}
                  >
                    blog
+                 </Link>
+
+                 <Link
+                   href="/shop"
+                   className={`block text-sm transition-colors duration-300 delay-100 group ${
+                     processOpen
+                       ? 'text-zinc-400 hover:text-zinc-200'
+                       : theme === 'dark'
+                         ? 'text-zinc-400 hover:text-zinc-200'
+                         : 'text-zinc-600 hover:text-zinc-900'
+                   }`}
+                   onClick={() => setMobileMenuOpen(false)}
+                 >
+                   shop
                  </Link>
           </div>
         </motion.div>
