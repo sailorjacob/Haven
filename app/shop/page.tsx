@@ -601,9 +601,7 @@ export default function ShopPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className={`fixed inset-0 z-40 flex items-center justify-center p-4 min-h-screen ${
-                theme === 'dark' ? 'bg-black/70' : 'bg-white/70'
-              } backdrop-blur-md`}
+              className="fixed inset-0 z-40 flex items-center justify-center min-h-screen"
               onClick={(e) => {
                 if (e.target === e.currentTarget) {
                   setSelectedProduct(null)
@@ -622,13 +620,13 @@ export default function ShopPage() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="relative"
                   >
-                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full ${
+                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-screen max-w-none mx-0 ${
                       theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700'
                         : 'bg-zinc-50 border-zinc-200'
                     }`}>
                       {/* Product Image */}
-                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px] w-full`}>
+                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px] w-screen max-w-none mx-0`}>
                         <Image
                           src={getCurrentImage(product)}
                           alt={product.name}
