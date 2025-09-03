@@ -1,15 +1,94 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
-import { ArrowLeft, ShoppingCart, Heart } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ArrowLeft, ShoppingCart, Heart, Hexagon, Code, ChevronDown, Sun, Moon, Menu, X, Mail, ChevronLeft } from "lucide-react"
 import { useTheme } from "next-themes"
+import ProcessDropdown from "@/components/ProcessDropdown"
 
 export default function ShopPage() {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null)
-  const { theme } = useTheme()
+  const [cartItems, setCartItems] = useState<any[]>([])
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [likedProducts, setLikedProducts] = useState<Set<string>>(new Set())
+  const [processOpen, setProcessOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  // Get seeded random color for navigation
+  const getSeededRandomColor = (seed: string) => {
+    const hash = seed.split('').reduce((acc, char) => {
+      return char.charCodeAt(0) + ((acc << 5) - acc)
+    }, 0)
+    const colors = ['text-green-500', 'text-red-500', 'text-yellow-500']
+    return colors[Math.abs(hash) % colors.length]
+  }
+
+  const navColors = {
+    studio: getSeededRandomColor('studio'),
+    work: getSeededRandomColor('work'),
+    gallery: getSeededRandomColor('gallery'),
+    contact: getSeededRandomColor('contact')
+  }
+
+  // Add to cart function
+  const addToCart = (product: any) => {
+    setCartItems(prev => {
+      const existing = prev.find(item => item.id === product.id)
+      if (existing) {
+        return prev.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      }
+      return [...prev, { ...product, quantity: 1 }]
+    })
+    setIsCartOpen(true)
+  }
+
+  // Remove from cart function
+  const removeFromCart = (productId: string) => {
+    setCartItems(prev => prev.filter(item => item.id !== productId))
+  }
+
+  // Update cart item quantity
+  const updateQuantity = (productId: string, quantity: number) => {
+    if (quantity <= 0) {
+      removeFromCart(productId)
+      return
+    }
+    setCartItems(prev =>
+      prev.map(item =>
+        item.id === productId ? { ...item, quantity } : item
+      )
+    )
+  }
+
+  // Toggle heart/like functionality
+  const toggleLike = async (productId: string) => {
+    const newLikedProducts = new Set(likedProducts)
+    if (newLikedProducts.has(productId)) {
+      newLikedProducts.delete(productId)
+    } else {
+      newLikedProducts.add(productId)
+      // Copy link to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href)
+      } catch (err) {
+        console.error('Failed to copy link:', err)
+      }
+    }
+    setLikedProducts(newLikedProducts)
+  }
+
+  // Calculate total cart price
+  const cartTotal = cartItems.reduce((total, item) => {
+    const price = parseFloat(item.price.replace('$', ''))
+    return total + (price * item.quantity)
+  }, 0)
 
   const products = [
     {
@@ -25,6 +104,20 @@ export default function ShopPage() {
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/NSKK.png",
       description: "Bold statement piece with vintage aesthetic",
       price: "$42"
+    },
+    {
+      id: "racer",
+      name: "Racer",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Racer.png",
+      description: "Speed-inspired design for the modern racer",
+      price: "$48"
+    },
+    {
+      id: "marble",
+      name: "Marble",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Marble.png",
+      description: "Elegant marble pattern with contemporary edge",
+      price: "$44"
     }
   ]
 
@@ -35,52 +128,213 @@ export default function ShopPage() {
         : 'bg-white text-zinc-900'
     }`}>
       {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-all duration-300 ${
-        theme === 'dark'
-          ? 'bg-zinc-900/80 border-zinc-700'
-          : 'bg-white/80 border-zinc-200'
+      <header onMouseLeave={()=>setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
+        processOpen
+          ? theme === 'dark'
+            ? 'bg-zinc-900/95 border-zinc-700'
+            : 'bg-zinc-900/95 border-zinc-700'
+          : theme === 'dark'
+            ? 'bg-zinc-900/80 border-zinc-700'
+            : 'bg-white/80 border-zinc-200'
       }`}>
-        <div className="w-full px-4 sm:px-6 py-4">
+        <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
                 <div className="relative">
-                  <div className={`w-8 h-8 rounded-full border transition-colors duration-300 ${
-                    theme === 'dark' ? 'border-zinc-600' : 'border-zinc-300'
-                  }`} />
+                  <Hexagon className={`w-8 h-8 transition-colors duration-300 delay-100 ${
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-200 opacity-60'
+                        : 'text-zinc-500 opacity-60'
+                      : theme === 'dark'
+                        ? 'text-zinc-300 opacity-40'
+                        : 'text-zinc-400 opacity-40'
+                  }`} strokeWidth={1} />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <ArrowLeft className={`w-4 h-4 transition-colors duration-300 ${
-                      theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                    <Code className={`w-4 h-4 transition-colors duration-300 delay-100 ${
+                      processOpen
+                        ? theme === 'dark'
+                          ? 'text-zinc-200 opacity-60'
+                          : 'text-zinc-500 opacity-60'
+                        : theme === 'dark'
+                          ? 'text-zinc-300 opacity-40'
+                          : 'text-zinc-400 opacity-40'
                     }`} />
                   </div>
                 </div>
               </Link>
-              <h1 className="text-xl font-light">Shop</h1>
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-6">
+                {/* Process with dropdown trigger */}
+                <div className="relative flex items-center" onMouseEnter={()=>setProcessOpen(true)}>
+                  <Link href="/" className={`text-sm font-light transition-colors duration-300 delay-100 group ${
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-200 hover:text-zinc-100'
+                      : theme === 'dark'
+                        ? 'text-zinc-300 hover:text-zinc-100'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}>
+                    <span className="group-hover:hidden">process</span>
+                    <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
+                  </Link>
+                  {/* Dropdown indicator */}
+                  <motion.span
+                    className="ml-1"
+                    animate={{ rotate: processOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <ChevronDown className={`w-3.5 h-3.5 transition-colors duration-300 delay-100 ${
+                      processOpen ? 'text-zinc-400' : 'text-zinc-500'
+                    }`} />
+                  </motion.span>
+                </div>
+
+                {/* Shop link */}
+                <Link
+                  href="/shop"
+                  className={`text-sm font-light transition-colors duration-300 delay-100 ${
+                    processOpen
+                      ? theme === 'dark'
+                        ? 'text-zinc-500 hover:text-zinc-200'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-500 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                >
+                  shop
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-4">
+              {/* Blog link */}
+              <Link
+                href="/blog"
+                className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
+                  processOpen
+                    ? theme === 'dark'
+                      ? 'text-zinc-500 hover:text-zinc-200'
+                      : 'text-zinc-400 hover:text-zinc-200'
+                    : theme === 'dark'
+                      ? 'text-zinc-500 hover:text-zinc-200'
+                      : 'text-zinc-600 hover:text-zinc-900'
+                }`}
+              >
+                blog
+              </Link>
+              {/* Start button (contact) */}
+              <Link
+                href="/contact"
+                className={`hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 delay-100 text-sm ${
+                  processOpen
+                    ? theme === 'dark'
+                      ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
+                      : 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
+                    : theme === 'dark'
+                      ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
+                      : 'border-zinc-300 hover:bg-zinc-50 text-zinc-900'
+                }`}
+              >
+                msg
+              </Link>
+
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="hidden p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'dark' ? (
+                  <Sun className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                    processOpen ? 'text-zinc-200' : 'text-zinc-900 dark:text-zinc-100'
+                  }`} />
+                ) : (
+                  <Moon className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                    processOpen ? 'text-zinc-200' : 'text-zinc-900'
+                  }`} />
+                )}
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2"
+              >
+                {mobileMenuOpen ? <X className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                  processOpen ? 'text-zinc-200' : 'text-zinc-900 dark:text-zinc-100'
+                }`} /> : <Menu className={`w-5 h-5 transition-colors duration-300 delay-100 ${
+                  processOpen ? 'text-zinc-200' : 'text-zinc-900 dark:text-zinc-100'
+                }`} />}
+              </button>
             </div>
           </nav>
+
+          {/* Process dropdown full width */}
+          <AnimatePresence>
+            {processOpen && (
+              <ProcessDropdown onClose={() => setProcessOpen(false)} />
+            )}
+          </AnimatePresence>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className={`md:hidden border-b transition-all duration-300 delay-100 ${
+                processOpen
+                  ? 'bg-zinc-900 border-zinc-700'
+                  : theme === 'dark'
+                    ? 'bg-zinc-900 border-zinc-700'
+                    : 'bg-white border-zinc-200'
+              }`}
+            >
+              <div className="w-full px-4 sm:px-6 py-3 space-y-3">
+                <Link
+                  href="/blog"
+                  className={`block text-sm transition-colors duration-300 delay-100 group ${
+                    processOpen
+                      ? 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  blog
+                </Link>
+
+                <Link
+                  href="/shop"
+                  className={`block text-sm transition-colors duration-300 delay-100 group ${
+                    processOpen
+                      ? 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  shop
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Main Content */}
-      <section className="pt-24 px-6 pb-12">
+      <section className="pt-20 px-6 pb-12">
         <div className="container max-w-6xl mx-auto">
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-light mb-4">
-              Limited Edition
-            </h2>
-            <p className={`text-lg max-w-2xl mx-auto transition-colors duration-300 ${
-              theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-            }`}>
-              Unique designs crafted with attention to detail
-            </p>
-          </motion.div>
-
           {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {products.map((product, index) => (
@@ -132,21 +386,33 @@ export default function ShopPage() {
 
                     {/* Action Buttons */}
                     <div className="flex space-x-3">
-                      <button className={`flex-1 flex items-center justify-center border font-medium py-3 px-6 rounded-full text-sm transition-all duration-300 ${
-                        theme === 'dark'
-                          ? 'border-zinc-600 text-zinc-200 hover:bg-zinc-700'
-                          : 'border-zinc-300 text-zinc-900 hover:bg-zinc-50'
-                      }`}>
+                      <button
+                        onClick={() => addToCart(product)}
+                        className={`flex-1 flex items-center justify-center border font-medium py-3 px-6 rounded-full text-sm transition-all duration-300 ${
+                          theme === 'dark'
+                            ? 'border-zinc-600 text-zinc-200 hover:bg-zinc-700'
+                            : 'border-zinc-300 text-zinc-900 hover:bg-zinc-50'
+                        }`}
+                      >
                         <ShoppingCart className="w-4 h-4 mr-2" />
                         Add to Cart
                       </button>
 
-                      <button className={`p-3 rounded-full border transition-all duration-300 ${
-                        theme === 'dark'
-                          ? 'border-zinc-600 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200'
-                          : 'border-zinc-300 text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
-                      }`}>
-                        <Heart className="w-4 h-4" />
+                      <button
+                        onClick={() => toggleLike(product.id)}
+                        className={`p-3 rounded-full border transition-all duration-300 ${
+                          likedProducts.has(product.id)
+                            ? 'border-green-500 text-green-400 bg-green-500/10'
+                            : theme === 'dark'
+                              ? 'border-zinc-600 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200'
+                              : 'border-zinc-300 text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
+                        }`}
+                      >
+                        <Heart
+                          className={`w-4 h-4 transition-all duration-300 ${
+                            likedProducts.has(product.id) ? 'fill-current scale-110' : ''
+                          }`}
+                        />
                       </button>
                     </div>
                   </div>
@@ -172,6 +438,108 @@ export default function ShopPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Slide-out Cart */}
+      <AnimatePresence>
+        {isCartOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-40"
+              onClick={() => setIsCartOpen(false)}
+            />
+
+            {/* Cart Panel */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className={`fixed top-0 right-0 h-full w-full max-w-md z-50 transition-colors duration-300 ${
+                theme === 'dark' ? 'bg-zinc-900 border-l border-zinc-700' : 'bg-white border-l border-zinc-200'
+              }`}
+            >
+              <div className="flex flex-col h-full">
+                {/* Cart Header */}
+                <div className="flex items-center justify-between p-6 border-b border-zinc-200 dark:border-zinc-700">
+                  <h2 className="text-xl font-light">Cart</h2>
+                  <button
+                    onClick={() => setIsCartOpen(false)}
+                    className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Cart Items */}
+                <div className="flex-1 overflow-y-auto p-6">
+                  {cartItems.length === 0 ? (
+                    <div className="text-center py-12">
+                      <ShoppingCart className="w-12 h-12 mx-auto mb-4 text-zinc-400" />
+                      <p className="text-zinc-500">Your cart is empty</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {cartItems.map((item) => (
+                        <div key={item.id} className="flex items-center space-x-4 p-4 border border-zinc-200 dark:border-zinc-700 rounded-lg">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={60}
+                            height={60}
+                            className="rounded-md object-cover"
+                          />
+                          <div className="flex-1">
+                            <h3 className="font-medium">{item.name}</h3>
+                            <p className="text-sm text-zinc-500">{item.price}</p>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                            >
+                              -
+                            </button>
+                            <span className="w-8 text-center">{item.quantity}</span>
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              className="w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                            >
+                              +
+                            </button>
+                          </div>
+                          <button
+                            onClick={() => removeFromCart(item.id)}
+                            className="text-red-500 hover:text-red-700 p-2"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Cart Footer */}
+                {cartItems.length > 0 && (
+                  <div className="p-6 border-t border-zinc-200 dark:border-zinc-700">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-lg font-medium">Total:</span>
+                      <span className="text-lg font-medium">${cartTotal.toFixed(2)}</span>
+                    </div>
+                    <button className="w-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 py-3 px-6 rounded-full font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
+                      Checkout
+                    </button>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </main>
   )
 }
