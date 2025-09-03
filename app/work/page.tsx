@@ -18,7 +18,14 @@ export default function WorkPage() {
   const [apparelImageIndex, setApparelImageIndex] = useState(0)
   const [isAmmocatTransitioning, setIsAmmocatTransitioning] = useState(false)
   const [isApparelTransitioning, setIsApparelTransitioning] = useState(false)
-  const { theme } = useTheme()
+  const { theme, setTheme } = useTheme()
+
+  // Ensure dark mode is set for this page
+  useEffect(() => {
+    if (theme !== 'dark') {
+      setTheme('dark')
+    }
+  }, [theme, setTheme])
   
   // Function to get a random highlight color - precompute for better performance
   const getRandomHighlightColor = () => {
@@ -255,55 +262,58 @@ export default function WorkPage() {
       </div>
 
       {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 ${
-        theme === 'dark'
-          ? 'bg-zinc-900/80 border-zinc-700'
-          : 'bg-white/80 border-zinc-200'
-      }`}>
-        <div className="container mx-auto px-6 py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+        <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
-                <Hexagon className={`w-8 h-8 transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                }`} strokeWidth={1} />
-                <span className={`ml-2 text-lg font-light tracking-wider transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                }`}>Haven Studio</span>
+                <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
+                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
               </Link>
-              
+
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
-                <Link 
-                  href="/work" 
-                  className={`text-sm transition-colors tracking-wider uppercase group ${
-                    theme === 'dark'
-                      ? 'text-zinc-400 hover:text-zinc-100'
-                      : 'text-zinc-600 hover:text-zinc-900'
-                  }`}
+                <Link
+                  href="/"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                 >
-                  <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Work</span>
+                  Studio
+                </Link>
+                <Link
+                  href="/products"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Products
+                </Link>
+                <Link
+                  href="/work"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Work
+                </Link>
+                <Link
+                  href="/explore"
+                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                >
+                  Explore
                 </Link>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
-              
+              <Link
+                href="/contact"
+                className="hidden md:inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 text-sm"
+              >
+                Contact Us
+              </Link>
+
               {/* Mobile Menu Button */}
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
-                {mobileMenuOpen ? (
-                  <X className={`w-5 h-5 transition-colors duration-300 ${
-                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                  }`} />
-                ) : (
-                  <Menu className={`w-5 h-5 transition-colors duration-300 ${
-                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                  }`} />
-                )}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </nav>
@@ -316,26 +326,43 @@ export default function WorkPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className={`md:hidden border-b transition-colors duration-300 ${
-                theme === 'dark'
-                  ? 'bg-zinc-900 border-zinc-700'
-                  : 'bg-white border-zinc-200'
-              }`}
-              style={{ willChange: "opacity, height" }}
+              className="md:hidden bg-white border-b border-zinc-200"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
-                <Link 
-                  href="/work" 
-                  className={`block text-sm transition-colors tracking-wider uppercase group ${
-                    theme === 'dark'
-                      ? 'text-zinc-400 hover:text-zinc-100'
-                      : 'text-zinc-600 hover:text-zinc-900'
-                  }`}
+                <Link
+                  href="/"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="group-hover:hidden">Work</span>
-                  <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Work</span>
+                  Studio
+                </Link>
+                <Link
+                  href="/products"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Products
+                </Link>
+                <Link
+                  href="/work"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Work
+                </Link>
+                <Link
+                  href="/explore"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Explore
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
                 </Link>
               </div>
             </motion.div>
@@ -745,7 +772,11 @@ export default function WorkPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center border-2 border-yellow-400 bg-transparent text-zinc-900 font-medium py-2 px-5 rounded-full text-sm overflow-hidden transition-all duration-300"
+                className={`group relative inline-flex items-center justify-center border-2 bg-transparent font-medium py-2 px-5 rounded-full text-sm overflow-hidden transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'border-yellow-400 text-zinc-100 hover:text-zinc-900'
+                    : 'border-yellow-400 text-zinc-900'
+                }`}
               >
                 <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center">

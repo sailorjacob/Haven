@@ -24,51 +24,51 @@ export function Footer() {
           </div>
           
           {/* Desktop Footer Links */}
-          <div className="hidden md:flex items-center space-x-6 mb-4 md:mb-0">
-            <Link href="/privacy" className="text-sm transition-colors ${
+          <div className="hidden md:flex items-center space-x-4 mb-4 md:mb-0">
+            <Link href="/privacy" className={`text-xs transition-colors ${
               theme === 'dark'
-                ? 'text-zinc-500 hover:text-zinc-300'
-                : 'text-zinc-600 hover:text-zinc-900'
-            }">
+                ? 'text-zinc-400 hover:text-zinc-300'
+                : 'text-zinc-500 hover:text-zinc-900'
+            }`}>
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm transition-colors ${
+            <Link href="/terms" className={`text-xs transition-colors ${
               theme === 'dark'
-                ? 'text-zinc-500 hover:text-zinc-300'
-                : 'text-zinc-600 hover:text-zinc-900'
-            }">
+                ? 'text-zinc-400 hover:text-zinc-300'
+                : 'text-zinc-500 hover:text-zinc-900'
+            }`}>
               Terms
             </Link>
-            <Link href="/contact" className="text-sm transition-colors ${
+            <Link href="/contact" className={`text-xs transition-colors ${
               theme === 'dark'
-                ? 'text-zinc-500 hover:text-zinc-300'
-                : 'text-zinc-600 hover:text-zinc-900'
-            }">
+                ? 'text-zinc-400 hover:text-zinc-300'
+                : 'text-zinc-500 hover:text-zinc-900'
+            }`}>
               Contact
             </Link>
           </div>
           
           {/* Mobile Footer Links */}
-          <div className="flex md:hidden items-center space-x-6 mb-4">
-            <Link href="/privacy" className="text-sm transition-colors ${
+          <div className="flex md:hidden items-center space-x-4 mb-4">
+            <Link href="/privacy" className={`text-xs transition-colors ${
               theme === 'dark'
-                ? 'text-zinc-500 hover:text-zinc-300'
-                : 'text-zinc-600 hover:text-zinc-900'
-            }">
+                ? 'text-zinc-400 hover:text-zinc-300'
+                : 'text-zinc-500 hover:text-zinc-900'
+            }`}>
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm transition-colors ${
+            <Link href="/terms" className={`text-xs transition-colors ${
               theme === 'dark'
-                ? 'text-zinc-500 hover:text-zinc-300'
-                : 'text-zinc-600 hover:text-zinc-900'
-            }">
+                ? 'text-zinc-400 hover:text-zinc-300'
+                : 'text-zinc-500 hover:text-zinc-900'
+            }`}>
               Terms
             </Link>
-            <Link href="/contact" className="text-sm transition-colors ${
+            <Link href="/contact" className={`text-xs transition-colors ${
               theme === 'dark'
-                ? 'text-zinc-500 hover:text-zinc-300'
-                : 'text-zinc-600 hover:text-zinc-900'
-            }">
+                ? 'text-zinc-400 hover:text-zinc-300'
+                : 'text-zinc-500 hover:text-zinc-900'
+            }`}>
               Contact
             </Link>
           </div>
