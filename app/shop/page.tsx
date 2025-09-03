@@ -395,7 +395,7 @@ export default function ShopPage() {
 
       {/* Main Content */}
       <section className="pt-20 px-6 pb-12">
-        <div className="container max-w-6xl mx-auto">
+        <div className="container max-w-7xl mx-auto">
           {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {products.map((product, index) => {
@@ -420,7 +420,7 @@ export default function ShopPage() {
                   onMouseEnter={() => handleProductHover(product.id, true)}
                   onMouseLeave={() => handleProductHover(product.id, false)}
                 >
-                  <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-6xl ${
+                  <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full ${
                     theme === 'dark'
                       ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
                       : 'bg-zinc-50 border-zinc-200 hover:border-zinc-300'
@@ -601,9 +601,9 @@ export default function ShopPage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className={`fixed inset-0 z-40 flex items-center justify-center p-8 min-h-screen ${
-                theme === 'dark' ? 'bg-black/60' : 'bg-white/60'
-              } backdrop-blur-sm`}
+              className={`fixed inset-0 z-40 flex items-center justify-center p-4 min-h-screen ${
+                theme === 'dark' ? 'bg-black/70' : 'bg-white/70'
+              } backdrop-blur-md`}
               onClick={(e) => {
                 if (e.target === e.currentTarget) {
                   setSelectedProduct(null)
@@ -622,13 +622,13 @@ export default function ShopPage() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="relative"
                   >
-                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full max-w-6xl ${
+                    <div className={`relative rounded-xl overflow-hidden border transition-all duration-300 w-full ${
                       theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700'
                         : 'bg-zinc-50 border-zinc-200'
                     }`}>
                       {/* Product Image */}
-                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px]`}>
+                      <div className={`relative overflow-hidden transition-all duration-500 h-[600px] w-full`}>
                         <Image
                           src={getCurrentImage(product)}
                           alt={product.name}
