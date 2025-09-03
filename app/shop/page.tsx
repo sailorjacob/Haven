@@ -15,6 +15,8 @@ export default function ShopPage() {
   const [likedProducts, setLikedProducts] = useState<Set<string>>(new Set())
   const [processOpen, setProcessOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [productSizes, setProductSizes] = useState<Record<string, string>>({})
+  const [showNotification, setShowNotification] = useState(false)
   const { theme, setTheme } = useTheme()
 
   // Get seeded random color for navigation
@@ -35,34 +37,37 @@ export default function ShopPage() {
 
   // Add to cart function
   const addToCart = (product: any) => {
+    const selectedSize = productSizes[product.id] || 'M' // Default to M if no size selected
+    const cartItemId = `${product.id}-${selectedSize}`
+
     setCartItems(prev => {
-      const existing = prev.find(item => item.id === product.id)
+      const existing = prev.find(item => item.cartItemId === cartItemId)
       if (existing) {
         return prev.map(item =>
-          item.id === product.id
+          item.cartItemId === cartItemId
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
       }
-      return [...prev, { ...product, quantity: 1 }]
+      return [...prev, { ...product, cartItemId, size: selectedSize, quantity: 1 }]
     })
     setIsCartOpen(true)
   }
 
   // Remove from cart function
-  const removeFromCart = (productId: string) => {
-    setCartItems(prev => prev.filter(item => item.id !== productId))
+  const removeFromCart = (cartItemId: string) => {
+    setCartItems(prev => prev.filter(item => item.cartItemId !== cartItemId))
   }
 
   // Update cart item quantity
-  const updateQuantity = (productId: string, quantity: number) => {
+  const updateQuantity = (cartItemId: string, quantity: number) => {
     if (quantity <= 0) {
-      removeFromCart(productId)
+      removeFromCart(cartItemId)
       return
     }
     setCartItems(prev =>
       prev.map(item =>
-        item.id === productId ? { ...item, quantity } : item
+        item.cartItemId === cartItemId ? { ...item, quantity } : item
       )
     )
   }
@@ -77,11 +82,22 @@ export default function ShopPage() {
       // Copy link to clipboard
       try {
         await navigator.clipboard.writeText(window.location.href)
+        // Show notification
+        setShowNotification(true)
+        setTimeout(() => setShowNotification(false), 2000)
       } catch (err) {
         console.error('Failed to copy link:', err)
       }
     }
     setLikedProducts(newLikedProducts)
+  }
+
+  // Size selection function
+  const selectSize = (productId: string, size: string) => {
+    setProductSizes(prev => ({
+      ...prev,
+      [productId]: size
+    }))
   }
 
   // Calculate total cart price
@@ -118,6 +134,13 @@ export default function ShopPage() {
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Marble.png",
       description: "Elegant marble pattern with contemporary edge",
       price: "$44"
+    },
+    {
+      id: "blackbunny",
+      name: "Black Bunny",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/black%20bunny%20(1).png",
+      description: "Mysterious black bunny design",
+      price: "$46"
     }
   ]
 
@@ -378,11 +401,28 @@ export default function ShopPage() {
                       </span>
                     </div>
 
-                    <p className={`text-sm mb-6 transition-colors duration-300 ${
-                      theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                    }`}>
-                      {product.description}
-                    </p>
+                    {/* Size Selector */}
+                    <div className="mb-6">
+                      <div className="flex space-x-2">
+                        {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+                          <button
+                            key={size}
+                            onClick={() => selectSize(product.id, size)}
+                            className={`px-3 py-2 text-sm font-medium rounded-md border transition-all duration-200 ${
+                              productSizes[product.id] === size
+                                ? theme === 'dark'
+                                  ? 'border-zinc-300 bg-zinc-700 text-zinc-100'
+                                  : 'border-zinc-400 bg-zinc-200 text-zinc-900'
+                                : theme === 'dark'
+                                  ? 'border-zinc-600 text-zinc-400 hover:border-zinc-500'
+                                  : 'border-zinc-300 text-zinc-600 hover:border-zinc-400'
+                            }`}
+                          >
+                            {size}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
 
                     {/* Action Buttons */}
                     <div className="flex space-x-3">
@@ -400,7 +440,7 @@ export default function ShopPage() {
 
                       <button
                         onClick={() => toggleLike(product.id)}
-                        className={`p-3 rounded-full border transition-all duration-300 ${
+                        className={`relative p-3 rounded-full border transition-all duration-300 ${
                           likedProducts.has(product.id)
                             ? 'border-green-500 text-green-400 bg-green-500/10'
                             : theme === 'dark'
@@ -413,6 +453,25 @@ export default function ShopPage() {
                             likedProducts.has(product.id) ? 'fill-current scale-110' : ''
                           }`}
                         />
+                        {/* Flying heart animation */}
+                        {likedProducts.has(product.id) && (
+                          <motion.div
+                            initial={{ scale: 1, opacity: 1, y: 0 }}
+                            animate={{
+                              scale: [1, 1.5, 0.5],
+                              opacity: [1, 0.8, 0],
+                              y: [-20, -60, -100],
+                              x: [0, 10, 20]
+                            }}
+                            transition={{
+                              duration: 1,
+                              ease: "easeOut"
+                            }}
+                            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                          >
+                            <Heart className="w-4 h-4 text-green-400 fill-current" />
+                          </motion.div>
+                        )}
                       </button>
                     </div>
                   </div>
@@ -438,6 +497,42 @@ export default function ShopPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Notification */}
+      <AnimatePresence>
+        {showNotification && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.8 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50"
+          >
+            <div className={`px-6 py-3 rounded-full border-2 shadow-lg transition-colors duration-300 ${
+              theme === 'dark'
+                ? 'bg-zinc-900 border-green-400 text-green-400 shadow-green-400/20'
+                : 'bg-white border-green-500 text-green-500 shadow-green-500/20'
+            }`}>
+              <div className="flex items-center space-x-2">
+                <motion.div
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    repeat: Infinity,
+                    repeatDelay: 2
+                  }}
+                >
+                  <Heart className="w-4 h-4 fill-current" />
+                </motion.div>
+                <span className="text-sm font-medium">Link copied to share!</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Slide-out Cart */}
       <AnimatePresence>
@@ -484,7 +579,7 @@ export default function ShopPage() {
                   ) : (
                     <div className="space-y-4">
                       {cartItems.map((item) => (
-                        <div key={item.id} className="flex items-center space-x-4 p-4 border border-zinc-200 dark:border-zinc-700 rounded-lg">
+                        <div key={item.cartItemId} className="flex items-center space-x-4 p-4 border border-zinc-200 dark:border-zinc-700 rounded-lg">
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -495,24 +590,25 @@ export default function ShopPage() {
                           <div className="flex-1">
                             <h3 className="font-medium">{item.name}</h3>
                             <p className="text-sm text-zinc-500">{item.price}</p>
+                            <p className="text-xs text-zinc-400">Size: {item.size}</p>
                           </div>
                           <div className="flex items-center space-x-2">
                             <button
-                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              onClick={() => updateQuantity(item.cartItemId, item.quantity - 1)}
                               className="w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800"
                             >
                               -
                             </button>
                             <span className="w-8 text-center">{item.quantity}</span>
                             <button
-                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              onClick={() => updateQuantity(item.cartItemId, item.quantity + 1)}
                               className="w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800"
                             >
                               +
                             </button>
                           </div>
                           <button
-                            onClick={() => removeFromCart(item.id)}
+                            onClick={() => removeFromCart(item.cartItemId)}
                             className="text-red-500 hover:text-red-700 p-2"
                           >
                             <X className="w-4 h-4" />
