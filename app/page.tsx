@@ -729,7 +729,7 @@ export default function HomePage() {
                 {/* Start a Project Button */}
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group ${
+                  className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] sm:min-w-0 ${
                     theme === 'dark'
                       ? 'border-zinc-600 text-zinc-200'
                       : 'border-zinc-400 text-zinc-900'
@@ -749,7 +749,7 @@ export default function HomePage() {
                 {/* View Work Button */}
                 <Link
                   href="/work"
-                  className={`inline-flex items-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group ${
+                  className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] sm:min-w-0 ${
                     theme === 'dark'
                       ? 'border-zinc-600 text-zinc-200'
                       : 'border-zinc-400 text-zinc-900'

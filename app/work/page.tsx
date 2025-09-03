@@ -186,14 +186,26 @@ export default function WorkPage() {
   ]
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className={`min-h-screen transition-colors duration-300 ${
+      theme === 'dark'
+        ? 'bg-zinc-900 text-zinc-100'
+        : 'bg-white text-zinc-900'
+    }`}>
       {/* Animated Stars */}
       <AnimatedStars />
       
       {/* Clean gradient background */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-white to-zinc-50"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent"></div>
+        <div className={`absolute inset-0 transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-900'
+            : 'bg-gradient-to-b from-zinc-50 via-white to-zinc-50'
+        }`}></div>
+        <div className={`absolute inset-0 transition-colors duration-300 ${
+          theme === 'dark'
+            ? 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900/30 via-transparent to-transparent'
+            : 'bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-100/20 via-transparent to-transparent'
+        }`}></div>
       </div>
 
       {/* Blueprint grid on left margin */}
@@ -202,17 +214,17 @@ export default function WorkPage() {
           <div className="h-full w-full" 
             style={{
               backgroundImage: `
-                linear-gradient(to right, rgba(75, 85, 99, 0.6) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.6) 1px, transparent 1px),
-                linear-gradient(to right, rgba(75, 85, 99, 0.3) 0.5px, transparent 0.5px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 0.5px, transparent 0.5px)
+                linear-gradient(to right, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.6)' : 'rgba(75, 85, 99, 0.6)'} 1px, transparent 1px),
+                linear-gradient(to bottom, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.6)' : 'rgba(75, 85, 99, 0.6)'} 1px, transparent 1px),
+                linear-gradient(to right, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.3)' : 'rgba(75, 85, 99, 0.3)'} 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.3)' : 'rgba(75, 85, 99, 0.3)'} 0.5px, transparent 0.5px)
               `,
               backgroundSize: '20px 20px, 20px 20px, 5px 5px, 5px 5px'
             }}
           ></div>
           <div className="absolute left-0 top-0 bottom-0 w-full opacity-30"
             style={{
-              background: 'linear-gradient(90deg, white, transparent)'
+              background: `linear-gradient(90deg, ${theme === 'dark' ? 'rgb(24, 24, 27)' : 'white'}, transparent)`
             }}
           ></div>
         </div>
@@ -224,37 +236,49 @@ export default function WorkPage() {
           <div className="h-full w-full" 
             style={{
               backgroundImage: `
-                linear-gradient(to right, rgba(75, 85, 99, 0.6) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.6) 1px, transparent 1px),
-                linear-gradient(to right, rgba(75, 85, 99, 0.3) 0.5px, transparent 0.5px),
-                linear-gradient(to bottom, rgba(75, 85, 99, 0.3) 0.5px, transparent 0.5px)
+                linear-gradient(to right, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.6)' : 'rgba(75, 85, 99, 0.6)'} 1px, transparent 1px),
+                linear-gradient(to bottom, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.6)' : 'rgba(75, 85, 99, 0.6)'} 1px, transparent 1px),
+                linear-gradient(to right, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.3)' : 'rgba(75, 85, 99, 0.3)'} 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, ${theme === 'dark' ? 'rgba(156, 163, 175, 0.3)' : 'rgba(75, 85, 99, 0.3)'} 0.5px, transparent 0.5px)
               `,
               backgroundSize: '20px 20px, 20px 20px, 5px 5px, 5px 5px'
             }}
           ></div>
           <div className="absolute right-0 top-0 bottom-0 w-full opacity-30"
             style={{
-              background: 'linear-gradient(270deg, white, transparent)'
+              background: `linear-gradient(270deg, ${theme === 'dark' ? 'rgb(24, 24, 27)' : 'white'}, transparent)`
             }}
           ></div>
         </div>
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+      <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 ${
+        theme === 'dark'
+          ? 'bg-zinc-900/80 border-zinc-700'
+          : 'bg-white/80 border-zinc-200'
+      }`}>
         <div className="container mx-auto px-6 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
-                <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider text-zinc-900">Haven Studio</span>
+                <Hexagon className={`w-8 h-8 transition-colors duration-300 ${
+                  theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                }`} strokeWidth={1} />
+                <span className={`ml-2 text-lg font-light tracking-wider transition-colors duration-300 ${
+                  theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                }`}>Haven Studio</span>
               </Link>
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link 
                   href="/work" 
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  className={`text-sm transition-colors tracking-wider uppercase group ${
+                    theme === 'dark'
+                      ? 'text-zinc-400 hover:text-zinc-100'
+                      : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
                 >
                   <span className="group-hover:hidden">Work</span>
                   <span className={`hidden group-hover:inline ${precomputedColors[3]}`}>Work</span>
@@ -269,7 +293,15 @@ export default function WorkPage() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? (
+                  <X className={`w-5 h-5 transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                  }`} />
+                ) : (
+                  <Menu className={`w-5 h-5 transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                  }`} />
+                )}
               </button>
             </div>
           </nav>
@@ -283,13 +315,21 @@ export default function WorkPage() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="md:hidden bg-white border-b border-zinc-200"
+              className={`md:hidden border-b transition-colors duration-300 ${
+                theme === 'dark'
+                  ? 'bg-zinc-900 border-zinc-700'
+                  : 'bg-white border-zinc-200'
+              }`}
               style={{ willChange: "opacity, height" }}
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link 
                   href="/work" 
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase group"
+                  className={`block text-sm transition-colors tracking-wider uppercase group ${
+                    theme === 'dark'
+                      ? 'text-zinc-400 hover:text-zinc-100'
+                      : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="group-hover:hidden">Work</span>
@@ -314,17 +354,25 @@ export default function WorkPage() {
           >
             <Link 
               href="/"
-              className="inline-flex items-center text-zinc-600 hover:text-zinc-900 transition-colors mb-6"
+              className={`inline-flex items-center transition-colors mb-6 ${
+                theme === 'dark'
+                  ? 'text-zinc-400 hover:text-zinc-100'
+                  : 'text-zinc-600 hover:text-zinc-900'
+              }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Link>
             
             <div className="text-center mb-12">
-              <h1 className="text-3xl md:text-4xl font-light text-zinc-900 mb-3 tracking-tight">
-                
+              <h1 className={`text-3xl md:text-4xl font-light mb-3 tracking-tight transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+              }`}>
+                Work
               </h1>
-              <p className="text-md text-zinc-600 max-w-2xl mx-auto">
+              <p className={`text-md max-w-2xl mx-auto transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+              }`}>
                 a selection of my custom development projects showcasing logos, interactive experiences, and ai-powered tools.
               </p>
             </div>
@@ -344,13 +392,21 @@ export default function WorkPage() {
               >
                 {/* Content */}
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <span className="inline-block px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-xs font-medium mb-3">
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 transition-colors duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800 text-zinc-300'
+                      : 'bg-zinc-100 text-zinc-700'
+                  }`}>
                     {work.category}
                   </span>
-                  <h2 className="text-xl md:text-2xl font-light text-zinc-900 mb-3">
+                  <h2 className={`text-xl md:text-2xl font-light mb-3 transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                  }`}>
                     {work.title}
                   </h2>
-                  <p className="text-sm text-zinc-600 leading-relaxed mb-5">
+                  <p className={`text-sm leading-relaxed mb-5 transition-colors duration-300 ${
+                    theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                  }`}>
                     {work.description}
                   </p>
                   
@@ -367,7 +423,11 @@ export default function WorkPage() {
                   ) : work.id === "apparel-merch-webstore" ? (
                     <button
                       onClick={() => openModal(work.images || [], 0)}
-                      className="inline-flex items-center text-zinc-900 hover:text-zinc-600 transition-colors font-medium text-sm group"
+                      className={`inline-flex items-center transition-colors font-medium text-sm group ${
+                        theme === 'dark'
+                          ? 'text-zinc-300 hover:text-zinc-100'
+                          : 'text-zinc-900 hover:text-zinc-600'
+                      }`}
                     >
                       View Gallery
                       <ArrowLeft className="ml-2 w-3.5 h-3.5 rotate-180 group-hover:translate-x-1 transition-transform" />
@@ -375,7 +435,11 @@ export default function WorkPage() {
                   ) : (
                     <Link
                       href={work.link}
-                      className="inline-flex items-center text-zinc-900 hover:text-zinc-600 transition-colors font-medium text-sm group"
+                      className={`inline-flex items-center transition-colors font-medium text-sm group ${
+                        theme === 'dark'
+                          ? 'text-zinc-300 hover:text-zinc-100'
+                          : 'text-zinc-900 hover:text-zinc-600'
+                      }`}
                     >
                       View Project
                       <ArrowLeft className="ml-2 w-3.5 h-3.5 rotate-180 group-hover:translate-x-1 transition-transform" />
@@ -557,7 +621,9 @@ export default function WorkPage() {
           </div>
 
           {/* Portfolio Showcase */}
-          <div className="bg-zinc-50 rounded-xl p-8 mb-12">
+          <div className={`rounded-xl p-8 mb-12 transition-colors duration-300 ${
+            theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
+          }`}>
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -566,10 +632,14 @@ export default function WorkPage() {
               className="text-center mb-6"
             >
               <p className="text-sm font-medium text-purple-600 mb-2"></p>
-              <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+              }`}>
                 Recent brand transformations
               </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              <p className={`text-lg max-w-2xl mx-auto transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+              }`}>
                 See how we've helped visionary brands create distinctive identities that challenge conventions.
               </p>
             </motion.div>
@@ -583,7 +653,11 @@ export default function WorkPage() {
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               >
                 <Link href="https://www.swivimedia.com/about" target="_blank" rel="noopener noreferrer" className="block group">
-                  <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                  <div className={`rounded-xl overflow-hidden border hover:border-zinc-400 transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
+                      : 'bg-white border-zinc-200'
+                  }`}>
                     <div className="relative aspect-video overflow-hidden">
                       <Image
                         src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//swivi4.png"
@@ -593,8 +667,12 @@ export default function WorkPage() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">Swivi Media</h3>
-                      <p className="text-zinc-600 mb-3">A viral marketing agency connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
+                      <h3 className={`text-xl font-semibold mb-2 transition-colors group-hover:text-purple-600 ${
+                        theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                      }`}>Swivi Media</h3>
+                      <p className={`mb-3 transition-colors ${
+                        theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                      }`}>A viral marketing agency connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
                       <div className="flex items-center text-purple-600 font-medium">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -614,7 +692,11 @@ export default function WorkPage() {
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               >
                 <Link href="https://1stclassstudios.com" target="_blank" rel="noopener noreferrer" className="block group">
-                  <div className="bg-white rounded-xl overflow-hidden border border-zinc-200 hover:border-zinc-400 transition-all duration-300">
+                  <div className={`rounded-xl overflow-hidden border hover:border-zinc-400 transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
+                      : 'bg-white border-zinc-200'
+                  }`}>
                     <div className="relative aspect-video overflow-hidden">
                       <Image
                         src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png"
@@ -624,8 +706,12 @@ export default function WorkPage() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-zinc-900 group-hover:text-purple-600 transition-colors">1st Class Studios</h3>
-                      <p className="text-zinc-600 mb-3">Professional recording studio with three state-of-the-art facilities just 45 minutes from Manhattan.</p>
+                      <h3 className={`text-xl font-semibold mb-2 transition-colors group-hover:text-purple-600 ${
+                        theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                      }`}>1st Class Studios</h3>
+                      <p className={`mb-3 transition-colors ${
+                        theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                      }`}>Professional recording studio with three state-of-the-art facilities just 45 minutes from Manhattan.</p>
                       <div className="flex items-center text-purple-600 font-medium">
                         Visit Website
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -643,10 +729,14 @@ export default function WorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-center py-12 border-t border-zinc-200"
+            className={`text-center py-12 border-t transition-colors duration-300 ${
+              theme === 'dark' ? 'border-zinc-700' : 'border-zinc-200'
+            }`}
             style={{ willChange: "transform, opacity" }}
           >
-            <p className="text-sm text-zinc-600 mb-6 max-w-xl mx-auto">
+            <p className={`text-sm mb-6 max-w-xl mx-auto transition-colors duration-300 ${
+              theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+            }`}>
               Let's collaborate on custom solutions that elevate your brand and captivate your audience.
             </p>
             
@@ -663,7 +753,11 @@ export default function WorkPage() {
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center bg-transparent hover:bg-zinc-50 text-zinc-900 text-sm font-medium py-2 px-5 rounded-full border border-zinc-300 transition-all duration-300"
+                className={`inline-flex items-center justify-center text-sm font-medium py-2 px-5 rounded-full border transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'bg-transparent hover:bg-zinc-800 text-zinc-300 border-zinc-600 hover:border-zinc-500'
+                    : 'bg-transparent hover:bg-zinc-50 text-zinc-900 border-zinc-300'
+                }`}
               >
                 Back to Home
               </Link>
@@ -694,7 +788,11 @@ export default function WorkPage() {
               {/* Close button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors bg-black/20 hover:bg-black/40 rounded-full p-2 z-10"
+                className={`absolute top-4 right-4 text-white hover:text-gray-300 transition-colors rounded-full p-2 z-10 ${
+                  theme === 'dark'
+                    ? 'bg-zinc-800/50 hover:bg-zinc-700/50'
+                    : 'bg-black/20 hover:bg-black/40'
+                }`}
               >
                 <X className="w-6 h-6" />
               </button>
@@ -704,13 +802,21 @@ export default function WorkPage() {
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/20 hover:bg-black/40 rounded-full p-2 z-10"
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors rounded-full p-2 z-10 ${
+                      theme === 'dark'
+                        ? 'bg-zinc-800/50 hover:bg-zinc-700/50'
+                        : 'bg-black/20 hover:bg-black/40'
+                    }`}
                   >
                     <ArrowLeft className="w-6 h-6" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/20 hover:bg-black/40 rounded-full p-2 z-10"
+                    className={`absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors rounded-full p-2 z-10 ${
+                      theme === 'dark'
+                        ? 'bg-zinc-800/50 hover:bg-zinc-700/50'
+                        : 'bg-black/20 hover:bg-black/40'
+                    }`}
                   >
                     <ArrowRight className="w-6 h-6" />
                   </button>
@@ -729,7 +835,11 @@ export default function WorkPage() {
                 
                 {/* Image counter */}
                 {modalImages.length > 1 && (
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                  <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-white px-3 py-1 rounded-full text-sm ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800/50'
+                      : 'bg-black/50'
+                  }`}>
                     {currentImageIndex + 1} / {modalImages.length}
                   </div>
                 )}
