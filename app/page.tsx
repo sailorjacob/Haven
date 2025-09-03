@@ -1130,8 +1130,8 @@ export default function HomePage() {
           {/* Signature - Bottom (appears on scroll) - Overlaid without affecting layout */}
           <div className={`absolute inset-0 flex justify-center transition-opacity duration-500 pointer-events-none ${
             isScrolled ? 'opacity-100' : 'opacity-0'
-          }`} style={{ top: 'auto', bottom: '20px' }}>
-            <div className="relative overflow-hidden" style={{ width: '140px', height: '35px' }}>
+          }`} style={{ top: 'auto', bottom: '35px' }}>
+            <div className="relative overflow-hidden" style={{ width: '140px', height: '45px' }}>
               <Image
                 src={theme === 'dark'
                   ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
