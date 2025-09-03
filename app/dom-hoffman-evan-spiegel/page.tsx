@@ -207,6 +207,20 @@ export default function DomHoffmanEvanSpiegelPage() {
                 : 'text-zinc-600 hover:text-zinc-900'
             }`}>← Back to Blog</Link>
           </div>
+
+          {/* Signature at bottom of article */}
+          <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-700">
+            <Image
+              src={theme === 'dark'
+                ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
+                : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
+              }
+              alt="Signature"
+              width={140}
+              height={70}
+              className="opacity-70 hover:opacity-90 transition-opacity duration-300"
+            />
+          </div>
         </div>
       </section>
     </main>

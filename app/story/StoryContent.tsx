@@ -2,7 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
+import { useTheme } from "next-themes"
 
 export default function StoryContent() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -11,6 +13,7 @@ export default function StoryContent() {
   const [animationComplete, setAnimationComplete] = useState(false)
   const [showMemorialPopup, setShowMemorialPopup] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const { theme } = useTheme() || { theme: 'light' }
 
   const imageSequence = [
     "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//story1.jpg",
@@ -229,6 +232,20 @@ export default function StoryContent() {
             </motion.div>
           </motion.div>
         )}
+
+        {/* Signature at bottom of story */}
+        <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700 flex justify-center">
+          <Image
+            src={theme === 'dark'
+              ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
+              : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
+            }
+            alt="Signature"
+            width={160}
+            height={80}
+            className="opacity-70 hover:opacity-90 transition-opacity duration-300"
+          />
+        </div>
       </AnimatePresence>
     </main>
   )

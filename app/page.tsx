@@ -515,6 +515,20 @@ export default function HomePage() {
         </AnimatePresence>
       </header>
 
+      {/* Signature - Top Left Corner */}
+      <div className="fixed top-20 left-4 z-40 pointer-events-none">
+        <Image
+          src={theme === 'dark'
+            ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
+            : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
+          }
+          alt="Signature"
+          width={120}
+          height={60}
+          className="opacity-80 hover:opacity-100 transition-opacity duration-300 pointer-events-auto"
+        />
+      </div>
+
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 pt-10 px-6 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto space-y-12">
