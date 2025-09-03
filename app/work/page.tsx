@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, ExternalLink, Hexagon, ArrowRight, Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
 
@@ -17,6 +18,7 @@ export default function WorkPage() {
   const [apparelImageIndex, setApparelImageIndex] = useState(0)
   const [isAmmocatTransitioning, setIsAmmocatTransitioning] = useState(false)
   const [isApparelTransitioning, setIsApparelTransitioning] = useState(false)
+  const { theme } = useTheme()
   
   // Function to get a random highlight color - precompute for better performance
   const getRandomHighlightColor = () => {
