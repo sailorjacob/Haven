@@ -517,8 +517,8 @@ export default function HomePage() {
                 <Link href={`/blog`} className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
                   blog
                 </Link>
-                <Link href="/contact" className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
-                  contact
+                <Link href="/shop" className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
+                  shop
                 </Link>
               </div>
             </motion.div>
