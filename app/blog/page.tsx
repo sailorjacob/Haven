@@ -121,6 +121,15 @@ const posts = [
     isPreview: true,
   },
   {
+    slug: "/i-dont-need-to-know-code-i-dont-need-to-know-math",
+    title: "I don't need to know code. I don't need to know math",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
+  {
     slug: "/i-hate-the-status-quo",
     title: "I hate the status quo",
     description: "Coming soon...",
@@ -132,15 +141,6 @@ const posts = [
   {
     slug: "/cigarette-genocide",
     title: "Cigarette Genocide",
-    description: "Coming soon...",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: Lock,
-    date: "Coming Soon",
-    isPreview: true,
-  },
-  {
-    slug: "/i-dont-need-to-know-code-i-dont-need-to-know-math",
-    title: "I don't need to know code. I don't need to know math",
     description: "Coming soon...",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Lock,
@@ -579,9 +579,9 @@ export default function BlogIndex() {
                 <Link href="/story" className="hover:opacity-80 transition-opacity">
                   <h2 className="text-lg md:text-xl font-semibold transition-colors duration-300 text-zinc-100">Jacob Hale</h2>
                 </Link>
-                <p className="mt-1 text-sm md:text-base transition-colors duration-300 text-zinc-400">Founder & Creative Director</p>
+                <p className="mt-1 text-sm md:text-base transition-colors duration-300 text-zinc-400">Artist & Entrepreneur</p>
                 <p className="text-sm mt-2 leading-relaxed transition-colors duration-300 text-zinc-500">
-                  Exploring the intersection of technology, culture, and human potential. Building the future through thoughtful design.
+                  Exploring technology, culture, and human potential.
                 </p>
               </div>
             </div>
