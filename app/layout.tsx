@@ -43,6 +43,7 @@ export default function RootLayout({
           storageKey="haven-theme"
           disableTransitionOnChange
           forcedTheme="dark"
+          enableColorScheme={false}
         >
           {children}
           <CookieConsent />

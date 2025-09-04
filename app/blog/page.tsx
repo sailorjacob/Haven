@@ -351,8 +351,33 @@ export default function BlogIndex() {
     // Run again after a short delay to catch any timing issues
     const timeout = setTimeout(ensureDarkMode, 100)
 
-    return () => clearTimeout(timeout)
+    // Run again after longer delay to catch any late overrides
+    const timeout2 = setTimeout(ensureDarkMode, 500)
+
+    return () => {
+      clearTimeout(timeout)
+      clearTimeout(timeout2)
+    }
   }, [])
+
+  // Last resort: force dark mode on every render
+  useEffect(() => {
+    // This will run on every render to ensure dark mode is maintained
+    if (typeof window !== 'undefined') {
+      const html = document.documentElement
+      const body = document.body
+
+      // Force dark class
+      html.classList.add('dark')
+      html.classList.remove('light')
+      body.classList.add('dark')
+      body.classList.remove('light')
+
+      // Override any inline styles that might be set
+      html.style.colorScheme = 'dark'
+      body.style.colorScheme = 'dark'
+    }
+  })
 
   // Separate posts into preview and published
   const previewPosts = posts.filter(post => post.isPreview)
@@ -439,12 +464,10 @@ export default function BlogIndex() {
                             }`} />
                             {/* Lock Icon positioned above scribbles */}
                             <div className="absolute inset-0 flex items-center justify-center z-30">
-                              <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full backdrop-blur-sm shadow-lg ${
-                                theme === 'dark'
-                                  ? 'bg-red-900/80 text-red-400 border-red-700/60'
-                                  : 'bg-red-100/90 text-red-600 border-red-300/60'
-                              }`}>
-                                {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                              <div className="inline-flex items-center justify-center w-8 h-8">
+                                {post.Icon ? <post.Icon className={`w-5 h-5 transition-colors duration-300 ${
+                                  theme === 'dark' ? 'text-red-400' : 'text-red-600'
+                                }`} /> : null}
                               </div>
                             </div>
                           </div>
