@@ -306,8 +306,20 @@ export default function BlogIndex() {
 
   // Force blog page to always use dark mode
   useEffect(() => {
+    // Force dark mode immediately and ensure it persists
     setTheme('dark')
+    // Also try to set it in localStorage to override any cached settings
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('haven-theme', 'dark')
+    }
   }, [setTheme])
+
+  // Additional effect to ensure theme stays dark
+  useEffect(() => {
+    if (theme !== 'dark') {
+      setTheme('dark')
+    }
+  }, [theme, setTheme])
 
   // Separate posts into preview and published
   const previewPosts = posts.filter(post => post.isPreview)
@@ -349,7 +361,7 @@ export default function BlogIndex() {
                       <div className={`absolute inset-0 mix-blend-overlay ${
                         theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
                       }`} />
-                      <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm shadow-lg ${
+                      <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm shadow-lg z-20 ${
                         theme === 'dark'
                           ? 'bg-red-900/80 text-red-400 border-red-700/60'
                           : 'bg-red-100/90 text-red-600 border-red-300/60'

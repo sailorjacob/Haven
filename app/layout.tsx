@@ -40,6 +40,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+          storageKey="haven-theme"
           disableTransitionOnChange
         >
           {children}
