@@ -569,9 +569,19 @@ export default function BlogIndex() {
         <div className="mb-12">
           <div className="rounded-2xl border p-6 md:p-8 shadow-sm transition-colors duration-300 bg-zinc-800 border-zinc-700">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <div className="relative flex-shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors duration-300 bg-gradient-to-br from-zinc-700 to-zinc-800">
-                  <Hexagon className="w-8 h-8 md:w-10 md:h-10 transition-colors duration-300 text-zinc-300" strokeWidth={1} />
+              <div className="relative flex-shrink-0 group">
+                <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 transition-colors duration-300 border-zinc-700">
+                  {/* Default Hexagon icon */}
+                  <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 bg-gradient-to-br from-zinc-700 to-zinc-800 group-hover:opacity-0">
+                    <Hexagon className="w-8 h-8 md:w-10 md:h-10 transition-colors duration-300 text-zinc-300" strokeWidth={1} />
+                  </div>
+                  {/* Hidden profile picture that appears on hover */}
+                  <Image
+                    src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/j2222.JPG"
+                    alt="Jacob Hale profile"
+                    fill
+                    className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
                 </div>
                 <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full border-2 transition-colors duration-300 border-zinc-800"></div>
               </div>
@@ -710,24 +720,26 @@ export default function BlogIndex() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 max-w-md w-full mx-4"
+                className="bg-zinc-800 border border-zinc-700 rounded-xl p-6 max-w-sm w-full mx-4"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-red-900/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Lock className="w-8 h-8 text-red-400" />
+                  {/* Lock icon and title on same line */}
+                  <div className="flex items-center justify-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-red-900/80 rounded-full flex items-center justify-center">
+                      <Lock className="w-5 h-5 text-red-400" />
+                    </div>
+                    <h2 className="text-xl font-bold text-zinc-100">Unlock</h2>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-zinc-100 mb-4">Unlock</h2>
-
-                  <p className="text-zinc-400 mb-6">
+                  <p className="text-sm text-zinc-400 mb-5 leading-relaxed">
                     This blog post is coming soon. Unlock access to this hidden post for just $450.
                   </p>
 
                   <div className="flex space-x-3">
                     <button
                       onClick={closeModal}
-                      className="flex-1 px-6 py-3 bg-zinc-700 hover:bg-zinc-600 text-zinc-200 rounded-lg transition-colors duration-200"
+                      className="flex-1 px-4 py-2.5 bg-zinc-700 hover:bg-zinc-600 text-zinc-200 rounded-lg transition-colors duration-200 text-sm"
                     >
                       Cancel
                     </button>
@@ -735,7 +747,7 @@ export default function BlogIndex() {
                       href="https://buy.stripe.com/fZufZicpR2zq6IL0Th57W0b"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-center"
+                      className="flex-1 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-center text-sm"
                     >
                       Unlock for $450
                     </a>
