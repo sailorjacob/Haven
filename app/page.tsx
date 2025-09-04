@@ -513,12 +513,18 @@ export default function HomePage() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
-              <div className="w-full px-4 sm:px-6 py-4 space-y-4">
-                <Link href={`/blog`} className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
-                  Blog
+              <div className="container mx-auto px-6 py-4 space-y-3">
+                <Link href="/" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Studio
                 </Link>
-                <Link href="/shop" className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
-                  Shop
+                <Link href="/products" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Products
+                </Link>
+                <Link href="/explore" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Explore
+                </Link>
+                <Link href="/contact" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Contact
                 </Link>
               </div>
             </motion.div>
