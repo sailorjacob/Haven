@@ -525,36 +525,35 @@ export default function HomePage() {
                     : 'bg-white border-zinc-200'
               }`}
             >
-                             <div className="w-full px-4 sm:px-6 py-3 space-y-3">
+                             <div className="w-full px-4 sm:px-6 py-4 space-y-4">
+                <Link
+                  href="/blog"
+                  className={`block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 ${
+                    processOpen
+                      ? 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  blog
+                </Link>
 
-                 <Link
-                   href="/blog"
-                   className={`block text-sm transition-colors duration-300 delay-100 group ${
-                     processOpen
-                       ? 'text-zinc-400 hover:text-zinc-200'
-                       : theme === 'dark'
-                         ? 'text-zinc-400 hover:text-zinc-200'
-                         : 'text-zinc-600 hover:text-zinc-900'
-                   }`}
-                   onClick={() => setMobileMenuOpen(false)}
-                 >
-                   blog
-                 </Link>
-
-                 <Link
-                   href="/shop"
-                   className={`block text-sm transition-colors duration-300 delay-100 group ${
-                     processOpen
-                       ? 'text-zinc-400 hover:text-zinc-200'
-                       : theme === 'dark'
-                         ? 'text-zinc-400 hover:text-zinc-200'
-                         : 'text-zinc-600 hover:text-zinc-900'
-                   }`}
-                   onClick={() => setMobileMenuOpen(false)}
-                 >
-                   shop
-                 </Link>
-          </div>
+                <Link
+                  href="/shop"
+                  className={`block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 ${
+                    processOpen
+                      ? 'text-zinc-400 hover:text-zinc-200'
+                      : theme === 'dark'
+                        ? 'text-zinc-400 hover:text-zinc-200'
+                        : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  shop
+                </Link>
+              </div>
         </motion.div>
           )}
         </AnimatePresence>
