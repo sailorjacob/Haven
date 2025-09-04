@@ -1,13 +1,17 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
 import { useTheme } from "next-themes"
 import { Footer } from "@/components/footer"
+import { Hexagon, Menu, X } from "lucide-react"
+import ProcessDropdown from "@/components/ProcessDropdown"
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [processOpen, setProcessOpen] = useState(false)
   const { theme } = useTheme()
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,6 +48,52 @@ export default function ContactPage() {
         ? 'bg-zinc-900 text-zinc-100'
         : 'bg-zinc-50 text-zinc-900'
     }`}>
+      {/* Header */}
+      <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 bg-zinc-900/95 border-zinc-700">
+        <div className="w-full px-4 sm:px-6 py-2">
+          <nav className="flex items-center justify-between">
+            <div className="flex items-center space-x-8">
+              <Link href="/" className="flex items-center">
+                <Hexagon className="w-8 h-8 transition-colors duration-300 text-zinc-100" strokeWidth={1} />
+                <span className="ml-2 text-lg font-light tracking-wider transition-colors duration-300 text-zinc-100">Haven</span>
+              </Link>
+              <div className="hidden md:flex items-center space-x-6">
+                <Link href="/" className="text-sm font-light transition-colors group text-zinc-400 hover:text-zinc-200">
+                  <span className="group-hover:hidden">process</span>
+                  <span className="hidden group-hover:inline text-zinc-400">process</span>
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Link href="/blog" className="hidden md:inline text-sm font-light transition-colors text-zinc-400 hover:text-zinc-200">blog</Link>
+              <Link href="/contact" className="hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm border-zinc-600 hover:bg-zinc-800 text-zinc-200">msg</Link>
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 transition-colors duration-300 text-zinc-400">
+                {mobileMenuOpen ? <X className="w-5 h-5 transition-colors duration-300 text-zinc-400" /> : <Menu className="w-5 h-5 transition-colors duration-300 text-zinc-400" />}
+              </button>
+            </div>
+          </nav>
+          <AnimatePresence>
+            {processOpen && (
+              <ProcessDropdown onClose={() => setProcessOpen(false)} />
+            )}
+          </AnimatePresence>
+        </div>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
+              <div className="w-full px-4 sm:px-6 py-4 space-y-4">
+                <Link href={`/blog`} className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
+                  blog
+                </Link>
+                <Link href="/contact" className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
+                  contact
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+
       {/* Gradient background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className={`absolute inset-0 transition-colors duration-300 ${
@@ -58,7 +108,7 @@ export default function ContactPage() {
         }`}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 pt-24">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
