@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useMemo, useState, useEffect } from "react"
-import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, Crown, Grid, List } from "lucide-react"
+import { Hexagon, ChevronDown, Menu, X, FileText, Sparkles, Bitcoin, BookOpen, Crown, Grid, List, Lock } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes"
 import ProcessDropdown from "@/components/ProcessDropdown"
@@ -111,6 +111,42 @@ const RandomScribbles = () => {
 }
 
 const posts = [
+  {
+    slug: "/i-dont-need-to-know-code-i-dont-need-to-know-math",
+    title: "I don't need to know code. I don't need to know math",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
+  {
+    slug: "/i-hate-the-status-quo",
+    title: "I hate the status quo",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
+  {
+    slug: "/cigarette-genocide",
+    title: "Cigarette Genocide",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
+  {
+    slug: "/elon-says-the-most-entertaining-is-the-most-likely-i-say-the-most-boring-is",
+    title: "Elon says the most entertaining is the most likely, I say the most boring is",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
   {
     slug: "/is-the-world-dangerous-or-safe",
     title: "Is the world dangerous or safe?",
@@ -277,12 +313,120 @@ export default function BlogIndex() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('list')
   const { theme, setTheme } = useTheme() || { theme: 'light', setTheme: () => {} }
 
-  // Set blog page to default to dark mode
+  // Force blog page to always use dark mode
   useEffect(() => {
-    if (theme === 'system') {
-      setTheme('dark')
-    }
-  }, [theme, setTheme])
+    setTheme('dark')
+  }, [setTheme])
+
+  // Separate posts into preview and published
+  const previewPosts = posts.filter(post => post.isPreview)
+  const publishedPosts = posts.filter(post => !post.isPreview)
+
+  // Render preview posts section
+  const renderPreviewPosts = () => (
+    <div className="mb-12">
+      <div className="flex items-center space-x-3 mb-6">
+        <h2 className={`text-sm font-medium uppercase tracking-wider transition-colors duration-300 ${
+          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+        }`}>
+          Upcoming
+        </h2>
+        <div className={`flex-1 h-px transition-colors duration-300 ${
+          theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300'
+        }`}></div>
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={viewMode}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          {viewMode === 'grid' ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {previewPosts.map((post) => (
+                <div key={post.slug} className="group cursor-not-allowed">
+                  <div className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800/50 border-zinc-700/50'
+                      : 'bg-zinc-100/50 border-zinc-200/50'
+                  }`}>
+                    <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)} opacity-50`}>
+                      <RandomScribbles />
+                      <div className={`absolute inset-0 mix-blend-overlay ${
+                        theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
+                      }`} />
+                      <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm shadow-sm ${
+                        theme === 'dark'
+                          ? 'bg-zinc-700/50 text-zinc-400 border-zinc-600/50'
+                          : 'bg-white/50 text-zinc-500 border-zinc-200/50'
+                      }`}>
+                        {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-start justify-between">
+                        <h2 className={`text-lg font-medium transition-colors duration-300 ${
+                          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+                        }`}>{post.title}</h2>
+                        <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
+                          theme === 'dark' ? 'text-zinc-600' : 'text-zinc-400'
+                        }`}>{post.date}</span>
+                      </div>
+                      <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
+                        theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
+                      }`}>{post.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {previewPosts.map((post) => (
+                <div key={post.slug} className="group cursor-not-allowed">
+                  <div className={`rounded-xl border p-6 transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-zinc-800/50 border-zinc-700/50'
+                      : 'bg-zinc-100/50 border-zinc-200/50'
+                  }`}>
+                    <div className="flex items-start space-x-4">
+                      <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)} opacity-50`}>
+                        <RandomScribbles />
+                        <div className={`absolute inset-0 mix-blend-overlay ${
+                          theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
+                        }`} />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
+                            theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+                          }`} /> : null}
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between">
+                          <h2 className={`text-lg font-medium transition-colors duration-300 ${
+                            theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+                          }`}>{post.title}</h2>
+                          <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
+                            theme === 'dark' ? 'text-zinc-600' : 'text-zinc-400'
+                          }`}>{post.date}</span>
+                        </div>
+                        <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
+                          theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
+                        }`}>{post.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )
 
   const navColors = useMemo(() => ({
     studio: getSeededRandomColor('studio'),
@@ -489,97 +633,116 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={viewMode}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            {viewMode === 'grid' ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post) => (
-                  <Link key={post.slug} href={post.slug} className="group">
-                    <div className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg ${
-                      theme === 'dark'
-                        ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
-                        : 'bg-white border-zinc-200 hover:border-zinc-400'
-                    }`}>
-                      <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)}`}>
-                        <RandomScribbles />
-                        <div className={`absolute inset-0 mix-blend-overlay ${
-                          theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                        }`} />
-                        <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm shadow-sm ${
+        {/* Render Preview Posts Section */}
+        {previewPosts.length > 0 && renderPreviewPosts()}
+
+        {/* Render Published Posts Section */}
+        {publishedPosts.length > 0 && (
+          <div>
+            <div className="flex items-center space-x-3 mb-6">
+              <h2 className={`text-sm font-medium uppercase tracking-wider transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+              }`}>
+                Published
+              </h2>
+              <div className={`flex-1 h-px transition-colors duration-300 ${
+                theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300'
+              }`}></div>
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={viewMode}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {viewMode === 'grid' ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {publishedPosts.map((post) => (
+                      <Link key={post.slug} href={post.slug} className="group">
+                        <div className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg ${
                           theme === 'dark'
-                            ? 'bg-zinc-700/80 text-zinc-200 border-zinc-600'
-                            : 'bg-white/80 text-zinc-800 border-zinc-200'
+                            ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
+                            : 'bg-white border-zinc-200 hover:border-zinc-400'
                         }`}>
-                          {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
-                        </div>
-                      </div>
-                      <div className="p-5">
-                        <div className="flex items-start justify-between">
-                          <h2 className={`text-lg font-medium transition-colors duration-300 ${
-                            theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                          }`}>{post.title}</h2>
-                          <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                            theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
-                          }`}>{post.date}</span>
-                        </div>
-                        <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                        }`}>{post.description}</p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {posts.map((post) => (
-                  <Link key={post.slug} href={post.slug} className="group">
-                    <div className={`rounded-xl border p-6 transition-all duration-300 hover:shadow-md ${
-                      theme === 'dark'
-                        ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
-                        : 'bg-white border-zinc-200 hover:border-zinc-400'
-                    }`}>
-                      <div className="flex items-start space-x-4">
-                        <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)}`}>
-                          <RandomScribbles />
-                          <div className={`absolute inset-0 mix-blend-overlay ${
-                            theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                          }`} />
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
-                              theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
-                            }`} /> : null}
-                          </div>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between">
-                            <h2 className={`text-lg font-medium transition-colors group-hover:text-zinc-700 ${
+                          <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)}`}>
+                            <RandomScribbles />
+                            <div className={`absolute inset-0 mix-blend-overlay ${
+                              theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
+                            }`} />
+                            <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm shadow-sm ${
                               theme === 'dark'
-                                ? 'text-zinc-100 group-hover:text-zinc-300'
-                                : 'text-zinc-900 group-hover:text-zinc-700'
-                            }`}>{post.title}</h2>
-                            <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                              theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
-                            }`}>{post.date}</span>
+                                ? 'bg-zinc-700/80 text-zinc-200 border-zinc-600'
+                                : 'bg-white/80 text-zinc-800 border-zinc-200'
+                            }`}>
+                              {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                            </div>
                           </div>
-                          <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                            theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                          }`}>{post.description}</p>
+                          <div className="p-5">
+                            <div className="flex items-start justify-between">
+                              <h2 className={`text-lg font-medium transition-colors duration-300 ${
+                                theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
+                              }`}>{post.title}</h2>
+                              <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
+                                theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
+                              }`}>{post.date}</span>
+                            </div>
+                            <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
+                              theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                            }`}>{post.description}</p>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {publishedPosts.map((post) => (
+                      <Link key={post.slug} href={post.slug} className="group">
+                        <div className={`rounded-xl border p-6 transition-all duration-300 hover:shadow-md ${
+                          theme === 'dark'
+                            ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
+                            : 'bg-white border-zinc-200 hover:border-zinc-400'
+                        }`}>
+                          <div className="flex items-start space-x-4">
+                            <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)}`}>
+                              <RandomScribbles />
+                              <div className={`absolute inset-0 mix-blend-overlay ${
+                                theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
+                              }`} />
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
+                                  theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
+                                }`} /> : null}
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-start justify-between">
+                                <h2 className={`text-lg font-medium transition-colors group-hover:text-zinc-700 ${
+                                  theme === 'dark'
+                                    ? 'text-zinc-100 group-hover:text-zinc-300'
+                                    : 'text-zinc-900 group-hover:text-zinc-700'
+                                }`}>{post.title}</h2>
+                                <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
+                                  theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
+                                }`}>{post.date}</span>
+                              </div>
+                              <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
+                                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
+                              }`}>{post.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        )}
       </div>
     </main>
   )
