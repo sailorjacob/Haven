@@ -214,6 +214,10 @@ export default function AIWorkNoShame() {
                 I always disclose when AI is involved (like right here), and I ensure the content is original in substance. Plagiarism checkers come back clean because the ideas are mine, even if the wording is AI-assisted.
               </p>
 
+              <p className="text-zinc-700 leading-relaxed mb-6">
+                This is just the beginning. I have made music with AI. I will make a movie using AI. I will build a house using AI. And in the future, I won't trust a doctor unless they are using AI or more likely a precision robot paired with AI. The possibilities are endless when you embrace this technology as a tool for human creativity.
+              </p>
+
               <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">The Real Work: 95% Invisible Effort</h2>
               
               <p className="text-zinc-700 leading-relaxed mb-6">
