@@ -204,12 +204,12 @@ export default function ShopPage() {
       stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
     },
     {
-      id: "transrealala",
-      name: "TransrealAla",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/transrealala.png",
-      description: "Transreal Ala design - bridging reality and imagination",
+      id: "transrealallah",
+      name: "Trans Real Allah",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/transrealallah2.png",
+      description: "Premium graphic design on soft cotton blend",
       price: "$45",
-      stripeLink: "https://buy.stripe.com/eVq5kE4Xp5LC8QTcBZ57W06"
+      stripeLink: "https://buy.stripe.com/5kQ9AUdtV6PGaZ18lJ57W07"
     }
   ]
 

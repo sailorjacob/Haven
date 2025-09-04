@@ -189,11 +189,11 @@ const posts = [
   },
   {
     slug: "/ai-work-no-shame",
-    title: "No Shame in AI",
-    description: "All of my work is powered by AI. From blog posts to reports, creative stories to professional analyses, AI generates the bulk of the content.",
+    title: "All of My Work is AI: Why I Use AI with No Shame",
+    description: "Exploring how AI amplifies human creativity and why the real work lies in ideas, not typing.",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Sparkles,
-    date: "Oct 2025",
+    date: "Aug 2025",
   },
   {
     slug: "/the-mosquito",
