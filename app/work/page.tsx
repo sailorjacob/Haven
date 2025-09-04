@@ -29,7 +29,7 @@ export default function WorkPage() {
   
   // Function to get a random highlight color - precompute for better performance
   const getRandomHighlightColor = () => {
-    const colors = ['text-green-500 font-bold', 'text-red-500 font-bold', 'text-yellow-500 font-bold'];
+    const colors = ['text-zinc-300 font-bold', 'text-zinc-400 font-bold', 'text-zinc-500 font-bold'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
   
@@ -262,38 +262,38 @@ export default function WorkPage() {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-200">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 bg-zinc-900/95 border-zinc-700">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
-                <Hexagon className="w-8 h-8 text-zinc-900" strokeWidth={1} />
-                <span className="ml-2 text-lg font-light tracking-wider">Haven</span>
+                <Hexagon className="w-8 h-8 transition-colors duration-300 text-zinc-100" strokeWidth={1} />
+                <span className="ml-2 text-lg font-light tracking-wider transition-colors duration-300 text-zinc-100">Haven</span>
               </Link>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <Link
                   href="/"
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                 >
                   Studio
                 </Link>
                 <Link
                   href="/products"
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                 >
                   Products
                 </Link>
                 <Link
                   href="/work"
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                 >
                   Work
                 </Link>
                 <Link
                   href="/explore"
-                  className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                 >
                   Explore
                 </Link>
@@ -303,7 +303,7 @@ export default function WorkPage() {
             <div className="flex items-center space-x-4">
               <Link
                 href="/contact"
-                className="hidden md:inline-flex items-center bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 text-sm"
+                className="hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm border-zinc-600 hover:bg-zinc-800 text-zinc-200"
               >
                 Contact Us
               </Link>
@@ -311,9 +311,9 @@ export default function WorkPage() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2"
+                className="md:hidden p-2 transition-colors duration-300 text-zinc-400"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 transition-colors duration-300 text-zinc-400" /> : <Menu className="w-5 h-5 transition-colors duration-300 text-zinc-400" />}
               </button>
             </div>
           </nav>
@@ -326,40 +326,40 @@ export default function WorkPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-b border-zinc-200"
+              className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
                 <Link
                   href="/"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Studio
                 </Link>
                 <Link
                   href="/products"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Products
                 </Link>
                 <Link
                   href="/work"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Work
                 </Link>
                 <Link
                   href="/explore"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Explore
                 </Link>
                 <Link
                   href="/contact"
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 transition-colors tracking-wider uppercase"
+                  className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contact
@@ -660,7 +660,7 @@ export default function WorkPage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-6"
             >
-              <p className="text-sm font-medium text-purple-600 mb-2"></p>
+              <p className="text-sm font-medium text-zinc-400 mb-2"></p>
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
               }`}>
@@ -696,13 +696,13 @@ export default function WorkPage() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className={`text-xl font-semibold mb-2 transition-colors group-hover:text-purple-600 ${
+                      <h3 className={`text-xl font-semibold mb-2 transition-colors group-hover:text-zinc-300 ${
                         theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
                       }`}>Swivi Media</h3>
                       <p className={`mb-3 transition-colors ${
                         theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                       }`}>A viral marketing agency connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
-                      <div className="flex items-center text-purple-600 font-medium">
+                      <div className="flex items-center text-zinc-400 font-medium">
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
@@ -735,13 +735,13 @@ export default function WorkPage() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className={`text-xl font-semibold mb-2 transition-colors group-hover:text-purple-600 ${
+                      <h3 className={`text-xl font-semibold mb-2 transition-colors group-hover:text-zinc-300 ${
                         theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
                       }`}>1st Class Studios</h3>
                       <p className={`mb-3 transition-colors ${
                         theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                       }`}>Professional recording studio with three state-of-the-art facilities just 45 minutes from Manhattan.</p>
-                      <div className="flex items-center text-purple-600 font-medium">
+                      <div className="flex items-center text-zinc-400 font-medium">
                         Visit Website
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
@@ -774,11 +774,13 @@ export default function WorkPage() {
                 href="/contact"
                 className={`group relative inline-flex items-center justify-center border-2 bg-transparent font-medium py-2 px-5 rounded-full text-sm overflow-hidden transition-all duration-300 ${
                   theme === 'dark'
-                    ? 'border-yellow-400 text-zinc-100 hover:text-zinc-900'
-                    : 'border-yellow-400 text-zinc-900'
+                    ? 'border-zinc-600 text-zinc-200 hover:text-zinc-100'
+                    : 'border-zinc-400 text-zinc-900'
                 }`}
               >
-                <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                  theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
+                }`}></div>
                 <span className="relative z-10 flex items-center justify-center">
                   Start Your Project
                   <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />

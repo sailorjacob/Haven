@@ -180,14 +180,6 @@ export default function ShopPage() {
 
   const products = [
     {
-      id: "transrealallah",
-      name: "Trans Real Allah",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/transrealallah2.png",
-      description: "Premium graphic design on soft cotton blend",
-      price: "$45",
-      stripeLink: "https://buy.stripe.com/5kQ9AUdtV6PGaZ18lJ57W07"
-    },
-    {
       id: "nskk",
       name: "NSKK",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/NSKK.png",
