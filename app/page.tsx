@@ -819,8 +819,8 @@ export default function HomePage() {
                 },
                 {
                   number: "03",
-                  title: "Design & Development", 
-                  description: "Our team crafts beautiful interfaces and builds robust applications with clean code."
+                  title: "Design & Development",
+                  description: "We craft beautiful interfaces and build robust applications with clean code."
                 },
                 {
                   number: "04",
