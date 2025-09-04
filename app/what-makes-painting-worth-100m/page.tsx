@@ -168,7 +168,7 @@ export default function WhatMakesPaintingWorth100mPage() {
               <div className={`font-serif text-[15px] leading-7 space-y-6 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
               }`}>
-                <p>The answer is simple yet profound: <strong>the artist's story</strong>.</p>
+                <p>The answer is simple: <strong>the artist's story</strong>.</p>
                 
                 <p>Not the technical skill, not the materials used, not even the aesthetic beauty. Though these matter, they are secondary.</p>
                 
