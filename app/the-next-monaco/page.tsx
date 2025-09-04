@@ -167,13 +167,13 @@ export default function TheNextMonacoPage() {
                 
                 <p>What else feels like a luxurious Star Wars cloud city with F1 racing, yachts, and a supermodel tax haven?</p>
                 
-                <p>Monaco exists as this impossible dream—a city-state that somehow manages to be both exclusive and accessible, both ancient and futuristic, both European and global. It's where the world's wealthiest people go to play, where Formula 1 cars scream through narrow streets, where yachts the size of small buildings dock casually in the harbor.</p>
+                <p>Monaco exists as this impossible dream - a city-state that somehow manages to be both exclusive and accessible, both ancient and futuristic, both European and global. It's where the world's wealthiest people go to play, where Formula 1 cars scream through narrow streets, where yachts the size of small buildings dock casually in the harbor.</p>
                 
                 <p>But Monaco isn't just about money. It's about a certain kind of lifestyle, a certain kind of aesthetic, a certain kind of freedom. It's about living in a place where everything is designed for pleasure, where every detail is considered, where every experience is curated.</p>
                 
                 <p>So why not create more places like this? Why not build new Monaco's around the world?</p>
                 
-                <p>Imagine a Monaco in the mountains—a high-altitude playground where the wealthy can ski, hike, and escape the heat. Or a Monaco in the desert—a futuristic oasis where technology and luxury meet in perfect harmony. Or a Monaco in the tropics—a paradise where the world's elite can live in perpetual summer.</p>
+                <p>Imagine a Monaco in the mountains - a high-altitude playground where the wealthy can ski, hike, and escape the heat. Or a Monaco in the desert - a futuristic oasis where technology and luxury meet in perfect harmony. Or a Monaco in the tropics - a paradise where the world's elite can live in perpetual summer.</p>
                 
                 <p>These wouldn't just be cities. They would be experiences. They would be statements about what's possible when you combine unlimited resources with unlimited imagination.</p>
                 

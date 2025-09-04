@@ -105,7 +105,7 @@ export default function HavenMusicPlatformPage() {
                 
                 <p>Replace BMI, ASCAP, and all the other outdated licensing organizations. Create a system that's faster, fairer, and more transparent. A system that works for artists, not against them.</p>
                 
-                <p>Replace the entire music industry infrastructure. Build something from the ground up that makes sense for the digital age. Something that understands that music is more than just audio files—it's culture, it's community, it's connection.</p>
+                <p>Replace the entire music industry infrastructure. Build something from the ground up that makes sense for the digital age. Something that understands that music is more than just audio files-it's culture, it's community, it's connection.</p>
                 
                 <p>Build a software platform that's as beautiful as it is functional. White backgrounds with gold accents and red highlights. Clean, modern, luxurious. Something that feels as premium as the content it delivers.</p>
                 
@@ -113,7 +113,7 @@ export default function HavenMusicPlatformPage() {
                 
                 <p>It's not about disrupting the industry. It's about building something better. Something that serves artists and fans equally. Something that understands that great music deserves great technology.</p>
                 
-                <p>This is what happens when you combine the best ideas from the best platforms and add something new—something that only Haven can provide.</p>
+                <p>This is what happens when you combine the best ideas from the best platforms and add something new-something that only Haven can provide.</p>
                 
                 <p>This is the future of music. And it's beautiful.</p>
               </div>

@@ -95,15 +95,15 @@ export default function OurJeffKoonsOurDrakeOurStarWarsPage() {
                 
                 <p>Kevin George, whose first manager worked for American Idol and discovered Katy Perry, whose fans include Grimes, Nigerian megastar Rema, and the late Juice WRLD. The pure-hearted lion.</p>
                 
-                <p>Ammo Cat is our Star Wars. It might be one of the only series with true artistic and aesthetic potential. Emotions, dimensions, things like that. Maybe it will never happen, maybe it will be micro—but if it's anything like Downtown 81, it will be a success.</p>
+                <p>Ammo Cat is our Star Wars. It might be one of the only series with true artistic and aesthetic potential. Emotions, dimensions, things like that. Maybe it will never happen, maybe it will be micro-but if it's anything like Downtown 81, it will be a success.</p>
                 
                 <p>These are our cultural icons. These are the people and projects that will define our generation.</p>
                 
-                <p>Gordon Berger understands that art isn't just about beauty—it's about technology, about innovation, about pushing boundaries. His work on the blockchain isn't just a gimmick—it's a fundamental reimagining of what art can be in the digital age.</p>
+                <p>Gordon Berger understands that art isn't just about beauty-it's about technology, about innovation, about pushing boundaries. His work on the blockchain isn't just a gimmick-it's a fundamental reimagining of what art can be in the digital age.</p>
                 
-                <p>Kevin George represents the new generation of artists who understand that success isn't just about talent—it's about community, about connection, about building something that resonates with people on a deep level.</p>
+                <p>Kevin George represents the new generation of artists who understand that success isn't just about talent-it's about community, about connection, about building something that resonates with people on a deep level.</p>
                 
-                <p>Ammo Cat represents the potential for storytelling that goes beyond entertainment—that becomes art, that becomes culture, that becomes something that defines a generation.</p>
+                <p>Ammo Cat represents the potential for storytelling that goes beyond entertainment-that becomes art, that becomes culture, that becomes something that defines a generation.</p>
                 
                 <p>These aren't just individual successes. They're cultural movements. They're the beginning of something new, something that will change how we think about art, music, and storytelling.</p>
                 

@@ -172,21 +172,21 @@ export default function DomHoffmanEvanSpiegelPage() {
                 
                 <p>Dom Hoffman built Vine, then Byte, then Dispo. Each iteration refined the same core insight: people want to create, share, and discover short-form video content. But more than that, Dom understood that the platform itself needed to feel approachable, human, real. Not corporate. Not sterile.</p>
                 
-                <p>Evan Spiegel took Snapchat from a disappearing photo app to a camera company. But what he really built was a platform that felt like it was made by people who understood how people actually communicate. The interface was intuitive because it mirrored real human behavior—the way we gesture, the way we think about time, the way we share moments.</p>
+                <p>Evan Spiegel took Snapchat from a disappearing photo app to a camera company. But what he really built was a platform that felt like it was made by people who understood how people actually communicate. The interface was intuitive because it mirrored real human behavior - the way we gesture, the way we think about time, the way we share moments.</p>
                 
                 <p>Throw in Mike Cessario from Liquid Death, who turned water into a lifestyle brand by making it feel dangerous and rebellious. Or Dietrich Mateschitz from Red Bull, who built an empire on the simple premise that people want to feel energized and limitless. Or Larry Gagosian, the art dealer who made galleries feel like exclusive clubs where the art was secondary to the experience of being there.</p>
                 
                 <p>We're really starting to think simple.</p>
                 
-                <p>Simple doesn't mean basic. Simple means essential. It means removing everything that doesn't serve the core purpose. It means understanding that the best products feel inevitable—like they were always meant to exist exactly as they are.</p>
+                <p>Simple doesn't mean basic. Simple means essential. It means removing everything that doesn't serve the core purpose. It means understanding that the best products feel inevitable - like they were always meant to exist exactly as they are.</p>
                 
-                <p>Dom and Evan both understood that the tone of a platform matters more than its features. Vine felt playful and experimental. Snapchat felt intimate and ephemeral. These weren't just design choices—they were cultural statements about how people should interact with technology.</p>
+                <p>Dom and Evan both understood that the tone of a platform matters more than its features. Vine felt playful and experimental. Snapchat felt intimate and ephemeral. These weren't just design choices - they were cultural statements about how people should interact with technology.</p>
                 
                 <p>Respectability as a founder isn't about being boring or corporate. It's about being consistent, reliable, and authentic to your vision. It's about building something that people can trust, even if they don't fully understand it yet.</p>
                 
-                <p>The best founders don't just build products—they build cultures. They create environments where people feel comfortable being themselves, where creativity feels natural, where connection feels inevitable.</p>
+                <p>The best founders don't just build products - they build cultures. They create environments where people feel comfortable being themselves, where creativity feels natural, where connection feels inevitable.</p>
                 
-                <p>That's what Dom and Evan did. That's what Mike and Dietrich and Larry did. They didn't just sell products—they sold experiences, identities, ways of being in the world.</p>
+                <p>That's what Dom and Evan did. That's what Mike and Dietrich and Larry did. They didn't just sell products - they sold experiences, identities, ways of being in the world.</p>
                 
                 <p>And they did it all with remarkable simplicity.</p>
               </div>

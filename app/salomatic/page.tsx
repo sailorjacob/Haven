@@ -47,7 +47,7 @@ export default function SalomaticPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-600 mb-4">
-                We redesigned the investor pitch deck end-to-end: story arc, typography, iconography, and data visualization. The goal was to clearly communicate Salomatic’s value—AI-assisted interpretation of lab panels—while keeping the narrative credible for global healthcare.
+                We redesigned the investor pitch deck end-to-end: story arc, typography, iconography, and data visualization. The goal was to clearly communicate Salomatic’s value-AI-assisted interpretation of lab panels-while keeping the narrative credible for global healthcare.
               </p>
               <p className="text-zinc-600">
                 The new deck improves clarity of clinical claims, highlights partnerships, and reframes the opportunity around patient comprehension and provider efficiency.

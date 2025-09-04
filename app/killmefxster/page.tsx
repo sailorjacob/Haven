@@ -495,7 +495,7 @@ export default function KillMeFxsterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <p className="text-zinc-400 mb-4">
-                Operating from undisclosed locations—potentially a French castle or through a network of trusted contacts—Kill Me Faster maintains a commanding presence in digital space while remaining physically anonymous. Between high-value art sales, digital counter-terrorism operations, and developing advanced robotics for castle construction and companion immortalization, the artist's influence extends across multiple domains.
+                Operating from undisclosed locations-potentially a French castle or through a network of trusted contacts-Kill Me Faster maintains a commanding presence in digital space while remaining physically anonymous. Between high-value art sales, digital counter-terrorism operations, and developing advanced robotics for castle construction and companion immortalization, the artist's influence extends across multiple domains.
               </p>
               <p className="text-zinc-400">
                 Through anonymous writings, AI-generated content, and strategic market operations, the artist's influence on digital culture may parallel historical figures like Voltaire, while simultaneously building a legacy through precious metal preservation and autonomous castle systems.

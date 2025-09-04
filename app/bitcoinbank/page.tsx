@@ -505,7 +505,7 @@ export default function BitcoinBankPage() {
               </p>
               <ul className="space-y-2 text-sm text-zinc-600 mb-4">
                 <li>• Track Specific Addresses: Identify wallets or addresses tied to particular individuals, businesses, or groups. For example, a business could use a designated wallet for all its transactions, allowing you to filter and brand those transactions as "theirs."</li>
-                <li>• Cross-Reference Data: Combine blockchain data with external information (e.g., a member list or purchase records) to verify who's spending, how much, and for what. This lets you tag transactions with specific use cases—like "customer purchases" or "membership fees."</li>
+                <li>• Cross-Reference Data: Combine blockchain data with external information (e.g., a member list or purchase records) to verify who's spending, how much, and for what. This lets you tag transactions with specific use cases-like "customer purchases" or "membership fees."</li>
                 <li>• Add Branding On-Chain: Use Bitcoin's OP_RETURN field to embed a small identifier (e.g., "BEES2023" for "Bees Bitcoin Bank") in transactions. This marks them directly on the ledger for easy verification.</li>
                 <li>• Leverage Layer 2 (L2): On the Lightning Network, a Bitcoin L2 solution, you can add metadata to off-chain transactions (e.g., via invoices). This could include branding tags, which are then linked to the on-chain channel openings and closings.</li>
               </ul>
@@ -561,7 +561,7 @@ export default function BitcoinBankPage() {
                 Not quite in this way. While some projects use blockchain metadata (e.g., OP_RETURN for timestamps), this specific implementation of visual transaction branding with animated bees and real-time value comparisons is unique. The combination of cute bee animations, intuitive value visualization, and user-friendly interface creates a fresh approach to making Bitcoin transactions more engaging and understandable.
               </p>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                In short, yes, you can use the public nature of Bitcoin's ledger to brand transactions by cross-referencing and verifying data. It's a practical concept with real value for businesses, communities, or analytics—though it requires careful design to balance privacy and effectiveness.
+                In short, yes, you can use the public nature of Bitcoin's ledger to brand transactions by cross-referencing and verifying data. It's a practical concept with real value for businesses, communities, or analytics-though it requires careful design to balance privacy and effectiveness.
               </p>
             </div>
           </div>
@@ -570,7 +570,7 @@ export default function BitcoinBankPage() {
             <div>
               <h2 className="text-lg font-medium text-zinc-800 mb-3">Visual Design & Data Visualization</h2>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                The idea is to enhance Bitcoin transactions with visual designs—think of it like adding the flair of physical dollar bills, such as a bee animation SVG logo—to help people better understand and mentally model their transactions. You also want to pair this with a data visualization website that compares the value of anything tradable in the world, like apples to oranges, showing how much of one item equals another in terms of Bitcoin or other assets. Let's break this down and bring it to life with a practical example.
+                The idea is to enhance Bitcoin transactions with visual designs-think of it like adding the flair of physical dollar bills, such as a bee animation SVG logo-to help people better understand and mentally model their transactions. You also want to pair this with a data visualization website that compares the value of anything tradable in the world, like apples to oranges, showing how much of one item equals another in terms of Bitcoin or other assets. Let's break this down and bring it to life with a practical example.
               </p>
             </div>
 
@@ -578,7 +578,7 @@ export default function BitcoinBankPage() {
               <h3 className="text-md font-medium text-zinc-800 mb-2">How It Could Work</h3>
               <h4 className="text-sm font-medium text-zinc-700 mb-2">1. Visual Designs for Bitcoin Transactions</h4>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                Bitcoin transactions are raw data on the blockchain, so we can't embed animations or logos directly into them. Instead, we can build a custom interface—like a wallet or browser extension—that overlays visual elements onto the transaction data. Here's how it could look:
+                Bitcoin transactions are raw data on the blockchain, so we can't embed animations or logos directly into them. Instead, we can build a custom interface-like a wallet or browser extension-that overlays visual elements onto the transaction data. Here's how it could look:
               </p>
               <ul className="space-y-2 text-sm text-zinc-600 mb-4">
                 <li>• Bee Animation for Transactions: When you send or receive Bitcoin, your wallet could display a buzzing bee animation. For example, sending 0.001 BTC might show a single bee flying across the screen with a message like "Funds delivered!" A larger transaction, say 0.1 BTC, could trigger a swarm of bees, visually representing the scale.</li>
@@ -590,7 +590,7 @@ export default function BitcoinBankPage() {
             <div>
               <h4 className="text-sm font-medium text-zinc-700 mb-2">2. Data Visualization Website</h4>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                The second part of your vision is a website that compares the value of tradable items—everything from apples to luxury cars—in terms of Bitcoin or other currencies. This would make Bitcoin's value more relatable and intuitive. Here's the concept:
+                The second part of your vision is a website that compares the value of tradable items-everything from apples to luxury cars-in terms of Bitcoin or other currencies. This would make Bitcoin's value more relatable and intuitive. Here's the concept:
               </p>
               <ul className="space-y-2 text-sm text-zinc-600 mb-4">
                 <li>• Item-to-Item Comparisons: Users could see that 0.001 BTC equals 10 apples, 5 oranges, or half a movie ticket. Or they could compare goods directly: how many oranges equal one apple in Bitcoin terms?</li>

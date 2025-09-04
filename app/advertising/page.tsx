@@ -53,7 +53,7 @@ export default function AdvertisingPage() {
   const faqs = [
     {
       question: "What's included in the unmatched advertising services?",
-      answer: "Our unmatched services include revolutionary brand concept development, bespoke visual systems, distinctive narrative creation, and immersive brand experiences. We craft the entire brand universe from conceptual foundation to execution."
+      answer: "We develop brand concepts, create visual systems, build distinctive narratives, and design immersive brand experiences. We handle everything from the initial idea to final execution."
     },
     {
       question: "How long does it take to develop a unique brand identity?",

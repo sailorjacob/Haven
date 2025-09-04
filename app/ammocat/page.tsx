@@ -196,7 +196,7 @@ export default function AmmocatPage() {
                 The new ammocat3000.com website has significantly expanded the artist's digital presence and commercial reach, creating a new revenue stream through online sales while strengthening their brand identity.
               </p>
               <p className="text-zinc-600">
-                The interactive mini-game has proven particularly successful in increasing user engagement, with visitors spending an average of 12 minutes on the site—far exceeding industry standards for art and e-commerce websites.
+                The interactive mini-game has proven particularly successful in increasing user engagement, with visitors spending an average of 12 minutes on the site-far exceeding industry standards for art and e-commerce websites.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">

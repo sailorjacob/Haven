@@ -103,7 +103,7 @@ export default function IDontLikeTheWordProductPage() {
                 
                 <p>Elon doesn't talk about products. He talks about missions. He talks about changing the world. He talks about solving problems that matter.</p>
                 
-                <p>SpaceX isn't a product—it's a mission to make humanity a multi-planetary species. Tesla isn't a product—it's a mission to accelerate the world's transition to sustainable energy. Neuralink isn't a product—it's a mission to merge human consciousness with artificial intelligence.</p>
+                <p>SpaceX isn't a product-it's a mission to make humanity a multi-planetary species. Tesla isn't a product-it's a mission to accelerate the world's transition to sustainable energy. Neuralink isn't a product-it's a mission to merge human consciousness with artificial intelligence.</p>
                 
                 <p>These aren't products. They're movements. They're revolutions. They're attempts to change the fundamental nature of what it means to be human.</p>
                 

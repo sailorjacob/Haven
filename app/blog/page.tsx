@@ -112,6 +112,15 @@ const RandomScribbles = () => {
 
 const posts = [
   {
+    slug: "/elon-says-the-most-enteertaining-outcome-is-the-most-likely-i-think-the-most-star-is",
+    title: "Elon says the most enteertaining outcome is the most likely. I think the most '*' is..",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
+  {
     slug: "/i-dont-need-to-know-code-i-dont-need-to-know-math",
     title: "I don't need to know code. I don't need to know math",
     description: "Coming soon...",
@@ -132,15 +141,6 @@ const posts = [
   {
     slug: "/cigarette-genocide",
     title: "Cigarette Genocide",
-    description: "Coming soon...",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: Lock,
-    date: "Coming Soon",
-    isPreview: true,
-  },
-  {
-    slug: "/elon-says-the-most-entertaining-is-the-most-likely-i-say-the-most-boring-is",
-    title: "Elon says the most entertaining is the most likely, I say the most boring is",
     description: "Coming soon...",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Lock,
