@@ -210,6 +210,15 @@ export default function ShopPage() {
       description: "Premium graphic design on soft cotton blend",
       price: "$45",
       stripeLink: "https://buy.stripe.com/5kQ9AUdtV6PGaZ18lJ57W07"
+    },
+    {
+      id: "blackbunny",
+      name: "Black Bunny",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/black%20bunny%20(1).png",
+      hoverImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/bunny2.png",
+      description: "Mysterious black bunny design",
+      price: "$46",
+      stripeLink: "https://buy.stripe.com/fZudRadtV3Du7MPatR57W08"
     }
   ]
 
