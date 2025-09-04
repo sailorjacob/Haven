@@ -546,20 +546,11 @@ export default function BlogIndex() {
               className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
+                <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Shop
+                </Link>
                 <Link href="/" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Studio
-                </Link>
-                <Link href="/products" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Products
-                </Link>
-                <Link href="/work" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Work
-                </Link>
-                <Link href="/explore" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Explore
-                </Link>
-                <Link href="/contact" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Contact
+                  Home
                 </Link>
               </div>
             </motion.div>

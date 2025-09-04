@@ -514,17 +514,11 @@ export default function HomePage() {
           {mobileMenuOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
               <div className="container mx-auto px-6 py-4 space-y-3">
-                <Link href="/" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Studio
+                <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Shop
                 </Link>
-                <Link href="/products" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Products
-                </Link>
-                <Link href="/explore" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Explore
-                </Link>
-                <Link href="/contact" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
-                  Contact
+                <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                  Blog
                 </Link>
               </div>
             </motion.div>
