@@ -112,8 +112,8 @@ const RandomScribbles = () => {
 
 const posts = [
   {
-    slug: "/elon-says-the-most-enteertaining-outcome-is-the-most-likely-i-think-the-most-star-is",
-    title: "Elon says the most enteertaining outcome is the most likely. I think the most '*' is..",
+    slug: "/elon-says-the-most-entertaining-outcome-is-the-most-likely-i-think-the-most-star-is",
+    title: "Elon says the most entertaining outcome is the most likely. I think the most '*' is..",
     description: "Coming soon...",
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: Lock,
