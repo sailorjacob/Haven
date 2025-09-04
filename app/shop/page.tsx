@@ -116,8 +116,23 @@ export default function ShopPage() {
     }))
   }
 
-  // Product selection function
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768) // md breakpoint
+    }
+
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
+
+  // Product selection function - desktop only
   const selectProduct = (productId: string) => {
+    if (isMobile) return // Disable on mobile
     setSelectedProduct(productId === selectedProduct ? null : productId)
   }
 
@@ -431,8 +446,8 @@ export default function ShopPage() {
                   key={`grid-${product.id}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
-                    opacity: selectedProduct ? (isSelected ? 0 : 0.3) : 1,
-                    scale: selectedProduct ? (isSelected ? 0.95 : 0.95) : 1,
+                    opacity: selectedProduct && !isMobile ? (isSelected ? 0 : 0.3) : 1,
+                    scale: selectedProduct && !isMobile ? (isSelected ? 0.95 : 0.95) : 1,
                     y: 0
                   }}
                   transition={{
@@ -452,7 +467,7 @@ export default function ShopPage() {
                   }`}>
                   {/* Product Image */}
                   <div className={`relative overflow-hidden transition-all duration-500 ${
-                    isSelected ? 'h-[600px]' : 'h-96'
+                    isSelected && !isMobile ? 'h-[600px]' : 'h-96'
                   }`}>
                     <Image
                       src={getCurrentImage(product)}
@@ -463,7 +478,7 @@ export default function ShopPage() {
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
 
                     {/* Image Toggle for Selected Product */}
-                    {isSelected && product.hoverImage && (
+                    {isSelected && !isMobile && product.hoverImage && (
                       <div className="absolute top-4 right-4 flex space-x-2">
                         <button
                           onClick={(e) => {
@@ -594,7 +609,7 @@ export default function ShopPage() {
                     </div>
 
                     {/* Back Button for Selected Product */}
-                    {isSelected && (
+                    {isSelected && !isMobile && (
                       <div className="absolute top-4 left-4 z-10">
                         <button
                           onClick={(e) => {
@@ -620,7 +635,7 @@ export default function ShopPage() {
           </div>
 
           {/* Selected Product Overlay */}
-          {selectedProduct && (
+          {selectedProduct && !isMobile && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
