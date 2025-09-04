@@ -139,6 +139,15 @@ const posts = [
     isPreview: true,
   },
   {
+    slug: "/i-dont-need-to-know-code-i-dont-need-to-know-math",
+    title: "I don't need to know code. I don't need to know math",
+    description: "Coming soon...",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Lock,
+    date: "Coming Soon",
+    isPreview: true,
+  },
+  {
     slug: "/is-the-world-dangerous-or-safe",
     title: "Is the world dangerous or safe?",
     description: "We have iPhones, video games, art museums, and sports. But we have hundreds of millions if not billions on the threshold of poverty. Does this mean there's a long way to fall for those at the top? Or will those at the bottom be lifted?",
@@ -177,6 +186,14 @@ const posts = [
     image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
     Icon: FileText,
     date: "Sep 2025",
+  },
+  {
+    slug: "/ai-work-no-shame",
+    title: "No Shame in AI",
+    description: "All of my work is powered by AI. From blog posts to reports, creative stories to professional analyses, AI generates the bulk of the content.",
+    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
+    Icon: Sparkles,
+    date: "Oct 2025",
   },
   {
     slug: "/the-mosquito",
@@ -507,7 +524,13 @@ export default function BlogIndex() {
         </div>
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }} 
+              animate={{ opacity: 1, height: "auto" }} 
+              exit={{ opacity: 0, height: 0 }} 
+              transition={{ duration: 0.3 }} 
+              className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700"
+            >
               <div className="w-full px-4 sm:px-6 py-4 space-y-4">
                 <Link href="/shop" className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
                   Shop

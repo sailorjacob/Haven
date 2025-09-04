@@ -204,13 +204,12 @@ export default function ShopPage() {
       stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
     },
     {
-      id: "blackbunny",
-      name: "Black Bunny",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/black%20bunny%20(1).png",
-      hoverImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/bunny2.png",
-      description: "Mysterious black bunny design",
-      price: "$46",
-      stripeLink: "https://buy.stripe.com/fZudRadtV3Du7MPatR57W08"
+      id: "transrealala",
+      name: "TransrealAla",
+      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/transrealala.png",
+      description: "Transreal Ala design - bridging reality and imagination",
+      price: "$45",
+      stripeLink: "https://buy.stripe.com/eVq5kE4Xp5LC8QTcBZ57W06"
     }
   ]
 
@@ -378,7 +377,13 @@ export default function ShopPage() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }} 
+              animate={{ opacity: 1, height: "auto" }} 
+              exit={{ opacity: 0, height: 0 }} 
+              transition={{ duration: 0.3 }} 
+              className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700"
+            >
               <div className="w-full px-4 sm:px-6 py-4 space-y-4">
                 <Link href={`/blog`} className="block text-right text-base font-light transition-all duration-300 delay-100 group hover:translate-x-1 text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
                   Blog

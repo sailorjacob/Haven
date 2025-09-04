@@ -669,7 +669,7 @@ export default function WorkPage() {
               <p className={`text-lg max-w-2xl mx-auto transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
               }`}>
-                See how we've helped visionary brands create distinctive identities that challenge conventions.
+                See how we've helped visionary brands create distinctive identities.
               </p>
             </motion.div>
 
@@ -703,7 +703,7 @@ export default function WorkPage() {
                         theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                       }`}>A viral marketing agency connecting brands with micro-influencers to create hundreds of authentic campaign videos.</p>
                       <div className="flex items-center text-zinc-400 font-medium">
-                        View Case Study
+                        View
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </div>
@@ -766,7 +766,7 @@ export default function WorkPage() {
             <p className={`text-sm mb-6 max-w-xl mx-auto transition-colors duration-300 ${
               theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
             }`}>
-              Let's collaborate on custom solutions that elevate your brand and captivate your audience.
+              Let's collaborate on custom solutions that elevate your brand.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
