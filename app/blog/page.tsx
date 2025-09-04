@@ -726,9 +726,7 @@ export default function BlogIndex() {
                 <div className="text-center">
                   {/* Lock icon and title on same line */}
                   <div className="flex items-center justify-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-red-900/80 rounded-full flex items-center justify-center">
-                      <Lock className="w-5 h-5 text-red-400" />
-                    </div>
+                    <Lock className="w-6 h-6 text-red-500" />
                     <h2 className="text-xl font-bold text-zinc-100">Unlock</h2>
                   </div>
 
@@ -747,7 +745,7 @@ export default function BlogIndex() {
                       href="https://buy.stripe.com/fZufZicpR2zq6IL0Th57W0b"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-center text-sm"
+                      className="flex-1 px-4 py-2.5 bg-zinc-700 hover:bg-zinc-600 text-zinc-200 rounded-lg transition-colors duration-200 text-center text-sm"
                     >
                       Unlock for $450
                     </a>
