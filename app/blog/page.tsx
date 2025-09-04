@@ -121,15 +121,6 @@ const posts = [
     isPreview: true,
   },
   {
-    slug: "/i-dont-need-to-know-code-i-dont-need-to-know-math",
-    title: "I don't need to know code. I don't need to know math",
-    description: "Coming soon...",
-    image: "https://nu8yz6iiqtcqwmvw.public.blob.vercel-storage.com/theater4-zuEGjHSjKeHSqJt9xFovS1Vy9TCSPa.png",
-    Icon: Lock,
-    date: "Coming Soon",
-    isPreview: true,
-  },
-  {
     slug: "/i-hate-the-status-quo",
     title: "I hate the status quo",
     description: "Coming soon...",
