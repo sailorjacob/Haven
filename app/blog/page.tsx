@@ -721,7 +721,7 @@ export default function BlogIndex() {
                   <h2 className="text-2xl font-bold text-zinc-100 mb-4">Unlock</h2>
 
                   <p className="text-zinc-400 mb-6">
-                    This blog post is coming soon. Unlock access to all premium content for just $450.
+                    This blog post is coming soon. Unlock access to all hidden content for just $450.
                   </p>
 
                   <div className="flex space-x-3">
