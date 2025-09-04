@@ -387,14 +387,10 @@ export default function BlogIndex() {
   const renderPreviewPosts = () => (
     <div className="mb-12">
       <div className="flex items-center space-x-3 mb-6">
-        <h2 className={`text-sm font-medium uppercase tracking-wider transition-colors duration-300 ${
-          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
-        }`}>
+        <h2 className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-zinc-400">
           Upcoming
         </h2>
-        <div className={`flex-1 h-px transition-colors duration-300 ${
-          theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300'
-        }`}></div>
+        <div className="flex-1 h-px transition-colors duration-300 bg-zinc-700"></div>
       </div>
 
       <AnimatePresence mode="wait">
@@ -409,39 +405,23 @@ export default function BlogIndex() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {previewPosts.map((post) => (
                 <div key={post.slug} className="group cursor-not-allowed">
-                  <div className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
-                    theme === 'dark'
-                      ? 'bg-zinc-800/50 border-zinc-700/50'
-                      : 'bg-zinc-100/50 border-zinc-200/50'
-                  }`}>
+                  <div className="rounded-2xl border overflow-hidden transition-all duration-300 bg-zinc-800/50 border-zinc-700/50">
                     <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)} opacity-50`}>
                       <RandomScribbles />
-                      <div className={`absolute inset-0 mix-blend-overlay ${
-                        theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                      }`} />
+                      <div className="absolute inset-0 mix-blend-overlay bg-zinc-900/30" />
                       {/* Lock Icon positioned above scribbles */}
                       <div className="absolute top-4 left-4 z-30">
-                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm shadow-lg ${
-                          theme === 'dark'
-                            ? 'bg-red-900/80 text-red-400 border-red-700/60'
-                            : 'bg-red-100/90 text-red-600 border-red-300/60'
-                        }`}>
-                          {post.Icon ? <post.Icon className="w-6 h-6" /> : null}
+                        <div className="inline-flex items-center justify-center w-12 h-12">
+                          {post.Icon ? <post.Icon className="w-6 h-6 transition-colors duration-300 text-red-400" /> : null}
                         </div>
                       </div>
                     </div>
                     <div className="p-5">
                       <div className="flex items-start justify-between">
-                        <h2 className={`text-lg font-medium transition-colors duration-300 ${
-                          theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
-                        }`}>{post.title}</h2>
-                        <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                          theme === 'dark' ? 'text-zinc-600' : 'text-zinc-400'
-                        }`}>{post.date}</span>
+                        <h2 className="text-lg font-medium transition-colors duration-300 text-zinc-400">{post.title}</h2>
+                        <span className="text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 text-zinc-600">{post.date}</span>
                       </div>
-                      <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                        theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
-                      }`}>{post.description}</p>
+                      <p className="text-sm mt-2 leading-relaxed transition-colors duration-300 text-zinc-500">{post.description}</p>
                     </div>
                   </div>
                 </div>
@@ -451,22 +431,16 @@ export default function BlogIndex() {
             <div className="space-y-4">
               {previewPosts.map((post) => (
                 <div key={post.slug} className="group cursor-not-allowed">
-                  <div className={`rounded-xl border p-6 transition-all duration-300 ${
-                    theme === 'dark'
-                      ? 'bg-zinc-800/50 border-zinc-700/50'
-                      : 'bg-zinc-100/50 border-zinc-200/50'
-                  }`}>
+                  <div className="rounded-xl border p-6 transition-all duration-300 bg-zinc-800/50 border-zinc-700/50">
                     <div className="flex items-start space-x-4">
                                                 <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)} opacity-50`}>
                             <RandomScribbles />
-                            <div className={`absolute inset-0 mix-blend-overlay ${
-                              theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                            }`} />
+                            <div className="absolute inset-0 mix-blend-overlay bg-zinc-900/30" />
                             {/* Lock Icon positioned above scribbles */}
                             <div className="absolute inset-0 flex items-center justify-center z-30">
                               <div className="inline-flex items-center justify-center w-8 h-8">
                                 {post.Icon ? <post.Icon className={`w-5 h-5 transition-colors duration-300 ${
-                                  theme === 'dark' ? 'text-red-400' : 'text-red-600'
+                                  text-red-400
                                 }`} /> : null}
                               </div>
                             </div>
@@ -474,14 +448,14 @@ export default function BlogIndex() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between">
                           <h2 className={`text-lg font-medium transition-colors duration-300 ${
-                            theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
+                            text-zinc-400
                           }`}>{post.title}</h2>
                           <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                            theme === 'dark' ? 'text-zinc-600' : 'text-zinc-400'
+                            text-zinc-600
                           }`}>{post.date}</span>
                         </div>
                         <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                          theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
+                          text-zinc-500
                         }`}>{post.description}</p>
                       </div>
                     </div>
@@ -502,66 +476,34 @@ export default function BlogIndex() {
     contact: getSeededRandomColor('contact')
   }), [])
   return (
-    <main className={`min-h-screen transition-colors duration-300 ${
-      theme === 'dark'
-        ? 'bg-zinc-900 text-zinc-100'
-        : 'bg-white text-zinc-900'
-    }`}>
+    <main className="min-h-screen transition-colors duration-300 bg-zinc-900 text-zinc-100">
       {/* Header (same as homepage) */}
-      <header onMouseLeave={() => setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 ${
-        theme === 'dark'
-          ? 'bg-zinc-900/95 border-zinc-700'
-          : 'bg-white/90 border-zinc-200'
-      }`}>
+      <header onMouseLeave={() => setProcessOpen(false)} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 bg-zinc-900/95 border-zinc-700">
         <div className="w-full px-4 sm:px-6 py-2">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center">
-                <Hexagon className={`w-8 h-8 transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                }`} strokeWidth={1} />
-                <span className={`ml-2 text-lg font-light tracking-wider transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                }`}>Haven</span>
+                <Hexagon className="w-8 h-8 transition-colors duration-300 text-zinc-100" strokeWidth={1} />
+                <span className="ml-2 text-lg font-light tracking-wider transition-colors duration-300 text-zinc-100">Haven</span>
               </Link>
               <div className="hidden md:flex items-center space-x-6">
                 <div className="relative flex items-center" onMouseEnter={() => setProcessOpen(true)}>
-                  <Link href="/" className={`text-sm font-light transition-colors group ${
-                    theme === 'dark'
-                      ? 'text-zinc-400 hover:text-zinc-200'
-                      : 'text-zinc-600 hover:text-zinc-900'
-                  }`}>
+                  <Link href="/" className="text-sm font-light transition-colors group text-zinc-400 hover:text-zinc-200">
                     <span className="group-hover:hidden">process</span>
                     <span className={`hidden group-hover:inline ${navColors.studio}`}>process</span>
                   </Link>
                   <motion.span className="ml-1" animate={{ rotate: processOpen ? 180 : 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}>
-                    <ChevronDown className={`w-3.5 h-3.5 transition-colors duration-300 ${
-                      theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
-                    }`} />
+                    <ChevronDown className="w-3.5 h-3.5 transition-colors duration-300 text-zinc-400" />
                   </motion.span>
                 </div>
 
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="/blog" className={`hidden md:inline text-sm font-light transition-colors ${
-                theme === 'dark'
-                  ? 'text-zinc-400 hover:text-zinc-200'
-                  : 'text-zinc-600 hover:text-zinc-900'
-              }`}>blog</Link>
-              <Link href="/contact" className={`hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm ${
-                theme === 'dark'
-                  ? 'border-zinc-600 hover:bg-zinc-800 text-zinc-200'
-                  : 'border-zinc-300 hover:bg-zinc-50 text-zinc-900'
-              }`}>msg</Link>
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`md:hidden p-2 transition-colors duration-300 ${
-                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-900'
-              }`}>
-                {mobileMenuOpen ? <X className={`w-5 h-5 transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-400' : 'text-zinc-900'
-                }`} /> : <Menu className={`w-5 h-5 transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-400' : 'text-zinc-900'
-                }`} />}
+              <Link href="/blog" className="hidden md:inline text-sm font-light transition-colors text-zinc-400 hover:text-zinc-200">blog</Link>
+              <Link href="/contact" className="hidden md:inline-flex items-center border font-medium py-2 px-6 rounded-full transition-all duration-300 text-sm border-zinc-600 hover:bg-zinc-800 text-zinc-200">msg</Link>
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 transition-colors duration-300 text-zinc-400">
+                {mobileMenuOpen ? <X className="w-5 h-5 transition-colors duration-300 text-zinc-400" /> : <Menu className="w-5 h-5 transition-colors duration-300 text-zinc-400" />}
               </button>
             </div>
           </nav>
@@ -573,25 +515,13 @@ export default function BlogIndex() {
         </div>
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className={`md:hidden border-b transition-colors duration-300 ${
-              theme === 'dark'
-                ? 'bg-zinc-900 border-zinc-700'
-                : 'bg-white border-zinc-200'
-            }`}>
+            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
               <div className="w-full px-4 sm:px-6 py-3 space-y-3">
 
-                <Link href={`/blog`} className={`block text-sm transition-colors group ${
-                  theme === 'dark'
-                    ? 'text-zinc-400 hover:text-zinc-200'
-                    : 'text-zinc-600 hover:text-zinc-900'
-                }`} onClick={() => setMobileMenuOpen(false)}>
+                <Link href={`/blog`} className="block text-sm transition-colors group text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
                   blog
                 </Link>
-                <Link href="/contact" className={`block text-sm transition-colors tracking-wider uppercase group ${
-                  theme === 'dark'
-                    ? 'text-zinc-400 hover:text-zinc-200'
-                    : 'text-zinc-600 hover:text-zinc-900'
-                }`} onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/contact" className="block text-sm transition-colors tracking-wider uppercase group text-zinc-400 hover:text-zinc-200" onClick={() => setMobileMenuOpen(false)}>
                   <span className="group-hover:hidden">Contact</span>
                   <span className={`hidden group-hover:inline ${navColors.contact}`}>Contact</span>
                 </Link>
@@ -602,11 +532,7 @@ export default function BlogIndex() {
       </header>
 
       <div className="fixed inset-0 -z-10">
-        <div className={`absolute inset-0 transition-colors duration-300 ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-900'
-            : 'bg-gradient-to-b from-zinc-50 via-white to-zinc-50'
-        }`} />
+        <div className="absolute inset-0 transition-colors duration-300 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-900" />
       </div>
 
       <div className="pt-20" />
@@ -614,38 +540,20 @@ export default function BlogIndex() {
       <div className="max-w-6xl mx-auto px-6 pb-16">
         {/* Jacob's Profile Section */}
         <div className="mb-12">
-          <div className={`rounded-2xl border p-6 md:p-8 shadow-sm transition-colors duration-300 ${
-            theme === 'dark'
-              ? 'bg-zinc-800 border-zinc-700'
-              : 'bg-white border-zinc-200'
-          }`}>
+          <div className="rounded-2xl border p-6 md:p-8 shadow-sm transition-colors duration-300 bg-zinc-800 border-zinc-700">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
               <div className="relative flex-shrink-0">
-                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                  theme === 'dark'
-                    ? 'bg-gradient-to-br from-zinc-700 to-zinc-800'
-                    : 'bg-gradient-to-br from-zinc-100 to-zinc-200'
-                }`}>
-                  <Hexagon className={`w-8 h-8 md:w-10 md:h-10 transition-colors duration-300 ${
-                    theme === 'dark' ? 'text-zinc-300' : 'text-zinc-600'
-                  }`} strokeWidth={1} />
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors duration-300 bg-gradient-to-br from-zinc-700 to-zinc-800">
+                  <Hexagon className="w-8 h-8 md:w-10 md:h-10 transition-colors duration-300 text-zinc-300" strokeWidth={1} />
                 </div>
-                <div className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full border-2 transition-colors duration-300 ${
-                  theme === 'dark' ? 'border-zinc-800' : 'border-white'
-                }`}></div>
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full border-2 transition-colors duration-300 border-zinc-800"></div>
               </div>
               <div className="flex-1 min-w-0">
                 <Link href="/story" className="hover:opacity-80 transition-opacity">
-                  <h2 className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${
-                    theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                  }`}>Jacob Hale</h2>
+                  <h2 className="text-lg md:text-xl font-semibold transition-colors duration-300 text-zinc-100">Jacob Hale</h2>
                 </Link>
-                <p className={`mt-1 text-sm md:text-base transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                }`}>Founder & Creative Director</p>
-                <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                  theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500'
-                }`}>
+                <p className="mt-1 text-sm md:text-base transition-colors duration-300 text-zinc-400">Founder & Creative Director</p>
+                <p className="text-sm mt-2 leading-relaxed transition-colors duration-300 text-zinc-500">
                   Exploring the intersection of technology, culture, and human potential. Building the future through thoughtful design.
                 </p>
               </div>
@@ -656,28 +564,18 @@ export default function BlogIndex() {
         <div className="mb-10">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className={`text-2xl md:text-3xl font-light transition-colors duration-300 ${
-                theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-              }`}>🌋🏛️⚔️</h1>
-              <p className={`mt-2 transition-colors duration-300 ${
-                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-              }`}>thoughts ideas + generations</p>
+              <h1 className="text-2xl md:text-3xl font-light transition-colors duration-300 text-zinc-100">🌋🏛️⚔️</h1>
+              <p className="mt-2 transition-colors duration-300 text-zinc-400">thoughts ideas + generations</p>
             </div>
 
             {/* View Mode Switcher */}
-            <div className={`flex items-center space-x-2 rounded-lg p-1 transition-colors duration-300 ${
-              theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-100'
-            }`}>
+            <div className="flex items-center space-x-2 rounded-lg p-1 transition-colors duration-300 bg-zinc-800">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-md transition-all duration-200 ${
                   viewMode === 'grid'
-                    ? theme === 'dark'
-                      ? 'bg-zinc-700 text-zinc-200 shadow-sm'
-                      : 'bg-white text-zinc-900 shadow-sm'
-                    : theme === 'dark'
-                      ? 'text-zinc-400 hover:text-zinc-200'
-                      : 'text-zinc-600 hover:text-zinc-900'
+                    ? 'bg-zinc-700 text-zinc-200 shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
                 <Grid className="w-4 h-4" />
@@ -686,12 +584,8 @@ export default function BlogIndex() {
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-md transition-all duration-200 ${
                   viewMode === 'list'
-                    ? theme === 'dark'
-                      ? 'bg-zinc-700 text-zinc-200 shadow-sm'
-                      : 'bg-white text-zinc-900 shadow-sm'
-                    : theme === 'dark'
-                      ? 'text-zinc-400 hover:text-zinc-200'
-                      : 'text-zinc-600 hover:text-zinc-900'
+                    ? 'bg-zinc-700 text-zinc-200 shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
                 <List className="w-4 h-4" />
@@ -707,14 +601,10 @@ export default function BlogIndex() {
         {publishedPosts.length > 0 && (
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <h2 className={`text-sm font-medium uppercase tracking-wider transition-colors duration-300 ${
-                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
-              }`}>
+              <h2 className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-zinc-400">
                 Published
               </h2>
-              <div className={`flex-1 h-px transition-colors duration-300 ${
-                theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300'
-              }`}></div>
+              <div className="flex-1 h-px transition-colors duration-300 bg-zinc-700"></div>
             </div>
 
             <AnimatePresence mode="wait">
@@ -729,36 +619,20 @@ export default function BlogIndex() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {publishedPosts.map((post) => (
                       <Link key={post.slug} href={post.slug} className="group">
-                        <div className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg ${
-                          theme === 'dark'
-                            ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
-                            : 'bg-white border-zinc-200 hover:border-zinc-400'
-                        }`}>
+                        <div className="rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg bg-zinc-800 border-zinc-700 hover:border-zinc-600">
                           <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)}`}>
                             <RandomScribbles />
-                            <div className={`absolute inset-0 mix-blend-overlay ${
-                              theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                            }`} />
-                            <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm shadow-sm ${
-                              theme === 'dark'
-                                ? 'bg-zinc-700/80 text-zinc-200 border-zinc-600'
-                                : 'bg-white/80 text-zinc-800 border-zinc-200'
-                            }`}>
+                            <div className="absolute inset-0 mix-blend-overlay bg-zinc-900/30" />
+                            <div className="absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm shadow-sm bg-zinc-700/80 text-zinc-200 border-zinc-600">
                               {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
                             </div>
                           </div>
                           <div className="p-5">
                             <div className="flex items-start justify-between">
-                              <h2 className={`text-lg font-medium transition-colors duration-300 ${
-                                theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
-                              }`}>{post.title}</h2>
-                              <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                                theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
-                              }`}>{post.date}</span>
+                              <h2 className="text-lg font-medium transition-colors duration-300 text-zinc-100">{post.title}</h2>
+                              <span className="text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 text-zinc-500">{post.date}</span>
                             </div>
-                            <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                              theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                            }`}>{post.description}</p>
+                            <p className="text-sm mt-2 leading-relaxed transition-colors duration-300 text-zinc-400">{post.description}</p>
                           </div>
                         </div>
                       </Link>
@@ -768,37 +642,21 @@ export default function BlogIndex() {
                   <div className="space-y-4">
                     {publishedPosts.map((post) => (
                       <Link key={post.slug} href={post.slug} className="group">
-                        <div className={`rounded-xl border p-6 transition-all duration-300 hover:shadow-md ${
-                          theme === 'dark'
-                            ? 'bg-zinc-800 border-zinc-700 hover:border-zinc-600'
-                            : 'bg-white border-zinc-200 hover:border-zinc-400'
-                        }`}>
+                        <div className="rounded-xl border p-6 transition-all duration-300 hover:shadow-md bg-zinc-800 border-zinc-700 hover:border-zinc-600">
                           <div className="flex items-start space-x-4">
                             <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)}`}>
                               <RandomScribbles />
-                              <div className={`absolute inset-0 mix-blend-overlay ${
-                                theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                              }`} />
+                                                          <div className="absolute inset-0 mix-blend-overlay bg-zinc-900/30" />
                               <div className="absolute inset-0 flex items-center justify-center">
-                                {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
-                                  theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
-                                }`} /> : null}
+                                {post.Icon ? <post.Icon className="w-6 h-6 transition-colors duration-300 text-zinc-300" /> : null}
                               </div>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-start justify-between">
-                                <h2 className={`text-lg font-medium transition-colors group-hover:text-zinc-700 ${
-                                  theme === 'dark'
-                                    ? 'text-zinc-100 group-hover:text-zinc-300'
-                                    : 'text-zinc-900 group-hover:text-zinc-700'
-                                }`}>{post.title}</h2>
-                                <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                                  theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400'
-                                }`}>{post.date}</span>
+                                <h2 className="text-lg font-medium transition-colors group-hover:text-zinc-300 text-zinc-100">{post.title}</h2>
+                                <span className="text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 text-zinc-500">{post.date}</span>
                               </div>
-                              <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                                theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                              }`}>{post.description}</p>
+                              <p className="text-sm mt-2 leading-relaxed transition-colors duration-300 text-zinc-400">{post.description}</p>
                             </div>
                           </div>
                         </div>
