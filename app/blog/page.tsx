@@ -571,16 +571,16 @@ export default function BlogIndex() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
               <div className="relative flex-shrink-0 group">
                 <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 transition-colors duration-300 border-zinc-700">
-                  {/* Default Hexagon icon */}
-                  <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 bg-gradient-to-br from-zinc-700 to-zinc-800 group-hover:opacity-0">
+                  {/* Hidden Hexagon icon that appears on hover */}
+                  <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 bg-gradient-to-br from-zinc-700 to-zinc-800 opacity-0 group-hover:opacity-100">
                     <Hexagon className="w-8 h-8 md:w-10 md:h-10 transition-colors duration-300 text-zinc-300" strokeWidth={1} />
                   </div>
-                  {/* Hidden profile picture that appears on hover */}
+                  {/* Default profile picture that gets hidden on hover */}
                   <Image
                     src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/j2222.JPG"
                     alt="Jacob Hale profile"
                     fill
-                    className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="object-cover transition-opacity duration-500 group-hover:opacity-0"
                   />
                 </div>
                 <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-full border-2 transition-colors duration-300 border-zinc-800"></div>
