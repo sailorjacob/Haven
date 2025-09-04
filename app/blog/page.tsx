@@ -349,12 +349,12 @@ export default function BlogIndex() {
                       <div className={`absolute inset-0 mix-blend-overlay ${
                         theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
                       }`} />
-                      <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-sm shadow-sm ${
+                      <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm shadow-lg ${
                         theme === 'dark'
-                          ? 'bg-zinc-700/50 text-zinc-400 border-zinc-600/50'
-                          : 'bg-white/50 text-zinc-500 border-zinc-200/50'
+                          ? 'bg-red-900/80 text-red-400 border-red-700/60'
+                          : 'bg-red-100/90 text-red-600 border-red-300/60'
                       }`}>
-                        {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                        {post.Icon ? <post.Icon className="w-6 h-6" /> : null}
                       </div>
                     </div>
                     <div className="p-5">
@@ -384,17 +384,17 @@ export default function BlogIndex() {
                       : 'bg-zinc-100/50 border-zinc-200/50'
                   }`}>
                     <div className="flex items-start space-x-4">
-                      <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)} opacity-50`}>
-                        <RandomScribbles />
-                        <div className={`absolute inset-0 mix-blend-overlay ${
-                          theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
-                        }`} />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
-                            theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500'
-                          }`} /> : null}
-                        </div>
-                      </div>
+                                                <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)} opacity-50`}>
+                            <RandomScribbles />
+                            <div className={`absolute inset-0 mix-blend-overlay ${
+                              theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
+                            }`} />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
+                                theme === 'dark' ? 'text-red-400' : 'text-red-600'
+                              }`} /> : null}
+                            </div>
+                          </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between">
                           <h2 className={`text-lg font-medium transition-colors duration-300 ${
