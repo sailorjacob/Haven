@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={caveat.variable} suppressHydrationWarning>
+    <html lang="en" className={`${caveat.variable} dark`} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,6 +42,7 @@ export default function RootLayout({
           defaultTheme="dark"
           storageKey="haven-theme"
           disableTransitionOnChange
+          forcedTheme="dark"
         >
           {children}
           <CookieConsent />

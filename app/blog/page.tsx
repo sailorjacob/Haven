@@ -304,22 +304,55 @@ export default function BlogIndex() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('list')
   const { theme, setTheme } = useTheme() || { theme: 'light', setTheme: () => {} }
 
-  // Force blog page to always use dark mode
+  // Force blog page to always use dark mode - multiple layers of enforcement
   useEffect(() => {
-    // Force dark mode immediately and ensure it persists
+    // Force dark mode immediately
     setTheme('dark')
-    // Also try to set it in localStorage to override any cached settings
+
+    // Set localStorage with multiple keys to be thorough
     if (typeof window !== 'undefined') {
       localStorage.setItem('haven-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+
+      // Force dark class on document element immediately
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
+
+      // Also force it on body
+      document.body.classList.add('dark')
+      document.body.classList.remove('light')
     }
   }, [setTheme])
 
-  // Additional effect to ensure theme stays dark
+  // Aggressive theme monitoring and correction
   useEffect(() => {
     if (theme !== 'dark') {
       setTheme('dark')
+      // Force classes on document
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
+      document.body.classList.add('dark')
+      document.body.classList.remove('light')
     }
   }, [theme, setTheme])
+
+  // Additional effect to ensure DOM classes are correct
+  useEffect(() => {
+    const ensureDarkMode = () => {
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
+      document.body.classList.add('dark')
+      document.body.classList.remove('light')
+    }
+
+    // Run immediately
+    ensureDarkMode()
+
+    // Run again after a short delay to catch any timing issues
+    const timeout = setTimeout(ensureDarkMode, 100)
+
+    return () => clearTimeout(timeout)
+  }, [])
 
   // Separate posts into preview and published
   const previewPosts = posts.filter(post => post.isPreview)
@@ -361,12 +394,15 @@ export default function BlogIndex() {
                       <div className={`absolute inset-0 mix-blend-overlay ${
                         theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
                       }`} />
-                      <div className={`absolute top-4 left-4 inline-flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm shadow-lg z-20 ${
-                        theme === 'dark'
-                          ? 'bg-red-900/80 text-red-400 border-red-700/60'
-                          : 'bg-red-100/90 text-red-600 border-red-300/60'
-                      }`}>
-                        {post.Icon ? <post.Icon className="w-6 h-6" /> : null}
+                      {/* Lock Icon positioned above scribbles */}
+                      <div className="absolute top-4 left-4 z-30">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm shadow-lg ${
+                          theme === 'dark'
+                            ? 'bg-red-900/80 text-red-400 border-red-700/60'
+                            : 'bg-red-100/90 text-red-600 border-red-300/60'
+                        }`}>
+                          {post.Icon ? <post.Icon className="w-6 h-6" /> : null}
+                        </div>
                       </div>
                     </div>
                     <div className="p-5">
@@ -401,10 +437,15 @@ export default function BlogIndex() {
                             <div className={`absolute inset-0 mix-blend-overlay ${
                               theme === 'dark' ? 'bg-zinc-900/30' : 'bg-white/20'
                             }`} />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              {post.Icon ? <post.Icon className={`w-6 h-6 transition-colors duration-300 ${
-                                theme === 'dark' ? 'text-red-400' : 'text-red-600'
-                              }`} /> : null}
+                            {/* Lock Icon positioned above scribbles */}
+                            <div className="absolute inset-0 flex items-center justify-center z-30">
+                              <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full backdrop-blur-sm shadow-lg ${
+                                theme === 'dark'
+                                  ? 'bg-red-900/80 text-red-400 border-red-700/60'
+                                  : 'bg-red-100/90 text-red-600 border-red-300/60'
+                              }`}>
+                                {post.Icon ? <post.Icon className="w-5 h-5" /> : null}
+                              </div>
                             </div>
                           </div>
                       <div className="flex-1 min-w-0">
