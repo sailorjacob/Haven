@@ -439,24 +439,16 @@ export default function BlogIndex() {
                             {/* Lock Icon positioned above scribbles */}
                             <div className="absolute inset-0 flex items-center justify-center z-30">
                               <div className="inline-flex items-center justify-center w-8 h-8">
-                                {post.Icon ? <post.Icon className={`w-5 h-5 transition-colors duration-300 ${
-                                  text-red-400
-                                }`} /> : null}
+                                {post.Icon ? <post.Icon className="w-5 h-5 transition-colors duration-300 text-red-400" /> : null}
                               </div>
                             </div>
                           </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between">
-                          <h2 className={`text-lg font-medium transition-colors duration-300 ${
-                            text-zinc-400
-                          }`}>{post.title}</h2>
-                          <span className={`text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 ${
-                            text-zinc-600
-                          }`}>{post.date}</span>
+                          <h2 className="text-lg font-medium transition-colors duration-300 text-zinc-400">{post.title}</h2>
+                          <span className="text-xs mt-1 ml-3 flex-shrink-0 transition-colors duration-300 text-zinc-600">{post.date}</span>
                         </div>
-                        <p className={`text-sm mt-2 leading-relaxed transition-colors duration-300 ${
-                          text-zinc-500
-                        }`}>{post.description}</p>
+                        <p className="text-sm mt-2 leading-relaxed transition-colors duration-300 text-zinc-500">{post.description}</p>
                       </div>
                     </div>
                   </div>
