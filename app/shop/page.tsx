@@ -143,34 +143,58 @@ export default function ShopPage() {
     return total + (price * item.quantity)
   }, 0)
 
+  // Handle checkout - redirect to Stripe payment links
+  const handleCheckout = () => {
+    if (cartItems.length === 1) {
+      // Single item - redirect to its specific Stripe link
+      const item = cartItems[0]
+      const product = products.find(p => p.id === item.id)
+      if (product?.stripeLink) {
+        window.location.href = product.stripeLink
+      }
+    } else if (cartItems.length > 1) {
+      // Multiple items - for now, redirect to the first item's link
+      // TODO: Implement proper multi-item checkout with Stripe dynamic checkout
+      const firstItem = cartItems[0]
+      const product = products.find(p => p.id === firstItem.id)
+      if (product?.stripeLink) {
+        window.location.href = product.stripeLink
+      }
+    }
+  }
+
   const products = [
     {
       id: "transrealallah",
       name: "Trans Real Allah",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/transrealallah2.png",
       description: "Premium graphic design on soft cotton blend",
-      price: "$45"
+      price: "$45",
+      stripeLink: "https://buy.stripe.com/5kQ9AUdtV6PGaZ18lJ57W07"
     },
     {
       id: "nskk",
       name: "NSKK",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/NSKK.png",
       description: "Bold statement piece with vintage aesthetic",
-      price: "$42"
+      price: "$42",
+      stripeLink: "https://buy.stripe.com/eVq5kE4Xp5LC8QTcBZ57W06"
     },
     {
       id: "racer",
       name: "Racer",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Racer.png",
       description: "Speed-inspired design for the modern racer",
-      price: "$48"
+      price: "$48",
+      stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
     },
     {
-      id: "marble",
-      name: "Marble",
+      id: "sculpture",
+      name: "Sculpture",
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Marble.png",
       description: "Elegant marble pattern with contemporary edge",
-      price: "$44"
+      price: "$44",
+      stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
     },
     {
       id: "blackbunny",
@@ -178,7 +202,8 @@ export default function ShopPage() {
       image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/black%20bunny%20(1).png",
       hoverImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/bunny2.png",
       description: "Mysterious black bunny design",
-      price: "$46"
+      price: "$46",
+      stripeLink: "https://buy.stripe.com/fZudRadtV3Du7MPatR57W08"
     }
   ]
 
@@ -939,7 +964,10 @@ export default function ShopPage() {
                       <span className="text-lg font-medium">Total:</span>
                       <span className="text-lg font-medium">${cartTotal.toFixed(2)}</span>
                     </div>
-                    <button className="w-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 py-3 px-6 rounded-full font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
+                    <button
+                      onClick={handleCheckout}
+                      className="w-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 py-3 px-6 rounded-full font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
+                    >
                       Checkout
                     </button>
                   </div>
