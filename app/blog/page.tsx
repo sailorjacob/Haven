@@ -319,6 +319,8 @@ export default function BlogIndex() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [processOpen, setProcessOpen] = useState(false)
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('list')
+  const [showUnlockModal, setShowUnlockModal] = useState(false)
+  const [selectedLockedPost, setSelectedLockedPost] = useState<string | null>(null)
   const { theme, setTheme } = useTheme() || { theme: 'light', setTheme: () => {} }
 
   // Force blog page to always use dark mode - multiple layers of enforcement
@@ -400,6 +402,18 @@ export default function BlogIndex() {
   const previewPosts = posts.filter(post => post.isPreview)
   const publishedPosts = posts.filter(post => !post.isPreview)
 
+  // Handle locked post clicks
+  const handleLockedPostClick = (slug: string) => {
+    setSelectedLockedPost(slug)
+    setShowUnlockModal(true)
+  }
+
+  // Close modal
+  const closeModal = () => {
+    setShowUnlockModal(false)
+    setSelectedLockedPost(null)
+  }
+
   // Render preview posts section
   const renderPreviewPosts = () => (
     <div className="mb-12">
@@ -421,7 +435,7 @@ export default function BlogIndex() {
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {previewPosts.map((post) => (
-                <div key={post.slug} className="group cursor-not-allowed">
+                <div key={post.slug} className="group cursor-pointer" onClick={() => handleLockedPostClick(post.slug)}>
                   <div className="rounded-2xl border overflow-hidden transition-all duration-300 bg-zinc-800/50 border-zinc-700/50">
                     <div className={`relative aspect-[3/2] overflow-hidden ${getRandomBackgroundColor(post.slug)} opacity-50`}>
                       <RandomScribbles />
@@ -447,7 +461,7 @@ export default function BlogIndex() {
           ) : (
             <div className="space-y-4">
               {previewPosts.map((post) => (
-                <div key={post.slug} className="group cursor-not-allowed">
+                <div key={post.slug} className="group cursor-pointer" onClick={() => handleLockedPostClick(post.slug)}>
                   <div className="rounded-xl border p-6 transition-all duration-300 bg-zinc-800/50 border-zinc-700/50">
                     <div className="flex items-start space-x-4">
                                                 <div className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 ${getRandomBackgroundColor(post.slug)} opacity-50`}>
@@ -681,6 +695,56 @@ export default function BlogIndex() {
             </AnimatePresence>
           </div>
         )}
+
+        {/* Unlock Modal */}
+        <AnimatePresence>
+          {showUnlockModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+              onClick={closeModal}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 max-w-md w-full mx-4"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-red-900/80 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Lock className="w-8 h-8 text-red-400" />
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-zinc-100 mb-4">Unlock</h2>
+
+                  <p className="text-zinc-400 mb-6">
+                    This blog post is coming soon. Unlock access to all premium content for just $450.
+                  </p>
+
+                  <div className="flex space-x-3">
+                    <button
+                      onClick={closeModal}
+                      className="flex-1 px-6 py-3 bg-zinc-700 hover:bg-zinc-600 text-zinc-200 rounded-lg transition-colors duration-200"
+                    >
+                      Cancel
+                    </button>
+                    <a
+                      href="https://buy.stripe.com/fZufZicpR2zq6IL0Th57W0b"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-center"
+                    >
+                      Unlock for $450
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </main>
   )

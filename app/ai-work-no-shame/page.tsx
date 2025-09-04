@@ -172,90 +172,90 @@ export default function AIWorkNoShame() {
           {activeVersion === 1 && (
             <>
               <p className="text-lg text-zinc-700 leading-relaxed mb-6">
-                I use AI for almost all my writing. About 95% of the words you read come from AI models. The other 5% is just my prompts. But that 5% is only a tiny part of the real work. The heavy lifting happens in developing the thesis, building the premise, and refining those prompts.
+                I use AI for nearly all my writing. About 95% of the words come from AI, the other 5% are my prompts. That 5% might seem small, but it's just the start. The real work is in the thesis, the research, and crafting those prompts.
               </p>
 
               <p className="text-lg text-zinc-700 leading-relaxed mb-6">
-                If you think I'm just sitting back while a robot does the work, you're missing the point. Using AI isn't about laziness. It's about efficiency and amplifying human ingenuity. I'll explain why I embrace AI without shame, how the real value comes from the ideas behind it, and why this approach might be the future for creators.
+                If you think I'm just letting AI do everything, you're wrong. This isn't about being lazy. It's about working smarter. The value isn't in typing every word by hand. It's in the ideas and direction. This is the future of creating content.
               </p>
 
               <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">The Myth of "Original" Creation</h2>
               
               <p className="text-zinc-700 leading-relaxed mb-6">
-                First, let's clear up a misconception: that "real" writing must be 100% human-typed, word by word. Creators have always relied on tools to enhance their output. Typewriters replaced quills, word processors added spell-check, and now AI handles drafting. But the core of any great work isn't the mechanical act of stringing sentences together. It's the intellectual framework that holds it all up.
+                People think "real" writing means typing every word by hand. That's wrong. Creators have always used tools. Typewriters, spell-check, now AI. The important part isn't typing. It's the thinking behind it.
               </p>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                In my process, the thesis is king. Before I touch a keyboard, I spend hours (sometimes days) thinking about the central argument. What am I trying to say? Why does it matter? Who is the audience, and what evidence will convince them? This is the premise-building phase, where I research, outline, and iterate on ideas until they crystallize. Only then do I craft prompts for the AI detailed directives that specify tone, structure, length, and key points to cover.
+                My process starts with the thesis. I spend hours researching the topic, figuring out what I want to say, and who I'm saying it to. I build the foundation first. Only then do I write prompts for AI that tell it exactly what to do.
               </p>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                For example, if I'm writing about climate change solutions, my prompt might look like this: "Write a 1,500-word article arguing that individual actions are insufficient without systemic policy changes. Start with a personal anecdote, include data from recent IPCC reports, counter common objections, and end with a call to action. Use engaging, conversational language aimed at young adults." That's not just typing. It's directing a symphony. The AI generates the bulk of the text, but it's my vision steering the ship.
+                For example, writing about climate change: my prompt would be specific about the argument, what data to include, and how to structure it. The AI follows my direction. I'm not typing the words. I'm directing the work.
               </p>
 
               <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">Why AI? Efficiency Without Compromise</h2>
               
               <p className="text-zinc-700 leading-relaxed mb-6">
-                Skeptics might argue that AI dilutes authenticity or borders on plagiarism. I get it. There's a knee-jerk reaction to anything "automated." But AI doesn't create from a vacuum. It draws from vast datasets of human knowledge, remixing ideas in ways that mimic our own creative processes. And in my case, since I'm the one shaping the input, the output is inherently mine.
+                Some people worry AI makes things less authentic or like cheating. I understand the reaction. But AI doesn't create from nothing. It uses existing knowledge and follows my direction. Since I'm giving the instructions, the result is still mine.
               </p>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                The benefits are clear:
-              </p>
-
-              <ul className="list-disc list-inside text-zinc-700 leading-relaxed mb-6 space-y-2 ml-4">
-                <li><strong>Speed and Scale:</strong> What used to take me a full day of drafting can now be done in an hour. This frees up time for deeper thinking, revisions, or producing more content. In a fast-paced world, this isn't cheating. It's adapting.</li>
-                <li><strong>Overcoming Blocks:</strong> Writer's block is real, and AI helps blast through it. By generating initial drafts, it provides a starting point I can refine, ensuring my ideas don't stall out.</li>
-                <li><strong>Consistency and Quality:</strong> AI excels at grammar, flow, and variety in phrasing things that can trip up even seasoned writers. I review and edit everything, of course, but starting with a solid foundation elevates the final product.</li>
-                <li><strong>Accessibility:</strong> Not everyone has the luxury of endless time or perfect English skills. AI levels the playing field, allowing diverse voices to shine without being hindered by technical barriers.</li>
-              </ul>
-
-              <p className="text-zinc-700 leading-relaxed mb-6">
-                I always disclose when AI is involved (like right here), and I ensure the content is original in substance. Plagiarism checkers come back clean because the ideas are mine, even if the wording is AI-assisted.
-              </p>
-
-              <p className="text-zinc-700 leading-relaxed mb-6">
-                This is just the beginning. I have made music with AI. I will make a movie using AI. I will build a house using AI. And in the future, I won't trust a doctor unless they are using AI or more likely a precision robot paired with AI. The possibilities are endless when you embrace this technology as a tool for human creativity.
-              </p>
-
-              <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">The Real Work: 95% Invisible Effort</h2>
-              
-              <p className="text-zinc-700 leading-relaxed mb-6">
-                Now, back to that 95/5 split. The 5% prompting might seem minimal, but it's the tip of the iceberg. The underlying 95% is all about intellectual labor:
+                The benefits are practical:
               </p>
 
               <ul className="list-disc list-inside text-zinc-700 leading-relaxed mb-6 space-y-2 ml-4">
-                <li><strong>Thesis Development:</strong> This is the "why" of the piece. It's philosophical, requiring critical thinking to form a defensible argument. AI can't do this. It needs human direction.</li>
-                <li><strong>Premise Construction:</strong> Gathering facts, synthesizing research, and outlining logic. I pull from books, articles, personal experiences, and debates. This is where originality lives.</li>
-                <li><strong>Prompt Engineering:</strong> Don't underestimate this. Crafting effective prompts is an art. It involves trial and error, refining language to avoid biases, hallucinations, or off-topic tangents. A bad prompt yields garbage. A great one produces gold.</li>
+                <li><strong>Speed:</strong> What took a full day now takes an hour. This gives more time for thinking and editing.</li>
+                <li><strong>Overcoming Blocks:</strong> AI helps when I'm stuck. It gives me a starting point to work from.</li>
+                <li><strong>Better Quality:</strong> AI handles grammar and flow well. I still review and edit everything.</li>
+                <li><strong>Accessibility:</strong> Not everyone has perfect writing skills. AI helps more people share their ideas.</li>
               </ul>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                I'm not outsourcing creativity. I'm augmenting it. The AI is my collaborator, not my replacement. Studies show that human-AI hybrids outperform either alone in creative tasks think chess grandmasters using engines or artists with digital tools.
-              </p>
-
-              <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">Addressing the Shame: Ethics and the Future</h2>
-              
-              <p className="text-zinc-700 leading-relaxed mb-6">
-                Why no shame? Because shame implies wrongdoing, and there's none here. AI use is ethical when transparent, attributed, and used to enhance rather than deceive. Industries like journalism, marketing, and academia are already integrating it. The New York Times experiments with AI for data analysis. Professors use it for lesson planning. If they're not ashamed, why should I be?
+                I always mention when AI is used (like here). The ideas are mine, even if AI helps with the words. Plagiarism tools confirm this.
               </p>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                We must navigate challenges. Job displacement is a concern, but history shows technology creates new roles (prompt engineers, anyone?). Bias in AI outputs requires vigilance. I always fact-check and diversify sources. And over-reliance could atrophy skills, so I balance by writing some pieces fully by hand.
+                This is just the start. I've made music with AI. I'll make movies with AI. I'll build houses with AI. In the future, I won't trust doctors without AI or precision robots. The possibilities are huge when you see AI as a tool for human work.
+              </p>
+
+              <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">The Real Work: 95% Thinking, 5% Typing</h2>
+
+              <p className="text-zinc-700 leading-relaxed mb-6">
+                The 95/5 split is misleading. The 5% of prompting is just the surface. The real 95% is the thinking work:
+              </p>
+
+              <ul className="list-disc list-inside text-zinc-700 leading-relaxed mb-6 space-y-2 ml-4">
+                <li><strong>Thesis:</strong> Figuring out what I want to say and why it matters.</li>
+                <li><strong>Research:</strong> Gathering facts, reading sources, building the argument.</li>
+                <li><strong>Prompts:</strong> Writing clear instructions so AI understands what I want.</li>
+              </ul>
+
+              <p className="text-zinc-700 leading-relaxed mb-6">
+                AI isn't replacing me. It's helping me work better. Human-AI teams do better than either alone.
+              </p>
+
+              <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">No Shame, Just Progress</h2>
+
+              <p className="text-zinc-700 leading-relaxed mb-6">
+                Why no shame? Because there's nothing wrong here. AI is ethical when used transparently. News organizations, marketers, and schools already use it. If they aren't ashamed, neither am I.
               </p>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                Looking ahead, AI will democratize creation. Imagine students in under-resourced areas producing polished essays, or entrepreneurs drafting business plans without hiring ghostwriters. The focus shifts from rote production to innovative thinking, which is where humans excel.
-              </p>
-
-              <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">Conclusion: Embrace the Tool, Own the Vision</h2>
-              
-              <p className="text-zinc-700 leading-relaxed mb-6">
-                So, yes, 95% of these words were AI-generated based on my prompts. But the thesis that AI is a shameless ally in creation comes from me. The premise, that true work is conceptual, not clerical, is my stake in the ground. If you're a creator hesitant about AI, I urge you: try it. Craft your prompts, guide the output, and watch your ideas flourish.
+                There are challenges. Some jobs change, but new ones appear. AI can be biased, so I check facts carefully. I also write some things without AI to keep my skills sharp.
               </p>
 
               <p className="text-zinc-700 leading-relaxed mb-6">
-                In the end, it's not about who types the words. It's about who shapes the message. And that, my friends, will always be human.
+                AI will make creation more accessible. Students in poor areas could write better essays. Entrepreneurs could create business plans faster. The focus moves from typing to thinking.
+              </p>
+
+              <h2 className="text-2xl font-medium text-zinc-900 mt-12 mb-6">The Future is Human-AI</h2>
+
+              <p className="text-zinc-700 leading-relaxed mb-6">
+                Yes, 95% of these words came from AI based on my prompts. But the idea that AI helps without shame is mine. The belief that thinking matters more than typing is mine. If you're a creator afraid of AI, try it. Write good prompts and see your ideas improve.
+              </p>
+
+              <p className="text-zinc-700 leading-relaxed mb-6">
+                In the end, it's not about who types the words. It's about who has the vision. That will always be human.
               </p>
             </>
           )}
