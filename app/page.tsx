@@ -1127,21 +1127,21 @@ export default function HomePage() {
           {/* Signature - Bottom (appears on scroll) - Overlaid without affecting layout */}
           <div className={`absolute inset-0 flex justify-center transition-opacity duration-500 pointer-events-none ${
             isScrolled ? 'opacity-100' : 'opacity-0'
-          }`} style={{ top: 'auto', bottom: '-55px', transform: 'translateX(8px)' }}>
-            <div className="relative overflow-hidden" style={{ width: '140px', height: '45px' }}>
+          }`} style={{ top: 'auto', bottom: '-55px' }}>
+            <div className="relative overflow-hidden max-w-[120px] sm:max-w-[140px]" style={{ width: '120px', height: '45px' }}>
               <Image
                 src={theme === 'dark'
                   ? "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(2).png"
                   : "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/signature(black).png"
                 }
                 alt="Signature"
-                width={140}
+                width={120}
                 height={70}
                 className="opacity-70 hover:opacity-90 transition-opacity duration-300 absolute"
                 style={{
                   top: '-21px', // Crop 30% from top (21px of 70px)
                   left: 0,
-                  width: '140px',
+                  width: '120px',
                   height: '70px'
                 }}
               />

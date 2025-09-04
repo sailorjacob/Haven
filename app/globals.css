@@ -12,6 +12,7 @@ body {
   color: white;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
