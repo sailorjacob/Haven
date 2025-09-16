@@ -215,7 +215,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["moonlight", "klaire", "roundabout", "salomatic", "killmefaster"]
+  const hiddenIds: string[] = ["moonlight", "klaire", "roundabout", "salomatic", "killmefxster"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
