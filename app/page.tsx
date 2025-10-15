@@ -79,6 +79,15 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
+      id: "thewashbuckler",
+      title: "The Washbuckler™",
+      description: "The revolutionary sink splash guard that keeps your counters dry, your clothes clean, and your kitchen mess-free. Install in seconds, enjoy for years.",
+      technologies: ["E-commerce", "Product Design", "Kitchen"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/thewashbuckler.png",
+      link: "https://www.thewashbuckler.com/",
+      category: "website"
+    },
+    {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
       description: "fine art photography gallery.",
