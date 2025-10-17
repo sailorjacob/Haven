@@ -729,11 +729,11 @@ export default function HomePage() {
                 Premium digital experiences
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex justify-center">
                 {/* Start a Project Button */}
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] sm:min-w-0 ${
+                  className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] ${
                     theme === 'dark'
                       ? 'border-zinc-600 text-zinc-200'
                       : 'border-zinc-400 text-zinc-900'
@@ -746,26 +746,6 @@ export default function HomePage() {
                   {/* Text content */}
                   <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     start a project
-                  </span>
-                  {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                </Link>
-                {/* View Work Button */}
-                <Link
-                  href="/work"
-                  className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] sm:min-w-0 ${
-                    theme === 'dark'
-                      ? 'border-zinc-600 text-zinc-200'
-                      : 'border-zinc-400 text-zinc-900'
-                  }`}
-                >
-                  {/* Grey background that fills from left on hover */}
-                  <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
-                    theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
-                  }`}></div>
-                  {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    view work
                   </span>
                   {/* Arrow icon that appears on hover */}
                   <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
@@ -1025,7 +1005,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: <>Jacob is a digital artist and entrepreneur with <Link href="https://github.com/sailorjacob" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 transition-colors">experience</Link> in imagery and design.</>,
+                  description: <>Jacob is a digital artist and entrepreneur with experience in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }
