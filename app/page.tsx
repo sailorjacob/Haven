@@ -79,15 +79,6 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "thewashbuckler",
-      title: "The Washbuckler™",
-      description: "The revolutionary sink splash guard that keeps your counters dry, your clothes clean, and your kitchen mess-free. Install in seconds, enjoy for years.",
-      technologies: ["E-commerce", "Product Design", "Kitchen"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/thewashbuckler.png",
-      link: "https://www.thewashbuckler.com/",
-      category: "website"
-    },
-    {
       id: "jacobhalestudio",
       title: "jacobhalestudio.net",
       description: "fine art photography gallery.",
@@ -220,6 +211,15 @@ export default function HomePage() {
       technologies: ["Next.js", "Literature", "Portfolio"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
       link: "https://anthonyhadenguest.net",
+      category: "website"
+    },
+    {
+      id: "thewashbuckler",
+      title: "The Washbuckler™",
+      description: "The revolutionary sink splash guard that keeps your counters dry, your clothes clean, and your kitchen mess-free. Install in seconds, enjoy for years.",
+      technologies: ["E-commerce", "Product Design", "Kitchen"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/thewashbuckler.png",
+      link: "https://www.thewashbuckler.com/",
       category: "website"
     },
   ]
@@ -1005,7 +1005,7 @@ export default function HomePage() {
                 {
                   name: "Jacob Beam",
                   role: "Founder",
-                  description: <>Jacob is a digital artist and entrepreneur with experience in imagery and design.</>,
+                  description: <>Jacob is a digital artist and entrepreneur with <a href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline transition-all duration-200">experience</a> in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }
