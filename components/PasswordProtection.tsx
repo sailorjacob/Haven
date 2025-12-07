@@ -10,15 +10,17 @@ export default function PasswordProtection({ children }: { children: React.React
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
+  const [isChecking, setIsChecking] = useState(true)
 
   useEffect(() => {
     // Check if user is already authenticated
-    const authStatus = sessionStorage.getItem(AUTH_KEY)
-    if (authStatus === "true") {
-      setIsAuthenticated(true)
+    if (typeof window !== 'undefined') {
+      const authStatus = sessionStorage.getItem(AUTH_KEY)
+      if (authStatus === "true") {
+        setIsAuthenticated(true)
+      }
+      setIsChecking(false)
     }
-    setIsLoading(false)
   }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,17 +37,9 @@ export default function PasswordProtection({ children }: { children: React.React
     }
   }
 
-  // Show loading state while checking authentication
-  if (isLoading) {
-    return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
-        <div className="text-white text-xl">Loading...</div>
-      </div>
-    )
-  }
-
-  // Show password form if not authenticated
-  if (!isAuthenticated) {
+  // Don't render anything until we've checked authentication
+  // This prevents static content from showing before hydration
+  if (isChecking || !isAuthenticated) {
     return (
       <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
         <motion.div
