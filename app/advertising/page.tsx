@@ -150,20 +150,15 @@ export default function AdvertisingPage() {
 
       {/* Animated Intro Sequence - new impressive 3D animation */}
       <motion.div 
-        className="fixed inset-0 z-[999] flex items-center justify-center bg-black animated-overlay overflow-hidden"
+        className="fixed inset-0 z-[999] flex items-center justify-center bg-black animated-overlay overflow-hidden pointer-events-none"
         initial={{ opacity: 1 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        style={{ willChange: "opacity, transform" }}
-        onAnimationComplete={() => {
-          // When animation completes, trigger the overlay to disappear
-          const overlay = document.querySelector('.animated-overlay');
-          if (overlay) {
-            setTimeout(() => {
-              (overlay as HTMLElement).style.display = 'none';
-            }, 5000); // Show for 5 seconds total
-          }
+        animate={{ opacity: [1, 1, 1, 0] }}
+        transition={{ 
+          duration: 5.5,
+          times: [0, 0.8, 0.95, 1],
+          ease: "easeInOut"
         }}
+        style={{ willChange: "opacity, transform" }}
       >
         {/* 3D Perspective Container */}
         <div className="relative w-full h-full perspective-container" style={{ perspective: "1000px" }}>
