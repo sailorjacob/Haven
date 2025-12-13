@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Check, X, ArrowRight, Zap, Clock, Users, Star, Palette, Award, Repeat, Hexagon, Menu, Globe, Target, BarChart, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { useRef, useState } from "react"
 import AnimatedStars from "../components/AnimatedStars"
 import { Footer } from "@/components/footer"
@@ -318,23 +317,19 @@ export default function AdvertisingPage() {
                 Revolutionary branding and conceptual innovation to transform your market presence.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
+                <button 
+                  className="inline-flex items-center justify-center bg-white border-2 border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-full transition-all duration-300"
                   onClick={scrollToFeatures}
                 >
                   View Services
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </button>
                 <Link href="/contact">
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="border-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-full px-8"
+                  <button 
+                    className="inline-flex items-center justify-center bg-white border-2 border-zinc-300 hover:bg-zinc-50 text-zinc-900 font-medium py-3 px-8 rounded-full transition-all duration-300"
                   >
                     Book a 15-min intro call
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </motion.div>
