@@ -3,10 +3,6 @@ import './globals.css'
 import { Caveat } from 'next/font/google'
 import CookieConsent from "../components/CookieConsent"
 import { ThemeProvider } from "@/components/theme-provider"
-import PasswordProtection from "@/components/PasswordProtection"
-
-// Force dynamic rendering to enable password protection
-export const dynamic = 'force-dynamic'
 
 const caveat = Caveat({
   subsets: ['latin'],
@@ -49,10 +45,8 @@ export default function RootLayout({
           forcedTheme="dark"
           enableColorScheme={false}
         >
-          <PasswordProtection>
-            {children}
-            <CookieConsent />
-          </PasswordProtection>
+          {children}
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>
