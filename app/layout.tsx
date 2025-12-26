@@ -3,6 +3,7 @@ import './globals.css'
 import { Caveat } from 'next/font/google'
 import CookieConsent from "../components/CookieConsent"
 import { ThemeProvider } from "@/components/theme-provider"
+import PasswordGate from "@/components/PasswordGate"
 
 const caveat = Caveat({
   subsets: ['latin'],
@@ -45,8 +46,10 @@ export default function RootLayout({
           forcedTheme="dark"
           enableColorScheme={false}
         >
-          {children}
-          <CookieConsent />
+          <PasswordGate>
+            {children}
+            <CookieConsent />
+          </PasswordGate>
         </ThemeProvider>
       </body>
     </html>
