@@ -664,12 +664,12 @@ export default function HomePage() {
                     <h3 className={`text-xl font-medium mb-2 transition-colors duration-300 ${
                       theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
                     }`}>{project.title}</h3>
-                    <p className={`mb-4 leading-relaxed transition-colors duration-300 ${
+                    <p className={`mb-4 leading-relaxed transition-colors duration-300 hidden md:block ${
                       theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                     }`}>{project.description}</p>
-                    
+
                     {/* Technology Pills */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-4 hidden md:flex">
                       {project.technologies.map((tech, index) => (
                         <span 
                           key={index}
