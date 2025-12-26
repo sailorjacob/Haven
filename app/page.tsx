@@ -101,7 +101,7 @@ export default function HomePage() {
       title: "sojourn.city",
       description: "solar punk inspired art project with an interactive public art gallery wall.",
       technologies: ["Interactive Art", "Solar Punk", "Community"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/sojournbubble.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/solarpunkcity/extra%20vision/Capital%20City%201.png",
       link: "https://sojourn.city",
       category: "website"
     },
@@ -224,7 +224,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["klaire", "thewashbuckler"]
+  const hiddenIds: string[] = ["klaire", "thewashbuckler", "roundabout"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
