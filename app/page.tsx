@@ -79,24 +79,6 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "jacobhalestudio",
-      title: "jacobhalestudio.net",
-      description: "fine art photography gallery.",
-      technologies: ["Next.js", "Photography", "Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "https://web.archive.org/web/20250211220413/http://jacobhalestudio.net/",
-      category: "website"
-    },
-    {
-      id: "ammocat",
-      title: "ammocat3000.com",
-      description: "homepage, webstore, and mini-game for new york artist ammo cat.",
-      technologies: ["Vue.js", "Webstore", "Mini-game"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
-      link: "https://ammocat3000.com",
-      category: "website"
-    },
-    {
       id: "killmefxster",
       title: "killmefaster.com",
       description: "digital art platform with interactive experiences.",
@@ -106,6 +88,15 @@ export default function HomePage() {
       category: "webapp"
     },
     {
+      id: "jacobhalestudio",
+      title: "jacobhalestudio.net",
+      description: "fine art photography gallery.",
+      technologies: ["Next.js", "Photography", "Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
+      link: "https://web.archive.org/web/20250211220413/http://jacobhalestudio.net/",
+      category: "website"
+    },
+    {
       id: "swivimedia",
       title: "swivimedia.com",
       description: "marketing platform connecting brands with micro-influencers for campaign videos.",
@@ -113,6 +104,15 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
       link: "/swivimedia",
       category: "webapp"
+    },
+    {
+      id: "ammocat",
+      title: "ammocat3000.com",
+      description: "homepage, webstore, and mini-game for new york artist ammo cat.",
+      technologies: ["Vue.js", "Webstore", "Mini-game"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//ammo3.png",
+      link: "https://ammocat3000.com",
+      category: "website"
     },
     {
       id: "sojourn",
