@@ -115,6 +115,15 @@ export default function HomePage() {
       category: "website"
     },
     {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "digital art platform with interactive experiences.",
+      technologies: ["Next.js", "Three.js", "Digital Art"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
+    },
+    {
       id: "swivimedia",
       title: "swivimedia.com",
       description: "marketing platform connecting brands with micro-influencers for campaign videos.",
@@ -131,15 +140,6 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
       link: "https://comparison-deserving.net",
       category: "website"
-    },
-    {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "digital art platform with interactive experiences.",
-      technologies: ["Next.js", "Three.js", "Digital Art"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "webapp"
     },
     {
       id: "xrated",
@@ -224,7 +224,7 @@ export default function HomePage() {
     },
   ]
 
-  const hiddenIds: string[] = ["klaire", "thewashbuckler", "roundabout"]
+  const hiddenIds: string[] = ["klaire", "thewashbuckler", "roundabout", "salomatic"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
