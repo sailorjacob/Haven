@@ -223,28 +223,6 @@ export default function SwivimediaPage() {
           </div>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 pt-16 border-t border-zinc-800"
-        >
-          <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
-            Let us create a custom digital experience that elevates your brand and connects with your audience.
-          </p>
-          <Link href="/contact">
-            <div className="inline-flex items-center border border-zinc-900 text-zinc-900 font-medium py-2 px-8 rounded-full text-sm relative overflow-hidden group">
-              {/* Sky blue background that fills from left on hover */}
-              <div className="absolute inset-0 bg-sky-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              {/* Text content */}
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-                Start
-              </span>
-            </div>
-          </Link>
-        </motion.div>
 
         {/* Next Project */}
         <div className="text-center mt-24">

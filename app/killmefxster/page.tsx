@@ -543,28 +543,6 @@ export default function KillMeFxsterPage() {
           </div>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 pt-16 border-t border-zinc-800"
-        >
-          <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-            Let us help you create platforms that matter and connect with the right people.
-          </p>
-          <Link href="/contact">
-            <div className="inline-flex items-center border border-white text-white font-medium py-2 px-8 rounded-full text-sm relative overflow-hidden group">
-              {/* Red background that fills from left on hover */}
-              <div className="absolute inset-0 bg-red-600 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              {/* Text content */}
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-zinc-100">
-                Start
-              </span>
-            </div>
-          </Link>
-        </motion.div>
 
         {/* Next Project */}
         <div className="text-center mt-24">

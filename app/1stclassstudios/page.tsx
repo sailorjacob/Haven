@@ -95,15 +95,6 @@ export default function FirstClassStudiosPage() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-16 pt-16 border-t border-zinc-200">
-          <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Need a booking experience that feels premium and effortless?</p>
-          <Link href="/contact">
-            <div className="inline-flex items-center border border-zinc-900 text-zinc-900 font-medium py-2 px-8 rounded-full text-sm relative overflow-hidden group">
-              <div className="absolute inset-0 bg-yellow-400 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Start</span>
-            </div>
-          </Link>
-        </motion.div>
 
         <div className="text-center mt-24">
           <p className="text-sm text-zinc-500 mb-4">Next Project</p>
