@@ -74,10 +74,10 @@ export default function MoonlightGarden() {
   ];
 
   return (
-    <div className="bg-white text-zinc-800 min-h-screen">
+    <div className="bg-zinc-900 text-zinc-300 min-h-screen">
       {/* Stars background */}
       <div className="fixed inset-x-0 top-0 h-64 z-0">
-        <div className="absolute inset-0 bg-white">
+        <div className="absolute inset-0 bg-zinc-800/50">
           <div className="stars-small"></div>
           <div className="stars-medium"></div>
           <div className="stars-large"></div>
@@ -169,10 +169,10 @@ export default function MoonlightGarden() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-             <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
+             <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-100 tracking-tight">
               Moonlight Garden
             </h1>
-             <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 mb-6">
+             <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
               A 24/7 mobile order-only restaurant serving healthy, 
               automated cuisine starting at college campuses.
             </p>
@@ -188,25 +188,25 @@ export default function MoonlightGarden() {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">The Concept</h2>
+            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">The Concept</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-sm border border-zinc-200">
-                <h3 className="text-lg mb-2 text-zinc-900">24/7 Availability</h3>
-                <p className="text-zinc-600">
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+                <h3 className="text-lg mb-2 text-zinc-100">24/7 Availability</h3>
+                <p className="text-zinc-400">
                   Order anytime day or night through popular delivery platforms
                   like DoorDash, Uber Eats, and Grubhub.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200">
-                <h3 className="text-lg mb-2 text-zinc-900">Automation-First</h3>
-                <p className="text-zinc-600">
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+                <h3 className="text-lg mb-2 text-zinc-100">Automation-First</h3>
+                <p className="text-zinc-400">
                   Our kitchen utilizes robotic prep systems and partners with
                   self-driving delivery vehicles to minimize labor costs.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200">
-                <h3 className="text-lg mb-2 text-zinc-900">College Campus Focus</h3>
-                <p className="text-zinc-600">
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+                <h3 className="text-lg mb-2 text-zinc-100">College Campus Focus</h3>
+                <p className="text-zinc-400">
                   Starting in Bloomington, Indiana, we're targeting college students
                   seeking healthy food options with convenient delivery.
                 </p>
@@ -222,22 +222,22 @@ export default function MoonlightGarden() {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Our Menu</h2>
+            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Our Menu</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {menuItems.map((item) => (
                 <div 
                   key={item.id}
                    className={`border cursor-pointer transition-colors duration-300 ${
                     selectedItem === item.id 
-                       ? "border-zinc-300 bg-white shadow-sm" 
-                       : "border-zinc-200 hover:border-zinc-300"
+                       ? "border-zinc-300 bg-zinc-800/50 shadow-sm" 
+                       : "border-zinc-700 hover:border-zinc-300"
                   }`}
                   onClick={() => setSelectedItem(selectedItem === item.id ? null : item.id)}
                 >
                   <div className="p-4">
-                    <h3 className="text-zinc-900 font-medium">{item.name}</h3>
-                    <p className="text-zinc-600 text-sm mt-1">{item.description}</p>
-                    <div className="mt-3 text-zinc-700 font-mono">${item.price.toFixed(2)}</div>
+                    <h3 className="text-zinc-100 font-medium">{item.name}</h3>
+                    <p className="text-zinc-400 text-sm mt-1">{item.description}</p>
+                    <div className="mt-3 text-zinc-300 font-mono">${item.price.toFixed(2)}</div>
                   </div>
                   
                   <AnimatePresence>
@@ -260,7 +260,7 @@ export default function MoonlightGarden() {
                             opacity: { duration: 0.1 } 
                           }
                         }}
-                        className="bg-zinc-50 border-t border-zinc-200 overflow-hidden"
+                        className="bg-zinc-50 border-t border-zinc-700 overflow-hidden"
                       >
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
@@ -273,12 +273,12 @@ export default function MoonlightGarden() {
                           className="p-4"
                         >
                           <div className="grid grid-cols-2 gap-2 text-sm">
-                             <div className="text-zinc-500">Ingredients:</div>
-                             <div className="text-zinc-700">{item.ingredients}</div>
-                             <div className="text-zinc-500">Cost:</div>
-                             <div className="text-zinc-700">${item.cost.toFixed(2)}</div>
-                             <div className="text-zinc-500">Profit:</div>
-                             <div className="text-zinc-700">${item.profit.toFixed(2)}</div>
+                             <div className="text-zinc-400">Ingredients:</div>
+                             <div className="text-zinc-300">{item.ingredients}</div>
+                             <div className="text-zinc-400">Cost:</div>
+                             <div className="text-zinc-300">${item.cost.toFixed(2)}</div>
+                             <div className="text-zinc-400">Profit:</div>
+                             <div className="text-zinc-300">${item.profit.toFixed(2)}</div>
                           </div>
                         </motion.div>
                       </motion.div>
@@ -297,23 +297,23 @@ export default function MoonlightGarden() {
             viewport={{ once: true }}
             className="pb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Business Strategy</h2>
+            <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Business Strategy</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-xl mb-4 text-zinc-900">Automation Strategy</h3>
-                <p className="text-zinc-600 mb-4">
+                <h3 className="text-xl mb-4 text-zinc-100">Automation Strategy</h3>
+                <p className="text-zinc-400 mb-4">
                   Moonlight Garden minimizes labor costs by leveraging robotic preparation 
                   systems and partnering with self-driving delivery vehicles from roundabout.run. 
                   The initial automation investment is $10,000.
                 </p>
-                <p className="text-zinc-600">
+                <p className="text-zinc-400">
                   We also create partnerships with local markets to source surplus produce, 
                   reducing our ingredient costs while supporting local businesses.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl mb-4 text-zinc-900">Revenue Potential</h3>
-                <div className="bg-zinc-50 p-6 rounded-sm text-zinc-700 font-mono border border-zinc-200">
+                <h3 className="text-xl mb-4 text-zinc-100">Revenue Potential</h3>
+                <div className="bg-zinc-50 p-6 rounded-sm text-zinc-300 font-mono border border-zinc-700">
                   <div className="grid grid-cols-2 gap-y-3">
                     <div>Annual Orders:</div>
                     <div>87,600</div>
@@ -321,10 +321,10 @@ export default function MoonlightGarden() {
                     <div>$8.43</div>
                     <div>Profit per Item:</div>
                     <div>$5.00</div>
-                     <div className="text-zinc-900 pt-3 border-t border-zinc-200">Annual Revenue:</div>
-                     <div className="text-zinc-900 pt-3 border-t border-zinc-200">$738,468</div>
-                     <div className="text-zinc-900">Annual Profit:</div>
-                     <div className="text-zinc-900">$438,000</div>
+                     <div className="text-zinc-100 pt-3 border-t border-zinc-700">Annual Revenue:</div>
+                     <div className="text-zinc-100 pt-3 border-t border-zinc-700">$738,468</div>
+                     <div className="text-zinc-100">Annual Profit:</div>
+                     <div className="text-zinc-100">$438,000</div>
                   </div>
                 </div>
               </div>

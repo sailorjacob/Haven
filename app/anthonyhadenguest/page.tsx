@@ -6,11 +6,11 @@ import Image from "next/image"
 
 export default function AnthonyHadenGuestPage() {
   return (
-    <main className="min-h-screen bg-white text-zinc-800">
-      {/* Light gradient background */}
+    <main className="min-h-screen bg-zinc-900 text-zinc-300">
+      {/* Dark gradient background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-zinc-50 opacity-100"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-100/80 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 opacity-100"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900/5 to-zinc-900"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-4 pb-20">
@@ -21,7 +21,7 @@ export default function AnthonyHadenGuestPage() {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <Link href="/" className="text-zinc-500 hover:text-zinc-800 transition-colors inline-flex items-center">
+          <Link href="/" className="text-zinc-400 hover:text-zinc-200 transition-colors inline-flex items-center">
             <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -36,18 +36,18 @@ export default function AnthonyHadenGuestPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-100 tracking-tight">
             Anthony Haden-Guest
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 mb-6">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
             A simple portfolio website for renowned author, writer, and art critic Anthony Haden-Guest showcasing his literary works and cultural contributions.
           </p>
-          <div className="flex items-center justify-center gap-4 text-sm text-zinc-500">
+          <div className="flex items-center justify-center gap-4 text-sm text-zinc-400">
             <span>Literature</span>
-            <span className="text-zinc-600">•</span>
+            <span className="text-zinc-400">•</span>
             <span>Portfolio</span>
-            <span className="text-zinc-600">•</span>
-            <a href="https://anthonyhadenguest.net/" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-zinc-900 transition-colors">
+            <span className="text-zinc-400">•</span>
+            <a href="https://anthonyhadenguest.net/" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-zinc-100 transition-colors">
               Visit Website
             </a>
           </div>
@@ -78,30 +78,30 @@ export default function AnthonyHadenGuestPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Project Overview</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Project Overview</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-zinc-600 mb-4">
+              <p className="text-zinc-400 mb-4">
                 Anthony Haden-Guest is a distinguished author, writer, and art critic whose work has shaped cultural discourse for decades. His portfolio website needed to reflect the sophistication and depth of his literary contributions while providing an elegant platform for his extensive body of work.
               </p>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 We created a minimalist, typography-focused website that emphasizes content readability and elegant presentation, allowing his writing and insights to take center stage.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Project Details</h3>
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Project Details</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Client</h4>
-                  <p className="text-zinc-700">Anthony Haden-Guest</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Client</h4>
+                  <p className="text-zinc-300">Anthony Haden-Guest</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Year</h4>
-                  <p className="text-zinc-700">2025</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Year</h4>
+                  <p className="text-zinc-300">2025</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
-                  <p className="text-zinc-700">Website Design, Development</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Services</h4>
+                  <p className="text-zinc-300">Website Design, Development</p>
                 </div>
 
               </div>
@@ -117,23 +117,23 @@ export default function AnthonyHadenGuestPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Key Features</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Typography-First Design</h3>
-              <p className="text-zinc-600">
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Typography-First Design</h3>
+              <p className="text-zinc-400">
                 Clean, readable typography that enhances the literary content and provides an exceptional reading experience across all devices.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Content Organization</h3>
-              <p className="text-zinc-600">
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Content Organization</h3>
+              <p className="text-zinc-400">
                 Intuitive navigation and categorization system that makes it easy for visitors to explore Anthony's extensive portfolio of writings and reviews.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Responsive Experience</h3>
-              <p className="text-zinc-600">
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Responsive Experience</h3>
+              <p className="text-zinc-400">
                 Optimized for all devices with careful attention to reading comfort and accessibility across desktop, tablet, and mobile platforms.
               </p>
             </div>
@@ -148,33 +148,33 @@ export default function AnthonyHadenGuestPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Our Process</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Our Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Content Strategy</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Content Strategy</h3>
+              <p className="text-zinc-400">
                 We worked closely with Anthony to understand his literary voice and develop a content architecture that showcases his diverse body of work.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Typography & Design</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Typography & Design</h3>
+              <p className="text-zinc-400">
                 Developed a sophisticated typographic system and minimalist design that emphasizes readability and editorial elegance.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Development</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Development</h3>
+              <p className="text-zinc-400">
                 Built with careful attention to performance, SEO optimization, and seamless content management.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Launch & Optimization</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Launch & Optimization</h3>
+              <p className="text-zinc-400">
                 Deployed with careful attention to performance metrics and ongoing optimization for search visibility and user engagement.
               </p>
             </div>
@@ -189,32 +189,32 @@ export default function AnthonyHadenGuestPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Results</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-zinc-600 mb-4">
+              <p className="text-zinc-400 mb-4">
                 The new website has significantly enhanced Anthony's digital presence, providing a professional platform that befits his stature in the literary and art criticism world.
               </p>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 The clean, sophisticated design has improved reader engagement and made his extensive body of work more accessible to both longtime followers and new audiences.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">95%</div>
-                <p className="text-zinc-600 text-sm">Improved readability score</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">95%</div>
+                <p className="text-zinc-400 text-sm">Improved readability score</p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">3.2x</div>
-                <p className="text-zinc-600 text-sm">Increase in page engagement</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">3.2x</div>
+                <p className="text-zinc-400 text-sm">Increase in page engagement</p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">72%</div>
-                <p className="text-zinc-600 text-sm">Faster page load times</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">72%</div>
+                <p className="text-zinc-400 text-sm">Faster page load times</p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">100%</div>
-                <p className="text-zinc-600 text-sm">Mobile responsive</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">100%</div>
+                <p className="text-zinc-400 text-sm">Mobile responsive</p>
               </div>
             </div>
           </div>
@@ -223,8 +223,8 @@ export default function AnthonyHadenGuestPage() {
 
         {/* Next Project */}
         <div className="text-center mt-24">
-          <p className="text-sm text-zinc-500 mb-4">Next Project</p>
-          <Link href="/jacobhalestudio" className="text-xl text-zinc-700 hover:text-zinc-900 transition-colors">
+          <p className="text-sm text-zinc-400 mb-4">Next Project</p>
+          <Link href="/jacobhalestudio" className="text-xl text-zinc-300 hover:text-zinc-100 transition-colors">
             Jacob Hale Studio
             <span className="ml-2">→</span>
           </Link>

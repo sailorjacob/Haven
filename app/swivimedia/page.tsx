@@ -6,11 +6,11 @@ import Image from "next/image"
 
 export default function SwivimediaPage() {
   return (
-    <main className="min-h-screen bg-white text-zinc-800">
-      {/* Light gradient background */}
+    <main className="min-h-screen bg-zinc-900 text-zinc-300">
+      {/* Dark gradient background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-zinc-50 opacity-100"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-100/80 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 opacity-100"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900/5 to-zinc-900"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-4 pb-20">
@@ -21,7 +21,7 @@ export default function SwivimediaPage() {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <Link href="/" className="text-zinc-500 hover:text-zinc-800 transition-colors inline-flex items-center">
+          <Link href="/" className="text-zinc-400 hover:text-zinc-200 transition-colors inline-flex items-center">
             <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -36,18 +36,18 @@ export default function SwivimediaPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-100 tracking-tight">
             Swivi
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 mb-6">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-400 mb-6">
             A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.
           </p>
-          <div className="flex items-center justify-center gap-4 text-sm text-zinc-500">
+          <div className="flex items-center justify-center gap-4 text-sm text-zinc-400">
             <span>Marketing</span>
-            <span className="text-zinc-600">•</span>
+            <span className="text-zinc-400">•</span>
             <span>Influencer Platform</span>
-            <span className="text-zinc-600">•</span>
-            <a href="https://www.swivimedia.com/about" target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-zinc-900 transition-colors">
+            <span className="text-zinc-400">•</span>
+            <a href="https://www.swivimedia.com/about" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-zinc-100 transition-colors">
               Visit Website
             </a>
           </div>
@@ -78,34 +78,34 @@ export default function SwivimediaPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Project Overview</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Project Overview</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-zinc-600 mb-4">
+              <p className="text-zinc-400 mb-4">
                 Swivimedia revolutionizes viral marketing by connecting brands with a network of micro-influencers to create authentic, engaging video content at scale. The platform streamlines the entire process from campaign creation to content delivery.
               </p>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 Our challenge was to build a sophisticated platform that could handle hundreds of video submissions, provide seamless creator onboarding, and deliver powerful analytics for brands to track campaign performance.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Project Details</h3>
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Project Details</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Client</h4>
-                  <p className="text-zinc-700">Swivimedia</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Client</h4>
+                  <p className="text-zinc-300">Swivimedia</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Year</h4>
-                  <p className="text-zinc-700">2025</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Year</h4>
+                  <p className="text-zinc-300">2025</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Services</h4>
-                  <p className="text-zinc-700">Platform Development, Video Processing</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Services</h4>
+                  <p className="text-zinc-300">Platform Development, Video Processing</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-zinc-500 mb-1">Technologies</h4>
-                  <p className="text-zinc-700">Next.js, Video APIs, Analytics</p>
+                  <h4 className="text-sm text-zinc-400 mb-1">Technologies</h4>
+                  <p className="text-zinc-300">Next.js, Video APIs, Analytics</p>
                 </div>
               </div>
             </div>
@@ -120,23 +120,23 @@ export default function SwivimediaPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Key Features</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Creator Network</h3>
-              <p className="text-zinc-600">
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Creator Network</h3>
+              <p className="text-zinc-400">
                 Comprehensive platform for micro-influencers to discover campaigns, submit content, and track earnings with streamlined onboarding and verification.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Video Processing</h3>
-              <p className="text-zinc-600">
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Video Processing</h3>
+              <p className="text-zinc-400">
                 Advanced video upload, processing, and quality control systems that handle hundreds of submissions while maintaining brand standards.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-sm border border-zinc-200">
-              <h3 className="text-lg mb-4 text-zinc-900">Campaign Analytics</h3>
-              <p className="text-zinc-600">
+            <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700">
+              <h3 className="text-lg mb-4 text-zinc-100">Campaign Analytics</h3>
+              <p className="text-zinc-400">
                 Real-time dashboard providing brands with detailed insights on campaign performance, engagement metrics, and ROI tracking.
               </p>
             </div>
@@ -151,33 +151,33 @@ export default function SwivimediaPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Our Process</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Our Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">01</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Platform Architecture</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Platform Architecture</h3>
+              <p className="text-zinc-400">
                 Designed a scalable architecture to handle high-volume video uploads, processing, and real-time analytics for both creators and brands.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">02</div>
-              <h3 className="text-xl text-zinc-900 mb-2">User Experience Design</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">User Experience Design</h3>
+              <p className="text-zinc-400">
                 Created intuitive interfaces for both creators and brands, focusing on streamlined workflows and clear campaign management tools.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">03</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Video Infrastructure</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Video Infrastructure</h3>
+              <p className="text-zinc-400">
                 Implemented robust video processing pipelines with automated quality checks, transcoding, and content moderation systems.
               </p>
             </div>
             <div>
               <div className="text-4xl text-zinc-300 font-bold mb-4">04</div>
-              <h3 className="text-xl text-zinc-900 mb-2">Analytics & Optimization</h3>
-              <p className="text-zinc-600">
+              <h3 className="text-xl text-zinc-100 mb-2">Analytics & Optimization</h3>
+              <p className="text-zinc-400">
                 Built comprehensive analytics dashboards and performance tracking tools to maximize campaign effectiveness and creator engagement.
               </p>
             </div>
@@ -192,32 +192,32 @@ export default function SwivimediaPage() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-800">Results</h2>
+          <h2 className="text-2xl md:text-3xl font-light mb-8 text-zinc-200">Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <p className="text-zinc-600 mb-4">
+              <p className="text-zinc-400 mb-4">
                 Swivimedia has transformed how brands approach viral marketing, enabling them to create authentic content at unprecedented scale while providing creators with new monetization opportunities.
               </p>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 The platform's success has led to partnerships with major brands and a rapidly growing network of content creators, establishing Swivimedia as a leader in the micro-influencer marketing space.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">500+</div>
-                <p className="text-zinc-600 text-sm">Active creators</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">500+</div>
+                <p className="text-zinc-400 text-sm">Active creators</p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">10M+</div>
-                <p className="text-zinc-600 text-sm">Video views generated</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">10M+</div>
+                <p className="text-zinc-400 text-sm">Video views generated</p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">85%</div>
-                <p className="text-zinc-600 text-sm">Campaign completion rate</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">85%</div>
+                <p className="text-zinc-400 text-sm">Campaign completion rate</p>
               </div>
-              <div className="bg-white p-6 rounded-sm border border-zinc-200 text-center">
-                <div className="text-3xl font-bold text-zinc-900 mb-2">3.2x</div>
-                <p className="text-zinc-600 text-sm">Average engagement boost</p>
+              <div className="bg-zinc-800/50 p-6 rounded-sm border border-zinc-700 text-center">
+                <div className="text-3xl font-bold text-zinc-100 mb-2">3.2x</div>
+                <p className="text-zinc-400 text-sm">Average engagement boost</p>
               </div>
             </div>
           </div>
@@ -226,8 +226,8 @@ export default function SwivimediaPage() {
 
         {/* Next Project */}
         <div className="text-center mt-24">
-          <p className="text-sm text-zinc-500 mb-4">Next Project</p>
-          <Link href="/anthonyhadenguest" className="text-xl text-zinc-700 hover:text-zinc-900 transition-colors">
+          <p className="text-sm text-zinc-400 mb-4">Next Project</p>
+          <Link href="/anthonyhadenguest" className="text-xl text-zinc-300 hover:text-zinc-100 transition-colors">
             Anthony Haden-Guest
             <span className="ml-2">→</span>
           </Link>
