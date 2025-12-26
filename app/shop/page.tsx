@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowLeft, ShoppingCart, Heart, Hexagon, Code, ChevronDown, Sun, Moon, Menu, X, Mail, ChevronLeft } from "lucide-react"
+import { ArrowLeft, ShoppingCart, Heart, Hexagon, Code, ChevronDown, Sun, Moon, Menu, X, Mail, ChevronLeft, Lock } from "lucide-react"
 import { useTheme } from "next-themes"
 import ProcessDropdown from "@/components/ProcessDropdown"
 
@@ -19,12 +19,38 @@ export default function ShopPage() {
   const [showNotification, setShowNotification] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null)
   const [hoveredProductImage, setHoveredProductImage] = useState<Record<string, boolean>>({})
+  
+  // Password protection state
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [passwordInput, setPasswordInput] = useState("")
+  const [passwordError, setPasswordError] = useState(false)
 
   const { theme, setTheme } = useTheme()
 
-  // Prevent body scroll when product is selected
+  // Check if user is already authenticated
   useEffect(() => {
-    if (selectedProduct) {
+    const authenticated = sessionStorage.getItem('shop_authenticated')
+    if (authenticated === 'true') {
+      setIsAuthenticated(true)
+    }
+  }, [])
+
+  // Handle password submission
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (passwordInput === 'killmefaster') {
+      setIsAuthenticated(true)
+      sessionStorage.setItem('shop_authenticated', 'true')
+      setPasswordError(false)
+    } else {
+      setPasswordError(true)
+      setPasswordInput("")
+    }
+  }
+
+  // Prevent body scroll when product is selected or password modal is showing
+  useEffect(() => {
+    if (selectedProduct || !isAuthenticated) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'unset'
@@ -33,7 +59,7 @@ export default function ShopPage() {
     return () => {
       document.body.style.overflow = 'unset'
     }
-  }, [selectedProduct])
+  }, [selectedProduct, isAuthenticated])
 
   // Get seeded random color for navigation
   const getSeededRandomColor = (seed: string) => {
@@ -228,6 +254,74 @@ export default function ShopPage() {
         ? 'bg-zinc-900 text-zinc-100'
         : 'bg-white text-zinc-900'
     }`}>
+      {/* Password Protection Modal */}
+      <AnimatePresence>
+        {!isAuthenticated && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-zinc-950/95 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-zinc-900 border border-zinc-800 rounded-xl p-8 max-w-sm w-full mx-4 shadow-2xl"
+            >
+              <div className="text-center">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="p-3 rounded-full bg-zinc-800 border border-zinc-700">
+                    <Lock className="w-6 h-6 text-zinc-400" />
+                  </div>
+                </div>
+                
+                <h2 className="text-xl font-light text-zinc-100 mb-2 tracking-wide">
+                  Access Required
+                </h2>
+                <p className="text-sm text-zinc-500 mb-6">
+                  Enter password to view the shop
+                </p>
+
+                <form onSubmit={handlePasswordSubmit} className="space-y-4">
+                  <input
+                    type="password"
+                    value={passwordInput}
+                    onChange={(e) => {
+                      setPasswordInput(e.target.value)
+                      setPasswordError(false)
+                    }}
+                    placeholder="Password"
+                    className={`w-full px-4 py-3 bg-zinc-800 border rounded-lg text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-zinc-600 transition-colors ${
+                      passwordError ? 'border-red-500/50' : 'border-zinc-700'
+                    }`}
+                    autoFocus
+                  />
+                  
+                  {passwordError && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-400 text-sm"
+                    >
+                      Incorrect password
+                    </motion.p>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 hover:border-zinc-600 rounded-lg text-zinc-200 font-medium transition-all duration-200"
+                  >
+                    Enter
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Header */}
       <header onMouseLeave={()=>setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
         processOpen
