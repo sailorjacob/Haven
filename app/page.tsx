@@ -110,7 +110,7 @@ export default function HomePage() {
       title: "designforstartups.net",
       description: "branding and design for new and special projects.",
       technologies: ["Branding", "Design", "Identity"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/design%20for%20startups.png",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/desginforstartups%20dark.png",
       link: "https://designforstartups.net",
       category: "website"
     },
@@ -124,21 +124,75 @@ export default function HomePage() {
       category: "webapp"
     },
     {
-      id: "moonlight",
-      title: "Moonlight Garden 🌱",
-      description: "24/7 mobile order restaurant with automation systems.",
-      technologies: ["Next.js", "Mobile Order", "Automation"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png", 
-      link: "/moonlight-garden",
-      category: "webapp"
-    },
-    {
       id: "comparison-deserving",
       title: "comparison",
       description: "fine art gallery, online-first and accepting bitcoin.",
       technologies: ["Fine Art", "Bitcoin", "Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
       link: "https://comparison-deserving.net",
+      category: "website"
+    },
+    {
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "digital art platform with interactive experiences.",
+      technologies: ["Next.js", "Three.js", "Digital Art"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
+      link: "/killmefxster",
+      category: "webapp"
+    },
+    {
+      id: "xrated",
+      title: "rated",
+      description: "social platform for content sharing with privacy controls and monetization.",
+      technologies: ["Next.js", "Privacy Controls", "Monetization"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
+      link: "https://x-rated.me",
+      category: "webapp"
+    },
+    {
+      id: "anthonyhadenguest",
+      title: "Anthony Haden-Guest",
+      description: "website for author and art critic anthony haden-guest.",
+      technologies: ["Next.js", "Literature", "Portfolio"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
+      link: "https://anthonyhadenguest.net",
+      category: "website"
+    },
+    {
+      id: "1stclassstudios",
+      title: "1stclassstudios.com",
+      description: "professional recording studio with three facilities 45 minutes from manhattan.",
+      technologies: ["Next.js", "Booking System", "Studio"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
+      link: "/1stclassstudios",
+      category: "website"
+    },
+    {
+      id: "moonlight",
+      title: "Moonlight Garden 🌱",
+      description: "24/7 mobile order restaurant with automation systems.",
+      technologies: ["Next.js", "Mobile Order", "Automation"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png",
+      link: "/moonlight-garden",
+      category: "webapp"
+    },
+    {
+      id: "beloved",
+      title: "be-loved.app",
+      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
+      technologies: ["React", "iOS App", "Scheduling"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "/beloved",
+      category: "webapp"
+    },
+    {
+      id: "salomatic",
+      title: "Salomatic Pitch Deck",
+      description: "design and branding for their routine blood testing product with modern healthcare aesthetics.",
+      technologies: ["Design", "Healthcare", "Pitch Deck"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
+      link: "/salomatic",
       category: "website"
     },
     {
@@ -157,60 +211,6 @@ export default function HomePage() {
       technologies: ["Next.js", "UI/UX", "Game Design"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//klairedev.png",
       link: "https://www.klaire.dev/klaire-portfolio.html",
-      category: "website"
-    },
-    {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
-      technologies: ["React", "iOS App", "Scheduling"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
-      category: "webapp"
-    },
-    {
-      id: "xrated",
-      title: "rated",
-      description: "social platform for content sharing with privacy controls and monetization.",
-      technologies: ["Next.js", "Privacy Controls", "Monetization"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
-      link: "https://x-rated.me",
-      category: "webapp"
-    },
-    {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "digital art platform with interactive experiences.",
-      technologies: ["Next.js", "Three.js", "Digital Art"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//kxllme3.png",
-      link: "/killmefxster",
-      category: "webapp"
-    },
-    {
-      id: "1stclassstudios",
-      title: "1stclassstudios.com",
-      description: "professional recording studio with three facilities 45 minutes from manhattan.",
-      technologies: ["Next.js", "Booking System", "Studio"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/1stclass//1stclassstudios-min.png",
-      link: "/1stclassstudios",
-      category: "website"
-    },
-    {
-      id: "salomatic",
-      title: "Salomatic Pitch Deck",
-      description: "design and branding for their routine blood testing product with modern healthcare aesthetics.",
-      technologies: ["Design", "Healthcare", "Pitch Deck"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//salomatic.png",
-      link: "/salomatic",
-      category: "website"
-    },
-    {
-      id: "anthonyhadenguest",
-      title: "Anthony Haden-Guest",
-      description: "website for author and art critic anthony haden-guest.",
-      technologies: ["Next.js", "Literature", "Portfolio"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png",
-      link: "https://anthonyhadenguest.net",
       category: "website"
     },
     {
