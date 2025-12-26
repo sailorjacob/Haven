@@ -62,7 +62,7 @@ export default function AnthonyHadenGuestPage() {
         >
           <div className="relative aspect-video overflow-hidden">
             <Image
-              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ahgpreview7.png"
+              src="https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/AHG%20SC.png"
               alt="Anthony Haden-Guest Website"
               fill
               className="object-cover"

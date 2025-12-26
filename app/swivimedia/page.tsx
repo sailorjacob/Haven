@@ -37,7 +37,7 @@ export default function SwivimediaPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-light mb-6 text-zinc-900 tracking-tight">
-            swivimedia.com
+            Swivi
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 mb-6">
             A viral marketing 'clipping' agency platform connecting brands with micro-influencers to create hundreds of authentic campaign videos.

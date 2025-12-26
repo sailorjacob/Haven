@@ -725,13 +725,13 @@ export default function HomePage() {
                   </div>
                 </div>
               </motion.div>
-              <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
+              {/* <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
                 Premium digital experiences
-              </p>
-              
-              <div className="flex justify-center">
+              </p> */}
+
+              {/* <div className="flex justify-center">
                 {/* Start a Project Button */}
-                <Link
+                {/* <Link
                   href="/contact"
                   className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] ${
                     theme === 'dark'
@@ -740,17 +740,17 @@ export default function HomePage() {
                   }`}
                 >
                   {/* Grey background that fills from left on hover */}
-                  <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                  {/* <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
                     theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
-                  }`}></div>
+                  }`}></div> */}
                   {/* Text content */}
-                  <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
+                  {/* <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
                     start a project
-                  </span>
+                  </span> */}
                   {/* Arrow icon that appears on hover */}
-                  <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+                  {/* <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
                 </Link>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 
