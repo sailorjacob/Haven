@@ -84,7 +84,7 @@ export default function HomePage() {
       description: "digital art platform with interactive experiences.",
       technologies: ["Next.js", "Three.js", "Digital Art"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/KILLMEFASTER4.png",
-      link: "/killmefxster",
+      link: "https://killmefaster.com",
       category: "webapp"
     },
     {
