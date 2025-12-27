@@ -93,7 +93,7 @@ export default function HomePage() {
       description: "fine art photography gallery.",
       technologies: ["Next.js", "Photography", "Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "https://jacobhalestudio.net",
+      link: "https://web.archive.org/web/20250211220413/http://jacobhalestudio.net/",
       category: "website"
     },
     {
