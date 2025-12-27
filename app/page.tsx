@@ -79,12 +79,12 @@ export default function HomePage() {
   
   const projects: Project[] = [
     {
-      id: "killmefxster",
-      title: "killmefaster.com",
-      description: "digital art platform with interactive experiences.",
-      technologies: ["Next.js", "Three.js", "Digital Art"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/KILLMEFASTER4.png",
-      link: "https://killmefaster.com",
+      id: "swivimedia",
+      title: "swivimedia.com",
+      description: "marketing platform connecting brands with micro-influencers for campaign videos.",
+      technologies: ["Next.js", "Creator Network", "Video"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
+      link: "https://www.swivimedia.com/about",
       category: "webapp"
     },
     {
@@ -93,16 +93,16 @@ export default function HomePage() {
       description: "fine art photography gallery.",
       technologies: ["Next.js", "Photography", "Gallery"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "https://web.archive.org/web/20250211220413/http://jacobhalestudio.net/",
+      link: "https://jacobhalestudio.net",
       category: "website"
     },
     {
-      id: "swivimedia",
-      title: "swivimedia.com",
-      description: "marketing platform connecting brands with micro-influencers for campaign videos.",
-      technologies: ["Next.js", "Creator Network", "Video"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//swivimedia.png",
-      link: "/swivimedia",
+      id: "killmefxster",
+      title: "killmefaster.com",
+      description: "digital art platform with interactive experiences.",
+      technologies: ["Next.js", "Three.js", "Digital Art"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/KILLMEFASTER4.png",
+      link: "https://killmefaster.com",
       category: "webapp"
     },
     {
