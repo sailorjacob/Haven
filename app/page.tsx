@@ -142,6 +142,15 @@ export default function HomePage() {
       category: "website"
     },
     {
+      id: "hancock",
+      title: "Hancock Trading Community",
+      description: "trading community platform with real-time market data and social features.",
+      technologies: ["Trading", "Community", "Real-time"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Hancock.png",
+      link: "https://v0.app/chat/trading-community-website-hhGHhtoTq7Y?b=v0-preview-b_E88K9P9mthS&f=1&path=%2F",
+      category: "webapp"
+    },
+    {
       id: "designforstartups",
       title: "designforstartups.net",
       description: "branding and design for new and special projects.",
