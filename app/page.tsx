@@ -147,7 +147,7 @@ export default function HomePage() {
       description: "trading community platform with real-time market data and social features.",
       technologies: ["Trading", "Community", "Real-time"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Hancock.png",
-      link: "https://v0.app/chat/trading-community-website-hhGHhtoTq7Y?b=v0-preview-b_E88K9P9mthS&f=1&path=%2F",
+      link: "",
       category: "webapp"
     },
     {
@@ -684,7 +684,19 @@ export default function HomePage() {
                       : 'bg-white border-zinc-200 hover:border-zinc-400'
                   }`}
                 >
-                  <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
+                  {project.link ? (
+                    <Link href={project.link} target={project.link.startsWith('http') ? "_blank" : "_self"}>
+                      <div className="relative h-64 overflow-hidden">
+                        <Image 
+                          src={project.imageUrl}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                      </div>
+                    </Link>
+                  ) : (
                     <div className="relative h-64 overflow-hidden">
                       <Image 
                         src={project.imageUrl}
@@ -694,7 +706,7 @@ export default function HomePage() {
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                     </div>
-                  </Link>
+                  )}
                   
                   <div className="p-6">
                     <h3 className={`text-xl font-medium mb-2 transition-colors duration-300 ${
@@ -720,18 +732,20 @@ export default function HomePage() {
                       ))}
                     </div>
                     
-                    <Link 
-                      href={project.link} 
-                      target={project.link.startsWith('http') ? "_blank" : "_self"}
-                      className={`inline-flex items-center text-sm transition-colors font-medium group ${
-                        theme === 'dark'
-                          ? 'text-zinc-300 hover:text-zinc-100'
-                          : 'text-zinc-900 hover:text-zinc-600'
-                      }`}
-                    >
-                      View Project
-                      <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    {project.link && (
+                      <Link 
+                        href={project.link} 
+                        target={project.link.startsWith('http') ? "_blank" : "_self"}
+                        className={`inline-flex items-center text-sm transition-colors font-medium group ${
+                          theme === 'dark'
+                            ? 'text-zinc-300 hover:text-zinc-100'
+                            : 'text-zinc-900 hover:text-zinc-600'
+                        }`}
+                      >
+                        View Project
+                        <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    )}
                   </div>
                 </motion.div>
               ))}
