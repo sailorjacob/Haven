@@ -92,8 +92,62 @@ export default function HomePage() {
       title: "jacobhalestudio.net",
       description: "fine art photography gallery.",
       technologies: ["Next.js", "Photography", "Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images/jhale.png",
-      link: "https://web.archive.org/web/20250211220413/http://jacobhalestudio.net/",
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/newjacobhalestudio.png",
+      link: "https://www.killmefaster.com/photos.html",
+      category: "website"
+    },
+    {
+      id: "1stclassstudios",
+      title: "1stclassstudios.com",
+      description: "professional recording studio with three facilities 45 minutes from manhattan.",
+      technologies: ["Next.js", "Booking System", "Studio"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/1ST2.jpg",
+      link: "/1stclassstudios",
+      category: "website"
+    },
+    {
+      id: "zenitram",
+      title: "zenitram.io",
+      description: "home automation lighting security and home theater business.",
+      technologies: ["Automation", "Smart Home", "Security"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/zenitram.io.png",
+      link: "https://www.zenitram.io/",
+      category: "website"
+    },
+    {
+      id: "drinktreasure",
+      title: "drinktreasure.com",
+      description: "premium dark rum brand.",
+      technologies: ["E-commerce", "Spirits", "Branding"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/treasure2.png",
+      link: "https://drinktreasure.com/",
+      category: "website"
+    },
+    {
+      id: "thewashbuckler",
+      title: "The Washbuckler™",
+      description: "The revolutionary sink splash guard that keeps your counters dry, your clothes clean, and your kitchen mess-free. Install in seconds, enjoy for years.",
+      technologies: ["E-commerce", "Product Design", "Kitchen"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/thewashbuckler.png",
+      link: "https://www.thewashbuckler.com/",
+      category: "website"
+    },
+    {
+      id: "donrogelio",
+      title: "donrogelio.com",
+      description: "cigar brand with payments.",
+      technologies: ["E-commerce", "Cigars", "Payments"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/ddonrog.png",
+      link: "https://www.donrogelio.com/",
+      category: "website"
+    },
+    {
+      id: "designforstartups",
+      title: "designforstartups.net",
+      description: "branding and design for new and special projects.",
+      technologies: ["Branding", "Design", "Identity"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/desginforstartups%20dark.png",
+      link: "https://designforstartups.net",
       category: "website"
     },
     {
@@ -104,6 +158,24 @@ export default function HomePage() {
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/KILLMEFASTER4.png",
       link: "https://killmefaster.com",
       category: "webapp"
+    },
+    {
+      id: "xrated",
+      title: "rated",
+      description: "social platform for content sharing with privacy controls and monetization.",
+      technologies: ["Next.js", "Privacy Controls", "Monetization"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
+      link: "https://x-rated.me",
+      category: "webapp"
+    },
+    {
+      id: "comparison-deserving",
+      title: "comparison",
+      description: "fine art gallery, online-first and accepting bitcoin.",
+      technologies: ["Fine Art", "Bitcoin", "Gallery"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
+      link: "https://comparison-deserving.net",
+      category: "website"
     },
     {
       id: "ammocat",
@@ -124,33 +196,6 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "designforstartups",
-      title: "designforstartups.net",
-      description: "branding and design for new and special projects.",
-      technologies: ["Branding", "Design", "Identity"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/desginforstartups%20dark.png",
-      link: "https://designforstartups.net",
-      category: "website"
-    },
-    {
-      id: "comparison-deserving",
-      title: "comparison",
-      description: "fine art gallery, online-first and accepting bitcoin.",
-      technologies: ["Fine Art", "Bitcoin", "Gallery"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/comparison.png",
-      link: "https://comparison-deserving.net",
-      category: "website"
-    },
-    {
-      id: "xrated",
-      title: "rated",
-      description: "social platform for content sharing with privacy controls and monetization.",
-      technologies: ["Next.js", "Privacy Controls", "Monetization"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/rated22.png",
-      link: "https://x-rated.me",
-      category: "webapp"
-    },
-    {
       id: "anthonyhadenguest",
       title: "Anthony Haden-Guest",
       description: "website for author and art critic anthony haden-guest.",
@@ -160,13 +205,13 @@ export default function HomePage() {
       category: "website"
     },
     {
-      id: "1stclassstudios",
-      title: "1stclassstudios.com",
-      description: "professional recording studio with three facilities 45 minutes from manhattan.",
-      technologies: ["Next.js", "Booking System", "Studio"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/1ST2.jpg",
-      link: "/1stclassstudios",
-      category: "website"
+      id: "beloved",
+      title: "be-loved.app",
+      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
+      technologies: ["React", "iOS App", "Scheduling"],
+      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
+      link: "/beloved",
+      category: "webapp"
     },
     {
       id: "moonlight",
@@ -175,15 +220,6 @@ export default function HomePage() {
       technologies: ["Next.js", "Mobile Order", "Automation"],
       imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//moonlight4.png",
       link: "/moonlight-garden",
-      category: "webapp"
-    },
-    {
-      id: "beloved",
-      title: "be-loved.app",
-      description: "ios app and web platform with scheduling for nemt provider beloved transportation.",
-      technologies: ["React", "iOS App", "Scheduling"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//beloved2.png",
-      link: "/beloved",
       category: "webapp"
     },
     {
@@ -213,18 +249,9 @@ export default function HomePage() {
       link: "https://www.klaire.dev/klaire-portfolio.html",
       category: "website"
     },
-    {
-      id: "thewashbuckler",
-      title: "The Washbuckler™",
-      description: "The revolutionary sink splash guard that keeps your counters dry, your clothes clean, and your kitchen mess-free. Install in seconds, enjoy for years.",
-      technologies: ["E-commerce", "Product Design", "Kitchen"],
-      imageUrl: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/thewashbuckler.png",
-      link: "https://www.thewashbuckler.com/",
-      category: "website"
-    },
   ]
 
-  const hiddenIds: string[] = ["klaire", "thewashbuckler", "roundabout", "salomatic", "moonlight"]
+  const hiddenIds: string[] = ["klaire", "roundabout", "salomatic", "moonlight"]
 
   const filteredProjects = (filter 
     ? projects.filter(project => project.category === filter)
