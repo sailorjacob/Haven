@@ -22,7 +22,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   // Handle password submission
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (passwordInput === 'killmefaster') {
+    if (passwordInput === 'beehive1') {
       setIsAuthenticated(true)
       sessionStorage.setItem('site_authenticated', 'true')
       setPasswordError(false)

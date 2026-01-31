@@ -46,10 +46,10 @@ export default function RootLayout({
           forcedTheme="dark"
           enableColorScheme={false}
         >
-          {/* <PasswordGate> */}
+          <PasswordGate>
             {children}
             <CookieConsent />
-          {/* </PasswordGate> */}
+          </PasswordGate>
         </ThemeProvider>
       </body>
     </html>
