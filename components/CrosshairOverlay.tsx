@@ -18,13 +18,7 @@ export default function CrosshairOverlay({ parentRef, variant = "white", dismiss
   const smoothX = useSpring(x, { stiffness: 40, damping: 12 })
   const smoothY = useSpring(y, { stiffness: 40, damping: 12 })
 
-  // On dismiss: move crosshair to tap position then we fade out via wrapper
-  useEffect(() => {
-    if (dismissed && tapPosition) {
-      x.set(tapPosition.x)
-      y.set(tapPosition.y)
-    }
-  }, [dismissed, tapPosition, x, y])
+  // Don't animate position on dismiss - just fade in place
 
   useEffect(() => {
     if (dismissed) return

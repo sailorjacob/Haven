@@ -594,8 +594,8 @@ export default function HomePage() {
       </div> */}
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 flex-grow pt-10 px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
-        <div className="container max-w-6xl mx-auto flex flex-col gap-6 md:gap-12">
+      <section className="relative z-10 flex-grow pt-10 px-4 md:px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
+        <div className="container max-w-6xl mx-auto flex flex-col gap-6 md:gap-12 items-center md:items-stretch">
           
 
 
@@ -819,26 +819,17 @@ export default function HomePage() {
             ref={processRef}
             className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-4 md:order-2 bg-transparent`}
             onClick={(e) => {
-              const rect = processRef.current?.getBoundingClientRect()
-              if (rect) {
-                setCrosshairTapPosition({
-                  x: e.clientX - rect.left,
-                  y: e.clientY - rect.top,
-                })
-                setCrosshairDismissed(true)
-                // Reset after animation completes so it can be dismissed again
-                setTimeout(() => {
-                  setCrosshairDismissed(false)
-                  setCrosshairTapPosition(null)
-                }, 2000)
-              }
+              setCrosshairDismissed(true)
+              // Reset after fade completes so it can be dismissed again
+              setTimeout(() => {
+                setCrosshairDismissed(false)
+              }, 1800)
             }}
           >
             <CrosshairOverlay
               parentRef={processRef}
               variant="white"
               dismissed={crosshairDismissed}
-              tapPosition={crosshairTapPosition}
             />
             <div className="flex items-center justify-center">
               <button
