@@ -1172,7 +1172,7 @@ export default function HomePage() {
           </div>
 
           {/* Signature - Bottom of content, above footer */}
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-4 mb-2">
             <div className="relative overflow-hidden" style={{ width: '120px', height: '45px' }}>
               <Image
                 src={theme === 'dark'
