@@ -589,7 +589,7 @@ export default function HomePage() {
       </div>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 flex-grow pt-10 px-6 text-zinc-900 dark:text-zinc-100 min-h-[calc(100vh-200px)]">
+      <section className="relative z-10 flex-grow pt-10 px-6 pb-32 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto space-y-12">
           
 
@@ -1065,7 +1065,7 @@ export default function HomePage() {
                   role: "Partner",
                   description: <>George brings expertise and vision to our projects.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/jhalestudio/KGGG.JPG",
-                  altImage: ""
+                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/jhalestudio/KGGG.JPG"
                 }
               ]
               .map((member, index) => (
