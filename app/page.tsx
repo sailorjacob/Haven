@@ -376,7 +376,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className={`w-full transition-colors duration-300 ${
+    <main className={`min-h-screen flex flex-col w-full transition-colors duration-300 ${
       theme === 'dark'
         ? 'bg-zinc-900 text-zinc-100'
         : 'bg-white text-zinc-900'
@@ -588,7 +588,7 @@ export default function HomePage() {
       </div>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 pt-10 px-6 text-zinc-900 dark:text-zinc-100">
+      <section className="relative z-10 flex-grow pt-10 px-6 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto space-y-12">
           
 
