@@ -8,12 +8,12 @@ import { useTheme } from "next-themes"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Footer } from "@/components/footer"
 import { LucideIcon } from "lucide-react"
-import { ServiceCard } from "./components/ServiceCard"
-import { BlueprintGrid } from "./components/BlueprintGrid"
-import { ServicesSection } from "./components/ServicesSection"
-import { ScatteredStars } from "./components/ScatteredStars"
+import { ServiceCard } from "../components/ServiceCard"
+import { BlueprintGrid } from "../components/BlueprintGrid"
+import { ServicesSection } from "../components/ServicesSection"
+import { ScatteredStars } from "../components/ScatteredStars"
 import ProcessDropdown from "@/components/ProcessDropdown"
-import CrosshairOverlay from "../components/CrosshairOverlay"
+import CrosshairOverlay from "../../components/CrosshairOverlay"
 import WorkGallery from "@/components/WorkGallery"
 
 type Project = {
@@ -38,7 +38,7 @@ const getSeededRandomColor = (seed: string) => {
   return colors[Math.abs(hash) % colors.length]
 }
 
-export default function HomePage() {
+export default function PortfolioPage() {
   const [filter, setFilter] = useState<string | null>(null)
   const [counter, setCounter] = useState(100000)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -464,8 +464,8 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-                {/* Shop link - HIDDEN */}
-                {/* <Link
+                {/* Shop link */}
+                <Link
                   href="/shop"
                   className={`text-sm font-light transition-colors duration-300 delay-100 ${
                     processOpen
@@ -478,14 +478,14 @@ export default function HomePage() {
                   }`}
                 >
                   shop
-                </Link> */}
+                </Link>
               </div>
 
             </div>
 
             <div className="flex items-center space-x-4">
-              {/* Blog link - HIDDEN */}
-              {/* <Link
+              {/* Blog link */}
+                              <Link
                   href="/blog"
                   className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
                     processOpen
@@ -498,7 +498,7 @@ export default function HomePage() {
                   }`}
                 >
                 blog
-              </Link> */}
+              </Link>
               {/* Start button (contact) */}
               <Link 
                 href="/contact"
@@ -559,13 +559,12 @@ export default function HomePage() {
           {mobileMenuOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
               <div className="container mx-auto px-6 py-4 space-y-3">
-                {/* Shop and Blog links - HIDDEN */}
-                {/* <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Shop
                 </Link>
                 <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Blog
-                </Link> */}
+                </Link>
               </div>
             </motion.div>
           )}
@@ -593,29 +592,8 @@ export default function HomePage() {
         <div className="container max-w-6xl mx-auto space-y-12">
           
 
-
-          {/* Work Gallery Showcase - HIDDEN */}
-          {/* <div className="mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="text-2xl md:text-3xl font-light text-zinc-900 mb-3">
-                Featured Work
-              </h2>
-              <p className="text-zinc-600 max-w-xl mx-auto">
-                Explore our latest projects showcasing custom development, design, and AI-powered solutions.
-              </p>
-            </motion.div>
-
-            <WorkGallery />
-          </div> */}
-
-          {/* Selected Projects - HIDDEN (moved to /portfolio) */}
-          {/* <div>
+          {/* Selected Projects */}
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -717,6 +695,7 @@ export default function HomePage() {
                       theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                     }`}>{project.description}</p>
 
+                    {/* Technology Pills */}
                     <div className="flex flex-wrap gap-2 mb-4 hidden md:flex">
                       {project.technologies.map((tech, index) => (
                         <span 
@@ -750,7 +729,7 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
-          </div> */}
+          </div>
           
           {/* Haven Studio Hero */}
           <div>
@@ -775,32 +754,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </motion.div>
-              {/* <p className="text-sm md:text-base text-zinc-500 font-light max-w-lg mx-auto mb-8">
-                Premium digital experiences
-              </p> */}
-
-              {/* <div className="flex justify-center">
-                {/* Start a Project Button */}
-                {/* <Link
-                  href="/contact"
-                  className={`inline-flex items-center justify-center border font-medium py-2 px-6 rounded-full text-sm relative overflow-hidden group min-w-[160px] ${
-                    theme === 'dark'
-                      ? 'border-zinc-600 text-zinc-200'
-                      : 'border-zinc-400 text-zinc-900'
-                  }`}
-                >
-                  {/* Grey background that fills from left on hover */}
-                  {/* <div className={`absolute inset-0 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
-                    theme === 'dark' ? 'bg-zinc-600' : 'bg-zinc-400'
-                  }`}></div> */}
-                  {/* Text content */}
-                  {/* <span className="relative z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    start a project
-                  </span> */}
-                  {/* Arrow icon that appears on hover */}
-                  {/* <ArrowRight className="w-5 h-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-                </Link>
-              </div> */}
             </motion.div>
           </div>
 
@@ -1050,7 +1003,7 @@ export default function HomePage() {
             >
             </motion.div>
 
-            <div className="flex justify-center gap-16 max-w-4xl mx-auto">
+            <div className="flex justify-center max-w-4xl mx-auto">
               {[
                 {
                   name: "Jacob Beam",
@@ -1058,13 +1011,6 @@ export default function HomePage() {
                   description: <>Jacob is a digital artist and entrepreneur with <a href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline transition-all duration-200">experience</a> in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
-                },
-                {
-                  name: "George",
-                  role: "Partner",
-                  description: <>George brings expertise and vision to our projects.</>,
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG",
-                  altImage: ""
                 }
               ]
               .map((member, index) => (
@@ -1202,4 +1148,3 @@ export default function HomePage() {
     </main>
   )
 }
-
