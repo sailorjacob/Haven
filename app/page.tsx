@@ -1164,8 +1164,8 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Contact Info */}
-              <div className={`flex items-center justify-center text-sm transition-colors duration-300 ${
+              {/* Contact Info - email hidden, message button kept */}
+              {/* <div className={`flex items-center justify-center text-sm transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
               }`}>
                 <a
@@ -1179,7 +1179,7 @@ export default function HomePage() {
                   <Mail className="w-4 h-4 mr-2" />
                   info@haven.engineer
                 </a>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 
