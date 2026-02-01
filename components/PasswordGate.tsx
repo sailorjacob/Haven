@@ -18,6 +18,8 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   // Check if user is already authenticated
   useEffect(() => {
     if (isHomepage) {
+      // Clear session when on homepage so shop/blog require password
+      sessionStorage.removeItem('site_authenticated')
       setIsAuthenticated(true)
       setIsLoading(false)
       return

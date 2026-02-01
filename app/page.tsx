@@ -762,7 +762,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center"
             >
               <p className={`text-sm md:text-base font-light mb-6 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-500' : 'text-zinc-600'
@@ -1109,6 +1109,7 @@ export default function HomePage() {
                         alt={`${member.name} alternate`}
                         fill
                         className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+                        style={member.name === "George" ? { objectPosition: "center 46%" } : undefined}
                       />
                     ) : null}
                     {/* Primary image shown on hover */}
@@ -1117,6 +1118,7 @@ export default function HomePage() {
                       alt={member.name}
                       fill
                       className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      style={member.name === "George" ? { objectPosition: "center 46%" } : undefined}
                     />
                   </div>
                   <h3 className={`text-lg font-medium mb-1 transition-colors duration-300 ${
