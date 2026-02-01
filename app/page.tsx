@@ -819,9 +819,7 @@ export default function HomePage() {
           <div
             id="process"
             ref={processRef}
-            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-5 md:order-2 ${
-              theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
-            }`}
+            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-5 md:order-2 bg-transparent`}
             onClick={(e) => {
               const rect = processRef.current?.getBoundingClientRect()
               if (rect) {
@@ -1104,7 +1102,7 @@ export default function HomePage() {
                         alt={`${member.name} alternate`}
                         fill
                         className="object-cover transition-opacity duration-500 group-hover:opacity-0"
-                        style={member.name === "George" ? { objectPosition: "center 46%" } : undefined}
+                        style={member.name === "George" ? { objectPosition: "center 40%" } : undefined}
                       />
                     ) : null}
                     {/* Primary image shown on hover */}
@@ -1113,7 +1111,7 @@ export default function HomePage() {
                       alt={member.name}
                       fill
                       className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      style={member.name === "George" ? { objectPosition: "center 46%" } : undefined}
+                      style={member.name === "George" ? { objectPosition: "center 40%" } : undefined}
                     />
                   </div>
                   <h3 className={`text-lg font-medium mb-1 transition-colors duration-300 ${

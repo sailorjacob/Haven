@@ -77,15 +77,6 @@ export default function CrosshairOverlay({ parentRef, variant = "white", dismiss
       transition={{
         opacity: { duration: 1.5, delay: dismissed ? 0.2 : 0 },
       }}
-      onAnimationComplete={() => {
-        // Reset after fade completes so it can be dismissed again
-        if (dismissed && parentRef.current) {
-          setTimeout(() => {
-            x.set(-100)
-            y.set(-100)
-          }, 100)
-        }
-      }}
     >
       <motion.div
         className={`absolute top-0 bottom-0 w-px ${lineClass}`}
