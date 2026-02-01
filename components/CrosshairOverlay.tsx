@@ -70,12 +70,14 @@ export default function CrosshairOverlay({ parentRef, variant = "white", dismiss
   return (
     <motion.div
       className="pointer-events-none absolute inset-0 z-20"
-      initial={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
       animate={{
         opacity: dismissed ? 0 : 1,
       }}
       transition={{
-        opacity: { duration: 1.5, delay: dismissed ? 0.2 : 0 },
+        opacity: dismissed 
+          ? { duration: 1.5, delay: 0.2 }
+          : { duration: 0.3, delay: 0.1 }
       }}
     >
       <motion.div

@@ -595,7 +595,7 @@ export default function HomePage() {
 
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 flex-grow pt-20 md:pt-10 px-4 md:px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
-        <div className="container max-w-6xl mx-auto flex flex-col gap-6 md:gap-12 items-center md:items-stretch">
+        <div className="container max-w-6xl mx-auto flex flex-col gap-6 md:gap-12">
           
 
 
