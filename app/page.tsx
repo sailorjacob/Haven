@@ -1103,8 +1103,9 @@ export default function HomePage() {
                         src={member.altImage}
                         alt={`${member.name} alternate`}
                         fill
-                        className="object-cover transition-opacity duration-500 group-hover:opacity-0"
-                        style={member.name === "George" ? { objectPosition: "center 35%" } : undefined}
+                        className={`object-cover transition-opacity duration-500 group-hover:opacity-0 ${
+                          member.name === "George" ? "scale-110 -translate-y-2" : ""
+                        }`}
                       />
                     ) : null}
                     {/* Primary image shown on hover */}
@@ -1112,8 +1113,9 @@ export default function HomePage() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      style={member.name === "George" ? { objectPosition: "center 40%" } : undefined}
+                      className={`object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${
+                        member.name === "George" ? "scale-110 -translate-y-2" : ""
+                      }`}
                     />
                   </div>
                   <h3 className={`text-lg font-medium mb-1 transition-colors duration-300 ${
