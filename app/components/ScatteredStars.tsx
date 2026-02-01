@@ -73,12 +73,17 @@ function Star({ star, scrollProgress, windowHeight }: {
   )
 }
 
+const MOBILE_BREAKPOINT = 768
+const MOBILE_STAR_COUNT = 2
+
 export function ScatteredStars() {
   const [stars, setStars] = useState<StarPosition[]>([])
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
   const { theme } = useTheme()
+  const isMobile = windowSize.width > 0 && windowSize.width < MOBILE_BREAKPOINT
+  const visibleStars = isMobile ? stars.slice(0, MOBILE_STAR_COUNT) : stars
 
   // Create a motion value for scroll progress
   const scrollProgress = useMotionValue(0)
@@ -130,8 +135,8 @@ export function ScatteredStars() {
           : 'bg-white/50 mix-blend-overlay'
       }`} />
 
-      {/* Stars */}
-      {stars.map((star) => (
+      {/* Stars — max 2 on mobile for performance/clutter */}
+      {visibleStars.map((star) => (
         <Star
           key={star.id}
           star={star}
