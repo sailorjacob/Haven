@@ -1,23 +1,34 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Lock } from "lucide-react"
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [passwordInput, setPasswordInput] = useState("")
   const [passwordError, setPasswordError] = useState(false)
 
+  // Skip password protection for homepage
+  const isHomepage = pathname === "/"
+
   // Check if user is already authenticated
   useEffect(() => {
+    if (isHomepage) {
+      setIsAuthenticated(true)
+      setIsLoading(false)
+      return
+    }
+    
     const authenticated = sessionStorage.getItem('site_authenticated')
     if (authenticated === 'true') {
       setIsAuthenticated(true)
     }
     setIsLoading(false)
-  }, [])
+  }, [isHomepage])
 
   // Handle password submission
   const handlePasswordSubmit = (e: React.FormEvent) => {
