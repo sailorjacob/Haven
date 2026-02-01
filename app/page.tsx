@@ -589,7 +589,7 @@ export default function HomePage() {
       </div>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 flex-grow pt-10 px-6 pb-32 text-zinc-900 dark:text-zinc-100">
+      <section className="relative z-10 flex-grow pt-10 px-6 text-zinc-900 dark:text-zinc-100 min-h-[calc(100vh-200px)]">
         <div className="container max-w-6xl mx-auto space-y-12">
           
 
@@ -809,8 +809,8 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Services */}
-          <ServicesSection />
+          {/* Services - HIDDEN */}
+          {/* <ServicesSection /> */}
 
           {/* Process */}
           <div id="process" ref={processRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
