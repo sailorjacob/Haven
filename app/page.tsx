@@ -588,7 +588,7 @@ export default function HomePage() {
       </div>
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 flex-grow pt-10 px-6 text-zinc-900 dark:text-zinc-100">
+      <section className="relative z-10 flex-grow pt-10 px-6 pb-32 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto space-y-12">
           
 
