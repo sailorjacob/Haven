@@ -1108,11 +1108,12 @@ export default function HomePage() {
                   <p className={`text-sm mb-3 font-medium transition-colors duration-300 ${
                     theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                   }`}>{member.role}</p>
-                  <p className={`text-sm leading-relaxed transition-colors duration-300 ${
+                  {/* Description hidden */}
+                  {/* <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                     theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
                   }`}>
                         {member.description}
-                  </p>
+                  </p> */}
                 </motion.div>
               ))}
             </div>
