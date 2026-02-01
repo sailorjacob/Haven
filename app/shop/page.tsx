@@ -153,15 +153,16 @@ export default function ShopPage() {
       description: "Speed-inspired design for the modern racer",
       price: "$48",
       stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
-    },
-    {
-      id: "sculpture",
-      name: "Sculpture",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Marble.png",
-      description: "Elegant marble pattern with contemporary edge",
-      price: "$44",
-      stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
     }
+    // Sculpture hidden
+    // , {
+    //   id: "sculpture",
+    //   name: "Sculpture",
+    //   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/Marble.png",
+    //   description: "Elegant marble pattern with contemporary edge",
+    //   price: "$44",
+    //   stripeLink: "https://buy.stripe.com/5kQ6oI75x1vm0kneK757W09"
+    // }
     // {
     //   id: "transrealallah",
     //   name: "Trans Real Allah",
@@ -391,7 +392,7 @@ export default function ShopPage() {
                 {/* <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Blog
                 </Link> */}
-                <Link href="/" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider" onClick={() => setMobileMenuOpen(false)}>
                   Home
                 </Link>
               </div>

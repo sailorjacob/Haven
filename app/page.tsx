@@ -404,8 +404,8 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Header */}
-      <header onMouseLeave={()=>setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
+      {/* Header — hidden on mobile homepage */}
+      <header onMouseLeave={()=>setProcessOpen(false)} className={`hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
         processOpen
           ? theme === 'dark'
             ? 'bg-zinc-900/95 border-zinc-700'
