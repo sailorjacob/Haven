@@ -813,11 +813,11 @@ export default function HomePage() {
           {/* Services - HIDDEN */}
           {/* <ServicesSection /> */}
 
-          {/* Process — below message/email */}
+          {/* Process — below message/email, closer spacing */}
           <div
             id="process"
             ref={processRef}
-            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-4 md:order-2 bg-transparent`}
+            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-4 md:order-2 bg-transparent -mt-3 md:mt-0`}
             onClick={(e) => {
               if (!crosshairDismissed) {
                 setCrosshairDismissed(true)
