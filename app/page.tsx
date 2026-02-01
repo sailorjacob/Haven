@@ -397,8 +397,12 @@ export default function HomePage() {
         }`}></div>
       </div>
 
-      {/* Scattered Stars */}
-      {ENABLE_HOMEPAGE_STARS && <ScatteredStars />}
+      {/* Scattered Stars — hidden on mobile */}
+      {ENABLE_HOMEPAGE_STARS && (
+        <div className="hidden md:block">
+          <ScatteredStars />
+        </div>
+      )}
 
       {/* Header */}
       <header onMouseLeave={()=>setProcessOpen(false)} className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b relative transition-all duration-300 delay-100 ${
@@ -559,10 +563,10 @@ export default function HomePage() {
           {mobileMenuOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
               <div className="container mx-auto px-6 py-4 space-y-3">
-                <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider" onClick={() => setMobileMenuOpen(false)}>
                   Shop
                 </Link>
-                <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider" onClick={() => setMobileMenuOpen(false)}>
                   Blog
                 </Link>
               </div>
@@ -589,7 +593,7 @@ export default function HomePage() {
 
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 flex-grow pt-10 px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
-        <div className="container max-w-6xl mx-auto flex flex-col gap-12 md:gap-12">
+        <div className="container max-w-6xl mx-auto flex flex-col gap-6 md:gap-12">
           
 
 
@@ -751,8 +755,8 @@ export default function HomePage() {
             </div>
           </div> */}
           
-          {/* Haven Studio Hero — on mobile appears below Process (order-2) */}
-          <div className="order-2 md:order-1">
+          {/* Haven Studio Hero */}
+          <div className="order-1 md:order-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -811,11 +815,11 @@ export default function HomePage() {
           {/* Services - HIDDEN */}
           {/* <ServicesSection /> */}
 
-          {/* Process — on mobile appears above hero (order-1); tap dismisses crosshair */}
+          {/* Process — moved below profiles (order-5 on mobile) */}
           <div
             id="process"
             ref={processRef}
-            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-1 md:order-2 ${
+            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-5 md:order-2 ${
               theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
             }`}
             onClick={(e) => {
@@ -1058,8 +1062,8 @@ export default function HomePage() {
             </AnimatePresence>
           </div> */}
 
-          {/* Team (profiles) — kept below everything else */}
-          <div className="order-4">
+          {/* Team (profiles) */}
+          <div className="order-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1138,7 +1142,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <div className="rounded-xl p-4 text-center order-3">
+          <div className="rounded-xl p-4 text-center order-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1215,8 +1219,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer — transparent, no divider on homepage mobile */}
-      <Footer transparentOnMobile />
+      {/* Footer hidden on homepage */}
+      {/* <Footer transparentOnMobile /> */}
     </main>
   )
 }
