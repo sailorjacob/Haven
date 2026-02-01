@@ -821,10 +821,7 @@ export default function HomePage() {
             onClick={(e) => {
               if (!crosshairDismissed) {
                 setCrosshairDismissed(true)
-                // Reset after fade animation fully completes
-                setTimeout(() => {
-                  setCrosshairDismissed(false)
-                }, 2000)
+                // Stay dismissed - don't reset
               }
             }}
           >
