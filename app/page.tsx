@@ -572,8 +572,8 @@ export default function HomePage() {
         </AnimatePresence>
       </header>
 
-      {/* Signature - Top Left Corner (disappears on scroll) */}
-      <div className={`fixed top-20 left-4 z-40 pointer-events-none transition-opacity duration-500 ${
+      {/* Signature - Top Left Corner (disappears on scroll) - HIDDEN */}
+      {/* <div className={`fixed top-20 left-4 z-40 pointer-events-none transition-opacity duration-500 ${
         isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-80 hover:opacity-100'
       }`}>
         <Image
@@ -586,7 +586,7 @@ export default function HomePage() {
           height={60}
           className="transition-opacity duration-300 pointer-events-auto"
         />
-      </div>
+      </div> */}
 
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 flex-grow pt-10 px-6 pb-32 text-zinc-900 dark:text-zinc-100">
@@ -1171,8 +1171,8 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Signature - Bottom of content, above footer */}
-          <div className="flex justify-center mt-4 mb-2">
+          {/* Signature - Bottom of content, above footer - HIDDEN */}
+          {/* <div className="flex justify-center mt-4 mb-2">
             <div className="relative overflow-hidden" style={{ width: '120px', height: '45px' }}>
               <Image
                 src={theme === 'dark'
@@ -1191,7 +1191,7 @@ export default function HomePage() {
                 }}
               />
             </div>
-          </div>
+          </div> */}
 
         </div>
       </section>
