@@ -761,6 +761,11 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <p className={`text-sm md:text-base font-light mb-6 transition-colors duration-300 ${
+                theme === 'dark' ? 'text-zinc-500' : 'text-zinc-600'
+              }`}>
+                building products focused on bitcoin
+              </p>
               <motion.div 
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -1054,7 +1059,7 @@ export default function HomePage() {
               {[
                 {
                   name: "Jacob Beam",
-                  role: "Founder",
+                  role: "Partner",
                   description: <>Jacob is a digital artist and entrepreneur with <a href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline transition-all duration-200">experience</a> in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
@@ -1063,8 +1068,8 @@ export default function HomePage() {
                   name: "George",
                   role: "Partner",
                   description: <>George brings expertise and vision to our projects.</>,
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG",
-                  altImage: ""
+                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/jhalestudio/KGGG.JPG",
+                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 }
               ]
               .map((member, index) => (
