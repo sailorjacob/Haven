@@ -46,6 +46,8 @@ export default function HomePage() {
   const [processSectionOpen, setProcessSectionOpen] = useState(false)
   const [performanceSectionOpen, setPerformanceSectionOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [crosshairDismissed, setCrosshairDismissed] = useState(false)
+  const [crosshairTapPosition, setCrosshairTapPosition] = useState<{ x: number; y: number } | null>(null)
   const { theme, setTheme } = useTheme()
   
   // Feature flags for easy toggling
@@ -590,7 +592,7 @@ export default function HomePage() {
 
       {/* Single Combined Section - All Content Flows Together */}
       <section className="relative z-10 flex-grow pt-10 px-6 pb-32 text-zinc-900 dark:text-zinc-100">
-        <div className="container max-w-6xl mx-auto space-y-12">
+        <div className="container max-w-6xl mx-auto flex flex-col gap-12 md:gap-12">
           
 
 
@@ -752,8 +754,8 @@ export default function HomePage() {
             </div>
           </div> */}
           
-          {/* Haven Studio Hero */}
-          <div>
+          {/* Haven Studio Hero — on mobile appears below Process (order-2) */}
+          <div className="order-2 md:order-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -812,12 +814,31 @@ export default function HomePage() {
           {/* Services - HIDDEN */}
           {/* <ServicesSection /> */}
 
-          {/* Process */}
-          <div id="process" ref={processRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
-            theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
-          }`}>
-            {/* crosshair overlay */}
-            <CrosshairOverlay parentRef={processRef} />
+          {/* Process — on mobile appears above hero (order-1); tap dismisses crosshair */}
+          <div
+            id="process"
+            ref={processRef}
+            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-1 md:order-2 ${
+              theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
+            }`}
+            onClick={(e) => {
+              if (crosshairDismissed) return
+              const rect = processRef.current?.getBoundingClientRect()
+              if (rect) {
+                setCrosshairTapPosition({
+                  x: e.clientX - rect.left,
+                  y: e.clientY - rect.top,
+                })
+                setCrosshairDismissed(true)
+              }
+            }}
+          >
+            <CrosshairOverlay
+              parentRef={processRef}
+              variant="white"
+              dismissed={crosshairDismissed}
+              tapPosition={crosshairTapPosition}
+            />
             <div className="flex items-center justify-center">
               <button
                 aria-expanded={processSectionOpen}
