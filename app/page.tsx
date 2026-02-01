@@ -774,7 +774,7 @@ export default function HomePage() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="flex justify-center mb-6"
+                className="flex justify-center"
               >
                 <div className="relative">
                   <Hexagon className="w-16 h-16 text-zinc-400 opacity-40" strokeWidth={1} />
@@ -823,7 +823,6 @@ export default function HomePage() {
               theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
             }`}
             onClick={(e) => {
-              if (crosshairDismissed) return
               const rect = processRef.current?.getBoundingClientRect()
               if (rect) {
                 setCrosshairTapPosition({
@@ -831,6 +830,11 @@ export default function HomePage() {
                   y: e.clientY - rect.top,
                 })
                 setCrosshairDismissed(true)
+                // Reset after animation completes so it can be dismissed again
+                setTimeout(() => {
+                  setCrosshairDismissed(false)
+                  setCrosshairTapPosition(null)
+                }, 2000)
               }
             }}
           >
@@ -1064,15 +1068,6 @@ export default function HomePage() {
 
           {/* Team (profiles) */}
           <div className="order-3">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-            </motion.div>
-
             <div className="flex justify-center gap-16 max-w-4xl mx-auto">
               {[
                 {

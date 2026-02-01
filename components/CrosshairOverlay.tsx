@@ -75,7 +75,16 @@ export default function CrosshairOverlay({ parentRef, variant = "white", dismiss
         opacity: dismissed ? 0 : 1,
       }}
       transition={{
-        opacity: { duration: 0.4, delay: dismissed ? 0.15 : 0 },
+        opacity: { duration: 1.5, delay: dismissed ? 0.2 : 0 },
+      }}
+      onAnimationComplete={() => {
+        // Reset after fade completes so it can be dismissed again
+        if (dismissed && parentRef.current) {
+          setTimeout(() => {
+            x.set(-100)
+            y.set(-100)
+          }, 100)
+        }
       }}
     >
       <motion.div
@@ -85,10 +94,6 @@ export default function CrosshairOverlay({ parentRef, variant = "white", dismiss
       <motion.div
         className={`absolute left-0 right-0 h-px ${lineClass}`}
         style={{ top: smoothY }}
-      />
-      <motion.div
-        className={`absolute w-2.5 h-2.5 ${circleBorder} rounded-full -translate-x-1/2 -translate-y-1/2 border`}
-        style={{ left: smoothX, top: smoothY }}
       />
     </motion.div>
   )
