@@ -813,11 +813,11 @@ export default function HomePage() {
           {/* Services - HIDDEN */}
           {/* <ServicesSection /> */}
 
-          {/* Process — moved below profiles (order-5 on mobile) */}
+          {/* Process — below message/email */}
           <div
             id="process"
             ref={processRef}
-            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-5 md:order-2 bg-transparent`}
+            className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-4 md:order-2 bg-transparent`}
             onClick={(e) => {
               const rect = processRef.current?.getBoundingClientRect()
               if (rect) {
@@ -855,7 +855,7 @@ export default function HomePage() {
                     <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </motion.span>
-                <span className="uppercase tracking-wider">Process</span>
+                <span className="tracking-wider">Process</span>
               </button>
             </div>
 
@@ -1063,7 +1063,7 @@ export default function HomePage() {
           </div> */}
 
           {/* Team (profiles) */}
-          <div className="order-3">
+          <div className="order-2">
             <div className="flex justify-center gap-16 max-w-4xl mx-auto">
               {[
                 {
@@ -1137,8 +1137,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="rounded-xl p-4 text-center order-2">
+          {/* CTA (message + email) — below profiles, above process */}
+          <div className="rounded-xl p-4 text-center order-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
