@@ -767,7 +767,7 @@ export default function HomePage() {
               <p className={`text-sm md:text-base font-light mb-6 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-zinc-500' : 'text-zinc-600'
               }`}>
-                building products focused on bitcoin
+                building focused on bitcoin
               </p>
               <motion.div 
                 initial={{ scale: 0.9, opacity: 0 }}
