@@ -594,7 +594,7 @@ export default function HomePage() {
       </div> */}
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 flex-grow pt-10 px-4 md:px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
+      <section className="relative z-10 flex-grow pt-20 md:pt-10 px-4 md:px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto flex flex-col gap-6 md:gap-12 items-center md:items-stretch">
           
 
@@ -819,11 +819,13 @@ export default function HomePage() {
             ref={processRef}
             className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-4 md:order-2 bg-transparent`}
             onClick={(e) => {
-              setCrosshairDismissed(true)
-              // Reset after fade completes so it can be dismissed again
-              setTimeout(() => {
-                setCrosshairDismissed(false)
-              }, 1800)
+              if (!crosshairDismissed) {
+                setCrosshairDismissed(true)
+                // Reset after fade animation fully completes
+                setTimeout(() => {
+                  setCrosshairDismissed(false)
+                }, 2000)
+              }
             }}
           >
             <CrosshairOverlay

@@ -10,15 +10,28 @@ interface Props {
   tapPosition?: { x: number; y: number } | null
 }
 
-// Crosshair overlay that follows the cursor; tap dismisses it (floats to tap then fades)
-export default function CrosshairOverlay({ parentRef, variant = "white", dismissed = false, tapPosition = null }: Props) {
-  const x = useMotionValue(-100)
-  const y = useMotionValue(-100)
+import { useState } from "react"
 
-  const smoothX = useSpring(x, { stiffness: 40, damping: 12 })
-  const smoothY = useSpring(y, { stiffness: 40, damping: 12 })
+// Crosshair overlay that follows the cursor; tap dismisses it with fade
+export default function CrosshairOverlay({ parentRef, variant = "white", dismissed = false }: Props) {
+  // Random starting position for variety (different each time it appears)
+  const getRandomPosition = () => {
+    const positions = [
+      { x: -100, y: -100 },     // top-left
+      { x: 300, y: -100 },      // top-right  
+      { x: -100, y: 300 },      // bottom-left
+      { x: 300, y: 300 },       // bottom-right
+      { x: 150, y: -100 },      // top-center
+    ]
+    return positions[Math.floor(Math.random() * positions.length)]
+  }
 
-  // Don't animate position on dismiss - just fade in place
+  const [startPos] = useState(getRandomPosition())
+  const x = useMotionValue(startPos.x)
+  const y = useMotionValue(startPos.y)
+
+  const smoothX = useSpring(x, { stiffness: 50, damping: 15 })
+  const smoothY = useSpring(y, { stiffness: 50, damping: 15 })
 
   useEffect(() => {
     if (dismissed) return
@@ -29,20 +42,13 @@ export default function CrosshairOverlay({ parentRef, variant = "white", dismiss
       const rect = parent.getBoundingClientRect()
       const offsetX = e.clientX - rect.left
       const offsetY = e.clientY - rect.top
-      if (offsetX < 0 || offsetY < 0 || offsetX > rect.width || offsetY > rect.height) {
-        x.set(-100)
-        y.set(-100)
-      } else {
+      if (offsetX >= 0 && offsetY >= 0 && offsetX <= rect.width && offsetY <= rect.height) {
         x.set(offsetX)
         y.set(offsetY)
       }
     }
 
     parent.addEventListener("mousemove", handleMove)
-    parent.addEventListener("mouseleave", () => {
-      x.set(-100)
-      y.set(-100)
-    })
     return () => {
       parent.removeEventListener("mousemove", handleMove)
     }
