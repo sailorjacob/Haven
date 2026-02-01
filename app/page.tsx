@@ -828,11 +828,14 @@ export default function HomePage() {
               }
             }}
           >
-            <CrosshairOverlay
-              parentRef={processRef}
-              variant="white"
-              dismissed={crosshairDismissed}
-            />
+            {/* Only show crosshair when process section is expanded */}
+            {processSectionOpen && (
+              <CrosshairOverlay
+                parentRef={processRef}
+                variant="white"
+                dismissed={crosshairDismissed}
+              />
+            )}
             <div className="flex items-center justify-center">
               <button
                 aria-expanded={processSectionOpen}
