@@ -1104,7 +1104,7 @@ export default function HomePage() {
                         alt={`${member.name} alternate`}
                         fill
                         className={`object-cover transition-opacity duration-500 group-hover:opacity-0 ${
-                          member.name === "George" ? "scale-110 translate-y-1" : ""
+                          member.name === "George" ? "scale-110 translate-y-0.5" : ""
                         }`}
                       />
                     ) : null}
