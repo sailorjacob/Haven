@@ -179,14 +179,15 @@ export default function ShopPage() {
   }
 
   const products = [
-    {
-      id: "nskk",
-      name: "NSKK",
-      image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/NSKK.png",
-      description: "Bold statement piece with vintage aesthetic",
-      price: "$42",
-      stripeLink: "https://buy.stripe.com/eVq5kE4Xp5LC8QTcBZ57W06"
-    },
+    // NSKK hidden
+    // {
+    //   id: "nskk",
+    //   name: "NSKK",
+    //   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs/NSKK.png",
+    //   description: "Bold statement piece with vintage aesthetic",
+    //   price: "$42",
+    //   stripeLink: "https://buy.stripe.com/eVq5kE4Xp5LC8QTcBZ57W06"
+    // },
     {
       id: "racer",
       name: "Racer",
@@ -806,7 +807,8 @@ export default function ShopPage() {
 
           {/* Footer Text - Hidden when product is selected */}
           {!selectedProduct && (
-            <motion.div
+            {/* On demand message hidden */}
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -819,7 +821,7 @@ export default function ShopPage() {
               }`}>
                 All designs are printed on demand. Shipping worldwide.
               </p>
-            </motion.div>
+            </motion.div> */}
           )}
         </div>
       </section>

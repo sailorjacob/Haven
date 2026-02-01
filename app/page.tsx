@@ -489,7 +489,8 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Link
+              {/* Blog link - HIDDEN */}
+              {/* <Link
                 href="/blog"
                 className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
                   processOpen
@@ -502,7 +503,7 @@ export default function HomePage() {
                 }`}
               >
                 blog
-              </Link>
+              </Link> */}
               {/* Start button (contact) */}
               <Link 
                 href="/contact"
@@ -566,9 +567,10 @@ export default function HomePage() {
                 <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider" onClick={() => setMobileMenuOpen(false)}>
                   Shop
                 </Link>
-                <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider" onClick={() => setMobileMenuOpen(false)}>
+                {/* Blog link hidden */}
+                {/* <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider" onClick={() => setMobileMenuOpen(false)}>
                   Blog
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
           )}
@@ -1102,7 +1104,7 @@ export default function HomePage() {
                         alt={`${member.name} alternate`}
                         fill
                         className="object-cover transition-opacity duration-500 group-hover:opacity-0"
-                        style={member.name === "George" ? { objectPosition: "center 40%" } : undefined}
+                        style={member.name === "George" ? { objectPosition: "center 35%" } : undefined}
                       />
                     ) : null}
                     {/* Primary image shown on hover */}
@@ -1122,9 +1124,10 @@ export default function HomePage() {
                       return parts[0] + (parts[1] ? " " + parts[1][0] + "." : "")
                     })()
                   }</h3>
-                  <p className={`text-sm mb-3 font-medium transition-colors duration-300 ${
+                  {/* Role hidden */}
+                  {/* <p className={`text-sm mb-3 font-medium transition-colors duration-300 ${
                     theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
-                  }`}>{member.role}</p>
+                  }`}>{member.role}</p> */}
                   {/* Description hidden */}
                   {/* <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                     theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'
