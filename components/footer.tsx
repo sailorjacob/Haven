@@ -7,7 +7,7 @@ export function Footer() {
   const { theme } = useTheme() || { theme: 'light' }
 
   return (
-    <footer className={`relative z-10 border-t mt-24 pt-8 pb-4 px-6 transition-colors duration-300 ${
+    <footer className={`relative z-20 border-t mt-auto pt-8 pb-4 px-6 transition-colors duration-300 shrink-0 ${
       theme === 'dark'
         ? 'border-zinc-700 bg-zinc-900'
         : 'border-zinc-200 bg-white'

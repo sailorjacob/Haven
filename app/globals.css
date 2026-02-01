@@ -5,6 +5,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overscroll-behavior: none;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }
 
 /* Override Next.js loading spinner color */
