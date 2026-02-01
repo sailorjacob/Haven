@@ -899,11 +899,10 @@ export default function HomePage() {
             </AnimatePresence>
           </div>
 
-          {/* Studio Performance */}
-          <div id="performance" ref={performanceRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
+          {/* Studio Performance - HIDDEN */}
+          {/* <div id="performance" ref={performanceRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
             theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-50'
           }`}>
-            {/* crosshair overlay */}
             <CrosshairOverlay parentRef={performanceRef} />
             <div className="flex items-center justify-center">
               <button
@@ -937,7 +936,6 @@ export default function HomePage() {
 
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Uptime */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -991,7 +989,6 @@ export default function HomePage() {
                       }`}>Uptime</h3>
                     </motion.div>
 
-                    {/* Support */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -1011,7 +1008,6 @@ export default function HomePage() {
                       }`}>Support</h3>
                     </motion.div>
 
-                    {/* Better Conversion */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -1042,7 +1038,7 @@ export default function HomePage() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
 
           {/* Team */}
           <div>
@@ -1069,7 +1065,7 @@ export default function HomePage() {
                   role: "Partner",
                   description: <>George brings expertise and vision to our projects.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/jhalestudio/KGGG.JPG",
-                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
+                  altImage: ""
                 }
               ]
               .map((member, index) => (
