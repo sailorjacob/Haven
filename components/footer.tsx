@@ -1,17 +1,27 @@
 import Link from "next/link"
-import { Hexagon, Menu } from "lucide-react"
-import { useState } from "react"
+import { Hexagon } from "lucide-react"
 import { useTheme } from "next-themes"
 
-export function Footer() {
+interface FooterProps {
+  /** On homepage mobile: transparent background, no divider line */
+  transparentOnMobile?: boolean
+}
+
+export function Footer({ transparentOnMobile = false }: FooterProps) {
   const { theme } = useTheme() || { theme: 'light' }
 
+  const baseClasses = "relative z-20 mt-auto pt-8 pb-4 px-6 transition-colors duration-300 shrink-0"
+  const normalClasses =
+    theme === 'dark'
+      ? 'border-t border-zinc-700 bg-zinc-900'
+      : 'border-t border-zinc-200 bg-white'
+  const transparentMobileClasses = transparentOnMobile
+    ? 'border-transparent bg-transparent md:border-t md:pt-8 ' +
+      (theme === 'dark' ? 'md:border-zinc-700 md:bg-zinc-900' : 'md:border-zinc-200 md:bg-white')
+    : normalClasses
+
   return (
-    <footer className={`relative z-20 border-t mt-auto pt-8 pb-4 px-6 transition-colors duration-300 shrink-0 ${
-      theme === 'dark'
-        ? 'border-zinc-700 bg-zinc-900'
-        : 'border-zinc-200 bg-white'
-    }`}>
+    <footer className={`${baseClasses} ${transparentMobileClasses}`}>
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row justify-between items-center">
           <div className="flex items-center mt-6 md:mt-0">

@@ -466,8 +466,7 @@ export default function HomePage() {
                   </motion.span>
                 </div>
 
-                {/* Shop link - HIDDEN */}
-                {/* <Link
+                <Link
                   href="/shop"
                   className={`text-sm font-light transition-colors duration-300 delay-100 ${
                     processOpen
@@ -480,27 +479,26 @@ export default function HomePage() {
                   }`}
                 >
                   shop
-                </Link> */}
+                </Link>
               </div>
 
             </div>
 
             <div className="flex items-center space-x-4">
-              {/* Blog link - HIDDEN */}
-              {/* <Link
-                  href="/blog"
-                  className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
-                    processOpen
-                      ? theme === 'dark'
-                        ? 'text-zinc-500 hover:text-zinc-200'
-                        : 'text-zinc-400 hover:text-zinc-200'
-                      : theme === 'dark'
-                        ? 'text-zinc-500 hover:text-zinc-200'
-                        : 'text-zinc-600 hover:text-zinc-900'
-                  }`}
-                >
+              <Link
+                href="/blog"
+                className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
+                  processOpen
+                    ? theme === 'dark'
+                      ? 'text-zinc-500 hover:text-zinc-200'
+                      : 'text-zinc-400 hover:text-zinc-200'
+                    : theme === 'dark'
+                      ? 'text-zinc-500 hover:text-zinc-200'
+                      : 'text-zinc-600 hover:text-zinc-900'
+                }`}
+              >
                 blog
-              </Link> */}
+              </Link>
               {/* Start button (contact) */}
               <Link 
                 href="/contact"
@@ -561,13 +559,12 @@ export default function HomePage() {
           {mobileMenuOpen && (
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700">
               <div className="container mx-auto px-6 py-4 space-y-3">
-                {/* Shop and Blog links - HIDDEN */}
-                {/* <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/shop" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Shop
                 </Link>
                 <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Blog
-                </Link> */}
+                </Link>
               </div>
             </motion.div>
           )}
@@ -591,7 +588,7 @@ export default function HomePage() {
       </div> */}
 
       {/* Single Combined Section - All Content Flows Together */}
-      <section className="relative z-10 flex-grow pt-10 px-6 pb-32 text-zinc-900 dark:text-zinc-100">
+      <section className="relative z-10 flex-grow pt-10 px-6 pb-8 md:pb-32 text-zinc-900 dark:text-zinc-100">
         <div className="container max-w-6xl mx-auto flex flex-col gap-12 md:gap-12">
           
 
@@ -1061,8 +1058,8 @@ export default function HomePage() {
             </AnimatePresence>
           </div> */}
 
-          {/* Team */}
-          <div>
+          {/* Team (profiles) — kept below everything else */}
+          <div className="order-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1141,7 +1138,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA */}
-          <div className="rounded-xl p-4 text-center">
+          <div className="rounded-xl p-4 text-center order-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1218,8 +1215,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer — transparent, no divider on homepage mobile */}
+      <Footer transparentOnMobile />
     </main>
   )
 }
