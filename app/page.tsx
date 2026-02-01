@@ -766,11 +766,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <p className={`text-sm md:text-base font-light mb-6 transition-colors duration-300 ${
-                theme === 'dark' ? 'text-zinc-500' : 'text-zinc-600'
-              }`}>
-                building focused on bitcoin
-              </p>
+              {/* building focused on bitcoin - hidden */}
               <motion.div 
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -1114,7 +1110,7 @@ export default function HomePage() {
                       alt={member.name}
                       fill
                       className={`object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${
-                        member.name === "George" ? "scale-110 translate-y-1" : ""
+                        member.name === "George" ? "scale-110 translate-y-0.5" : ""
                       }`}
                     />
                   </div>

@@ -306,8 +306,8 @@ export default function ShopPage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              {/* Blog link */}
-              <Link
+              {/* Blog link - hidden */}
+              {/* <Link
                 href="/blog"
                 className={`hidden md:inline text-sm font-light transition-colors duration-300 delay-100 ${
                   processOpen
@@ -320,7 +320,7 @@ export default function ShopPage() {
                 }`}
               >
                 blog
-              </Link>
+              </Link> */}
               {/* Start button (contact) */}
               <Link
                 href="/contact"
@@ -387,9 +387,10 @@ export default function ShopPage() {
               className="md:hidden border-b transition-colors duration-300 bg-zinc-900 border-zinc-700"
             >
               <div className="container mx-auto px-6 py-4 space-y-3">
-                <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
+                {/* Blog link hidden */}
+                {/* <Link href="/blog" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Blog
-                </Link>
+                </Link> */}
                 <Link href="/" className="block text-sm text-zinc-400 hover:text-zinc-200 transition-colors tracking-wider uppercase" onClick={() => setMobileMenuOpen(false)}>
                   Home
                 </Link>
