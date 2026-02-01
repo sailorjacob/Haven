@@ -1058,9 +1058,9 @@ export default function HomePage() {
             <div className="flex justify-center gap-16 max-w-4xl mx-auto">
               {[
                 {
-                  name: "Jacob Beam",
+                  name: "Jacob",
                   role: "Partner",
-                  description: <>Jacob is a digital artist and entrepreneur with <a href="https://sailorjacob.github.io" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline transition-all duration-200">experience</a> in imagery and design.</>,
+                  description: <>Jacob is a digital artist and entrepreneur with experience in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
                 },
