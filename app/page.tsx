@@ -813,106 +813,19 @@ export default function HomePage() {
           {/* Services - HIDDEN */}
           {/* <ServicesSection /> */}
 
-          {/* Process — below message on both mobile and desktop */}
-          <div
+          {/* Process — HIDDEN */}
+          {/* <div
             id="process"
             ref={processRef}
             className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 order-4 bg-transparent -mt-4 md:-mt-6`}
             onClick={(e) => {
               if (!crosshairDismissed) {
                 setCrosshairDismissed(true)
-                // Stay dismissed - don't reset
               }
             }}
           >
-            {/* Only show crosshair when process section is expanded */}
-            {processSectionOpen && (
-              <CrosshairOverlay
-                parentRef={processRef}
-                variant="white"
-                dismissed={crosshairDismissed}
-              />
-            )}
-            <div className="flex items-center justify-center">
-              <button
-                aria-expanded={processSectionOpen}
-                onClick={() => setProcessSectionOpen((v) => !v)}
-                className="flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
-              >
-                <motion.span
-                  animate={{ rotate: processSectionOpen ? 180 : 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="inline-block"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-zinc-700 dark:text-zinc-500">
-                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </motion.span>
-                <span className="tracking-wider">Process</span>
-              </button>
-            </div>
-
-            <AnimatePresence initial={false}>
-              {processSectionOpen && (
-                <motion.div
-                  key="process-content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.35, ease: "easeInOut" }}
-                  className="mt-4"
-                >
-
-
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    {[
-                {
-                  number: "01",
-                  title: "Discovery",
-                  description: "We learn about your business, goals, and vision to establish clear project objectives."
-                },
-                {
-                  number: "02", 
-                  title: "Strategy",
-                  description: "We develop a detailed roadmap and technical approach tailored to your specific needs."
-                },
-                {
-                  number: "03",
-                  title: "Design & Development",
-                  description: "We craft beautiful interfaces and build robust applications with clean code."
-                },
-                {
-                  number: "04",
-                  title: "Launch & Optimize",
-                  description: "We deploy your project and provide ongoing support to ensure continued success."
-                }
-                    ].map((step, index) => (
-                      <motion.div
-                        key={step.number}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        onMouseEnter={() => setHoveredStep(index)}
-                        onMouseLeave={() => setHoveredStep(null)}
-                        className={`text-center group transition-opacity duration-300 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-25' : 'opacity-100'}`}
-                      >
-                        <div className={`flex items-center justify-center gap-3 mb-3 ${hoveredStep !== null && hoveredStep !== index ? 'opacity-40' : 'opacity-100'} transition-opacity duration-300`}>
-                          <GearGraphic index={index} number={step.number} active={hoveredStep === index} />
-                          <h3 className="text-base font-medium text-zinc-600 transition-opacity duration-700 ease-in-out">
-                            {step.title}
-                          </h3>
-                        </div>
-                        <p className="text-zinc-500 text-sm leading-snug transition-opacity duration-700 ease-in-out">
-                          {step.description}
-                        </p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+            ...
+          </div> */}
 
           {/* Studio Performance - HIDDEN */}
           {/* <div id="performance" ref={performanceRef} className={`relative rounded-xl p-6 overflow-hidden scroll-mt-32 transition-colors duration-300 ${
@@ -1055,7 +968,7 @@ export default function HomePage() {
             </AnimatePresence>
           </div> */}
 
-          {/* Team (profiles) */}
+          {/* Team (profiles) - George hidden */}
           <div className="order-2">
             <div className="flex justify-center gap-16 max-w-4xl mx-auto">
               {[
@@ -1065,14 +978,8 @@ export default function HomePage() {
                   description: <>Jacob is a digital artist and entrepreneur with experience in imagery and design.</>,
                   image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/images//1737057840405%20(1).jpeg",
                   altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/havensvgs//jacob2.JPG"
-                },
-                {
-                  name: "George",
-                  role: "Partner",
-                  description: <>George brings expertise and vision to our projects.</>,
-                  image: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/jhalestudio/KGGG.JPG",
-                  altImage: "https://twejikjgxkzmphocbvpt.supabase.co/storage/v1/object/public/jhalestudio/KGGG.JPG"
                 }
+                // George profile hidden
               ]
               .map((member, index) => (
                 <motion.div
